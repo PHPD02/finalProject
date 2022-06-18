@@ -1,25 +1,21 @@
-import React, { Component } from 'react';
-import { HashRouter, Switch, Route} from 'react-router-dom';
-
-import Login from './chattyComponents/login';
-
+import React, { Component } from "react";
+import { HashRouter, Switch, Route } from "react-router-dom";
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import Firstpage from "./components/firstpage";
+import Convenient from "./partpage/convenient";
 class App extends Component {
-  state = {  } 
-  render() { 
+  state = {};
+  render() {
     return (
       <HashRouter>
-        <div className='container'>
-          <Switch>
-            {/* <Route path="/" component={Index} exact/> */}
-            {/* <Route path ="/index" component={Index} /> */}
-            <Route path="/login" component={Login} />
-          </Switch>
-        </div>
+        <Switch>
+          <Route path="/" component={Firstpage} exact />
+          <Route path="/firstpage" component={Firstpage} />
+          <Route path="/convenient" component={Convenient} />
+        </Switch>
       </HashRouter>
     );
   }
 }
- 
-export default App;
-  
 
+export default App;

@@ -4,7 +4,7 @@ class Restaurant extends React.Component {
 
 
   render() {
-    const {name,image,star,comment,restauranttype,describe,delivercost}= this.props.restaurant;
+    const {Name,Picture1,star,comment,restauranttype,Description,delivercost}= this.props.restaurant;
 
 
 
@@ -12,11 +12,11 @@ class Restaurant extends React.Component {
 
     return (
       <div className="card">
-        <img src={image} className="card-img-top" alt={image}/>
+        <img src={Picture1} className="card-img-top" alt={Picture1}/>
         {/* 因為上面解構了 */}
         <div className="card-body">
           <span className="card-headline d-flex  justify-content-between">
-            <h5 className="card-title"><b>{name}</b></h5>
+            <h5 className="card-title"><b>{Name}</b></h5>
             <div>
               <i className="fa fa-star " style={{ color: "pink" }}></i>
               <span className="star-point">{star}</span>
@@ -24,7 +24,7 @@ class Restaurant extends React.Component {
             </div>
           </span>
           <small className="restaurant-type">$$$, {restauranttype}</small>
-          <p className="card-text">{describe}</p>
+          <p className="card-text">{Description}</p>
           <p className="card-price ">$ {delivercost}<small> 外送服務費</small></p>
         </div>
       </div>

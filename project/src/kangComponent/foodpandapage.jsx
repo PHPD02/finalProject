@@ -1,12 +1,21 @@
 import React from "react";
+import SearchBar from "./searchbar"
+import Restaurant from "./restaurant";
+
+
 class FoodpandaPage extends React.Component {
   state = {};
   render() {
     return (
       <React.Fragment>
-        <button type="button" className="btn btn-primary">
-          Primary
+        <div className="d-flex justify-content-end mt-2">
+        <button type="button" className="btn btn-outline-light text-dark mr-4">
+          購物車
         </button>
+        <button type="button" className="btn btn-outline-light text-dark">
+          登入 / 註冊
+        </button>
+        </div>
         <h1>Foodpanda Page</h1>
         <div
           id="carouselExampleInterval"
@@ -18,13 +27,13 @@ class FoodpandaPage extends React.Component {
         >
           <div className="carousel-inner">
             <div className="carousel-item active" data-bs-interval="10000">
-              <img src="../img/img1.jpg " className="d-block w-100" alt="img1" />
+              <img src="../img/img1.jpg " className="d-block w-100" alt="img1" style={{width:'100%',height:'35vh'}}/>
             </div>
             <div className="carousel-item" data-bs-interval="2000">
             <img src="../img/img2.jpg " className="d-block w-100" alt="img2" />
             </div>
             <div className="carousel-item">
-            <img src="../img/img1=3.jpg " className="d-block w-100" alt="img1=3" />
+            <img src="../img/img3.jpg " className="d-block w-100" alt="img3" />
             </div>
           </div>
           <button
@@ -37,7 +46,6 @@ class FoodpandaPage extends React.Component {
               className="carousel-control-prev-icon"
               aria-hidden="true"
             ></span>
-            <span className="visually-hidden">Previous</span>
           </button>
           <button
             className="carousel-control-next"
@@ -49,9 +57,15 @@ class FoodpandaPage extends React.Component {
               className="carousel-control-next-icon"
               aria-hidden="true"
             ></span>
-            <span className="visually-hidden">Next</span>
           </button>
         </div>
+{/* 搜尋bar部分 */}
+<div style={{margin:'20px 0 20px 0'}}>
+<SearchBar />
+</div>
+<Restaurant />
+
+
       </React.Fragment>
     );
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import SearchBar from "./searchbar"
 import Restaurant from "./restaurant";
+import Restaurants from "./restaurants";
 
 
 class FoodpandaPage extends React.Component {
@@ -26,10 +27,10 @@ class FoodpandaPage extends React.Component {
         }}
         >
           <div className="carousel-inner">
-            <div className="carousel-item active" data-bs-interval="10000">
-              <img src="../img/img1.jpg " className="d-block w-100" alt="img1" style={{width:'100%',height:'35vh'}}/>
+            <div className="carousel-item " data-bs-interval="10000">
+              <img src="../img/img1.jpg " className="d-block w-100" alt="img1" style={{width:'100%',overflow:'hidden'}}/>
             </div>
-            <div className="carousel-item" data-bs-interval="2000">
+            <div className="carousel-item " data-bs-interval="2000">
             <img src="../img/img2.jpg " className="d-block w-100" alt="img2" />
             </div>
             <div className="carousel-item">
@@ -60,10 +61,15 @@ class FoodpandaPage extends React.Component {
           </button>
         </div>
 {/* 搜尋bar部分 */}
-<div style={{margin:'20px 0 20px 0'}}>
+<div style={{margin:'50px 0 70px 0'}}>
 <SearchBar />
 </div>
-<Restaurant />
+<h2>優惠主打星<i className="fa fa-star" style={{color:'gold'}}></i></h2>
+<div style={{margin:'20px 0 20px 0'}} className='category-lane'>
+
+</div>
+
+<Restaurants />
 
 
       </React.Fragment>

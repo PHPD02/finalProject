@@ -32,7 +32,7 @@ class Sunsua extends Component {
                 <div className='header'>
                     <h1 >順弁</h1>
                 </div>
-                <p><?=$hello?></p>
+                <p></p>
                 <div className='container'>
 
                     <div className='row'>

@@ -6,25 +6,11 @@ import SunsuaProposal from './sunsuaProposal';
 import SunsuaOrder from './sunsuaOrder';
 import Navi from '../navigation.jsx';
 
+
 import "./css/sunsua.css";
 
 class Sunsua extends Component {
-    state = {
-        innerContent: null
-        // innerContent: <SunsuaOrder></SunsuaOrder>
-    }
-    innerContentChange = () => {
-        // console.log(window.location.pathname);
-        switch (window.location.pathname) {
-            case "/sunsua/proposal":
-                this.state.innerContent = <SunsuaProposal></SunsuaProposal>
-                break;
-            case "/sunsua/order":
-                this.state.innerContent = <SunsuaOrder></SunsuaOrder>
-                break;
-        }
-        this.setState({});
-    }
+    state = {}
     render() {
         return (
             <div id="sunsua">
@@ -32,21 +18,25 @@ class Sunsua extends Component {
                 <div className='header'>
                     <h1 >順弁</h1>
                 </div>
-                <p><?=$hello?></p>
                 <div className='container'>
 
                     <div className='row'>
                         {/* 左側 點選列表 */}
                         <div className='col-2'>
-                            <ul>
-                                <li onClick={this.innerContentChange}><Link to="/sunsua/proposal" >提案</Link></li>
-                                <li onClick={this.innerContentChange}><Link to="/sunsua/order" >查詢訂單</Link></li>
-                            </ul>
-                            <hr />
+                            <div className='col'>
+                                <a href='/sunsua/proposal'> 提案 </a>
+                                <br />
+                                <a href='/sunsua/order'> 查詢訂單 </a>
+                            </div>
                         </div>
                         {/* 右側顯示列表 */}
                         <div className="col-10">
-                            {this.state.innerContent}
+                            <BrowserRouter>
+                                <Switch>
+                                    <Route path="/sunsua/proposal" component={SunsuaProposal} />
+                                    <Route path="/sunsua/order" component={SunsuaOrder} />
+                                </Switch>
+                            </BrowserRouter>
                         </div>
                     </div>
                 </div>

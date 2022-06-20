@@ -1,6 +1,33 @@
+#sunsua {
+    box-sizing: border-box;
+    background-color: rgba(259, 211, 103, 0.2);
+}
 
+.header {
+    background-color: #f9d367;
+    text-align: center;
+}
 
 h1 {
     font-size: 160px;
     color: red;
+}
+
+#sunsua li{
+color: red;
+text-decoration: none;
+}
+
+
+/* 測試用 */
+.row {
+    outline: 1px solid black;
+}
+
+.row>div:nth-child(1) {
+    outline: 1px solid red;
+}
+
+.row>div:nth-child(2) {
+    outline: 1px solid blue;
 }

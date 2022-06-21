@@ -15,6 +15,7 @@
     "bootstrap-icons": "^1.8.3",
     "bootstrap4": "^0.0.1-security",
     "font": "^0.0.4",
+    "font-awesome": "^4.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.3.0",
@@ -45,5 +46,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-react-app": "^7.0.1",
+    "postcss": "^8.4.14",
+    "postcss-loader": "^7.0.0"
   }
 }

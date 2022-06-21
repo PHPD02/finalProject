@@ -17,7 +17,7 @@ class SunsuaProposal extends Component {
                 <hr />
                 <div className='text-center'>
                     <form action='' method=''>
-                        <table border={1}>
+                        <table id='proposalInfo' border="1">
                             <thead></thead>
                             <tbody>
                                 <tr>
@@ -30,7 +30,7 @@ class SunsuaProposal extends Component {
                                 </tr>
                                 <tr>
                                     <td>餐廳 : </td>
-                                    <td><input type="text" required="required" placeholder="請輸入要配送的餐廳" /></td>
+                                    <td><input type="text" required="required" placeholder="請輸入要配送的餐廳" width={"1000px"} /></td>
                                 </tr>
                                 <tr>
                                     <td>餐點 : </td>

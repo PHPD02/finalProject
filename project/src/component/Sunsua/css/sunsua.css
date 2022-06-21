@@ -1,33 +1,33 @@
 #sunsua {
     box-sizing: border-box;
-    background-color: rgba(259, 211, 103, 0.2);
 }
 
 .header {
-    background-color: #f9d367;
+    /* background-color: #f9d367; */
+    /* #f767f9 */
+    /* #676bf9 */
+    background-color: rgba(259, 211, 103, 0.2);
     text-align: center;
 }
-
-h1 {
-    font-size: 160px;
+#sunsua li {
     color: red;
+    text-decoration: none;
 }
 
-#sunsua li{
-color: red;
-text-decoration: none;
+.footer {
+    text-align: center;
 }
-
 
 /* 測試用 */
 .row {
     outline: 1px solid black;
 }
 
-.row>div:nth-child(1) {
+
+.olRed {
     outline: 1px solid red;
 }
 
-.row>div:nth-child(2) {
+.olBlue {
     outline: 1px solid blue;
 }

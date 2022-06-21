@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import SunsuaOrderList from './sunsuaOrderList.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 
 class SunsuaOrder extends Component {
@@ -10,6 +10,7 @@ class SunsuaOrder extends Component {
             <div>
                 訂單搜尋
                 <hr />
+                <SunsuaOrderList></SunsuaOrderList>
             </div>
 
         );

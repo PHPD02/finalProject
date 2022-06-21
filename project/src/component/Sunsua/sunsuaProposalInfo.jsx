@@ -1,5 +1,6 @@
 /**
  * 提案的詳細內容
+ * TODO: 串接後端 資料庫
  */
 
 import React, { Component } from 'react';
@@ -10,7 +11,7 @@ class SunsuaProposalInfo extends Component {
     state = {
         orderDetail: {
             name: "Max", time: 300, shop: "麥當勞",
-            meal: "麥香雞", cost: 100, amount: 8
+            meal: "麥香雞", cost: 100, addr: "台中火車站", amount: 8
             //     name: null, time: null, shop: null,
             //     meal: null, cost: null, amount: 6
         },
@@ -36,32 +37,30 @@ class SunsuaProposalInfo extends Component {
                         <img src="https://dummyimage.com/200x200/a3a3a3/fff" alt="" />
                     </div>
                     <div id="proposalInfo" className='col-6'>
-
-                        <table className='table table-info' border="1">
+                        <table className='table table-info my-2' border="1">
                             <tbody>
                                 <tr>
                                     <th>提案人</th>
                                     <td>{this.state.orderDetail.name}</td>
-                                </tr>
-                                <tr>
-                                    <th>剩餘時間</th>
-                                    <td>{this.state.orderDetail.time}</td>
-                                </tr>
-                                <tr>
                                     <th>餐廳</th>
                                     <td>{this.state.orderDetail.shop}</td>
                                 </tr>
                                 <tr>
+                                    <th>剩餘時間</th>
+                                    <td>{this.state.orderDetail.time}</td>
                                     <th>餐點</th>
                                     <td>{this.state.orderDetail.meal}</td>
                                 </tr>
                                 <tr>
+                                    <th>送到地點</th>
+                                    <td>{this.state.orderDetail.addr}</td>
+
                                     <th>單份金額</th>
                                     <td>{this.state.orderDetail.cost}</td>
                                 </tr>
-                                <tr>
-                                    <th>上限數量</th>
-                                    <td>{this.state.orderDetail.amount}</td>
+                                <tr className='text-center'>
+                                    <th colSpan={2}>上限數量</th>
+                                    <td colSpan={2}>{this.state.orderDetail.amount}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -73,7 +72,6 @@ class SunsuaProposalInfo extends Component {
                             &nbsp;
                             &nbsp;
                             <select id='totalMeal' className='my-2'>
-                                {/* TODO: 將這邊改成 對應數量 */}
                                 {this.state.optionNum.map((item, index) => {
                                     return (
                                         <option key={index}>{item}</option>

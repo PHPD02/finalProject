@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import SunsuaProposal from './sunsuaProposal';
 import SunsuaSearchProposal from './sunsuaSearchProposal';
-import Navi from '../navigation.jsx';
 import SunsuaIntro from './sunsuaIntro.jsx';
 import Navbar from '../../repeatability/Navbar.jsx';
 
@@ -13,7 +12,6 @@ import "./css/sunsua.css";
 class Sunsua extends Component {
     state = {
         innerContent: <SunsuaIntro></SunsuaIntro>
-        // innerContent: <SunsuaOrder></SunsuaOrder>
     }
     innerContentChange = () => {
         // console.log(window.location.pathname);

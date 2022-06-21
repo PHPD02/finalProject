@@ -10,11 +10,11 @@ class SunsuaProposal extends Component {
         return (
             <div className='container'>
 
-                <div className='b'>訂單頁面</div>
+                <div className='text-center'>訂單頁面</div>
                 <hr />
-                <div>
+                <div className='text-center'>
                     <form action='' method=''>
-                        <table>
+                        <table border={1}>
                             <thead></thead>
                             <tbody>
                                 <tr>
@@ -42,7 +42,15 @@ class SunsuaProposal extends Component {
                                     <td><input type="text" required="required" placeholder="請輸入單筆餐點的金額" /></td>
                                 </tr>
                                 <tr>
-                                    <td> menu ??? : </td>
+                                    <td>訂單限制時間 : </td>
+                                    <td><input type="text" required="required" placeholder="請輸入訂單限制時間" /></td>
+                                </tr>
+                                <tr>
+                                    <td>預計到達時間 : </td>
+                                    <td><input type="text" required="required" placeholder="請輸入預計到達時間" /></td>
+                                </tr>
+                                <tr>
+                                    <td> menu : </td>
                                     <td><input type="file" required="required" /></td>
                                 </tr>
                             </tbody>

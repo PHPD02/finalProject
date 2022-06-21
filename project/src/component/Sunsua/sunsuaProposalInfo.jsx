@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-class SunsuaOrderList extends Component {
+class SunsuaProposalInfo extends Component {
     state = {
         orderDetail: {
             name: "Max", time: 300, shop: "麥當勞",
@@ -73,4 +73,4 @@ class SunsuaOrderList extends Component {
     }
 }
 
-export default SunsuaOrderList;
+export default SunsuaProposalInfo;

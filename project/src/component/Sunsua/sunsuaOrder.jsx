@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import SunsuaOrderList from './sunsuaOrderList.jsx'
+import SunsuaProposalInfo from './sunsuaProposalInfo.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class SunsuaOrder extends Component {
     state = {}
+    
     render() {
         return (
             <div>
                 訂單搜尋
                 <hr />
-                <SunsuaOrderList></SunsuaOrderList>
+                <SunsuaProposalInfo></SunsuaProposalInfo>
             </div>
 
         );

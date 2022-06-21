@@ -6,6 +6,7 @@ import SunsuaProposal from './sunsuaProposal';
 import SunsuaOrder from './sunsuaOrder';
 import Navi from '../navigation.jsx';
 import SunsuaIntro from './sunsuaIntro.jsx';
+import Navbar from '../../repeatability/Navbar.jsx';
 
 import "./css/sunsua.css";
 
@@ -32,8 +33,8 @@ class Sunsua extends Component {
     render() {
         return (
             <div id="sunsua" className='py-2'>
-                <Navi></Navi>
-                <div className='header'>
+                <Navbar></Navbar>
+                <div className='header mt-5'>
                     <h1 >順弁</h1>
                 </div>
                 <p></p>

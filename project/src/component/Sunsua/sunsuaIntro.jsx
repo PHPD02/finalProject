@@ -1,11 +1,14 @@
+/**
+ * 順弁的介紹
+ * 闡述 順弁 頁面的裡面
+ * 稍微 介紹 頁面的使用方法
+ */
 import React, { Component } from 'react';
-
-
 class SunsuaIntro extends Component {
     state = {}
     render() {
         return (
-            <div className='text-center'>
+            <div className='text-center py-4'>
                 <h2> 關於順弁 </h2>
                 <hr />
                 <h4>我們的構想理念:</h4>

@@ -7,53 +7,56 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 class SunsuaProposal extends Component {
     state = {
-        order: { name: null, address: null, shop: null, meal: null, pic: null }
+        proposal: [{
+            name: null, address: null, shop: null,
+            meal: null, cost: null, deadlineTime: null, arriveTime: null, pic: null
+        }]
     }
     render() {
         return (
-            <div className='container'>
+            <div className='container py-3'>
 
-                <div className='text-center'>訂單頁面</div>
+                <h1 className='text-center'>訂單頁面</h1>
                 <hr />
                 <div className='text-center'>
                     <form action='' method=''>
-                        <table id='proposalInfo' border="1">
+                        <table className='table' border="1">
                             <thead></thead>
                             <tbody>
                                 <tr>
-                                    <td>姓名 : </td>
+                                    <td>姓名</td>
                                     <td><input type="text" required="required" placeholder="請輸入姓名" /></td>
                                 </tr>
                                 <tr>
-                                    <td>要送到的地址 : </td>
+                                    <td>要送到的地址</td>
                                     <td><input type="text" required="required" placeholder="請輸入目的地" /></td>
                                 </tr>
                                 <tr>
-                                    <td>餐廳 : </td>
+                                    <td>餐廳</td>
                                     <td><input type="text" required="required" placeholder="請輸入要配送的餐廳" width={"1000px"} /></td>
                                 </tr>
                                 <tr>
-                                    <td>餐點 : </td>
+                                    <td>餐點</td>
                                     <td><input type="text" required="required" placeholder="請輸入要配送的餐點" /></td>
                                 </tr>
                                 <tr>
-                                    <td>餐點上限數量 : </td>
+                                    <td>餐點上限數量</td>
                                     <td><input type="text" required="required" placeholder="請輸入要配送餐點的上限數量" /></td>
                                 </tr>
                                 <tr>
-                                    <td>單筆金額 : </td>
+                                    <td>單筆金額</td>
                                     <td><input type="text" required="required" placeholder="請輸入單筆餐點的金額" /></td>
                                 </tr>
                                 <tr>
-                                    <td>訂單限制時間 : </td>
+                                    <td>訂單限制時間</td>
                                     <td><input type="text" required="required" placeholder="請輸入訂單限制時間" /></td>
                                 </tr>
                                 <tr>
-                                    <td>預計到達時間 : </td>
+                                    <td>預計到達時間</td>
                                     <td><input type="text" required="required" placeholder="請輸入預計到達時間" /></td>
                                 </tr>
                                 <tr>
-                                    <td> menu : </td>
+                                    <td>menu</td>
                                     <td><input type="file" required="required" /></td>
                                 </tr>
                             </tbody>
@@ -61,6 +64,7 @@ class SunsuaProposal extends Component {
                         </table>
                     </form>
                 </div>
+                <hr />
             </div>
 
         );

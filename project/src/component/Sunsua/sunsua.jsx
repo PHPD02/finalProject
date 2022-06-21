@@ -44,7 +44,7 @@ class Sunsua extends Component {
                             <div>
                                 <div className="sunsuaBtn" onClick={this.innerContentChange}><Link to="/sunsua/intro" >介紹</Link></div>
                                 <div className="sunsuaBtn" onClick={this.innerContentChange}><Link to="/sunsua/proposal" >提案</Link></div>
-                                <div className="sunsuaBtn" onClick={this.innerContentChange}><Link to="/sunsua/order" >搜訂單</Link></div>
+                                <div className="sunsuaBtn" onClick={this.innerContentChange}><Link to="/sunsua/order" >搜方案</Link></div>
                             </div>
                             <hr />
                         </div>

@@ -18,7 +18,7 @@ class SunsuaProposal extends Component {
         return (
             <div className='container py-3'>
 
-                <h1 className='text-center'>訂單頁面</h1>
+                <h1 className='text-center'>提案頁面</h1>
                 <hr />
                 <div className='text-center'>
                     <form action='' method=''>

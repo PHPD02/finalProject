@@ -1,15 +1,19 @@
+/**
+ * 搜尋方案
+ * 
+ */
 import React, { Component } from 'react';
 import SunsuaProposalInfo from './sunsuaProposalInfo.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-class SunsuaOrder extends Component {
+class SunsuaSearchProposal extends Component {
     state = {}
-    
+
     render() {
         return (
             <div>
-                訂單搜尋
+                搜尋方案
                 <hr />
                 <SunsuaProposalInfo></SunsuaProposalInfo>
             </div>
@@ -18,5 +22,5 @@ class SunsuaOrder extends Component {
     }
 }
 
-export default SunsuaOrder;
+export default SunsuaSearchProposal;
 

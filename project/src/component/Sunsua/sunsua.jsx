@@ -3,7 +3,7 @@ import { BrowserRouter, HashRouter, Switch, Route, Link } from 'react-router-dom
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import SunsuaProposal from './sunsuaProposal';
-import SunsuaOrder from './sunsuaOrder';
+import SunsuaSearchProposal from './sunsuaSearchProposal';
 import Navi from '../navigation.jsx';
 import SunsuaIntro from './sunsuaIntro.jsx';
 import Navbar from '../../repeatability/Navbar.jsx';
@@ -25,7 +25,7 @@ class Sunsua extends Component {
                 this.state.innerContent = <SunsuaProposal></SunsuaProposal>
                 break;
             case "/sunsua/order":
-                this.state.innerContent = <SunsuaOrder></SunsuaOrder>
+                this.state.innerContent = <SunsuaSearchProposal></SunsuaSearchProposal>
                 break;
         }
         this.setState({});

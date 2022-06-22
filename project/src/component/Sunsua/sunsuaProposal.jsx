@@ -1,11 +1,11 @@
 /**
  * 發起提案
- * TODO: 1.看看 input 長度需不需要改變
- *       2.submitProposal 改變樣式
+ * TODO: 1 .看看 input 長度需不需要改變
 */
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import './css/sunsuaProposal.css'
 
 class SunsuaProposal extends Component {
     state = {
@@ -67,7 +67,9 @@ class SunsuaProposal extends Component {
                     </form>
                 </div>
                 <hr />
-                <button id="submitProposal" type="sumit">送出提案</button>
+                <div  className='px-5 d-flex flex-row-reverse'>
+                    <button  id="submitProposal" className='mx-5' type="sumit">送出提案</button>
+                </div>
             </div>
 
         );

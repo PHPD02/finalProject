@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../repeatability/Navbar';
+import Footer from '../repeatability/Footer';
 class orderDetails extends Component {
   state = {}
   render() {
@@ -8,7 +9,7 @@ class orderDetails extends Component {
         <Navbar />
         <br />
         <div className="container mt-5 ">
-          <div className="text-center">
+          <div>
             {/* 小標題 */}
             <div>
               <h1>訂單詳情</h1>
@@ -20,34 +21,51 @@ class orderDetails extends Component {
               <img src="#" />
             </div>
             {/* 清單 */}
-
-            <ul>
-              <li>訂單編號</li>
-              <li>外送餐廳</li>
-              <li>送餐目的地</li>
-              <li>總計</li>
-            </ul>
-            <p></p>
-            <p>12345678</p>
-            <p></p>
-            <p>八方雲集(雲集店)</p>
-            <p></p>
-            <p>公益路二段</p>
-            <p></p>
-            <p>$800</p>
-
-
+            <table>
+              <tr>
+                <td>訂單編號</td>
+                <td>12345678</td>
+              </tr>
+              <tr>
+                <td>外送餐廳</td>
+                <td>八方雲集(雲集店)</td>
+              </tr>
+              <tr>
+                <td>送餐目的地</td>
+                <td>公益路二段</td>
+              </tr>
+              <tr>
+                <td>總計</td>
+                <td>$800</td>
+              </tr>
+            </table>
             <hr />
-
-            <p>訂餐</p><p>12345678</p>
-            <p>訂餐</p><p>12345678</p>
-            <p>訂餐</p><p>12345678</p>
-            <button>12134</button>
-            <button>12134</button>
-            <button>12134</button>
+            <table>
+              <th>
+                <td>訂單內容</td>
+                <td>訂單數量</td>
+              </th>
+              <tr>
+                <td>韓式臘味</td>
+                <td>$50</td>
+              </tr>
+              <tr>
+                <td>韓式狗味</td>
+                <td>$8000</td>
+              </tr>
+            </table>
+            <div className='row'>
+              <div>
+                <button>有需要幫助的嗎 ?</button>
+              </div>
+              <div>
+                <button>客服中心</button>
+                <button>外送人員</button>
+              </div>
+            </div>
           </div>
         </div>
-      </React.Fragment>
+      </React.Fragment >
     );
   }
 }

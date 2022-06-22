@@ -3,13 +3,17 @@ import SearchBar from "./searchbar";
 import Restaurants from "./restaurants";
 import Caroursel from "./Caroursel";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Container } from "react-bootstrap";
+
+import StoreSlideBar from "./StoreSlideBar";
 
 class FoodpandaPage extends React.Component {
   state = {};
   render() {
     return (
       <React.Fragment>
-        <div className="d-flex justify-content-end mt-2">
+        <Container fluid>
+        <div className="d-flex justify-content-end mt-2 ">
           <button
             type="button"
             className="btn btn-outline-light text-dark mr-4"
@@ -22,6 +26,8 @@ class FoodpandaPage extends React.Component {
         </div>
 
         <Caroursel />
+        </Container>
+        <StoreSlideBar />
         <h1>Foodpanda Page</h1>
 
         {/* 搜尋bar部分 */}
@@ -37,6 +43,7 @@ class FoodpandaPage extends React.Component {
         ></div>
 
         <Restaurants />
+
       </React.Fragment>
     );
   }

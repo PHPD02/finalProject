@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
 
 import StoreSlideBar from "./StoreSlideBar";
+import StoreSlideBar2 from "./StoreSlideBar2";
 
 class FoodpandaPage extends React.Component {
   state = {};
@@ -28,6 +29,7 @@ class FoodpandaPage extends React.Component {
         <Caroursel />
         </Container>
         <StoreSlideBar />
+        <StoreSlideBar2 />
         <h1>Foodpanda Page</h1>
 
         {/* 搜尋bar部分 */}

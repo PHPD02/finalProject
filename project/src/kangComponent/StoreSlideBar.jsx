@@ -59,7 +59,6 @@ export default function StoreSlideBar() {
         {slides.map(({slideContent}, index) => (
           <SwiperSlide key={slideContent} virtualIndex={index}>
             <img src={img1} alt="img1" style={{objectFit:'auto'}}/>
-            {restaurant}
             {slideContent}
           </SwiperSlide>
         ))}

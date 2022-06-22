@@ -20,6 +20,7 @@ class orderDetails extends Component {
               <p>time</p>
               <img src="#" />
             </div>
+            <hr />
             {/* 清單 */}
             <table>
               <tr>
@@ -54,6 +55,7 @@ class orderDetails extends Component {
                 <td>$8000</td>
               </tr>
             </table>
+            <hr />
             <div className='row'>
               <div>
                 <button>有需要幫助的嗎 ?</button>

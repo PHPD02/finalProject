@@ -1,6 +1,5 @@
 /**
  * 提案的詳細內容
- * TODO: 串接後端 資料庫
  */
 
 import React, { Component } from 'react';
@@ -10,15 +9,14 @@ import "./css/sunsuaProposalInfo.css";
 class SunsuaProposalInfo extends Component {
     state = {
         orderDetail: {
-            name: "Max", time: 300, shop: "麥當勞",
-            meal: "麥香雞", cost: 100, addr: "台中火車站", amount: 8
-            //     name: null, time: null, shop: null,
-            //     meal: null, cost: null, amount: 6
+                name: null, time: null, shop: null,
+                meal: null, cost: null, amount: 6
         },
         optionNum: []
     }
 
     async componentDidMount() {
+        this.state.orderDetail= this.props.orderDetail
         this.optNumCreate();
     }
 
@@ -31,7 +29,7 @@ class SunsuaProposalInfo extends Component {
     }
     render() {
         return (
-            <div className='container'>
+            <div className='container my-2'>
                 <div className='row p-1'>
                     <div id="proposalPic" className='col-3 '>
                         <img src="https://dummyimage.com/200x200/a3a3a3/fff" alt="" />

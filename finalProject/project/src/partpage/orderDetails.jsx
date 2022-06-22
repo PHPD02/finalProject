@@ -8,7 +8,7 @@ class orderDetails extends Component {
         <Navbar />
         <br />
         <div className="container mt-5 ">
-          <div className="mx-auto">
+          <div className="text-center">
             {/* 小標題 */}
             <div>
               <h1>訂單詳情</h1>
@@ -19,20 +19,23 @@ class orderDetails extends Component {
               <p>time</p>
               <img src="#" />
             </div>
-              {/* 清單 */}
-            <div>
-              <ul>
-                <li></li>
-              </ul> 
-              <p>訂單編號</p>
-              <p>12345678</p>
-              <p>外送餐廳</p>
-              <p>八方雲集(雲集店)</p>
-              <p>送餐目的地</p>
-              <p>公益路二段</p>
-              <p>總計</p>
-              <p>$800</p>
-            </div>
+            {/* 清單 */}
+
+            <ul>
+              <li>訂單編號</li>
+              <li>外送餐廳</li>
+              <li>送餐目的地</li>
+              <li>總計</li>
+            </ul>
+            <p></p>
+            <p>12345678</p>
+            <p></p>
+            <p>八方雲集(雲集店)</p>
+            <p></p>
+            <p>公益路二段</p>
+            <p></p>
+            <p>$800</p>
+
 
             <hr />
 
@@ -43,9 +46,6 @@ class orderDetails extends Component {
             <button>12134</button>
             <button>12134</button>
           </div>
-
-
-
         </div>
       </React.Fragment>
     );

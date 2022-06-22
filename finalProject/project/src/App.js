@@ -12,8 +12,7 @@ class App extends Component {
     return (
       <HashRouter>
         <Switch>
-          <Route path="/" component={Firstpage} exact />
-          <Route path="/firstpage" component={Firstpage} />
+          <Route path="/firstpage" component={Firstpage} exact />
           <Route path="/convenient" component={Convenient} />
           <Route path="/orderDetails" component={OrderDetails} />
           <Route path="/shopList" component={ShopList} />

@@ -67,3 +67,4 @@ export default function StoreSlideBar() {
     </>
   );
 }
+// https://swiperjs.com/react

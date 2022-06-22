@@ -21,8 +21,8 @@ class StoreSlidrBar2 extends React.Component {
   render() {
     return (
 
-      <div className="px-3">
-      <Carousel cols={4} rows={1} gap={40} dotColorActive={'#ffa500'} loop >
+      <div >
+      <Carousel cols={4} rows={1} gap={40} dotColorActive={'red'} loop scrollSnap>
         {this.state.restaurant.map((r) => {
           return (
             <Carousel.Item style={{}}>

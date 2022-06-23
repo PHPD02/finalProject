@@ -14,7 +14,7 @@ class convenient extends Component {
             <NavLink to="/firstpage">首頁</NavLink>
           </div>
         </div>
-      </React.Fragment >
+      </React.Fragment>
 
     );
   }

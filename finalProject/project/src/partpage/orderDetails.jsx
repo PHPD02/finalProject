@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../repeatability/Navbar';
-import Footer from '../repeatability/Footer';
+// import Footer from '../repeatability/Footer';
 class orderDetails extends Component {
   state = {}
   render() {
@@ -24,19 +24,19 @@ class orderDetails extends Component {
             {/* 清單 */}
             <table>
               <tr>
-                <td>訂單編號</td>
+                <td>訂單編號：</td>
                 <td>12345678</td>
               </tr>
               <tr>
-                <td>外送餐廳</td>
+                <td>外送餐廳：</td>
                 <td>八方雲集(雲集店)</td>
               </tr>
               <tr>
-                <td>送餐目的地</td>
+                <td>送餐目的地：</td>
                 <td>公益路二段</td>
               </tr>
               <tr>
-                <td>總計</td>
+                <td>總計：</td>
                 <td>$800</td>
               </tr>
             </table>
@@ -57,10 +57,10 @@ class orderDetails extends Component {
             </table>
             <hr />
             <div className='row'>
-              <div>
+              <div className=" text-center col-6">
                 <button>有需要幫助的嗎 ?</button>
               </div>
-              <div>
+              <div className="col-6">
                 <button>客服中心</button>
                 <button>外送人員</button>
               </div>

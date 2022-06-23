@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import { Container } from "react-bootstrap";
 // import StoreSlideBar from "./StoreSlideBar";
 import StoreSlideBar2 from "./StoreSlideBar2";
+import MultipleSearch from "./MultipleSearch";
 
 class FoodpandaPage extends React.Component {
   state = {};
@@ -61,6 +62,8 @@ class FoodpandaPage extends React.Component {
         </h2>
 
         <Restaurants />
+
+        <MultipleSearch />
 
       </React.Fragment>
     );

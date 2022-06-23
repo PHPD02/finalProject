@@ -11,7 +11,7 @@ class App extends Component {
   render() { 
     return (
       <HashRouter>
-        <div className='container'>
+        {/* <div className='container'> */}
           <Switch>
             {/* <Route path="/" component={Index} exact/> */}
             {/* <Route path ="/index" component={Index} /> */}
@@ -19,7 +19,7 @@ class App extends Component {
             <Route path="/foodpandapage" component={FoodpandaPage}/>
             <Route path="/restaurants" component={Restaurants} />
           </Switch>
-        </div>
+        {/* </div> */}
       </HashRouter>
     );
   }

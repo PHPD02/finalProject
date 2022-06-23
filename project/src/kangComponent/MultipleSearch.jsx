@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
+import { Stack ,Select, Option } from '@chakra-ui/react'
 
-class MultipleSearch extends Component {
+
+  class MutileSearch extends Component {
     state = {  } 
     render() { 
         return (
-            <h1>66</h1>
-    )}
-}
- 
-export default MultipleSearch;
+<Stack spacing={3}>
+  <Select variant='outline' placeholder='Outline' />
+  <Select variant='outline' placeholder='Filled' />
+  <Select variant='outline' placeholder='Flushed' />
+  <Select variant='outline' placeholder='Unstyled' />
+</Stack>
+        );
+    }
+  }
+   
+  export default MutileSearch;

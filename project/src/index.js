@@ -5,16 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import "./css/foodpandapage.css";
-// import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 // 好用插件 https://chakra-ui.com/getting-started/cra-guide
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <ChakraProvider> */}
+    <ChakraProvider>
     <App />
-    {/* </ChakraProvider> */}
+    </ChakraProvider>
   </React.StrictMode>
 );
 

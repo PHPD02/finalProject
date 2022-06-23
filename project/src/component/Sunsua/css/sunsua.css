@@ -19,27 +19,6 @@
     text-align: center;
 }
 
-.sunsuaBtn {
-    width: 150px;
-    height: 150px;
-    margin: 10px 0px;
-    background-color: rgba(247, 103, 249, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
-    font-weight: bold;
-}
-
-@media (max-width: 990px) {
-    .sunsuaBtn {
-        width: 80px;
-        height: 80px;
-        margin: 5px 0px;
-        font-size: 20px;
-    }
-}
-
 /* 測試用 */
 .row {
     outline: 1px solid black;

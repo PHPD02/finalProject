@@ -1,0 +1,11 @@
+.product_des{
+    display: -webkit-box;
+    -Webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    font-size: 15px;
+    line-height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

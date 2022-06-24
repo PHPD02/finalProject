@@ -5,6 +5,7 @@ import { HashRouter, Switch, Route} from 'react-router-dom';
 import Login from './chattyComponents/login';
 import FoodpandaPage from './kangComponent/foodpandapage';
 import Restaurants from './kangComponent/restaurants';
+import DashboardProducts from './kangComponent/DashboardProducts';
 
 class App extends Component {
   state = {  } 
@@ -18,6 +19,7 @@ class App extends Component {
             <Route path="/login" component={Login} />
             <Route path="/foodpandapage" component={FoodpandaPage}/>
             <Route path="/restaurants" component={Restaurants} />
+            <Route path="/dashboardproducts" component={DashboardProducts} />
           </Switch>
         {/* </div> */}
       </HashRouter>

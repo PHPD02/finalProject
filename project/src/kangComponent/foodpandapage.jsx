@@ -10,6 +10,9 @@ import StoreSlideBar2 from "./StoreSlideBar2";
 // import MultipleSearch2 from "./MultipleSearch2";
 import "../css/foodpandapage.css";
 import 'animate.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+AOS.init();
 
 class FoodpandaPage extends React.Component {
   state = {};
@@ -17,7 +20,7 @@ class FoodpandaPage extends React.Component {
     return (
       <React.Fragment>
         <div className="container">
-          <div className="d-flex justify-content-end mt-2 ">
+          <div className="d-flex justify-content-end mt-2 " >
             <button
               type="button"
               className="btn btn-outline-light text-dark mr-4 btn-lg"
@@ -33,7 +36,7 @@ class FoodpandaPage extends React.Component {
           </div>
         </div>
         <Caroursel />
-        <div className=" section1_searchsection">
+        <div className=" section1_searchsection" data-aos="fade-in">
           <div>
             <h1 className="font-weight-bolder h1 section1_searchbar">
               即刻享用新鮮餐點

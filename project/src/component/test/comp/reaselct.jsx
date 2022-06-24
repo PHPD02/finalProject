@@ -5,18 +5,57 @@ import {Select,SelectOption,SelectInput} from 'reaselct'
 import CityCountyData from '../../../data/taiwan city country/CityCountyData.json'
 const CityArray = CityCountyData.map((value)=>value.CityName)
 
-/* === class 版本 === */
+
+/* === class 版本 document 範例改寫 ==== */
+// class Reaselct extends Component {
+//   state = {
+//     value: [],
+//     animals: ['chicken', 'cow', 'mouse']
+//   }
+//   setValue = (v)=>{
+//     this.state.value = v;
+//     this.setState({});
+//   }
+//   setAnimals = (opts)=>{
+//     this.state.animals = opts.map((o) => o.value);
+//     this.setState({});
+//   }
+//   render() {
+//     return (
+//       <div style={{ width: 300 }}>
+//         <Select
+//           multiple
+//           closeOnSelect={false}
+//           createable
+//           placeholder="Add some categories or pick existing one..."
+//           value={this.state.value}
+//           onChange={(v) => this.setValue(v)}
+//           onOptionsChange={(opts) => this.setAnimals(opts)}
+//         >
+//           {this.state.animals.map((o) => (
+//             <SelectOption key={o} value={o}>
+//               {o}
+//             </SelectOption>
+//           ))}
+//         </Select>
+//       </div>);
+//   }
+// }
+// export default Reaselct;
+
+
+/* === class 版本 - 台灣縣市 ==== */
 class Reaselct extends Component {
   state = {
     value: [],
-    animals: ['chicken', 'cow', 'mouse']
+    city: CityArray
   }
   setValue = (v)=>{
     this.state.value = v;
     this.setState({});
   }
-  setAnimals = (opts)=>{
-    this.state.animals = opts.map((o) => o.value);
+  setCity = (opts)=>{
+    this.state.city = opts.map((o) => o.value);
     this.setState({});
   }
   render() {
@@ -26,12 +65,12 @@ class Reaselct extends Component {
           multiple
           closeOnSelect={false}
           createable
-          placeholder="Add some categories or pick existing one..."
+          placeholder="請選擇縣市"
           value={this.state.value}
           onChange={(v) => this.setValue(v)}
-          onOptionsChange={(opts) => this.setAnimals(opts)}
+          onOptionsChange={(opts) => this.setCity(opts)}
         >
-          {this.state.animals.map((o) => (
+          {this.state.city.map((o) => (
             <SelectOption key={o} value={o}>
               {o}
             </SelectOption>
@@ -43,8 +82,7 @@ class Reaselct extends Component {
 export default Reaselct;
 
 
-/* === function 版本 === */
-
+/* === function 版本 - 台灣縣市 === */
 // function Reaselct (){
 //   const [value, setValue] = useState([]);
 //   // const [city, setCity] = useState(['台北', '台中', '台南']);
@@ -55,7 +93,7 @@ export default Reaselct;
 //         multiple
 //         closeOnSelect={false}
 //         createable
-//         placeholder="請選擇地區"
+//         placeholder="請選擇縣市"
 //         value={value}
 //         onChange={(v) => setValue(v)}
 //         onOptionsChange={(opts) => setCity(opts.map((o) => o.value))}

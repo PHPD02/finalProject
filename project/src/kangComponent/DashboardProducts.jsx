@@ -2,6 +2,11 @@ import React from "react";
 import Restaurant from "./restaurant";
 import "../css/foodpandapage.css";
 import DashboardProduct from "./DashboardProduct";
+import DashboardPanel from "./DashboardPanel";
+import '../css/DashboardPanel.css';
+import AddInventary from './AddInventary';
+import axios from "./axios";
+
 
 class DashboardProducts extends React.Component {
   state = {
@@ -9,15 +14,30 @@ class DashboardProducts extends React.Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:3005/restaurant")
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({
-          DashboardProduct: data,
-        });
-      });
+    // fetch("http://localhost:3005/restaurant")
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     this.setState({
+    //       DashboardProduct: data,
+    axios.get('/restaurant').then((response)=>{
+      this.setState({
+        DashboardProduct:response.data
+      })
+    })
+
   }
 
+  addProduct=() =>{
+    DashboardPanel.open({
+      component: AddInventary,
+      callback:(data)=>{
+        console.log('Product Data:',data)
+        if (data) {
+          this.add(data);
+        }
+      }
+    });
+  }
   render() {
     return (
       <div>
@@ -445,6 +465,7 @@ class DashboardProducts extends React.Component {
             </div>
           </div>
         </div>
+        <button className="btn btn-primary  addproduct" onClick={this.addProduct}>添加商品</button>
       </div>
     );
   }

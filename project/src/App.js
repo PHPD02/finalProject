@@ -6,6 +6,7 @@ import Login from './chattyComponents/login';
 import FoodpandaPage from './kangComponent/foodpandapage';
 import Restaurants from './kangComponent/restaurants';
 import DashboardProducts from './kangComponent/DashboardProducts';
+import MemberPage from './kangComponent/MemberPage'
 
 class App extends Component {
   state = {  } 
@@ -20,6 +21,7 @@ class App extends Component {
             <Route path="/foodpandapage" component={FoodpandaPage}/>
             <Route path="/restaurants" component={Restaurants} />
             <Route path="/dashboardproducts" component={DashboardProducts} />
+            <Route path="/memberpage" component={MemberPage} />
           </Switch>
         {/* </div> */}
       </HashRouter>

@@ -3,6 +3,7 @@ import axios from "./axios";
 
 class AddInventary extends React.Component {
   state = {
+    Id:"1521565",
     Name:"",
     Picture1:"",
     Description:"",
@@ -20,7 +21,7 @@ class AddInventary extends React.Component {
     e.preventDefault();
     const DashboardProduct ={...this.state};
     // console.log(restaurant);
-    axios.post('restaurant',DashboardProduct).then((res) =>{
+    axios.post('/restaurant',DashboardProduct).then((res) =>{
         console.log(res.data);
         this.props.close(res.data);
         alert('新增成功')

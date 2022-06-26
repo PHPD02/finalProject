@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import Navbar from '../repeatability/Navbar';
 import Footer from '../repeatability/Footer';
 import Cards from '../repeatability/Cards';
-import TaiwanMap from '../repeatability/TaiwanMap';
+import Taiwan from '../repeatability/Taiwan';
 
 class firstpage extends Component {
   state = {}
@@ -50,7 +50,7 @@ class firstpage extends Component {
           </div>
           <div className="container">
             <div className='row'>
-              <div className='col-3'><TaiwanMap /></div>
+              <div className='col-3'><Taiwan /></div>
               <div className='col-3'><Cards /><Cards /><Cards /></div>
               <div className='col-3'><Cards /><Cards /><Cards /></div>
               <div className='col-3'><Cards /><Cards /><Cards /></div>

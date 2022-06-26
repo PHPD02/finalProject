@@ -6,16 +6,19 @@ import Firstpage from "./components/firstpage";
 import Convenient from "./partpage/convenient";
 import OrderDetails from "./partpage/orderDetails";
 import ShopList from "./partpage/shopList";
+import TaiwanMap from "./repeatability/TaiwanMap";
 class App extends Component {
   state = {};
   render() {
     return (
       <HashRouter>
         <Switch>
-          <Route path="/firstpage" component={Firstpage} exact />
+          <Route path="/" component={Firstpage} exact />
+          <Route path="/firstpage" component={Firstpage} />
           <Route path="/convenient" component={Convenient} />
           <Route path="/orderDetails" component={OrderDetails} />
           <Route path="/shopList" component={ShopList} />
+          <Route path="/taiwanMap" component={TaiwanMap} />
         </Switch>
       </HashRouter>
     );

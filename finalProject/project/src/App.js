@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { HashRouter, Switch, Route } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
-import Firstpage from "./components/firstpage";
-import Convenient from "./partpage/convenient";
-import OrderDetails from "./partpage/orderDetails";
-import ShopList from "./partpage/shopList";
+import Firstpage from "./components/Firstpage";
+import Convenient from "./partpage/Convenient";
+import OrderDetails from "./partpage/OrderDetails";
+import ShopList from "./partpage/ShopList";
 class App extends Component {
   state = {};
   render() {

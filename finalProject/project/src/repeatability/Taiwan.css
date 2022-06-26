@@ -1,6 +1,7 @@
 .twSvg {
   width: 50%;
   height: auto;
+  position: absolute;
 }
 
 .st0 {

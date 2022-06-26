@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import './footer.css';
 class Footer extends Component {
   state = {}
   render() {
     return (
       <React.Fragment>
-        <footer className='bg-secondary text-light'>
+        <footer className='footer-headback text-light'>
           <div className="container">
             <div className='row'>
               <div className='col-lg-4 mt-3'>
@@ -44,7 +45,7 @@ class Footer extends Component {
               </div>
             </div>
           </div>
-          <div className='bg-dark text-light'>
+          <div className='footer-footback text-light'>
             <div className="container">
               <div className="row">
                 <div className="col-12">

@@ -26,7 +26,7 @@ class firstpage extends Component {
                   <p>想讓上百萬新顧客試試你的美食或生鮮雜貨商品嗎？讓我們來幫忙吧！該怎麼做呢？我們會協助你上傳菜單或商品清單、幫你處理訂單、訂單確認後我們將請外送夥伴前往你的商店去取件，再將餐點或商品外送給顧客們。</p>
                 </div>
                 <div className='col-5'>
-                  <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="350" height="350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect></svg>
+                  <svg className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="350" height="350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect></svg>
                 </div>
               </div>
             </div>
@@ -42,7 +42,7 @@ class firstpage extends Component {
               </div>
             </div>
           </div>
-
+          <Taiwan />
           <br />
           <br />
           <div className="text-center">
@@ -50,13 +50,14 @@ class firstpage extends Component {
           </div>
           <div className="container">
             <div className='row'>
-              <div className='col-3'><Taiwan /></div>
+              {/* <div className='col-3'><Taiwan /></div> */}
               <div className='col-3'><Cards /><Cards /><Cards /></div>
               <div className='col-3'><Cards /><Cards /><Cards /></div>
               <div className='col-3'><Cards /><Cards /><Cards /></div>
             </div>
           </div>
           <div className='float-right'><button className="btn btn-outline-dark ml-1">more...</button></div>
+
           <div className='mt-2'>
             <Footer />
           </div>

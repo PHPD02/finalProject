@@ -7,6 +7,7 @@ import FoodpandaPage from './kangComponent/foodpandapage';
 import Restaurants from './kangComponent/restaurants';
 import DashboardProducts from './kangComponent/DashboardProducts';
 import MemberPage from './kangComponent/MemberPage'
+import Order_record from './kangComponent/Order_record';
 
 class App extends Component {
   state = {  } 
@@ -22,6 +23,7 @@ class App extends Component {
             <Route path="/restaurants" component={Restaurants} />
             <Route path="/dashboardproducts" component={DashboardProducts} />
             <Route path="/memberpage" component={MemberPage} />
+            <Route path="/orderrecord" component={Order_record} />
           </Switch>
         {/* </div> */}
       </HashRouter>

@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './chattyComponents/login';
 import Sunsua from './component/Sunsua/sunsua.jsx';
 
-import TestComp from './component/test/testComp.jsx';
+import PhpTest from './component/test/phptest/phptest';
 class App extends Component {
   state = {}
   render() {
@@ -16,7 +16,10 @@ class App extends Component {
           {/* <Route path ="/index" component={Index} /> */}
           <Route path="/login" component={Login} />
           <Route path="/sunsua" component={Sunsua} />
-          <Route path="/test/:comp" component={TestComp} />
+
+
+          
+          <Route path="/phptest" component={PhpTest} />
         </Switch>
       </BrowserRouter>
     );

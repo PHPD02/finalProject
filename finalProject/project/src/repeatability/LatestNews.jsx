@@ -109,7 +109,6 @@ class LatestNews extends Component {
                         </div>
                         <div className="card-body p-0"></div>
                         <h6 className="h6 news-title text-dark limit-line-2 mb-3">BytheWay外送申請流程懶人包</h6>
-                        <p className="p news-txt text-font limit-line-3 mb-0">BytheWay外送申請流程懶人包！</p>
                         <p className="p news-txt text-font limit-line-3 mb-0">如何加入BytheWay成為外送夥伴？</p>
                         <p className="p news-txt text-font limit-line-3 mb-0">今天申請當天領取外送裝備，立即成為BytheWay外送夥伴</p>
                         <div className='container'>

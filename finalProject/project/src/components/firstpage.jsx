@@ -8,6 +8,7 @@ import Footer from '../repeatability/Footer';
 import Cards from '../repeatability/Cards';
 import Taiwan from '../repeatability/Taiwan';
 import LatestNews from '../repeatability/LatestNews';
+import 'bootstrap/dist/js/bootstrap.bundle';
 
 class firstpage extends Component {
   state = {}
@@ -39,7 +40,7 @@ class firstpage extends Component {
           {/* 點選地圖 - 相對應地區的特別合作店家 */}
           <div className="mt-3 container">
             <div className='row'>
-              <h3 className=' col-12 ShopCooperation'>特別合作店家</h3>
+              <h3 className=' col-12 text-center'>特別合作店家</h3>
             </div>
           </div>
           <div className='ml-4'>

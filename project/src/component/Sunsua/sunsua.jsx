@@ -15,14 +15,27 @@ class Sunsua extends Component {
     }
     innerContentChange = () => {
         // console.log(window.location.pathname);
-        switch (window.location.pathname) {
-            case "/sunsua/intro":
+        /* 用 BrowserRouter */
+        // switch (window.location.pathname) {
+        //     case "/sunsua/intro":
+        //         this.state.innerContent = <SunsuaIntro></SunsuaIntro>
+        //         break;
+        //     case "/sunsua/proposal":
+        //         this.state.innerContent = <SunsuaProposal></SunsuaProposal>
+        //         break;
+        //     case "/sunsua/order":
+        //         this.state.innerContent = <SunsuaSearchProposal></SunsuaSearchProposal>
+        //         break;
+        // }
+        /* 用 HashRouter */
+        switch (window.location.hash) {
+            case "#/sunsua/intro":
                 this.state.innerContent = <SunsuaIntro></SunsuaIntro>
                 break;
-            case "/sunsua/proposal":
+            case "#/sunsua/proposal":
                 this.state.innerContent = <SunsuaProposal></SunsuaProposal>
                 break;
-            case "/sunsua/order":
+            case "#/sunsua/order":
                 this.state.innerContent = <SunsuaSearchProposal></SunsuaSearchProposal>
                 break;
         }

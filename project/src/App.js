@@ -10,7 +10,7 @@ class App extends Component {
   state = {}
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <Switch>
           {/* <Route path="/" component={Index} exact/> */}
           {/* <Route path ="/index" component={Index} /> */}
@@ -21,7 +21,7 @@ class App extends Component {
           
           <Route path="/phptest" component={PhpTest} />
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }

@@ -21,7 +21,7 @@ class AddInventary extends React.Component {
     e.preventDefault();
     const DashboardProduct ={...this.state};
     // console.log(restaurant);
-    axios.post('/restaurant',DashboardProduct).then((res) =>{
+    axios.post('restaurant',DashboardProduct).then((res) =>{
         console.log(res.data);
         this.props.close(res.data);
         alert('新增成功')

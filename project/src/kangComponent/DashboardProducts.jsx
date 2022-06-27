@@ -13,6 +13,7 @@ class DashboardProducts extends React.Component {
     DashboardProduct: [],
   };
 
+
   componentDidMount() {
     // fetch("http://localhost:3005/restaurant")
     //   .then((response) => response.json())
@@ -30,6 +31,7 @@ class DashboardProducts extends React.Component {
   addProduct=() =>{
     DashboardPanel.open({
       component: AddInventary,
+      //試試記得改
       callback:(data)=>{
         console.log('Product Data:',data)
         if (data) {
@@ -39,6 +41,10 @@ class DashboardProducts extends React.Component {
     });
   }
   render() {
+
+
+
+
     return (
       <div>
         <div className="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">

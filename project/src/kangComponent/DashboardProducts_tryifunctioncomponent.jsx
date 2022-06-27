@@ -454,7 +454,7 @@ function DashboardProducts_tryifunctioncomponent() {
                     <div className="col-lg-4" key={val.Id}>
                     {/* 目前使用的id console顯示是有重複的，需調整 */}
                     <DashboardProduct DashboardProduct={val} />
-                      id:{val.Id}| name:{val.Name}
+                      {/* id:{val.Id}| name:{val.Name} */}
                       {/* 這句可以刪除 check用 */}
                     </div>
                   )

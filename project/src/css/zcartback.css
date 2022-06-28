@@ -1,0 +1,30 @@
+
+#cartcontainer1 {
+    /* background-color:chocolate; */
+    padding-right:0;
+    padding-left: 0;
+}
+#cartcontainer2  {
+    /* background-color: chartreuse; */
+    min-width: 350px;
+}
+#footer {
+    background-color: cornflowerblue;
+}
+tr {
+    height: 300px;
+}
+#cartcontainer {
+    max-width: 100%;
+    margin-top: -15px;
+}
+table {
+    border: 1px solid black;
+    width: 100%;
+}
+#cartcontainer img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover; 
+}
+

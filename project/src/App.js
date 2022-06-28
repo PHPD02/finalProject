@@ -16,6 +16,8 @@ import Cart from './chattyComponents/cart';
 import Card from './chattyComponents/cartcard';
 import Payment from './chattyComponents/payment';
 
+import Test from './chattyComponents/testsql';
+
 class App extends Component {
   state = {  } 
   render() { 
@@ -33,6 +35,8 @@ class App extends Component {
             <Route path="/cart" component={Cart} />
             <Route path="/cartcard" component={Card} />
             <Route path="/payment" component={Payment} />
+
+            <Route path="/test" component={Test} />
 
           </Switch>
       </BrowserRouter>

@@ -39,8 +39,8 @@ class Register extends Component {
                 <Navbar />
                 <br /><br /><br /><br />
                 <div id='registerform'>
-                    <form className="form-signin shadow" id='registerformin' encType="multipart/form-data"  method='POST' action='http://localhost/phpd02-master/register.php'>
-                        <h1 className="h3 mb-3 font-weight-normal">讓我們開始註冊吧</h1><br /> <span id="mesg"></span>
+                    <form className="form-signin shadow" id='registerformin' encType="multipart/form-data"  method='POST' action='http://localhost:8000/register.php'>
+                        <h1 className="h3 mb-3 font-weight-normal">讓我們開始註冊吧</h1><br /> <span id="mesg"></span><br />
                         <h6>開始建立你的帳戶</h6>
                         <label htmlFor="inputEmail" className="sr-only">電子郵件</label>
                         <input type="email" id="account" name='account' onChange={this.checkNewAccount} className="form-control" placeholder="電子郵件" required autoFocus />

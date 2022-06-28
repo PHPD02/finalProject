@@ -14,7 +14,7 @@ class Login3 extends Component {
             <React.Fragment>
                 <Navbar />
                 <br /><br /><br />
-                <form className="form-signin form-top mt-sm-2" action='http://localhost/phpd02-master/checkAccount.php'>
+                <form className="form-signin form-top mt-sm-2" action='http://localhost:8000/checkAccount.php'>
                     {/* <img className="mb-4" src="../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72" /> */}
                     {/* <h1 className="h3 mb-3 font-weight-normal">歡迎！<br /> <small><NavLink to="/register">註冊</NavLink>或登入</small></h1> */}
                     <h1 className='shadow text-center p-2 mb-4'><strong>用戶 登入</strong></h1>

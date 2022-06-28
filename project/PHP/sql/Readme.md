@@ -1,0 +1,1 @@
+mysqldump -u root -R ispan > c:\users\user\Desktop\ispan.sql

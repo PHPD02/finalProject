@@ -48,15 +48,13 @@ class firstpage extends Component {
           </div>
           <div className="container">
             <div className='row'>
-              <div className='col-2'></div>
-              <div className='col-10'>
+              <div className='col-3'></div>
+              <div className='col-9'>
                 <div className="container">
-                  <div className='row ml-5'>
-
+                  <div className='row'>
                     <div className='col-4'><Cards /><Cards /><Cards /></div>
                     <div className='col-4'><Cards /><Cards /><Cards /></div>
                     <div className='col-4'><Cards /><Cards /><Cards /></div>
-
                   </div>
                 </div>
               </div>

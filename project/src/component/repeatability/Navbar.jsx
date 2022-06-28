@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import "./Navbar.css";
+import "./navbar.css";
 
 class Navbar extends Component {
   state = {}
   render() {
     return (
       <React.Fragment>
+        {/* 固定導覽列在最上方 */}
         <nav className="nav-bg navbar navbar-expand-lg fixed-top navbar-light">
           <div className="container-fluid">
             <a className="navbar-brand">Logo</a>
@@ -22,17 +23,18 @@ class Navbar extends Component {
                 {/* <a href="" className="btn btn-outline-dark">
                   <i class="fa fa-user-circle" aria-hidden="true"></i>
                 </a> */}
-                <a href="" className="btn btn-outline-warning ml-1">順弁</a>
-                <a href="" className="btn btn-outline-warning ml-1">
-                  <i className="fa fa-shopping-cart text-muted p-1"></i>Cart (0)</a>
-                <a href="" className="btn btn-outline-warning ml-1">
-                  <i className="fa fa-sign-in text-muted p-1"></i>Login</a>
+                {/* 購物車 */}
+                <a href="" className="btn btn-outline-dark ml-1">
+                  <i className="fa fa-shopping-cart text-info p-1"></i>Cart (0)</a>
+                {/* 登入 */}
+                <a href="" className="btn btn-outline-dark ml-1">
+                  <i className="fa fa-sign-in text-info p-1"></i>Login</a>
               </div>
             </div>
           </div>
 
         </nav>
-      </React.Fragment>
+      </React.Fragment >
     );
   }
 }

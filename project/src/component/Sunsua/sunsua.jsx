@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SunsuaProposal from './sunsuaProposal';
 import SunsuaSearchProposal from './sunsuaSearchProposal';
 import SunsuaIntro from './sunsuaIntro.jsx';
-import Navbar from '../../repeatability/Navbar.jsx';
+import Navbar from '../repeatability/Navbar.jsx';
 
 import "./css/sunsua.css";
 

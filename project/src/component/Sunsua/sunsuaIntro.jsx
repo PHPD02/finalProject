@@ -11,7 +11,6 @@ class SunsuaIntro extends Component {
     render() {
         return (
             <div id="sunsuaIntro" className='text-center py-4'>
-                
                 <h1> 關於順弁 </h1>
                 <hr />
                 <h3>我們的構想理念:</h3>

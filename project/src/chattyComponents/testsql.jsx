@@ -17,6 +17,7 @@ function App() {
             type: "POST",
             url: form.attr("action"),
             data: form.serialize(),
+            // 成功回傳data
             success(data) {
                 setResult(data);
             },

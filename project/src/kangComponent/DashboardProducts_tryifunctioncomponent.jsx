@@ -4,8 +4,10 @@ import "../css/foodpandapage.css";
 import DashboardProduct from "./DashboardProduct";
 import DashboardPanel from "./DashboardPanel";
 import "../css/DashboardPanel.css";
+import "./menubar/sidebar.js";
 import AddInventary_tryifunctioncomponent from "./AddInventary_tryifunctioncomponent";
 //試試記得改
+import EditInventary from "./EditInventary"
 import Axios from "axios";
 
 function DashboardProducts_tryifunctioncomponent() {
@@ -38,11 +40,35 @@ function DashboardProducts_tryifunctioncomponent() {
       component: AddInventary_tryifunctioncomponent,
       //試試記得改
       callback: (data) => {
-        console.log("Product Data:", data);
-        if (data) {
-          this.add(data);
-        }
+        // console.log("Product Data:", data);
+        // if (data) {
+        //   this.add(data);
+        // }
       },
+    });
+  };
+  const toEdit = () => {
+    DashboardPanel.open({
+      component: EditInventary,
+      // props: {
+      //   product: this.props.product,
+      //   deleteProduct: this.props.delete,
+      // },
+      callback: (data) => {
+        // console.log(data);
+        // if (data) {
+        //   this.props.update(data);
+        // }
+      },
+    });
+  };
+  const deleteitem = (Id) => {
+    Axios.delete(`http://localhost:8000/delete/${Id}`).then((response) => {
+      setProductList(
+        productList.filter((val) => {
+          return val.Id !== Id;
+        })
+      );
     });
   };
   // render() {
@@ -453,7 +479,7 @@ function DashboardProducts_tryifunctioncomponent() {
                   return (
                     <div className="col-lg-4" key={val.Id}>
                     {/* 目前使用的id console顯示是有重複的，需調整 */}
-                    <DashboardProduct DashboardProduct={val} />
+                    <DashboardProduct DashboardProduct={val} onClick={[toEdit,deleteitem]} />
                       {/* id:{val.Id}| name:{val.Name} */}
                       {/* 這句可以刪除 check用 */}
                     </div>

@@ -4,7 +4,7 @@
  * sidebar sidebar
  *
  */
-function($) {
+!function($) {
   "use strict";
 
   var sidebar = function(element, options) {

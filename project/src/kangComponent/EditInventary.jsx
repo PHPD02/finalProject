@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-// import axios from "./axios";
 import DashboardPanel from "./DashboardPanel";
 import '../css/DashboardPanel.css'
-import Axios from "axios";
 
-function AddInventary_tryifunctioncomponent() {
+import Axios from "./axios";
+
+function EditInventary() {
   const [Id, setId] = useState("");
   const [Name, setName] = useState("");
   const [Description, setDescription] = useState("");
@@ -17,22 +17,31 @@ function AddInventary_tryifunctioncomponent() {
     });
   });
 
-  const submit = () => {
-    Axios.post("http://localhost:8000/api/insert", { Id: Id, Name: Name, Description: Description,
+  const submit = (id) => {
+    Axios.post("http://localhost:8000/api/update", { Id: Id, Name: Name, Description: Description,
     Picture1: Picture1,
   }).then(
-      () => {
-        alert("成功插入");
+      (response) => {
+        setProductList(
+          productList.map((val) => {
+            return val.Id === Id
+              ? {
+                  Id: val.Id,
+                  Name: val.Name,
+                  Description: val.Description,
+                  Picture1: val.Picture1,
+                }
+              : val;
+          })
+        );
       }
     );
-    // DashboardPanel.close();
-    // this.forceUpdate()   都沒成功
-
   };
+
 
   const closePanel = () => {
     DashboardPanel.close({
-      component: AddInventary_tryifunctioncomponent,
+      component: EditInventary,
       //試試記得改
       callback: (data) => {
         // console.log("Product Data:", data);
@@ -80,7 +89,7 @@ function AddInventary_tryifunctioncomponent() {
           <textarea 
              className="textarea"
             name="Description"
-            // value={this.state.Name}
+            value={Description}
             onChange={(e) => {
               setDescription(e.target.value);
             }}
@@ -169,4 +178,4 @@ function AddInventary_tryifunctioncomponent() {
 }
 // }
 
-export default AddInventary_tryifunctioncomponent;
+export default EditInventary;

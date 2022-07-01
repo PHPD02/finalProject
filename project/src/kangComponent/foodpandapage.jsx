@@ -3,16 +3,16 @@ import SearchBar from "./searchbar";
 import Restaurants from "./restaurants";
 import Caroursel from "./Caroursel";
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/js/bootstrap.bundle';
 // import { Container } from "react-bootstrap";
 // import StoreSlideBar from "./StoreSlideBar";
 import StoreSlideBar2 from "./StoreSlideBar2";
 // import MultipleSearch from "./MultipleSearch";
 // import MultipleSearch2 from "./MultipleSearch2";
 import "../css/foodpandapage.css";
-import 'animate.css';
-import AOS from 'aos';
+// import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
-AOS.init();
+// AOS.init();
 
 class FoodpandaPage extends React.Component {
   state = {};

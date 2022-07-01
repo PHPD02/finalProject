@@ -52,6 +52,7 @@
   },
   "devDependencies": {
     "@babel/standalone": "^7.18.5",
+    "@types/bootstrap": "^5.1.12",
     "eslint": "^8.0.0",
     "eslint-config-react-app": "^7.0.1",
     "postcss": "^8.4.14",

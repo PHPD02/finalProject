@@ -51,7 +51,9 @@ class ProposalInfo extends Component {
     /*  給 TimeCountDown 呼叫
         讓 倒數為0 時，方案狀態改變
     */
-    timeoutChageState = () => { }
+    timeoutChageState = () => {
+        console.log("結案!!!!");
+    }
 
     render() {
         return (
@@ -95,7 +97,6 @@ class ProposalInfo extends Component {
                     <div id="proposalBtn" className='col-lg-3'>
                         <div className='m-1 text-center'>
                             <label className='h3 mr-2'>提案剩餘時間</label>
-                            {/* <l1abel className='h4'>2:30:00</l1abel> */}
                             <TimeCountDown
                                 // limitTime={this.state.proposalDetail.limitTime}
                                 // setTime={this.state.proposalDetail.setTime}

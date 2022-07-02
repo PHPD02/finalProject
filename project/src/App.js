@@ -12,6 +12,7 @@ import TodoDelete from "./kangComponent/TodoDelete";
 // import DashboardProducts_tryifunctioncomponent from "./kangComponent/DashboardProducts_tryifunctioncomponent";
 import MemberPage from "./kangComponent/MemberPage";
 import Order_record from "./kangComponent/Order_record";
+import CommentPage from "./kangComponent/CommentPage"
 
 class App extends Component {
   state = {};
@@ -29,6 +30,7 @@ class App extends Component {
           <Route path="/Todo/Edit/:id" component={TodoEdit} />
           <Route path="/Todo/Delete/:id" component={TodoDelete} />
           <Route path="/Todo/Create" component={TodoCreate} />
+          <Route path="/CommentPage" component={CommentPage} />
 
           {/* <Route
             path="/DashboardProducts_tryifunctioncomponent"

@@ -142,6 +142,8 @@
 //         }
 //     )
 // })
+
+// 店家後臺的增刪修改
 var express = require("express");
 var cors = require("cors");
 var app = express();
@@ -209,7 +211,7 @@ function (err, rows) {
         }
     )
 })
-
+// 首頁用的餐廳列表
 var restaurants = mysql.createConnection({
     user: "root",
     password: "",
@@ -234,4 +236,39 @@ app.get("/restaurants/list", function (req, res) {
             res.send( JSON.stringify(rows[0]) );
         }
     )
+})
+// 餐廳評論
+var restaurantcomment = mysql.createConnection({
+    user: "root",
+    password: "",
+    host: "localhost",
+    port: 3306,
+    database: "finalproject"
+});
+restaurantcomment.connect(function (err) {
+    console.log(err);
+})
+app.get("/restaurantcomment/list", function (req, res) {
+    restaurantcomment.query("select * from restaurantcomment", [],
+        function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})
+app.get("/restaurantcomment/list/:restaurant", function (req, res) {
+    restaurantcomment.query("select * from restaurantcomment where restaurant = ?", 
+        [req.params.restaurant],
+        function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})
+app.post("/restaurantcomment/create", function (req, res) {
+    restaurantcomment.query("INSERT INTO restaurantcomment (commentId , restaurant , costomerName , date , comment , rating) VALUES (?,?,?,?,?,?)", 
+        [req.body.commentId,req.body.restaurant,req.body.costomerName,req.body.date,req.body.comment,req.body.rating],
+function (err, rows) {
+           res.send( JSON.stringify( req.body ));
+       }
+   )
+
 })

@@ -136,7 +136,7 @@ class LatestNews extends Component {
                         <div className='container'>
                           <div className='row'>
                             <span className="note text-pink mb-0 col-8">2021/07/30</span>
-                            <NavLink to="/convenient" className="btn btn-danger col-4">請點我... <i className="fa fa-share"></i></NavLink>
+                            <NavLink to="/sunsua" className="btn btn-danger col-4">請點我... <i className="fa fa-share"></i></NavLink>
                           </div>
                         </div>
                       </div>

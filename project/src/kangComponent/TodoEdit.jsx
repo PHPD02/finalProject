@@ -14,8 +14,8 @@ class ToDoEdit extends React.Component {
   async componentDidMount() {
     var url = `http://localhost:8000/todo/item/${this.props.match.params.id}`;
     var result = await axios.get(url);
-    console.log(result);
-    console.log(url);
+    // console.log(result);
+    // console.log(url);
     this.state.todoItem = result.data;
     this.setState({});
   }

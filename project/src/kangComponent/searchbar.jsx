@@ -1,4 +1,5 @@
 import React from "react";
+
 class SearchBar extends React.Component {
   state = {};
   render() {
@@ -22,7 +23,7 @@ class SearchBar extends React.Component {
                 }}
                 className="icon "
               >
-                <i class="fa fa-location"></i>
+                <i className="fa fa-location"></i>
               </span>
               <input
                 type="text"

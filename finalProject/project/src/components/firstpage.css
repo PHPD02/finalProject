@@ -1,16 +1,50 @@
-/* .back {
-  background-image: url("");
-  position: relative;
-  max-width: 1600px;
-  background-repeat: no-repeat;
-} */
 .topColor {
   background-color: #cdaa92;
-  height: 130px;
+  height: 100px;
 }
 
+.firstpic {
+
+  height: 600px;
+}
+
+@media(max-width:1200px) {
+  .firstpic {
+
+    height: 400px;
+  }
+
+  .textheader {
+    font-size: 22px;
+  }
+
+  .textcontent {
+    font-size: 16.72px;
+  }
+
+  .textfooter {
+    font-size: 14px;
+  }
+
+}
+
+@media(max-width:600px) {
+  .firstpic {
+
+    height: 300px;
+  }
+
+  .textheader {
+    font-size: 18px;
+  }
+
+  .textcontent {
+    font-size: 12.72px;
+  }
+
+  .textfooter {
+    font-size: 10px;
+  }
 
 
-.wid {
-  float: right;
 }

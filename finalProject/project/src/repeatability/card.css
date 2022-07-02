@@ -1,0 +1,11 @@
+.setHeight {
+  width: 100%;
+  height: 200px;
+}
+
+@media(max-height:600px) {
+  .setHeight {
+    width: 100%;
+    height: 200px;
+  }
+}

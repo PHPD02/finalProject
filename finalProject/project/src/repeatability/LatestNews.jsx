@@ -1,153 +1,162 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import './latestnews.css';
+// import 'aos/dist/aos.css';
+// import AOS from 'aos';
+// import './latestnews.css';
 class LatestNews extends Component {
   state = {}
   render() {
     return (
       <React.Fragment>
-        <div className="my-5">
-          <div className="container">
-            <div className="row">
-              <h4 className='col-9'>最新公告</h4>
-              <h6>第一手重要通知，不容錯過</h6>
+        <header className='container'>
+          <div className='row'>
+            <div className='col-md-10'>
+              <h1>最新公告</h1>
+              <hr className='w-100 bg' />
             </div>
-            <hr className='border-1 w-100' />
-            <div className="d-block">
-              <div className="row mt-4">
-                <div className="col-lg-4">
-                  <div className="py-3 h-100">
-                    <div className="card-overlap overlap-reverse card-overlap-news overlap-gray">
-                      <div className="card-header bg-secondary p-1">
-                        <div className="heading-news-title">
-                          <h5>電子報</h5>
-                        </div>
-                        <div className="card-body p-0"></div>
-                        <h6 className="h6 news-title text-dark limit-line-2 mb-3">電子報8月號</h6>
-                        <p className="p news-txt text-font limit-line-3 mb-3">8月份電子報為夥伴精選多項夏季活動，請好好把握！！</p>
-                        <div className='container'>
-                          <div className='row'>
-                            <p className="note text-pink mb-0 col-9">2022/08/07</p>
-                            <button className='col-3 text-center w-25'><a href="https://foodpandarider.tw/news/13">touch</a></button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <hr className="d-lg-none" />
-                <div className="col-lg-4">
-                  <div className="py-3 h-100">
-                    <div className="card-overlap overlap-reverse card-overlap-news overlap-gray">
-                      <div className="card-header bg-secondary p-1">
-                        <div className="heading-news-title">
-                          <h5>電子報</h5>
-                        </div>
-                        <div className="card-body p-0"></div>
-                        <h6 className="h6 news-title text-dark limit-line-2 mb-3">電子報7月號</h6>
-                        <p className="p news-txt text-font limit-line-3 mb-3">7月份電子報為夥伴精選多項獎金活動，請夥伴們點進來瞧瞧吧!</p>
-                        <div className='container'>
-                          <div className='row'>
-                            <p className="note text-pink mb-0 col-9">2022/07/07</p>
-                            <button className='col-3 text-center w-25'><a href="https://foodpandarider.tw/news/12">touch</a></button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div className='col-my-1 mt-5'>
+              <p>第一手重要通知，不容錯過</p>
+            </div>
 
-                <hr className="d-lg-none" />
-                <div className="col-lg-4">
-                  <div className="py-3 h-100">
-                    <div className="card-overlap overlap-reverse card-overlap-news overlap-gray">
-                      <div className="card-header bg-secondary p-1">
-                        <div className="heading-news-title">
-                          <h5>電子報</h5>
-                        </div>
-                        <div className="card-body p-0"></div>
-                        <h6 className="h6 news-title text-dark limit-line-2 mb-3">電子報6月號</h6>
-                        <p className="p news-txt text-font limit-line-3 mb-3">2022年6月份電子報有專屬優惠，快點進來瞧瞧吧!</p>
-                        <div className='container'>
-                          <div className='row'>
-                            <p className="note text-pink mb-0 col-9">2022/06/07</p>
-                            <button className='col-3 text-center w-25'><a href="https://foodpandarider.tw/news/11">touch</a></button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <hr className="d-lg-none" />
-                <div className="col-lg-4">
-                  <div className="py-3 h-100">
-                    <div className="card-overlap overlap-reverse card-overlap-news overlap-gray">
-                      <div className="card-header bg-secondary p-1">
-                        <div className="heading-news-title">
-                          <h5>最新快訊</h5>
-                        </div>
-                        <div className="card-body p-0"></div>
-                        <h6 className="h6 news-title text-dark limit-line-2 mb-3">當月開通強檔活動</h6>
-                        <p className="p news-txt text-font limit-line-3 mb-3">了解本月申請成為BytheWay外送夥伴的最新強檔活動</p>
-                        <div className='container'>
-                          <div className='row'>
-                            <p className="note text-pink mb-0 col-9">2022/01/30</p>
-                            <button className='col-3 text-center w-25'><a href="https://foodpandarider.tw/newPartner?typeId=0&amp;page=1&amp;utm_source=home&amp;utm_medium=news&amp;utm_campaign=recruitment" target="_blank">touch</a></button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <hr className="d-lg-none" />
-                <div className="col-lg-4">
-                  <div className="py-3 h-100">
-                    <div className="card-overlap overlap-reverse card-overlap-news overlap-gray">
-                      <div className="card-header bg-secondary p-1">
-                        <div className="heading-news-title">
-                          <h5>最新快訊</h5>
-                        </div>
-                        <div className="card-body p-0"></div>
-                        <h6 className="h6 news-title text-dark limit-line-2 mb-3">BytheWay外送申請流程懶人包</h6>
-                        <p className="p news-txt text-font limit-line-3 mb-0">如何加入BytheWay成為外送夥伴？</p>
-                        <p className="p news-txt text-font limit-line-3 mb-0">今天申請當天領取外送裝備，立即成為BytheWay外送夥伴</p>
-                        <div className='container'>
-                          <div className='row'>
-                            <p className="note text-pink mb-0 col-9">2022/01/30</p>
-                            <button className='col-3 text-center w-25'><a href="https://foodpandarider.tw/join?utm_source=home&amp;utm_medium=news&amp;utm_campaign=recruitment" target="_blank">touch</a></button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          </div>
 
-                <hr className="d-lg-none" />
-                <div className="col-lg-4">
-                  <div className="py-3 h-100">
-                    <div className="card-overlap overlap-reverse card-overlap-news overlap-gray">
-                      <div className="card-header bg-secondary p-0">
-                        <div className="heading-news-title">
-                          <h5>最新快訊</h5>
-                        </div>
-                        <div className="card-body p-0"></div>
-                        <h6 className="h6 news-title text-dark limit-line-2 mb-3">強勢推出「順弁」New 功能</h6>
-                        <p className="p news-txt text-font limit-line-3 mb-3">為了讓消費者能更快速的選擇，我們做了顧客與顧客的往來機制，快來一同「順弁」探索吧！</p>
-                        <div className='container'>
-                          <div className='row'>
-                            <span className="note text-pink mb-0 col-8">2021/07/30</span>
-                            <NavLink to="/convenient" className="btn btn-danger col-4">請點我... <i className="fa fa-share"></i></NavLink>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+        </header>
+        {/* 電子報 */}
+        <section className="container">
+          <div className='row'>
+            <div className=" col-md-4 card ">
+              <div className='container'>
+                <div className='row'>
+                  <h2>電子報</h2>
+                </div>
+                <div className='row'>
+                  <p>電子報8月號</p>
+                </div>
+                <div className='row'>
+                  <p>8月份電子報為夥伴精選多項夏季活動，請好好把握！！</p>
+                </div>
+                <div className='row'>
+                  <div className='col-10'>
+                    <p>2022/08/07</p>
                   </div>
+                  <button classNameName='col-3 text-center w-25'><a href="#">touch</a></button>
+                </div>
+              </div>
+            </div>
+            <div className=" col-md-4 card">
+              <div className='container'>
+                <div className='row'>
+                  <h2>電子報</h2>
+                </div>
+                <div className='row'>
+                  <p>電子報7月號</p>
+                </div>
+                <div className='row'>
+                  <p>7月份電子報為夥伴精選多項獎金活動，請夥伴們點進來瞧瞧吧!</p>
+                </div>
+                <div className='row'>
+                  <div className='col-10'>
+                    <p>2022/07/07</p>
+                  </div>
+                  <button classNameName='col-3 text-center w-25'><a href="#">touch</a></button>
+                </div>
+              </div>
+            </div>
+            <div className=" col-md-4 card">
+              <div className='container'>
+                <div className='row'>
+                  <h2>電子報</h2>
+                </div>
+                <div className='row'>
+                  <p>電子報6月號</p>
+                </div>
+                <div className='row'>
+                  <p>2022年6月份電子報有專屬優惠，快點進來瞧瞧吧!</p>
+                </div>
+                <div className='row'>
+                  <div className='col-10'>
+                    <p>2022/06/07</p>
+                  </div>
+                  <button classNameName='col-3 text-center w-25'><a href="#">touch</a></button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </React.Fragment>
+        </section>
+
+        {/* 最新消息 */}
+        <section className="container">
+          <div className='row'>
+            <div className="col-md-4 card">
+              <div className='container'>
+                <div className='row'>
+                  <h2>最新快訊</h2>
+                </div>
+                <div className='row'>
+                  <p>當月開通強檔活動</p>
+                </div>
+                <div className='row'>
+                  <p>了解本月申請成為BytheWay外送夥伴的最新強檔活動</p>
+                </div>
+                <div className='row'>
+                  <div className='col-10'>
+                    <p>2022/01/30</p>
+                  </div>
+                  <button classNameName='col-3 text-center w-25'><a href="#">touch</a></button>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4 card">
+              <div className='container'>
+                <div className='row'>
+                  <h2>最新快訊</h2>
+                </div>
+                <div className='row'>
+                  <p>BytheWay外送申請流程懶人包</p>
+                </div>
+                <div className='row'>
+                  <p>如何加入BytheWay成為外送夥伴？</p>
+                </div>
+                <div className='row'>
+                  <p>今天申請當天領取外送裝備，立即成為BytheWay外送夥伴</p>
+                </div>
+                <div className='row'>
+                  <div className='col-10'>
+                    <p>2022/01/30</p>
+                  </div>
+                  <div>
+                    <button classNameName='col-3 text-center w-25'><a href="#">touch</a></button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4 card">
+              <div className='container'>
+                <div className='row'>
+                  <h2>最新快訊</h2>
+                </div>
+                <div className='row'>
+                  <p>強勢推出「順弁」New 功能</p>
+                </div>
+                <div className='row'>
+                  <p>為了讓消費者能更快速的選擇，我們做了顧客與顧客的往來機制，快來一同「順弁」探索吧！</p>
+                </div>
+                <div className='row'>
+                  <div className='col-10'>
+                    <p>2022/08/09</p>
+                  </div>
+                  <NavLink to="/convenient" type='button' className="btn btn-danger w-25">touch</NavLink>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+        </section>
+
+
+
+      </React.Fragment >
     );
   }
 }

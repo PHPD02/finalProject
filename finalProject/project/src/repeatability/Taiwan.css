@@ -1,12 +1,19 @@
 .twSvg {
-  width: 50%;
-  height: auto;
-  position: absolute;
   fill: none;
   stroke: #5F9EA0;
-  stroke-width: 1;
+  stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
+  height: 800px;
+  width: 100%;
+}
+
+@media(max-width:600px) {
+  .twSvg {
+    height: 400px;
+    width: 100%;
+  }
+
 }
 
 .st1 {

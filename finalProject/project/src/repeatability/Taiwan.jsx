@@ -2,7 +2,7 @@ import * as React from "react";
 import "./taiwan.css";
 function Taiwan(props: React.SVGProps<SVGSVGElement>) {
     return (
-        <svg height="800px" className='twSvg'{...props} >
+        <svg className='twSvg'{...props} >
             {/* 基隆 */}
             <path d='M264.22,23.4l-.14.08-4.38,1.91-1.44,1,.21,1,1.65,2.14a1,1,0,0,1,.09.15l1,2.09,1.67,2,2.2,2.08,1.73,1.24,6.37,2.65,2.86.37,2.17-.81,1.19-.88.12-.76-2-2.09a.88.88,0,0,1-.23-.55l-.11-1.88v-.07l.17-6.73-6.31-1.53-.09,0-2.4-.88a.75.75,0,0,1-.3-.2l-1-1a.24.24,0,0,1-.08-.09l-.4-.52-.27-.19Z' />
             {/* 新北 */}

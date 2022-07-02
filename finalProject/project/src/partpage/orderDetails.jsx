@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../repeatability/Navbar';
+import './orderdetails.css';
 // import Footer from '../repeatability/Footer';
 class orderDetails extends Component {
   state = {}
@@ -9,7 +10,6 @@ class orderDetails extends Component {
         <Navbar />
         <br />
         <div className="mt-5 ">
-          <h1 className='text-center'>訂單詳情</h1>
           <br />
           <br />
           <div className='container'>
@@ -18,14 +18,14 @@ class orderDetails extends Component {
               <div className='col-4'>
                 <p>預計外送時間</p>
                 <p>時間</p>
-                <img src="#" /><br />
+                <img src="./image/fastMan.png" /><br />
                 {/* 讀取外送時間 */}
-                <input type="range" name="points" min="1" max="10" />
+                <div class="progress-6"></div>
                 {/* 再送達後更改內容 */}
                 <p>餐點準備中</p>
               </div>
               <div className='col-4'>
-                <p>預計外送時間</p>
+                <p>訂單詳情</p>
                 <p>訂單編號: #1212141</p>
                 <p>訂單配送來自: 八方雲集(雲集店)</p>
                 <p>送餐地址: 公益路二段</p>

@@ -5,56 +5,44 @@ class Footer extends Component {
   render() {
     return (
       <React.Fragment>
-        <footer className='footer-headback text-light'>
-          <div className="container">
-            <div className='row'>
-              <div className='col-lg-4 mt-3'>
-                <div className='section-title theme-white'>
-                  <h4>關於</h4>
-                </div>
-                <div className='row my-4 no-gutters mx-n2'>
-                  <div className='col-12 px-2 mb-2'>
-                    <a className="text-white d-block" role="button" href="/#" target="_blank">外送夥伴品牌形象</a>
-                  </div>
-                  <div className='col-12 px-2 mb-2'>
-                    <a className="text-white d-block" role="button" href="/#" target="_blank">服務條款</a>
-                  </div>
-                  <div className='col-12 px-2 mb-2'>
-                    <a className="text-white d-block" role="button" href="/#" target="_blank">隱私權政策</a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 mt-3">
-                <div className="section-title theme-white">
-                  <h4>取得協助</h4>
-                </div>
-                <div className="row my-4 no-gutters mx-n2">
+        <footer className="flex-rw">
 
-                  <div className="col-12 px-2 mb-2"><a className="text-white d-block" role="button" href="https://foodpandarider.tw/faq/main">常見Q&amp;A</a></div>
-                  <div className="col-12 px-2 mb-2"><a className="text-white d-block" role="button" href="https://foodpandarider.tw/operation">營運中心開放時間</a></div>
+          <ul className="footer-list-top">
+            <li>
+              <h4 className="footer-list-header">關於</h4></li>
+            <li><a href='#' className="generic-anchor footer-list-anchor" itemprop="significantLink">外送夥伴品牌形象</a></li>
+            <li><a href='#' className="generic-anchor footer-list-anchor" itemprop="significantLink">承攬服務條款</a></li>
+            <li><a href='#' className="generic-anchor footer-list-anchor" itemprop="significantLink">隱私權政策</a></li>
+          </ul>
+          <ul className="footer-list-top">
+            <li>
+              <h4 className="footer-list-header">取得協助</h4></li>
 
-                </div>
-              </div>
-              <div className="col-lg-4 mt-3">
-                <div className="section-title theme-white">
-                  <h4>追蹤社群</h4>
-                </div>
-                <div className="row my-4 no-gutters mx-n3">
-                  <p className='pl-3'>社群 ....</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='footer-footback text-light'>
-            <div className="container">
-              <div className="row">
-                <div className="col-12">
-                  <div className="text-center">
-                    <a>©2022 All Right Reserved.</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+            <li><a href='#' className="generic-anchor footer-list-anchor">常見Q&A</a></li>
+            <li><a href='#' className="generic-anchor footer-list-anchor">營運中心開放時間</a></li>
+
+          </ul>
+          <ul className="footer-list-top">
+            <li id='help'>
+              <h4 className="footer-list-header">追蹤社群</h4></li>
+            <section className="footer-social-section flex-rw">
+              <span className="footer-social-overlap footer-social-icons-wrapper">
+
+                <a href="#" className="generic-anchor" target="_blank" title="Facebook" itemprop="significantLink"><i className="fa fa-facebook"></i></a>
+
+                <a href="#" className="generic-anchor" target="_blank" title="Instagram" itemprop="significantLink"><i className="fa fa-instagram"></i></a>
+
+                <a href="#" className="generic-anchor" target="_blank" title="Google Plus" itemprop="significantLink"><i className="fa fa-google-plus"></i></a>
+              </span>
+            </section>
+          </ul>
+
+
+          <div className="footer-bottom-wrapper">
+            <i className="fa fa-copyright" role="copyright">
+
+            </i> 2022 <address className="footer-address" role="company address">非商業使用，團隊創作</address>
           </div>
 
         </footer>

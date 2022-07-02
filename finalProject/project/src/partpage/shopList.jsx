@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from '../repeatability/Navbar';
 import ShopCard from '../repeatability/ShopCard';
+import Footer from '../repeatability/Footer';
 import { NavLink } from 'react-router-dom';
 class shopList extends Component {
   state = {}
@@ -12,13 +13,13 @@ class shopList extends Component {
         <br />
         <div>
           <div className='mt-2'>
-            <img src='./image/food.png' className="col-12 p-0" />
+            <img src='https://images.deliveryhero.io/image/fd-tw/LH/f6xl-hero.jpg?width=1600&height=400&quality=45' className="col-12 p-0" />
           </div>
           <br />
           <div className='container'>
             <div className='row'>
               <h4 className='col-7'>餐廳名稱</h4>
-              <button className='col-3'>開始團購訂單</button>
+              <button className='col-3 btn btn-outline-primary'>開始團購訂單</button>
               <p className='col-2'>餐廳資訊</p>
             </div>
             <div>
@@ -29,15 +30,11 @@ class shopList extends Component {
             </div>
             <hr />
             <div>
-              <button>人氣精選</button>
-              <button className='m-1'>※注意事項※</button>
-              <button className='m-1'>種類</button>
-              <button className='m-1'>種類</button>
-              <button className='m-1'>種類</button>
-              <button className='m-1'>種類</button>
-              <button className='m-1'>種類</button>
-              <button className='m-1'>種類</button>
-              <button className='m-1'>種類</button>
+              <button className='btn btn-outline-primary'>人氣精選</button>
+              <button className='m-1 btn btn-outline-primary'>※注意事項※</button>
+              <button className='m-1 btn btn-outline-primary'>種類</button>
+              <button className='m-1 btn btn-outline-primary'>種類</button>
+              <button className='m-1 btn btn-outline-primary'>種類</button>
             </div>
             <br />
             <h2 className>人氣精選✨</h2>
@@ -46,25 +43,53 @@ class shopList extends Component {
                 <div className='col-6'>
                   <ShopCard />
                 </div>
-                <div className=''></div>
                 <div className='col-6'>
                   <ShopCard />
                 </div>
               </div>
+            </div>
 
-
-              <hr />
-              <h2>※注意事項※</h2>
-
-              <hr />
-              <h2>種類</h2>
-
-              <hr />
-              <h2>種類</h2>
-
+            <hr />
+            <h2>※注意事項※</h2>
+            <div className='container'>
+              <div className='row'>
+                <div className='col-6'>
+                  <ShopCard />
+                </div>
+                <div className='col-6'>
+                  <ShopCard />
+                </div>
+              </div>
+            </div>
+            <h2>重要</h2>
+            <div className='container'>
+              <div className='row'>
+                <div className='col-6'>
+                  <ShopCard />
+                </div>
+                <div className='col-6'>
+                  <ShopCard />
+                </div>
+              </div>
+            </div>
+            <h2>重要</h2>
+            <div className='container'>
+              <div className='row'>
+                <div className='col-6'>
+                  <ShopCard />
+                </div>
+                <div className='col-6'>
+                  <ShopCard />
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
+        <br />
+        <br />
+        <br />
+        <Footer />
       </React.Fragment >
     );
   }

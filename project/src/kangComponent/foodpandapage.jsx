@@ -10,12 +10,17 @@ import StoreSlideBar2 from "./StoreSlideBar2";
 // import MultipleSearch from "./MultipleSearch";
 // import MultipleSearch2 from "./MultipleSearch2";
 import "../css/foodpandapage.css";
-// import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// AOS.init();
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 class FoodpandaPage extends React.Component {
-  state = {};
+
+  componentDidMount() {
+    // or simply just AOS.init();
+    AOS.init({
+      // initialise with other settings
+      duration : 2000
+    });
+  }
   render() {
     return (
       <React.Fragment>
@@ -34,9 +39,10 @@ class FoodpandaPage extends React.Component {
               登入 / 註冊
             </button>
           </div>
-        </div>
+        
         <Caroursel />
-        <div className=" section1_searchsection" data-aos="fade-in">
+        </div>
+        <div className=" section1_searchsection" >
           <div>
             <h1 className="font-weight-bolder h1 section1_searchbar">
               即刻享用新鮮餐點
@@ -48,16 +54,16 @@ class FoodpandaPage extends React.Component {
             </div>
           </div>
         </div>
-        <div className="container mt-4">
+        <div className="container mt-4" >
           <div className="section2">
-          <div className="section2_bar1 wow bounceInUp">
+          <div className="section2_bar1 " data-aos="fade-right" data-aos-once="true" >
           <h2 className="font-weight-bolder">
             優惠主打星
             <i className="fa fa-star ml-3" style={{ color: "gold" }}></i>
           </h2>
           <StoreSlideBar2 />
           </div>
-          <div className="section2_bar2">
+          <div className="section2_bar2" data-aos="fade-left" data-aos-once="true" >
 
           <h2 className="mt-5 font-weight-bolder">
             附近美食
@@ -65,7 +71,7 @@ class FoodpandaPage extends React.Component {
           </h2>
           <StoreSlideBar2 />
           </div>
-          <div className="section2_bar3">
+          <div className="section2_bar3" data-aos="fade-right" data-aos-once="true" >
 
           <h2 className="mt-5 font-weight-bolder">
             中式餐廳
@@ -73,7 +79,7 @@ class FoodpandaPage extends React.Component {
           </h2>
           <StoreSlideBar2 />
           </div>
-          <div className="section2_bar4">
+          <div className="section2_bar4" data-aos="fade-left" data-aos-once="true" data-aos-duration="700">
 
           <h2 className="mt-5 font-weight-bolder">
             西式餐廳
@@ -94,9 +100,9 @@ class FoodpandaPage extends React.Component {
             探索更多<i className="fa fa-star" style={{ color: "gold" }}></i>
           </h2>
           </div>
-          <section3>
+          <section>
           <Restaurants />
-          </section3>
+          </section>
           {/* <MultipleSearch /> */}
           {/* <MultipleSearch2 /> */}
         </div>

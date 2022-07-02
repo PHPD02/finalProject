@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-
+import { toast } from "react-toastify";
 class ToDoDelete extends React.Component {
   state = {
     todoItem: {},
@@ -15,6 +15,7 @@ class ToDoDelete extends React.Component {
     await axios.delete(
       `http://localhost:8000/todo/delete/${this.state.todoItem.Id}`
     );
+    toast.success('刪除成功');
     window.location = "#/TodoIndex";
   };
 

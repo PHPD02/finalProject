@@ -9,6 +9,7 @@ import AddInventary from './AddInventary';
 import axios from "./axios";
 
 
+
 // class DashboardProducts extends React.Component {
 //   state = {
 //     DashboardProduct: [],
@@ -623,8 +624,8 @@ class TodoIndex extends React.Component {
 <div class="container">
   <h1 className="h1 my-4">
     菜單品項
-    <a href="#/Todo/Create" class=" btn btn-primary btn-md float-right">
-      新增
+    <a href="#/Todo/Create" class=" btn btn-primary btn-lg float-right">
+      新增品項
     </a>
   </h1>
   <div className="main-content">

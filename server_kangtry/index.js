@@ -192,7 +192,7 @@ function (err, rows) {
 })
 
 app.put("/todo/item", function (req, res) {
-     conn.query("update tablename set  Description = ? , Name =?  where Id = ?", 
+     conn.query("UPDATE tablename SET  Description = ? , Name =?  WHERE Id = ?", 
          [req.body.Id,req.body.Name,req.body.Description,req.body.Picture1],
 function (err, rows) {
             res.send( JSON.stringify( req.body ));
@@ -206,6 +206,32 @@ app.delete("/todo/delete/:id", function (req, res) {
          [req.params.id], 
 function (err, rows) {
             res.send("#" + req.params.id + " deleted");
+        }
+    )
+})
+
+var restaurants = mysql.createConnection({
+    user: "root",
+    password: "",
+    host: "localhost",
+    port: 3306,
+    database: "finalproject"
+});
+restaurants.connect(function (err) {
+    console.log(err);
+})
+app.get("/restaurants/list", function (req, res) {
+    restaurants.query("select * from restaurants", [],
+        function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})
+app.get("/restaurants/list", function (req, res) {
+    restaurants.query("select * from restaurants where Id = ?", 
+        [req.params.id],
+        function (err, rows) {
+            res.send( JSON.stringify(rows[0]) );
         }
     )
 })

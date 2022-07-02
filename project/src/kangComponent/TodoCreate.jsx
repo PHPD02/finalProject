@@ -1,5 +1,6 @@
 import Axios from "axios";
 import React from "react";
+import { toast } from "react-toastify";
 
 class ToDoCreate extends React.Component {
   state = {
@@ -19,6 +20,7 @@ class ToDoCreate extends React.Component {
   yesBtn = async () => {
     await Axios.post(`http://localhost:8000/todo/create/`, this.state.todoItem);
     window.location = "#/TodoIndex";
+    toast.success('建立品項成功')
   };
   todoItemTitleChange = async (e) => {
     var newState = { ...this.state };
@@ -141,15 +143,15 @@ class ToDoCreate extends React.Component {
             ></input>
           </div>
 
-          <div className="form-group">
+          <div className="form-group float-right ">
             <input
               type="submit"
               value="確定"
-              className="btn btn-outline-primary"
+              className="btn btn-outline-primary btn-lg mr-3"
               onClick={this.yesBtn}
             />
-            |
-            <a href="#/TodoIndex" className="btn btn-outline-info">
+            
+            <a href="#/TodoIndex" className="btn btn-outline-info mr-5 btn-lg ml-1">
               取消
             </a>
           </div>

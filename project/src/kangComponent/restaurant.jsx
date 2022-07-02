@@ -1,9 +1,18 @@
 import React from "react";
+import axios from "axios";
 class Restaurant extends React.Component {
-  state = {};
+  state = {
+    restaurantsList: [],
+  };
+
+  async componentDidMount() {
+    var result = await axios.get("http://localhost:8000/restaurants/list");
+    this.setState({ restaurantsList: result.data });
+  }
 
   render() {
     const {
+      Id,
       Name,
       Picture1,
       star,

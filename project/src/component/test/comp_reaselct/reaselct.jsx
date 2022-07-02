@@ -7,7 +7,7 @@ const CityArray = CityCountyData.map((value)=>value.CityName)
 
 
 /* === class 版本 document 範例改寫 ==== */
-// class Reaselct extends Component {
+// class Test extends Component {
 //   state = {
 //     value: [],
 //     animals: ['chicken', 'cow', 'mouse']
@@ -41,11 +41,11 @@ const CityArray = CityCountyData.map((value)=>value.CityName)
 //       </div>);
 //   }
 // }
-// export default Reaselct;
+// export default Test;
 
 
 /* === class 版本 - 台灣縣市 ==== */
-class Reaselct extends Component {
+class Test extends Component {
   state = {
     value: [],
     city: CityArray
@@ -79,11 +79,11 @@ class Reaselct extends Component {
       </div>);
   }
 }
-export default Reaselct;
+export default Test;
 
 
 /* === function 版本 - 台灣縣市 === */
-// function Reaselct (){
+// function Test (){
 //   const [value, setValue] = useState([]);
 //   // const [city, setCity] = useState(['台北', '台中', '台南']);
 //   const [city, setCity] = useState(CityArray);
@@ -108,4 +108,4 @@ export default Reaselct;
 //   );
 // }
 
-// export default Reaselct;
+// export default Test;

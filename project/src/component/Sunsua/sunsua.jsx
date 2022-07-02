@@ -53,7 +53,7 @@ class Sunsua extends Component {
                     <div className='row'>
                         {/* 左側 點選列表 */}
                         <div className='col-2 d-flex flex-column'>
-                            <div className="my-1 h2 font-weight-bold d-flex justify-content-center" onClick={this.innerContentChange}><NavLink to="/sunsua/intro" >介紹</NavLink></div>
+                            <div className="my-1 h2 font-weight-bold d-flex justify-content-center" onClick={this.innerContentChange}><Link to="/sunsua/intro" >介紹</Link></div>
                             <div className="my-1 h2 font-weight-bold d-flex justify-content-center" onClick={this.innerContentChange}><Link to="/sunsua/proposal" >提案</Link></div>
                             <div className="my-1 h2 font-weight-bold d-flex justify-content-center" onClick={this.innerContentChange}><Link to="/sunsua/order">搜方案</Link></div>
                         </div>

@@ -37,48 +37,48 @@ class shopList extends Component {
               <button className='m-1 btn btn-outline-primary'>種類</button>
             </div>
             <br />
-            <h2 className>人氣精選✨</h2>
+            <h3 className>人氣精選✨</h3>
             <div className='container'>
               <div className='row'>
-                <div className='col-6'>
+                <div className='col-md-6 col-sm-12'>
                   <ShopCard />
                 </div>
-                <div className='col-6'>
+                <div className='col-md-6 col-sm-12 mt-1'>
                   <ShopCard />
                 </div>
               </div>
             </div>
 
             <hr />
-            <h2>※注意事項※</h2>
+            <h3>※注意事項※</h3>
             <div className='container'>
               <div className='row'>
-                <div className='col-6'>
+                <div className='col-md-6 col-sm-12'>
                   <ShopCard />
                 </div>
-                <div className='col-6'>
+                <div className='col-md-6 col-sm-12 mt-1'>
                   <ShopCard />
                 </div>
               </div>
             </div>
-            <h2>重要</h2>
+            <h4>種類</h4>
             <div className='container'>
               <div className='row'>
-                <div className='col-6'>
+                <div className='col-md-6 col-sm-12'>
                   <ShopCard />
                 </div>
-                <div className='col-6'>
+                <div className='col-md-6 col-sm-12 mt-1'>
                   <ShopCard />
                 </div>
               </div>
             </div>
-            <h2>重要</h2>
+            <h4>種類</h4>
             <div className='container'>
               <div className='row'>
-                <div className='col-6'>
+                <div className='col-md-6 col-sm-12'>
                   <ShopCard />
                 </div>
-                <div className='col-6'>
+                <div className='col-md-6 col-sm-12 mt-1'>
                   <ShopCard />
                 </div>
               </div>

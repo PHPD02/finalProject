@@ -5,13 +5,13 @@
 
 .firstpic {
 
-  height: 600px;
+  height: 450px;
 }
 
 @media(max-width:1200px) {
   .firstpic {
 
-    height: 400px;
+    height: 430px;
   }
 
   .textheader {
@@ -47,4 +47,21 @@
   }
 
 
+}
+
+.btnon {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.btnon:hover {
+  background-color: #f1f1f1;
 }

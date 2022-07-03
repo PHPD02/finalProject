@@ -22,11 +22,14 @@ class Cart extends Component {
         // console.log(toutput);
         this.setState({ count: this.state.count + 1 });
         this.setState({ price: this.state.price });
-        this.setState({ countsum: this.state.count * this.state.price + this.state.price });
+        this.setState({ countsum: (this.state.count * this.state.price +(this.state.price))});
         this.setState({ total: this.state.countsum+this.state.price +19});
+        
 
     }
     componentDidMount = () => {
+        // this.setState({ countsum: this.state.count * this.state.price });
+        // this.setState({ total: this.state.countsum+this.state.price +19});
         // document.getElementById('sum').innerHTML = `${this.state.countsum} `;
     }
 
@@ -53,7 +56,7 @@ class Cart extends Component {
             this.setState({ count: this.state.count - 1 })
             this.setState({ price: this.state.price });
             this.setState({ countsum: this.state.count * this.state.price - this.state.price })
-
+            this.setState({ total: this.state.countsum-this.state.price +19});
         }
 
     }
@@ -76,7 +79,7 @@ class Cart extends Component {
                         <div className='col-2'>金額</div>
                     </div>
 
-                    <Cartcard />
+                    {/* <Cartcard /> */}
 
                     <div className='menutail row'>
                         {/* 點餐內容 */}
@@ -98,46 +101,12 @@ class Cart extends Component {
                         <output className='col-2 cart-food-sp sp3' id='sum'>${this.state.countsum}</output>
                     </div>
 
-                    <div className='menutail row'>
-                        {/* 點餐內容 */}
-                        <div className='col-3 cart-food-sp sp1'>food1pic</div>
-                        <div className='col-3 cart-food-sp sp2'>food1Name</div>
-                        <div className='col-2 cart-food-sp'>$100</div>
-                        <div className='col-2 cart-food-sp'>
-
-                            <div>
-                                <button className='btn'>-</button>
-                                <span>&nbsp;1&nbsp;</span>
-                                <button className='btn'>+</button>
-
-                            </div>
-
-                        </div>
-                        <div className='col-2 cart-food-sp sp3'>$100</div>
-                    </div>
-                    <div className='menutail row'>
-                        {/* 點餐內容 */}
-                        <div className='col-3 cart-food-sp sp1'>food2pic</div>
-                        <div className='col-3 cart-food-sp sp2'>food2Name</div>
-                        <div className='col-2 cart-food-sp'>$150</div>
-                        <div className='col-2 cart-food-sp'>
-
-                            <p>
-                                <span>
-                                    <button className='btn'>-</button>
-                                    <span>&nbsp;1&nbsp;</span>
-                                    <button className='btn'>+</button>
-                                </span>
-                            </p>
-
-                        </div>
-                        <div className='col-2 cart-food-sp sp3'>$150</div>
-                    </div>
+                    
 
                     <hr />
                 </div>
 
-
+                {/* 小計 */}
                 <div className='container'>
                     <div className="row">
                         <div className="col-10 text-right">

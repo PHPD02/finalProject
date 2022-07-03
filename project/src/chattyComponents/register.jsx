@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Navbar from '../always used/navbar';
 import '../css/register.css';
 import './re.js';
+import $ from "jquery";
 
 
 
@@ -10,32 +11,53 @@ import './re.js';
 
 class Register extends Component {
     state = { 
-        mesg:"我在這"
+        mesg:""
      } 
 
+    // 檢查帳號是否重複
+    btnGetFromOrigin_click = () => {
+        var account = document.getElementById('account').value;
+        // $.get("http://localhost:8000/isNewAccount.php?account=" + account, function(data){$("#mesg").text(data);});
+        $.post("http://localhost:8000/isNewAccount.php", {account}, function(data){$("#mesg").text(data);});
+    }
+
+    
+        handleSumbit = (e) => {
+            e.preventDefault();
+            const form = $(e.target);
+            $.ajax({
+                type: "POST",
+                url: form.attr("action"),
+                data: form.serialize(),
+                // 成功回傳data
+                success(data) {
+                    this.setState({mesg: data})
+                },
+            });
+        };
     
 
-    checkNewAccount = () =>{
-        var xhttp = new XMLHttpRequest();
-        var account = document.getElementById('account').value;
-        xhttp.open("GET", "http://localhost:8000/isNewAccount.php?account=" + account, true);
+    // doDataback = (data) => {
+    //     this.setState({mesg: data});
+    //     // $("#mesg").text(data);
+    // }
+    
 
-        xhttp.onreadystatechange = function(){
-            if (xhttp.readyState == 4 && xhttp.status == 200){
-                if (xhttp.responseText != 0){
-                    // console.log(xhttp.responseText);
-                    // 帳號重複
-                    // document.getElementById('mesg').innerHTML = '帳號重複';
-                    this.setState({mesg:"帳號重複"});
-                }else{
-                    // document.getElementById('mesg').innerHTML = '帳號可以';
-                    this.setState({mesg:"帳號可以"});
-                }
-            }
-        };
-        
-        xhttp.send();
-    }
+    // ckaccount = () => {
+    //     var account = document.getElementById('account').value;
+    //     $.post("http://localhost:8000/register.php", {account}, function(data){$("#mesg").text(data);});
+    // }
+    // function btnGetFromMonster_click() {
+    //     $.get("http://127.0.0.1/Lab/Demo_SameOriginPolicy/getTime_2.php", 
+    //             doDataback);
+    // }
+    
+    // doDataback(data){
+    //     $("#mesg").text(data);
+    // }
+    
+
+    
 
     // cha = () => {
     //     this.setState({mesg: "我我變了"});
@@ -48,10 +70,11 @@ class Register extends Component {
                 <br /><br /><br /><br />
                 <div id='registerform'>
                     <form className="form-signin shadow" id='registerformin' encType="multipart/form-data"  method='POST' action='http://localhost:8000/register.php'>
-                        <h1 className="h3 mb-3 font-weight-normal">讓我們開始註冊吧</h1><br /><span id="mesg">{this.state.mesg}</span><br />
+                        <h1 className="h3 mb-3 font-weight-normal">讓我們開始註冊吧</h1>
                         <h6>開始建立你的帳戶</h6>
+                        <span id="mesg">{this.state.mesg}</span><br />
                         <label htmlFor="inputEmail" className="sr-only">電子郵件</label>
-                        <input type="email" id="account" name='account' onChange={this.checkNewAccount} className="form-control" placeholder="電子郵件" required autoFocus />
+                        <input htmlFor="inputEmail" type="email" id="account" name='account' onChange={this.btnGetFromOrigin_click} className="form-control" placeholder="電子郵件" required autoFocus />
                         <div className="container my-4">
                             <div className='row'>
                                 <input type="text" id="inputFirstname" className="form-control col-6" placeholder="姓" required autoFocus />
@@ -60,7 +83,7 @@ class Register extends Component {
                         </div>
 
                         <input type="password" id="passwd" name="passwd" className="form-control" placeholder="密碼" required autoFocus />
-                        <button className="btn btn-lg btn-danger btn-block mt-4" type="submit">建立帳戶</button>
+                        <button onClick={this.handleSumbit} className="btn btn-lg btn-danger btn-block mt-4" type="submit">建立帳戶</button>
                     </form>
                 </div>
                 

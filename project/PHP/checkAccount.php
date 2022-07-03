@@ -6,7 +6,7 @@
     });
     session_start();
 
-    if (!isset($_REQUEST['account'])) header("Location: login.php");
+    if (!isset($_REQUEST['account'])) header("Location: http://localhost:3000/index");
 
     $account = $_REQUEST['account']; $passwd = $_REQUEST['passwd'];
     $sql = "SELECT * FROM member WHERE account = ?";

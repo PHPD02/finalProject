@@ -1,22 +1,69 @@
+// export default function test(){ 
+//     function ListItem(props) {
+//         // 正確！你不需要在這裡指出 key：
+//         return <li>{props.value}</li>;
+//       } 
+//     function NumberList(props) {
+//         const numbers = props.numbers;
+//         const listItems = numbers.map((number) =>
+//           // 正確！Key 應該在 array 內被指定。
+//           <ListItem key={number} value={number} />
+//         );
+//         return (
+//           <ul>
+//             {listItems}
+//           </ul>
+//         );
+//       }
+//     const numbers = [1, 2, 3, 4, 5];
+//     return (
+//         <NumberList numbers={numbers} />
+//     );   
+// }
+
+// export default function test() {
+//     const numbers = [1, 2, 3, 4, 5];
+//     // const numberlist = numbers.map((number) => <li key={number}>{number}</li>)
+//     function ListItem(props) {
+//         return numbers.map((number) => <li key={number}>{number}</li>)
+//     }
+//     return (
+//         // numbers.map((number) => <li key={number}>{number}</li>)
+        
+//         <ul>
+//             <ListItem key={numbers}/>
+//         </ul>
+//     )
+
+// }
+
 import React, { Component } from 'react';
 
-class Teststate extends Component {
+class Test1 extends Component {
     state = { 
-        name:"wong"
-    };
+        numbers: [1, 2, 3, 4, 5]
+     } 
+    
+    chanli = (number) =>{
+        return (
+            this.state.numbers.map((number) => <li key={number}>{number}</li>)
 
-    doClick = () => {
-        this.setState({name:"yang"});
+        )
+        
     }
+    
 
     render() { 
         return (
-            <React.Fragment>
-                <button onClick={this.doClick}>click me</button>
-                <div>{this.state.name}</div>
-            </React.Fragment>
+            this.chanli()
+            
         );
     }
 }
  
-export default Teststate;
+export default Test1;
+
+
+
+  
+  

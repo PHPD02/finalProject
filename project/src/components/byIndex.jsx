@@ -9,7 +9,8 @@ class byIndex extends Component {
         return (
             <React.Fragment>
                 <Navbar />
-                <div className='container mt-5'>
+                <br /><br /><br /><br />
+                <div className='container'>
                     <h1>Index test</h1>
                     <NavLink to="/index">index page</NavLink><br />
                     <NavLink to="/login1">login1 page</NavLink><br />
@@ -19,6 +20,7 @@ class byIndex extends Component {
                     <NavLink to="/forgotpwd">forgotpwd page</NavLink><br />
                     <NavLink to="/cart">cart page</NavLink><br />
                     <NavLink to="/payment">payment page</NavLink><br />
+                    <div>{localStorage.getItem('uId')}</div>
                 </div>
             </React.Fragment>
             

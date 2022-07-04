@@ -8,8 +8,8 @@ import './js/tesst.js';
 import Index from './components/byIndex';
 
 import Login1 from './chattyComponents/login1';
-import Login2 from './chattyComponents/login2';
-import Login3 from './chattyComponents/login3';
+import Login2 from './chattyComponents/loginCompany';
+import Login3 from './chattyComponents/loginComsumer';
 import Register from './chattyComponents/register';
 import Register2 from './chattyComponents/register2';
 import Forgotpwd from './chattyComponents/forgotpwd';

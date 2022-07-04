@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 // import { NavLink } from 'react-router-dom';
 import Navbar from '../always used/navbar';
 import '../css/register.css';
-import './re.js';
 import $ from "jquery";
 
 

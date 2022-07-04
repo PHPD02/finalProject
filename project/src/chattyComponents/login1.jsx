@@ -5,11 +5,21 @@ import { faUserAlt, faStore } from '@fortawesome/free-solid-svg-icons'
 
 import '../css/login.css';
 
-
 import Navbar from '../always used/navbar';
 
 class Login1 extends Component {
     state = {  } 
+
+    componentDidMount() {
+        var url = "http://localhost:3000/";
+        var uId = parseInt(localStorage.getItem('uId'));
+        if (uId > 0) {
+            //登入狀態，不能連去登入頁
+            window.location = url;
+            // window.history.back()
+            // $('#loginin').hide();
+        }
+    }
     render() { 
         return (
             <React.Fragment>

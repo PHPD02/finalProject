@@ -12,7 +12,7 @@ class orderDetails extends Component {
         <div className="mt-5 text-center">
           <br />
           <br />
-          <h4>外送詳細資訊</h4>
+          <h4>外送訂單資訊</h4>
           <br />
           <br />
           <div className='container'>

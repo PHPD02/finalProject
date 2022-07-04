@@ -6,7 +6,7 @@ class Cards extends Component {
   render() {
     return (
       <React.Fragment>
-        <NavLink to="/shopList">
+        <NavLink to="/shopList" target="_blank">
           <div className="card setHeight">
             {/* 需要套資料庫呈現(圖片) */}
             <svg className="bd-img bd-img-lg featurette-image img-fluid mx-auto" id="myImg" width="100%" height="200" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#F08080"></rect></svg>

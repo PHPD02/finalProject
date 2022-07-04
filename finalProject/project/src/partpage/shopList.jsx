@@ -3,12 +3,24 @@ import Navbar from '../repeatability/Navbar';
 import ShopCard from '../repeatability/ShopCard';
 import Footer from '../repeatability/Footer';
 import { NavLink } from 'react-router-dom';
+import "./shoplist.css";
 class shopList extends Component {
   state = {}
   render() {
     return (
       <React.Fragment>
         <Navbar />
+        {/* 查詢地址  */}
+        <div className='container fixed-top ddd'>
+          <div className='row'>
+            <div className='col-md-12 col-sm-12'>送達:
+              <input type="button" className='w-25 text-left' value={'Select your address'} />
+            </div>
+          </div>
+          <div className='col-md-12 col-sm-12'>
+            <input type="text" name="" id="" />
+          </div>
+        </div>
         <br />
         <br />
         <div>
@@ -19,7 +31,7 @@ class shopList extends Component {
           <div className='container'>
             <div className='row'>
               <h4 className='col-7'>餐廳名稱</h4>
-              <button className='col-3 btn btn-outline-primary'>開始團購訂單</button>
+              <button className='col-3 btn btn-outline-primary'><b>+</b><i className='fa fa-users pr-1'></i>開始團購訂單</button>
               <p className='col-2'>餐廳資訊</p>
             </div>
             <div>
@@ -27,6 +39,9 @@ class shopList extends Component {
             </div>
             <div>
               <span>$$$</span>●<span>種類</span>●<span>西式/台式/沒事</span>
+            </div>
+            <div>
+              <span>地址</span>●<span>公里</span>●<span>以地圖開啟</span>
             </div>
             <hr />
             <div>

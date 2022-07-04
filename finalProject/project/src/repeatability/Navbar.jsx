@@ -24,11 +24,11 @@ class Navbar extends Component {
                   <i class="fa fa-user-circle" aria-hidden="true"></i>
                 </a> */}
                 {/* 購物車 */}
-                <a href="" className="btn btn-outline-dark ml-1">
-                  <i className="fa fa-shopping-cart text-info p-1"></i>Cart (0)</a>
+                <a href="" className="btn btn-outline-dark ml-1 p-1">
+                  <i className="fa fa-shopping-bag text-info p-1"></i>Cart (0)</a>
                 {/* 登入 */}
-                <a href="" className="btn btn-outline-dark ml-1">
-                  <i className="fa fa-sign-in text-info p-1"></i>Login</a>
+                <a href="" className="btn btn-outline-dark m-1 p-1">
+                  <i className="fa fa-user-circle text-info p-1"></i>Login</a>
               </div>
             </div>
           </div>

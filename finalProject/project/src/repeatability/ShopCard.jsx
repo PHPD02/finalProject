@@ -4,7 +4,7 @@ class ShopCard extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className='card'>
+        <div className='card' style={{ boxShadow: "3px 3px 3px grey" }}>
           <div className='container'>
             <div className='row'>
               <div className='col-md-12 col-sm-12'>

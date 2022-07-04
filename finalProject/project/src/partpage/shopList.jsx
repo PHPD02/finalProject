@@ -4,6 +4,7 @@ import ShopCard from '../repeatability/ShopCard';
 import Footer from '../repeatability/Footer';
 import { NavLink } from 'react-router-dom';
 import "./shoplist.css";
+import SearchBar from '../repeatability/SeachBar';
 class shopList extends Component {
   state = {}
   render() {
@@ -11,16 +12,17 @@ class shopList extends Component {
       <React.Fragment>
         <Navbar />
         {/* 查詢地址  */}
-        <div className='container fixed-top ddd'>
+        <div className='container fixed-top ddd' style={{ display: "none" }}>
           <div className='row'>
-            <div className='col-md-12 col-sm-12'>送達:
+            <div className='col-md-12 col-sm-12'>送到:
               <input type="button" className='w-25 text-left' value={'Select your address'} />
             </div>
           </div>
           <div className='col-md-12 col-sm-12'>
-            <input type="text" name="" id="" />
+            <SearchBar />
           </div>
         </div>
+
         <br />
         <br />
         <div>
@@ -71,29 +73,31 @@ class shopList extends Component {
                 <div className='col-md-6 col-sm-12'>
                   <ShopCard />
                 </div>
-                <div className='col-md-6 col-sm-12 mt-1'>
+                <div className='col-md-6 col-sm-12'>
                   <ShopCard />
                 </div>
               </div>
             </div>
+            <hr />
             <h4>種類</h4>
             <div className='container'>
               <div className='row'>
                 <div className='col-md-6 col-sm-12'>
                   <ShopCard />
                 </div>
-                <div className='col-md-6 col-sm-12 mt-1'>
+                <div className='col-md-6 col-sm-12'>
                   <ShopCard />
                 </div>
               </div>
             </div>
+            <hr />
             <h4>種類</h4>
             <div className='container'>
               <div className='row'>
                 <div className='col-md-6 col-sm-12'>
                   <ShopCard />
                 </div>
-                <div className='col-md-6 col-sm-12 mt-1'>
+                <div className='col-md-6 col-sm-12'>
                   <ShopCard />
                 </div>
               </div>

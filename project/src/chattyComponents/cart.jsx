@@ -69,7 +69,7 @@ class Cart extends Component {
                     <div className='text-center'>
                         <span className='h1'><strong>購物車</strong></span>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className='h4'>店家名字</span>
+                        <span className='h4'>日伴洋食 (台中勤美店)</span>
                     </div>
                     <div className='menutailBar row text-right'>
                         <div className='col-3'>食物</div>
@@ -83,8 +83,8 @@ class Cart extends Component {
 
                     <div className='menutail row'>
                         {/* 點餐內容 */}
-                        <div className='col-3 cart-food-sp sp1'>food1pic</div>
-                        <div className='col-3 cart-food-sp sp2'>food1Name</div>
+                        <div className='col-3 cart-food-sp sp1'><img src="https://images.deliveryhero.io/image/fd-tw/Products/38155656.jpg?height=80" alt="" /></div>
+                        <div className='col-3 cart-food-sp sp2'>黃金里肌厚切豬排咖哩飯</div>
                         <div className='col-2 cart-food-sp'>{this.state.price}</div>
 
                         <div className='col-2 cart-food-sp'>

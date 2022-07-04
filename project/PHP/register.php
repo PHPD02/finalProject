@@ -21,7 +21,7 @@
             "('{$account}','{$passwd}','{$realname}')";
         if ($mysqli->query($sql)){
             // echo var_dump($mysqli->query($sql));
-            header("Location: http://localhost:3000/login3");
+            // header("Location: http://localhost:3000/login3");
             echo "註冊成功!";
         }else{
             echo "此帳號已註冊!";
@@ -29,10 +29,10 @@
             // header("Location: www.google.com");
         }
         }catch(Exception $e){
-            header("Location: http://localhost:3000/register");
-            ob_flush();
-            flush();
-            sleep(2);
+            // header("Location: http://localhost:3000/register");
+            // ob_flush();
+            // flush();
+            // sleep(2);
             echo "something wrong or 此帳號已註冊!";
             
             

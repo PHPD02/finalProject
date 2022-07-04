@@ -26,7 +26,7 @@
             // header("Location: main.php");
 
         }else{
-            echo "something wrong";
+            echo "密碼錯誤 or something wrong";
             // header("Location: login.php");
         }
     }else{

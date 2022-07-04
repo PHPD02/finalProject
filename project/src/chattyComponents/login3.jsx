@@ -29,7 +29,7 @@ class Login3 extends Component {
                     </div> */}
                     
                     <div className='mt-3'>
-                        <NavLink to="/register"><button className='btn btn-success'>註冊</button></NavLink>
+                        <NavLink to="/register2"><button className='btn btn-success'>註冊</button></NavLink>
                         <div className='float-right'>
                             <NavLink to="/forgotpwd">
                                 <button className='btn btn-warning mr-2'>忘記密碼</button>

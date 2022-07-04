@@ -16,6 +16,8 @@ function Register2() {
             data: form.serialize(),
             success(data) {
                 setResult(data);
+                alert(data);
+                window.location="http://localhost:3000/login3";
             }
         })
     }
@@ -31,10 +33,14 @@ function Register2() {
                     onSubmit={(event) => handleSumbit(event)}>
                         <h1 className="h3 mb-3 font-weight-normal">讓我們開始註冊吧</h1>
                         <h6>開始建立你的帳戶</h6>
-                        <span id="mesg">{result}</span><br />
-                        <label htmlFor="inputEmail" className="sr-only">電子郵件</label>
-                        <input htmlFor="inputEmail" type="email" id="account" name='account' className="form-control" placeholder="電子郵件" required autoFocus />
-                        <div className="container my-4">
+                        {/* <span id="mesg">{result}</span><br /> */}
+                        <input type="email" id="account" name='account' className="form-control" placeholder="電子郵件" required autoFocus />
+                        
+                        <div className="container my-0">
+                            <div className='row mb-2'>
+                                <input type="text" id="reschknumber" name='reschknumber' className="form-control col-7" placeholder="驗證碼" required autoFocus />
+                                <button className='btn btn-primary btn-block col-5'><small>發送驗證碼</small></button>
+                            </div>
                             <div className='row'>
                                 <input type="text" id="inputFirstname" className="form-control col-6" placeholder="姓" required autoFocus />
                                 <input type="text" id="inputLastname" name="realname" className="form-control col-6" placeholder="名" required autoFocus />
@@ -42,7 +48,7 @@ function Register2() {
                         </div>
 
                         <input type="password" id="passwd" name="passwd" className="form-control" placeholder="密碼" required autoFocus />
-                        <button className="btn btn-lg btn-danger btn-block mt-4" type="submit">建立帳戶</button>
+                        <button className="btn btn-lg btn-danger btn-block mt-4" type="submit">建立個人帳戶</button>
                     </form>
                 </div>
                 

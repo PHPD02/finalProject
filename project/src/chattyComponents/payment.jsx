@@ -70,14 +70,14 @@ class Payment extends Component {
                             <div className='menutail row'>
                                 {/* 點餐內容 */}
                                 {/* <div className='col-6 cart-food-sp sp1'>food1pic</div> */}
-                                <div className='col cart-food-sp sp2'>food1Name</div>
+                                <div className='col cart-food-sp sp2'>黃金里肌厚切豬排咖哩飯</div>
                                 <div className='col-3 cart-food-sp'>1</div>
                                 <div className='col-3 cart-food-sp sp3'>$100</div>
                             </div>
                             <div className='menutail row'>
                                 {/* 點餐內容 */}
                                 {/* <div className='col-6 cart-food-sp sp1'>food1pic</div> */}
-                                <div className='col cart-food-sp sp2'>food2Name</div>
+                                <div className='col cart-food-sp sp2'>爆漿起司豚肉咖哩飯</div>
                                 <div className='col-3 cart-food-sp'>1</div>
                                 <div className='col-3 cart-food-sp sp3'>$150</div>
                             </div>

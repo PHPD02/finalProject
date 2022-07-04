@@ -18,6 +18,8 @@ import axios from 'axios'
 /* 引入 css */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/sunsuaProposal.css';
+/* 引入 server host */
+import serverHost from './js/severHost.js';
 
 /* 引入 其他資料 */
 import cityAreaData from '../../data/taiwan city country/CityCountyData.json'
@@ -35,12 +37,10 @@ class SunsuaProposal extends Component {
             cost: null,
             amount: null,
             mealType: null,
-            proposalSetTime: null,
-            LimitTime: null,
-            LimitTimeHr: null,
-            LimitTimeMin: null,
+            limitTime: null,
+            limitTimeHr: null,
+            limitTimeMin: null,
             picture: null,
-            namePartyB: []
         }
     }
 
@@ -125,12 +125,12 @@ class SunsuaProposal extends Component {
     /* ==【Event Func】時間 == */
     hrInput = (e) => {
         if (e.target.value) {
-            this.state.proposalDetail.LimitTimeHr = e.target.value;
+            this.state.proposalDetail.limitTimeHr = e.target.value;
         }
     }
     minInput = (e) => {
         if (e.target.value) {
-            this.state.proposalDetail.LimitTimeMin = e.target.value;
+            this.state.proposalDetail.limitTimeMin = e.target.value;
         }
     }
 
@@ -144,24 +144,26 @@ class SunsuaProposal extends Component {
         let proposalConfirm = document.querySelector("#proposalConfirm");
         proposalConfirm.classList.remove("d-none");
     }
-    
-    // TODO: 1.
+
     submitProposal = async (e) => {
-        // console.clear();
-        // e.preventDefault();
-        // let url = 'http://localhost/finalProject_php/sunsua/setProposal.php';
-        // await axios.post(url, this.state)
-        //     .then(res => {
-        //         console.log("success");
-        //     })
-        //     .catch(error => {
-        //         console.log("error");
-        //         console.log(error.message);
-        //     });
+        console.clear();
+        e.preventDefault();
+        let url = serverHost + '/finalProject_php/sunsua/setProposal.php';
+        console.log(`url: ${url}`);
+        await axios.post(url, this.state.proposalDetail)
+            .then(res => {
+                // console.log("success");
+                if (res.status == 200) {
+                    document.location.href = "/sunsua"
+                }
+            })
+            .catch(error => {
+                console.log("error:" + error.message);
+            });
     }
     cancel = (e) => {
         e.preventDefault();
-        this.setState({})
+        this.setState({});
         let proposalSet = document.querySelector("#proposalSet");
         proposalSet.classList.remove("d-none");
         let proposalConfirm = document.querySelector("#proposalConfirm");
@@ -240,7 +242,8 @@ class SunsuaProposal extends Component {
                                         <td>單點品項</td>
                                         <td>
                                             {/* <select className="mx-3" style={{ width: 100 }} onChange={this.typeSel} required > */}
-                                            <select className="mx-3" style={{ width: 100 }} onChange={this.typeSel} >
+                                            <select className="mx-3" style={{ width: 100 }} onChange={this.typeSel} defaultValue={-1}>
+                                                <option value="-1">餐點類型</option>
                                                 <optgroup label="餐點">
                                                     <option value="台式">台式</option>
                                                     <option value="日式">日式</option>
@@ -284,7 +287,7 @@ class SunsuaProposal extends Component {
                                 </tbody>
                             </table>
                             <div className='px-5 d-flex flex-row-reverse'>
-                                <button id="submitProposal" className='mx-5' type="" onClick={this.setProposal}>建立提案</button>
+                                <button id="setProposal" className='mx-5' type="" onClick={this.setProposal}>建立提案</button>
                             </div>
                         </form>
                     </div>
@@ -327,8 +330,8 @@ class SunsuaProposal extends Component {
                             </tbody>
                         </table>
                         <div className='px-5 d-flex flex-row-reverse'>
-                            <button id="submitProposal" className='mx-5' type="" onClick={this.submitProposal}>送出提案</button>
-                            <button id="submitProposal" className='mx-5' type="" onClick={this.cancel}>取消</button>
+                            <button className='mx-5' type="" onClick={this.submitProposal}>送出提案</button>
+                            <button className='mx-5' type="" onClick={this.cancel}>取消</button>
                         </div>
                     </div>
                 </div>

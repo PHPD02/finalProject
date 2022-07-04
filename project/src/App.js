@@ -13,14 +13,15 @@ import Sunsua from './component/Sunsua/sunsua.jsx';
 
 /* 測試元件專區 */
 import PhpTest from './component/test/phptest/phptest';
-import TimeCountDown from './component/Sunsua/comp/TimeCountDown'
-import Test from './component/test/test_npmComp/npmComp'
+import TimeCountDown from './component/Sunsua/comp/TimeCountDown';
+import Test from './component/test/test_npmComp/npmComp';
+import TestPhpServer from './component/test/test_phpserver/phpserver';
 
 class App extends Component {
   state = {}
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <Switch>
           {/* 首頁 */}
           <Route path="/" component={Firstpage} exact />
@@ -42,8 +43,9 @@ class App extends Component {
           <Route path="/phptest" component={PhpTest} />
           <Route path="/test/tcd" component={TimeCountDown} />
           <Route path="/test/npmComp" component={Test} />
+          <Route path="/test/phpServer" component={TestPhpServer} />
         </Switch>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }

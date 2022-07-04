@@ -13,13 +13,14 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 
+/* 引入 server host url */
+import serverHost from './js/severHost.js';
+
 /* 引入 component */
 
 /* 引入 css */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/sunsuaProposal.css';
-/* 引入 server host */
-import serverHost from './js/severHost.js';
 
 /* 引入 其他資料 */
 import cityAreaData from '../../data/taiwan city country/CityCountyData.json'
@@ -195,54 +196,46 @@ class SunsuaProposal extends Component {
                                         <td><div className='mt-5'>要送到的地址</div></td>
                                         <td>
                                             <div className='m-3'>
-                                                {/* <select id="city" className="mx-3" style={{ width: 70 }} onChange={this.citySel} required> */}
-                                                <select id="city" className="mx-3" style={{ width: 70 }} onChange={this.citySel} >
+                                                <select id="city" className="mx-3" style={{ width: 70 }} onChange={this.citySel} required="required">
                                                     <option value="-1">縣市</option>
                                                     {cityAreaData.map((val, idx) =>
                                                         <option key={idx} value={idx}>{val.CityName}</option>
                                                     )}
                                                 </select>
-                                                {/* <select id="area" className="mx-3" style={{ width: 70 }} onChange={this.areaSel} required> */}
-                                                <select id="area" className="mx-3" style={{ width: 70 }} onChange={this.areaSel} >
+                                                <select id="area" className="mx-3" style={{ width: 70 }} onChange={this.areaSel} required="required">
                                                     <option value="-1">地區</option>
                                                 </select>
                                             </div>
-                                            {/* <input type="text" style={{ width: 300 }} required="required" placeholder="輸入要配送的地點" /> */}
-                                            <input type="text" style={{ width: 300 }} placeholder="輸入要配送的地點" onChange={this.addrInput} />
+                                            <input type="text" style={{ width: 300 }} placeholder="輸入要配送的地點" onChange={this.addrInput} required="required" />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>預計到達時間</td>
-                                        {/* <td><input type="datetime-local" required="required" placeholder="輸入預計到達時間" /></td> */}
-                                        <td><input type="datetime-local" placeholder="輸入預計到達時間" onChange={this.arriveTimeInput} /></td>
+                                        <td><input type="datetime-local" placeholder="輸入預計到達時間" onChange={this.arriveTimeInput} required="required" /></td>
                                     </tr>
                                     {/* 餐廳 / 商家 */}
                                     <tr>
                                         <td>餐廳 / 商家</td>
-                                        {/* <td><input type="text" required="required" placeholder="輸入要配送的餐廳" width={"1000px"} /></td> */}
-                                        <td><input type="text" placeholder="輸入要配送的餐廳" width={"1000px"} onChange={this.shopInput} /></td>
+                                        <td><input type="text" placeholder="輸入要配送的餐廳" width={"1000px"} onChange={this.shopInput} required="required" /></td>
                                     </tr>
                                     {/* 餐點資訊 */}
                                     <tr>
                                         <td>餐點</td>
-                                        {/* <td><input type="text" required="required" placeholder="輸入要配送的餐點" /></td> */}
-                                        <td><input type="text" placeholder="輸入要配送的餐點" onChange={this.mealInput} /></td>
+                                        <td><input type="text" placeholder="輸入要配送的餐點" onChange={this.mealInput} required="required" /></td>
                                     </tr>
                                     <tr>
                                         <td>餐點上限數量</td>
-                                        {/* <td><input type="number" min="0" required="required" placeholder="餐點上限數量" /></td> */}
-                                        <td><input type="number" min="0" placeholder="餐點上限數量" onChange={this.amountInput} /></td>
+                                        <td><input type="number" min="0" placeholder="餐點上限數量" onChange={this.amountInput} required="required" /></td>
                                     </tr>
                                     <tr>
                                         <td>單筆金額</td>
-                                        {/* <td><input type="number" min="0" required="required" placeholder="單筆餐點金額" /></td> */}
-                                        <td><input type="number" min="0" placeholder="單筆餐點金額" onChange={this.costInput} /></td>
+                                        <td><input type="number" min="0" placeholder="單筆餐點金額" onChange={this.costInput} required="required" /></td>
                                     </tr>
                                     <tr>
                                         <td>單點品項</td>
                                         <td>
-                                            {/* <select className="mx-3" style={{ width: 100 }} onChange={this.typeSel} required > */}
-                                            <select className="mx-3" style={{ width: 100 }} onChange={this.typeSel} defaultValue={-1}>
+
+                                            <select className="mx-3" style={{ width: 100 }} onChange={this.typeSel} defaultValue={-1} required="required">
                                                 <option value="-1">餐點類型</option>
                                                 <optgroup label="餐點">
                                                     <option value="台式">台式</option>
@@ -256,9 +249,7 @@ class SunsuaProposal extends Component {
                                                 </optgroup>
                                                 <option value="其他">其他</option>
                                             </select>
-
-                                            {/* <input type='text' id="otherType" className='d-none' style={{ width: 200 }} required="required" placeholder='輸入品項類型'></input> */}
-                                            <input type='text' id="otherType" className='d-none' style={{ width: 200 }} placeholder='輸入品項類型' onChange={this.typeInput}></input>
+                                            <input type='text' id="otherType" className='d-none' style={{ width: 200 }} placeholder='輸入品項類型' onChange={this.typeInput} required="required"></input>
                                         </td>
                                     </tr>
                                     {/* 提案時間 */}
@@ -266,12 +257,11 @@ class SunsuaProposal extends Component {
                                         <td>提案限制時間</td>
                                         <td>
                                             <span>
-                                                <input type="number" min={0} max={24} style={{ width: 50 }} onChange={this.hrInput}></input>
+                                                <input type="number" min={0} max={24} style={{ width: 50 }} onChange={this.hrInput} required="required"></input>
                                                 <label className='mx-2'>時</label>
                                             </span>
                                             <span>
-                                                {/* <input type="text" size={2}></input> */}
-                                                <input type="number" min={0} max={60} style={{ width: 50 }} onChange={this.minInput}></input>
+                                                <input type="number" min={0} max={60} style={{ width: 50 }} onChange={this.minInput} required="required"></input>
                                                 <label className='mx-2'>分</label>
                                             </span>
                                         </td>

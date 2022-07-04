@@ -7,13 +7,15 @@
 import React, { Component } from 'react';
 import axios from "axios";
 
-/* 引入 server host */
+/* 引入 server host url*/
 import serverHost from './js/severHost.js';
-/*  */
+
+/* 引入 component */
 import ProposalInfo from './ProposalInfo.jsx'
+
+/* 引入 css */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
 import './css/sunsuaSearchProposal.css';
 class SunsuaSearchProposal extends Component {
     state = {

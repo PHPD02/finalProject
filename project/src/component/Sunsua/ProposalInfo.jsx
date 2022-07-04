@@ -3,9 +3,15 @@
  */
 
 import React, { Component } from 'react';
+import axios from 'axios';
+
+/* 引入 server host */
+import serverHost from './js/severHost.js';
+
+/* 引入 component */
 import TimeCountDown from './comp/TimeCountDown.jsx'
 
-
+/* 引入 css */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./css/sunsuaProposalInfo.css";
 class ProposalInfo extends Component {
@@ -22,7 +28,7 @@ class ProposalInfo extends Component {
             mealType: null,
             setTime: null,
             limitTime: null,
-            status: "open"
+            state: "open"
         },
         optionNum: []
     }
@@ -30,9 +36,10 @@ class ProposalInfo extends Component {
     constructor() {
         super();
     }
-    async componentDidMount() {
+    componentDidMount = async () => {
         // console.log(this);
         this.state.proposalDetail = this.props.proposalDetail
+        // console.log(this.state);
         this.optNumCreate();
         this.setState({})
     }
@@ -45,14 +52,35 @@ class ProposalInfo extends Component {
     }
 
     addProposal = () => {
-        console.log(this.state)
+        if (this.state.proposalDetail.state != 1) {
+            alert("提案已關閉");
+        }
+        else {
+
+        }
     }
 
-    /*  給 TimeCountDown 呼叫
-        讓 倒數為0 時，方案狀態改變
-    */
-    timeoutChageState = () => {
+    /*  給 TimeCountDown 呼叫，讓倒數為0時，方案狀態改變 */
+    timeoutChageState = async () => {
+        //TODO: 時間到 改變狀態
         console.log("結案!!!!");
+        this.state.proposalDetail.state = 0;
+
+        /* 傳給後端 改變資料庫狀態 */
+        let url = serverHost + '/finalProject_php/sunsua/chgProposalState.php';
+        let dataToServer = {
+            id: this.state.proposalDetail.id,
+            state: 0
+        }
+        await axios.put(url, dataToServer)
+            .then(res => {
+                // console.log("success");
+                if (res.status == 200) { }
+            })
+            .catch(error => {
+                console.log("error:" + error.message);
+            });
+
     }
 
     render() {

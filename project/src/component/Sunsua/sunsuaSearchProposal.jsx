@@ -5,6 +5,11 @@
  * // 【Q】能不用css直接在html標籤裡面設定Width 或 style 嗎?
  */
 import React, { Component } from 'react';
+import axios from "axios";
+
+/* 引入 server host */
+import serverHost from './js/severHost.js';
+/*  */
 import ProposalInfo from './ProposalInfo.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -12,31 +17,35 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './css/sunsuaSearchProposal.css';
 class SunsuaSearchProposal extends Component {
     state = {
-        proposalDetail: [
-            {
-                id: "001", namePartyA: "Max",
-                addr: "400台中市中區台灣大道一段1號",
-                arriveTime: "2022/07/01 14:00:00",
-                shop: "麥當勞", meal: "麥香雞", cost: 100, amount: 8, mealType: "速食",
-                setTime: 1656732751321, limitTime: 86400000, status: "open"
-            },
-            {
-                id: "002", namePartyA: "Tony",
-                addr: "台灣省台中市北屯區大鵬路陳平里１２之３巷５之１弄３之２鄰５８號６樓之３",
-                arriveTime: "2022/07/04 16:00:00",
-                shop: "肯德基", meal: "蛋塔", cost: 100, amount: 20, mealType: "速食",
-                setTime: 1656732751321, limitTime: 26400000, status: "open"
-            },
-            {
-                id: "003", namePartyA: "Tony",
-                addr: "桃園縣龜山鄉迴龍村萬壽路",
-                arriveTime: "2022/07/04 16:00:00",
-                shop: "50嵐", meal: "珍珠奶茶", cost: 20, amount: 10, mealType: "冷飲",
-                setTime: 1656732751321, limitTime: 360000, status: "open"
-            },
-        ]
+        proposalDetail: []
+        // proposalDetail: [
+        //     {
+        //         id: "001", namePartyA: "Max",
+        //         addr: "400台中市中區台灣大道一段1號",
+        //         arriveTime: "2022/07/01 14:00:00",
+        //         shop: "麥當勞", meal: "麥香雞", cost: 100, amount: 8, mealType: "速食",
+        //         setTime: 1656732751321, limitTime: 86400000, state: 1
+        //     },
+        // ]
     }
-
+    componentDidMount = async () => {
+        let url = serverHost + '/finalProject_php/sunsua/selProposal.php';
+        this.state.proposalDetail = [];
+        await axios.get(url)
+            .then(res => {
+                // console.log("success");
+                if (res.status == 200) {
+                    // console.log(res.data)
+                    this.state.proposalDetail = res.data;
+                    console.log(this.state.proposalDetail);
+                    this.setState({});
+                }
+            })
+            .catch(error => {
+                console.log("error:" + error.message);
+            });
+        // this.setState({});
+    }
     test = () => {
         console.log(new Date().valueOf())
     }

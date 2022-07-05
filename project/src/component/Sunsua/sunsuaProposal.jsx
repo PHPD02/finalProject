@@ -317,7 +317,7 @@ class SunsuaProposal extends Component {
                             </tbody>
                         </table>
                         <div className='px-5 d-flex flex-row-reverse'>
-                            {/* <button className='mx-5' type="" onClick={this.submitProposal}>送出提案</button> */}
+                            <button className='mx-5' type="" onClick={this.submitProposal}>送出提案</button>
                             <button className='mx-5' type="" onClick={this.cancel}>取消</button>
                         </div>
                     </div>

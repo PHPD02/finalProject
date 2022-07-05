@@ -67,11 +67,6 @@ class TimeCountDown extends Component {
         this.setState({});
     }
 
-    /* 測試用 */
-    datashow = () => {
-        console.log(this.state.showTimeVal)
-    }
-
     /* Render */
     render() {
         return (
@@ -82,8 +77,6 @@ class TimeCountDown extends Component {
                 <label className='p'> min : </label>
                 <label className='h3'>{this.state.showTime.sec} </label>
                 <label className='p'> sec</label>
-
-                <button onClick={this.datashow}> test</button>
             </>
         );
     }

@@ -114,10 +114,7 @@ class ProposalInfo extends Component {
                                     <th>單份金額</th>
                                     <td>{this.state.proposalDetail.cost}</td>
                                 </tr>
-                                <tr className='text-center'>
-                                    <th colSpan={2}>剩餘數量</th>
-                                    <td colSpan={2}>{this.state.proposalDetail.amount}</td>
-                                </tr>
+
                             </tbody>
                         </table>
 
@@ -134,7 +131,11 @@ class ProposalInfo extends Component {
                             >
                             </TimeCountDown>
                         </div>
+                        <br />
                         <div>
+                            <label className='h3'>剩餘數量 : </label>
+                            &nbsp;
+                            <label className='h4'>{this.state.proposalDetail.amount}</label>
                             <label className='mr-2'>請選擇數量</label>
                             <select id='totalMeal' className='my-2'>
                                 {this.state.optionNum.map((item, index) => {

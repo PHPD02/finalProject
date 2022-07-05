@@ -47,15 +47,11 @@ class SunsuaSearchProposal extends Component {
             });
         // this.setState({});
     }
-    test = () => {
-        console.log(new Date().valueOf())
-    }
 
     render() {
         return (
             <div className='container py-3'>
                 <h1 className='text-center'>搜尋方案</h1>
-                <button onClick={this.test}>Test </button>
                 <div>
                     <span>
                         <input id="searchBox" placeholder='請輸入您的地址' />
@@ -64,7 +60,6 @@ class SunsuaSearchProposal extends Component {
                     {/* <input id="" placeholder='時間' /><i className="bi bi-search ml-1"></i> */}
 
                 </div>
-
                 <hr />
                 {this.state.proposalDetail.map((value, index) => {
                     return (

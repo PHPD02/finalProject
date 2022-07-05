@@ -1,8 +1,8 @@
 import React from "react";
 import Restaurant from "./restaurant";
 import "../css/foodpandapage.css";
-import DashboardProduct from "./DashboardProduct";
-import DashboardPanel from "./DashboardPanel";
+import DashboardProduct from "./NOT_UESD_NOW/DashboardProducthboardProduct";
+import DashboardPanel from "./NOT_UESD_NOW/DashboardPanel";
 import '../css/DashboardPanel.css';
 
 import AddInventary from './AddInventary';
@@ -494,18 +494,18 @@ import axios from "./axios";
 
 //   render() {
 //     return (
-//       <div class="container">
+//       <div className="container">
 //         <h1>
 //           待辦事項清單
 //           <a
 //             href="/#/menu/Create"
-//             class="btn btn-outline-success btn-md float-right"
+//             className="btn btn-outline-success btn-md float-right"
 //           >
 //             新增
 //           </a>
 //         </h1>
 
-//         <table class="table table-striped table-hover">
+//         <table className="table table-striped table-hover">
 //           <thead>
 //             <tr>
 //               <th>項目名稱</th>
@@ -565,18 +565,18 @@ class TodoIndex extends React.Component {
 
   render() {
     return (
-//       <div class="container">
+//       <div className="container">
 //         <h1>
 //           待辦事項清單
 //           <a
 //             href="#/Todo/Create"
-//             class="btn btn-outline-success btn-md float-right"
+//             className="btn btn-outline-success btn-md float-right"
 //           >
 //             新增
 //           </a>
 //         </h1>
 // {/* -------------------- */}
-//         <table class="table table-striped table-hover">
+//         <table className="table table-striped table-hover">
 //           <thead>
 //             <tr>
 //               <th>項目名稱</th>
@@ -621,10 +621,10 @@ class TodoIndex extends React.Component {
 
 
 //       </div>
-<div class="container">
+<div className="container">
   <h1 className="h1 my-4">
     菜單品項
-    <a href="#/Todo/Create" class=" btn btn-primary btn-lg float-right">
+    <a href="#/Todo/Create" className=" btn btn-primary btn-lg float-right">
       新增品項
     </a>
   </h1>

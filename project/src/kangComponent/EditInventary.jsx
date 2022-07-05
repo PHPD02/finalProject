@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import DashboardPanel from "./DashboardPanel";
+import DashboardPanel from "./NOT_UESD_NOW/DashboardPanel";
 import '../css/DashboardPanel.css'
 
 import Axios from "./axios";

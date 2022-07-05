@@ -195,7 +195,8 @@ function (err, rows) {
 
 app.put("/todo/item", function (req, res) {
      conn.query("UPDATE tablename SET  Description = ? , Name =?  WHERE Id = ?", 
-         [req.body.Id,req.body.Name,req.body.Description,req.body.Picture1],
+     [req.body.Description,req.body.Name,req.body.Id],
+        //  [req.body.Id,req.body.Name,req.body.Description,req.body.Picture1],
 function (err, rows) {
             res.send( JSON.stringify( req.body ));
         }

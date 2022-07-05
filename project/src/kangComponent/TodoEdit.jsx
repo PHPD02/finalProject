@@ -20,26 +20,27 @@ class ToDoEdit extends React.Component {
     this.setState({});
   }
   okButtonClick = async () => {
-    // console.log(this.state.todoItem);
+    
     var result = await axios.put(
-      `http://localhost:8000/todo/item/`,
+      `http://localhost:8000/todo/item`,
       this.state.todoItem
     );
+    console.log(result);
     toast.success('修改成功');
     window.location = "#/TodoIndex";
   };
   todoItemNameChange = async (e) => {
-    var newState = { ...this.state };
-    newState.todoItem.Name = e.target.value;
+    // var newState = { ...this.state };
+    this.state.todoItem.Name = e.target.value;
     // newState.todoItem.Description = e.target.value;
     // newState.todoItem.Id = e.target.value;
     // newState.todoItem.Picture1 = e.target.value;
-    this.setState(newState);
+    this.setState({});
   };
   todoItemDescriptionChange = async (e) => {
-    var newState = { ...this.state };
-    newState.todoItem.Description = e.target.value;
-    this.setState(newState);
+    // var newState = { ...this.state };
+    this.state.todoItem.Description = e.target.value;
+    this.setState({});
   };
   render() {
     return (

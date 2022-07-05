@@ -2,7 +2,7 @@ import React from "react";
 import "../css/DashboardProduct.css";
 import DashboardPanel from "./DashboardPanel";
 import AddInventary_tryifunctioncomponent from "./AddInventary_tryifunctioncomponent";
-import EditInventory from "./EditInventary";
+import EditInventory from "../EditInventaryy";
 
 // import { toast } from "react-toastify";
 

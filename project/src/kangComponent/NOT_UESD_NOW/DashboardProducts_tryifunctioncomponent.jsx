@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Restaurant from "./restaurant";
+import Restaurant from "../restaurantt";
 import "../css/foodpandapage.css";
-import DashboardProduct from "./DashboardProduct";
+import DashboardProduct from "./NOT_UESD_NOW/DashboardProducthboardProduct";
 import DashboardPanel from "./DashboardPanel";
 import "../css/DashboardPanel.css";
-import "./menubar/sidebar.js";
+import "../menubar/sidebar.jss";
 import AddInventary_tryifunctioncomponent from "./AddInventary_tryifunctioncomponent";
 //試試記得改
-import EditInventary from "./EditInventary"
+import EditInventary from "../EditInventaryy"
 import Axios from "axios";
 
 function DashboardProducts_tryifunctioncomponent() {

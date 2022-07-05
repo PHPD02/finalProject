@@ -4,10 +4,7 @@
  * 確認提案後 成立方案
  * ==================================
  * TODO: 
- *  1.submit btn 功能未實現
- *     送出提案 要給後端php資料
- *       (1) 請考量 "提案處理中" 
- *       (2) 方案建立完成 跳轉 順弁首頁 
+ *  1. 將表單填寫設為必填
  *   
 */
 import React, { Component } from 'react';
@@ -188,7 +185,7 @@ class SunsuaProposal extends Component {
                     <button onClick={this.dataShow}>Data Show</button>
                     <br />
                     <div className='text-center'>
-                        <form action='#'>
+                        <form action='#' className=''>
                             <table className='table'>
                                 <tbody >
                                     {/* 到達地址 */}
@@ -196,7 +193,7 @@ class SunsuaProposal extends Component {
                                         <td><div className='mt-5'>要送到的地址</div></td>
                                         <td>
                                             <div className='m-3'>
-                                                <select id="city" className="mx-3" style={{ width: 70 }} onChange={this.citySel} required="required">
+                                                <select id="city" className="mx-3 " style={{ width: 70 }} onChange={this.citySel} required="required">
                                                     <option value="-1">縣市</option>
                                                     {cityAreaData.map((val, idx) =>
                                                         <option key={idx} value={idx}>{val.CityName}</option>
@@ -216,7 +213,7 @@ class SunsuaProposal extends Component {
                                     {/* 餐廳 / 商家 */}
                                     <tr>
                                         <td>餐廳 / 商家</td>
-                                        <td><input type="text" placeholder="輸入要配送的餐廳" width={"1000px"} onChange={this.shopInput} required="required" /></td>
+                                        <td><input type="text" className='form-control' placeholder="輸入要配送的餐廳" width={"1000px"} onChange={this.shopInput} required="required" /></td>
                                     </tr>
                                     {/* 餐點資訊 */}
                                     <tr>
@@ -277,7 +274,7 @@ class SunsuaProposal extends Component {
                                 </tbody>
                             </table>
                             <div className='px-5 d-flex flex-row-reverse'>
-                                <button id="setProposal" className='mx-5' type="" onClick={this.setProposal}>建立提案</button>
+                                <button id="setProposal" className='mx-5' type="submit" onClick={this.setProposal}>建立提案</button>
                             </div>
                         </form>
                     </div>
@@ -320,7 +317,7 @@ class SunsuaProposal extends Component {
                             </tbody>
                         </table>
                         <div className='px-5 d-flex flex-row-reverse'>
-                            <button className='mx-5' type="" onClick={this.submitProposal}>送出提案</button>
+                            {/* <button className='mx-5' type="" onClick={this.submitProposal}>送出提案</button> */}
                             <button className='mx-5' type="" onClick={this.cancel}>取消</button>
                         </div>
                     </div>

@@ -2,7 +2,6 @@
  * 搜尋方案
  * 讓使用者 可以搜尋方案
  * 
- * // 【Q】能不用css直接在html標籤裡面設定Width 或 style 嗎?
  */
 import React, { Component } from 'react';
 import axios from "axios";

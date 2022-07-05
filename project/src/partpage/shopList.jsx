@@ -4,7 +4,7 @@ import ShopCard from '../repeatability/ShopCard';
 import Footer from '../repeatability/Footer';
 import { NavLink } from 'react-router-dom';
 import "./shoplist.css";
-import SearchBar from '../repeatability/SeachBar';
+import SearchBar from '../repeatability/SearchBar';
 class shopList extends Component {
   state = {}
   render() {

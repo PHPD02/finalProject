@@ -15,7 +15,6 @@ import Sunsua from './component/Sunsua/sunsua.jsx';
 import PhpTest from './component/test/phptest/phptest';
 import TimeCountDown from './component/Sunsua/comp/TimeCountDown';
 import Test from './component/test/test_npmComp/npmComp';
-import TestPhpServer from './component/test/test_phpserver/phpserver';
 
 class App extends Component {
   state = {}
@@ -43,7 +42,6 @@ class App extends Component {
           <Route path="/phptest" component={PhpTest} />
           <Route path="/test/tcd" component={TimeCountDown} />
           <Route path="/test/npmComp" component={Test} />
-          <Route path="/test/phpServer" component={TestPhpServer} />
         </Switch>
       </BrowserRouter>
     );

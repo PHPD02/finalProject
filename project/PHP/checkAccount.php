@@ -6,13 +6,13 @@
     });
     session_start();
 
-    if (!isset($_REQUEST['account'])) header("Location: http://localhost:3000/");
+    if (!isset($_REQUEST['inputEmail'])) header("Location: http://localhost:3000/");
 
-    $account = $_REQUEST['account']; $passwd = $_REQUEST['passwd'];
-    $sql = "SELECT * FROM member WHERE account = ?";
+    $inputEmail = $_REQUEST['inputEmail']; $passwd = $_REQUEST['inputPassword'];
+    $sql = "SELECT * FROM usermember WHERE email = ?";
 
     $stmt = $mysqli->prepare($sql);
-    $stmt->bind_param('s', $account);
+    $stmt->bind_param('s', $inputEmail);
     $stmt->execute();
 
     $result = $stmt->get_result();
@@ -21,23 +21,13 @@
     if ($result->num_rows > 0){
         $member = $result->fetch_object();
         // var_dump($member);
-        if (password_verify($passwd, $member->passwd)){
+        if (password_verify($passwd, $member->password)){
+            //密碼正確
             $_SESSION['member'] = $member;
-            // $s = json_decode( $member,false);
             $s = json_encode($member);
-            // $s = mysqli_free_result($member);
-            // var_dump( $member->id);
-            // $s = $member;
-            $uId = $member->id;
-            // $_SESSION['cart'] = new Cart();
-            // echo "Welcome!";
+            $uId = $member->uid;
             $finalresult =$uId;
             echo $s;
-            // $deco = json_decode($member);
-            // echo $deco;
-            
-            // header("Location: main.php");
-
         }else{
             echo $finalresult;
             // echo "密碼錯誤 or something wrong";

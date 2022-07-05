@@ -1,1 +1,1 @@
-mysqldump -u root -R ispan > c:\users\user\Desktop\ispan.sql
+mysqldump -u root -R finalproject > c:\users\user\Desktop\finalproject.sql

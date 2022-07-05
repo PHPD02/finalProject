@@ -3,18 +3,21 @@ import { NavLink } from 'react-router-dom';
 import $ from 'jquery';
 
 // import '../css/navbar.css'
+var getemail = localStorage.getItem('email');
 
 class Navbar extends Component {
     state = {}
 
     loginClick = () => {
-        var uId = parseInt(localStorage.getItem('uId'));
-        // console.log(uId);
-        if (uId > 0) {
+        if (getemail) {
             //登入狀態，不能連去登入頁
             window.location = "http://localhost:3000/index";
             // window.history.back()
             // $('#loginin').hide();
+        }else {
+            $('#login1').fadeIn();
+            $('#loginCompany').hide();
+            $('#loginComsumer').hide();
         }
     }
 
@@ -26,9 +29,8 @@ class Navbar extends Component {
     }
 
     componentDidMount() {
-        var uId = parseInt(localStorage.getItem('uId'));
         // console.log(uId);
-        if (uId > 0) {
+        if (getemail) {
             //登入狀態
             $('#loginin').attr("type", "hidden");
             $('#logoutout').attr("type", "submit");
@@ -52,9 +54,7 @@ class Navbar extends Component {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                         <ul className="navbar-nav mr-auto">
-
                         </ul>
-
 
                         <div className="form-inline mt-2 mt-md-0">
                             {/* <NavLink to="/login1"><button onClick={this.loginClick} className="btn btn-outline-success my-2 my-sm-0" type="submit">login</button></NavLink> */}

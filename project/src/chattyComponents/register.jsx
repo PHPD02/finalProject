@@ -6,7 +6,7 @@ import $ from "jquery";
 
 
 
-
+var upwhere = window.location.href;
 
 class Register extends Component {
     state = { 

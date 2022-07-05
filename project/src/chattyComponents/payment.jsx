@@ -12,6 +12,19 @@ import '../css/payment.css';
 
 class Payment extends Component {
     state = {}
+
+    componentDidMount() {
+        var url = "http://localhost:3000/login1";
+        
+        var getemail = localStorage.getItem('email');
+        // console.log(uId);
+        if (!getemail) {
+            //登入狀態，不能連去登入頁
+            window.location = url;
+            // window.history.back()
+            // $('#loginin').hide();
+        }
+    }
     render() {
         return (
             <React.Fragment>

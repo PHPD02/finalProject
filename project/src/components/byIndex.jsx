@@ -14,8 +14,8 @@ class byIndex extends Component {
                     <h1>Index test</h1>
                     <NavLink to="/index">index page</NavLink><br />
                     <NavLink to="/login1">login1 page</NavLink><br />
-                    <NavLink to="/login2">login2 page</NavLink><br />
-                    <NavLink to="/login3">login3 page</NavLink><br />
+                    {/* <NavLink to="/login2">login2 page</NavLink><br />
+                    <NavLink to="/login3">login3 page</NavLink><br /> */}
                     <NavLink to="/register">register page</NavLink><br />
                     <NavLink to="/forgotpwd">forgotpwd page</NavLink><br />
                     <NavLink to="/cart">cart page</NavLink><br />

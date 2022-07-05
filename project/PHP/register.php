@@ -2,23 +2,19 @@
     header('Access-Control-Allow-Origin: http://localhost:3000');
     include("sql.php");
 
-    if (isset($_REQUEST["account"])){
-        $account = $_REQUEST['account'];
-        $passwd = password_hash($_REQUEST['passwd'], PASSWORD_DEFAULT);
-        $realname = $_REQUEST['realname'];
+    if (isset($_REQUEST["inputEmail"])){
+        
+        $inputEmail = $_REQUEST['inputEmail'];
+        $password = password_hash($_REQUEST['password'], PASSWORD_DEFAULT);
+        $firstname = $_REQUEST['inputFirstname'];
+        $lastname = $_REQUEST['inputLastname'];
+        $tel= "0".$_REQUEST['phoneNumber'];
+        $reschknumber= $_REQUEST['reschknumber'];
+        
 
-        // $icon = null; $icontype = null;
-        // if ($_FILES['icon']['error'] == 0){
-        //     // var_dump($_FILES);
-        //     $icon = addslashes(file_get_contents($_FILES['icon']['tmp_name'])) ;
-            
-        //     $icon = mysqli_real_escape_string(file_get_contents($_FILES['icon']['tmp_name']));
-
-        //     $icontype = $_FILES['icon']['type'];
-        // }
         try{
-            $sql = "INSERT INTO member (account,passwd,realname) VALUES " .
-            "('{$account}','{$passwd}','{$realname}')";
+            $sql = "INSERT INTO usermember (email,`password`,firstName,lastName,tel) VALUES " .
+            "('{$inputEmail}','{$password}','{$firstname}','{$lastname}','{$tel}')";
         if ($mysqli->query($sql)){
             // echo var_dump($mysqli->query($sql));
             // header("Location: http://localhost:3000/login3");

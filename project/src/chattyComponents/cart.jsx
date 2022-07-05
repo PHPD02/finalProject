@@ -9,6 +9,8 @@ import Cartcard from './cartcard';
 
 import '../css/cart.css';
 
+var upwhere = window.location.href;
+
 class Cart extends Component {
     state = { count: 1, countsum: 100, price: 100,
               total: 100+19 }
@@ -28,6 +30,7 @@ class Cart extends Component {
 
     }
     componentDidMount = () => {
+        localStorage.setItem('upwhere', upwhere);
         // this.setState({ countsum: this.state.count * this.state.price });
         // this.setState({ total: this.state.countsum+this.state.price +19});
         // document.getElementById('sum').innerHTML = `${this.state.countsum} `;

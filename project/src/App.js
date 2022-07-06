@@ -8,8 +8,8 @@ import './js/tesst.js';
 import Index from './components/byIndex';
 
 import Login1 from './chattyComponents/login1';
-// import Login2 from './chattyComponents/loginCompany';
-// import Login3 from './chattyComponents/loginComsumer';
+// import Login2 from './chattyComponents/zzloginCompany';
+// import Login3 from './chattyComponents/zzloginComsumer';
 import Register from './chattyComponents/register';
 import Register2 from './chattyComponents/register2';
 import Forgotpwd from './chattyComponents/forgotpwd';
@@ -30,8 +30,8 @@ class App extends Component {
             <Route path ="/index" component={Index} />
 
             <Route path="/login1" component={Login1} />
-            {/* <Route path="/login2" component={Login2} /> */}
-            {/* <Route path="/login3" component={Login3} /> */}
+            {/* <Route path="/login2" component={Login2} />
+            <Route path="/login3" component={Login3} /> */}
             <Route path="/register" component={Register} />
             <Route path="/register2" component={Register2} />
             <Route path="/forgotpwd" component={Forgotpwd} />

@@ -8,7 +8,7 @@
         $password = password_hash($_REQUEST['password'], PASSWORD_DEFAULT);
         $firstname = $_REQUEST['inputFirstname'];
         $lastname = $_REQUEST['inputLastname'];
-        $tel= "0".$_REQUEST['phoneNumber'];
+        $tel= $_REQUEST['phoneNumber'];
         $reschknumber= $_REQUEST['reschknumber'];
         
 

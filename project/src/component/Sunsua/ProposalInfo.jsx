@@ -32,7 +32,7 @@ class ProposalInfo extends Component {
         },
         optionNum: []
     }
-
+    mealAmount = 1
     constructor() {
         super();
     }
@@ -43,7 +43,7 @@ class ProposalInfo extends Component {
         this.optNumCreate();
         this.setState({})
     }
-
+    /*  */
     optNumCreate = () => {
         for (let i = 0; i < this.state.proposalDetail.amount; i++) {
             this.state.optionNum[i] = i + 1;
@@ -51,19 +51,26 @@ class ProposalInfo extends Component {
         this.setState({});
     }
 
+    /* 選擇餐點數量 */
+    selNum = (event) => {
+        this.mealAmount = event.target.value;
+        console.log(this.mealAmount);
+    }
+    /* 加入方案 建立訂單 */
     addProposal = () => {
         if (this.state.proposalDetail.state != 1) {
             alert("提案已關閉");
         }
         else {
-
+            // TODO: 要根據帳號 輸入姓名
+            let num = this.mealAmount;
+            this.props.func(this.state.proposalDetail, "王大明", num);
         }
     }
 
     /*  給 TimeCountDown 呼叫，讓倒數為0時，方案狀態改變 */
     timeoutChageState = async () => {
-        //TODO: 時間到 改變狀態
-        console.log("結案!!!!");
+        // console.log("結案!!!!");
         this.state.proposalDetail.state = 0;
 
         /* 傳給後端 改變資料庫狀態 */
@@ -137,7 +144,7 @@ class ProposalInfo extends Component {
                             &nbsp;
                             <label className='h4'>{this.state.proposalDetail.amount}</label>
                             <label className='mr-2'>請選擇數量</label>
-                            <select id='totalMeal' className='my-2'>
+                            <select id='totalMeal' className='my-2' defaultValue={1} onChange={this.selNum}>
                                 {this.state.optionNum.map((item, index) => {
                                     return (
                                         <option key={index}>{item}</option>

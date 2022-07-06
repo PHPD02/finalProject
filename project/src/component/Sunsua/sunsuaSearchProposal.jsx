@@ -18,7 +18,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './css/sunsuaSearchProposal.css';
 class SunsuaSearchProposal extends Component {
     state = {
-        proposalDetail: []
+        proposalDetail: [],
         // proposalDetail: [
         //     {
         //         id: "001", namePartyA: "Max",
@@ -28,6 +28,15 @@ class SunsuaSearchProposal extends Component {
         //         setTime: 1656732751321, limitTime: 86400000, state: 1
         //     },
         // ]
+        orderDetail: {
+            namePartyA: "",
+            addr: "",
+            arriveTime: "",
+            shop: "",
+            meal: "",
+            cost: null,
+            amount: null
+        }
     }
     componentDidMount = async () => {
         let url = serverHost + '/finalProject_php/sunsua/selProposal.php';
@@ -38,7 +47,7 @@ class SunsuaSearchProposal extends Component {
                 if (res.status == 200) {
                     // console.log(res.data)
                     this.state.proposalDetail = res.data;
-                    console.log(this.state.proposalDetail);
+                    // console.log(this.state.proposalDetail);
                     this.setState({});
                 }
             })
@@ -47,26 +56,98 @@ class SunsuaSearchProposal extends Component {
             });
         // this.setState({});
     }
+    orderConfirm = (orderDetail, name, num) => {
+        console.log(orderDetail);
+        this.state.orderDetail = orderDetail;
+        this.state.orderDetail.namePartyB = name;
+        this.state.orderDetail.number = num;
+
+
+        this.setState({});
+        let proposalSearch = document.querySelector("#proposalSearch");
+        proposalSearch.classList.add("d-none");
+        let orderConfirm = document.querySelector("#orderConfirm");
+        orderConfirm.classList.remove("d-none");
+    }
+
+    /* 送出訂單 */
+    orderSubmit = () => {
+        alert("送出訂單");
+    }
+    /* 取消 */
+    cancel = () => {
+        let proposalSearch = document.querySelector("#proposalSearch");
+        proposalSearch.classList.remove("d-none");
+        let orderConfirm = document.querySelector("#orderConfirm");
+        orderConfirm.classList.add("d-none");
+    }
 
     render() {
         return (
-            <div className='container py-3'>
-                <h1 className='text-center'>搜尋方案</h1>
-                <div>
-                    <span>
-                        <input id="searchBox" placeholder='請輸入您的地址' />
-                        <i className="bi bi-search ml-1"></i>
-                    </span>
-                    {/* <input id="" placeholder='時間' /><i className="bi bi-search ml-1"></i> */}
+            <>
+                <div id="proposalSearch" className='container py-3'>
+                    <h1 className='text-center'>搜尋方案</h1>
+                    <div>
+                        <span>
+                            <input id="searchBox" placeholder='請輸入您的地址' />
+                            <i className="bi bi-search ml-1"></i>
+                        </span>
+                        {/* <input id="" placeholder='時間' /><i className="bi bi-search ml-1"></i> */}
 
+                    </div>
+                    <hr />
+                    {this.state.proposalDetail.map((value, index) => {
+                        return (
+                            <ProposalInfo key={index} proposalDetail={value} func={this.orderConfirm}> </ProposalInfo>
+                        )
+                    })}
                 </div>
-                <hr />
-                {this.state.proposalDetail.map((value, index) => {
-                    return (
-                        <ProposalInfo key={index} proposalDetail={value}> </ProposalInfo>
-                    )
-                })}
-            </div>
+                <div id="orderConfirm" className='container py-3 d-none'>
+
+                    <h1>確認提案內容</h1>
+                    <table className='table'>
+                        <tbody className='h3'>
+                            <tr>
+                                <th>你的姓名</th>
+                                <td>{this.state.orderDetail.namePartyB}</td>
+                            </tr>
+                            <tr>
+                                <th>送單人姓名</th>
+                                <td>{this.state.orderDetail.namePartyA}</td>
+                            </tr>
+                            <tr>
+                                <th>送到地址</th>
+                                <td>{this.state.orderDetail.addr}</td>
+                            </tr>
+                            <tr>
+                                <th>預計到達時間</th>
+                                <td>{this.state.orderDetail.arriveTime}</td>
+                            </tr>
+                            <tr>
+                                <th>餐廳</th>
+                                <td>{this.state.orderDetail.shop}</td>
+                            </tr>
+                            <tr>
+                                <th>餐點</th>
+                                <td>{this.state.orderDetail.meal}</td>
+                            </tr>
+                            <tr>
+                                <th>數量</th>
+                                <td>{this.state.orderDetail.number}</td>
+                            </tr>
+                            <tr>
+                                <th>金額</th>
+                                <td>{this.state.orderDetail.cost * this.state.orderDetail.number}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div className='px-5 d-flex flex-row-reverse'>
+                        <button className='mx-5' type="" onClick={this.orderSubmit}>送出訂單</button>
+                        <button className='mx-5' type="" onClick={this.cancel}>取消</button>
+                    </div>
+                </div>
+            </>
+
 
         );
     }

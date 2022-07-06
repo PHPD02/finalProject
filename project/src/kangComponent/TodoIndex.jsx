@@ -1,11 +1,11 @@
 import React from "react";
-import Restaurant from "./restaurant";
-import "../css/foodpandapage.css";
-import DashboardProduct from "./NOT_UESD_NOW/DashboardProducthboardProduct";
-import DashboardPanel from "./NOT_UESD_NOW/DashboardPanel";
-import '../css/DashboardPanel.css';
-
-import AddInventary from './AddInventary';
+// import Restaurant from "./restaurant";
+// import "../css/foodpandapage.css";
+// import DashboardProduct from "./NOT_UESD_NOW/DashboardProducthboardProduct";
+// import DashboardPanel from "./NOT_UESD_NOW/DashboardPanel";
+// import '../css/DashboardPanel.css';
+import '../css/DashboardProduct.css';
+// import AddInventary from './AddInventary';
 import axios from "./axios";
 
 
@@ -634,8 +634,8 @@ class TodoIndex extends React.Component {
         return (
           <div className="col-lg-4" key={index}>
             {/* 這key值需要提供，但還是能跑 */}
-            <div className="card alert">
-              <div className="row align-items-center">
+            <div className="card alert ">
+              <div className="row align-items-center card-body">
                 <div className="col-lg-5">
                   <div className="product-3-img">
                     <img src={item.Picture1} alt={item.Name}></img>

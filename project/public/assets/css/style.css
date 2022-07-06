@@ -3682,6 +3682,7 @@ tbody tr td:last-child {
 
 .product-3-img img {
     width: 100%;
+    max-height: 100px;
 }
 
 .product_details_3 {

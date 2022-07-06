@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "better-react-carousel";
-import Restaurant from "./restaurant";
+// import Restaurant from "./restaurant";
 import axios from "axios";
 
 class StoreSlidrBar2 extends React.Component {

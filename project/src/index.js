@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./css/foodpandapage.css";
 // import { ChakraProvider } from '@chakra-ui/react'
 // 好用插件 https://chakra-ui.com/getting-started/cra-guide
+// import "../src/css/css_initial.css"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

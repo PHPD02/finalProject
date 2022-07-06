@@ -19,7 +19,7 @@ class ToDoCreate extends React.Component {
 
   yesBtn = async () => {
     await Axios.post(`http://localhost:8000/todo/create/`, this.state.todoItem);
-    window.location = "#/TodoIndex";
+    window.location = "/TodoIndex";
     toast.success('建立品項成功')
   };
   todoItemTitleChange = async (e) => {
@@ -78,7 +78,7 @@ class ToDoCreate extends React.Component {
       //               onClick={this.yesBtn}
       //             />{" "}
       //             |
-      //             <a href="#/TodoIndex" className="btn btn-outline-info">
+      //             <a href="/TodoIndex" className="btn btn-outline-info">
       //               取消
       //             </a>
       //           </div>
@@ -151,7 +151,7 @@ class ToDoCreate extends React.Component {
               onClick={this.yesBtn}
             />
             
-            <a href="#/TodoIndex" className="btn btn-outline-info mr-5 btn-lg ml-1">
+            <a href="/TodoIndex" className="btn btn-outline-info mr-5 btn-lg ml-1">
               取消
             </a>
           </div>

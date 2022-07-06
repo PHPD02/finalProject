@@ -16,7 +16,7 @@ class ToDoDelete extends React.Component {
       `http://localhost:8000/todo/delete/${this.state.todoItem.Id}`
     );
     toast.success('刪除成功');
-    window.location = "#/TodoIndex";
+    window.location = "/TodoIndex";
   };
 
   render() {
@@ -70,7 +70,7 @@ class ToDoDelete extends React.Component {
             className="btn btn-outline-danger btn-lg mr-3"
           />
         
-          <a href="#/TodoIndex" className="btn btn-outline-info btn-lg ml-1">
+          <a href="/TodoIndex" className="btn btn-outline-info btn-lg ml-1">
             取消
           </a>
           </div>
@@ -105,7 +105,7 @@ class ToDoDelete extends React.Component {
       //         className="btn btn-outline-danger"
       //       />
       //       |
-      //       <a href="#/TodoIndex" className="btn btn-outline-info">
+      //       <a href="/TodoIndex" className="btn btn-outline-info">
       //         取消
       //       </a>
       //     </div>

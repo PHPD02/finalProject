@@ -20,14 +20,13 @@ class ToDoEdit extends React.Component {
     this.setState({});
   }
   okButtonClick = async () => {
-    
     var result = await axios.put(
       `http://localhost:8000/todo/item`,
       this.state.todoItem
     );
     console.log(result);
-    toast.success('修改成功');
-    window.location = "#/TodoIndex";
+    toast.success("修改成功");
+    window.location = "/TodoIndex";
   };
   todoItemNameChange = async (e) => {
     // var newState = { ...this.state };
@@ -40,6 +39,11 @@ class ToDoEdit extends React.Component {
   todoItemDescriptionChange = async (e) => {
     // var newState = { ...this.state };
     this.state.todoItem.Description = e.target.value;
+    this.setState({});
+  };
+  todoItemPicture1Change= async(e) => {
+    // var newState = { ...this.state };
+    this.state.todoItem.Picture1 = e.target.value;
     this.setState({});
   };
   render() {
@@ -86,12 +90,20 @@ class ToDoEdit extends React.Component {
           </div>
           <div className="form-group">
             <label htmlFor="itemPicture" className="h4">
-              架上圖片
-            </label>
+              重新上傳圖片(請輸入網址)
+            </label><br />
             <img
               src={this.state.todoItem.Picture1}
               alt={this.state.todoItem.Name}
             ></img>
+            <input
+              type="text"
+              className="form-control mb-4"
+              id="itemPrice"
+              // value={this.state.todoItem.Picture1}
+              onChange={this.todoItemPicture1Change}
+            ></input>
+<br /><br /><br /><br /><h3>這邊是之後看看能不能直接上傳圖片而非網址進資料庫方式</h3> 
             <input
               type="file"
               className="form-control-file mb-4 justify-content-end"
@@ -111,7 +123,7 @@ class ToDoEdit extends React.Component {
             />
 
             <a
-              href="#/TodoIndex"
+              href="/TodoIndex"
               className="btn btn-outline-info mr-5 btn-lg ml-1"
             >
               取消

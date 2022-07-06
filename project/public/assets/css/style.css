@@ -3689,14 +3689,12 @@ tbody tr td:last-child {
     padding: 15px 0
 }
 
-.product_details_3 .product_name h4 {
+.product_name h4 {
     font-size: 20px;
     font-weight: 800
 }
 
-.product_details_3 .product_des {
 
-}
 
 .product_details_3 .prdt_add_to_curt {
     padding-top: 10px

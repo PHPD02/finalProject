@@ -17,6 +17,7 @@
     "chakra-react-select": "^4.0.3",
     "framer-motion": "^6.3.13",
     "json-server": "^0.17.0",
+    "postcss-initial": "^4.0.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
     "react-bulma-components": "^4.1.0",

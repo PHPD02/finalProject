@@ -101,7 +101,7 @@ class firstpage extends Component {
         <br />
         {/* 頁角 */}
         <Footer />
-      </React.Fragment >
+      </React.Fragment>
 
     );
   }

@@ -109,7 +109,7 @@ class shopList extends Component {
         <br />
         <br />
         <Footer />
-      </React.Fragment >
+      </React.Fragment>
     );
   }
 }

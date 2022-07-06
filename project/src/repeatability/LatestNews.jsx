@@ -130,7 +130,7 @@ class LatestNews extends Component {
             </div>
 
             {/* 順弁頁面傳送 */}
-            <NavLink to="/convenient" className="col-md-4">
+            <NavLink to="/sunsua" className="col-md-4">
               <div className='container card cardshadow'>
                 <b className='p-1'>
                   <div className='row'>
@@ -156,7 +156,7 @@ class LatestNews extends Component {
 
 
 
-      </React.Fragment >
+      </React.Fragment>
     );
   }
 }

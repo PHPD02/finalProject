@@ -1,0 +1,39 @@
+#sunsua {
+    box-sizing: border-box;
+}
+
+.header {
+    /* #f9d367; */
+    /* #f767f9 */
+    /* #676bf9 */
+    background-color: rgba(259, 211, 103, 0.2);
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+}
+
+/* v2 上下版本 */
+#sunsuaBtnBox {
+    width: 80%;
+    margin: 0 auto;
+}
+.sunsuaBtn {
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+
+
+/* 測試用 */
+.olRed {
+    outline: 1px solid red;
+}
+
+.olBlue {
+    outline: 1px solid blue;
+}

@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
-import { HashRouter, Switch, Route} from 'react-router-dom';
+import { BrowserRouter, HashRouter, Switch, Route } from 'react-router-dom';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+import Sunsua from './component/Sunsua/sunsua.jsx';
 
 class App extends Component {
-  state = {  } 
-  render() { 
+  state = {}
+  render() {
     return (
-      <HashRouter>
-          <h1>Hello ,PHPD02</h1>
-      </HashRouter>
+      <BrowserRouter>
+        <Switch>
+          {/* 首頁 */}
+          {/* 登入頁面 */}
+          {/* 順弁頁 */}
+          <Route path="/sunsua" component={Sunsua} />
+          {/* 外送頁 */}
+
+
+          {/* ====================================== */}
+
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
- 
+
 export default App;
-  
 

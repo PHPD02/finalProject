@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { HashRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 import Firstpage from "./components/firstpage";
@@ -10,7 +10,7 @@ class App extends Component {
   state = {};
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <Switch>
           <Route path="/" component={Firstpage} exact />
           <Route path="/firstpage" component={Firstpage} />
@@ -18,7 +18,7 @@ class App extends Component {
           <Route path="/orderDetails" component={OrderDetails} />
           <Route path="/shopList" component={ShopList} />
         </Switch>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }

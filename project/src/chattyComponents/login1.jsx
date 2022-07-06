@@ -50,12 +50,23 @@ class Login1 extends Component {
                     alert("Welcome!");
                     // alert(data);
                     var sqlemail = JSON.parse(data).email;
+                    var sqlfirstname = JSON.parse(data).firstName;
                     var sqllastname = JSON.parse(data).lastName;
                     // console.log(JSON.parse(data).id);
                     localStorage.setItem('email', sqlemail);
+                    localStorage.setItem('firstname', sqlfirstname);
                     localStorage.setItem('lastname', sqllastname);
                     // window.location= url;
-                    window.location = "http://localhost:3000/index";
+                    // window.location = "http://localhost:3000/index";
+                    var fromwhere = localStorage.getItem('upwhere');
+                    if(fromwhere){
+                        window.location= fromwhere;
+                    }
+                    else{
+                        window.location = "http://localhost:3000/";
+                    }
+                    
+                    
                     // window.history.back();
                 }
 
@@ -65,7 +76,7 @@ class Login1 extends Component {
 
 
     componentDidMount() {
-
+        var fromwhere = localStorage.getItem('upwhere');
         var url = "http://localhost:3000/";
         if (getemail) {
             //登入狀態，不能連去登入頁

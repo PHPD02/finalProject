@@ -25,6 +25,7 @@ class LoginCompany extends Component {
             <React.Fragment>
                 <Navbar />
                 <br /><br /><br /><br />
+                <div>
                 <form id='loginCompany' className="form-signin form-top">
                     <h1 className='shadow text-center p-2 mb-4'><strong>廠商 登入</strong></h1>
                     <label htmlFor="inputEmail" className="sr-only">Email address</label>
@@ -44,6 +45,7 @@ class LoginCompany extends Component {
                     </div>
                     <hr />
                 </form>
+                </div>
             </React.Fragment>
         );
     }

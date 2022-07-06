@@ -10,12 +10,14 @@ import Footer from '../always used/footer';
 import '../css/payment.css';
 
 
+
 class Payment extends Component {
     state = {}
 
     componentDidMount() {
+        var upwhere = window.location.href;
+        localStorage.setItem('upwhere', upwhere);
         var url = "http://localhost:3000/login1";
-        
         var getemail = localStorage.getItem('email');
         // console.log(uId);
         if (!getemail) {

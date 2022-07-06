@@ -1,0 +1,67 @@
+.topColor {
+  background-color: #cdaa92;
+  height: 100px;
+}
+
+.firstpic {
+
+  height: 450px;
+}
+
+@media(max-width:1200px) {
+  .firstpic {
+
+    height: 430px;
+  }
+
+  .textheader {
+    font-size: 22px;
+  }
+
+  .textcontent {
+    font-size: 16.72px;
+  }
+
+  .textfooter {
+    font-size: 14px;
+  }
+
+}
+
+@media(max-width:600px) {
+  .firstpic {
+
+    height: 300px;
+  }
+
+  .textheader {
+    font-size: 18px;
+  }
+
+  .textcontent {
+    font-size: 12.72px;
+  }
+
+  .textfooter {
+    font-size: 10px;
+  }
+
+
+}
+
+.btnon {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.btnon:hover {
+  background-color: #f1f1f1;
+}

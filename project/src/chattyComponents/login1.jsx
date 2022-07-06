@@ -6,6 +6,7 @@ import { faFacebookSquare, faGoogle, faApple } from '@fortawesome/free-brands-sv
 import $ from 'jquery';
 
 import '../css/login.css';
+import '../css/signin.css';
 
 import Navbar from '../always used/navbar';
 

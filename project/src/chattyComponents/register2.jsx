@@ -38,7 +38,7 @@ function Register2() {
                     setResult(data);
                     alert(data);
                     localStorage.setItem('upwhere', upwhere);
-                    window.location="http://localhost:3000/login1";
+                    window.location = "http://localhost:3000/login1";
                 }
             })
         }
@@ -50,14 +50,16 @@ function Register2() {
     return (
         <React.Fragment>
             <Navbar />
-            <br /><br /><br /><br />
+            <br /><br /><br />
+            
+            {/* 消費者註冊 */}
             <div id='registerform'>
-                <form className="form-signin shadow" id='registerformin' encType="multipart/form-data"
+                <form className="form-signin shadow registerformin" id='registerformin' encType="multipart/form-data"
                     method='POST' action='http://localhost:8000/register.php'
                     onSubmit={(event) => handleSumbit(event)}>
                     <h1 className="h3 mb-3 font-weight-normal">讓我們開始註冊吧</h1>
                     <h6>開始建立你的帳戶</h6>
-                    {/* account */}
+                    {/* email */}
                     <input id="inputEmail" name='inputEmail' type="email" className="form-control" placeholder="電子郵件" required autoFocus />
 
                     <div className="container my-0">

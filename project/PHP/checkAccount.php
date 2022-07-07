@@ -23,7 +23,7 @@
         // var_dump($member);
         if (password_verify($passwd, $member->password)){
             //密碼正確
-            $_SESSION['member'] = $member;
+            // $_SESSION['member'] = $member;
             $s = json_encode($member);
             $uId = $member->uid;
             $finalresult =$uId;

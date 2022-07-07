@@ -96,7 +96,7 @@ class Login1 extends Component {
                 <br /><br /><br />
                 {/* 廠商 or 消費者 */}
                 <div id="login1" className="container">
-                    <h1 className='text-center my-5 border-bottom'>選擇廠商或用戶</h1>
+                    <h1 className='text-center my-5 border-bottom'>請選擇您是廠商或用戶</h1>
 
                     <div className="row mt-5">
                         <div className="col text-center">

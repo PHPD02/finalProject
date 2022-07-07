@@ -1,10 +1,12 @@
 import React from 'react';
-import Navbar from "../always used/navbar";
-import '../css/register.css';
 import $ from 'jquery';
+import axios from 'axios';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons/faCircleCheck';
+
+import Navbar from "../always used/navbar";
+import '../css/register.css';
 
 var upwhere = window.location.href;
 
@@ -12,9 +14,40 @@ function Register2() {
     const [result, setResult] = useState("");
 
     const reschkButton = () => {
-        var chkNumber = Math.floor(Math.random() * 10000);
-        // alert(chkNumber);
-        $('#chkmesg').text(chkNumber);
+        // var chkNumber = Math.floor(Math.random() * 10000);
+        // // alert(chkNumber);
+        // $('#chkmesg').text(chkNumber);
+        var sendmail = $('#inputEmail').val();
+        if(sendmail){
+            alert('已成功發送，請至信箱確認');
+        }
+        // console.log(sendmail);
+        $.post("http://localhost:8000/sendmail/sendmail.php", {sendmail}, function(data){
+            setResult(data);
+            
+        })
+        // .then((res) => {
+        //     setResult(res.data);
+        //     console.log(res.data);
+        // })
+        
+    }
+
+    const enterChkNumber = () => {
+        var correctNumber = parseInt( $('#chkmesg').text());
+        var inputChknumber = parseInt( $('#reschknumber').val());
+        // alert(correctNumber);
+
+        // console.log(chkNumber);
+        if (inputChknumber == correctNumber) {
+            $('#chkconfirm').css("visibility",'visible') ;
+            // $('#chkconfirm').fadeIn();
+            // break;
+        }
+        if (inputChknumber != correctNumber) {
+            $('#chkconfirm').css("visibility",'hidden') ;
+            // break;
+        }
     }
 
     const handleSumbit = (e) => {
@@ -35,7 +68,7 @@ function Register2() {
                 url: form.attr("action"),
                 data: form.serialize(),
                 success(data) {
-                    setResult(data);
+                    // setResult(data);
                     alert(data);
                     localStorage.setItem('upwhere', upwhere);
                     window.location="http://localhost:3000/login1";
@@ -63,7 +96,9 @@ function Register2() {
                     <div className="container my-0">
                         <div className='row mb-2'>
                             {/* 驗證碼 */}
-                            <input type="text" id="reschknumber" name='reschknumber' className="form-control col-7" placeholder="驗證碼" required autoFocus />
+                            <input type="text" id="reschknumber" name='reschknumber' 
+                                className="form-control col-7" placeholder="驗證碼" required autoFocus 
+                                onChange={enterChkNumber} />
                             <button onClick={reschkButton} className='btn btn-primary btn-block col-5'><small>發送驗證碼</small></button>
                             <div id='chkconfirm' style={{ color: 'green', height: '15px', visibility: 'hidden' }} ><FontAwesomeIcon icon={faCircleCheck} /></div>
 
@@ -79,7 +114,7 @@ function Register2() {
                     <input type="text" id="phoneNumber" name="phoneNumber" className='btn-block form-control' placeholder='手機號碼' required autoFocus />
                     {/* password */}
                     <input type="password" id="password" name="password" className="form-control" placeholder="密碼" required autoFocus />
-                    <div id="chkmesg" className='h6' style={{ color: 'red', height: '10px' }}></div>
+                    <div id="chkmesg" className='h6' style={{ color: 'red', height: '10px' , visibility:'hidden'}}>{result}</div>
                     <button className="btn btn-lg btn-danger btn-block mt-4" type="submit">建立個人帳戶</button>
                 </form>
             </div>

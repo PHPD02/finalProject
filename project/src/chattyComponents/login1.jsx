@@ -20,18 +20,31 @@ var getlastname = localStorage.getItem('lastname');
 
 class Login1 extends Component {
     state = {}
-
+    // 廠商點擊
     companyClick = () => {
         $('#login1').hide();
         $('#loginCompany').fadeIn();
     }
-
+    // 消費者點擊
     comsumerClick = () => {
         $('#login1').hide();
         // $('#loginComsumer').attr('style','display:block');
         $('#loginComsumer').fadeIn();
     }
-
+    // 廠商提交登入表單
+    handleSubmitCompany = (e) => {
+        e.preventDefault();
+        const form = $(e.target);
+        $.ajax({
+            type: "POST",
+            url: form.attr("action"),
+            data:form.serialize(),
+            success(data){
+                alert(data);
+            }
+        })
+    }
+    // 消費者提交登入表單
     handleSumbit = (e) => {
         e.preventDefault();
         // localStorage.setItem('uId', $('#inputEmail').val()) 
@@ -74,7 +87,6 @@ class Login1 extends Component {
         })
     }
 
-
     componentDidMount() {
         var fromwhere = localStorage.getItem('upwhere');
         var url = "http://localhost:3000/";
@@ -82,8 +94,16 @@ class Login1 extends Component {
             //登入狀態，不能連去登入頁
             window.location = url;
         }
-        var urlfrom = "http://localhost:3000/register2"
+        var urlfrom = "http://localhost:3000/register"
+        var urlfrom2 = "http://localhost:3000/register2"
         if (fromwhere == urlfrom) {
+            // 廠商註冊完進到登入畫面
+            $('#login1').hide();
+            // $('#loginComsumer').attr('style','display:block');
+            $('#loginCompany').fadeIn();
+        }
+        if (fromwhere == urlfrom2) {
+            // 消費者註冊完進到登入畫面
             $('#login1').hide();
             // $('#loginComsumer').attr('style','display:block');
             $('#loginComsumer').fadeIn();
@@ -122,7 +142,9 @@ class Login1 extends Component {
 
                 {/* 廠商登入 */}
                 <div id="loginCompany" style={{ display: 'none' }}>
-                    <form className="form-signin form-top" >
+                    <form className="form-signin form-top"
+                        action='http://localhost:8000/checkCompanyAccount.php' method='post'
+                        onSubmit={(event) => this.handleSubmitCompany(event)} >
                         <h1 className='shadow text-center p-2 mb-4'><strong>廠商 登入</strong></h1>
                         {/* 廠商email */}
                         <input type="email" id="companyInputEmail" name='companyInputEmail' className="form-control" placeholder="Email address" required autoFocus />

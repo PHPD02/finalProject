@@ -6,10 +6,10 @@
     });
     session_start();
 
-    if (!isset($_REQUEST['inputEmail'])) header("Location: http://localhost:3000/");
+    if (!isset($_REQUEST['companyInputEmail'])) header("Location: http://localhost:3000/");
 
-    $inputEmail = $_REQUEST['inputEmail']; $passwd = $_REQUEST['inputPassword'];
-    $sql = "SELECT * FROM usermember WHERE email = ?";
+    $inputEmail = $_REQUEST['companyInputEmail']; $passwd = $_REQUEST['companyInputPassword'];
+    $sql = "SELECT * FROM restaurant WHERE email = ?";
 
     $stmt = $mysqli->prepare($sql);
     $stmt->bind_param('s', $inputEmail);

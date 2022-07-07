@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Navbar from '../repeatability/Navbar';
-import './orderdetails.css';
+import Navbar from './repeatability/Navbar';
+import './css/orderdetails.css';
 // import Footer from '../repeatability/Footer';
 class orderDetails extends Component {
   state = {}

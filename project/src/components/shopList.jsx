@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Navbar from '../repeatability/Navbar';
-import ShopCard from '../repeatability/ShopCard';
-import Footer from '../repeatability/Footer';
+import Navbar from './repeatability/Navbar';
+import ShopCard from './component/ShopCard';
+import Footer from './repeatability/Footer';
 import { NavLink } from 'react-router-dom';
-import "./shoplist.css";
-import SearchBar from '../repeatability/SearchBar';
+import "./css/shoplist.css";
+import SearchBar from './component/SearchBar';
 class shopList extends Component {
   state = {}
   render() {

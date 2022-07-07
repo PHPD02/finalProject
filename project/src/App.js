@@ -1,11 +1,17 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+// 引入模板
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
+import "bootstrap/dist/js/bootstrap.bundle";
+
+// 引入首頁
 import Firstpage from "./components/firstpage";
-import Convenient from "./partpage/convenient";
-import OrderDetails from "./partpage/orderDetails";
-import ShopList from "./partpage/shopList";
+// 引入訂單詳情
+import OrderDetails from "./components/orderDetails";
+// 引入店家頁面
+import ShopList from "./components/shopList";
+
 class App extends Component {
   state = {};
   render() {
@@ -14,7 +20,7 @@ class App extends Component {
         <Switch>
           <Route path="/" component={Firstpage} exact />
           <Route path="/firstpage" component={Firstpage} />
-          <Route path="/convenient" component={Convenient} />
+
           <Route path="/orderDetails" component={OrderDetails} />
           <Route path="/shopList" component={ShopList} />
         </Switch>

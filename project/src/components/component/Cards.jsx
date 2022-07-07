@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import "./card.css";
+import "./css/card.css";
 class Cards extends Component {
   state = {}
   render() {

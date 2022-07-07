@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import './latesnews.css';
+import './css/latesnews.css';
 // import 'aos/dist/aos.css';
 // import AOS from 'aos';
 class LatestNews extends Component {

@@ -4,10 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCcApplePay } from '@fortawesome/free-brands-svg-icons';
 import { faCreditCard, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 
-import Navbar from '../always used/navbar';
-import Footer from '../always used/footer';
+import Navbar from './always used/navbar';
+import Footer from './always used/footer';
 
-import '../css/payment.css';
+import './css/payment.css';
 
 
 

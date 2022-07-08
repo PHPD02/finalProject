@@ -5,10 +5,10 @@ import { faUserAlt, faStore } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookSquare, faGoogle, faApple } from '@fortawesome/free-brands-svg-icons';
 import $ from 'jquery';
 
-import '../css/login.css';
-import '../css/signin.css';
+import './css/login.css';
+import './css/signin.css';
 
-import Navbar from '../always used/navbar';
+import Navbar from './always used/navbar';
 
 // var comsumerButton = document.getElementById('#loginComsumer');
 // var companyButton = document.getElementById('#loginCompany');

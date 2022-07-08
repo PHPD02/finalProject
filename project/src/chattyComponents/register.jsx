@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { NavLink } from 'react-router-dom';
-import Navbar from '../always used/navbar';
-import '../css/register.css';
+import Navbar from './always used/navbar';
+import './css/register.css';
 import $ from "jquery";
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import $ from 'jquery';
 
-import Navbar from '../always used/navbar';
-import Footer from '../always used/footer';
+import Navbar from './always used/navbar';
+import Footer from './always used/footer';
 
 import Cartcard from './cartcard';
 
-import '../css/cart.css';
+import './css/cart.css';
 
 
 

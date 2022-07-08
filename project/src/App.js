@@ -3,9 +3,9 @@ import { BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
-import './js/tesst.js';
+import './chattyComponents/js/tesst.js';
 
-import Index from './components/byIndex';
+import Index from './chattyComponents/components/byIndex';
 
 import Login1 from './chattyComponents/login1';
 // import Login2 from './chattyComponents/zzloginCompany';
@@ -17,8 +17,8 @@ import Cart from './chattyComponents/cart';
 import Card from './chattyComponents/cartcard';
 import Payment from './chattyComponents/payment';
 
-import Test from './chattyComponents/zztestsql';
-import Test1 from './chattyComponents/zzteststate';
+// import Test from './chattyComponents/zztestsql';
+// import Test1 from './chattyComponents/zzteststate';
 
 class App extends Component {
   state = {  } 
@@ -39,8 +39,8 @@ class App extends Component {
             <Route path="/cartcard" component={Card} />
             <Route path="/payment" component={Payment} />
 
-            <Route path="/test" component={Test} />
-            <Route path="/test1" component={Test1} />
+            {/* <Route path="/test" component={Test} />
+            <Route path="/test1" component={Test1} /> */}
 
           </Switch>
       </BrowserRouter>

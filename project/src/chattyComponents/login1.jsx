@@ -73,6 +73,9 @@ class Login1 extends Component {
                     // window.location = "http://localhost:3000/index";
                     var fromwhere = localStorage.getItem('upwhere');
                     if(fromwhere){
+                        if(fromwhere = "http://localhost:3000/register2" || "http://localhost:3000/register" ){
+                            window.location = "http://localhost:3000/";
+                        }
                         window.location= fromwhere;
                     }
                     else{

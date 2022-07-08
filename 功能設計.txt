@@ -1,12 +1,10 @@
 https://magazine.foodpanda.com.tw/healthy-meal/?gclid=Cj0KCQjw5ZSWBhCVARIsALERCvzjsDvCiUDOCUKzKdPsmSTJXuuniNzZj66CR685NVS0Iu3Os9Lk3S4aAjb-EALw_wcB
 需要的功能(完成後請打圈)
-1.串連資料庫
-2.地圖點選 出現相對應的合作店家 
-3.計算配送時間
-4.店家頁面 需要二個判斷式 input 一個輸入欄位(地址) 
+1.地圖點選 出現相對應的合作店家 (O)完成 -串連資料庫
+2.計算配送時間
+3.店家頁面 需要二個判斷式 input 一個輸入欄位(地址) 
   一. 是否有填寫配送地址 才可點餐 GOOGLE MAP
-  二. 是否距離內 才可點餐        
-5.//登出會返回首頁
+  二. 是否距離內 才可點餐 
 ----------------( 對話框 )-------------------
 壹.
   對話框表格(店家頁面的部分)

@@ -58,7 +58,7 @@ class firstpage extends Component {
         </div>
 
         <div className='mt-4'>
-          <h4 className='text-center '>特別合作店家</h4>
+          <h4 className='text-center'><span id="city"></span>特別合作店家</h4>
           {/* <h4 className='text-center'>
             請選擇區域:<select><option>1</option>
               <option>2</option>

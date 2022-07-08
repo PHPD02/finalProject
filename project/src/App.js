@@ -11,6 +11,8 @@ import Firstpage from "./components/firstpage";
 import OrderDetails from "./components/orderDetails";
 // 引入店家頁面
 import ShopList from "./components/shopList";
+// 測試
+// import Taiwan from "./Taiwan";
 
 class App extends Component {
   state = {};
@@ -23,6 +25,8 @@ class App extends Component {
 
           <Route path="/orderDetails" component={OrderDetails} />
           <Route path="/shopList" component={ShopList} />
+
+          {/* <Route path="/taiwan" component={Taiwan} /> */}
         </Switch>
       </BrowserRouter>
     );

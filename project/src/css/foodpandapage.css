@@ -16,3 +16,17 @@
 .section1_searchbar{
     padding-top: 50px;
 }
+.form-control:focus{
+    outline:none,
+
+}
+/* searchbox部分 */
+.searchBox{
+    max-width: 900px;
+    height: 100px;
+    box-shadow: 3px 3px 15px grey;
+}
+#locate_btn :hover{
+    color:red
+}
+

@@ -4,14 +4,14 @@ import Restaurants from "./restaurants";
 import Caroursel from "./Caroursel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/js/bootstrap.bundle';
-// import { Container } from "react-bootstrap";
-// import StoreSlideBar from "./StoreSlideBar";
 import StoreSlideBar2 from "./StoreSlideBar2";
-// import MultipleSearch from "./MultipleSearch";
-// import MultipleSearch2 from "./MultipleSearch2";
 import "../css/foodpandapage.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ChatRobot from "./ChatRobot";
+import LiveChat from "./LiveChat"
+// import ChatRobot2 from "./NOT_UESD_NOW/ChatRobot2OW/ChatRobot2"
+// import FindDisatnce from "./js/GetCurrentPosition"
 class FoodpandaPage extends React.Component {
 
   componentDidMount() {
@@ -54,6 +54,10 @@ class FoodpandaPage extends React.Component {
             </div>
           </div>
         </div>
+        <ChatRobot />
+        <LiveChat />
+        {/* <ChatRobot2/> */}
+        {/* <FindDisatnce /> */}
         <div className="container mt-4" >
           <div className="section2">
           <div className="section2_bar1 " data-aos="fade-right" data-aos-once="true" >
@@ -106,6 +110,7 @@ class FoodpandaPage extends React.Component {
           {/* <MultipleSearch /> */}
           {/* <MultipleSearch2 /> */}
         </div>
+        
       </React.Fragment>
     );
   }

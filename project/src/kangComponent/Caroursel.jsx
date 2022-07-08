@@ -37,7 +37,7 @@ class Caroursel extends React.Component {
               }}
               pagination={{ clickable: true }}
               onSwiper={(swiper) => console.log(swiper)}
-              onSlideChange={() => console.log('slide change')}
+              // onSlideChange={() => console.log('slide change')}
               style={{width:'100%',height:'60vh'}}
             >
               <SwiperSlide><img src={img1} alt="img1" style={{objectFit:'auto'}}/></SwiperSlide>

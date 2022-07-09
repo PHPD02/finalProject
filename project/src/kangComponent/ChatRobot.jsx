@@ -30,10 +30,10 @@ const steps = [
     {
         id: '2',
         message: " 你好 {previousValue}, 請問需要甚麼服務呢?可以透過點擊以下選項，來讓我為您解答喔!",
-        trigger: '4',
+        trigger: '3',
     }, 
     {
-        id: '4',
+        id: '3',
         options: [
               
             // When we need to show a number of
@@ -69,7 +69,6 @@ function ChatRobot() {
     return (
         <div className="App">
             <ThemeProvider theme={theme}>
-            <React.StrictMode>
                 <ChatBot
   
                     // This apperas as the header
@@ -79,7 +78,6 @@ function ChatRobot() {
                     {...config}
   
                 />
-            </React.StrictMode>
             </ThemeProvider>
         </div>
     );

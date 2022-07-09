@@ -1,0 +1,96 @@
+.sign-wrapper{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+     align-items:center;
+}
+.signin-button{
+    padding: 30px;
+    font-Size: 20px;
+    border-Radius: 0;
+    font-Weight: 600;
+}
+.chatroom-wrapper{
+    border: 1px solid black;
+}
+.signout-wrapper{
+    border-bottom: 1px solid gray;
+    display: flex;
+    height: 40px;
+    display: flex;
+    float: right;
+
+}
+.signout-button{
+    font-size: 15px;
+    border-radius: 5px;
+    margin: 5px;
+}
+.chatroom-wrapper .msgs {
+    margin: 110px 0;
+    display: flex;
+    flex-direction: column;
+    /* 文字區塊 */
+}
+.chatroom-wrapper .msgs img{
+    border-radius: 50%;
+    height: 55px;
+    width:55px;
+    border: 2px solid black;
+}
+.chatroom-wrapper .msgs p{
+    font-weight: 500;
+    font-size: 25px;
+    margin: 10px;
+    overflow-wrap: break-word;
+}
+.chatroom-wrapper .msg {
+    display: flex;
+    width:65%;
+    padding: 20px;
+    margin: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px grey;
+    align-items: center;
+    /* 單一條文字 */
+}
+
+/* 判斷彼此是寄件人還是收件人 */
+.chatroom-wrapper .msgs .sent {
+    background-color: rgb(99, 99, 207);
+    border: 1px solid black;
+    color: white;
+    flex-direction: row-reverse;
+    float: right;
+}
+.chatroom-wrapper .msgs .received {
+    border: 1px solid lightgray;
+    background-color: #FAFAFA;
+    float: left;
+}
+
+.sendMessage-wrapper{
+    display: flex;
+    width: 100%;
+    border-top: 1px solid lightgray;
+    padding: 20px;
+    background-color: #fafafa;
+    align-items: center;
+}
+.sendMessage-wrapper input{
+    width:80%;
+    border: none;
+    border-bottom: 2px solid grey;
+    margin:0 15px;
+    background-color: #fafafa;
+    outline: none;
+}
+.sendMessage-wrapper button{
+    width:20%;
+    border: none;
+    margin:0 15px;
+    background-color: #fafafa;
+    font-size: 20px;
+    font-weight: bold;
+    border-left: 2px solid gray;
+}

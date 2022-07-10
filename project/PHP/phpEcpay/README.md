@@ -29,6 +29,14 @@ $obj->HashIV      = 'v77hoKGq4kWxNNIS';
 
 
 
+ps
+youtube
+https://www.youtube.com/watch?v=zq9IaQI8Ykk&t=168s
+
+文件欄位
+https://www.ecpay.com.tw/Content/files/gw_p110.pdf
+
+
 
 
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Navbar from '../always used/navbar.jsx';
+import Navbar from '../components item/navbar';
 
 class byIndex extends Component {
     state = {  } 

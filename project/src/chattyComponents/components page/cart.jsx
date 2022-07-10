@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import $ from 'jquery';
 
-import Navbar from './always used/navbar';
-import Footer from './always used/footer';
+import Navbar from '../components item/navbar';
+import Footer from '../components item/footer';
 
-import Cartcard from './cartcard';
+import Cartcard from '../components item/cartcard';
 
-import './css/cart.css';
-
-
+import '../css/cart.css';
 
 class Cart extends Component {
-    state = { count: 1, countsum: 100, price: 100,
+    state = { count: 1, 
+              countsum: 100, 
+              price: 100,
               total: 100+19 }
 
     // 餐點數量增加

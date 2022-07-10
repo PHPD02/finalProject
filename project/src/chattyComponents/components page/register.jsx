@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-// import { NavLink } from 'react-router-dom';
-import Navbar from './always used/navbar';
-import './css/register.css';
 import $ from "jquery";
+import React from 'react';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons/faCircleCheck';
+
+import Navbar from '../components item/navbar';
+import '../css/login.css';
 
 
 var upwhere = window.location.href;

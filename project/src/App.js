@@ -5,20 +5,24 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import './chattyComponents/js/tesst.js';
 
-import Index from './chattyComponents/components/byIndex';
+import Login1 from './chattyComponents/components page/login1';
+import Register from './chattyComponents/components page/register';
+import Register2 from './chattyComponents/components page/register2';
+import Forgotpwd from './chattyComponents/components page/forgotpwd';
+import Cart from './chattyComponents/components page/cart';
+import Payment from './chattyComponents/components page/payment';
 
-import Login1 from './chattyComponents/login1';
-// import Login2 from './chattyComponents/zzloginCompany';
-// import Login3 from './chattyComponents/zzloginComsumer';
-import Register from './chattyComponents/register';
-import Register2 from './chattyComponents/register2';
-import Forgotpwd from './chattyComponents/forgotpwd';
-import Cart from './chattyComponents/cart';
-import Card from './chattyComponents/cartcard';
-import Payment from './chattyComponents/payment';
-
+import Card from './chattyComponents/components item/cartcard';
+import Index from './chattyComponents/components try/byIndex';
 // import Test from './chattyComponents/zztestsql';
 // import Test1 from './chattyComponents/zzteststate';
+// import Login2 from './chattyComponents/zzloginCompany';
+// import Login3 from './chattyComponents/zzloginComsumer';
+// import Glogin from './chattyComponents/components try/googlelogin';
+import UseGoogleLogin from './chattyComponents/components try/useGoogleLogin';
+import facebooklogin from './chattyComponents/components try/facebooklogin';
+// import './index';
+import TestScreen from './chattyComponents/components try/testscreen.jsx';
 
 class App extends Component {
   state = {  } 
@@ -38,6 +42,11 @@ class App extends Component {
             <Route path="/cart" component={Cart} />
             <Route path="/cartcard" component={Card} />
             <Route path="/payment" component={Payment} />
+            {/* <Route path="/googlelogin" component={Glogin} /> */}
+            <Route path="/usegooglelogin" component={UseGoogleLogin} />
+            <Route path="/usefacebooklogin" component={facebooklogin} />
+            <Route path="/testScreen" component={TestScreen} />
+
 
             {/* <Route path="/test" component={Test} />
             <Route path="/test1" component={Test1} /> */}

@@ -1,12 +1,11 @@
 import React from 'react';
 import $ from 'jquery';
-// import axios from 'axios';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons/faCircleCheck';
 
-import Navbar from "./always used/navbar";
-import './css/register.css';
+import Navbar from "../components item/navbar";
+import '../css/register.css';
 
 var upwhere = window.location.href;
 

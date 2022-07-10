@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import Navbar from './always used/navbar';
-import './css/register.css';
+import Navbar from '../components item/navbar';
+import '../css/register.css';
 
 class Forgotpwd extends Component {
     state = {  } 
@@ -12,7 +12,7 @@ class Forgotpwd extends Component {
                 <Navbar />
                 <br /><br /><br /><br /><br />
                 <div id='registerform'>
-                    <form className="form-signin shadow" id='registerformin'>
+                    <form className="form-signin shadow registerformin" id='registerformin'>
                         <h1 className="h3 mb-3 font-weight-normal">你的email是？</h1><br /> 
                         <h6>輸入你的email，我們將發送重設密碼連結</h6>
                         <label htmlFor="inputEmail" className="sr-only">電子郵件</label>

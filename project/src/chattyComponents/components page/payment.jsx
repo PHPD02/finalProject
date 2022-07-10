@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-// import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCcApplePay } from '@fortawesome/free-brands-svg-icons';
 import { faCreditCard, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 
-import Navbar from './always used/navbar';
-import Footer from './always used/footer';
+import Navbar from '../components item/navbar';
+import Footer from '../components item/footer';
 
-import './css/payment.css';
+import '../css/payment.css';
 
 
 

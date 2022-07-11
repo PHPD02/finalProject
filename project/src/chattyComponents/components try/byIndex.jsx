@@ -20,6 +20,10 @@ class byIndex extends Component {
                     <NavLink to="/forgotpwd">forgotpwd page</NavLink><br />
                     <NavLink to="/cart">cart page</NavLink><br />
                     <NavLink to="/payment">payment page</NavLink><br />
+                    <NavLink to="/storeCards">storeCards</NavLink><br />
+                    {/* <NavLink to="/forgotpwd">forgotpwd page</NavLink><br />
+                    <NavLink to="/cart">cart page</NavLink><br />
+                    <NavLink to="/payment">payment page</NavLink><br /> */}
                     <div>{localStorage.getItem('uId')}</div>
                 </div>
             </React.Fragment>

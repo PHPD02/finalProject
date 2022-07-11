@@ -1,6 +1,6 @@
 import { useState } from "react";
 import $ from "jquery";
-import "../App.css";
+// import "../App.css";
   
 function App() {
     const [name, setName] = useState("");

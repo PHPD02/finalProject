@@ -15,7 +15,7 @@ import Payment from './chattyComponents/components page/payment';
 // import Card from './chattyComponents/components item/cartcard';
 import Index from './chattyComponents/components try/byIndex';
 import StoreCard from './chattyComponents/components item/storeCards';
-// import Test from './chattyComponents/zztestsql';
+import Test from './chattyComponents/components try/zztestsql';
 // import Test1 from './chattyComponents/zzteststate';
 // import Login2 from './chattyComponents/zzloginCompany';
 // import Login3 from './chattyComponents/zzloginComsumer';
@@ -24,6 +24,7 @@ import UseGoogleLogin from './chattyComponents/components try/useGoogleLogin';
 import facebooklogin from './chattyComponents/components try/facebooklogin';
 // import './index';
 import TestScreen from './chattyComponents/components try/testscreen.jsx';
+import StorePage from './chattyComponents/components page/storePage.jsx';
 
 class App extends Component {
   state = {  } 
@@ -48,10 +49,11 @@ class App extends Component {
             <Route path="/usefacebooklogin" component={facebooklogin} />
             <Route path="/testScreen" component={TestScreen} />
             <Route path="/storeCards" component={StoreCard} />
+            <Route path="/storePage" component={StorePage} />
 
 
-            {/* <Route path="/test" component={Test} />
-            <Route path="/test1" component={Test1} /> */}
+            <Route path="/test" component={Test} />
+            {/* <Route path="/test1" component={Test1} /> */}
 
           </Switch>
       </BrowserRouter>

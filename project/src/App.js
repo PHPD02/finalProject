@@ -11,7 +11,7 @@ import TodoDelete from "./kangComponent/TodoDelete";
 import MemberPage from "./kangComponent/MemberPage";
 import Order_record from "./kangComponent/Order_record";
 import CommentPage from "./kangComponent/CommentPage";
-import Dashboard from "./kangComponent/Dashboard"
+import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard"
 
 class App extends Component {
   state = {};

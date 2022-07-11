@@ -12,6 +12,8 @@ import ChatRobot from "./ChatRobot";
 // import LiveChat from "./LiveChat";
 import FirebaseIndex from "./firebase/firebaseIndex";
 
+import Section1_pic from "../img/man.png";
+
 // import ChatRobot2 from "./NOT_UESD_NOW/ChatRobot2OW/ChatRobot2"
 // import FindDisatnce from "./js/GetCurrentPosition"
 class FoodpandaPage extends React.Component {
@@ -40,8 +42,27 @@ class FoodpandaPage extends React.Component {
               登入 / 註冊
             </button>
           </div>
-
-          <Caroursel />
+          <div className="first-section d-flex">
+            <div className="dot1 dot"></div>
+            <div className="dot2 dot"></div>
+            <div className="dot3 dot"></div>
+            <div className="section-left flex-grow-1 ">
+              <h2>
+                <span className="special-text">&nbsp;</span>新功能上線中
+              </h2>
+              <h4>
+                搶先體驗 <br />
+                &emsp; 獲得100元順弁優惠券
+              </h4>
+              <div className="btn-collect">
+                <button className="first-try">搶先體驗</button>
+                <button class="play-btn"></button>
+              </div>
+            </div>
+            <div className="section-right">
+              <img src={Section1_pic} alt="" />
+            </div>
+          </div>
         </div>
         <div className=" section1_searchsection">
           <div>
@@ -55,11 +76,23 @@ class FoodpandaPage extends React.Component {
             </div>
           </div>
         </div>
+        <div className="container">
+          <Caroursel />
+        </div>
         <ChatRobot />
         {/* <LiveChat /> */}
         <FirebaseIndex />
         {/* <ChatRobot2/> */}
         {/* <FindDisatnce /> */}
+{/* 測試 */}
+        <button id="btn_locate" onclick="locate()">
+          點我定位
+        </button>
+        <div id="location"></div>
+
+        <div id="mapArea"></div>
+{/* 測試 */}
+
         <div className="container mt-4">
           <div className="section2">
             <div
@@ -122,9 +155,7 @@ class FoodpandaPage extends React.Component {
               探索更多<i className="fa fa-star" style={{ color: "gold" }}></i>
             </h2>
           </div>
-          <section>
-            <Restaurants />
-          </section>
+          <section>{/* <Restaurants />    先關掉太多了*/}</section>
           {/* <MultipleSearch /> */}
           {/* <MultipleSearch2 /> */}
         </div>

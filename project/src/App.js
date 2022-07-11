@@ -12,8 +12,9 @@ import Forgotpwd from './chattyComponents/components page/forgotpwd';
 import Cart from './chattyComponents/components page/cart';
 import Payment from './chattyComponents/components page/payment';
 
-import Card from './chattyComponents/components item/cartcard';
+// import Card from './chattyComponents/components item/cartcard';
 import Index from './chattyComponents/components try/byIndex';
+import StoreCard from './chattyComponents/components item/storeCards';
 // import Test from './chattyComponents/zztestsql';
 // import Test1 from './chattyComponents/zzteststate';
 // import Login2 from './chattyComponents/zzloginCompany';
@@ -40,12 +41,13 @@ class App extends Component {
             <Route path="/register2" component={Register2} />
             <Route path="/forgotpwd" component={Forgotpwd} />
             <Route path="/cart" component={Cart} />
-            <Route path="/cartcard" component={Card} />
+            {/* <Route path="/cartcard" component={Card} /> */}
             <Route path="/payment" component={Payment} />
             {/* <Route path="/googlelogin" component={Glogin} /> */}
             <Route path="/usegooglelogin" component={UseGoogleLogin} />
             <Route path="/usefacebooklogin" component={facebooklogin} />
             <Route path="/testScreen" component={TestScreen} />
+            <Route path="/storeCards" component={StoreCard} />
 
 
             {/* <Route path="/test" component={Test} />

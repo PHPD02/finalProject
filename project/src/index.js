@@ -7,8 +7,6 @@ import reportWebVitals from './reportWebVitals';
 
 import { ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-
 import "./css/foodpandapage.css";
 // import { ChakraProvider } from '@chakra-ui/react'
 // 好用插件 https://chakra-ui.com/getting-started/cra-guide

@@ -27,6 +27,7 @@ class FoodpandaPage extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <div className="body-wrapper">
         <div className="container">
           <div className="d-flex justify-content-end mt-2 ">
             <button
@@ -149,6 +150,7 @@ class FoodpandaPage extends React.Component {
           <section>{/* <Restaurants />    先關掉太多了*/}</section>
           {/* <MultipleSearch /> */}
           {/* <MultipleSearch2 /> */}
+        </div>
         </div>
       </React.Fragment>
     );

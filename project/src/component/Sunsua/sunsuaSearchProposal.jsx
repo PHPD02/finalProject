@@ -4,6 +4,8 @@
  * ===========================================
  * TODO: uid 要改成動態，從登入那邊抓
  * TODO: 運費也要改成動態，從google map api 判斷句離
+ * 
+ * FIXME: 可以的話，這裡是改變proposal的amount 當其歸0時關閉訂單，可以的畫 蓋成 proposal join sunsua_order
  */
 import React, { Component } from 'react';
 import axios from "axios";

@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Sunsua from './component/Sunsua/sunsua.jsx';
 
+/* 測試 */
+import ImgUpload from './component/test/imgUpload'
 class App extends Component {
   state = {}
   render() {
@@ -19,6 +21,7 @@ class App extends Component {
 
 
           {/* ====================================== */}
+          <Route path="/imgtest" component={ImgUpload} />
 
         </Switch>
       </BrowserRouter>

@@ -84,15 +84,6 @@ class FoodpandaPage extends React.Component {
         <FirebaseIndex />
         {/* <ChatRobot2/> */}
         {/* <FindDisatnce /> */}
-{/* 測試 */}
-        <button id="btn_locate" onclick="locate()">
-          點我定位
-        </button>
-        <div id="location"></div>
-
-        <div id="mapArea"></div>
-{/* 測試 */}
-
         <div className="container mt-4">
           <div className="section2">
             <div

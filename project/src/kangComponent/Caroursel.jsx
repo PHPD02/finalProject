@@ -12,10 +12,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-import img1 from '../img/img1.jpg';
-import img2 from '../img/img2.jpg';
-import img3 from '../img/img3.jpg';
-import img4 from '../img/img4.jpg';
+import img1 from '../img/ad1.png';
+import img2 from '../img/ad2.png';
+import img3 from '../img/ad3.png';
+import img4 from '../img/ad4.png';
 
 
 
@@ -40,10 +40,10 @@ class Caroursel extends React.Component {
               // onSlideChange={() => console.log('slide change')}
               style={{width:'100%',height:'70vh'}}
             >
-              <SwiperSlide><img src={img1} alt="img1" style={{objectFit:'auto'}}/></SwiperSlide>
-              <SwiperSlide><img src={img2} alt="img2" style={{objectFit:'auto'}}/></SwiperSlide>
-              <SwiperSlide><img src={img3} alt="img3" style={{objectFit:'auto'}}/></SwiperSlide>
-              <SwiperSlide><img src={img4} alt="img4" style={{objectFit:'auto'}}/></SwiperSlide>
+              <SwiperSlide><img src={img1} alt="img1" style={{width:"100%",height:"70vh"}}/></SwiperSlide>
+              <SwiperSlide><img src={img2} alt="img2" style={{width:"100%",height:"70vh"}}/></SwiperSlide>
+              <SwiperSlide><img src={img3} alt="img3" style={{width:"100%",height:"70vh"}}/></SwiperSlide>
+              <SwiperSlide><img src={img4} alt="img4" style={{width:"100%",height:"70vh"}}/></SwiperSlide>
             </Swiper>
           );
     }

@@ -38,8 +38,9 @@ class SunsuaProposal extends Component {
             limitTime: null,
             limitTimeHr: null,
             limitTimeMin: null,
-            picture: null,
-        }
+            picUrl: null,
+        },
+        file: {}
     }
 
     constructor(props) {
@@ -131,11 +132,36 @@ class SunsuaProposal extends Component {
             this.state.proposalDetail.limitTimeMin = e.target.value;
         }
     }
-
-
+    /*  */
+    picSel = (e) => {
+        this.state.file = e.target.files[0];
+    }
     /* submit */
-    setProposal = (e) => {
+    setProposal = async (e) => {
+        console.clear();
         e.preventDefault();
+
+        // const formData = new FormData();
+        // formData.append(
+        //     "image",
+        //     this.state.file,
+        // );
+        // let url = "https://api.imgur.com/3/image";
+        // await axios.post(url, formData, {
+        //     headers: {
+        //         'Authorization': 'Client-ID 7b9a0d0b0e036c5'
+        //     }
+        // })
+        //     .then(res => {
+        //         console.log("imgur post success");
+        //         console.log(res);
+        //         this.state.proposalDetail.picUrl = res.data.link;
+        //     })
+        //     .catch(error => {
+        //         console.log("error:" + error.message);
+        //         console.log("imgur post failed");
+        //     })
+
         this.setState({})
         let proposalSet = document.querySelector("#proposalSet");
         proposalSet.classList.add("d-none");
@@ -147,7 +173,7 @@ class SunsuaProposal extends Component {
         console.clear();
         e.preventDefault();
         let url = serverHost + '/finalProject_php/sunsua/setProposal.php';
-        console.log(`url: ${url}`);
+        // console.log(`url: ${url}`);
         await axios.post(url, this.state.proposalDetail)
             .then(res => {
                 // console.log("success");
@@ -172,8 +198,7 @@ class SunsuaProposal extends Component {
     /* 測試用 */
     dataShow = () => {
         console.clear();
-        // console.log(this.state);
-        console.log(this.state.proposalDetail);
+        console.log(this.state);
     }
 
 
@@ -269,7 +294,7 @@ class SunsuaProposal extends Component {
                                             資訊提供 <br />
                                             餐單照片&nbsp;或&nbsp;餐點照片
                                         </td>
-                                        <td><input type="file" /></td>
+                                        <td><input type="file" onChange={this.picSel} /></td>
                                     </tr>
                                 </tbody>
                             </table>

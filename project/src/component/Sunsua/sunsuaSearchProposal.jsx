@@ -1,7 +1,9 @@
 /**
  * 搜尋方案
  * 讓使用者 可以搜尋方案
- * 
+ * ===========================================
+ * TODO: uid 要改成動態，從登入那邊抓
+ * TODO: 運費也要改成動態，從google map api 判斷句離
  */
 import React, { Component } from 'react';
 import axios from "axios";
@@ -29,6 +31,7 @@ class SunsuaSearchProposal extends Component {
         //     },
         // ]
         orderDetail: {
+            id: "",
             namePartyA: "",
             addr: "",
             arriveTime: "",
@@ -56,6 +59,7 @@ class SunsuaSearchProposal extends Component {
             });
         // this.setState({});
     }
+    /* 訂單確認 */
     orderConfirm = (orderDetail, name, num) => {
         console.log(orderDetail);
         this.state.orderDetail = orderDetail;
@@ -71,9 +75,69 @@ class SunsuaSearchProposal extends Component {
     }
 
     /* 送出訂單 */
-    orderSubmit = () => {
+    orderSubmit = async () => {
         alert("送出訂單");
+
+        let dataToServer = {
+            proposalId: this.state.orderDetail.id,
+            // TODO: uid 要改成動態，從登入那邊抓
+            uidPartyB: '1',
+            count: this.state.orderDetail.number,
+            // TODO: 運費也要改成動態，從google map api 判斷句離
+            freight: 60
+        };
+        console.log(dataToServer);
+
+        let url = serverHost + '/finalProject_php/sunsua/setSunsuaOrder.php';
+        // console.log(`url: ${url}`);
+        await axios.post(url, dataToServer)
+            .then(res => {
+                if (res.status == 200) {
+                    console.log("success state = 200");
+                }
+            })
+            .catch(error => {
+                console.log("error:" + error.message);
+                return;
+            });
+
+        /*  */
+        dataToServer = {
+            id: this.state.orderDetail.id,
+            amount: this.state.orderDetail.amount - this.state.orderDetail.number
+        };
+        console.log(dataToServer);
+        url = serverHost + '/finalProject_php/sunsua/chgProposalAmount.php';
+        await axios.post(url, dataToServer)
+            .then(res => {
+                if (res.status == 200) {
+                    console.log("success state = 200");
+                }
+            })
+            .catch(error => {
+                console.log("error:" + error.message);
+                return;
+            });
+
+        /* 當訂單被買光時 狀態改變 */
+        if (dataToServer.amount == 0) {
+            /* 傳給後端 改變資料庫狀態 */
+            url = serverHost + '/finalProject_php/sunsua/chgProposalState.php';
+            dataToServer = {
+                id: this.state.orderDetail.id,
+                state: 0
+            }
+            await axios.put(url, dataToServer)
+                .then(res => {
+                    if (res.status == 200) { }
+                })
+                .catch(error => {
+                    console.log("error:" + error.message);
+                });
+        }
+        document.location.href = "/sunsua"
     }
+
     /* 取消 */
     cancel = () => {
         let proposalSearch = document.querySelector("#proposalSearch");

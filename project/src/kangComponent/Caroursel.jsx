@@ -29,7 +29,7 @@ class Caroursel extends React.Component {
               // install Swiper modules
               modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay ]}
               spaceBetween={50}
-              navigation
+              // navigation
               loop={true}
               autoplay={{
                 delay: 3000,
@@ -38,12 +38,12 @@ class Caroursel extends React.Component {
               pagination={{ clickable: true }}
               onSwiper={(swiper) => console.log(swiper)}
               // onSlideChange={() => console.log('slide change')}
-              style={{width:'100%',height:'70vh'}}
+              style={{width:'95%',height:'50vh'}}
             >
-              <SwiperSlide><img src={img1} alt="img1" style={{width:"100%",height:"70vh"}}/></SwiperSlide>
-              <SwiperSlide><img src={img2} alt="img2" style={{width:"100%",height:"70vh"}}/></SwiperSlide>
-              <SwiperSlide><img src={img3} alt="img3" style={{width:"100%",height:"70vh"}}/></SwiperSlide>
-              <SwiperSlide><img src={img4} alt="img4" style={{width:"100%",height:"70vh"}}/></SwiperSlide>
+              <SwiperSlide><img src={img1} alt="img1" style={{width:"100%",height:"50vh"}}/></SwiperSlide>
+              <SwiperSlide><img src={img2} alt="img2" style={{width:"100%",height:"50vh"}}/></SwiperSlide>
+              <SwiperSlide><img src={img3} alt="img3" style={{width:"100%",height:"50vh"}}/></SwiperSlide>
+              <SwiperSlide><img src={img4} alt="img4" style={{width:"100%",height:"50vh"}}/></SwiperSlide>
             </Swiper>
           );
     }

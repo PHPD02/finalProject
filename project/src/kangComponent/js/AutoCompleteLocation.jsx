@@ -67,8 +67,8 @@ const PlacesAutocomplete = () => {
         type="text"
         placeholder="輸入您欲送達的位置"
         style={{
-            height: "100px",
-            width: "400px",
+            height: "70px",
+            width: "550px",
             borderRadius: "10px",
             outline: "none",
             cursor:"pointer"

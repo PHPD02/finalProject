@@ -4,7 +4,7 @@ import SignOut from "./Signout";
 import SendMessage from "./SendMessage";
 import "../../css/firebase.css"
 
-function firebaseChat() {
+function FirebaseChat() {
     const scroll = useRef();
   const [Messages, setMessages] = useState([]);
   useEffect(() => {
@@ -40,4 +40,4 @@ function firebaseChat() {
   );
 }
 
-export default firebaseChat;
+export default FirebaseChat;

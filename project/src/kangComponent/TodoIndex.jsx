@@ -1,6 +1,11 @@
 import React from "react";
 import "../css/DashboardProduct.css";
 import axios from "./axios";
+// import "./assets/css/lib/font-awesome.min.css"
+// import "./assets/css/lib/themify-icons.css"
+import "./assets/css/lib/menubar/sidebar.css"
+import "./assets/css/style.css"
+
 
 class TodoIndex extends React.Component {
   state = {

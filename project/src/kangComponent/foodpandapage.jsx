@@ -12,7 +12,9 @@ import ChatRobot from "./ChatRobot";
 // import LiveChat from "./LiveChat";
 import FirebaseIndex from "./firebase/firebaseIndex";
 
-import Section1_pic from "../img/man.png";
+import Section1_pic from "../img/man.png";  //送貨人
+import SvgLogo from "./Svg/final_project_logo.svg";
+import LogoPNG from "../img/logo.png"
 
 // import ChatRobot2 from "./NOT_UESD_NOW/ChatRobot2OW/ChatRobot2"
 // import FindDisatnce from "./js/GetCurrentPosition"
@@ -65,6 +67,10 @@ class FoodpandaPage extends React.Component {
             </div>
           </div>
         </div>
+        <div className="container">
+          <Caroursel />
+        </div>
+        <div className="container">
         <div className=" section1_searchsection">
           <div>
             <h1 className="font-weight-bolder h1 section1_searchbar">
@@ -77,23 +83,20 @@ class FoodpandaPage extends React.Component {
             </div>
           </div>
         </div>
-        <div className="container">
-          <Caroursel />
         </div>
-        <ChatRobot />
         {/* <LiveChat /> */}
-        <FirebaseIndex />
+        {/* <FirebaseIndex /> */}
         {/* <ChatRobot2/> */}
         {/* <FindDisatnce /> */}
-        <div className="container mt-4">
+        <div className="container mt-4 all-item">
           <div className="section2">
             <div
-              className="section2_bar1 "
+              className="section2_bar1 hito"
               data-aos="fade-right"
               data-aos-once="true"
             >
-              <h2 className="font-weight-bolder">
-                優惠主打星
+              <h2 className="font-weight-bolder ">
+              &ensp;優惠主打星
                 <i className="fa fa-star ml-3" style={{ color: "gold" }}></i>
               </h2>
               <StoreSlideBar2 />
@@ -104,7 +107,7 @@ class FoodpandaPage extends React.Component {
               data-aos-once="true"
             >
               <h2 className="mt-5 font-weight-bolder">
-                附近美食
+              &ensp;附近美食
                 <i className="fa fa-cutlery ml-3" style={{ color: "grey" }}></i>
               </h2>
               <StoreSlideBar2 />
@@ -115,7 +118,7 @@ class FoodpandaPage extends React.Component {
               data-aos-once="true"
             >
               <h2 className="mt-5 font-weight-bolder">
-                中式餐廳
+              &ensp;中式餐廳
                 <i className="fa fa-lemon ml-3" style={{ color: "orange" }}></i>
               </h2>
               <StoreSlideBar2 />
@@ -127,7 +130,7 @@ class FoodpandaPage extends React.Component {
               data-aos-duration="700"
             >
               <h2 className="mt-5 font-weight-bolder">
-                西式餐廳
+              &ensp;西式餐廳
                 <i
                   className="fa  fa-glasses ml-3"
                   style={{ color: "yellow" }}
@@ -137,20 +140,21 @@ class FoodpandaPage extends React.Component {
             </div>
             <div className="section2_bar5">
               <h2 className="mt-5 font-weight-bolder">
-                飲料
+              &ensp;飲料
                 <i className="fa fa-coffee ml-3" style={{ color: "pink" }}></i>
               </h2>
               <StoreSlideBar2 />
             </div>
 
             <h2 className="mt-5 font-weight-bolder">
-              探索更多<i className="fa fa-star" style={{ color: "gold" }}></i>
+            &ensp;探索更多<i className="fa fa-star" style={{ color: "gold" }}></i>
             </h2>
           </div>
           <section>{/* <Restaurants />    先關掉太多了*/}</section>
           {/* <MultipleSearch /> */}
           {/* <MultipleSearch2 /> */}
         </div>
+        <ChatRobot />
         </div>
       </React.Fragment>
     );

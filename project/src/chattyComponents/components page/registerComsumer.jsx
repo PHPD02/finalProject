@@ -12,6 +12,7 @@ var upwhere = window.location.href;
 function Register2() {
     const [result, setResult] = useState("");
 
+    // 發送驗證碼
     const reschkButton = () => {
         var sendmail = $('#inputEmail').val();
         // var account = $('#inputEmail').val();

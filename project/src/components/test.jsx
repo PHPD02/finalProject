@@ -5,7 +5,8 @@ class test extends Component {
     restaurant: []
   }
   componentDidMount = async () => {
-    let url = "http://localhost/finalproject/firstsql2.php";
+    let url = "http://localhost/finalproject/home.php";
+    // let url = "http://localhost/finalproject/firstsql2.php";
     await axios.get(url)
       .then(res => {
         console.log("success");

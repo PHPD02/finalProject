@@ -1,0 +1,84 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <button id="apiGet"> imgur get api</button>
+    <div>
+        <input id="file" type="file" />
+        <button id="upload">upload</button>
+    </div>
+    <script>
+        let data;
+        const file = document.querySelector("#file");
+        const apiGet = document.querySelector("#apiGet");
+        const upload = document.querySelector("#upload");
+        const formdata = new FormData;
+        const t = file.addEventListener("change", fileSel);
+        const e2 = upload.addEventListener("click", fileUpload);
+        const e3 = apiGet.addEventListener("click", getData);
+        function getData() {
+            console.log("getData");
+            let res = $.get({
+                url: "https://api.imgur.com/3/image/Xsok1uB",
+                processData: false,
+                headers: {
+                    'Authorization': 'Client-ID 7b9a0d0b0e036c5'
+                },
+            })
+                .then(res => {
+                    console.log("success")
+                    console.log(res.data)
+                })
+                .catch(err => {
+                    console.log("failed")
+                    console.log(err)
+                })
+            // console.log(res);
+
+        }
+        function fileSel(event) {
+            data = event.target.files[0];
+            console.log(data);
+            formdata.append("image", data)
+            console.log(formdata);
+        }
+
+        async function fileUpload() {
+            console.log("fileUpload");
+            let res = await $.post({
+                url: "https://api.imgur.com/3/image",
+                async: true,
+                crossDomain: true,
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Client-ID 7b9a0d0b0e036c5'
+                },
+                processData: false,
+                contentType: false,
+                mimeType: 'multipart/form-data',
+                data: formdata,
+            })
+                .then(res => {
+                    console.log("success");
+                    // console.log(res);
+                    let temp = JSON.parse(res);
+                    console.log(typeof(temp));
+                    console.log(temp.data);
+                })
+                .catch(err => {
+                    console.log("failed");
+                    console.log(err);
+                })
+        }
+
+    </script>
+</body>
+
+</html>

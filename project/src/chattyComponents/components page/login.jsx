@@ -51,6 +51,7 @@ class Login1 extends Component {
                     localStorage.setItem('companyname', sqlname);
                     localStorage.setItem('companyaddr', sqladdress);
                     
+                    /////廠商登入後須到後台不留在前台
                     window.location = "http://localhost:3000/";
                 }
             }

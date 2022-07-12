@@ -27,15 +27,16 @@ class StoreCard extends Component {
           <div className='container'>
             <div className='row'>
               <div className='col-md-12 col-sm-12'>
+                <img src={picture} alt="" height="100" />
                 {/* 圖片 */}
-                <svg className="bd-img bd-img-lg featurette-image img-fluid rounded float-left" width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#eee" /><text x="25%" y="25%" fill="#aaa">100x100</text></svg>
+                {/* <svg className="bd-img bd-img-lg featurette-image img-fluid rounded float-left" width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#eee" /><text x="25%" y="25%" fill="#aaa">100x100</text></svg> */}
                 <div className='row m-2'>
                   <div className='col'>
                     {/* 商品名稱 */}
-                    <h4>奶茶布丁</h4>
+                    <h4>{dish}</h4>
                     <br />
                     {/* 金額 */}
-                    <span>$<span>55</span></span>
+                    <span>$<span>{cost}</span></span>
                     <div>1{menuItemId}</div>
         <div>2{dish}</div>
         <div>3{type}</div>

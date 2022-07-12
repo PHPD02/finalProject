@@ -1,1 +1,0 @@
-mysqldump -u root -R finalproject > c:\users\user\Desktop\finalproject.sql

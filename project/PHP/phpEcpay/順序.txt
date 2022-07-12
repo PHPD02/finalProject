@@ -1,3 +1,0 @@
-index -> createOrder -> Cashier/AioCheckOut/V5 
--> Ret PaymentTypr -> CreditPyment/BerifySMS?.........
--> PaymentCenter/..../result -> ClientBackURL

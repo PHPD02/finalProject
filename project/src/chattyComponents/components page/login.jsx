@@ -9,7 +9,7 @@ import '../css/signin.css';
 
 import Navbar from '../components item/navbar';
 
-// var fromwhere = localStorage.getItem('upwhere');
+var fromwhere = localStorage.getItem('upwhere');
 var getemail = localStorage.getItem('email');
 var getlastname = localStorage.getItem('lastname');
 
@@ -35,7 +35,24 @@ class Login1 extends Component {
             url: form.attr("action"),
             data:form.serialize(),
             success(data){
-                alert(data);
+                // console.log(data);
+                if (parseInt(data) < 0) {
+                    // localStorage.setItem('uId', data);
+                    alert("something wrong or password worong")
+                }
+                else {
+                    alert("Welcome!");
+                    // alert(data);
+                    var sqlemail = JSON.parse(data).email;
+                    var sqlname = JSON.parse(data).name;
+                    var sqladdress= JSON.parse(data).address;
+                    // console.log(JSON.parse(data).id);
+                    localStorage.setItem('email', sqlemail);
+                    localStorage.setItem('companyname', sqlname);
+                    localStorage.setItem('companyaddr', sqladdress);
+                    
+                    window.location = "http://localhost:3000/";
+                }
             }
         })
     }
@@ -77,7 +94,7 @@ class Login1 extends Component {
                     //     window.location = "http://localhost:3000/";
                     // }
 
-                    // 登入成功到首頁
+                    // 登入成功到首頁 //以上判斷有空再調整
                     window.location = "http://localhost:3000/";
                 }
 
@@ -92,15 +109,17 @@ class Login1 extends Component {
             //登入狀態，不能連去登入頁
             window.location = url;
         }
-        var urlfrom = "http://localhost:3000/register"
+
+        // 要再調整目前無作用??
+        var urlfrom = "http://localhost:3000/registerComsumer"
         var urlfrom2 = "http://localhost:3000/registerCompany"
-        if (fromwhere == urlfrom) {
+        if (fromwhere == urlfrom2) {
             // 廠商註冊完進到登入畫面
             $('#login1').hide();
             // $('#loginComsumer').attr('style','display:block');
             $('#loginCompany').fadeIn();
         }
-        if (fromwhere == urlfrom2) {
+        if (fromwhere == urlfrom) {
             // 消費者註冊完進到登入畫面
             $('#login1').hide();
             // $('#loginComsumer').attr('style','display:block');

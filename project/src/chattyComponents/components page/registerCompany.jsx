@@ -69,7 +69,7 @@ function Register() {
                     setResult(data);
                     alert(data);
                     localStorage.setItem('upwhere', upwhere);
-                    window.location = "http://localhost:3000/login1";
+                    window.location = "http://localhost:3000/login";
                 }
             })
         }

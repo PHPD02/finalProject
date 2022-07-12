@@ -8,7 +8,8 @@ class StorePage extends Component {
       }
     
       async componentDidMount() {
-        var result = await Axios.get("http://localhost:8000/todo/list");
+        // var result = await Axios.get("http://localhost:8000/todo/list");
+        var result = await Axios.get("http://localhost/PHP/storeCards/getStoreItems.php");
         // this.state.todoList = result.data;
         // this.setState({});
         this.setState({

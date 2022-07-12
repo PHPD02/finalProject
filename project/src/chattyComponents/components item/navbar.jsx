@@ -58,7 +58,7 @@ class Navbar extends Component {
 
                         <div className="form-inline mt-2 mt-md-0">
                             {/* <NavLink to="/login1"><button onClick={this.loginClick} className="btn btn-outline-success my-2 my-sm-0" type="submit">login</button></NavLink> */}
-                            <NavLink to="/login1"><input id="loginin" onClick={this.loginClick} className="btn btn-outline-success my-2 my-sm-0" type="submit" value="login" /></NavLink>
+                            <NavLink to="/login"><input id="loginin" onClick={this.loginClick} className="btn btn-outline-success my-2 my-sm-0" type="submit" value="login" /></NavLink>
                             <NavLink to="/"><input id="logoutout" onClick={this.logoutClick} className="btn btn-outline-primary my-2 my-sm-0" type="hidden" value="logout" /></NavLink>
                             <NavLink to="/cart"><button className="btn btn-outline-danger my-2 my-sm-0" type="submit">Cart</button></NavLink>
                         </div>

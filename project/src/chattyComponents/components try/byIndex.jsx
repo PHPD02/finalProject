@@ -25,7 +25,7 @@ class byIndex extends Component {
                     {/* <NavLink to="/forgotpwd">forgotpwd page</NavLink><br />
                     <NavLink to="/cart">cart page</NavLink><br />
                     <NavLink to="/payment">payment page</NavLink><br /> */}
-                    <div>{localStorage.getItem('uId')}</div>
+                    <div>HI! {localStorage.getItem('lastname')}</div>
                 </div>
             </React.Fragment>
             

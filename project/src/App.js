@@ -5,9 +5,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import './chattyComponents/js/tesst.js';
 
-import Login1 from './chattyComponents/components page/login1';
-import Register from './chattyComponents/components page/register';
-import Register2 from './chattyComponents/components page/register2';
+import Login from './chattyComponents/components page/login';
+import RegisterCompany from './chattyComponents/components page/registerCompany';
+import RegisterComsumer from './chattyComponents/components page/registerComsumer';
 import Forgotpwd from './chattyComponents/components page/forgotpwd';
 import Cart from './chattyComponents/components page/cart';
 import Payment from './chattyComponents/components page/payment';
@@ -35,11 +35,11 @@ class App extends Component {
             <Route path="/" component={Index} exact/>
             <Route path ="/index" component={Index} />
 
-            <Route path="/login1" component={Login1} />
+            <Route path="/login" component={Login} />
             {/* <Route path="/login2" component={Login2} />
             <Route path="/login3" component={Login3} /> */}
-            <Route path="/register" component={Register} />
-            <Route path="/register2" component={Register2} />
+            <Route path="/registerComsumer" component={RegisterComsumer} />
+            <Route path="/registerCompany" component={RegisterCompany} />
             <Route path="/forgotpwd" component={Forgotpwd} />
             <Route path="/cart" component={Cart} />
             {/* <Route path="/cartcard" component={Card} /> */}

@@ -13,25 +13,23 @@ function Register2() {
     const [result, setResult] = useState("");
 
     const reschkButton = () => {
-        // var chkNumber = Math.floor(Math.random() * 10000);
-        // // alert(chkNumber);
-        // $('#chkmesg').text(chkNumber);
         var sendmail = $('#inputEmail').val();
+        // var account = $('#inputEmail').val();
         if(sendmail){
+            // $.post("http://localhost:80/loginComsumer/isNewAccount.php", {account}, function(data){
+            //     console.log(data);
+            // })
             alert('已成功發送，請至信箱確認');
         }
         // console.log(sendmail);
-        $.post("http://localhost:8000/sendmail/sendmail.php", {sendmail}, function(data){
+        $.post("http://localhost:8000/sendmail.php", {sendmail}, function(data){
             setResult(data);
             
         })
-        // .then((res) => {
-        //     setResult(res.data);
-        //     console.log(res.data);
-        // })
-        
+
     }
 
+    
     const enterChkNumber = () => {
         var correctNumber = parseInt( $('#chkmesg').text());
         var inputChknumber = parseInt( $('#reschknumber').val());
@@ -70,7 +68,7 @@ function Register2() {
                     // setResult(data);
                     alert(data);
                     localStorage.setItem('upwhere', upwhere);
-                    window.location = "http://localhost:3000/login1";
+                    window.location = "http://localhost:3000/login";
                 }
             })
         }
@@ -87,7 +85,7 @@ function Register2() {
             {/* 消費者註冊 */}
             <div id='registerform'>
                 <form className="form-signin shadow registerformin" id='registerformin' encType="multipart/form-data"
-                    method='POST' action='http://localhost:8000/register.php'
+                    method='POST' action='http://localhost/PHP/loginComsumer/register.php'
                     onSubmit={(event) => handleSumbit(event)}>
                     <h1 className="h3 mb-3 font-weight-normal">讓我們開始註冊吧</h1>
                     <h6>開始建立你的帳戶</h6>
@@ -115,7 +113,9 @@ function Register2() {
                     <input type="text" id="phoneNumber" name="phoneNumber" className='btn-block form-control' placeholder='手機號碼' required autoFocus />
                     {/* password */}
                     <input type="password" id="password" name="password" className="form-control" placeholder="密碼" required autoFocus />
-                    <div id="chkmesg" className='h6' style={{ color: 'red', height: '10px' , visibility:'hidden'}}>{result}</div>
+                    <div id="chkmesg" className='h6' style={{ color: 'red', height: '10px' 
+                    // , visibility:'hidden'
+                    }}>{result}</div>
                     <button className="btn btn-lg btn-danger btn-block mt-4" type="submit">建立個人帳戶</button>
                 </form>
             </div>

@@ -5,16 +5,11 @@ import { faUserAlt, faStore } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookSquare, faGoogle, faApple } from '@fortawesome/free-brands-svg-icons';
 import $ from 'jquery';
 
-import '../css/login.css';
 import '../css/signin.css';
 
 import Navbar from '../components item/navbar';
 
-// var comsumerButton = document.getElementById('#loginComsumer');
-// var companyButton = document.getElementById('#loginCompany');
-
-
-var fromwhere = localStorage.getItem('upwhere');
+// var fromwhere = localStorage.getItem('upwhere');
 var getemail = localStorage.getItem('email');
 var getlastname = localStorage.getItem('lastname');
 
@@ -71,19 +66,19 @@ class Login1 extends Component {
                     localStorage.setItem('lastname', sqllastname);
                     // window.location= url;
                     // window.location = "http://localhost:3000/index";
-                    var fromwhere = localStorage.getItem('upwhere');
-                    if(fromwhere){
-                        if(fromwhere = "http://localhost:3000/register2" || "http://localhost:3000/register" ){
-                            window.location = "http://localhost:3000/";
-                        }
-                        window.location= fromwhere;
-                    }
-                    else{
-                        window.location = "http://localhost:3000/";
-                    }
-                    
-                    
-                    // window.history.back();
+                    // var fromwhere = localStorage.getItem('upwhere');
+                    // if(fromwhere){
+                    //     if(fromwhere = "http://localhost:3000/register2" || "http://localhost:3000/register" ){
+                    //         window.location = "http://localhost:3000/";
+                    //     }
+                    //     window.location= fromwhere;
+                    // }
+                    // else{
+                    //     window.location = "http://localhost:3000/";
+                    // }
+
+                    // 登入成功到首頁
+                    window.location = "http://localhost:3000/";
                 }
 
             }
@@ -98,7 +93,7 @@ class Login1 extends Component {
             window.location = url;
         }
         var urlfrom = "http://localhost:3000/register"
-        var urlfrom2 = "http://localhost:3000/register2"
+        var urlfrom2 = "http://localhost:3000/registerCompany"
         if (fromwhere == urlfrom) {
             // 廠商註冊完進到登入畫面
             $('#login1').hide();
@@ -146,7 +141,7 @@ class Login1 extends Component {
                 {/* 廠商登入 */}
                 <div id="loginCompany" style={{ display: 'none' }}>
                     <form className="form-signin form-top"
-                        action='http://localhost:8000/checkCompanyAccount.php' method='post'
+                        action='http://localhost:80/PHP/loginCompany/checkCompanyAccount.php' method='post'
                         onSubmit={(event) => this.handleSubmitCompany(event)} >
                         <h1 className='shadow text-center p-2 mb-4'><strong>廠商 登入</strong></h1>
                         {/* 廠商email */}
@@ -155,7 +150,7 @@ class Login1 extends Component {
                         <input type="password" id="companyInputPassword" name="companyInputPassword" className="form-control" placeholder="Password" required />
 
                         <div className='mt-3'>
-                            <NavLink to="/register"><button className='btn btn-success'>註冊</button></NavLink>
+                            <NavLink to="/registerCompany"><button className='btn btn-success'>註冊</button></NavLink>
                             <div className='float-right'>
                                 <NavLink to="/forgotpwd">
                                     <button className='btn btn-warning mr-2'>忘記密碼</button>
@@ -170,7 +165,7 @@ class Login1 extends Component {
                 {/* 消費者登入 */}
                 <div id="loginComsumer" style={{ display: 'none' }}>
                     <form className="form-signin form-top mt-sm-2"
-                        action='http://localhost:8000/checkAccount.php' method='post'
+                        action='http://localhost:80/PHP/loginComsumer/checkAccount.php' method='post'
                         onSubmit={(event) => this.handleSumbit(event)}>
                         <h1 className='shadow text-center p-2 mb-4'><strong>用戶 登入</strong></h1>
                         {/* userEmail */}
@@ -179,7 +174,7 @@ class Login1 extends Component {
                         <input type="password" id="inputPassword" name="inputPassword" className="form-control" placeholder="Password" required autoFocus />
 
                         <div className='mt-3'>
-                            <NavLink to="/register2"><button className='btn btn-success'>註冊</button></NavLink>
+                            <NavLink to="/registerComsumer"><button className='btn btn-success'>註冊</button></NavLink>
                             <div className='float-right'>
                                 <NavLink to="/forgotpwd">
                                     <button className='btn btn-warning mr-2'>忘記密碼</button>

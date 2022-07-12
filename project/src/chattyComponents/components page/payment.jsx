@@ -16,7 +16,7 @@ class Payment extends Component {
     componentDidMount() {
         var upwhere = window.location.href;
         localStorage.setItem('upwhere', upwhere);
-        var url = "http://localhost:3000/login1";
+        var url = "http://localhost:3000/login";
         var getemail = localStorage.getItem('email');
         // console.log(uId);
         if (!getemail) {

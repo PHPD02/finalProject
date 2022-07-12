@@ -1,10 +1,11 @@
 import React from "react";
 import "../css/DashboardProduct.css";
 import axios from "./axios";
-// import "./assets/css/lib/font-awesome.min.css"
-// import "./assets/css/lib/themify-icons.css"
+import "./assets/css/lib/font-awesome.min.css"
+import "./assets/css/lib/themify-icons.css"
 import "./assets/css/lib/menubar/sidebar.css"
 import "./assets/css/style.css"
+
 
 
 class TodoIndex extends React.Component {
@@ -73,7 +74,7 @@ class TodoIndex extends React.Component {
           </div>
         </div>
 
-        <div className="header">
+        <div className="header ">
           <div className="pull-left">
             <div className="logo">
               <a href="index.html">
@@ -152,14 +153,14 @@ class TodoIndex extends React.Component {
             </ul>
           </div>
         </div>
-        <div className="content-wrap">
+        <div className="content-wrap mt-5 pt-3">
           <div className="main">
             <div className="container-fluid">
               <h1 className="h1 my-4">
-                菜單品項
+                菜單管理
                 <a
                   href="/Todo/Create"
-                  className=" btn btn-primary btn-lg float-right"
+                  className=" btn btn-primary btn-lg float-right "
                 >
                   新增品項
                 </a>
@@ -175,23 +176,23 @@ class TodoIndex extends React.Component {
                           <div className="row align-items-center card-body">
                             <div className="col-lg-5">
                               <div className="product-3-img">
-                                <img src={item.Picture1} alt={item.Name}></img>
+                                <img src={item.picture} alt={item.dish}></img>
                               </div>
                             </div>
                             <div className="col-lg-7">
                               <div className="product_details_3">
                                 <div className="product_name">
-                                  <h4 className="item_Name">{item.Name}</h4>
+                                  <h4 className="item_Name">{item.dish}</h4>
                                 </div>
                                 <div className="product_des">
-                                  <p>{item.Description}</p>
+                                  <p>{item.introduce}</p>
                                 </div>
                                 <div className="price mt-3">
-                                  <p>價格：{item.Id}</p>
+                                  <p>價格：{item.cost}</p>
                                 </div>
                                 <div className="prdt_add_to_cart text-right">
                                   <a
-                                    href={`/Todo/Edit/${item.Id}`}
+                                    href={`/Todo/Edit/${item.menuItemId}`}
                                     className="btn btn-success btn-rounded mr-2"
                                   >
                                     <span className="icon edit-btn">
@@ -199,27 +200,8 @@ class TodoIndex extends React.Component {
                                     </span>
                                   </a>
 
-                                  {/* <button
-                        type="button"
-                        className="btn btn-success btn-rounded mr-2"
-                        onClick={this.toEdit}
-                      >
-                        <span className="icon edit-btn">
-                          <i className="fas fa-sliders-h"></i>
-                        </span>
-                      </button> */}
-
-                                  {/* <button
-                        type="button"
-                        className="btn btn-danger btn-rounded"
-                        onClick={this.delete}
-                      >
-                        <span className="icon edit-btn">
-                          <i className="fas fa-trash"></i>
-                        </span>
-                      </button> */}
                                   <a
-                                    href={`/Todo/Delete/${item.Id}`}
+                                    href={`/Todo/Delete/${item.menuItemId}`}
                                     className="btn btn-danger btn-rounded mr-2"
                                   >
                                     <span className="icon edit-btn">

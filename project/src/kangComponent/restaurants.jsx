@@ -2,13 +2,15 @@ import React from "react";
 import Restaurant from "./restaurant";
 import axios from "axios";
 
+
+// 給foodpanda下面更多用
 class Restaurants extends React.Component {
   state = {
     restaurantsList: [],
   };
 
   async componentDidMount() {
-    var result = await axios.get("http://localhost:8000/restaurants/list");
+    var result = await axios.get("http://localhost:8000/restaurants/category/all");
     this.setState({ restaurantsList: result.data });
   }
 
@@ -19,13 +21,13 @@ class Restaurants extends React.Component {
           <div className="row ">
             {this.state.restaurantsList.map((item, index) => {
               return (
-                <div className="col-lg-3 col-md-4 col-sm-6 my-4" key={index}>
+                <div className="col-lg-3 col-md-4 col-sm-6 my-4" key={item.id}>
                   {/* 這key值需要提供，但還是能跑 */}
                   <div className="card" style={{ maxHeight: "349px" }}>
                     <img
-                      src={item.Picture1}
+                      src={item.picture}
                       className="card-img-top"
-                      alt={item.Picture1}
+                      alt={item.picture}
                       style={{
                         height: "150px",
                         width: "100%",
@@ -39,7 +41,7 @@ class Restaurants extends React.Component {
                         style={{ height: "50px", width: "100%" }}
                       >
                         <h5 className="card-title">
-                          <b>{item.Name}</b>
+                          <b>{item.name}</b>
                         </h5>
                         <div
                           className="float-right"
@@ -51,12 +53,12 @@ class Restaurants extends React.Component {
                           ></i>
                           <span className="star-point">{item.star}</span>
                           <span className="comment-amount">
-                            ({item.comment})
+                            ({item.tel})
                           </span>
                         </div>
                       </span>
                       <small className="restaurant-type">
-                        $$$, {item.restauranttype}
+                        $$$, {item.category}
                       </small>
                       <p
                         className="card-text"
@@ -69,10 +71,10 @@ class Restaurants extends React.Component {
                           fontSize: "12px",
                         }}
                       >
-                        {item.Description}
+                        {item.description}
                       </p>
                       <p className="card-price ">
-                        $ {item.delivercost}
+                        $ {item.tel}
                         <small> 外送服務費</small>
                       </p>
                     </div>
@@ -81,22 +83,6 @@ class Restaurants extends React.Component {
                 </div>
               );
             })}
-
-            {/* <div className="col-lg-3 col-md-4 col-sm-6 my-4">
-                <Restaurant />
-            </div>            
-            <div className="col-lg-3 col-md-4 col-sm-6 my-4">
-                <Restaurant />
-            </div>            
-            <div className="col-lg-3 col-md-4 col-sm-6 my-4">
-                <Restaurant />
-            </div>
-            <div className="col-lg-3 col-md-4 col-sm-6 my-4">
-                <Restaurant />
-            </div> */}
-
-            {/* <div className="w-100 d-none d-md-block"></div>
-強迫斷點 */}
           </div>
         </div>
       </div>

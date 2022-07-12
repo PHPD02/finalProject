@@ -3,13 +3,13 @@ import Carousel from "better-react-carousel";
 // import Restaurant from "./restaurant";
 import axios from "axios";
 
-class StoreSlidrBar2 extends React.Component {
+class StoreSlidrBar2_drinks extends React.Component {
   state = {
     restaurantsList: [],
   };
 
   async componentDidMount() {
-    var result = await axios.get("http://localhost:8000/restaurants/category/all");
+    var result = await axios.get("http://localhost:8000/restaurants/category/drinks");
     this.setState({ restaurantsList: result.data });
   }
 
@@ -56,7 +56,7 @@ class StoreSlidrBar2 extends React.Component {
                             className="fa fa-star "
                             style={{ color: "pink" }}
                           ></i>
-                          <span className="star-point">{item.star}</span>
+                          <span className="star-point">{item.id}</span>
                           <span className="comment-amount">
                             ({item.tel})
                           </span>
@@ -94,5 +94,5 @@ class StoreSlidrBar2 extends React.Component {
   }
 }
 
-export default StoreSlidrBar2;
+export default StoreSlidrBar2_drinks;
 // https://github.com/devpanther/better-react-carousel?ref=reactjsexample.com

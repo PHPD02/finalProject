@@ -16,7 +16,6 @@ class Order_record extends React.Component {
               <h6 className="card-subtitle text-muted my-4 text-center">
                 我們將於每月15日將上月收益匯至您的帳戶，當然，您也可以隨時提領，但您需要額外支付手續費。
               </h6>
-              <div className="container ">
                 <div className="row  text-center d-flex align-items-center">
                   <div className="col-5">
                     <i
@@ -30,10 +29,9 @@ class Order_record extends React.Component {
                       $500元
                     </p>
                   </div>
-                </div>
-                <div className="row  text-center mt-4 font-weight-bold h4 ">
+                <div className="row  text-center mt-4 font-weight-bold h4 mx-auto">
                   <div className="col ">
-                    <button className="card_button_effect Vbtn mx-auto">
+                    <button className="card_button_effect Vbtn ">
                       <svg>
                         <rect
                           x="0"
@@ -60,7 +58,6 @@ class Order_record extends React.Component {
             </div>
             <ul className="list-group">
               <li className="list-group-item">
-                <div className="container ">
                   <div className="row d-flex align-items-center">
                     <div className="col-2">
                       <img
@@ -104,7 +101,7 @@ class Order_record extends React.Component {
                           <ul className="list-group mt-4 ">
                             <div className="container">
                               <div className="row d-flex ">
-                                <div className="col-10 text-nowrap">品項</div>
+                                <div className="col-10 ">品項</div>
                                 <div className="col-1 text-nowrap">數量</div>
                                 <div className="col-1 text-nowrap">金額</div>
                               </div>
@@ -142,12 +139,10 @@ class Order_record extends React.Component {
                     </Accordion.Item>
                     
                   </Accordion>
-                </div>
               </li>
             </ul>
             <ul className="list-group">
               <li className="list-group-item">
-                <div className="container ">
                   <div className="row d-flex align-items-center">
                     <div className="col-2">
                       <img
@@ -229,7 +224,6 @@ class Order_record extends React.Component {
                     </Accordion.Item>
                     
                   </Accordion>
-                </div>
               </li>
             </ul>
 
@@ -242,7 +236,6 @@ class Order_record extends React.Component {
             </div>
             <ul className="list-group">
               <li className="list-group-item">
-                <div className="container ">
                   <div className="row d-flex align-items-center">
                     <div className="col-2">
                       <img
@@ -263,7 +256,7 @@ class Order_record extends React.Component {
                     </div>
                     <div className="col-2">
                       <div>
-                        <p className="h3 text-nowrap">$140元</p>
+                        <p className="h3 text-nowrap" >$140元</p>
                       </div>
                     </div>
                   </div>
@@ -324,12 +317,10 @@ class Order_record extends React.Component {
                     </Accordion.Item>
                     
                   </Accordion>
-                </div>
               </li>
             </ul>
             <ul className="list-group">
               <li className="list-group-item">
-                <div className="container ">
                   <div className="row d-flex align-items-center">
                     <div className="col-2">
                       <img
@@ -350,7 +341,7 @@ class Order_record extends React.Component {
                     </div>
                     <div className="col-2">
                       <div>
-                        <p className="h3 text-nowrap">$140元</p>
+                        <p className="h3 text-nowrap" >$140元</p>
                       </div>
                     </div>
                   </div>
@@ -365,7 +356,7 @@ class Order_record extends React.Component {
                       <Accordion.Header className="mt-3 font-weight-bold ">
                         <span>查看品項細節($4個品項)</span>
                         <span className="ml-2">
-                          <i className="fa-solid fa-angles-down"></i>
+                          <i class="fa-solid fa-angles-down"></i>
                         </span>
                       </Accordion.Header>
                       <Accordion.Body>
@@ -411,7 +402,6 @@ class Order_record extends React.Component {
                     </Accordion.Item>
                     
                   </Accordion>
-                </div>
               </li>
             </ul>
 

@@ -1,5 +1,8 @@
 import React from "react";
 import "../css/MemberPage.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle";
+
 class MemberPage extends React.Component {
   state = {};
   render() {
@@ -86,8 +89,7 @@ class MemberPage extends React.Component {
               <h6 className="card-subtitle mb-2 text-muted my-4 text-center">
                 您可以隨時提取押金，但記得使用順弁服務需要您提供一定金額的押金
               </h6>
-              <div className="container ">
-                <div className="row my-2 text-center d-flex align-items-center">
+              <div className="row my-2 text-center d-flex align-items-center">
                   <div className="col-5">
                     <i
                       class="fa fa-gift"
@@ -131,7 +133,6 @@ class MemberPage extends React.Component {
                     </button>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
           <div className="card" style={{ width: "30rem" }}>
@@ -142,7 +143,6 @@ class MemberPage extends React.Component {
               <h6 className="card-subtitle mb-2 text-muted my-4 text-center">
                 我們將於每月15日將上月收益匯至您的帳戶，當然，您也可以隨時提領，但您需要額外支付手續費。
               </h6>
-              <div className="container ">
                 <div className="row my-2 text-center d-flex align-items-center">
                   <div className="col-5">
                     <i
@@ -187,7 +187,6 @@ class MemberPage extends React.Component {
                     </button>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -200,7 +199,6 @@ class MemberPage extends React.Component {
             </div>
             <ul class="list-group">
               <li class="list-group-item">
-                <div className="container ">
                   <div
                     className="row text-left h3 d-flex align-items-center button_effect "
                     style={{ height: "150px" }}
@@ -222,10 +220,8 @@ class MemberPage extends React.Component {
                       <i class="fa-solid fa-pen-to-square"></i>
                     </div>
                   </div>
-                </div>
               </li>
               <li class="list-group-item">
-                <div className="container ">
                   <div
                     className="row text-left h3 d-flex align-items-center button_effect"
                     style={{ height: "150px" }}
@@ -243,7 +239,6 @@ class MemberPage extends React.Component {
                       <i class="fa-solid fa-pen-to-square"></i>
                     </div>
                   </div>
-                </div>
               </li>
             </ul>
           </div>

@@ -49,6 +49,7 @@ left: 30%;
 	/* text-transform: uppercase; */
 	vertical-align: middle;
 	width: 100%;
+	border:0
 }
 
 /* .Vbtn-1 {
@@ -78,7 +79,7 @@ left: 30%;
 .Vbtn:hover rect {
 	stroke-width: 8;
 	stroke-dasharray: 15, 310;
-	stroke-dashoffset: 35;
+	stroke-dashoffset: 20;
 	-webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
 	transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
 }

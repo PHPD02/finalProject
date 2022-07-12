@@ -752,7 +752,9 @@ div.dt-button:active:not(.disabled) {
     width: 100%;
     min-height: 50px;
     z-index: 990;
-    top: 0
+    top: 0;
+    box-shadow: 1px 1px 3px grey;
+
 }
 
 .logo {
@@ -765,7 +767,7 @@ div.dt-button:active:not(.disabled) {
 
 .logo span {
     color: #252525;
-    font-size: 16px;
+    font-size: 23px;
     font-weight: 600
 }
 

@@ -5,7 +5,7 @@ class test extends Component {
     restaurant: []
   }
   componentDidMount = async () => {
-    let url = "http://localhost/finalproject/firstsql.php";
+    let url = "http://localhost/finalproject/firstsql2.php";
     await axios.get(url)
       .then(res => {
         console.log("success");
@@ -28,7 +28,7 @@ class test extends Component {
         <hr />
         {this.state.restaurant.map((value, index) => {
           return (
-            <h5 key={index}>{value.name} : {value.region}</h5>
+            <h5 key={index}>{value.name} : {value.region} : {value.picture}</h5>
           )
         })}
 

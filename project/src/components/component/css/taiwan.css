@@ -6,7 +6,6 @@
   stroke-linejoin: round;
   height: 620px;
   width: 100%;
-  cursor: pointer;
 }
 
 @media(max-width:600px) {
@@ -21,5 +20,6 @@ path:hover {
   fill: #1d5254;
   stroke: none;
   stroke-width: 3;
+  cursor: pointer;
 
 }

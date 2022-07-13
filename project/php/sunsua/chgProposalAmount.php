@@ -9,16 +9,12 @@ include "../sql.php";
 $restJson = file_get_contents("php://input");
 $_POST = json_decode($restJson, true);
 if ($_POST) {
-    $state = $_POST['state'];
-    // $state = $_REQUEST['state'];
-    // echo $state;
+    $amount = $_POST['amount'];
     $id = $_POST['id'];
-    // $id = $_REQUEST['id'];
-    // echo $id;
 
-    $sql = "UPDATE proposal SET state = ? WHERE id = ?";
+    $sql = "UPDATE proposal SET amount = ? WHERE id = ?";
     $stmt = $mysqli->prepare($sql);
-    $stmt->bind_param("ss", $state, $id);
+    $stmt->bind_param("ss", $amount, $id);
     $stmt->execute();
     $result = $stmt->get_result();
     echo $result;

@@ -18,7 +18,22 @@ import AOS from 'aos';
 
 class firstpage extends Component {
   state = {}
+  // 首頁連結地圖城市
+  clickTwCity = (e) => {
+    // 是否有取得到Taiwan頁面的值
+    // let e = event;
+    // this.props.clickTwCity(e)
+    // var a = document.getElementsByClassName('itemCitys');
 
+    console.log(e.target.getAttribute('value'));
+  
+    // console.log(citys);
+    // console.log(index);
+    // var a = event.target.value;
+    // 基隆市
+    var Tw = document.getElementById('textCity');
+    Tw.textContent = e.target.getAttribute('value');
+  }
 
 
   componentDidMount() {
@@ -58,7 +73,7 @@ class firstpage extends Component {
         </div>
 
         <div className='mt-4'>
-          <h4 className='text-center'><span id="city"></span>特別合作店家</h4>
+          <h4 className='text-center'><span id="textCity"></span> 特別合作店家</h4>
           {/* <h4 className='text-center'>
             請選擇區域:<select><option>1</option>
               <option>2</option>
@@ -75,10 +90,11 @@ class firstpage extends Component {
 
         {/* 點選地圖 - 相對應地區的特別合作店家 */}
         <div className="container">
-          <div className='row'>
+          <div className='row'> 
             {/* 地圖 */}
             <div className='col-lg-5'>
-              <Taiwan />
+              {/* 取得與其他(Taiwan)元件的呼叫 */}
+              <Taiwan twCity={(e)=>this.clickTwCity(e)} />
             </div>
             {/* 合作店家 */}
             <div className="col-7 " data-aos="zoom-in-down">

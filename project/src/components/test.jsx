@@ -5,8 +5,8 @@ class test extends Component {
     restaurant: []
   }
   componentDidMount = async () => {
-    let url = "http://localhost/finalproject/home.php";
-    // let url = "http://localhost/finalproject/firstsql2.php";
+    // let url = "http://localhost/finalproject/home.php";
+    let url = "http://localhost/finalproject/firstsql2.php";
     await axios.get(url)
       .then(res => {
         console.log("success");
@@ -27,9 +27,9 @@ class test extends Component {
         <h1>gaga</h1>
         <button onClick={this.stateShow}>state show </button>
         <hr />
-        {this.state.restaurant.map((value, index) => {
+        {this.state.restaurant.map((restaurant, index) => {
           return (
-            <h5 key={index}>{value.name} : {value.region} : {value.picture}</h5>
+            <h5 key={index}>{restaurant.name} : {restaurant.region} : {restaurant.picture}</h5>
           )
         })}
 

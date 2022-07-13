@@ -76,25 +76,32 @@ class Payment extends Component {
                                 <label htmlFor='pyapple' className='btn btn-dark btn-block'><FontAwesomeIcon icon={faCcApplePay} className="fa-xl float-left" />&nbsp;&nbsp;Apple pay<input type="radio" name="pycheck" id="pyapple" className='float-right' /></label>
                             </section>
                         </div>
+
+
                         <div className="col-lg-5 shadow" id='col2color'>
-                            <br /><br />
-                            <h3>你的訂單</h3>
-                            <h4>店名</h4><br />
-                            <p className='h3'>上頁購物車default content</p>
-                            <div className='menutail row'>
-                                {/* 點餐內容 */}
-                                {/* <div className='col-6 cart-food-sp sp1'>food1pic</div> */}
-                                <div className='col cart-food-sp sp2'>黃金里肌厚切豬排咖哩飯</div>
-                                <div className='col-3 cart-food-sp'>1</div>
-                                <div className='col-3 cart-food-sp sp3'>$100</div>
+
+                            <div id='outorder'>
+                                <br /><br />
+                                <h3>你的訂單</h3>
+                                <h4>店名</h4><br />
+                                <p className='h3'>上頁購物車default content</p>
+                                <div className='menutail row'>
+                                    {/* 點餐內容 */}
+                                    {/* <div className='col-6 cart-food-sp sp1'>food1pic</div> */}
+                                    <div className='col cart-food-sp sp2'>黃金里肌厚切豬排咖哩飯</div>
+                                    <div className='col-3 cart-food-sp'>1</div>
+                                    <div className='col-3 cart-food-sp sp3'>$100</div>
+                                </div>
+                                <div className='menutail row'>
+                                    {/* 點餐內容 */}
+                                    {/* <div className='col-6 cart-food-sp sp1'>food1pic</div> */}
+                                    <div className='col cart-food-sp sp2'>爆漿起司豚肉咖哩飯</div>
+                                    <div className='col-3 cart-food-sp'>1</div>
+                                    <div className='col-3 cart-food-sp sp3'>$150</div>
+                                </div>
                             </div>
-                            <div className='menutail row'>
-                                {/* 點餐內容 */}
-                                {/* <div className='col-6 cart-food-sp sp1'>food1pic</div> */}
-                                <div className='col cart-food-sp sp2'>爆漿起司豚肉咖哩飯</div>
-                                <div className='col-3 cart-food-sp'>1</div>
-                                <div className='col-3 cart-food-sp sp3'>$150</div>
-                            </div>
+
+
                             <hr />
                             <div className='container'>
                                 <div className="row">
@@ -104,11 +111,14 @@ class Payment extends Component {
                                         <p><span>總計：</span></p>
                                     </div>
                                     <div className="col text-right">
+                                        
                                         <p><span >$250</span></p>
                                         <p><span>$19</span></p>
                                         <p><span>$269</span></p>
                                     </div>
                                 </div>
+
+                                <button className='btn btn-block btn-outline-danger'>送  出</button>
                                 {/* <div className='row'>
                                     <div className='col'></div>
                                     <div className="col-3"><NavLink to="/payment"><button className='btn btn-danger btn-block'>點我結帳</button></NavLink></div>

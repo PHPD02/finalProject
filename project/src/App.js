@@ -27,6 +27,7 @@ import facebooklogin from './chattyComponents/components try/facebooklogin';
 // import './index';
 import TestScreen from './chattyComponents/components try/testscreen.jsx';
 import StorePage from './chattyComponents/components page/storePage.jsx';
+import TestPayment from './chattyComponents/components try/testpayment.jsx';
 
 class App extends Component {
   state = {  } 
@@ -52,6 +53,7 @@ class App extends Component {
             <Route path="/storeCards" component={StoreCard} />
             <Route path="/storePage" component={StorePage} />
             <Route path="/test" component={Test} />
+            <Route path="/testPayment" component={TestPayment} />
             {/* <Route path="/login2" component={Login2} />
             <Route path="/login3" component={Login3} /> */}
             {/* <Route path="/test1" component={Test1} /> */}
@@ -63,6 +65,7 @@ class App extends Component {
     );
   }
 }
+
  
 export default App;
   

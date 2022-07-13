@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 import Navbar from '../components item/navbar';
 import Footer from '../components item/footer';
@@ -125,9 +125,9 @@ class Cart extends Component {
                             <p><span>總計：</span></p>
                         </div>
                         <div className="col text-right">
-                            <p><span >{this.state.countsum}</span></p>
+                            <p><span >11{this.state.countsum}</span></p>
                             <p><span>$19</span></p>
-                            <p><span>{this.state.total}</span></p>
+                            <p><span>11{this.state.total}</span></p>
                         </div>
                     </div>
                     <div className='row'>

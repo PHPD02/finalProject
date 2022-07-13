@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+
+import React, { Component } from "react";
 import { BrowserRouter, HashRouter, Switch, Route } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -29,8 +30,22 @@ import Payment from './chattyComponents/payment';
 // import Test from './chattyComponents/zztestsql';
 // import Test1 from './chattyComponents/zzteststate';
 
-class App extends Component {
-  state = {};
+/* 峻軒 */
+// import React, { Component } from "react";
+
+// import Login from "./chattyComponents/login";
+import FoodpandaPage from "./kangComponent/foodpandapage";
+import TodoIndex from "./kangComponent/TodoIndex";
+import TodoEdit from "./kangComponent/TodoEdit";
+import TodoCreate from "./kangComponent/TodoCreate";
+import TodoDelete from "./kangComponent/TodoDelete";
+
+import MemberPage from "./kangComponent/MemberPage";
+import Order_record from "./kangComponent/Order_record";
+import CommentPage from "./kangComponent/CommentPage";
+import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard"
+
+class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
@@ -68,6 +83,18 @@ class App extends Component {
 
           {/* ====================================== */}
           {/* 峻軒 */}
+          {/* <Route path="/login" component={Login} /> */}
+          <Route path="/foodpandapage" component={FoodpandaPage} />
+          <Route path="/TodoIndex" component={TodoIndex} />
+          <Route path="/Todo/Edit/:id" component={TodoEdit} />
+          <Route path="/Todo/Delete/:id" component={TodoDelete} />
+          <Route path="/Todo/Create" component={TodoCreate} />
+          <Route path="/CommentPage" component={CommentPage} />
+
+          <Route path="/memberpage" component={MemberPage} />
+          <Route path="/orderrecord" component={Order_record} />
+
+          <Route path="/admin/dashboard" component={Dashboard} />
 
         </Switch>
       </BrowserRouter>

@@ -1,0 +1,85 @@
+.button_effect {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  margin: 0 10px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0.99;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
+  -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+  transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+.button_effect:before {
+  content: "";
+  background-color: #3b5998;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 70%;
+  left: -55%;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+  transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+
+
+
+.button_effect:focus:before,
+.button_effect:hover:before {
+height: 800%;
+top: -90%;
+left: 30%;
+}
+
+
+.card_button_effect {
+	color: #333;
+	/* cursor: pointer; */
+	display: block;
+	font-size: 22px;
+	font-weight: 400;
+	line-height: 45px;
+	margin-right: 2em;
+	text-align: center;
+	max-width: 180px;
+	position: relative;
+	/* text-decoration: none; */
+	/* text-transform: uppercase; */
+	vertical-align: middle;
+	width: 100%;
+	border:0
+}
+
+/* .Vbtn-1 {
+	background:transparent;
+	text-align: center;
+	float:left;
+} */
+.Vbtn svg {
+	height: 45px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.Vbtn rect {
+	fill: none;
+	stroke: #e1b700;
+	stroke-width: 5;
+	stroke-dasharray: 422, 0;
+	transition: all 450ms linear 0s;
+}
+.Vbtn:hover {
+	background: rgba(128, 128, 128, 0.075);
+	font-weight: 900;
+	transition: all 150ms linear 0s;
+}
+.Vbtn:hover rect {
+	stroke-width: 8;
+	stroke-dasharray: 15, 310;
+	stroke-dashoffset: 20;
+	-webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+	transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}

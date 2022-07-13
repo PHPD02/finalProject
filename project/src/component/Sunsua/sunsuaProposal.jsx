@@ -141,44 +141,50 @@ class SunsuaProposal extends Component {
     setProposal = async (e) => {
         console.clear();
         e.preventDefault();
-        console.log("1." + this.state)
-        let imgUrl = "";
-        const formData = new FormData();
-        formData.append(
-            "image",
-            this.state.file,
-        );
+        let res_chkForm = this.chkForm();
+        if (res_chkForm == 1) {
 
-        // let url = "https://api.imgur.com/3/image";
-        let res = await $.post({
-            url: "https://api.imgur.com/3/image",
-            async: true,
-            crossDomain: true,
-            method: 'POST',
-            headers: {
-                'Authorization': 'Client-ID 7b9a0d0b0e036c5',
-            },
-            processData: false,
-            contentType: false,
-            mimeType: 'multipart/form-data',
-            data: formData,
-        })
-            .then(res => {
-                console.log("success");
-                let temp = JSON.parse(res);
-                this.state.proposalDetail.picUrl = temp.data.link;
+            console.log("1." + this.state)
+            let imgUrl = "";
+            const formData = new FormData();
+            formData.append(
+                "image",
+                this.state.file,
+            );
+    
+            // let url = "https://api.imgur.com/3/image";
+            let res = await $.post({
+                url: "https://api.imgur.com/3/image",
+                async: true,
+                crossDomain: true,
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Client-ID 7b9a0d0b0e036c5',
+                },
+                processData: false,
+                contentType: false,
+                mimeType: 'multipart/form-data',
+                data: formData,
             })
-            .catch(err => {
-                console.log("failed");
-                console.log(err);
-            })
-        console.log(this.state.proposalDetail);
-
-        this.setState({})
-        let proposalSet = document.querySelector("#proposalSet");
-        proposalSet.classList.add("d-none");
-        let proposalConfirm = document.querySelector("#proposalConfirm");
-        proposalConfirm.classList.remove("d-none");
+                .then(res => {
+                    console.log("success");
+                    let temp = JSON.parse(res);
+                    this.state.proposalDetail.picUrl = temp.data.link;
+                })
+                .catch(err => {
+                    console.log("failed");
+                    console.log(err);
+                    return;
+                })
+            console.log(this.state.proposalDetail);
+    
+            this.setState({})
+            let proposalSet = document.querySelector("#proposalSet");
+            proposalSet.classList.add("d-none");
+            let proposalConfirm = document.querySelector("#proposalConfirm");
+            proposalConfirm.classList.remove("d-none");
+        }
+        else alert(res_chkForm);
     }
 
     submitProposal = async (e) => {
@@ -191,7 +197,7 @@ class SunsuaProposal extends Component {
             .then(res => {
                 // console.log("success");
                 if (res.status == 200) {
-                    // document.location.href = "/sunsua"
+                    document.location.href = "/sunsua"
                     console.log(res);
                 }
             })
@@ -207,8 +213,22 @@ class SunsuaProposal extends Component {
         let proposalConfirm = document.querySelector("#proposalConfirm");
         proposalConfirm.classList.add("d-none");
     }
-
-
+    /* 確認表單都填寫 */
+    chkForm = () => {
+        if (this.state.proposalDetail.city == null || this.state.proposalDetail.city == "") return "請輸入縣市"
+        if (this.state.proposalDetail.area == null || this.state.proposalDetail.area == "") return "請輸入地區"
+        if (this.state.proposalDetail.addr == null || this.state.proposalDetail.addr == "") return "請輸入地址"
+        if (this.state.proposalDetail.arriveTime == null || this.state.proposalDetail.arriveTime == "") return "請輸入預計到達時間"
+        if (this.state.proposalDetail.shop == null || this.state.proposalDetail.shop == "") return "請輸入餐廳"
+        if (this.state.proposalDetail.meal == null || this.state.proposalDetail.meal == "") return "請輸入餐點"
+        if (this.state.proposalDetail.cost == null || this.state.proposalDetail.cost == "") return "請輸入餐點價格"
+        if (this.state.proposalDetail.amount == null || this.state.proposalDetail.amount == "") return "請輸入餐點上限數量"
+        if (this.state.proposalDetail.mealType == null || this.state.proposalDetail.mealType == "") return "請選擇餐點類型"
+        if (this.state.proposalDetail.limitTimeHr == null || this.state.proposalDetail.limitTimeHr == "") return "請輸入時間"
+        if (this.state.proposalDetail.limitTimeMin == null || this.state.proposalDetail.limitTimeMin == "") return "請輸入時間"
+        // if (this.state.proposalDetail.picUrl == null || this.state.proposalDetail.picUrl == "") return "請選擇餐點照片"
+        return 1;
+    }
     /* 測試用 */
     dataShow = () => {
         console.clear();

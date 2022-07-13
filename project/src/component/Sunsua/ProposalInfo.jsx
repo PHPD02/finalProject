@@ -28,6 +28,7 @@ class ProposalInfo extends Component {
             mealType: null,
             setTime: null,
             limitTime: null,
+            picUrl: '',
             state: "open"
         },
         optionNum: []
@@ -89,15 +90,21 @@ class ProposalInfo extends Component {
             });
 
     }
-
+    /*  */
+    stateChk = () => {
+        // console.log(this.state.proposalDetail);
+        console.log(this.state.proposalDetail.picUrl);
+    }
     render() {
         return (
             <div className='container my-2'>
+                <button onClick={this.stateChk}> stateChk</button>
                 <div className='row p-1'>
                     <div className='col-lg-3 d-flex align-items-center justify-content-center'>
                         {/* <img src="https://dummyimage.com/100x100/a3a3a3/fff" alt="" /> */}
-                        <img src="https://dummyimage.com/150x150/a3a3a3/fff" alt="" />
+                        {/* <img src="https://dummyimage.com/150x150/a3a3a3/fff" alt="" /> */}
                         {/* <img src="https://dummyimage.com/200x200/a3a3a3/fff" alt="" /> */}
+                        <img src={this.state.proposalDetail.picUrl} alt="" width={150} height={150}/>
                     </div>
                     <div className='col-lg-6 d-flex align-items-center'>
                         <table className='table table-info my-2' border="1">

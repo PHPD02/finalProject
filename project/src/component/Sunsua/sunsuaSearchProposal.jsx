@@ -147,10 +147,14 @@ class SunsuaSearchProposal extends Component {
         let orderConfirm = document.querySelector("#orderConfirm");
         orderConfirm.classList.add("d-none");
     }
-
+    /*  */
+    stateChk = () => {
+        console.log(this.state.proposalDetail);
+    }
     render() {
         return (
             <>
+                <button onClick={this.stateChk}>state show </button>
                 <div id="proposalSearch" className='container py-3'>
                     <h1 className='text-center'>搜尋方案</h1>
                     <div>

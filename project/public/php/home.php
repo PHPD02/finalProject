@@ -1,7 +1,8 @@
 <?php
 // 引入抬頭
 include('sql.php');
-$sql = "SELECT name,region,picture FROM restaurant limit 25";
+// LIKE 臺中市的店家 ORDER BY RAND()亂數
+$sql = "SELECT name,region,picture FROM restaurant WHERE region LIKE '%臺中%' ORDER BY RAND() limit 25";
 // 資料準備
 $stmt = $mysqli->prepare($sql);
 // 資料執行
@@ -10,12 +11,11 @@ $stmt->execute();
 $result = $stmt->get_result();
 // var_dump($result);
 $data = array();
-if($result->num_rows > 0){
-  while($row = $result->fetch_object()){
+if ($result->num_rows > 0) {
+  while ($row = $result->fetch_object()) {
     $data[] = $row;
   }
 }
-$dataToClient = json_encode(JSON_UNESCAPED_UNICODE);
-echo $dataToClicent ;
-
-?>
+// var_dump($data);
+$dataToClient = json_encode($data, JSON_UNESCAPED_UNICODE);
+echo $dataToClient;

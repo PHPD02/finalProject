@@ -9,6 +9,7 @@
 */
 import React, { Component } from 'react';
 import axios from 'axios'
+import $ from 'jquery';
 
 /* 引入 server host url */
 import serverHost from './js/severHost.js';
@@ -136,31 +137,42 @@ class SunsuaProposal extends Component {
     picSel = (e) => {
         this.state.file = e.target.files[0];
     }
-    /* submit */
+    /* 確認提案 */
     setProposal = async (e) => {
         console.clear();
         e.preventDefault();
+        console.log("1." + this.state)
+        let imgUrl = "";
+        const formData = new FormData();
+        formData.append(
+            "image",
+            this.state.file,
+        );
 
-        // const formData = new FormData();
-        // formData.append(
-        //     "image",
-        //     this.state.file,
-        // );
         // let url = "https://api.imgur.com/3/image";
-        // await axios.post(url, formData, {
-        //     headers: {
-        //         'Authorization': 'Client-ID 7b9a0d0b0e036c5'
-        //     }
-        // })
-        //     .then(res => {
-        //         console.log("imgur post success");
-        //         console.log(res);
-        //         this.state.proposalDetail.picUrl = res.data.link;
-        //     })
-        //     .catch(error => {
-        //         console.log("error:" + error.message);
-        //         console.log("imgur post failed");
-        //     })
+        let res = await $.post({
+            url: "https://api.imgur.com/3/image",
+            async: true,
+            crossDomain: true,
+            method: 'POST',
+            headers: {
+                'Authorization': 'Client-ID 7b9a0d0b0e036c5',
+            },
+            processData: false,
+            contentType: false,
+            mimeType: 'multipart/form-data',
+            data: formData,
+        })
+            .then(res => {
+                console.log("success");
+                let temp = JSON.parse(res);
+                this.state.proposalDetail.picUrl = temp.data.link;
+            })
+            .catch(err => {
+                console.log("failed");
+                console.log(err);
+            })
+        console.log(this.state.proposalDetail);
 
         this.setState({})
         let proposalSet = document.querySelector("#proposalSet");
@@ -173,12 +185,14 @@ class SunsuaProposal extends Component {
         console.clear();
         e.preventDefault();
         let url = serverHost + '/finalProject_php/sunsua/setProposal.php';
-        // console.log(`url: ${url}`);
+        console.log("submit:");
+        console.log(this.state.proposalDetail);
         await axios.post(url, this.state.proposalDetail)
             .then(res => {
                 // console.log("success");
                 if (res.status == 200) {
-                    document.location.href = "/sunsua"
+                    // document.location.href = "/sunsua"
+                    console.log(res);
                 }
             })
             .catch(error => {

@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import { BrowserRouter, HashRouter, Switch, Route } from 'react-router-dom';
 
@@ -22,24 +21,35 @@ import OrderDetails from "./components/orderDetails";
 /* 店家資訊 */
 import ShopList from "./components/shopList";
 
-/* 純芷 */
-import './chattyComponents/js/tesst.js';
-import Index from './chattyComponents/components/byIndex';
-import Login1 from './chattyComponents/login1';
+/* == 純芷 == */
+import Login from './chattyComponents/components page/login';
+import RegisterCompany from './chattyComponents/components page/registerCompany';
+import RegisterComsumer from './chattyComponents/components page/registerComsumer';
+import Forgotpwd from './chattyComponents/components page/zzforgotpwd';
+import Cart from './chattyComponents/components page/cart';
+import Payment from './chattyComponents/components page/payment';
+
+
+
+// import Card from './chattyComponents/components item/cartcard';
+import Index from './chattyComponents/components try/byIndex';
+import StoreCard from './chattyComponents/components item/storeCards';
+import Test from './chattyComponents/components try/zztestsql';
+// import Test1 from './chattyComponents/zzteststate';
 // import Login2 from './chattyComponents/zzloginCompany';
 // import Login3 from './chattyComponents/zzloginComsumer';
-import Register from './chattyComponents/register';
-import Register2 from './chattyComponents/register2';
-import Forgotpwd from './chattyComponents/forgotpwd';
-import Cart from './chattyComponents/cart';
-import Card from './chattyComponents/cartcard';
-import Payment from './chattyComponents/payment';
-
+// import Glogin from './chattyComponents/components try/googlelogin';
+import UseGoogleLogin from './chattyComponents/components try/useGoogleLogin';
+// import facebooklogin from './chattyComponents/components try/facebooklogin';
+// import './index';
+import TestScreen from './chattyComponents/components try/testscreen.jsx';
+import StorePage from './chattyComponents/components page/storePage.jsx';
+import TestPayment from './chattyComponents/components try/testpayment.jsx';
 
 /* == 峻軒 == */
 import FoodpandaPage from "./kangComponent/foodpandapage";
-import TodoIndex from "./kangComponent/TodoIndex";
-import TodoEdit from "./kangComponent/TodoEdit";
+// import TodoIndex from "./kangComponent/TodoIndex";
+// import TodoEdit from "./kangComponent/TodoEdit";
 import TodoCreate from "./kangComponent/TodoCreate";
 import TodoDelete from "./kangComponent/TodoDelete";
 
@@ -69,30 +79,39 @@ class App extends React.Component {
           <Route path="/orderDetails" component={OrderDetails} />
 
 
-          {/* ====================================== */}
+          {/* ================================================================================================================== */}
           {/* 純芷 */}
           <Route path="/cht4" component={Index} exact />
           <Route path="/index" component={Index} />
-
-          <Route path="/login1" component={Login1} />
-          {/* <Route path="/login2" component={Login2} /> */}
-          {/* <Route path="/login3" component={Login3} /> */}
-          <Route path="/register" component={Register} />
-          <Route path="/register2" component={Register2} />
-          <Route path="/forgotpwd" component={Forgotpwd} />
+          <Route path="/login" component={Login} />
+          <Route path="/registerComsumer" component={RegisterComsumer} />
+          <Route path="/registerCompany" component={RegisterCompany} />
           <Route path="/cart" component={Cart} />
-          <Route path="/cartcard" component={Card} />
           <Route path="/payment" component={Payment} />
 
-          {/* <Route path="/test" component={Test} /> */}
-          {/* <Route path="/test1" component={Test1} /> */}
 
-          {/* ====================================== */}
+
+
+          {/* <Route path="/googlelogin" component={Glogin} /> */}
+          <Route path="/usegooglelogin" component={UseGoogleLogin} />
+          {/* <Route path="/usefacebooklogin" component={facebooklogin} /> */}
+          <Route path="/testScreen" component={TestScreen} />
+          <Route path="/storeCards" component={StoreCard} />
+          <Route path="/storePage" component={StorePage} />
+          <Route path="/test" component={Test} />
+          <Route path="/testPayment" component={TestPayment} />
+          {/* <Route path="/login2" component={Login2} />
+            <Route path="/login3" component={Login3} /> */}
+          {/* <Route path="/test1" component={Test1} /> */}
+          {/* <Route path="/cartcard" component={Card} /> */}
+          <Route path="/forgotpwd" component={Forgotpwd} />
+
+          {/* ================================================================================================================== */}
           {/* 峻軒 */}
           {/* <Route path="/login" component={Login} /> */}
           <Route path="/foodpandapage" component={FoodpandaPage} />
-          <Route path="/TodoIndex" component={TodoIndex} />
-          <Route path="/Todo/Edit/:id" component={TodoEdit} />
+          {/* <Route path="/TodoIndex" component={TodoIndex} /> */}
+          {/* <Route path="/Todo/Edit/:id" component={TodoEdit} /> */}
           <Route path="/Todo/Delete/:id" component={TodoDelete} />
           <Route path="/Todo/Create" component={TodoCreate} />
           <Route path="/CommentPage" component={CommentPage} />
@@ -106,7 +125,7 @@ class App extends React.Component {
           <Route path="/orderDetails" component={OrderDetails} />
           <Route path="/shopList" component={ShopList} />
 
-          
+
         </Switch>
       </BrowserRouter>
     );

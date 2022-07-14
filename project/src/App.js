@@ -8,7 +8,7 @@ import './chattyComponents/js/tesst.js';
 import Login from './chattyComponents/components page/login';
 import RegisterCompany from './chattyComponents/components page/registerCompany';
 import RegisterComsumer from './chattyComponents/components page/registerComsumer';
-// import Forgotpwd from './chattyComponents/components page/forgotpwd';
+import Forgotpwd from './chattyComponents/components page/zzforgotpwd';
 import Cart from './chattyComponents/components page/cart';
 import Payment from './chattyComponents/components page/payment';
 
@@ -58,7 +58,7 @@ class App extends Component {
             <Route path="/login3" component={Login3} /> */}
             {/* <Route path="/test1" component={Test1} /> */}
             {/* <Route path="/cartcard" component={Card} /> */}
-            {/* <Route path="/forgotpwd" component={Forgotpwd} /> */}
+            <Route path="/forgotpwd" component={Forgotpwd} />
 
           </Switch>
       </BrowserRouter>

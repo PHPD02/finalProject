@@ -42,10 +42,12 @@ class TestPayment extends Component {
 
         return (
             <React.Fragment>
-                <br /><br /><br />
+                <br /><br />
                 <div className='text-center'>
                     <form id="idFormAioCheckOut" 
-                        method="POST" action="http://localhost:80/PHP/phpEcpay/ECPay_CreateOrder.php"
+                        method="POST" action=
+                        // "http://localhost/PHP/phpEcpay/test.php"
+                        "http://localhost:80/PHP/phpEcpay/ECPay_CreateOrder.php"
                         onSubmit={(event) => this.handleSubmit(event)}>
                         <label>編號 (MerchantTradeNo):
                             <input type="text" name="MerchantTradeNo"  defaultValue={this.state.num} className="form-control"  />

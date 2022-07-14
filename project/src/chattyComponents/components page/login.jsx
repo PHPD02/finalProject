@@ -8,6 +8,8 @@ import $ from 'jquery';
 import '../css/signin.css';
 
 import Navbar from '../components item/navbar';
+import GoogleLogin from '../components try/useGoogleLogin';
+// import GoogleLogin from 'react-google-login';
 
 var fromwhere = localStorage.getItem('upwhere');
 var getemail = localStorage.getItem('email');
@@ -207,8 +209,9 @@ class Login1 extends Component {
 
                     <div className="form-signin form-bottom">
                         {/* <b>使用第三方登入</b><br /> */}
-                        <button className='btn btn-lg btn-primary btn-block shadow '><FontAwesomeIcon icon={faFacebookSquare} className="mr-2" /> Facebook</button><br />
-                        <button className='btn btn-lg btn-light btn-block shadow'><FontAwesomeIcon icon={faGoogle} className="mr-4" /> Google</button><br />
+                        <GoogleLogin className='btn btn-lg'/> 
+                        <button className='btn btn-lg btn-primary btn-block shadow mt-4 p-3'><FontAwesomeIcon icon={faFacebookSquare} className="mr-2" /> Facebook</button><br />
+                        {/* <button className='btn btn-lg btn-light btn-block shadow'><FontAwesomeIcon icon={faGoogle} className="mr-4" /> Google</button><br /> */}
                         <button className='btn btn-lg btn-dark btn-block shadow'><FontAwesomeIcon icon={faApple} className="mr-2" /> 以apple帳戶登入</button><br />
                     </div>
 

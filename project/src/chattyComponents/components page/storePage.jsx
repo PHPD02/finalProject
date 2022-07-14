@@ -22,7 +22,7 @@ class StorePage extends Component {
             <div>
                 {this.state.menuList.map((p) => {
                             return(
-                                <div className="column is-3" key={p.menuItemId}>
+                                <div className="column is-3 col-5" key={p.menuItemId}>
                                     <StoreCard  
                                         StoreCard = {p} />
                                 </div>

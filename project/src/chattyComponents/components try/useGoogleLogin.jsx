@@ -11,7 +11,7 @@ const useGoogleLogin = () => {
 
   function handleCallbackResponse(response) {
     // console.log(response);
-    // console.log(jwtDecode( response.credential));
+    // console.log(response.credential);
     // console.log(jwtDecode( response.clientId));
 
     var userObject = jwtDecode(response.credential);

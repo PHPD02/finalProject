@@ -3,7 +3,7 @@
     -Webkit-box-orient: vertical;
     overflow: hidden;
     /* text-overflow: ellipsis; */
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     font-size: 15px;
     line-height: 20px;
     padding-top: 10px;

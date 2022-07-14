@@ -8,7 +8,7 @@ import "./assets/css/style.css"
 
 
 
-class TodoIndex extends React.Component {
+class Dashboard extends React.Component {
   state = {
     todoList: [],
   };
@@ -26,7 +26,7 @@ class TodoIndex extends React.Component {
             <div className="nano-content">
               <ul>
                 <li>
-                  <a className="sidebar-sub-toggle">
+                  <a className="sidebar-sub-toggle" style={{color:"#03A9F5 "}}>
                     <i className="ti-bar-chart-alt"></i> 儀錶板
                     <span className="sidebar-collapse-icon ti-angle-down"></span>
                   </a>
@@ -55,17 +55,17 @@ class TodoIndex extends React.Component {
                   </ul> */}
                 </li>
                 <li>
-                  <a href="/admin/dashboard" >
+                  <a href="#">
                     <i className="ti-calendar"></i> 主頁
                   </a>
                 </li>
                 <li>
-                <a href="/TodoIndex" style={{color:"#03A9F5 "}}>
+                  <a href="#">
                     <i className="ti-email"></i> 菜單管理
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/dashboard/Dashboardorder">
+                  <a href="#">
                     <i className="ti-user"></i> 訂單紀錄
                   </a>
                 </li>
@@ -156,68 +156,6 @@ class TodoIndex extends React.Component {
         <div className="content-wrap mt-5 pt-3">
           <div className="main">
             <div className="container-fluid">
-              <h1 className="h1 my-4">
-                菜單管理
-                <a
-                  href="/Todo/Create"
-                  className=" btn btn-primary btn-lg float-right "
-                >
-                  新增品項
-                </a>
-              </h1>
-
-              <div className="main-content">
-                <div className="row">
-                  {this.state.todoList.map((item, index) => {
-                    return (
-                      <div className="col-lg-4" key={index}>
-                        {/* 這key值需要提供，但還是能跑 */}
-                        <div className="card alert ">
-                          <div className="row align-items-center card-body">
-                            <div className="col-lg-5">
-                              <div className="product-3-img">
-                                <img src={item.picture} alt={item.dish}></img>
-                              </div>
-                            </div>
-                            <div className="col-lg-7">
-                              <div className="product_details_3">
-                                <div className="product_name">
-                                  <h4 className="item_Name">{item.dish}</h4>
-                                </div>
-                                <div className="product_des">
-                                  <p>{item.introduce}</p>
-                                </div>
-                                <div className="price mt-3">
-                                  <p>價格：{item.cost}</p>
-                                </div>
-                                <div className="prdt_add_to_cart text-right">
-                                  <a
-                                    href={`/Todo/Edit/${item.menuItemId}`}
-                                    className="btn btn-success btn-rounded mr-2"
-                                  >
-                                    <span className="icon edit-btn">
-                                      <i className="fas fa-sliders-h"></i>
-                                    </span>
-                                  </a>
-
-                                  <a
-                                    href={`/Todo/Delete/${item.menuItemId}`}
-                                    className="btn btn-danger btn-rounded mr-2"
-                                  >
-                                    <span className="icon edit-btn">
-                                      <i className="fas fa-trash"></i>
-                                    </span>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -228,4 +166,4 @@ class TodoIndex extends React.Component {
   }
 }
 
-export default TodoIndex;
+export default Dashboard;

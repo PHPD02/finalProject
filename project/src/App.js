@@ -7,11 +7,15 @@ import TodoIndex from "./kangComponent/TodoIndex";
 import TodoEdit from "./kangComponent/TodoEdit";
 import TodoCreate from "./kangComponent/TodoCreate";
 import TodoDelete from "./kangComponent/TodoDelete";
+import Dashboardorder from "./kangComponent/Dashboard_order";
+// 0713新增  記得加入
 
 import MemberPage from "./kangComponent/MemberPage";
 import Order_record from "./kangComponent/Order_record";
 import CommentPage from "./kangComponent/CommentPage";
-import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard"
+import Dashboard from "./kangComponent/Dashboard";
+
+
 
 class App extends Component {
   state = {};
@@ -26,11 +30,15 @@ class App extends Component {
           <Route path="/Todo/Delete/:id" component={TodoDelete} />
           <Route path="/Todo/Create" component={TodoCreate} />
           <Route path="/CommentPage" component={CommentPage} />
+          <Route path="/admin/dashboard/Dashboardorder" component={Dashboardorder} />
+          
+
 
           <Route path="/memberpage" component={MemberPage} />
           <Route path="/orderrecord" component={Order_record} />
 
           <Route path="/admin/dashboard" component={Dashboard} />
+          {/* 這還是空的  應該不會用到了 */}
 
         </Switch>
       </BrowserRouter>

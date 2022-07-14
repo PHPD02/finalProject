@@ -106,7 +106,7 @@ class FoodpandaPage extends React.Component {
         </div>
         </div>
         {/* <LiveChat /> */}
-        {/* <FirebaseIndex /> */}
+        <FirebaseIndex />
         {/* <ChatRobot2/> */}
         {/* <FindDisatnce /> */}
         <div className="container mt-4 all-item">

@@ -48,10 +48,12 @@ class Login1 extends Component {
                     var sqlemail = JSON.parse(data).email;
                     var sqlname = JSON.parse(data).name;
                     var sqladdress= JSON.parse(data).address;
+                    
                     // console.log(JSON.parse(data).id);
                     localStorage.setItem('email', sqlemail);
                     localStorage.setItem('companyname', sqlname);
                     localStorage.setItem('companyaddr', sqladdress);
+                    
                     
                     /////廠商登入後須到後台不留在前台
                     window.location = "http://localhost:3000/";
@@ -80,10 +82,14 @@ class Login1 extends Component {
                     var sqlemail = JSON.parse(data).email;
                     var sqlfirstname = JSON.parse(data).firstName;
                     var sqllastname = JSON.parse(data).lastName;
+                    var sqltel = JSON.parse(data).tel;
+                    var sqladdr = JSON.parse(data).addr;
                     // console.log(JSON.parse(data).id);
                     localStorage.setItem('email', sqlemail);
                     localStorage.setItem('firstname', sqlfirstname);
                     localStorage.setItem('lastname', sqllastname);
+                    localStorage.setItem('telphone', sqltel);
+                    localStorage.setItem('addr', sqladdr);
                     // window.location= url;
                     // window.location = "http://localhost:3000/index";
                     // var fromwhere = localStorage.getItem('upwhere');

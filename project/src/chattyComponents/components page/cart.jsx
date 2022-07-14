@@ -79,15 +79,16 @@ class Cart extends Component {
                     <div className='text-center'>
                         <span className='h1'><strong>購物車</strong></span>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className='h4'>日伴洋食 (台中勤美店)</span>
+                        <span className='h4'><u>功夫茶</u></span>
                     </div>
-                    <div className='menutailBar row text-right'>
+                    <div className='menutailBar row text-right mt-5'>
                         <div className='col-3'>食物</div>
                         <div className='col-3'>食物名字</div>
                         <div className='col-2'>單價</div>
                         <div className='col-2'>數量</div>
                         <div className='col-2'>金額</div>
                     </div>
+                    <hr />
 
                     <Cartcard />
 

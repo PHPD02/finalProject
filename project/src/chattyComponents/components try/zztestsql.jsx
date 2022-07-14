@@ -27,7 +27,7 @@ function App() {
     return (
         <div className="App">
             <form
-                action="http://localhost:8000/server.php"
+                action="http://localhost:80/PHP/test/server.php"
                 method="post"
                 onSubmit={(event) => handleSumbit(event)}
             >

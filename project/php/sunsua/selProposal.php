@@ -1,8 +1,10 @@
 <?php
-header('Access-Control-Allow-Origin: http://localhost:3000');
-header('Access-Control-Allow-Methods:POST,GET,OPTIONS');
-header('Access-Control-Allow-Headers: X-Requested-With,X_Requested_With,X-PINGOTHER,Content-Type');
+// header('Access-Control-Allow-Origin: * ');
+// // header('Access-Control-Allow-Origin: http://localhost:3000');
+// header('Access-Control-Allow-Methods:POST,GET,OPTIONS');
+// header('Access-Control-Allow-Headers: X-Requested-With,X_Requested_With,X-PINGOTHER,Content-Type');
 date_default_timezone_set('Asia/Taipei');
+include "../serverHeader.php";
 include "../sql.php";
 
 $sql =  "SELECT * FROM proposal WHERE state = 1 ;";

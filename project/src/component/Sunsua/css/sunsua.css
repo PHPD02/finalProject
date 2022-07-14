@@ -2,14 +2,16 @@
     box-sizing: border-box;
 }
 
-.header {
+#sunsua>.header {
     /* #f9d367; */
     /* #f767f9 */
     /* #676bf9 */
     background-color: rgba(259, 211, 103, 0.2);
     text-align: center;
 }
-
+#sunsua container{
+    
+}
 .footer {
     text-align: center;
 }

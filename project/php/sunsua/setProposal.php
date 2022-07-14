@@ -1,7 +1,9 @@
 <?php
-header('Access-Control-Allow-Origin: http://localhost:3000');
-header('Access-Control-Allow-Methods:POST,GET,OPTIONS');
-header('Access-Control-Allow-Headers: X-Requested-With,X_Requested_With,X-PINGOTHER,Content-Type');
+// header('Access-Control-Allow-Origin: *');
+// // header('Access-Control-Allow-Origin: http://localhost:3000');
+// header('Access-Control-Allow-Methods:POST,GET,OPTIONS');
+// header('Access-Control-Allow-Headers: X-Requested-With,X_Requested_With,X-PINGOTHER,Content-Type');
+include "../serverHeader.php";
 include "../sql.php";
 
 $restJson = file_get_contents("php://input");

@@ -9,6 +9,7 @@
 */
 import React, { Component } from 'react';
 import axios from 'axios'
+import $ from 'jquery';
 
 /* 引入 server host url */
 import serverHost from './js/severHost.js';
@@ -38,8 +39,9 @@ class SunsuaProposal extends Component {
             limitTime: null,
             limitTimeHr: null,
             limitTimeMin: null,
-            picture: null,
-        }
+            picUrl: null,
+        },
+        file: {}
     }
 
     constructor(props) {
@@ -131,28 +133,72 @@ class SunsuaProposal extends Component {
             this.state.proposalDetail.limitTimeMin = e.target.value;
         }
     }
-
-
-    /* submit */
-    setProposal = (e) => {
+    /*  */
+    picSel = (e) => {
+        this.state.file = e.target.files[0];
+    }
+    /* 確認提案 */
+    setProposal = async (e) => {
+        console.clear();
         e.preventDefault();
-        this.setState({})
-        let proposalSet = document.querySelector("#proposalSet");
-        proposalSet.classList.add("d-none");
-        let proposalConfirm = document.querySelector("#proposalConfirm");
-        proposalConfirm.classList.remove("d-none");
+        let res_chkForm = this.chkForm();
+        if (res_chkForm == 1) {
+
+            console.log("1." + this.state)
+            let imgUrl = "";
+            const formData = new FormData();
+            formData.append(
+                "image",
+                this.state.file,
+            );
+    
+            // let url = "https://api.imgur.com/3/image";
+            let res = await $.post({
+                url: "https://api.imgur.com/3/image",
+                async: true,
+                crossDomain: true,
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Client-ID 7b9a0d0b0e036c5',
+                },
+                processData: false,
+                contentType: false,
+                mimeType: 'multipart/form-data',
+                data: formData,
+            })
+                .then(res => {
+                    console.log("success");
+                    let temp = JSON.parse(res);
+                    this.state.proposalDetail.picUrl = temp.data.link;
+                })
+                .catch(err => {
+                    console.log("failed");
+                    console.log(err);
+                    return;
+                })
+            console.log(this.state.proposalDetail);
+    
+            this.setState({})
+            let proposalSet = document.querySelector("#proposalSet");
+            proposalSet.classList.add("d-none");
+            let proposalConfirm = document.querySelector("#proposalConfirm");
+            proposalConfirm.classList.remove("d-none");
+        }
+        else alert(res_chkForm);
     }
 
     submitProposal = async (e) => {
         console.clear();
         e.preventDefault();
         let url = serverHost + '/finalProject_php/sunsua/setProposal.php';
-        console.log(`url: ${url}`);
+        console.log("submit:");
+        console.log(this.state.proposalDetail);
         await axios.post(url, this.state.proposalDetail)
             .then(res => {
                 // console.log("success");
                 if (res.status == 200) {
                     document.location.href = "/sunsua"
+                    console.log(res);
                 }
             })
             .catch(error => {
@@ -167,13 +213,26 @@ class SunsuaProposal extends Component {
         let proposalConfirm = document.querySelector("#proposalConfirm");
         proposalConfirm.classList.add("d-none");
     }
-
-
+    /* 確認表單都填寫 */
+    chkForm = () => {
+        if (this.state.proposalDetail.city == null || this.state.proposalDetail.city == "") return "請輸入縣市"
+        if (this.state.proposalDetail.area == null || this.state.proposalDetail.area == "") return "請輸入地區"
+        if (this.state.proposalDetail.addr == null || this.state.proposalDetail.addr == "") return "請輸入地址"
+        if (this.state.proposalDetail.arriveTime == null || this.state.proposalDetail.arriveTime == "") return "請輸入預計到達時間"
+        if (this.state.proposalDetail.shop == null || this.state.proposalDetail.shop == "") return "請輸入餐廳"
+        if (this.state.proposalDetail.meal == null || this.state.proposalDetail.meal == "") return "請輸入餐點"
+        if (this.state.proposalDetail.cost == null || this.state.proposalDetail.cost == "") return "請輸入餐點價格"
+        if (this.state.proposalDetail.amount == null || this.state.proposalDetail.amount == "") return "請輸入餐點上限數量"
+        if (this.state.proposalDetail.mealType == null || this.state.proposalDetail.mealType == "") return "請選擇餐點類型"
+        if (this.state.proposalDetail.limitTimeHr == null || this.state.proposalDetail.limitTimeHr == "") return "請輸入時間"
+        if (this.state.proposalDetail.limitTimeMin == null || this.state.proposalDetail.limitTimeMin == "") return "請輸入時間"
+        // if (this.state.proposalDetail.picUrl == null || this.state.proposalDetail.picUrl == "") return "請選擇餐點照片"
+        return 1;
+    }
     /* 測試用 */
     dataShow = () => {
         console.clear();
-        // console.log(this.state);
-        console.log(this.state.proposalDetail);
+        console.log(this.state);
     }
 
 
@@ -269,7 +328,7 @@ class SunsuaProposal extends Component {
                                             資訊提供 <br />
                                             餐單照片&nbsp;或&nbsp;餐點照片
                                         </td>
-                                        <td><input type="file" /></td>
+                                        <td><input type="file" onChange={this.picSel} /></td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -24,13 +24,8 @@ class firstpage extends Component {
     // let e = event;
     // this.props.clickTwCity(e)
     // var a = document.getElementsByClassName('itemCitys');
-
     console.log(e.target.getAttribute('value'));
-  
-    // console.log(citys);
-    // console.log(index);
     // var a = event.target.value;
-    // 基隆市
     var Tw = document.getElementById('textCity');
     Tw.textContent = e.target.getAttribute('value');
   }
@@ -74,12 +69,6 @@ class firstpage extends Component {
 
         <div className='mt-4'>
           <h4 className='text-center'><span id="textCity"></span> 特別合作店家</h4>
-          {/* <h4 className='text-center'>
-            請選擇區域:<select><option>1</option>
-              <option>2</option>
-            </select>
-          </h4> */}
-
         </div>
         <hr className='w-75 bg-danger' />
         {/* 測試aos */}
@@ -87,33 +76,25 @@ class firstpage extends Component {
           className="zoom-in-down"
           data-aos="zoom-in-down">
         </div> */}
-
+        
         {/* 點選地圖 - 相對應地區的特別合作店家 */}
         <div className="container">
-          <div className='row'> 
+          <div className='row'>
             {/* 地圖 */}
             <div className='col-lg-5'>
               {/* 取得與其他(Taiwan)元件的呼叫 */}
-              <Taiwan twCity={(e)=>this.clickTwCity(e)} />
+              <Taiwan twCity={(e) => this.clickTwCity(e)} />
             </div>
             {/* 合作店家 */}
-            <div className="col-7 " data-aos="zoom-in-down">
+            {/* data-aos="zoom-in-down" */}
+            <div className="col-7 ">
               <div>
                 <div className='row '>
-                  <div className='col-lg-4 col-sm-12' ><Cards /></div>
-                  <div className='col-lg-4 col-sm-12' ><Cards /></div>
-                  <div className='col-lg-4 col-sm-12'><Cards /></div>
+                  <div className='col-lg-4 col-sm-12 stylecards'><Cards /></div>
+                  <div className='col-lg-4 col-sm-12 stylecards'><Cards /></div>
+                  <div className='col-lg-4 col-sm-12 stylecards'><Cards /></div>
                 </div>
-                <div className='row mt-2 '>
-                  <div className='col-lg-4 col-sm-12'><Cards /></div>
-                  <div className='col-lg-4 col-sm-12'><Cards /></div>
-                  <div className='col-lg-4 col-sm-12'><Cards /></div>
-                </div>
-                <div className='row mt-2'>
-                  <div className='col-lg-4 col-sm-12'><Cards /></div>
-                  <div className='col-lg-4 col-sm-12'><Cards /></div>
-                  <div className='col-lg-4 col-sm-12'><Cards /></div>
-                </div>
+                
                 <NavLink to="/" className=" float-right btn btnon">more...</NavLink>
               </div>
             </div>

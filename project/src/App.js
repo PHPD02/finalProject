@@ -6,7 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Sunsua from './component/Sunsua/sunsua.jsx';
 
 /* 測試 */
-import ImgUpload from './component/test/imgUpload'
+import ImgUpload from './component/Maxtest/imgUpload'
+import SimpleMap from './component/Maxtest/googleMap'
+import Gmtest from './component/Maxtest/gmtest'
+import MyComponent from './component/Maxtest/gmtest02'
+import Gmtest03 from './component/Maxtest/gmtest03'
 class App extends Component {
   state = {}
   render() {
@@ -22,6 +26,10 @@ class App extends Component {
 
           {/* ====================================== */}
           <Route path="/imgtest" component={ImgUpload} />
+          <Route path="/gm" component={SimpleMap} />
+          <Route path="/gmtest" component={Gmtest} />
+          <Route path="/gmtest02" component={MyComponent} />
+          <Route path="/gmtest03" component={Gmtest03} />
 
         </Switch>
       </BrowserRouter>

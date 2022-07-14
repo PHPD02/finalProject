@@ -95,7 +95,7 @@ class firstpage extends Component {
                   <div className='col-lg-4 col-sm-12 stylecards'><Cards /></div>
                 </div>
 
-                <NavLink to="/" className=" float-right btn btnon">more...</NavLink>
+                <NavLink to="/foodpandapage" className=" float-right btn btnon">more...</NavLink>
               </div>
             </div>
           </div>

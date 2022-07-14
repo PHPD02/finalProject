@@ -1,7 +1,9 @@
 https://magazine.foodpanda.com.tw/healthy-meal/?gclid=Cj0KCQjw5ZSWBhCVARIsALERCvzjsDvCiUDOCUKzKdPsmSTJXuuniNzZj66CR685NVS0Iu3Os9Lk3S4aAjb-EALw_wcB
 https://mui.com/zh/   React UI 開發
+https://blog.csdn.net/linkedin_37345339/article/details/104659961 React 使用sql 語法做判斷式
 需要的功能(完成後請打圈)
-1.地圖點選 出現相對應的合作店家 (O)完成 -串連資料庫
+1.地圖點選 出現相對應的合作店家 (O)完成 -串連資料庫 (O)
+---------------------------------------------------------
 2.計算配送時間
 3.店家頁面 需要二個判斷式 input 一個輸入欄位(地址) 
   一. 是否有填寫配送地址 才可點餐 GOOGLE MAP

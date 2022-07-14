@@ -35,7 +35,7 @@ class firstpage extends Component {
     // or simply just AOS.init();
     AOS.init({
       // initialise with other settings
-      duration: 2000
+      // duration: 2000
     });
   }
 

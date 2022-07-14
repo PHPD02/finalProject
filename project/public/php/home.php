@@ -2,7 +2,7 @@
 // 引入抬頭
 include('sql.php');
 // LIKE 臺中市的店家 ORDER BY RAND()亂數
-$sql = "SELECT name,region,picture FROM restaurant WHERE region LIKE '%臺中%' ORDER BY RAND() limit 9";
+$sql = "SELECT name,region,picture FROM restaurant WHERE region LIKE '%臺中%' ORDER BY RAND() limit 3";
 // 資料準備
 $stmt = $mysqli->prepare($sql);
 // 資料執行

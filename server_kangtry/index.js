@@ -134,6 +134,45 @@ function (err, rows) {
 })
 
 
+// 後臺訂單部分
+var mysql = require("mysql");
+var dashboardorder = mysql.createConnection({
+    user: "root",
+    password: "",
+    host: "localhost",
+    port: 3306,
+    database: "finalproject"
+});
+
+dashboardorder.connect(function (err) {
+    console.log(err);
+})
+	
+app.get("/dashboardorder", function (req, res) {
+    dashboardorder.query("select * from sunsua_order ", [],
+    function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})
+// app.get("/dashboardorder", function (req, res) {
+//     dashboardorder.query("select * from sunsua_order where id = ?",
+//     [req.body.id,req.body.proposalId,req.body.uidPartyB,req.body.count,req.body.freight,req.body.state],
+//     function (err, rows) {
+//             res.send( JSON.stringify(rows) );
+//         }
+//     )
+// })
+
+
+
+
+
+
+
+
+
+
 
 // 
 // 首頁用的餐廳列表

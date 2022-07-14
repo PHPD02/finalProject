@@ -113,8 +113,8 @@ class FoodpandaPage extends React.Component {
           <div className="section2">
             <div
               className="section2_bar1 hito"
-              data-aos="fade-right"
-              data-aos-once="true"
+              // data-aos="fade-right"
+              // data-aos-once="true"
             >
               <h2 className="font-weight-bolder ">
               &ensp;優惠主打星
@@ -124,8 +124,8 @@ class FoodpandaPage extends React.Component {
             </div>
             <div
               className="section2_bar2"
-              data-aos="fade-left"
-              data-aos-once="true"
+              // data-aos="fade-left"
+              // data-aos-once="true"
             >
               <h2 className="mt-5 font-weight-bolder">
               &ensp;附近美食
@@ -135,8 +135,8 @@ class FoodpandaPage extends React.Component {
             </div>
             <div
               className="section2_bar3"
-              data-aos="fade-right"
-              data-aos-once="true"
+              // data-aos="fade-right"
+              // data-aos-once="true"
             >
               <h2 className="mt-5 font-weight-bolder">
               &ensp;中式餐廳
@@ -146,9 +146,8 @@ class FoodpandaPage extends React.Component {
             </div>
             <div
               className="section2_bar4"
-              data-aos="fade-left"
-              data-aos-once="true"
-              data-aos-duration="700"
+              // data-aos="fade-left"
+              // data-aos-once="true"
             >
               <h2 className="mt-5 font-weight-bolder">
               &ensp;西式餐廳

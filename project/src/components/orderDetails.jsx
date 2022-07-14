@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Navbar from '../repeatability/Navbar';
-import './orderdetails.css';
+import Navbar from './repeatability/Navbar';
+import './css/orderdetails.css';
 // import Footer from '../repeatability/Footer';
-class orderDetails extends Component {
+class OrderDetails extends Component {
   state = {}
   render() {
     return (
@@ -79,9 +79,9 @@ class orderDetails extends Component {
           </div>
         </div>
 
-      </React.Fragment >
+      </React.Fragment>
     );
   }
 }
 
-export default orderDetails;
+export default OrderDetails;

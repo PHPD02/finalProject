@@ -1,10 +1,28 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import './latesnews.css';
+import './css/latesnews.css';
 // import 'aos/dist/aos.css';
 // import AOS from 'aos';
 class LatestNews extends Component {
   state = {}
+  // 測試 滑鼠滑過上方會改變背景色與文字顏色
+  // onMouseOver = () => {
+  //   function change() {
+  //     var msg = document.getElementById('msg');
+  //     msg.style.color = 'white';
+  //     msg.style.backgroundColor = 'red';
+  //   }
+  // }
+  // onMouseout = () => {
+  //   function restore() {
+  //     var msg = document.getElementById('msg');
+  //     msg.style.color = '';
+  //     msg.style.backgroundColor = '';
+  //   }
+  // }
+  // id='msg' onMouseOver={"change"} onMouseOut={"restore"}
+  // 
+
   render() {
     return (
       <React.Fragment>

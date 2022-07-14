@@ -2,27 +2,40 @@ import React, { Component } from 'react';
 // 頁面需做連結時 引入
 import { NavLink } from 'react-router-dom';
 // 引入頁面導覽列
-import "./firstpage.css";
-import Navbar from '../repeatability/Navbar';
-import Footer from '../repeatability/Footer';
-import Cards from '../repeatability/Cards';
-import Taiwan from '../repeatability/Taiwan';
-import LatestNews from '../repeatability/LatestNews';
-import 'bootstrap/dist/js/bootstrap.bundle';
+import "./css/firstpage.css";
+import Navbar from './repeatability/Navbar';
+import Footer from './repeatability/Footer';
 
+// 引入首頁專用卡片架構
+import Cards from './component/Cards';
+// 引入首頁專用地圖架構
+import Taiwan from './component/Taiwan';
+// 引入首頁專用最新消息資訊架構
+import LatestNews from './component/LatestNews';
 
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 
 class firstpage extends Component {
   state = {}
+  // 首頁連結地圖城市
+  clickTwCity = (e) => {
+    // 是否有取得到Taiwan頁面的值
+    // let e = event;
+    // this.props.clickTwCity(e)
+    // var a = document.getElementsByClassName('itemCitys');
+    console.log(e.target.getAttribute('value'));
+    // var a = event.target.value;
+    var Tw = document.getElementById('textCity');
+    Tw.textContent = e.target.getAttribute('value');
+  }
 
 
   componentDidMount() {
     // or simply just AOS.init();
     AOS.init({
       // initialise with other settings
-      duration: 2000
+      // duration: 2000
     });
   }
 
@@ -55,9 +68,7 @@ class firstpage extends Component {
         </div>
 
         <div className='mt-4'>
-
-          <h4 className='text-center'>特別合作店家</h4>
-
+          <h4 className='text-center'><span id="textCity"></span> 特別合作店家</h4>
         </div>
         <hr className='w-75 bg-danger' />
         {/* 測試aos */}
@@ -71,26 +82,19 @@ class firstpage extends Component {
           <div className='row'>
             {/* 地圖 */}
             <div className='col-lg-5'>
-              <Taiwan />
+              {/* 取得與其他(Taiwan)元件的呼叫 */}
+              <Taiwan twCity={(e) => this.clickTwCity(e)} />
             </div>
             {/* 合作店家 */}
-            <div className="col-7 " data-aos="zoom-in-down">
+            {/* data-aos="zoom-in-down" */}
+            <div className="col-7 ">
               <div>
                 <div className='row '>
-                  <div className='col-lg-4 col-sm-12' ><Cards /></div>
-                  <div className='col-lg-4 col-sm-12' ><Cards /></div>
-                  <div className='col-lg-4 col-sm-12'><Cards /></div>
+                  <div className='col-lg-4 col-sm-12 stylecards'><Cards /></div>
+                  <div className='col-lg-4 col-sm-12 stylecards'><Cards /></div>
+                  <div className='col-lg-4 col-sm-12 stylecards'><Cards /></div>
                 </div>
-                <div className='row mt-2 '>
-                  <div className='col-lg-4 col-sm-12'><Cards /></div>
-                  <div className='col-lg-4 col-sm-12'><Cards /></div>
-                  <div className='col-lg-4 col-sm-12'><Cards /></div>
-                </div>
-                <div className='row mt-2'>
-                  <div className='col-lg-4 col-sm-12'><Cards /></div>
-                  <div className='col-lg-4 col-sm-12'><Cards /></div>
-                  <div className='col-lg-4 col-sm-12'><Cards /></div>
-                </div>
+
                 <NavLink to="/" className=" float-right btn btnon">more...</NavLink>
               </div>
             </div>

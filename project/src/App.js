@@ -2,21 +2,29 @@
 import React, { Component } from "react";
 import { BrowserRouter, HashRouter, Switch, Route } from 'react-router-dom';
 
+// 引入模板
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/font-awesome/css/font-awesome.min.css";
+import "bootstrap/dist/js/bootstrap.bundle";
+import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* 承翰 */
+/* 順弁 */
 import Sunsua from './component/Sunsua/sunsua.jsx';
 
-import "../node_modules/font-awesome/css/font-awesome.min.css";
+
+/* == 群傑 == */
+/* 首頁 */
 import Firstpage from "./components/firstpage";
-import OrderDetails from "./partpage/orderDetails";
-import ShopList from "./partpage/shopList";
+/* 訂單詳情 */
+import OrderDetails from "./components/orderDetails";
+/* 店家資訊 */
+import ShopList from "./components/shopList";
 
 /* 純芷 */
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.bundle';
 import './chattyComponents/js/tesst.js';
-
 import Index from './chattyComponents/components/byIndex';
-
 import Login1 from './chattyComponents/login1';
 // import Login2 from './chattyComponents/zzloginCompany';
 // import Login3 from './chattyComponents/zzloginComsumer';
@@ -27,13 +35,8 @@ import Cart from './chattyComponents/cart';
 import Card from './chattyComponents/cartcard';
 import Payment from './chattyComponents/payment';
 
-// import Test from './chattyComponents/zztestsql';
-// import Test1 from './chattyComponents/zzteststate';
 
-/* 峻軒 */
-// import React, { Component } from "react";
-
-// import Login from "./chattyComponents/login";
+/* == 峻軒 == */
 import FoodpandaPage from "./kangComponent/foodpandapage";
 import TodoIndex from "./kangComponent/TodoIndex";
 import TodoEdit from "./kangComponent/TodoEdit";
@@ -45,7 +48,10 @@ import Order_record from "./kangComponent/Order_record";
 import CommentPage from "./kangComponent/CommentPage";
 import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard"
 
+
+
 class App extends React.Component {
+  state = {};
   render() {
     return (
       <BrowserRouter>
@@ -96,6 +102,11 @@ class App extends React.Component {
 
           <Route path="/admin/dashboard" component={Dashboard} />
 
+
+          <Route path="/orderDetails" component={OrderDetails} />
+          <Route path="/shopList" component={ShopList} />
+
+          
         </Switch>
       </BrowserRouter>
     );

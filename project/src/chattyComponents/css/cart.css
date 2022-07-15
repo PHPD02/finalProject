@@ -1,25 +1,11 @@
 #footer {
     background-color:cornflowerblue;
 }
-
-.sp1 {
-    /* background-color: darkcyan; */
-}
-.sp2 {
-    /* background-color: coral; */
-}
-.sp3 {
-    /* background-color: darkgray; */
-}
 .cart-food-sp {
     height: 80px;
     display: flex;
     justify-content: right;
     align-items: center;
-}
-
-.menutail {
-    /* background-color: darkorange; */
 }
 .menutailBar {
     /* background-color:indianred; */

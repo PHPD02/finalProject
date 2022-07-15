@@ -30,6 +30,11 @@ import Cart from './chattyComponents/components page/cart';
 import Payment from './chattyComponents/components page/payment';
 
 
+// 
+import Resetpassword from './chattyComponents/components page/resetpassword';
+import CompleteResetPwd from './chattyComponents/components page/CompleteResetPwd';
+import sendresetemail from './chattyComponents/components page/sendresetemail';
+
 
 // import Card from './chattyComponents/components item/cartcard';
 import Index from './chattyComponents/components try/byIndex';
@@ -125,6 +130,10 @@ class App extends React.Component {
           <Route path="/orderDetails" component={OrderDetails} />
           <Route path="/shopList" component={ShopList} />
 
+          <Route path="/forgotpwd" component={Forgotpwd} />
+          <Route path="/resetpassword" component={Resetpassword} />
+          <Route path="/CompleteResetPwd" component={CompleteResetPwd} />
+          <Route path="/sendresetemail" component={sendresetemail} />
 
         </Switch>
       </BrowserRouter>

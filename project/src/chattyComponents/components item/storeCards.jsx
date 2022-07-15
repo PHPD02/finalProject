@@ -20,7 +20,7 @@ class StoreCard extends Component {
 
 
   render() {
-    const { menuItemId, dish, type, introduce, picture, cost } = this.props.StoreCard;
+    const { dish, type, introduce, picture, cost } = this.props.StoreCard;
     return (
       <React.Fragment>
         <div className='card' style={{ boxShadow: "3px 3px 3px grey" }}>

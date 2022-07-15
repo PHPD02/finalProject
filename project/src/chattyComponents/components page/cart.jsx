@@ -81,7 +81,7 @@ class Cart extends Component {
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <span className='h4'><u>功夫茶</u></span>
                     </div>
-                    <div className='menutailBar row text-right mt-5'>
+                    <div className='menutailBar row text-right mt-4'>
                         <div className='col-3'>食物</div>
                         <div className='col-3'>食物名字</div>
                         <div className='col-2'>單價</div>
@@ -92,9 +92,9 @@ class Cart extends Component {
 
                     <Cartcard />
 
-                    <div className='menutail row'>
+                    {/* <div className='menutail row'> */}
                         {/* 點餐內容 */}
-                        <div className='col-3 cart-food-sp sp1'><img src="https://images.deliveryhero.io/image/fd-tw/Products/38155656.jpg?height=80" alt="" /></div>
+                        {/* <div className='col-3 cart-food-sp sp1'><img src="https://images.deliveryhero.io/image/fd-tw/Products/38155656.jpg?height=80" alt="" /></div>
                         <div className='col-3 cart-food-sp sp2'>黃金里肌厚切豬排咖哩飯</div>
                         <div className='col-2 cart-food-sp'>{this.state.price}</div>
 
@@ -110,7 +110,7 @@ class Cart extends Component {
                         </div>
 
                         <output className='col-2 cart-food-sp sp3' id='sum'>${this.state.countsum}</output>
-                    </div>
+                    </div> */}
 
                     
 

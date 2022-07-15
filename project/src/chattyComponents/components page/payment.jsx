@@ -4,7 +4,7 @@ import { faCcApplePay } from '@fortawesome/free-brands-svg-icons';
 import { faCreditCard, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 
 import Navbar from '../components item/navbar';
-import Footer from '../components item/footer';
+// import Footer from '../components item/footer';
 
 import '../css/payment.css';
 
@@ -191,7 +191,7 @@ class Payment extends Component {
                         </div>
                     </div>
                 </div>
-                <Footer />
+                {/* <Footer /> */}
             </React.Fragment>
 
         );

@@ -79,11 +79,18 @@ class Payment extends Component {
                                 <hr />
                                 <p>送餐地址:</p>
                                 <div>
-                                    <input type="radio" name="address" id="add1" value="add1" checked/>
-                                    <label htmlFor="add1">{localStorage.getItem('addr')}</label><br />
+                                    {/* <input type="radio" name="address" id="add1" value="add1" checked/>
+                                    <input type="text" className='w-75' placeholder='地址' defaultValue={localStorage.getItem('addr')} /><br/> */}
+                                    {/* <label htmlFor="add1">{localStorage.getItem('addr')}</label><br /> */}
                                     {/* <input type="radio" name="address" id="add2" value="add2" />
                                     <label htmlFor="add2">地址2</label><br /> */}
-                                    <button className='btn- btn-dark'>查看儲存地址</button>
+                                    {/* <button className='btn- btn-dark'>查看儲存地址</button> */}
+                                    <input type="text" className='btn-block' defaultValue={localStorage.getItem('addr')} placeholder="請輸入送餐地址"/>
+                                    {/* <select name="" id="" className='timesel'> */}
+                                        {/* <option value="now" >{localStorage.getItem('addr')}</option> */}
+                                            
+                                    {/* </select> */}
+                                    
                                 </div>
                             </section>
                             <section id='section2' className='shadow'>

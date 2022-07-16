@@ -1,5 +1,6 @@
 import { useState } from "react";
 import $ from "jquery";
+import axios from 'axios';
 // import "../App.css";
   
 function App() {
@@ -23,6 +24,30 @@ function App() {
             },
         });
     };
+
+    const doClick = () => {
+
+        // const text = $('#herew').text();
+        // console.log(text);
+        // axios
+        //   .post("http://localhost:80/PHP/test/test.php", {text:'String1'})
+        //   .then(function(body) {
+        //     console.log(body.data);
+        //   })
+        //   .catch(function(error) {
+        //     console.log(error);
+        //   });
+        var params = {
+            data1: 'string',
+        }
+        
+        axios.post("http://localhost:80/PHP/test/test.php", params).then(function(response) {
+            //code here 
+            console.log(response);
+        })
+    }
+
+
   
     return (
         <div className="App">
@@ -43,6 +68,8 @@ function App() {
                 <button type="submit">Submit</button>
             </form>
             <h1>{result}</h1>
+
+            <button id="herew" onClick={doClick}>here</button>
         </div>
     );
 }

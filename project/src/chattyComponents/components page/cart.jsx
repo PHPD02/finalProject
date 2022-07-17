@@ -29,20 +29,25 @@ class Cart extends Component {
     }
 
     doPayment = () => {
-        const ordert = {
-            restaurantId:this.state.cart[0].restaurantId,
-            uid:localStorage.getItem('uid'),
-            cost:$('#cartTotal').text(),
-            freight:$('#freight').text(),
-            orderdetails:this.state.cart
+        try{
+            const ordert = {
+                restaurantId:this.state.cart[0].restaurantId,
+                uid:localStorage.getItem('uid'),
+                cost:$('#cartTotal').text(),
+                freight:$('#freight').text(),
+                orderdetails:this.state.cart
+            }
+            console.log(ordert);
+            // const { id, menuItemId, restaurantId, restaurantName, dish, type, picture, cost } = this.props.cart;
+            axios.post("http://localhost/PHP/order/inorder.php", ordert)
+            .then((response) => {
+                console.log(response);
+            })
+            window.location = "http://localhost:3000/payment";
+        }catch(error){
+            console.log(error);
         }
-        console.log(ordert);
-        // const { id, menuItemId, restaurantId, restaurantName, dish, type, picture, cost } = this.props.cart;
-        axios.post("http://localhost/PHP/order/inorder.php", ordert)
-        .then((response) => {
-            console.log(response);
-        })
-        window.location = "http://localhost:3000/payment";
+        
     }
 
     async componentDidMount() {

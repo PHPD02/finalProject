@@ -1,4 +1,18 @@
 .nav-bg {
   background-color: #e3d6ce;
-  z-index: 1;
+  padding: 33px;
+  margin: 0 auto;
+}
+
+.logoImg {
+  width: 100px;
+  height: 90px;
+}
+
+.logoImg>img {
+  width: 90%;
+}
+
+.buttons {
+  text-align: right;
 }

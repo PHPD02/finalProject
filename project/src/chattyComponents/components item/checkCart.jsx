@@ -9,7 +9,7 @@ class CheckCart extends Component {
 
                 <NavLink to="/cart">
                     <span onClick={this.goCart}>
-                        <i className='fas fa-shopping-cart'></i>
+                        {/* <i className='fas fa-shopping-cart'></i> */}
                         <span>({this.props.cartNum})</span>
                     </span>
                 </NavLink>

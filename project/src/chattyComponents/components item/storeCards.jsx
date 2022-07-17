@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import { height } from '@mui/system';
 // import $ from 'jquery';
 
 
@@ -82,26 +83,27 @@ class StoreCard extends Component {
     return (
       <React.Fragment>
         <div className='card' style={{ boxShadow: "3px 3px 3px grey" }}>
-          <div className='container'>
-            <div className='row'>
-              <div className='col-md-12 col-sm-12'>
-                <img src={picture} alt="" name="picture" height="100" />
+          <div className='container' style={{height: '170px'}} >
+            <div className='row mt-3'>
+              {/* <div className='col-md-12 col-sm-12'> */}
+                <img src={picture} alt="" name="picture" height="100" className='col-3'  />
                 {/* 圖片 */}
-                <div className='row m-2'>
+                <div className='col-9 '>
                   <div className='col'>
                     {/* 商品名稱 */}
-                    <h4 name="dish">{dish}</h4>
-                    <br />
+                    <h4 name="dish">{dish}</h4><div name="type">{type}</div>
                     {/* 金額 */}
                     <span>$<span name="cost">{cost}</span></span>
-                    <div name="type">{type}</div>
-                    <div name="introduce">{introduce}</div>
-
+                    <br />
+                    <div className="row">
+                      <div name="introduce" className='col-10'>{introduce}</div>
+                      <button type="submit" className='col-2 btn btn-primary rounded-lg h-25' onClick={this.addtoCart}>+</button>
+                    </div>
                   </div>
-                  <button type="submit" className='mt-4 btn btn-primary rounded-lg' onClick={this.addtoCart}>+</button>
+                  
                   <ToastContainer />
                 </div>
-              </div>
+              {/* </div> */}
             </div>
           </div>
         </div>

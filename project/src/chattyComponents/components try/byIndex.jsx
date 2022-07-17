@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
-import Navbar from '../components item/navbar';
+// import Navbar from '../components item/navbar';
+import Navbar2 from '../components item/Navbar2';
+
 
 class byIndex extends Component {
     state = {  } 
     render() { 
         return (
             <React.Fragment>
-                <Navbar />
+                <Navbar2 />
                 <br /><br /><br /><br />
                 <div className='container'>
                     <h1>Index test</h1>

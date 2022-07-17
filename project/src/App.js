@@ -28,6 +28,7 @@ import RegisterComsumer from './chattyComponents/components page/registerComsume
 import Forgotpwd from './chattyComponents/components page/zzforgotpwd';
 import Cart from './chattyComponents/components page/cart';
 import Payment from './chattyComponents/components page/payment';
+import ShopList2 from "./chattyComponents/components page/shopList";
 
 
 // 
@@ -93,6 +94,7 @@ class App extends React.Component {
           <Route path="/registerCompany" component={RegisterCompany} />
           <Route path="/cart" component={Cart} />
           <Route path="/payment" component={Payment} />
+          <Route path="/shopList2" component={ShopList2} />
 
 
 

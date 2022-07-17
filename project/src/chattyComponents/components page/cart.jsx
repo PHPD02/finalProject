@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-// import $ from 'jquery';
+import $ from 'jquery';
 import Navbar from '../components item/navbar';
 import axios from 'axios';
 import Cartcard from '../components item/cartcard';
@@ -29,11 +29,20 @@ class Cart extends Component {
     }
 
     doPayment = () => {
+        const ordert = {
+            restaurantId:this.state.cart[0].restaurantId,
+            uid:localStorage.getItem('uid'),
+            cost:$('#cartTotal').text(),
+            freight:$('#freight').text(),
+            orderdetails:this.state.cart
+        }
+        console.log(ordert);
         // const { id, menuItemId, restaurantId, restaurantName, dish, type, picture, cost } = this.props.cart;
-        axios.post("http://localhost/PHP/order/inorder.php", this.state.cart)
+        axios.post("http://localhost/PHP/order/inorder.php", ordert)
         .then((response) => {
             console.log(response);
         })
+        window.location = "http://localhost:3000/payment";
     }
 
     async componentDidMount() {
@@ -118,9 +127,9 @@ class Cart extends Component {
                             <p><span>總計：</span></p>
                         </div>
                         <div className="col text-right">
-                            <p><span >${this.totalPrice()}</span></p>
-                            <p><span>$19</span></p>
-                            <p><span>${this.totalPrice()+19}</span></p>
+                            <p>$<span>{this.totalPrice()}</span></p>
+                            <p>$<span id='freight'>19</span></p>
+                            <p>$<span id='cartTotal'>{this.totalPrice()+19}</span></p>
                         </div>
                     </div>
                     <div className='row'>

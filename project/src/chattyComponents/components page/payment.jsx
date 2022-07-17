@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCcApplePay } from '@fortawesome/free-brands-svg-icons';
 import { faCreditCard, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import $ from 'jquery';
 
 import Navbar from '../components item/navbar';
 // import Footer from '../components item/footer';
@@ -188,7 +189,7 @@ class Payment extends Component {
 
                                         <p><span >{this.totalPrice()}</span></p>
                                         <p><span>{this.state.freight}</span></p>
-                                        <p><span>{this.totalPrice()+19}</span></p>
+                                        <p><span id='pTotal'>{this.totalPrice()+19}</span></p>
                                     </div>
                                 </div>
 
@@ -212,7 +213,7 @@ class Payment extends Component {
                                         {/* <!-- aio --> */}
                                     </label>
                                     <label visiable className="col-xs-12">金額 (TotalAmount):
-                                        <input type="text" name="TotalAmount" defaultValue={this.state.total} className="form-control" />
+                                        <input type="text" name="TotalAmount" defaultValue={$('#pTotal').text()} className="form-control" />
                                         {/* <!-- 請帶整數，不可有小數點 僅限新台幣 金額不可為 0 元 CVS&BARCODE 最低限制為 30 元，最高限制為 30,000 元 --> */}
                                     </label>
                                     <label visiable className="col-xs-12">描述 (TradeDesc):

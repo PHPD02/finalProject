@@ -8,7 +8,7 @@ class Cartcard extends Component {
     state = { } 
 
     doDelete = async() => {
-        const { id, menuItemId, restaurantId, restaurantName, dish, type, picture, cost } = this.props.cart;
+        const { id } = this.props.cart;
         console.log(this.props.cart);
         if(window.confirm("確定刪除嗎？") == true){
             const res = await axios.put("http://localhost/PHP/cart/deletecart.php", { id: id })
@@ -22,7 +22,7 @@ class Cartcard extends Component {
     changeM = async(e) => {
 
         // console.log(this.props.cart);
-        const { id, menuItemId, mount } = this.props.cart;
+        const { menuItemId} = this.props.cart;
 
         this.props.cart.mount = e.target.value <1? 1:e.target.value;
         this.setState({});

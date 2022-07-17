@@ -79,12 +79,14 @@ class Login1 extends Component {
                 else {
                     alert("Welcome!");
                     // alert(data);
+                    var sqluid = JSON.parse(data).uid;
                     var sqlemail = JSON.parse(data).email;
                     var sqlfirstname = JSON.parse(data).firstName;
                     var sqllastname = JSON.parse(data).lastName;
                     var sqltel = JSON.parse(data).tel;
                     var sqladdr = JSON.parse(data).addr;
                     // console.log(JSON.parse(data).id);
+                    localStorage.setItem('uid', sqluid);
                     localStorage.setItem('email', sqlemail);
                     localStorage.setItem('firstname', sqlfirstname);
                     localStorage.setItem('lastname', sqllastname);

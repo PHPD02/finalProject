@@ -47,7 +47,15 @@ class FoodpandaPage extends React.Component {
             >
               會員主頁
             </button>
-            </a>            
+            </a>  
+            <a href="/commentPage">
+            <button
+             type="button"
+              className="btn btn-outline-light text-dark mr-4 btn-lg"
+            >
+              評論頁
+            </button>
+            </a>          
             <a href="/orderrecord">
             <button
              type="button"

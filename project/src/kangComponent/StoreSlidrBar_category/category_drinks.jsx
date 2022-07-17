@@ -3,15 +3,22 @@ import Carousel from "better-react-carousel";
 // import Restaurant from "./restaurant";
 import axios from "axios";
 
+
+
+var randomStar = (Math.random()*(1-5) + 5).toFixed(1)
 class StoreSlidrBar2_drinks extends React.Component {
   state = {
     restaurantsList: [],
+    // randomStar:(Math.random()*(1-5) + 5).toFixed(1),
   };
 
   async componentDidMount() {
     var result = await axios.get("http://localhost:8000/restaurants/category/drinks");
     this.setState({ restaurantsList: result.data });
   }
+  randomStar (){
+    (Math.random()*(1-5) + 5).toFixed(1)
+  } 
 
   render() {
     return (
@@ -56,7 +63,9 @@ class StoreSlidrBar2_drinks extends React.Component {
                             className="fa fa-star "
                             style={{ color: "pink" }}
                           ></i>
-                          <span className="star-point">{item.id}</span>
+                          {/* <span className="star-point">{item.id}</span> */}
+                          <span className="star-point">{randomStar}</span>
+                          
                           <span className="comment-amount">
                             ({item.tel})
                           </span>

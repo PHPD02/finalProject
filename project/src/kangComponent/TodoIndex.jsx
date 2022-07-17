@@ -30,29 +30,6 @@ class TodoIndex extends React.Component {
                     <i className="ti-bar-chart-alt"></i> 儀錶板
                     <span className="sidebar-collapse-icon ti-angle-down"></span>
                   </a>
-                  {/* <ul>
-                    <li>
-                      <a href="#">1</a>
-                    </li>
-                    <li>
-                      <a href="#">2</a>
-                    </li>
-                    <li>
-                      <a href="#">3</a>
-                    </li>
-                    <li>
-                      <a href="#">4</a>
-                    </li>
-                    <li>
-                      <a href="#">5</a>
-                    </li>
-                    <li>
-                      <a href="#">6</a>
-                    </li>
-                    <li>
-                      <a href="#">7</a>
-                    </li>
-                  </ul> */}
                 </li>
                 <li>
                   <a href="#">
@@ -60,12 +37,12 @@ class TodoIndex extends React.Component {
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="#" style={{ color: "#03A9F5 " }}>
                     <i className="ti-email"></i> 菜單管理
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/admin/dashboard/Dashboardorder">
                     <i className="ti-user"></i> 訂單紀錄
                   </a>
                 </li>

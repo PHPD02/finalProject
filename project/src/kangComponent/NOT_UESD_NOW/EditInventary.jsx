@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import DashboardPanel from "./NOT_UESD_NOW/DashboardPanel";
+import DashboardPanel from "./DashboardPanel
 import '../css/DashboardPanel.css'
 
-import Axios from "./axios";
+import Axios from "../axioss";
 
 function EditInventary() {
   const [Id, setId] = useState("");

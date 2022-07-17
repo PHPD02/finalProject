@@ -43,7 +43,7 @@ import TodoDelete from "./kangComponent/TodoDelete";
 import MemberPage from "./kangComponent/MemberPage";
 import Order_record from "./kangComponent/Order_record";
 import CommentPage from "./kangComponent/CommentPage";
-import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard"
+// import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard"
 
 class App extends React.Component {
   render() {
@@ -85,16 +85,28 @@ class App extends React.Component {
           {/* 峻軒 */}
           {/* <Route path="/login" component={Login} /> */}
           <Route path="/foodpandapage" component={FoodpandaPage} />
+<<<<<<< Updated upstream
           <Route path="/TodoIndex" component={TodoIndex} />
           <Route path="/Todo/Edit/:id" component={TodoEdit} />
           <Route path="/Todo/Delete/:id" component={TodoDelete} />
           <Route path="/Todo/Create" component={TodoCreate} />
+=======
+>>>>>>> Stashed changes
           <Route path="/CommentPage" component={CommentPage} />
-
           <Route path="/memberpage" component={MemberPage} />
           <Route path="/orderrecord" component={Order_record} />
 
+<<<<<<< Updated upstream
           <Route path="/admin/dashboard" component={Dashboard} />
+=======
+
+          <Route path="/admin/dashboard/Dashboardorder" component={Dashboardorder} />
+          <Route path="/TodoIndex" component={TodoIndex} />
+          <Route path="/Todo/Edit/:id" component={TodoEdit} />
+          <Route path="/Todo/Delete/:id" component={TodoDelete} />
+          <Route path="/Todo/Create" component={TodoCreate} />
+          {/* <Route path="/admin/dashboard" component={Dashboard} /> */}
+>>>>>>> Stashed changes
 
         </Switch>
       </BrowserRouter>

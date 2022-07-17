@@ -3,7 +3,7 @@ import { Rating } from "@mui/material";
 import axios from "axios";
 import "../css/commentpage.css"
 
-var value = Math.floor(Math.random() * 6);
+var value = Math.floor(Math.random() * 5+1);
 var value2 = Math.floor(Math.random() * 6);
 
 class CommentPage extends React.Component {
@@ -156,7 +156,7 @@ class CommentPage extends React.Component {
                   // 實現倒序
                   return (
                     <li className="list-group-item" key={index}>
-                      <div className="container">
+                      {/* <div className="container"> */}
                         <div className="row">
                           <div className="col-10">
                             {item.costomerName} <br />
@@ -175,7 +175,7 @@ class CommentPage extends React.Component {
                         <div className="row mt-4 mb-3">
                           <div className="col-11">{item.comment}</div>
                         </div>
-                      </div>
+                      {/* </div> */}
                     </li>
                   );
                 })}

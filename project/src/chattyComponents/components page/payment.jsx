@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCcApplePay } from '@fortawesome/free-brands-svg-icons';
 import { faCreditCard, faDollarSign } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 import Navbar from '../components item/navbar';
 // import Footer from '../components item/footer';
@@ -17,36 +18,65 @@ class Payment extends Component {
         var today = new Date(),
             num = today.getTime(),
             y = today.getFullYear(),
-            m = (today.getMonth()+1) <10? `0${(today.getMonth()+1)}`: `${(today.getMonth()+1)}` ,
-            d = (today.getDate()) <10? `0${today.getDate()}`: `${today.getDate()}` ,
-            hh = (today.getHours()) <10? `0${today.getHours()}`: `${today.getHours()}` ,
-            mm = (today.getMinutes()) <10? `0${today.getMinutes()}`: `${today.getMinutes()}` ,
-            ss = (today.getSeconds()) <10? `0${today.getSeconds()}`: `${today.getSeconds()}` ,
+            m = (today.getMonth() + 1) < 10 ? `0${(today.getMonth() + 1)}` : `${(today.getMonth() + 1)}`,
+            d = (today.getDate()) < 10 ? `0${today.getDate()}` : `${today.getDate()}`,
+            hh = (today.getHours()) < 10 ? `0${today.getHours()}` : `${today.getHours()}`,
+            mm = (today.getMinutes()) < 10 ? `0${today.getMinutes()}` : `${today.getMinutes()}`,
+            ss = (today.getSeconds()) < 10 ? `0${today.getSeconds()}` : `${today.getSeconds()}`,
 
-            gotDate = `${y}/${m}/${d} ${hh}:${mm}:${ss}` ;
+            gotDate = `${y}/${m}/${d} ${hh}:${mm}:${ss}`;
 
         this.state = {
             num: num,
             gotDate: gotDate,
 
-            subtotal:250,
-            freight: 20,
-            total:270
+            // subtotal: 250,
+            freight: 19,
+            // total: 270,
+
+            cart: []
         };
     }
 
-    componentDidMount() {
-        var upwhere = window.location.href;
-        localStorage.setItem('upwhere', upwhere);
-        var url = "http://localhost:3000/login";
-        var getemail = localStorage.getItem('email');
-        // console.log(uId);
-        if (!getemail) {
-            //登入狀態，不能連去登入頁
-            window.location = url;
-            // window.history.back()
-            // $('#loginin').hide();
+    getaddr = () => {
+        const addr = localStorage.getItem('addr');
+        if ((localStorage.getItem('addr')) == 'undefined') {
+            return ''
+        } else {
+            return localStorage.getItem('addr');
         }
+    }
+
+    totalPrice = () => {
+        const totalPrice = this.state.cart.map(cartt => cartt.mount * parseInt(cartt.cost))
+            .reduce((a, value) => a + value, 0)
+        return totalPrice
+    }
+
+    async componentDidMount() {
+        // var upwhere = window.location.href;
+        // localStorage.setItem('upwhere', upwhere);
+        // var url = "http://localhost:3000/login";
+        // var getemail = localStorage.getItem('email');
+        // // console.log(uId);
+        // if (!getemail) {
+        //     //登入狀態，不能連去登入頁
+        //     window.location = url;
+        //     // window.history.back()
+        //     // $('#loginin').hide();
+        // }
+
+        // 抓購物車資料
+        await axios.get("http://localhost/PHP/cart/getallcart.php").then((response) => {
+            this.setState({
+                cart: response.data,
+                restaurantName: response.data[0].restaurantName
+            });
+
+        })
+        console.log(this.state.cart);
+
+
     }
     render() {
         return (
@@ -72,7 +102,7 @@ class Payment extends Component {
                                     <div className="col">
                                         <select name="" id="" className='timesel'>
                                             <option value="now" >現在</option>
-                                            
+
                                         </select>
                                     </div>
                                 </div>
@@ -85,12 +115,12 @@ class Payment extends Component {
                                     {/* <input type="radio" name="address" id="add2" value="add2" />
                                     <label htmlFor="add2">地址2</label><br /> */}
                                     {/* <button className='btn- btn-dark'>查看儲存地址</button> */}
-                                    <input type="text" className='btn-block' defaultValue={localStorage.getItem('addr')} placeholder="請輸入送餐地址"/>
+                                    <input type="text" className='btn-block' defaultValue={this.getaddr()} placeholder="請輸入送餐地址" />
                                     {/* <select name="" id="" className='timesel'> */}
-                                        {/* <option value="now" >{localStorage.getItem('addr')}</option> */}
-                                            
+                                    {/* <option value="now" >{localStorage.getItem('addr')}</option> */}
+
                                     {/* </select> */}
-                                    
+
                                 </div>
                             </section>
                             <section id='section2' className='shadow'>
@@ -114,23 +144,35 @@ class Payment extends Component {
                             <h3 className='text-center'>你的訂單</h3>
 
                             <div id='outorder'>
-                                
-                                <h4 className='text-center'>店名</h4><br />
+
+                                <h4 className='text-center'><u>{this.state.restaurantName}</u></h4><br />
                                 <p className='h3'>結帳餐點:</p>
-                                <div className='menutail row'>
+                                {this.state.cart.map((c) => {
+                                    return (
+                                        <div className='menutail row' key={c.id}>
+                                            {/* 點餐內容 */}
+                                            {/* <div className='col-6 cart-food-sp sp1'>food1pic</div> */}
+                                            <div className='col cart-food-sp sp2 '><u>{c.dish}</u></div>
+                                            <div className='col-3 cart-food-sp'>{c.mount}</div>
+                                            <div className='col-3 cart-food-sp sp3'>${c.cost*c.mount}</div>
+                                        </div>
+                                    )
+                                })}
+
+                                {/* <div className='menutail row'> */}
                                     {/* 點餐內容 */}
                                     {/* <div className='col-6 cart-food-sp sp1'>food1pic</div> */}
-                                    <div className='col cart-food-sp sp2 '><u>黃金里肌厚切豬排咖哩飯</u></div>
+                                    {/* <div className='col cart-food-sp sp2 '><u>黃金里肌厚切豬排咖哩飯</u></div>
                                     <div className='col-3 cart-food-sp'>1</div>
                                     <div className='col-3 cart-food-sp sp3'>$100</div>
-                                </div>
-                                <div className='menutail row'>
+                                </div> */}
+                                {/* <div className='menutail row'> */}
                                     {/* 點餐內容 */}
                                     {/* <div className='col-6 cart-food-sp sp1'>food1pic</div> */}
-                                    <div className='col cart-food-sp sp2 '><u>爆漿起司豚肉咖哩飯</u></div>
+                                    {/* <div className='col cart-food-sp sp2 '><u>爆漿起司豚肉咖哩飯</u></div>
                                     <div className='col-3 cart-food-sp'>1</div>
                                     <div className='col-3 cart-food-sp sp3'>$150</div>
-                                </div>
+                                </div> */}
                             </div>
 
 
@@ -144,15 +186,15 @@ class Payment extends Component {
                                     </div>
                                     <div className="col text-right">
 
-                                        <p><span >{this.state.subtotal}</span></p>
+                                        <p><span >{this.totalPrice()}</span></p>
                                         <p><span>{this.state.freight}</span></p>
-                                        <p><span>{this.state.total}</span></p>
+                                        <p><span>{this.totalPrice()+19}</span></p>
                                     </div>
                                 </div>
 
 
                                 {/* 傳送到後台處理資料 */}
-                                <form id="idFormAioCheckOut" 
+                                <form id="idFormAioCheckOut"
                                     method="POST" action=
                                     // "http://localhost/PHP/phpEcpay/test.php"
                                     "http://localhost:80/PHP/phpEcpay/ECPay_CreateOrder.php"
@@ -170,7 +212,7 @@ class Payment extends Component {
                                         {/* <!-- aio --> */}
                                     </label>
                                     <label visiable className="col-xs-12">金額 (TotalAmount):
-                                        <input type="text" name="TotalAmount" defaultValue={this.state.total} className="form-control"  />
+                                        <input type="text" name="TotalAmount" defaultValue={this.state.total} className="form-control" />
                                         {/* <!-- 請帶整數，不可有小數點 僅限新台幣 金額不可為 0 元 CVS&BARCODE 最低限制為 30 元，最高限制為 30,000 元 --> */}
                                     </label>
                                     <label visiable className="col-xs-12">描述 (TradeDesc):

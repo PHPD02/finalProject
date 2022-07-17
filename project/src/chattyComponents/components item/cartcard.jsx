@@ -19,6 +19,24 @@ class Cartcard extends Component {
         }
     }
 
+    changeM = async(e) => {
+
+        // console.log(this.props.cart);
+        const { id, menuItemId, mount } = this.props.cart;
+
+        this.props.cart.mount = e.target.value <1? 1:e.target.value;
+        this.setState({});
+
+        const res = await axios.post("http://localhost/PHP/cart/getcart.php", { menuItemId: menuItemId });
+        const carts = res.data;
+        console.log(carts.mount);
+        // const cart = carts[0]
+        carts.mount = e.target.value;
+
+        await axios.put(`http://localhost/PHP/cart/putcart.php`, carts);
+
+    }
+
     render() { 
         const{dish, picture ,cost ,mount} =this.props.cart ||{};
         const sumPrice = mount* parseInt(cost);
@@ -32,7 +50,7 @@ class Cartcard extends Component {
                     <div className='col-2 cart-food-sp'>{cost}</div>
 
                     <div className='col-2 cart-food-sp'>
-                        <input type="number" defaultValue={mount} className='text-right w-25'  />
+                        <input type="number" className='text-right w-25' value={mount} onChange={this.changeM} />
                     </div>
 
                     <output className='col-2 cart-food-sp sp3' id='sum'>{sumPrice}</output>

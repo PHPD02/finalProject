@@ -28,6 +28,14 @@ class Cart extends Component {
         console.log(this.state.cart);
     }
 
+    doPayment = () => {
+        // const { id, menuItemId, restaurantId, restaurantName, dish, type, picture, cost } = this.props.cart;
+        axios.post("http://localhost/PHP/order/inorder.php", this.state.cart)
+        .then((response) => {
+            console.log(response);
+        })
+    }
+
     async componentDidMount() {
         await axios.get("http://localhost/PHP/cart/getallcart.php").then((response) => {
             this.setState({ 
@@ -117,7 +125,14 @@ class Cart extends Component {
                     </div>
                     <div className='row'>
                         <div className='col'></div>
-                        <div className="col-3"><NavLink to="/payment"><button className='btn btn-danger btn-block'>點我結帳</button></NavLink></div>
+                        <div className="col-3">
+                            {/* <NavLink to="/payment"> */}
+                                <button className='btn btn-danger btn-block'
+                                    onClick={this.doPayment}>
+                                    點我結帳
+                                </button>
+                            {/* </NavLink> */}
+                        </div>
                     </div>
                 </div>
 

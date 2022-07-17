@@ -6,14 +6,14 @@ class CheckCart extends Component {
     render() {
         return (
             <React.Fragment>
-                <div>
-                    <NavLink to="/cart">
-                        <div onClick={this.goCart}>
-                            <i className='fas fa-shopping-cart'></i>
-                            <span>({this.props.cartNum})</span>
-                        </div>
-                    </NavLink>
-                </div>
+
+                <NavLink to="/cart">
+                    <span onClick={this.goCart}>
+                        <i className='fas fa-shopping-cart'></i>
+                        <span>({this.props.cartNum})</span>
+                    </span>
+                </NavLink>
+
 
             </React.Fragment>
         );

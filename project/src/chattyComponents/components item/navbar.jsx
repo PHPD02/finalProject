@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import $ from 'jquery';
+import '../css/navbar.css';
 
-// import '../css/navbar.css'
 var getemail = localStorage.getItem('email');
 
 class Navbar extends Component {
@@ -47,7 +47,7 @@ class Navbar extends Component {
         return (
             <React.Fragment>
 
-                <nav className="navbar navbar-expand-md navbar-light fixed-top bg-warning">
+                <nav className="navbar navbar-expand-md navbar-light fixed-top bg-light">
                     <NavLink to="/index" className="navbar-brand" href="#">Icon</NavLink>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>

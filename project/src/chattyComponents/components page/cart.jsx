@@ -8,14 +8,38 @@ import '../css/cart.css';
 
 class Cart extends Component {
     state = { 
-        cart:[] 
+        cart:[] ,
+        restaurantName: ''
     }
 
-    componentDidMount() {
-        axios.get("http://localhost:80/PHP/order/getCartList.php").then((response) => {
-            this.setState({ cart: response.data });
-        })
+    totalPrice = () => {
+        const totalPrice = this.state.cart.map(cartt => cartt.mount * parseInt(cartt.cost))
+            .reduce((a, value) => a + value, 0)
+        return totalPrice
     }
+
+    stateChg = async() => {
+        await axios.get("http://localhost/PHP/cart/getallcart.php").then((response) => {
+            this.setState({ 
+                cart: response.data
+            });
+            
+        })
+        console.log(this.state.cart);
+    }
+
+    async componentDidMount() {
+        await axios.get("http://localhost/PHP/cart/getallcart.php").then((response) => {
+            this.setState({ 
+                cart: response.data,
+                restaurantName: response.data[0].restaurantName
+            });
+            
+        })
+        console.log(this.state.cart);
+        // console.log(this.state.restaurantName);
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -25,7 +49,7 @@ class Cart extends Component {
                     <div className='text-center'>
                         <span className='h1'><strong>購物車</strong></span>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className='h4'><u>功夫茶</u></span>
+                        <span className='h4'><u>{this.state.restaurantName}</u></span>
                     </div>
                     <div className='menutailBar row text-right mt-4'>
                         <div className='col-3'>食物</div>
@@ -36,7 +60,21 @@ class Cart extends Component {
                     </div>
                     <hr />
 
-                    <Cartcard />
+
+
+                    <div>
+                        {this.state.cart.map((c) => {
+                            return (
+                                <Cartcard
+                                    key={c.id}
+                                    cart={c}
+                                    func={this.stateChg}
+                                />
+                            )
+                        })}
+                        
+                    </div>
+                    
 
                     {/* <div className='menutail row'> */}
                         {/* 點餐內容 */}
@@ -72,9 +110,9 @@ class Cart extends Component {
                             <p><span>總計：</span></p>
                         </div>
                         <div className="col text-right">
-                            <p><span >11{this.state.countsum}</span></p>
+                            <p><span >${this.totalPrice()}</span></p>
                             <p><span>$19</span></p>
-                            <p><span>11{this.state.total}</span></p>
+                            <p><span>${this.totalPrice()+19}</span></p>
                         </div>
                     </div>
                     <div className='row'>

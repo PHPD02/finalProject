@@ -7,7 +7,8 @@ import CheckCart from '../components item/checkCart';
 class StorePage extends Component {
     state = {
         menuList: [],
-        restaurantName: ''
+        restaurantName: '',
+        cartNum:0
     }
 
     async componentDidMount() {
@@ -18,11 +19,24 @@ class StorePage extends Component {
             restaurantName: result.data[0].restaurantName
         })
         console.log(this.state.menuList)
+        this.initCartNum();
     }
+
+    initCartNum = () => {
+        Axios.get("http://localhost/PHP/cart/getallcart.php").then((res) => {
+            console.log(res.data);
+            const carts = res.data || [] ;
+            const cartNum = carts.map(cart => parseInt(cart.mount)).reduce((a,value) => a+value ,0);
+            console.log(cartNum);
+            this.setState({cartNum: cartNum});
+            // console.log(carts[0]);
+        })
+    }
+
     render() {
         return (
             <div className='container'>
-                <div>{this.state.restaurantName}</div>
+                <span>{this.state.restaurantName}</span>
                 <CheckCart cartNum={this.state.cartNum} />
                 {this.state.menuList.map((p) => {
                     return (

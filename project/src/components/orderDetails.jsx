@@ -28,7 +28,7 @@ class OrderDetails extends Component {
                       <p className='display-3'>12:30 - 13:00</p>
                     </div>
                     <div className='col-12'>
-                      <img src="./image/fastMan.png" />
+                      <img src="./image/deliveryman.png" />
                     </div>
                     {/* <div className='col-12 row'>
                     <p className="progress-1"></p>

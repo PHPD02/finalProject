@@ -6,27 +6,26 @@ class Footer extends Component {
   render() {
     return (
       <React.Fragment>
-        <footer className="flex-rw">
-
-          <ul className="footer-list-top">
+        <footer className="flex-rw ">
+          <ul className="footer-list-top ">
             <li>
-              <h4 className="footer-list-header">關於</h4></li>
-            <li><a href='#' className="generic-anchor footer-list-anchor" itemprop="significantLink">外送夥伴品牌形象</a></li>
-            <li><a href='#' className="generic-anchor footer-list-anchor" itemprop="significantLink">承攬服務條款</a></li>
-            <li><a href='#' className="generic-anchor footer-list-anchor" itemprop="significantLink">隱私權政策</a></li>
+              <h4 className="footer-list-header text-dark">關於</h4></li>
+            <li><a href='#' className="generic-anchor footer-list-anchor text-dark" itemprop="significantLink">外送夥伴品牌形象</a></li>
+            <li><a href='#' className="generic-anchor footer-list-anchor text-dark" itemprop="significantLink">承攬服務條款</a></li>
+            <li><a href='#' className="generic-anchor footer-list-anchor text-dark" itemprop="significantLink">隱私權政策</a></li>
           </ul>
           <ul className="footer-list-top">
             <li>
-              <h4 className="footer-list-header">取得協助</h4></li>
+              <h4 className="footer-list-header text-dark">取得協助</h4></li>
 
 
-            <li><a href='#' className="generic-anchor footer-list-anchor">常見Q&A</a></li>
-            <li><a href='#' className="generic-anchor footer-list-anchor">營運中心開放時間</a></li>
+            <li><a href='#' className="generic-anchor footer-list-anchor text-dark">常見Q&A</a></li>
+            <li><a href='#' className="generic-anchor footer-list-anchor text-dark">營運中心開放時間</a></li>
 
           </ul>
           <ul className="footer-list-top">
             <li id='help'>
-              <h4 className="footer-list-header">追蹤社群</h4></li>
+              <h4 className="footer-list-header text-dark">追蹤社群</h4></li>
             <section className="footer-social-section flex-rw">
               <span className="footer-social-overlap footer-social-icons-wrapper">
 

@@ -46,8 +46,8 @@ class firstpage extends Component {
         <Navbar />
         {/* 首頁圖片 文字 */}
         <div>
-          <img src="./image/firstpagepic.jpg" className="card-img firstpic" />
-          <div className='container-intro text-left card-img-overlay text-white'>
+          <img src="./image/foodtraditional.png" className="card-img firstpic" />
+          <div className='container-intro text-left card-img-overlay text-dark'>
             <div className='row'>
               <div className='col-sm-12'><br /><br />
                 <h2 className="pl-5 mt-5 textheader"><b>還等什麼？一起和我們開始這個外送的旅程吧！</b></h2>
@@ -67,7 +67,7 @@ class firstpage extends Component {
           </div>
 
           <div className='mt-4'>
-            <h4 className='text-center'><span id="textCity"></span> 特別合作店家</h4>
+            <h4 className='text-center ImgZ'><span id="textCity"></span> 特別合作店家</h4>
           </div>
           <hr className='w-75 bg-danger' />
           {/* 測試aos */}

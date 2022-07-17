@@ -61,7 +61,7 @@ const theme = {
   
 // Set some properties of the bot
 const config = {
-    Avatar: false,
+    Avatar: true,
     floating: true,
 };
   

@@ -180,17 +180,17 @@ app.get("/restaurantcomment/list", function (req, res) {
         }
     )
 })
-app.get("/restaurantcomment/list/:restaurant", function (req, res) {
-    restaurantcomment.query("select * from restaurantcomment where restaurant = ?", 
-        [req.params.restaurant],
+app.get("/restaurantcomment/list/:name", function (req, res) {
+    restaurantcomment.query("select * from restaurantcomment where name = ?", 
+        [req.params.name],
         function (err, rows) {
             res.send( JSON.stringify(rows) );
         }
     )
 })
 app.post("/restaurantcomment/create", function (req, res) {
-    restaurantcomment.query("INSERT INTO restaurantcomment (commentId , restaurant , costomerName , date , comment , rating) VALUES (?,?,?,?,?,?)", 
-        [req.body.commentId,req.body.restaurant,req.body.costomerName,req.body.date,req.body.comment,req.body.rating],
+    restaurantcomment.query("INSERT INTO restaurantcomment (commentId , name , costomerName , date , comment , rating) VALUES (?,?,?,?,?,?)", 
+        [req.body.commentId,req.body.name,req.body.costomerName,req.body.date,req.body.comment,req.body.rating],
 function (err, rows) {
            res.send( JSON.stringify( req.body ));
        }

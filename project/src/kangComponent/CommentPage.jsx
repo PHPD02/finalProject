@@ -12,7 +12,7 @@ class CommentPage extends React.Component {
     // 下面這是給建立評論的
     CreateRestaurantcomment: {
       commentId: "",
-      restaurant: "",
+      name: "",
       costomerName: "",
       date: "",
       comment: "",
@@ -45,7 +45,7 @@ class CommentPage extends React.Component {
   };
   todoItemRestaurantChange = async (e) => {
     var newState = { ...this.state };
-    newState.CreateRestaurantcomment.restaurant = e.target.value;
+    newState.CreateRestaurantcomment.name = e.target.value;
     this.setState(newState);
   };
   todoItemCostomerNameChange = async (e) => {
@@ -126,7 +126,7 @@ class CommentPage extends React.Component {
                   className="form-control mb-4"
                   id="restaurant"
                   // value={this.state.CreateRestaurantcomment.小草食堂平價日式小吃}
-                  value={this.state.CreateRestaurantcomment.restaurant}
+                  value={this.state.CreateRestaurantcomment.name}
                   //假定自動帶入的是這間店(依照點擊進入的餐廳)
                   onChange={this.todoItemRestaurantChange}
                   // style={{ display: "none" }}
@@ -158,10 +158,12 @@ class CommentPage extends React.Component {
                     <li className="list-group-item" key={index}>
                       {/* <div className="container"> */}
                         <div className="row">
-                          <div className="col-10">
-                            {item.costomerName} <br />
-                            {item.date}
-                          </div>
+                          <div className="col-10" style={{fontWeight:"600"}}>
+                            {item.costomerName} 
+                            <div>  {item.date}  </div>
+                            </div>
+                          
+                          
                           <div className="col-2 text-nowrap">
                             <Rating
                               name="read-only"

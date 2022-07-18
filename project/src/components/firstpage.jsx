@@ -5,7 +5,8 @@ import { NavLink } from 'react-router-dom';
 import "./css/firstpage.css";
 import Navbar from './repeatability/Navbar';
 import Footer from './repeatability/Footer';
-
+// 死卡
+import Diecard from './component/diecard';
 // 引入首頁專用卡片架構
 import Cards from './component/Cards';
 // 引入首頁專用地圖架構
@@ -89,7 +90,7 @@ class firstpage extends Component {
               <div className="col-7 ">
                 <div>
                   <div className='row '>
-                    <div className='col-lg-4 col-sm-12 stylecards'><Cards /></div>
+                    <div className='col-lg-4 col-sm-12 stylecards'><Diecard /></div>
                     <div className='col-lg-4 col-sm-12 stylecards'><Cards /></div>
                     <div className='col-lg-4 col-sm-12 stylecards'><Cards /></div>
                   </div>

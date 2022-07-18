@@ -74,11 +74,12 @@ class Cart extends Component {
                         <span className='h4'><u>{this.state.restaurantName}</u></span>
                     </div>
                     <div className='menutailBar row text-right mt-4'>
-                        <div className='col-3'>食物</div>
+                        <div className='col-2'>食物</div>
                         <div className='col-3'>食物名字</div>
                         <div className='col-2'>單價</div>
                         <div className='col-2'>數量</div>
                         <div className='col-2'>金額</div>
+                        <div className='col-1'></div>
                     </div>
                     <hr />
 
@@ -136,6 +137,7 @@ class Cart extends Component {
                             <p>$<span id='freight'>19</span></p>
                             <p>$<span id='cartTotal'>{this.totalPrice()+19}</span></p>
                         </div>
+                        <div className='col-1'></div>
                     </div>
                     <div className='row'>
                         <div className='col'></div>
@@ -147,6 +149,7 @@ class Cart extends Component {
                                 </button>
                             {/* </NavLink> */}
                         </div>
+                        <div className="col-1"></div>
                     </div>
                 </div>
 

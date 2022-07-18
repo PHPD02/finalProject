@@ -24,7 +24,7 @@ function Register() {
             alert('已成功發送，請至信箱確認');
         }
         // console.log(sendmail);
-        $.post("http://localhost:8000/sendmail.php", {sendmail}, function(data){
+        $.post("http://localhost:80/PHP/sendmail/sendmail.php", {sendmail}, function(data){
             setResult(data);
             
         })

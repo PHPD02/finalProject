@@ -10,12 +10,10 @@ class PhpGetTest extends Component {
   }
   getPhp = async () => {
     console.clear();
-    let url = "http://localhost/finalProject_php/findcity.php"
+    let url = "http://localhost/finalProject/findcity.php"
     await axios.get(url, { params: { address: this.state.address } })
       .then(res => {
         console.log(res);
-        this.state.restaurant = res.data;
-        this.setState({});
       })
       .catch(err => {
         console.log("failed");

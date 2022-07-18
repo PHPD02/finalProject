@@ -1,10 +1,10 @@
 .setHeight {
-  max-width: 200px;
-  max-height: 300px;
+  /* max-width: 200px;
+  max-height: 300px; */
 
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
 
-  border:1px solid red;
+  /* border:1px solid red; */
 }
 
 @media(max-width:1200px) {
@@ -18,7 +18,7 @@
   cursor: pointer;
   transition: 0.3s;
   max-width: 100%;
-  max-height: 150px;
+  height: 150px;
 }
 #myImg:hover {
   opacity: 0.7;

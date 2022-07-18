@@ -1,25 +1,17 @@
 .twSvg {
   fill: none;
   stroke: #1d995b;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+
   height: 620px;
   width: 100%;
 }
 
-@media(max-width:600px) {
-  .twSvg {
-    width: 100%;
-    margin: 0 auto;
-  }
 
-}
 
 path:hover {
   fill: #1d5254;
   stroke: none;
-  stroke-width: 3;
+  /* stroke-width: 3; */
   cursor: pointer;
 
 }

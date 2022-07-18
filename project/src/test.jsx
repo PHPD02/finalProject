@@ -7,11 +7,12 @@ class PhpGetTest extends Component {
   }
   addrInput = (e) => {
     this.state.address = e.target.value;
+    console.log(this.state.address);
   }
   getPhp = async () => {
     console.clear();
     let url = "http://localhost/finalProject/findcity.php"
-    await axios.get(url, { params: { address: this.state.address } })
+    await axios.get(url, { params: { $address: this.state.address } })
       .then(res => {
         console.log(res);
       })

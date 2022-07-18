@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 // 引入頁面導覽列
 import "./css/firstpage.css";
-import Navbar from './repeatability/Navbar';
 import Footer from './repeatability/Footer';
 // 死卡
 import Diecard from './component/diecard';
@@ -13,12 +12,21 @@ import Cards from './component/Cards';
 import Taiwan from './component/Taiwan';
 // 引入首頁專用最新消息資訊架構
 import LatestNews from './component/LatestNews';
-
+// import $ from 'jquery'
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+import Navbar from './repeatability/Navbar';
+
+
+
+
 
 class firstpage extends Component {
   state = {}
+  
+ 
+  
+
   // 首頁連結地圖城市
   clickTwCity = (e) => {
     // 是否有取得到Taiwan頁面的值
@@ -29,9 +37,13 @@ class firstpage extends Component {
     // var a = event.target.value;
     var Tw = document.getElementById('textCity');
     Tw.textContent = e.target.getAttribute('value');
+    // getClickTwCity();
   }
+  // getClickTwcity(event){
+  //   let event = function clickTwCity(e){
 
-
+  //   }
+  // }
   componentDidMount() {
     // or simply just AOS.init();
     AOS.init({
@@ -39,16 +51,16 @@ class firstpage extends Component {
       // duration: 2000
     });
   }
-
   render() {
     return (
       <React.Fragment>
         {/* 導覽欄位 */}
         <Navbar />
         {/* 首頁圖片 文字 */}
-        <div>
+        <div style={{zIndex:'-1'}}>
           <img src="./image/foodtraditional.png" className="card-img firstpic" />
-          <div className='container-intro text-left card-img-overlay text-dark'>
+          <div className='mx-5 container-intro text-left card-img-overlay text-dark'>
+            <br />
             <div className='row'>
               <div className='col-sm-12'><br /><br />
                 <h2 className="pl-5 mt-5 textheader"><b>還等什麼？一起和我們開始這個外送的旅程吧！</b></h2>
@@ -68,7 +80,7 @@ class firstpage extends Component {
           </div>
 
           <div className='mt-4'>
-            <h4 className='text-center ImgZ'><span id="textCity"></span> 特別合作店家</h4>
+            <h4 className='text-center ImgZ'><span id="textCity" value=''></span> 特別合作店家</h4>
           </div>
           <hr className='w-75 bg-danger' />
           {/* 測試aos */}
@@ -79,20 +91,20 @@ class firstpage extends Component {
 
           {/* 點選地圖 - 相對應地區的特別合作店家 */}
           <div className="container">
-            <div className='row'>
+            <div className='row d-flex justify-content-center'>
               {/* 地圖 */}
-              <div className='col-lg-5'>
+              <div className='col-lg-5 col-md-12 '>
                 {/* 取得與其他(Taiwan)元件的呼叫 */}
                 <Taiwan twCity={(e) => this.clickTwCity(e)} />
               </div>
               {/* 合作店家 */}
               {/* data-aos="zoom-in-down" */}
-              <div className="col-7 ">
+              <div className="col-lg-7 col-md-12">
                 <div>
                   <div className='row '>
-                    <div className='col-lg-4 col-sm-12 stylecards'><Diecard /></div>
-                    <div className='col-lg-4 col-sm-12 stylecards'><Cards /></div>
-                    <div className='col-lg-4 col-sm-12 stylecards'><Cards /></div>
+                    <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Cards /></div>
+                    <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Cards /></div>
+                    <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Cards /></div>
                   </div>
 
                   <NavLink to="/foodpandapage" className=" float-right btn btnon">more...</NavLink>

@@ -76,6 +76,14 @@ class FoodpandaPage extends React.Component {
               去後台
             </button>
             </a>
+            <a href="/customerMail">
+            <button
+              type="button"
+              className="btn btn-outline-light text-dark btn-lg"
+            >
+              <i className="fa fa-envelope"></i>
+            </button>
+            </a>
           </div>
           <div className="first-section d-flex">
             <div className="dot1 dot"></div>

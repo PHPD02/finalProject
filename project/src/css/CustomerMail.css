@@ -1,0 +1,81 @@
+body {
+    background-color: #f2f3f5;
+  }
+
+  #container {
+    padding-top: 60px;
+    width: 600px;
+    margin: auto;
+    font-family: "Helvetica Neue", "Helvetica", "Arial";
+  }
+
+  .input-style {
+    border-radius: 5px;
+    border: 1px solid grey;
+    font-size: 1.1em;
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  .input-width {
+    width: 300px;
+    height: 40px;
+  }
+
+  #mail-gender {
+    width: 300px;
+    height: 40px;
+  }
+
+  label {
+    width: 200px;
+    float: left;
+    font-size: 1.2em;
+    padding-left: 8px;
+  }
+
+  #mail-message {
+    width: 500px;
+    padding-top: 15px;
+  }
+
+  #submitButton ,#backtoindex{
+    background-color: #a447bc;
+    color: white;
+    width: 510px;
+    height: 40px;
+  }
+
+  .form-error {
+    color: red;
+  }
+
+  .form-success {
+    color: green;
+  }
+
+  .input-error{
+    box-shadow: 0 0 5px red;
+  }
+  .customerMail{
+    /* text-align: center; */
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  /* 成功畫面 */
+  .success-wrapper{
+    position: absolute;
+    background-color: #f2f3f5;
+    height:420px;
+    width:47%;
+    top:20%;
+    box-shadow: 1px 1px 50px grey;
+    padding-top: 20px;
+    text-align: center;
+
+  }
+  .success-wrapper p{
+    font-weight: 600;
+    font-size: 30px;
+  }

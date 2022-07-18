@@ -174,7 +174,7 @@ restaurantcomment.connect(function (err) {
     console.log(err);
 })
 app.get("/restaurantcomment/list", function (req, res) {
-    restaurantcomment.query("select * from restaurantcomment", [],
+    restaurantcomment.query("select restaurantcomment,restaurant from restaurantcomment left join restaurant on restaurantcomment.name=restaurant.name", [],
         function (err, rows) {
             res.send( JSON.stringify(rows) );
         }
@@ -266,5 +266,41 @@ app.get("/restaurants/category/hito", function (req, res) {
             res.send( JSON.stringify(rows) );
         }
     )
+})
+
+// 個人資料修改
+var users = mysql.createConnection({
+    user: "root",
+    password: "",
+    host: "localhost",
+    port: 3306,
+    database: "finalproject"
+});
+users.connect(function (err) {
+    console.log(err);
+})
+app.get("/users/list", function (req, res) {
+    users.query("select  uid , userEmail , tel from users", [],
+        function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})
+app.get("/users/list/:userEmail", function (req, res) {
+    users.query("select  uid , userEmail , tel from users where userEmail = ?", 
+        [req.params.userEmail],
+        function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})
+app.put("/users/list", function (req, res) {
+    users.query("UPDATE users SET tel =?  WHERE userEmail = ?"
+        [req.body.tel,req.body.userEmail],
+function (err, rows) {
+           res.send( JSON.stringify( req.body ));
+       }
+   )
+
 })
 

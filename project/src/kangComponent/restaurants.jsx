@@ -25,7 +25,7 @@ class Restaurants extends React.Component {
               return (
                 <div className="col-lg-3 col-md-4 col-sm-6 my-4" key={item.id}>
                   {/* 這key值需要提供，但還是能跑 */}
-                  <div className="card" style={{ maxHeight: "349px" }}>
+                  <div className="card" style={{ maxHeight: "349px",cursor:"pointer" }}>
                     <img
                       src={item.picture}
                       className="card-img-top"

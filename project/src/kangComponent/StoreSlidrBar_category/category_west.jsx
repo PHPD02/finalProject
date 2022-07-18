@@ -30,7 +30,7 @@ class StoreSlidrBar2_west extends React.Component {
             return (
               <Carousel.Item>
                 <div key={item.id}>
-                  <div className="card" style={{ maxHeight: "349px" }}>
+                <div className="card" style={{ maxHeight: "349px",cursor:"pointer" }}>
                     <img
                       src={item.picture}
                       className="card-img-top"
@@ -66,9 +66,10 @@ class StoreSlidrBar2_west extends React.Component {
                             className="fa fa-star "
                             style={{ color: "pink" }}
                           ></i>
-                          <span className="star-point">{this.state.star}</span>
+                          <span className="star-point">{(Math.random()*(1-5) + 5).toFixed(1)}</span>
+                          
                           <span className="comment-amount">
-                            ({this.state.comment})
+                            ({Math.floor(Math.random()*1200)})
                           </span>
                         </div>
                       </span>

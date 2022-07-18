@@ -3,12 +3,12 @@ import Carousel from "better-react-carousel";
 // import Restaurant from "./restaurant";
 import axios from "axios";
 
-var star = (Math.random()*(1-5) + 5).toFixed(1)
+// var star = (Math.random()*(1-5) + 5).toFixed(1)
 class StoreSlidrBar2_chinese extends React.Component {
   state = {
     restaurantsList: [],
-    star:(Math.random()*(1-5) + 5).toFixed(1),
-    comment:Math.floor(Math.random()*1200),
+    // star:(Math.random()*(1-5) + 5).toFixed(1),
+    // comment:Math.floor(Math.random()*1200),
   };
 
   async componentDidMount() {
@@ -31,7 +31,7 @@ class StoreSlidrBar2_chinese extends React.Component {
             return (
               <Carousel.Item>
                 <div key={item.id}>
-                  <div className="card" style={{ maxHeight: "349px" }}>
+                  <div className="card" style={{ maxHeight: "349px",cursor:"pointer" }}>
                     <img
                       src={item.picture}
                       className="card-img-top"
@@ -67,9 +67,11 @@ class StoreSlidrBar2_chinese extends React.Component {
                             className="fa fa-star "
                             style={{ color: "pink" }}
                           ></i>
-                          <span className="star-point">{this.state.star}</span>
+                          {/* <span className="star-point">{this.state.star}</span> */}
+                          <span className="star-point">{(Math.random()*(1-5) + 5).toFixed(1)}</span>
+                          
                           <span className="comment-amount">
-                            ({this.state.comment})
+                            ({Math.floor(Math.random()*1200)})
                           </span>
                         </div>
                       </span>

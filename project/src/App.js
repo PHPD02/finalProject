@@ -43,6 +43,8 @@ import TodoDelete from "./kangComponent/TodoDelete";
 import MemberPage from "./kangComponent/MemberPage";
 import Order_record from "./kangComponent/Order_record";
 import CommentPage from "./kangComponent/CommentPage";
+import CustomerMail from "./kangComponent/customerMail"
+import CustomerMailSuccess from "./kangComponent/customerMail_Success.jsx";
 // import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard"
 
 class App extends React.Component {
@@ -88,8 +90,9 @@ class App extends React.Component {
           <Route path="/CommentPage" component={CommentPage} />
           <Route path="/memberpage" component={MemberPage} />
           <Route path="/orderrecord" component={Order_record} />
-
-
+          <Route path="/customerMail" component={CustomerMail} />
+          <Route path="/customerMailSuccess" component={CustomerMailSuccess} />
+          
           <Route path="/TodoIndex" component={TodoIndex} />
           <Route path="/Todo/Edit/:id" component={TodoEdit} />
           <Route path="/Todo/Delete/:id" component={TodoDelete} />

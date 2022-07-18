@@ -72,7 +72,7 @@ class diecard extends Component {
             </div>
             {/* 餐廳的種類 */}
             <br />
-            <small className="restaurant-type">$$$,<b>臺中市</b></small>
+            <small className="restaurant-type">$$$,<b></b></small>
           </div>
         </div>
         <div className="setHeight cardshadow">

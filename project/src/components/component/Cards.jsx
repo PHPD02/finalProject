@@ -49,9 +49,9 @@ class Cards extends Component {
                     <span className="comment-amount">5</span>
                   </div>
                 </div>
-                {/* 餐廳的種類 */}
+                {/* 餐廳的種類restaurant.region */}
                 <br />
-                <small className="restaurant-type">$$$,<b key={index}>{restaurant.region}</b></small>
+                <small className="restaurant-type">$$$,<b key={index}>{ }</b></small>
               </div>
             </div>
           )

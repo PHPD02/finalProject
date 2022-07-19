@@ -5,8 +5,9 @@ import { faCreditCard, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import $ from 'jquery';
 
-import Navbar from '../components item/navbar';
+import Navbar from '../../components/repeatability/Navbar';
 // import Footer from '../components item/footer';
+import Footer from '../../components/repeatability/Footer';
 
 import '../css/payment.css';
 
@@ -42,7 +43,7 @@ class Payment extends Component {
     getaddr = () => {
         const addr = localStorage.getItem('addr');
         if ((localStorage.getItem('addr')) == 'undefined') {
-            return ''
+            return '台中市南屯區公益路二段51號'
         } else {
             return localStorage.getItem('addr');
         }
@@ -83,7 +84,7 @@ class Payment extends Component {
         return (
             <React.Fragment>
                 <Navbar />
-                <br /><br /><br /><br />
+                <br /><br />
                 <div className='container'>
                     <div className="row" >
                         {/* 左邊 */}
@@ -134,9 +135,18 @@ class Payment extends Component {
                             </section>
                             <section id='section3' className='shadow'>
                                 <h1>3.付款方式</h1>
-                                <label htmlFor='pycard' className='btn btn-dark btn-block'><FontAwesomeIcon icon={faCreditCard} className="fa-xl float-left" />&nbsp;&nbsp;信用卡<input type="radio" onClick={this.creditsel} name="pycheck" id="pycard" className='float-right' checked /></label>
-                                <label htmlFor='pycash' className='btn btn-dark btn-block'><FontAwesomeIcon icon={faDollarSign} className="fa-xl float-left" />&nbsp;&nbsp;現金付款<input type="radio" name="pycheck" id="pycash" className='float-right' /></label>
-                                <label htmlFor='pyapple' className='btn btn-dark btn-block'><FontAwesomeIcon icon={faCcApplePay} className="fa-xl float-left" />&nbsp;&nbsp;Apple pay<input type="radio" name="pycheck" id="pyapple" className='float-right' /></label>
+                                <label htmlFor='pycard' className='btn btn-dark btn-block'>
+                                    <FontAwesomeIcon icon={faCreditCard} className="fa-xl float-left" />&nbsp;&nbsp;信用卡
+                                    <input type="radio" name="pycheck" id="pycard" className='float-right' value='信用卡' checked />
+                                </label>
+                                <label htmlFor='pycash' className='btn btn-dark btn-block'>
+                                    <FontAwesomeIcon icon={faDollarSign} className="fa-xl float-left" />&nbsp;&nbsp;現金付款
+                                    <input type="radio" name="pycheck" id="pycash" className='float-right' value='現金付款' />
+                                </label>
+                                <label htmlFor='pyapple' className='btn btn-dark btn-block'>
+                                    <FontAwesomeIcon icon={faCcApplePay} className="fa-xl float-left" />&nbsp;&nbsp;Apple pay
+                                    <input type="radio" name="pycheck" id="pyapple" className='float-right' value='Apple pay' />
+                                </label>
                             </section>
                         </div>
                         {/* 右邊 */}
@@ -241,7 +251,8 @@ class Payment extends Component {
                         </div>
                     </div>
                 </div>
-                {/* <Footer /> */}
+                <Footer />
+
             </React.Fragment>
 
         );

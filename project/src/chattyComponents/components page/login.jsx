@@ -7,7 +7,7 @@ import $ from 'jquery';
 
 import '../css/signin.css';
 
-import Navbar from '../components item/navbar';
+import Navbar from '../../components/repeatability/Navbar';
 import GoogleLogin from '../components try/useGoogleLogin';
 // import GoogleLogin from 'react-google-login';
 
@@ -141,7 +141,7 @@ class Login1 extends Component {
         return (
             <React.Fragment>
                 <Navbar />
-                <br /><br /><br />
+                
                 {/* 廠商 or 消費者 */}
                 <div id="login1" className="container">
                     <h1 className='text-center my-5 border-bottom'>請選擇您是廠商或用戶</h1>
@@ -170,6 +170,7 @@ class Login1 extends Component {
 
                 {/* 廠商登入 */}
                 <div id="loginCompany" style={{ display: 'none' }}>
+                    <br /><br /><br /><br />
                     <form className="form-signin form-top"
                         action='http://localhost:80/PHP/loginCompany/checkCompanyAccount.php' method='post'
                         onSubmit={(event) => this.handleSubmitCompany(event)} >

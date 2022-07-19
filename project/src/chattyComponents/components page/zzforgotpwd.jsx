@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import Navbar from '../components item/navbar';
+import Navbar from '../../components/repeatability/Navbar';
 import '../css/register.css';
 import $ from "jquery";
 
@@ -25,7 +25,7 @@ function Forgotpwd(){
         return (
             <React.Fragment>
                 <Navbar />
-                <br /><br /><br /><br /><br />
+                <br /><br />
                 <div id='registerform'>
                     <form className="form-signin shadow registerformin" id='registerformin'
                     action='http://localhost:80/forgetpassword/resetpassword/reset-request.php' method='post' >
@@ -41,7 +41,7 @@ function Forgotpwd(){
                     
                         <button className="btn btn-lg btn-danger btn-block mt-4" type="submit"
                          name='reset-requset-submit'>重設密碼</button>
-                        <NavLink to="/login3">
+                        <NavLink to="/login">
                             <button className="btn btn-lg btn-danger btn-block mt-4" type="submit">返回登入頁</button>
                         </NavLink>
                     </form>

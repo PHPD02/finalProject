@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom';
 import Axios from 'axios';
 import CheckCart from '../../chattyComponents/components item/checkCart';
 import "./css/navbar.css";
-// import $ from 'jquery';
+import $ from 'jquery';
 
-
+var getemail = localStorage.getItem('email');
 class Navbar extends Component {
   state = {
     cartNum: 0
@@ -22,16 +22,47 @@ class Navbar extends Component {
     })
   }
 
+  doLogin() {
+    if (window.location.href = 'http://localhost:3000/login') {
+      $('#login1').fadeIn();
+      $('#loginCompany').hide();
+      $('#loginComsumer').hide();
+    }
+  }
+
+  // componentDidMount() {
+    // if (getemail) {
+    //   //登入狀態
+    //   $('#login').attr('style','display:hidden'); 
+    //   $('#logout').attr('style','display:block');
+    // }
+    // else {
+    //   $('#logout').attr('style','display:hidden'); 
+    //   $('#login').attr('style','display:block');
+    // }
+    // console.log('ok');
+  // }
+
   async componentDidMount() {
+    if (getemail) {
+      //登入狀態
+      $('#login').attr('style','display:none'); 
+      $('#logout').attr('style','display:block');
+    }
+    else {
+      $('#logout').attr('style','display:none'); 
+      $('#login').attr('style','display:block');
+    }
+    console.log('ok');
     var result = await Axios.get("http://localhost/PHP/storeCards/getStoreItems.php");
     this.setState({
       menuList: result.data,
       restaurantName: result.data[0].restaurantName
     })
-    console.log(this.state.menuList)
+    // console.log(this.state.menuList)
     this.initCartNum();
   }
-  
+
   render() {
     return (
       <React.Fragment>
@@ -55,24 +86,25 @@ class Navbar extends Component {
             {/* 內容 */}
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <div className='container-fluid'>
-
-                <ul className="navbar-nav ">
-                  <li className="nav-item active pl-5">
+                {/* <ul></ul> */}
+                <ul className="navbar-nav">
+                  <li id='navSunsua' className="nav-item active pl-5" style={{ display: 'none' }}>
                     {/* <NavLink to='/sunsua'> */}
                     <a className="nav-link settext" href='/sunsua'><span className="sr-only "></span><i></i>順弁</a>
                     {/* </NavLink> */}
                   </li>
-                  <li id='accompany' className="nav-item active pl-5" style={{display:'none'}}>
+                  <li id='accompany' className="nav-item active pl-5" style={{ display: 'none' }}>
                     <a className="nav-link settext" href='#textCity'><span className="sr-only"></span>配合合作店家</a>
                   </li>
-                  <li id='latestNews' className="nav-item active pl-5" style={{display:'none'}}>
+                  <li id='latestNews' className="nav-item active pl-5" style={{ display: 'none' }}>
                     <a className="nav-link settext" href='#news'><span className="sr-only"></span>最新消息</a>
                   </li>
-                  <li className="nav-item active pl-5">
+                  <li id='contact' className="nav-item active pl-5" style={{ display: 'none' }}>
                     <a className="nav-link settext" href='#ff'><span className="sr-only"></span>聯絡我們</a>
                   </li>
                 </ul>
                 <div className="buttons">
+                  <div className="row">
                   {/* 購物車 */}
                   <NavLink to='/cart'>
                     <button type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'>
@@ -81,15 +113,16 @@ class Navbar extends Component {
                     </button>
                   </NavLink>
                   <NavLink to="/login">
-                    <button type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'>
+                    <button id='login' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display:'block'}} onClick={this.doLogin} >
                       <i className="fa fa-user-circle text-info p-1 "></i><span>Login</span>
                     </button>
                   </NavLink>
                   <NavLink to='/'>
-                    <button type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{display:'none'}}>
+                    <button id='logout' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display:'none'}}>
                       <i className="fa fa-sign-out text-info p-1 "></i><span>Logout</span>
                     </button>
                   </NavLink>
+                  </div>
                 </div>
 
 

@@ -8,7 +8,7 @@ class CheckCart extends Component {
             <React.Fragment>
 
                 <NavLink to="/cart">
-                    <span onClick={this.goCart}>
+                    <span>
                         {/* <i className='fas fa-shopping-cart'></i> */}
                         <span>({this.props.cartNum})</span>
                     </span>

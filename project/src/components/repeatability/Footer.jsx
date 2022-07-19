@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import './css/footer.css';
 
 class Footer extends Component {
@@ -24,8 +25,14 @@ class Footer extends Component {
 
           </ul>
           <ul className="footer-list-top">
+            <br />
             {/* <button className='btn btn-light'> */}
-              <a href="#navbar" className="fa fa-arrow-circle-o-up"></a>
+              {/* <a href="#navbar" className="fa fa-arrow-circle-o-up"></a> */}
+
+              {/* <NavLink to='/'> */}
+                <i class="fa fa-envelope-o fa-10x" ></i>
+              {/* </NavLink> */}
+              
             {/* </button> */}
             
             {/* <li id='help'>

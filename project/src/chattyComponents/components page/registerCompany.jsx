@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons/faCircleCheck';
 
-import Navbar from '../components item/navbar';
+import Navbar from '../../components/repeatability/Navbar';
 import '../css/signin.css';
 
 

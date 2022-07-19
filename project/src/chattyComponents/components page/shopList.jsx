@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import Navbar from '../../components/repeatability/Navbar';
-import Navbar2 from '../components item/Navbar2';
+import Navbar from '../../components/repeatability/Navbar';
 // import ShopCard from '../../components/component/ShopCard';
 import Footer from '../../components/repeatability/Footer';
 // import { NavLink } from 'react-router-dom';
@@ -42,7 +42,7 @@ class shopList extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar2 />
+        <Navbar />
         {/* 查詢地址  */}
         <div className='container fixed-top ddd' style={{ display: "none" }}>
           <div className='row'>
@@ -55,10 +55,9 @@ class shopList extends Component {
           </div>
         </div>
 
-        <br />
-        <br />
+        
         <div>
-          <div className='mt-2'>
+          <div>
             <img src='https://images.deliveryhero.io/image/fd-tw/LH/f6xl-hero.jpg?width=1600&height=400&quality=45' className="col-12 p-0" />
           </div>
           <br />

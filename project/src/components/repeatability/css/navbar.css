@@ -1,5 +1,6 @@
 .nav-bg {
-  background-image: url('./hito.png');
+  /* background-image: url('./hito.png'); */
+  background-color: white;
   background-repeat: no-repeat;
   padding: 33px;
   margin: 0 auto;

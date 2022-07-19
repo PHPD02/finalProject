@@ -45,6 +45,10 @@ class firstpage extends Component {
   componentDidMount() {
     $('#accompany').attr('style','display:block') ;
     $('#latestNews').attr('style','display:block') ;
+    $('#contact').attr('style','display:block') ;
+    $('#navSunsua').attr('style','display:block') ;
+    
+    
     
     // or simply just AOS.init();
     AOS.init({

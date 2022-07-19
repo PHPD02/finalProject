@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import $ from 'jquery';
-import Navbar from '../components item/navbar';
+import Navbar from '../../components/repeatability/Navbar';
 import axios from 'axios';
 import Cartcard from '../components item/cartcard';
 import '../css/cart.css';
 
+var getemail = localStorage.getItem('email');
 class Cart extends Component {
-    state = { 
-        cart:[] ,
+    state = {
+        cart: [],
         restaurantName: ''
     }
 
@@ -18,47 +19,50 @@ class Cart extends Component {
         return totalPrice
     }
 
-    stateChg = async() => {
+    stateChg = async () => {
         await axios.get("http://localhost/PHP/cart/getallcart.php").then((response) => {
-            this.setState({ 
+            this.setState({
                 cart: response.data,
             });
-            
+
         })
         console.log(this.state.cart);
     }
 
     doPayment = () => {
-        try{
-            const ordert = {
-                restaurantId:this.state.cart[0].restaurantId,
-                uid:localStorage.getItem('uid'),
-                cost:$('#cartTotal').text(),
-                freight:$('#freight').text(),
-                orderdetails:this.state.cart
+        if (getemail) {
+            try{
+                const ordert = {
+                    restaurantId:this.state.cart[0].restaurantId,
+                    uid:localStorage.getItem('uid'),
+                    cost:$('#cartTotal').text(),
+                    freight:$('#freight').text(),
+                    orderdetails:this.state.cart
+                }
+                console.log(ordert);
+                // const { id, menuItemId, restaurantId, restaurantName, dish, type, picture, cost } = this.props.cart;
+                axios.post("http://localhost/PHP/order/inorder.php", ordert)
+                .then((response) => {
+                    console.log(response);
+                })
+                window.location = "http://localhost:3000/payment";
+            }catch(error){
+                console.log(error);
             }
-            console.log(ordert);
-            // const { id, menuItemId, restaurantId, restaurantName, dish, type, picture, cost } = this.props.cart;
-            axios.post("http://localhost/PHP/order/inorder.php", ordert)
-            .then((response) => {
-                console.log(response);
-            })
-            window.location = "http://localhost:3000/payment";
-        }catch(error){
-            console.log(error);
+        } else {
+            window.location = 'http://localhost:3000/login';
         }
-        
     }
 
     async componentDidMount() {
         await axios.get("http://localhost/PHP/cart/getallcart.php").then((response) => {
-            this.setState({ 
+            this.setState({
                 cart: response.data,
                 restaurantName: response.data[0].restaurantName
             });
-            
+
         })
-        console.log(this.state.cart);
+        // console.log(this.state.cart);
         // console.log(this.state.restaurantName);
     }
 
@@ -95,13 +99,13 @@ class Cart extends Component {
                                 />
                             )
                         })}
-                        
+
                     </div>
-                    
+
 
                     {/* <div className='menutail row'> */}
-                        {/* 點餐內容 */}
-                        {/* <div className='col-3 cart-food-sp sp1'><img src="https://images.deliveryhero.io/image/fd-tw/Products/38155656.jpg?height=80" alt="" /></div>
+                    {/* 點餐內容 */}
+                    {/* <div className='col-3 cart-food-sp sp1'><img src="https://images.deliveryhero.io/image/fd-tw/Products/38155656.jpg?height=80" alt="" /></div>
                         <div className='col-3 cart-food-sp sp2'>黃金里肌厚切豬排咖哩飯</div>
                         <div className='col-2 cart-food-sp'>{this.state.price}</div>
 
@@ -119,7 +123,7 @@ class Cart extends Component {
                         <output className='col-2 cart-food-sp sp3' id='sum'>${this.state.countsum}</output>
                     </div> */}
 
-                    
+
 
                     <hr />
                 </div>
@@ -135,7 +139,7 @@ class Cart extends Component {
                         <div className="col text-right">
                             <p>$<span>{this.totalPrice()}</span></p>
                             <p>$<span id='freight'>19</span></p>
-                            <p>$<span id='cartTotal'>{this.totalPrice()+19}</span></p>
+                            <p>$<span id='cartTotal'>{this.totalPrice() + 19}</span></p>
                         </div>
                         <div className='col-1'></div>
                     </div>
@@ -143,10 +147,10 @@ class Cart extends Component {
                         <div className='col'></div>
                         <div className="col-3">
                             {/* <NavLink to="/payment"> */}
-                                <button className='btn btn-danger btn-block'
-                                    onClick={this.doPayment}>
-                                    點我結帳
-                                </button>
+                            <button className='btn btn-danger btn-block'
+                                onClick={this.doPayment}>
+                                點我結帳
+                            </button>
                             {/* </NavLink> */}
                         </div>
                         <div className="col-1"></div>

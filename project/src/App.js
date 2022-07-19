@@ -1,17 +1,16 @@
 import React, { Component } from "react";
-import { BrowserRouter, HashRouter, Switch, Route } from 'react-router-dom';
-
+import { BrowserRouter, HashRouter, Switch, Route } from "react-router-dom";
+import test from "./test";
 // 引入模板
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 /* 承翰 */
 /* 順弁 */
-import Sunsua from './component/Sunsua/sunsua.jsx';
-
+import Sunsua from "./component/Sunsua/sunsua.jsx";
 
 /* == 群傑 == */
 /* 首頁 */
@@ -36,21 +35,25 @@ import Resetpassword from './chattyComponents/components page/resetpassword';
 import CompleteResetPwd from './chattyComponents/components page/CompleteResetPwd';
 import sendresetemail from './chattyComponents/components page/sendresetemail';
 
+//
+import Resetpassword from "./chattyComponents/components page/resetpassword";
+import CompleteResetPwd from "./chattyComponents/components page/CompleteResetPwd";
+import sendresetemail from "./chattyComponents/components page/sendresetemail";
 
 // import Card from './chattyComponents/components item/cartcard';
-import Index from './chattyComponents/components try/byIndex';
-import StoreCard from './chattyComponents/components item/storeCards';
-import Test from './chattyComponents/components try/zztestsql';
+import Index from "./chattyComponents/components try/byIndex";
+import StoreCard from "./chattyComponents/components item/storeCards";
+import Test from "./chattyComponents/components try/zztestsql";
 // import Test1 from './chattyComponents/zzteststate';
 // import Login2 from './chattyComponents/zzloginCompany';
 // import Login3 from './chattyComponents/zzloginComsumer';
 // import Glogin from './chattyComponents/components try/googlelogin';
-import UseGoogleLogin from './chattyComponents/components try/useGoogleLogin';
+import UseGoogleLogin from "./chattyComponents/components try/useGoogleLogin";
 // import facebooklogin from './chattyComponents/components try/facebooklogin';
 // import './index';
-import TestScreen from './chattyComponents/components try/testscreen.jsx';
-import StorePage from './chattyComponents/components page/storePage.jsx';
-import TestPayment from './chattyComponents/components try/testpayment.jsx';
+import TestScreen from "./chattyComponents/components try/testscreen.jsx";
+import StorePage from "./chattyComponents/components page/storePage.jsx";
+import TestPayment from "./chattyComponents/components try/testpayment.jsx";
 
 /* == 峻軒 == */
 import FoodpandaPage from "./kangComponent/foodpandapage";
@@ -62,9 +65,7 @@ import TodoDelete from "./kangComponent/TodoDelete";
 import MemberPage from "./kangComponent/MemberPage";
 import Order_record from "./kangComponent/Order_record";
 import CommentPage from "./kangComponent/CommentPage";
-import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard"
-
-
+import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard";
 
 class App extends React.Component {
   state = {};
@@ -83,7 +84,7 @@ class App extends React.Component {
           <Route path="/shopList" component={ShopList} />
           {/* 外送訂單詳情頁 */}
           <Route path="/orderDetails" component={OrderDetails} />
-
+          <Route path="/test" component={test} />
 
           {/* ================================================================================================================== */}
           {/* 純芷 */}
@@ -95,9 +96,6 @@ class App extends React.Component {
           <Route path="/cart" component={Cart} />
           <Route path="/payment" component={Payment} />
           <Route path="/shopList2" component={ShopList2} />
-
-
-
 
           {/* <Route path="/googlelogin" component={Glogin} /> */}
           <Route path="/usegooglelogin" component={UseGoogleLogin} />
@@ -128,7 +126,6 @@ class App extends React.Component {
 
           <Route path="/admin/dashboard" component={Dashboard} />
 
-
           <Route path="/orderDetails" component={OrderDetails} />
           <Route path="/shopList" component={ShopList} />
 
@@ -136,7 +133,6 @@ class App extends React.Component {
           <Route path="/resetpassword" component={Resetpassword} />
           <Route path="/CompleteResetPwd" component={CompleteResetPwd} />
           <Route path="/sendresetemail" component={sendresetemail} />
-
         </Switch>
       </BrowserRouter>
     );

@@ -1,4 +1,42 @@
 .nav-bg {
-  background-color: #e3d6ce;
-  z-index: 1;
+  background-image: url('./hito.png');
+  background-repeat: no-repeat;
+  padding: 33px;
+  margin: 0 auto;
+  z-index: 99999999999999999999999;
+  
+}
+
+.logoImg {
+  width: 100px;
+  height: 90px;
+}
+
+.logoImg>img {
+  width: 90%;
+}
+
+.buttons {
+  /* border: 1px solid black; */
+  font-size: 24px;
+  font-weight: bolder;
+  
+}
+/* .div button span{
+  font-size: 24px;
+  font-weight: bolder;
+} */
+.btnsm{
+  height: 70px;
+  width: 125px;
+  
+}
+.settext{
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.settext:hover,
+.settext:focus{
+
 }

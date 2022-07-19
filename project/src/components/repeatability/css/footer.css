@@ -31,8 +31,11 @@ a {
 }
 
 footer {
-  background: rgb(55, 55, 55);
-  margin-top: auto;
+  background-image: url("./bread.png");
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  font-weight: 1000;
   width: 100%
 }
 

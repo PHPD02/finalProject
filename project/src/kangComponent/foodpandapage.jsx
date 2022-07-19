@@ -76,7 +76,7 @@ class FoodpandaPage extends React.Component {
               去後台
             </button>
             </a>
-            <a href="/customerMail">
+            <a href="/customerMail ">
             <button
               type="button"
               className="btn btn-outline-light text-dark btn-lg"

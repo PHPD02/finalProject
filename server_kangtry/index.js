@@ -304,3 +304,60 @@ function (err, rows) {
 
 })
 
+// order record 訂單紀錄  要去確定join欄位是啥抓誰
+var orderdetails = mysql.createConnection({
+    user: "root",
+    password: "",
+    host: "localhost",
+    port: 3306,
+    database: "finalproject"
+});
+orderdetails.connect(function (err) {
+    console.log(err);
+})
+app.get("/orderdetails/list", function (req, res) {
+    orderdetails.query("select * from orderdetails where orderId =1657761970", [],
+    // orderdetails.query("select * from ordert join orderdetails on ordert.orderId =  orderdetails.orderId", [],
+
+        function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})
+app.get("/orderdetails/list/:orderId", function (req, res) {
+    orderdetails.query("select * from orderdetails where orderId = ?", 
+        [req.params.orderId],
+        function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})
+
+// 順便收益紀錄  要去確定join欄位是啥抓誰
+var sunsua_order = mysql.createConnection({
+    user: "root",
+    password: "",
+    host: "localhost",
+    port: 3306,
+    database: "finalproject"
+});
+sunsua_order.connect(function (err) {
+    console.log(err);
+})
+app.get("/sunsua_order/list", function (req, res) {
+    // sunsua_order.query("select * from sunsua_order where proposalId =42", [],
+    orderdetails.query("select * from sunsua_order join proposal on sunsua_order.proposalId =  proposal.id", [],
+
+        function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})
+app.get("/sunsua_order/list/:proposalId", function (req, res) {
+    sunsua_order.query("select * from sunsua_order where proposalId = ?", 
+        [req.params.orderId],
+        function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})

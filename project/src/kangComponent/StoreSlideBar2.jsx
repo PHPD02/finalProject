@@ -57,6 +57,7 @@ class StoreSlidrBar2 extends React.Component {
                             style={{ color: "pink" }}
                           ></i>
                           <span className="star-point">{item.star}</span>
+                          {/* (Math.random()*(n-m) + m).toFixed(2) */}
                           <span className="comment-amount">
                             ({item.tel})
                           </span>

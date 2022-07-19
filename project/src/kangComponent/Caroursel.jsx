@@ -42,8 +42,8 @@ class Caroursel extends React.Component {
             >
               <SwiperSlide><img src={img1} alt="img1" style={{width:"100%",height:"50vh"}}/></SwiperSlide>
               <SwiperSlide><img src={img2} alt="img2" style={{width:"100%",height:"50vh"}}/></SwiperSlide>
-              <SwiperSlide><img src={img3} alt="img3" style={{width:"100%",height:"50vh"}}/></SwiperSlide>
-              <SwiperSlide><img src={img4} alt="img4" style={{width:"100%",height:"50vh"}}/></SwiperSlide>
+              {/* <SwiperSlide><img src={img3} alt="img3" style={{width:"100%",height:"50vh"}}/></SwiperSlide>
+              <SwiperSlide><img src={img4} alt="img4" style={{width:"100%",height:"50vh"}}/></SwiperSlide> */}
             </Swiper>
           );
     }

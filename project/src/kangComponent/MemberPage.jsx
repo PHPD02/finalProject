@@ -2,9 +2,43 @@ import React from "react";
 import "../css/MemberPage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
+import axios from "axios";
 
 class MemberPage extends React.Component {
-  state = {};
+
+  state = {
+    usersContact: {},
+  };
+
+
+  async componentDidMount() {
+    var url = `http://localhost:8000/users/list/kongkong@gmail.com`;
+    var result = await axios.get(url);
+    // console.log(result);
+    // console.log(url);
+    this.state.usersContact = result.data;
+    this.setState({});
+  }
+  okButtonClick = async () => {
+    var result = await axios.put(
+      `http://localhost:8000/users/list`,
+      this.state.usersContact
+    );
+    console.log(result);
+
+    window.location = "/memberpage/kongkong@gmail.com"
+  };
+  usersTelChange = async (e) => {
+    this.state.usersContact.tel = e.target.value;
+    this.setState({});
+  };
+
+
+
+
+
+
+
   render() {
     return (
       <React.Fragment>
@@ -84,13 +118,14 @@ class MemberPage extends React.Component {
           <div className="card" style={{ width: "30rem" }}>
             <div className="card-body">
               <h2 className="card-title text-center font-weight-bold h2">
-                順弁押金
+                訂單紀錄
               </h2>
               <h6 className="card-subtitle mb-2 text-muted my-4 text-center">
-                您可以隨時提取押金，但記得使用順弁服務需要您提供一定金額的押金
+                {/* 您可以隨時提取押金，但記得使用順弁服務需要您提供一定金額的押金 */}
+                <br></br><br/>
               </h6>
               <div className="row my-2 text-center d-flex align-items-center">
-                  <div className="col-5">
+                  {/* <div className="col-5">
                     <i
                       class="fa fa-gift"
                       aria-hidden="true"
@@ -101,7 +136,9 @@ class MemberPage extends React.Component {
                     <p className="card-text" style={{ fontSize: "50px" }}>
                       $500元
                     </p>
-                  </div>
+                  </div> */}
+                  <br /><br /><br/>
+
                 </div>
                 <div className="row  text-center mt-4 font-weight-bold h4">
                   <div className="col ">
@@ -115,7 +152,7 @@ class MemberPage extends React.Component {
                           height="100%"
                         ></rect>
                       </svg>
-                      提領錢包
+                      紀錄查詢
                     </button>
                   </div>
                   <div className="col">
@@ -129,7 +166,7 @@ class MemberPage extends React.Component {
                           height="100%"
                         ></rect>
                       </svg>
-                      儲值
+                      成為外送員
                     </button>
                   </div>
                 </div>
@@ -260,6 +297,7 @@ class MemberPage extends React.Component {
                     type="text"
                     class="form-control"
                     value="bgkong1205@gmail.com"
+                    readOnly
                   />
                 </div>
               </fieldset>
@@ -268,7 +306,10 @@ class MemberPage extends React.Component {
                   <p>姓</p>
                 </div>
                 <div class="input-group">
-                  <input type="text" class="form-control" value="康" />
+                  <input type="text" class="form-control" 
+                  value="康" 
+                  readOnly
+                  />
                 </div>
               </fieldset>
               <fieldset className="mb-5">
@@ -276,7 +317,9 @@ class MemberPage extends React.Component {
                   <p>名</p>
                 </div>
                 <div class="input-group">
-                  <input type="text" class="form-control" value="俊軒" />
+                  <input type="text" class="form-control" value="俊軒" 
+                  readOnly
+                  />
                 </div>
               </fieldset>
               <fieldset className="mb-5">
@@ -284,12 +327,17 @@ class MemberPage extends React.Component {
                   <p>手機號碼</p>
                 </div>
                 <div class="input-group">
-                  <input type="text" class="form-control" value="0938240026" />
+                  <input type="text" class="form-control" 
+                  value={this.state.usersContact.tel}
+                  onChange={this.usersTelChange}                  
+              />
                 </div>
               </fieldset>
 
             </form>
-            <button type="submit" className="btn btn-info">儲存修改</button>
+            <button type="submit" className="btn btn-info"
+             onClick={this.okButtonClick}>
+              儲存修改</button>
           </div>
         </div>
         <div className="my-5"> </div>

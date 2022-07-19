@@ -6,6 +6,8 @@ import axios from "axios";
 class StoreSlidrBar2_southeast extends React.Component {
   state = {
     restaurantsList: [],
+    star:(Math.random()*(1-5) + 5).toFixed(1),
+    comment:Math.floor(Math.random()*1200),
   };
 
   async componentDidMount() {
@@ -28,7 +30,7 @@ class StoreSlidrBar2_southeast extends React.Component {
             return (
               <Carousel.Item>
                 <div key={item.id}>
-                  <div className="card" style={{ maxHeight: "349px" }}>
+                <div className="card" style={{ maxHeight: "349px",cursor:"pointer" }}>
                     <img
                       src={item.picture}
                       className="card-img-top"
@@ -45,20 +47,29 @@ class StoreSlidrBar2_southeast extends React.Component {
                         className="card-headline d-flex  justify-content-between"
                         style={{ height: "50px", width: "100%" }}
                       >
-                        <h5 className="card-title">
+                        <h5 className="card-title "
+                        style={{ 
+                          display: "webkitBox",
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                          webkitLineClamp: "2",
+                          lineHeight: "20px",
+                          }}
+                        >
                           <b>{item.name}</b>
                         </h5>
                         <div
                           className="float-right"
-                          style={{ whiteSpace: "nowrap" }}
+                          style={{ whiteSpace: "nowrap",width:"40%" }}
                         >
                           <i
                             className="fa fa-star "
                             style={{ color: "pink" }}
                           ></i>
-                          <span className="star-point">{item.id}</span>
+                          <span className="star-point">{(Math.random()*(1-5) + 5).toFixed(1)}</span>
+                          
                           <span className="comment-amount">
-                            ({item.tel})
+                            ({Math.floor(Math.random()*1200)})
                           </span>
                         </div>
                       </span>

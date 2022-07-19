@@ -174,23 +174,23 @@ restaurantcomment.connect(function (err) {
     console.log(err);
 })
 app.get("/restaurantcomment/list", function (req, res) {
-    restaurantcomment.query("select * from restaurantcomment", [],
+    restaurantcomment.query("select restaurantcomment,restaurant from restaurantcomment left join restaurant on restaurantcomment.name=restaurant.name", [],
         function (err, rows) {
             res.send( JSON.stringify(rows) );
         }
     )
 })
-app.get("/restaurantcomment/list/:restaurant", function (req, res) {
-    restaurantcomment.query("select * from restaurantcomment where restaurant = ?", 
-        [req.params.restaurant],
+app.get("/restaurantcomment/list/:name", function (req, res) {
+    restaurantcomment.query("select * from restaurantcomment where name = ?", 
+        [req.params.name],
         function (err, rows) {
             res.send( JSON.stringify(rows) );
         }
     )
 })
 app.post("/restaurantcomment/create", function (req, res) {
-    restaurantcomment.query("INSERT INTO restaurantcomment (commentId , restaurant , costomerName , date , comment , rating) VALUES (?,?,?,?,?,?)", 
-        [req.body.commentId,req.body.restaurant,req.body.costomerName,req.body.date,req.body.comment,req.body.rating],
+    restaurantcomment.query("INSERT INTO restaurantcomment (commentId , name , costomerName , date , comment , rating) VALUES (?,?,?,?,?,?)", 
+        [req.body.commentId,req.body.name,req.body.costomerName,req.body.date,req.body.comment,req.body.rating],
 function (err, rows) {
            res.send( JSON.stringify( req.body ));
        }
@@ -268,3 +268,96 @@ app.get("/restaurants/category/hito", function (req, res) {
     )
 })
 
+// 個人資料修改
+var users = mysql.createConnection({
+    user: "root",
+    password: "",
+    host: "localhost",
+    port: 3306,
+    database: "finalproject"
+});
+users.connect(function (err) {
+    console.log(err);
+})
+app.get("/users/list", function (req, res) {
+    users.query("select  uid , userEmail , tel from users", [],
+        function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})
+app.get("/users/list/:userEmail", function (req, res) {
+    users.query("select  uid , userEmail , tel from users where userEmail = ?", 
+        [req.params.userEmail],
+        function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})
+app.put("/users/list", function (req, res) {
+    users.query("UPDATE users SET tel =?  WHERE userEmail = ?"
+        [req.body.tel,req.body.userEmail],
+function (err, rows) {
+           res.send( JSON.stringify( req.body ));
+       }
+   )
+
+})
+
+// order record 訂單紀錄  要去確定join欄位是啥抓誰
+var orderdetails = mysql.createConnection({
+    user: "root",
+    password: "",
+    host: "localhost",
+    port: 3306,
+    database: "finalproject"
+});
+orderdetails.connect(function (err) {
+    console.log(err);
+})
+app.get("/orderdetails/list", function (req, res) {
+    orderdetails.query("select * from orderdetails where orderId =1657761970", [],
+    // orderdetails.query("select * from ordert join orderdetails on ordert.orderId =  orderdetails.orderId", [],
+
+        function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})
+app.get("/orderdetails/list/:orderId", function (req, res) {
+    orderdetails.query("select * from orderdetails where orderId = ?", 
+        [req.params.orderId],
+        function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})
+
+// 順便收益紀錄  要去確定join欄位是啥抓誰
+var sunsua_order = mysql.createConnection({
+    user: "root",
+    password: "",
+    host: "localhost",
+    port: 3306,
+    database: "finalproject"
+});
+sunsua_order.connect(function (err) {
+    console.log(err);
+})
+app.get("/sunsua_order/list", function (req, res) {
+    // sunsua_order.query("select * from sunsua_order where proposalId =42", [],
+    orderdetails.query("select * from sunsua_order join proposal on sunsua_order.proposalId =  proposal.id", [],
+
+        function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})
+app.get("/sunsua_order/list/:proposalId", function (req, res) {
+    sunsua_order.query("select * from sunsua_order where proposalId = ?", 
+        [req.params.orderId],
+        function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})

@@ -71,6 +71,9 @@ import MemberPage from "./kangComponent/MemberPage";
 import Order_record from "./kangComponent/Order_record";
 import CommentPage from "./kangComponent/CommentPage";
 import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard";
+import CustomerMail from "./kangComponent/customerMail"
+import CustomerMailSuccess from "./kangComponent/customerMail_Success.jsx";
+// import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard"
 
 class App extends React.Component {
   state = {};
@@ -120,16 +123,23 @@ class App extends React.Component {
           {/* 峻軒 */}
           {/* <Route path="/login" component={Login} /> */}
           <Route path="/foodpandapage" component={FoodpandaPage} />
+<<<<<<< HEAD
           {/* <Route path="/TodoIndex" component={TodoIndex} /> */}
           {/* <Route path="/Todo/Edit/:id" component={TodoEdit} /> */}
-          <Route path="/Todo/Delete/:id" component={TodoDelete} />
-          <Route path="/Todo/Create" component={TodoCreate} />
+=======
           <Route path="/CommentPage" component={CommentPage} />
-
           <Route path="/memberpage" component={MemberPage} />
           <Route path="/orderrecord" component={Order_record} />
+          <Route path="/customerMail" component={CustomerMail} />
+          <Route path="/customerMailSuccess" component={CustomerMailSuccess} />
+          
+          <Route path="/TodoIndex" component={TodoIndex} />
+          <Route path="/Todo/Edit/:id" component={TodoEdit} />
+>>>>>>> kang_edit_from_mainmergetest
+          <Route path="/Todo/Delete/:id" component={TodoDelete} />
+          <Route path="/Todo/Create" component={TodoCreate} />
 
-          <Route path="/admin/dashboard" component={Dashboard} />
+          {/* <Route path="/admin/dashboard" component={Dashboard} /> */}
 
           <Route path="/orderDetails" component={OrderDetails} />
           <Route path="/shopList" component={ShopList} />

@@ -7,6 +7,8 @@ import axios from "axios";
 class Restaurants extends React.Component {
   state = {
     restaurantsList: [],
+    star:(Math.random()*(1-5) + 5).toFixed(1),
+    comment:Math.floor(Math.random()*1200),
   };
 
   async componentDidMount() {
@@ -23,7 +25,7 @@ class Restaurants extends React.Component {
               return (
                 <div className="col-lg-3 col-md-4 col-sm-6 my-4" key={item.id}>
                   {/* 這key值需要提供，但還是能跑 */}
-                  <div className="card" style={{ maxHeight: "349px" }}>
+                  <div className="card" style={{ maxHeight: "349px",cursor:"pointer" }}>
                     <img
                       src={item.picture}
                       className="card-img-top"
@@ -40,20 +42,28 @@ class Restaurants extends React.Component {
                         className="card-headline d-flex  justify-content-between"
                         style={{ height: "50px", width: "100%" }}
                       >
-                        <h5 className="card-title">
+                        <h5 className="card-title "
+                        style={{ 
+                          display: "webkitBox",
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                          webkitLineClamp: "2",
+                          lineHeight: "20px",
+                          }}
+                        >
                           <b>{item.name}</b>
                         </h5>
                         <div
                           className="float-right"
-                          style={{ whiteSpace: "nowrap" }}
+                          style={{ whiteSpace: "nowrap",width:"30%" }}
                         >
                           <i
                             className="fa fa-star "
                             style={{ color: "pink" }}
                           ></i>
-                          <span className="star-point">{item.star}</span>
+                          <span className="star-point">{this.state.star}</span>
                           <span className="comment-amount">
-                            ({item.tel})
+                            ({this.state.comment})
                           </span>
                         </div>
                       </span>

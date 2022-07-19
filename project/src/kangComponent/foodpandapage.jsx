@@ -21,6 +21,7 @@ import ChatRobot from "./ChatRobot";
 import FirebaseIndex from "./firebase/firebaseIndex";
 
 import Section1_pic from "../img/man.png";  //送貨人
+import Hands from "../img/hands.png"
 import SvgLogo from "./Svg/final_project_logo.svg";
 import LogoPNG from "../img/logo.png"
 
@@ -37,6 +38,8 @@ class FoodpandaPage extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <ChatRobot/>
+
         <div className="body-wrapper">
         <div className="container">
           <div className="d-flex justify-content-end mt-2 ">
@@ -47,7 +50,15 @@ class FoodpandaPage extends React.Component {
             >
               會員主頁
             </button>
-            </a>            
+            </a>  
+            <a href="/commentPage">
+            <button
+             type="button"
+              className="btn btn-outline-light text-dark mr-4 btn-lg"
+            >
+              評論頁
+            </button>
+            </a>          
             <a href="/orderrecord">
             <button
              type="button"
@@ -63,6 +74,14 @@ class FoodpandaPage extends React.Component {
               className="btn btn-outline-light text-dark btn-lg"
             >
               去後台
+            </button>
+            </a>
+            <a href="/customerMail ">
+            <button
+              type="button"
+              className="btn btn-outline-light text-dark btn-lg"
+            >
+              <i className="fa fa-envelope"></i>
             </button>
             </a>
           </div>
@@ -94,27 +113,31 @@ class FoodpandaPage extends React.Component {
         <div className="container">
         <div className=" section1_searchsection">
           <div>
+
+
+            {/* 搜尋bar部分 */}
+            <div className="searchbar-wrapper">
+              
+            <div style={{ margin: "0px 0 70px 180px" }}>
             <h1 className="font-weight-bolder h1 section1_searchbar">
               即刻享用新鮮餐點
             </h1>
-
-            {/* 搜尋bar部分 */}
-            <div style={{ margin: "30px 0 70px 0" }}>
               <SearchBar />
+            </div>
+            {/* <img src={Hands} alt=""/> */}
             </div>
           </div>
         </div>
         </div>
         {/* <LiveChat /> */}
         {/* <FirebaseIndex /> */}
-        {/* <ChatRobot2/> */}
         {/* <FindDisatnce /> */}
         <div className="container mt-4 all-item">
           <div className="section2">
             <div
               className="section2_bar1 hito"
-              data-aos="fade-right"
-              data-aos-once="true"
+              // data-aos="fade-right"
+              // data-aos-once="true"
             >
               <h2 className="font-weight-bolder ">
               &ensp;優惠主打星
@@ -124,8 +147,8 @@ class FoodpandaPage extends React.Component {
             </div>
             <div
               className="section2_bar2"
-              data-aos="fade-left"
-              data-aos-once="true"
+              // data-aos="fade-left"
+              // data-aos-once="true"
             >
               <h2 className="mt-5 font-weight-bolder">
               &ensp;附近美食
@@ -135,8 +158,8 @@ class FoodpandaPage extends React.Component {
             </div>
             <div
               className="section2_bar3"
-              data-aos="fade-right"
-              data-aos-once="true"
+              // data-aos="fade-right"
+              // data-aos-once="true"
             >
               <h2 className="mt-5 font-weight-bolder">
               &ensp;中式餐廳
@@ -146,9 +169,9 @@ class FoodpandaPage extends React.Component {
             </div>
             <div
               className="section2_bar4"
-              data-aos="fade-left"
-              data-aos-once="true"
-              data-aos-duration="700"
+              // data-aos="fade-left"
+              // data-aos-once="true"
+              // data-aos-duration="700"
             >
               <h2 className="mt-5 font-weight-bolder">
               &ensp;西式餐廳

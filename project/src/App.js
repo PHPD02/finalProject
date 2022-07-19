@@ -36,9 +36,9 @@ import CompleteResetPwd from './chattyComponents/components page/CompleteResetPw
 import sendresetemail from './chattyComponents/components page/sendresetemail';
 
 //
-import Resetpassword from "./chattyComponents/components page/resetpassword";
-import CompleteResetPwd from "./chattyComponents/components page/CompleteResetPwd";
-import sendresetemail from "./chattyComponents/components page/sendresetemail";
+// import Resetpassword from "./chattyComponents/components page/resetpassword";
+// import CompleteResetPwd from "./chattyComponents/components page/CompleteResetPwd";
+// import sendresetemail from "./chattyComponents/components page/sendresetemail";
 
 // import Card from './chattyComponents/components item/cartcard';
 import Index from "./chattyComponents/components try/byIndex";

@@ -61,19 +61,26 @@ import sendresetemail from './chattyComponents/components page/sendresetemail';
 // import TestPayment from "./chattyComponents/components try/testpayment.jsx";
 
 /* == 峻軒 == */
+// 按鈕或more
 import FoodpandaPage from "./kangComponent/foodpandapage";
-// import TodoIndex from "./kangComponent/TodoIndex";
-// import TodoEdit from "./kangComponent/TodoEdit";
+// 廠商登入後連結
+import TodoIndex from "./kangComponent/TodoIndex";
+import TodoEdit from "./kangComponent/TodoEdit";
 import TodoCreate from "./kangComponent/TodoCreate";
 import TodoDelete from "./kangComponent/TodoDelete";
 
+// 會員拉霸-會員中心、訂單紀錄、登出
 import MemberPage from "./kangComponent/MemberPage";
 import Order_record from "./kangComponent/Order_record";
+// 餐廳資訊
 import CommentPage from "./kangComponent/CommentPage";
-import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard";
+// import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard";
+// 聯絡客服
 import CustomerMail from "./kangComponent/customerMail"
 import CustomerMailSuccess from "./kangComponent/customerMail_Success.jsx";
 // import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard"
+
+// /orderdetails 這頁加入連繫外送員按鈕
 
 class App extends React.Component {
   state = {};
@@ -92,6 +99,7 @@ class App extends React.Component {
           {/* <Route path="/shopList" component={ShopList} /> */}
           {/* 外送訂單詳情頁 */}
           <Route path="/orderDetails" component={OrderDetails} />
+          <Route path="/shopList" component={ShopList} />
           {/* <Route path="/test" component={test} /> */}
 
           {/* ================================================================================================================== */}
@@ -117,32 +125,28 @@ class App extends React.Component {
             <Route path="/login3" component={Login3} /> */}
           {/* <Route path="/test1" component={Test1} /> */}
           {/* <Route path="/cartcard" component={Card} /> */}
-          <Route path="/forgotpwd" component={Forgotpwd} />
+          {/* <Route path="/forgotpwd" component={Forgotpwd} /> */}
 
           {/* ================================================================================================================== */}
           {/* 峻軒 */}
           {/* <Route path="/login" component={Login} /> */}
           <Route path="/foodpandapage" component={FoodpandaPage} />
-<<<<<<< HEAD
-          {/* <Route path="/TodoIndex" component={TodoIndex} /> */}
-          {/* <Route path="/Todo/Edit/:id" component={TodoEdit} /> */}
-=======
           <Route path="/CommentPage" component={CommentPage} />
           <Route path="/memberpage" component={MemberPage} />
           <Route path="/orderrecord" component={Order_record} />
           <Route path="/customerMail" component={CustomerMail} />
           <Route path="/customerMailSuccess" component={CustomerMailSuccess} />
           
+          {/* 後台 */}
           <Route path="/TodoIndex" component={TodoIndex} />
           <Route path="/Todo/Edit/:id" component={TodoEdit} />
->>>>>>> kang_edit_from_mainmergetest
           <Route path="/Todo/Delete/:id" component={TodoDelete} />
           <Route path="/Todo/Create" component={TodoCreate} />
 
           {/* <Route path="/admin/dashboard" component={Dashboard} /> */}
 
-          <Route path="/orderDetails" component={OrderDetails} />
-          <Route path="/shopList" component={ShopList} />
+          {/* <Route path="/orderDetails" component={OrderDetails} /> */}
+          
 
           <Route path="/forgotpwd" component={Forgotpwd} />
           <Route path="/resetpassword" component={Resetpassword} />

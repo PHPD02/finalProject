@@ -34,6 +34,7 @@ class Cartcard extends Component {
         carts.mount = e.target.value;
 
         await axios.put(`http://localhost/PHP/cart/putcart.php`, carts);
+        this.props.func();
 
     }
 

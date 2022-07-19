@@ -66,8 +66,9 @@ class StoreCard extends Component {
 
         
       }
-
+      
       toast.info("已成功新增至購物車!");
+      
 
     } catch (error) {
       console.log(error);
@@ -83,25 +84,29 @@ class StoreCard extends Component {
     return (
       <React.Fragment>
         <div className='card' style={{ boxShadow: "3px 3px 3px grey" }}>
-          <div className='container' style={{height: '170px'}} >
+          <div className='container' style={{height: '150px'}} >
             <div className='row mt-3'>
               {/* <div className='col-md-12 col-sm-12'> */}
-                <img src={picture} alt="" name="picture" height="100" className='col-3'  />
+                <img src={picture} alt="" name="picture" height="120" className='col-3'  />
                 {/* 圖片 */}
                 <div className='col-9 '>
                   <div className='col'>
                     {/* 商品名稱 */}
-                    <h4 name="dish">{dish}</h4><div name="type">{type}</div>
+                    
                     {/* 金額 */}
-                    <span>$<span name="cost">{cost}</span></span>
+                    <h4 name="dish">{dish}</h4>
+                    <div className="row">
+                    <div name="type"  className='col-10'>{type}</div>
+                    <button type="submit" className='col-2 btn btn-primary rounded-lg h-25' onClick={this.addtoCart}>+</button>
+                    </div>
+                    <span>$<span name="cost" >{cost}</span></span>
                     <br />
                     <div className="row">
-                      <div name="introduce" className='col-10'>{introduce}</div>
-                      <button type="submit" className='col-2 btn btn-primary rounded-lg h-25' onClick={this.addtoCart}>+</button>
-                    </div>
+                      <div name="introduce" className='col'>{introduce}</div>
+                      </div>
                   </div>
                   
-                  <ToastContainer />
+                  
                 </div>
               {/* </div> */}
             </div>

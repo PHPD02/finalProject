@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import Navbar from '../../components/repeatability/Navbar';
-import ShopCard from '../../components/component/ShopCard';
+// import Navbar from '../../components/repeatability/Navbar';
+import Navbar2 from '../components item/Navbar2';
+// import ShopCard from '../../components/component/ShopCard';
 import Footer from '../../components/repeatability/Footer';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import "../../components/component/css/card.css";
 import SearchBar from '../../components/component/SearchBar';
 
 import Axios from 'axios';
 import StoreCard from '../components item/storeCards';
-import CheckCart from '../components item/checkCart';
+// import CheckCart from '../components item/checkCart';
+import { ToastContainer, toast } from 'react-toastify';
 class shopList extends Component {
   state = {
     menuList: [],
@@ -40,7 +42,7 @@ class shopList extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar />
+        <Navbar2 />
         {/* 查詢地址  */}
         <div className='container fixed-top ddd' style={{ display: "none" }}>
           <div className='row'>
@@ -62,29 +64,29 @@ class shopList extends Component {
           <br />
           <div className='container'>
             <div className='row'>
-              <h4 className='col-7'>餐廳名稱:{this.state.restaurantName}</h4>
-              <button className='col-3 btn btn-outline-primary'><b>+</b><i className='fa fa-users pr-1'></i>開始團購訂單</button>
-              <p className='col-2'>餐廳資訊</p>
+              <h4 className='col-9'>餐廳名稱:{this.state.restaurantName}</h4>
+              {/* <button className='col-3 btn btn-outline-primary'><b>+</b><i className='fa fa-users pr-1'></i>開始團購訂單</button> */}
+              <button className='col-2 btn btn-outline-primary'>餐廳資訊</button>
             </div>
             <div>
               <span>★</span><span>5</span>/<span>4.7</span><span>(500)</span>
             </div>
-            <div>
+            {/* <div>
               <span>$$$</span>●<span>種類</span>●<span>西式/台式/沒事</span>
             </div>
             <div>
               <span>地址</span>●<span>公里</span>●<span>以地圖開啟</span>
             </div>
-            <hr />
-            <div>
+            <hr /> */}
+            {/* <div>
               <button className='btn btn-outline-primary'>人氣精選</button>
               <button className='m-1 btn btn-outline-primary'>※注意事項※</button>
               <button className='m-1 btn btn-outline-primary'>種類</button>
               <button className='m-1 btn btn-outline-primary'>種類</button>
               <button className='m-1 btn btn-outline-primary'>種類</button>
-            </div>
+            </div> */}
             <br />
-            <h3 className>人氣精選✨</h3>
+            {/* <h3 className>人氣精選✨</h3>
             <div className='container'>
               <div className='row'>
                 <div className='col-md-6 col-sm-12'>
@@ -107,9 +109,9 @@ class shopList extends Component {
                   <ShopCard />
                 </div>
               </div>
-            </div>
-            <hr />
-            <h4>種類</h4>
+            </div> */}
+            {/* <hr /> */}
+            <h4>菜單</h4>
             <div className='container'>
               <div className='row'>
               {this.state.menuList.map((p) => {
@@ -149,6 +151,7 @@ class shopList extends Component {
         <br />
         <br />
         <br />
+        {/* <ToastContainer /> */}
         <Footer />
       </React.Fragment>
     );

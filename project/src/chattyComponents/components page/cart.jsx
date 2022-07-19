@@ -21,7 +21,7 @@ class Cart extends Component {
     stateChg = async() => {
         await axios.get("http://localhost/PHP/cart/getallcart.php").then((response) => {
             this.setState({ 
-                cart: response.data
+                cart: response.data,
             });
             
         })

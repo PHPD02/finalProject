@@ -55,12 +55,15 @@ class Navbar extends Component {
                   <i class="fa fa-user-circle" aria-hidden="true"></i>
                 </a> */}
                 {/* 購物車 */}
+                <NavLink to='/cart'>
                 <a href="" className="btn btn-outline-dark ml-1 p-1">
                   <i className="fa fa-shopping-bag text-info p-1"></i>
                   Cart<CheckCart cartNum={this.state.cartNum} /></a>
+                  </NavLink>
                 {/* 登入 */}
                 {/* <a href="" id="loginin" className="btn btn-outline-dark m-1 p-1">
                   <i className="fa fa-user-circle text-info p-1"></i>Login</a> */}
+                  
                 <a href="" id="loginout" className="btn btn-outline-dark m-1 p-1">
                   <i class="fa fa-sign-out p-1"></i>Logout</a>
                 {/* <NavLink to="/login">

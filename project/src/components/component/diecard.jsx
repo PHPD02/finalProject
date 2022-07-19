@@ -35,6 +35,7 @@ class diecard extends Component {
         <div style={{
           width: '200px', height: '300px'
         }}>
+          <NavLink to='/shopList2'>
           <div className="setHeight cardshadow">
             {/* 需要套資料庫呈現(圖片) */}
             <div className='zImg'>
@@ -56,8 +57,9 @@ class diecard extends Component {
               <small className="restaurant-type">$$$,<b></b></small>
             </div>
           </div>
+          </NavLink>
           {/* </NavLink> */}
-          <div className="setHeight cardshadow">
+          <div className="setHeight cardshadow my-4">
             {/* 需要套資料庫呈現(圖片) */}
             <div className='zImg'>
               <img src="https://images.deliveryhero.io/image/fd-tw/LH/qsf8-listing.jpg?width=400&height=292|https://images.deliveryhero.io/image/fd-tw/LH/qsf8-listing.jpg?width=800&height=584" className="bd-img bd-img-lg featurette-image img-fluid mx-auto" id="myImg" width="100%" />

@@ -1,17 +1,47 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+import Axios from 'axios';
+import CheckCart from '../../chattyComponents/components item/checkCart';
 import "./css/navbar.css";
+// import $ from 'jquery';
 
 
 class Navbar extends Component {
-  state = {}
+  state = {
+    cartNum: 0
+  }
+
+  initCartNum = () => {
+    Axios.get("http://localhost/PHP/cart/getallcart.php").then((res) => {
+      // console.log(res.data);
+      const carts = res.data || [];
+      const cartNum = carts.map(cart => parseInt(cart.mount)).reduce((a, value) => a + value, 0);
+      // console.log(cartNum);
+      this.setState({ cartNum: cartNum });
+      // console.log(carts[0]);
+    })
+  }
+
+  async componentDidMount() {
+    var result = await Axios.get("http://localhost/PHP/storeCards/getStoreItems.php");
+    this.setState({
+      menuList: result.data,
+      restaurantName: result.data[0].restaurantName
+    })
+    console.log(this.state.menuList)
+    this.initCartNum();
+  }
+  
   render() {
     return (
       <React.Fragment>
         {/* 固定導覽列在最上方 */}
         {/* expand 節點 */}
-        <nav className="nav-bg navbar navbar-expand-lg flex-top navbar-light">
+        <nav className="nav-bg navbar navbar-expand-lg flex-top navbar-light" id='navbar'>
           <div className="container-fluid">
-            <a><img className="navbar-brand logoImg" src='../image/logo.png' /></a>
+            <NavLink to='/'>
+              <a><img className="navbar-brand logoImg" src='../image/logo.png' /></a>
+            </NavLink>
             {/* menu */}
             <button className="navbar-toggler"
               type="button"
@@ -28,26 +58,38 @@ class Navbar extends Component {
 
                 <ul className="navbar-nav ">
                   <li className="nav-item active pl-5">
-                    <a className="nav-link settext" href='./'><span className="sr-only "></span><i></i>順弁</a>
+                    {/* <NavLink to='/sunsua'> */}
+                    <a className="nav-link settext" href='/sunsua'><span className="sr-only "></span><i></i>順弁</a>
+                    {/* </NavLink> */}
+                  </li>
+                  <li id='accompany' className="nav-item active pl-5" style={{display:'none'}}>
+                    <a className="nav-link settext" href='#textCity'><span className="sr-only"></span>配合合作店家</a>
+                  </li>
+                  <li id='latestNews' className="nav-item active pl-5" style={{display:'none'}}>
+                    <a className="nav-link settext" href='#news'><span className="sr-only"></span>最新消息</a>
                   </li>
                   <li className="nav-item active pl-5">
-                    <a className="nav-link settext" href=''><span className="sr-only"></span>配合合作店家</a>
-                  </li>
-                  <li className="nav-item active pl-5">
-                    <a className="nav-link settext" href=''><span className="sr-only"></span>最新消息</a>
-                  </li>
-                  <li className="nav-item active pl-5">
-                    <a className="nav-link settext" href=''><span className="sr-only"></span>聯絡我們</a>
+                    <a className="nav-link settext" href='#ff'><span className="sr-only"></span>聯絡我們</a>
                   </li>
                 </ul>
                 <div className="buttons">
                   {/* 購物車 */}
-                  <button type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'>
-                    <i className="fa fa-shopping-cart text-info p-1"></i><span>Cart (0)</span>
-                  </button>
-                  <button type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'>
-                    <i className="fa fa-sign-in text-info p-1 "></i><span>Login</span>
-                  </button>
+                  <NavLink to='/cart'>
+                    <button type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'>
+                      <i className="fa fa-shopping-cart text-info p-1"></i>
+                      <span>Cart <CheckCart cartNum={this.state.cartNum} /></span>
+                    </button>
+                  </NavLink>
+                  <NavLink to="/login">
+                    <button type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'>
+                      <i className="fa fa-user-circle text-info p-1 "></i><span>Login</span>
+                    </button>
+                  </NavLink>
+                  <NavLink to='/'>
+                    <button type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{display:'none'}}>
+                      <i className="fa fa-sign-out text-info p-1 "></i><span>Logout</span>
+                    </button>
+                  </NavLink>
                 </div>
 
 

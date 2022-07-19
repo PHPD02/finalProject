@@ -4,18 +4,19 @@ import { NavLink } from 'react-router-dom';
 // 引入頁面導覽列
 import "./css/firstpage.css";
 import Footer from './repeatability/Footer';
-// 死卡
-import Diecard from './component/diecard';
 // 引入首頁專用卡片架構
 import Cards from './component/Cards';
 // 引入首頁專用地圖架構
 import Taiwan from './component/Taiwan';
 // 引入首頁專用最新消息資訊架構
 import LatestNews from './component/LatestNews';
+// 固定功夫茶
+import Diecard from './component/diecard';
 // import $ from 'jquery'
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import Navbar from './repeatability/Navbar';
+import $ from 'jquery';
 
 
 
@@ -23,9 +24,6 @@ import Navbar from './repeatability/Navbar';
 
 class firstpage extends Component {
   state = {}
-  
- 
-  
 
   // 首頁連結地圖城市
   clickTwCity = (e) => {
@@ -33,7 +31,7 @@ class firstpage extends Component {
     // let e = event;
     // this.props.clickTwCity(e)
     // var a = document.getElementsByClassName('itemCitys');
-    console.log(e.target.getAttribute('value'));
+    // console.log(e.target.getAttribute('value'));
     // var a = event.target.value;
     var Tw = document.getElementById('textCity');
     Tw.textContent = e.target.getAttribute('value');
@@ -45,6 +43,9 @@ class firstpage extends Component {
   //   }
   // }
   componentDidMount() {
+    $('#accompany').attr('style','display:block') ;
+    $('#latestNews').attr('style','display:block') ;
+    
     // or simply just AOS.init();
     AOS.init({
       // initialise with other settings
@@ -102,7 +103,7 @@ class firstpage extends Component {
               <div className="col-lg-7 col-md-12">
                 <div>
                   <div className='row '>
-                    <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Cards /></div>
+                    <div className='col-lg-4 col-md-4 col-sm-12 stylecards mb-5'><Diecard /></div>
                     <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Cards /></div>
                     <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Cards /></div>
                   </div>

@@ -9,7 +9,7 @@ class Cards extends Component {
     ]
   }
   componentDidMount = async () => {
-    let url = "http://localhost/finalProject/firstsql2.php"
+    let url = "http://localhost/ourPHPFinalproject/RjieProject/firstsql2.php"
     await axios.get(url)
 
       .then(res => {

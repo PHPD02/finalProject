@@ -6,7 +6,7 @@ class Footer extends Component {
   render() {
     return (
       <React.Fragment>
-        <footer className="flex-rw ">
+        <footer className="flex-rw" id='ff'>
           <ul className="footer-list-top ">
             <li>
               <h4 className="footer-list-header text-dark">關於</h4></li>
@@ -24,18 +24,22 @@ class Footer extends Component {
 
           </ul>
           <ul className="footer-list-top">
-            <li id='help'>
+            {/* <button className='btn btn-light'> */}
+              <a href="#navbar" className="fa fa-arrow-circle-o-up"></a>
+            {/* </button> */}
+            
+            {/* <li id='help'>
               <h4 className="footer-list-header text-dark">追蹤社群</h4></li>
             <section className="footer-social-section flex-rw">
               <span className="footer-social-overlap footer-social-icons-wrapper">
 
-                <a href="#" className="generic-anchor" target="_blank" title="Facebook" itemprop="significantLink"><i className="fa fa-facebook"></i></a>
+                <a href="#" className="generic-anchor" target="_blank" title="Facebook" itemprop="significantLink"><i className="fa fa-facebook" ></i></a>
 
                 <a href="#" className="generic-anchor" target="_blank" title="Instagram" itemprop="significantLink"><i className="fa fa-instagram"></i></a>
 
                 <a href="#" className="generic-anchor" target="_blank" title="Google Plus" itemprop="significantLink"><i className="fa fa-google-plus"></i></a>
               </span>
-            </section>
+            </section> */}
           </ul>
 
 

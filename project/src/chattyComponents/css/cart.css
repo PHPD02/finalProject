@@ -13,3 +13,9 @@
     /* display: flex;
     justify-content: right; */
 }
+
+#number {
+    /* display */
+    padding: none;
+    align-items: right;
+}

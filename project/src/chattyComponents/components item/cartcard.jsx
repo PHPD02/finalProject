@@ -45,17 +45,19 @@ class Cartcard extends Component {
             <React.Fragment>
                 <div className='menutail row'>
                     {/* 點餐內容 */}
-                    <div className="col-1 cart-food-sp sp1'"><span className="close" onClick={this.doDelete}>X</span></div>
+                    
                     <div className='col-2 cart-food-sp sp1'><img src={picture} alt={dish} style={{height:'100%'}} /></div>
                     <div className='col-3 cart-food-sp sp2'>{dish}</div>
                     <div className='col-2 cart-food-sp'>{cost}</div>
 
-                    <div className='col-2 cart-food-sp'>
-                        <input type="number" className='text-right w-25' value={mount} onChange={this.changeM} />
+                    <div className='col-2 cart-food-sp' id='number'>
+                        <input type="number" className='text-right w-50'  value={mount} onChange={this.changeM} />
                     </div>
 
                     <output className='col-2 cart-food-sp sp3' id='sum'>{sumPrice}</output>
+                    <div className="col-1 cart-food-sp sp1'"><span className="close" onClick={this.doDelete}><i class="fa fa-trash-o"></i></span></div>
                 </div>
+                
             </React.Fragment>
         );
     }

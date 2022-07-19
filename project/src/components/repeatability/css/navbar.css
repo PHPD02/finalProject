@@ -1,6 +1,6 @@
 .nav-bg {
-  background-image: url('./hito.png');
-  background-repeat: no-repeat;
+  /* background-image: url('./hito.png');
+  background-repeat: no-repeat; */
   padding: 33px;
   margin: 0 auto;
   z-index: 99999999999999999999999;
@@ -30,13 +30,15 @@
   height: 70px;
   width: 125px;
   
+  
 }
 .settext{
   font-size: 24px;
   font-weight: bolder;
 }
 
-.settext:hover,
-.settext:focus{
-
+.settext:hover{
+  color: blue;
 }
+
+

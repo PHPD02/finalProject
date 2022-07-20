@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, HashRouter, Switch, Route } from "react-router-dom";
-import test from "./test";
+import Cards from "./components/component/Cards";
+
 // 引入模板
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
@@ -100,7 +101,7 @@ class App extends React.Component {
           {/* 外送訂單詳情頁 */}
           <Route path="/orderDetails" component={OrderDetails} />
           <Route path="/shopList" component={ShopList} />
-          {/* <Route path="/test" component={test} /> */}
+          <Route path="/cards"  component={Cards} />
 
           {/* ================================================================================================================== */}
           {/* 純芷 */}

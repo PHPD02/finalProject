@@ -64,8 +64,8 @@ import sendresetemail from './chattyComponents/components page/sendresetemail';
 // 按鈕或more
 import FoodpandaPage from "./kangComponent/foodpandapage";
 // 廠商登入後連結
-import TodoIndex from "./kangComponent/TodoIndex";
-import TodoEdit from "./kangComponent/TodoEdit";
+// import TodoIndex from "./kangComponent/TodoIndex";
+// import TodoEdit from "./kangComponent/TodoEdit";
 import TodoCreate from "./kangComponent/TodoCreate";
 import TodoDelete from "./kangComponent/TodoDelete";
 
@@ -138,8 +138,8 @@ class App extends React.Component {
           <Route path="/customerMailSuccess" component={CustomerMailSuccess} />
           
           {/* 後台 */}
-          <Route path="/TodoIndex" component={TodoIndex} />
-          <Route path="/Todo/Edit/:id" component={TodoEdit} />
+          {/* <Route path="/TodoIndex" component={TodoIndex} /> */}
+          {/* <Route path="/Todo/Edit/:id" component={TodoEdit} /> */}
           <Route path="/Todo/Delete/:id" component={TodoDelete} />
           <Route path="/Todo/Create" component={TodoCreate} />
 

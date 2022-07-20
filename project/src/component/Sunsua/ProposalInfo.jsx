@@ -104,7 +104,7 @@ class ProposalInfo extends Component {
                         {/* <img src="https://dummyimage.com/100x100/a3a3a3/fff" alt="" /> */}
                         {/* <img src="https://dummyimage.com/150x150/a3a3a3/fff" alt="" /> */}
                         {/* <img src="https://dummyimage.com/200x200/a3a3a3/fff" alt="" /> */}
-                        <img src={this.state.proposalDetail.picUrl} alt="" width={150} height={150}/>
+                        <img src={this.state.proposalDetail.picUrl} alt="" width={150} height={150} />
                     </div>
                     <div className='col-lg-6 d-flex align-items-center'>
                         <table className='table table-info my-2' border="1">
@@ -133,7 +133,7 @@ class ProposalInfo extends Component {
                         </table>
 
                     </div>
-                    <div id="proposalBtn" className='col-lg-3'>
+                    <div className='col-lg-3 d-flex flex-column justify-content-center align-items-center '>
                         <div className='m-1 text-center'>
                             <label className='h3 mr-2'>提案剩餘時間</label>
                             <TimeCountDown

@@ -151,7 +151,7 @@ class SunsuaProposal extends Component {
                 "image",
                 this.state.file,
             );
-    
+
             // let url = "https://api.imgur.com/3/image";
             let res = await $.post({
                 url: "https://api.imgur.com/3/image",
@@ -177,7 +177,7 @@ class SunsuaProposal extends Component {
                     return;
                 })
             console.log(this.state.proposalDetail);
-    
+
             this.setState({})
             let proposalSet = document.querySelector("#proposalSet");
             proposalSet.classList.add("d-none");
@@ -313,11 +313,12 @@ class SunsuaProposal extends Component {
                                         <td>提案限制時間</td>
                                         <td>
                                             <span>
-                                                <input type="number" min={0} max={24} style={{ width: 50 }} onChange={this.hrInput} required="required"></input>
-                                                <label className='mx-2'>時</label>
+                                                <input type="number" min={0} max={24} defaultValue={0} style={{ width: 50 }} onChange={this.hrInput} required="required"></input>
                                             </span>
+                                            <label className='mx-2'>時</label>
                                             <span>
-                                                <input type="number" min={0} max={60} style={{ width: 50 }} onChange={this.minInput} required="required"></input>
+                                                <input type="number" min={0} max={60} defaultValue={0} style={{ width: 50 }} onChange={this.minInput} required="required"></input>
+
                                                 <label className='mx-2'>分</label>
                                             </span>
                                         </td>

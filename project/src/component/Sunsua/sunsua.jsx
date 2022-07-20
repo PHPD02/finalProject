@@ -5,7 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SunsuaProposal from './sunsuaProposal';
 import SunsuaSearchProposal from './sunsuaSearchProposal';
 import SunsuaIntro from './sunsuaIntro.jsx';
-import Navbar from '../repeatability/Navbar.jsx';
+
+// import Navbar from '../repeatability/Navbar.jsx';
+import Navbar from '../../components/repeatability/Navbar';
+import Footer from '../../components/repeatability/Footer';
 
 import "./css/sunsua.css";
 
@@ -27,25 +30,13 @@ class Sunsua extends Component {
                 this.state.innerContent = <SunsuaSearchProposal></SunsuaSearchProposal>
                 break;
         }
-        /* 用 HashRouter */
-        // switch (window.location.hash) {
-        //     case "#/sunsua/intro":
-        //         this.state.innerContent = <SunsuaIntro></SunsuaIntro>
-        //         break;
-        //     case "#/sunsua/proposal":
-        //         this.state.innerContent = <SunsuaProposal></SunsuaProposal>
-        //         break;
-        //     case "#/sunsua/order":
-        //         this.state.innerContent = <SunsuaSearchProposal></SunsuaSearchProposal>
-        //         break;
-        // }
         this.setState({});
     }
     render() {
         return (
             <div id="sunsua" className='py-2'>
                 <Navbar></Navbar>
-                <div className='header mt-5'>
+                <div id='sunsuaheader' className=''>
                     <h1 className='h1' >順弁</h1>
                 </div>
                 <p></p>
@@ -53,9 +44,21 @@ class Sunsua extends Component {
                     <div className='row'>
                         {/* 左側 點選列表 */}
                         <div className='col-2 d-flex flex-column'>
-                            <div className="my-1 h2 font-weight-bold d-flex justify-content-center" onClick={this.innerContentChange}><Link to="/sunsua/intro" >介紹</Link></div>
-                            <div className="my-1 h2 font-weight-bold d-flex justify-content-center" onClick={this.innerContentChange}><Link to="/sunsua/proposal" >提案</Link></div>
-                            <div className="my-1 h2 font-weight-bold d-flex justify-content-center" onClick={this.innerContentChange}><Link to="/sunsua/order">搜方案</Link></div>
+                            <div className="my-1 d-flex justify-content-center" onClick={this.innerContentChange}>
+                                <button className='btn btn-outline-danger' >
+                                    <Link to="/sunsua/intro" className='h2 font-weight-bold' >介紹</Link>
+                                </button>
+                            </div>
+                            <div className="my-1 d-flex justify-content-center" onClick={this.innerContentChange}>
+                                <button className='btn btn-outline-danger' >
+                                    <Link to="/sunsua/proposal" className='h2 font-weight-bold' >提案</Link>
+                                </button>
+                            </div>
+                            <div className="my-1 d-flex justify-content-center" onClick={this.innerContentChange}>
+                                <button className='btn btn-outline-danger' >
+                                    <Link to="/sunsua/order" className='h2 font-weight-bold'>搜方案</Link>
+                                </button>
+                            </div>
                         </div>
                         {/* 右側顯示列表 */}
                         <div className="col-10">
@@ -63,10 +66,7 @@ class Sunsua extends Component {
                         </div>
                     </div>
                 </div>
-                <div className='footer'>
-                    <p>about us</p>
-                </div>
-
+                <Footer></Footer>
             </div>
 
         );

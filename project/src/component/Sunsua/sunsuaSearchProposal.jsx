@@ -159,7 +159,7 @@ class SunsuaSearchProposal extends Component {
                     <h1 className='text-center'>搜尋方案</h1>
                     <div>
                         <span>
-                            <input id="searchBox" placeholder='請輸入您的地址' />
+                            <input id="searchBox" placeholder='請輸入您的地址' style={{ 'width': '80%' }} />
                             <i className="bi bi-search ml-1"></i>
                         </span>
                         {/* <input id="" placeholder='時間' /><i className="bi bi-search ml-1"></i> */}

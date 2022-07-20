@@ -11,6 +11,7 @@ import Axios from 'axios';
 import StoreCard from '../components item/storeCards';
 // import CheckCart from '../components item/checkCart';
 import { ToastContainer, toast } from 'react-toastify';
+import { NavLink } from 'react-router-dom';
 class shopList extends Component {
   state = {
     menuList: [],
@@ -65,7 +66,13 @@ class shopList extends Component {
             <div className='row'>
               <h4 className='col-9'>餐廳名稱:{this.state.restaurantName}</h4>
               {/* <button className='col-3 btn btn-outline-primary'><b>+</b><i className='fa fa-users pr-1'></i>開始團購訂單</button> */}
-              <button className='col-2 btn btn-outline-primary'>餐廳資訊</button>
+              
+              <div className="col-2">
+                <NavLink to='/CommentPage'>
+                  <button className='btn btn-outline-success btn-lg'>餐廳資訊</button>
+                </NavLink>
+              </div>
+                
             </div>
             <div>
               <span>★</span><span>5</span>/<span>4.7</span><span>(500)</span>

@@ -132,10 +132,12 @@ class CommentPage extends React.Component {
                   onChange={this.todoItemCostomerNameChange}
                 ></input>
               </div>
-              <div className="col-4 d-flex align-items-center justify-content-center">
+              <div 
+              // className="col-4 d-flex align-items-center justify-content-center"
+              >
                 <Rating
                   name="simple-controlled"
-                  size="large"
+                  // size="large"
                   value={this.state.CreateRestaurantcomment.rating}
                   onChange={this.todoItemRatingChange}
                 />

@@ -19,7 +19,7 @@ class ToDoCreate extends React.Component {
   // }
 
   yesBtn = async () => {
-    await Axios.post(`http://localhost:8000/todo/create/`, this.state.todoItem);
+    await Axios.post(`http://localhost:8050/todo/create/`, this.state.todoItem);
     window.location = "/TodoIndex";
     toast.success("建立品項成功");
   };

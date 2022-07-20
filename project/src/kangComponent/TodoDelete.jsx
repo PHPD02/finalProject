@@ -6,14 +6,14 @@ class ToDoDelete extends React.Component {
     todoItem: {},
   };
   async componentDidMount() {
-    var url = `http://localhost:8000/todo/item/${this.props.match.params.id}`;
+    var url = `http://localhost:8050/todo/item/${this.props.match.params.id}`;
     var result = await axios.get(url);
     this.state.todoItem = result.data;
     this.setState({});
   }
   okDelete = async () => {
     await axios.delete(
-      `http://localhost:8000/todo/delete/${this.state.todoItem.menuItemId}`
+      `http://localhost:8050/todo/delete/${this.state.todoItem.menuItemId}`
     );
     toast.success('刪除成功');
     window.location = "/TodoIndex";

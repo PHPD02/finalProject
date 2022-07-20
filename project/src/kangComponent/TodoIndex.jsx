@@ -14,7 +14,7 @@ class TodoIndex extends React.Component {
   };
 
   async componentDidMount() {
-    var result = await axios.get("http://localhost:8000/todo/list");
+    var result = await axios.get("http://localhost:8050/todo/list");
     this.setState({ todoList: result.data });
   }
 

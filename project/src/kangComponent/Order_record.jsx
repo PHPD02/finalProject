@@ -11,11 +11,11 @@ class Order_record extends React.Component {
 
   };
   async componentDidMount() {
-    var result = await axios.get("http://localhost:8000/orderdetails/list");
+    var result = await axios.get("http://localhost:8050/orderdetails/list");
     this.setState({ orderdetails: result.data });
     console.log(result.data);
 
-    var sunsua_order = await axios.get("http://localhost:8000/sunsua_order/list");
+    var sunsua_order = await axios.get("http://localhost:8050/sunsua_order/list");
     this.setState({ sunsua_order: sunsua_order.data });
     console.log(sunsua_order.data);
     

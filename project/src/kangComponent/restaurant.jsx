@@ -6,7 +6,7 @@ class Restaurant extends React.Component {
   };
 
   async componentDidMount() {
-    var result = await axios.get("http://localhost:8000/restaurants/list");
+    var result = await axios.get("http://localhost:8050/restaurants/list");
     this.setState({ restaurantsList: result.data });
   }
 

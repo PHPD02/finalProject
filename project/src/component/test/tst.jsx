@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ExportExcelButton from "../../kangComponent/ExportExcel_component";
 
 class Tst extends Component {
     state = { 
@@ -16,7 +17,7 @@ class Tst extends Component {
         return (
             <>
                 <h1>tst</h1>
-
+<h1><ExportExcelButton/></h1>
                 <h1>{this.dd}</h1>
             </>
         );

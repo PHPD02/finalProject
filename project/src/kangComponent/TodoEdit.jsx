@@ -19,7 +19,7 @@ class ToDoEdit extends React.Component {
   };
 
   async componentDidMount() {
-    var url = `http://localhost:8000/todo/item/${this.props.match.params.id}`;
+    var url = `http://localhost:8050/todo/item/${this.props.match.params.id}`;
     // 我明明就沒設這個id，但用我資料庫定的menuItemId反而抓不到
     var result = await axios.get(url);
     // console.log(result);
@@ -29,7 +29,7 @@ class ToDoEdit extends React.Component {
   }
   okButtonClick = async () => {
     var result = await axios.put(
-      `http://localhost:8000/todo/item`,
+      `http://localhost:8050/todo/item`,
       this.state.todoItem
     );
     console.log(result);

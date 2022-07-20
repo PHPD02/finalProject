@@ -6,6 +6,9 @@ import "./assets/css/lib/themify-icons.css";
 import "./assets/css/lib/menubar/sidebar.css";
 import "./assets/css/style.css";
 
+import ExportExcelButton from "./ExportExcel_component"  //失敗
+import ExcelJs from "exceljs";
+
 
 class DashboardIndex extends React.Component {
     state = {
@@ -13,24 +16,92 @@ class DashboardIndex extends React.Component {
         // dd:[],
         // dd:(new Date(result.data[0].orderId*1000)).toLocaleDateString()}
         monthrevenue:"",
+        downloadData:[],
+        tbody:[],
       };
+
       async componentDidMount() {
-        var result = await axios.get("http://localhost:8000/dashboardorder");
+        var result = await axios.get("http://localhost:8050/dashboardorder");
         this.setState({ dashboardorder: result.data} );
         const resultdata = result.data 
         const monthrevenue = resultdata.map(dashboardorder =>dashboardorder.cost*dashboardorder.amount).reduce((a , value) => a +value ,0)
         //       累加器   當前值            初始值
         this.setState({ monthrevenue:monthrevenue})
+        // excel部分 試試
+        const gg =resultdata.map((item,index)=>{
+          let date = new Date(item.orderId*1000);
+          //   console.log()
+          let ymd = date.toLocaleDateString();
+
+          return(
+            [ymd,item.dish]
+            // console.log([ymd,item.dish]),
+            // this.setState({ tbody:this.gg})
+            // console.log(this.setstate.tbody)
+          )
+        })
+        console.log(gg)
+
+        const downloadData=[{
+        sheetName: `水巷茶弄月收支報表`,
+	      thead: ['訂單編號','訂單日期','品項名稱','下單數目','消費金額','訂單利潤'],
+	      tbody: gg,
+	      // columnWidths: [{number: 1, width:20},{number: 2, width:10},{number: 3, width:40}]
+        }];
+        await this.setState({ downloadData:downloadData})
+        // console.log(this.state.tbody)
+        console.log(downloadData)
 
           } 
         //    orderId =this.state.dashboardorder[0].orderId;
         //    ymd = new Date(this.orderId*1000);
         //    dd = this.ymd.toLocaleDateString();
+
+
         toCurrency(num){
             var parts = num.toString().split('.');
             parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
             return parts.join('.');
         }
+
+
+
+        onClick(){
+          const workbook = new ExcelJs.Workbook(); // 創建試算表檔案
+          const sheet = workbook.addWorksheet('工作表範例1'); //在檔案中新增工作表 參數放自訂名稱
+      
+          sheet.addTable({ // 在工作表裡面指定位置、格式並用columsn與rows屬性填寫內容
+            name: 'table名稱',  // 表格內看不到的，算是key值，讓你之後想要針對這個table去做額外設定的時候，可以指定到這個table
+            ref: 'A1', // 從A1開始
+            columns: [{name:'名字'},{name:'年齡'},{name:'電話'}],
+            rows: [['小明','20','0987654321'],['小美','23','0912345678']]
+          });
+      
+          // 表格裡面的資料都填寫完成之後，訂出下載的callback function
+          // 異步的等待他處理完之後，創建url與連結，觸發下載
+          workbook.xlsx.writeBuffer().then((content) => {
+          const link = document.createElement("a");
+            const blobData = new Blob([content], {
+              type: "application/vnd.ms-excel;charset=utf-8;"
+            });
+            link.download = '測試的試算表.xlsx';
+            link.href = URL.createObjectURL(blobData);
+            link.click();
+          });
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       render() { 
         return (
@@ -155,9 +226,9 @@ class DashboardIndex extends React.Component {
                       <label for="year" className="mx-2">
                         年份
                       </label>
-                      <select name="" id="year" className="form-control">
-                        <option value="">2021</option>
-                        <option value="">2022</option>
+                      <select name="" id="year" className="form-control" style={{backgroundColor:"whitesmoke"}}>
+                        <option value="2021">2021</option>
+                        <option value="2022" selected>2022</option>
                       </select>
                     </div>
 
@@ -165,25 +236,30 @@ class DashboardIndex extends React.Component {
                       <label for="month" className="mx-2">
                         月份
                       </label>
-                      <select name="" id="month" className="form-control ml-2">
-                        <option value="">一月</option>
-                        <option value="">二月</option>
-                        <option value="">三月</option>
-                        <option value="">四月</option>
-                        <option value="">五月</option>
-                        <option value="">六月</option>
-                        <option value="">七月</option>
-                        <option value="">八月</option>
-                        <option value="">九月</option>
-                        <option value="">十月</option>
-                        <option value="">十一月</option>
-                        <option value="">十二月</option>
+                      <select name="" id="month" className="form-control ml-2" style={{backgroundColor:"whitesmoke"}} >
+                        <option value="一月">一月</option>
+                        <option value="二月">二月</option>
+                        <option value="三月">三月</option>
+                        <option value="四月">四月</option>
+                        <option value="五月">五月</option>
+                        <option value="六月">六月</option>
+                        <option value="七月" selected>七月</option>
+                        <option value="八月">八月</option>
+                        <option value="九月">九月</option>
+                        <option value="十月">十月</option>
+                        <option value="十一月">十一月</option>
+                        <option value="十二月">十二月</option>
                       </select>
                     </div>
                     <div className="ml-auto mt-2 p-2">
-                      <a href="#" className="btn btn-outline-secondary btn-lg">
+                    <ExportExcelButton 
+                    fileName={'測試的試算表'}
+                    sheetDatas={this.state.downloadData}
+                    />
+                      {/* <a href="#" className="btn btn-outline-secondary btn-lg"
+                      onClick={this.onClick}>
                         下載報表
-                      </a>
+                      </a> */}
                       <a
                         href="#"
                         className="btn btn-outline-secondary btn-lg ml-2"

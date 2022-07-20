@@ -87,12 +87,12 @@ class ToDoCreate extends React.Component {
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/todoIndex" style={{ color: "#03A9F5 " }}>
                     <i className="ti-email"></i> 菜單管理
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/DashboardIndex">
                     <i className="ti-user"></i> 訂單紀錄
                   </a>
                 </li>

@@ -64,6 +64,7 @@ import sendresetemail from './chattyComponents/components page/sendresetemail';
 // 按鈕或more
 import FoodpandaPage from "./kangComponent/foodpandapage";
 // 廠商登入後連結
+import DashboardIndex from "./kangComponent/DashboardIndex";
 import TodoIndex from "./kangComponent/TodoIndex";
 import TodoEdit from "./kangComponent/TodoEdit";
 import TodoCreate from "./kangComponent/TodoCreate";
@@ -79,6 +80,12 @@ import CommentPage from "./kangComponent/CommentPage";
 import CustomerMail from "./kangComponent/customerMail"
 import CustomerMailSuccess from "./kangComponent/customerMail_Success.jsx";
 // import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard"
+import FirebaseIndex from "./kangComponent/firebase/firebaseIndex";
+
+import Tst from "./component/test/tst";
+
+
+
 
 // /orderdetails 這頁加入連繫外送員按鈕
 
@@ -138,6 +145,7 @@ class App extends React.Component {
           <Route path="/customerMailSuccess" component={CustomerMailSuccess} />
           
           {/* 後台 */}
+          <Route path="/DashboardIndex" component={DashboardIndex} />
           <Route path="/TodoIndex" component={TodoIndex} />
           <Route path="/Todo/Edit/:id" component={TodoEdit} />
           <Route path="/Todo/Delete/:id" component={TodoDelete} />
@@ -147,11 +155,12 @@ class App extends React.Component {
 
           {/* <Route path="/orderDetails" component={OrderDetails} /> */}
           
-
+          <Route path="/FirebaseIndex" component={FirebaseIndex} />
           <Route path="/forgotpwd" component={Forgotpwd} />
           <Route path="/resetpassword" component={Resetpassword} />
           <Route path="/CompleteResetPwd" component={CompleteResetPwd} />
           <Route path="/sendresetemail" component={sendresetemail} />
+          <Route path="/tst" component={Tst} />
         </Switch>
       </BrowserRouter>
     );

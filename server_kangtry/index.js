@@ -346,7 +346,7 @@ sunsua_order.connect(function (err) {
 })
 app.get("/sunsua_order/list", function (req, res) {
     // sunsua_order.query("select * from sunsua_order where proposalId =42", [],
-    orderdetails.query("select * from sunsua_order join proposal on sunsua_order.proposalId =  proposal.id", [],
+    orderdetails.query("select * from sunsua_order left join proposal on sunsua_order.proposalId =  proposal.id", [],
 
         function (err, rows) {
             res.send( JSON.stringify(rows) );
@@ -361,3 +361,35 @@ app.get("/sunsua_order/list/:proposalId", function (req, res) {
         }
     )
 })
+
+
+// 後臺訂單部分
+var mysql = require("mysql");
+var dashboardorder = mysql.createConnection({
+    user: "root",
+    password: "",
+    host: "localhost",
+    port: 3306,
+    database: "finalproject"
+});
+
+dashboardorder.connect(function (err) {
+    console.log(err);
+})
+	
+app.get("/dashboardorder", function (req, res) {
+    // dashboardorder.query("select * from orderdetails left join ordert on orderdetails.orderId =  ordert.orderId", [],
+    dashboardorder.query("select * from orderdetails ", [],
+    function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})
+// app.get("/dashboardorder", function (req, res) {
+//     dashboardorder.query("select * from sunsua_order where id = ?",
+//     [req.body.id,req.body.proposalId,req.body.uidPartyB,req.body.count,req.body.freight,req.body.state],
+//     function (err, rows) {
+//             res.send( JSON.stringify(rows) );
+//         }
+//     )
+// })

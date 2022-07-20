@@ -39,6 +39,8 @@ import TodoIndex from "./kangComponent/TodoIndex";
 import TodoEdit from "./kangComponent/TodoEdit";
 import TodoCreate from "./kangComponent/TodoCreate";
 import TodoDelete from "./kangComponent/TodoDelete";
+import DashboardIndex from "./kangComponent/DashboardIndex";
+
 
 import MemberPage from "./kangComponent/MemberPage";
 import Order_record from "./kangComponent/Order_record";
@@ -93,6 +95,9 @@ class App extends React.Component {
           <Route path="/customerMail" component={CustomerMail} />
           <Route path="/customerMailSuccess" component={CustomerMailSuccess} />
           
+
+          
+          <Route path="/DashboardIndex" component={DashboardIndex} />
           <Route path="/TodoIndex" component={TodoIndex} />
           <Route path="/Todo/Edit/:id" component={TodoEdit} />
           <Route path="/Todo/Delete/:id" component={TodoDelete} />

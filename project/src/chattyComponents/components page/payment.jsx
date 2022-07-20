@@ -147,6 +147,7 @@ class Payment extends Component {
                                     <FontAwesomeIcon icon={faCcApplePay} className="fa-xl float-left" />&nbsp;&nbsp;Apple pay
                                     <input type="radio" name="pycheck" id="pyapple" className='float-right' value='Apple pay' />
                                 </label>
+                                <div>.</div>
                             </section>
                         </div>
                         {/* 右邊 */}

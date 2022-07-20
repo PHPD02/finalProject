@@ -4,13 +4,30 @@
 }
 
 .firstpic {
-  height: 600px;
+  height: 75vh;
+  /* width: %; */
+  /* overflow: visible; */
+  /* size: cover; */
+  /* overflow: hidden; */
+  background-image: url('./foodtraditional.png');
+  background-repeat: no-repeat, repeat;
+  background-position: bottom; 
+  background-size: 100%
+  
+  /* background-position: center; */
+  
+}
+
+.secpic {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
 }
 
 @media(max-width:1200px) {
-  .firstpic {
-    height: 450px;
-  }
+  /* .firstpic { */
+    /* height: 450px; */
+  /* } */
 
   .textheader {
     font-size: 22px;
@@ -27,13 +44,15 @@
 }
 
 @media(max-width:600px) {
-  .firstpic {
+  /* .firstpic { */
 
-    height: 250px;
-  }
+    /* height: 250px; */
+  /* } */
 
   .textheader {
     font-size: 18px;
+    /* color: black; */
+    /* background-color: black; */
   }
 
   .textcontent {

@@ -9,6 +9,7 @@ import '../css/signin.css';
 
 import Navbar from '../../components/repeatability/Navbar';
 import GoogleLogin from '../components try/useGoogleLogin';
+// import '../../img/7.png';
 // import GoogleLogin from 'react-google-login';
 
 var fromwhere = localStorage.getItem('upwhere');

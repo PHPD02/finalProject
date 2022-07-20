@@ -3,10 +3,10 @@ import axios from "./axios";
 import { toast } from "react-toastify";
 
 // 版面樣式
-import "./assets/css/lib/font-awesome.min.css"
-import "./assets/css/lib/themify-icons.css"
-import "./assets/css/lib/menubar/sidebar.css"
-import "./assets/css/style.css"
+// import "./assets/css/lib/font-awesome.min.css"
+// import "./assets/css/lib/themify-icons.css"
+// import "./assets/css/lib/menubar/sidebar.css"
+// import "./assets/css/style.css"
 // 
 
 class ToDoEdit extends React.Component {

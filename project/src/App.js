@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import { BrowserRouter, HashRouter, Switch, Route } from "react-router-dom";
 import test from "./test";
 // 引入模板
+// import "./assets/css/lib/font-awesome.min.css"
+import '../../project/src/kangComponent/assets/css/lib/font-awesome.min.css'
+import "../../project/src/kangComponent/assets/css/lib/themify-icons.css"
+import "../../project/src/kangComponent/assets/css/lib/menubar/sidebar.css"
+import "../../project/src/kangComponent/assets/css/style.css"
+
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";

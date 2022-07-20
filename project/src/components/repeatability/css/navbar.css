@@ -4,13 +4,14 @@
   background-repeat: no-repeat;
   padding: 33px;
   margin: 0 auto;
-  z-index: 99999999999999999999999;
+  /* z-index: 99999999999999999999999; */
   
 }
 
 .logoImg {
-  width: 100px;
-  height: 90px;
+  /* width: 100px; */
+  height: 7vh;
+  width: 5vw;
 }
 
 .logoImg>img {
@@ -28,7 +29,7 @@
   font-weight: bolder;
 } */
 .btnsm{
-  height: 70px;
+  height: 50px;
   width: 125px;
   
 }

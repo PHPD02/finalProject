@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SunsuaProposal from './sunsuaProposal';
 import SunsuaSearchProposal from './sunsuaSearchProposal';
 import SunsuaIntro from './sunsuaIntro.jsx';
-import Navbar from '../repeatability/Navbar.jsx';
+import Navbar from '../../components/repeatability/Navbar';
 
 import "./css/sunsua.css";
 
@@ -43,9 +43,9 @@ class Sunsua extends Component {
     }
     render() {
         return (
-            <div id="sunsua" className='py-2'>
-                <Navbar></Navbar>
-                <div className='header mt-5'>
+            <div id="sunsua">
+                <Navbar />
+                <div className='header1'>
                     <h1 className='h1' >順弁</h1>
                 </div>
                 <p></p>

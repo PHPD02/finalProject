@@ -43,13 +43,13 @@ class firstpage extends Component {
   //   }
   // }
   componentDidMount() {
-    $('#accompany').attr('style','display:block') ;
-    $('#latestNews').attr('style','display:block') ;
-    $('#contact').attr('style','display:block') ;
-    $('#navSunsua').attr('style','display:block') ;
-    
-    
-    
+    $('#accompany').attr('style', 'display:block');
+    $('#latestNews').attr('style', 'display:block');
+    $('#contact').attr('style', 'display:block');
+    $('#navSunsua').attr('style', 'display:block');
+
+
+
     // or simply just AOS.init();
     AOS.init({
       // initialise with other settings
@@ -61,10 +61,37 @@ class firstpage extends Component {
       <React.Fragment>
         {/* 導覽欄位 */}
         <Navbar />
+        {/* <br /> */}
         {/* 首頁圖片 文字 */}
-        <div style={{zIndex:'-1'}}>
-          <img src="./image/foodtraditional.png" className="card-img firstpic" />
-          <div className='mx-5 container-intro text-left card-img-overlay text-dark'>
+        <div
+        //  style={{zIndex:'-1'}}
+        >
+          <div className='firstpic'>
+            {/* <img src="./image/foodtraditional.png" className="card-img " /> */}
+            <div className='secpic'>
+              <section>
+                <h2 className='pt-5'><b>還等什麼？一起和我們開始這個外送的旅程吧！</b></h2>
+                <h3 >想讓上百萬新顧客試試你的美食或生鮮雜貨商品嗎？</h3>
+                <h4><b>讓我們來幫忙吧！該怎麼做呢？</b></h4>
+                <div style={{color:'gray'}}>
+                  <h5>我們會協助你上傳菜單或商品清單、幫你處理訂單</h5>
+                  <h5>幫你處理訂單、訂單確認後我們將請外送夥伴前往你的商店去取件</h5>
+                  <h5>再將餐點或商品外送給顧客們</h5>
+                </div>
+                <div className='text-center'>
+                  <NavLink to='/sunsua'>
+                    <button className='btn btn-outline-danger btn-lg'>點我查看新功能</button>
+                  </NavLink>
+                  
+                </div>
+              </section>
+            </div>
+            
+          </div>
+
+          {/* <div 
+          // className='mx-5 container-intro text-left card-img-overlay text-dark'
+          >
             <br />
             <div className='row'>
               <div className='col-sm-12'><br /><br />
@@ -82,7 +109,7 @@ class firstpage extends Component {
                 <h5 className="pl-5 mt-1 textfooter"><b>我們會協助你上傳菜單或商品清單、幫你處理訂單、訂單確認後我們將請外送夥伴前往你的商店去取件，再將餐點或商品外送給顧客們。</b></h5>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className='mt-4'>
             <h4 className='text-center ImgZ'><span id="textCity" value=''></span> 特別合作店家</h4>

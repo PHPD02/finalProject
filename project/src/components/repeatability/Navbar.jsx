@@ -30,6 +30,13 @@ class Navbar extends Component {
     }
   }
 
+  doLogout() {
+    // 登出
+    localStorage.clear();
+    window.location = "http://localhost:3000/";
+
+}
+
   // componentDidMount() {
     // if (getemail) {
     //   //登入狀態
@@ -109,17 +116,17 @@ class Navbar extends Component {
                   <NavLink to='/cart'>
                     <button type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'>
                       <i className="fa fa-shopping-cart text-info p-1"></i>
-                      <span>Cart <CheckCart cartNum={this.state.cartNum} /></span>
+                      <span><strong>Cart</strong> <CheckCart cartNum={this.state.cartNum} /></span>
                     </button>
                   </NavLink>
                   <NavLink to="/login">
                     <button id='login' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display:'block'}} onClick={this.doLogin} >
-                      <i className="fa fa-user-circle text-info p-1 "></i><span>Login</span>
+                      <i className="fa fa-user-circle text-info p-1 "></i><span><strong>Login</strong></span>
                     </button>
                   </NavLink>
                   <NavLink to='/'>
-                    <button id='logout' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display:'none'}}>
-                      <i className="fa fa-sign-out text-info p-1 "></i><span>Logout</span>
+                    <button id='logout' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display:'none'}} onClick={this.doLogout}>
+                      <i className="fa fa-sign-out text-info p-1 "></i><span><strong>Logout</strong></span>
                     </button>
                   </NavLink>
                   </div>

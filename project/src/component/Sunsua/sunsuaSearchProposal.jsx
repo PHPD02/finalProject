@@ -12,9 +12,10 @@ import axios from "axios";
 
 /* 引入 server host url*/
 import serverHost from './js/severHost.js';
+import phpRoute from './js/phpRoute.js';
 
 /* 引入 component */
-import ProposalInfo from './ProposalInfo.jsx'
+import ProposalInfo from './comp/proposalInfo'
 
 /* 引入 css */
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -44,7 +45,7 @@ class SunsuaSearchProposal extends Component {
         }
     }
     componentDidMount = async () => {
-        let url = serverHost + '/finalProject_php/sunsua/selProposal.php';
+        let url = serverHost + '/' + phpRoute + 'sunsua/selProposal.php';
         this.state.proposalDetail = [];
         await axios.get(url)
             .then(res => {
@@ -90,7 +91,7 @@ class SunsuaSearchProposal extends Component {
         };
         console.log(dataToServer);
 
-        let url = serverHost + '/finalProject_php/sunsua/setSunsuaOrder.php';
+        let url = serverHost + '/' + phpRoute + 'sunsua/setSunsuaOrder.php';
         // console.log(`url: ${url}`);
         await axios.post(url, dataToServer)
             .then(res => {
@@ -109,7 +110,7 @@ class SunsuaSearchProposal extends Component {
             amount: this.state.orderDetail.amount - this.state.orderDetail.number
         };
         console.log(dataToServer);
-        url = serverHost + '/finalProject_php/sunsua/chgProposalAmount.php';
+        url = serverHost + '/' + phpRoute + 'sunsua/chgProposalAmount.php';
         await axios.post(url, dataToServer)
             .then(res => {
                 if (res.status == 200) {
@@ -124,7 +125,7 @@ class SunsuaSearchProposal extends Component {
         /* 當訂單被買光時 狀態改變 */
         if (dataToServer.amount == 0) {
             /* 傳給後端 改變資料庫狀態 */
-            url = serverHost + '/finalProject_php/sunsua/chgProposalState.php';
+            url = serverHost + '/' + phpRoute + 'sunsua/chgProposalState.php';
             dataToServer = {
                 id: this.state.orderDetail.id,
                 state: 0

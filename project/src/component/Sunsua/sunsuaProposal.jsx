@@ -13,6 +13,7 @@ import $ from 'jquery';
 
 /* 引入 server host url */
 import serverHost from './js/severHost.js';
+import phpRoute from './js/phpRoute.js';
 
 /* 引入 component */
 
@@ -190,7 +191,7 @@ class SunsuaProposal extends Component {
     submitProposal = async (e) => {
         console.clear();
         e.preventDefault();
-        let url = serverHost + '/finalProject_php/sunsua/setProposal.php';
+        let url = serverHost + '/' + phpRoute + 'sunsua/setProposal.php';
         console.log("submit:");
         console.log(this.state.proposalDetail);
         await axios.post(url, this.state.proposalDetail)
@@ -315,11 +316,11 @@ class SunsuaProposal extends Component {
                                             <span>
                                                 <input type="number" min={0} max={24} defaultValue={0} style={{ width: 50 }} onChange={this.hrInput} required="required"></input>
                                             </span>
-                                            <label className='mx-2'>時</label>
+                                            <span className='p mx-2'>時</span>
                                             <span>
                                                 <input type="number" min={0} max={60} defaultValue={0} style={{ width: 50 }} onChange={this.minInput} required="required"></input>
 
-                                                <label className='mx-2'>分</label>
+                                                <span className='p mx-2'>分</span>
                                             </span>
                                         </td>
                                     </tr>

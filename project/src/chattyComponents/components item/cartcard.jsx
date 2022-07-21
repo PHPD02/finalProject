@@ -46,7 +46,7 @@ class Cartcard extends Component {
                 <div className='menutail row'>
                     {/* 點餐內容 */}
                     
-                    <div className='col-2 cart-food-sp sp1'><img src={picture} alt={dish} style={{height:'100%'}} /></div>
+                    <div className='col-2 cart-food-sp sp1'><img src={picture} alt={dish} style={{width:'100%'}} /></div>
                     <div className='col-3 cart-food-sp sp2'>{dish}</div>
                     <div className='col-2 cart-food-sp'>{cost}</div>
 

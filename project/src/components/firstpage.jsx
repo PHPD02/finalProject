@@ -31,7 +31,7 @@ class firstpage extends Component {
     Tw.textContent = e.target.getAttribute('value');                            //要顯示的文字
     this.state.address = e.target.getAttribute('value');                        //這裡的地址區域 會等於地圖點選後的值
     console.log(this.state.address);
-    this.state.restaurants=[];                                                  //點選後這裡的餐廳資訊
+    this.state.restaurants = [];                                                  //點選後這裡的餐廳資訊
     this.setState({});                                                          //狀態更新 
     let url = "http://localhost/ourPHPFinalproject/RjieProject/firstsql2.php"
     // console.log(url);
@@ -101,9 +101,7 @@ class firstpage extends Component {
               {/* 合作店家 */}
               {/* data-aos="zoom-in-down" */}
               <div className="col-lg-7 col-md-12">
-                <div>
                   <div className='row '>
-                    
                     {/* <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Diecard /></div> */}
                     {/* 矩陣餐廳內容 導入卡片裡面 */}
                     {this.state.restaurants.map((restaurant, index) => {
@@ -115,13 +113,34 @@ class firstpage extends Component {
                     })}
                   </div>
                   <NavLink to="/foodpandapage" className=" float-right btn btnon">more...</NavLink>
-                </div>
               </div>
             </div>
           </div>
           {/* 最新消息 */}
-          <LatestNews />
-          <br />
+          <header className='container-fluid'>
+            <div className='row'>
+              <div className='col-1 col-lg=1'></div>
+              <div className='col-8 col-lg-8 col-md-8 col-sm-8'>
+                <h3 className=''>最新消息</h3>
+              </div>
+              <div className='col-3 col-lg-3 col-md-3 col-sm-3 mt-3'>
+                <p>第一手重要通知，不容錯過</p>
+              </div>
+            </div>
+            <hr className='w-75 bg-danger' />
+          </header>
+          <div className='container-fluid'>
+            <div className='row'>
+              <div className=''></div>
+              <div className='col-'>
+                <LatestNews />
+              </div>
+              <div className=''></div>
+            </div>
+          </div>
+
+
+
           {/* 頁角 */}
           <Footer />
         </div>

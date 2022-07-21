@@ -6,6 +6,7 @@ import { faFacebookSquare, faGoogle, faApple } from '@fortawesome/free-brands-sv
 import $ from 'jquery';
 
 import '../css/signin.css';
+import '../js/login.js';
 
 import Navbar from '../../components/repeatability/Navbar';
 import GoogleLogin from '../components try/useGoogleLogin';
@@ -141,8 +142,11 @@ class Login1 extends Component {
     render() {
         return (
             <React.Fragment>
+                
+                <div className="backimg">
+
+                {/* </div> */}
                 <Navbar />
-                {/* <div className="backimg"> */}
 
                     {/* 廠商 or 消費者 */}
                     <div id="login1" className="container">
@@ -227,7 +231,7 @@ class Login1 extends Component {
                         </div>
 
                     </div>
-                {/* </div> */}
+                </div>
 
             </React.Fragment>
 

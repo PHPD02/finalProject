@@ -1,3 +1,6 @@
+body {
+  background-image: url('../../../img/6.jpg');
+}
 .nav-bg {
   /* background-image: url('./hito.png'); */
   background-color: white;
@@ -38,7 +41,4 @@
   font-weight: bolder;
 }
 
-.settext:hover,
-.settext:focus{
 
-}

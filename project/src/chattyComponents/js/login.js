@@ -1,1 +1,1 @@
-document.body.classList.add('backimg');
+// document.body.classList.add('backimg');

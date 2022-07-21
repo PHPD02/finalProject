@@ -6,12 +6,9 @@ class Cards extends Component {
 
     
   
-  rest = this.props.catchData;         
+  rest = this.props.catchData;    //把父階的資料傳送到子階來
   componentDidMount = async () => {
     console.log(this.res.name);
-
-
-
     // console.log(this.res.region);
     // let url = "http://localhost/ourPHPFinalproject/RjieProject/firstsql2.php"
     // await axios.get(url)
@@ -23,9 +20,6 @@ class Cards extends Component {
     //   .catch(err => {
     //     console.log("failed")
     //   })
-    
-
-
   }
   render() {
     return (

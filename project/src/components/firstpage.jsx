@@ -105,6 +105,7 @@ class firstpage extends Component {
                   <div className='row '>
                     
                     {/* <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Diecard /></div> */}
+                    {/* 矩陣餐廳內容 導入卡片裡面 */}
                     {this.state.restaurants.map((restaurant, index) => {
                       return (
                         <div className='col-lg-4 col-md-4 col-sm-12 stylecards'>

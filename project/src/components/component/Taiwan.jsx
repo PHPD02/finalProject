@@ -6,9 +6,9 @@ class Taiwan extends Component {
     state = {
         NodeList:[]
     }
-    twCity = (event) => {
+    twCity = (event) => {                           //執行一個function 
         let e = event;
-        this.props.twCity(e);
+        this.props.twCity(e);                       //這裡的值對應下方地圖的value5對應下方地圖的value值
         // console.log(event.target.value);
         // console.log(e.getAttribute('value'));
     }

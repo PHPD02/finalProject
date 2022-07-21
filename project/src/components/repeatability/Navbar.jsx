@@ -115,18 +115,18 @@ class Navbar extends Component {
                   {/* 購物車 */}
                   <NavLink to='/cart'>
                     <button id='cartBar' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'>
-                      <i className="fa fa-shopping-cart text-info p-1"></i>
+                      <i className="fa fa-shopping-cart text-info p-1 fa-2xl"></i>
                       <span><strong>Cart</strong> <CheckCart cartNum={this.state.cartNum} /></span>
                     </button>
                   </NavLink>
                   <NavLink to="/login">
                     <button id='login' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display:'block'}} onClick={this.doLogin} >
-                      <i className="fa fa-user-circle text-info p-1 "></i><span><strong>Login</strong></span>
+                      <i className="fa fa-user-circle text-info p-1 fa-2xl"></i><span><strong>Login</strong></span>
                     </button>
                   </NavLink>
                   <NavLink to='/'>
                     <button id='logout' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display:'none'}} onClick={this.doLogout}>
-                      <i className="fa fa-sign-out text-info p-1 "></i><span><strong>Logout</strong></span>
+                      <i className="fa fa-sign-out text-info p-1 fa-2xl"></i><span><strong>Logout</strong></span>
                     </button>
                   </NavLink>
                   </div>

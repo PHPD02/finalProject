@@ -46,39 +46,10 @@ class Sunsua extends Component {
     }
     render() {
         return (
-<<<<<<< HEAD
             <React.Fragment>
-                <div id="sunsua">
-                    <Navbar />
-                    <div className='header1'>
-                        <h1 className='h1' >順弁</h1>
-                    </div>
-                    <p></p>
-                    <div className='container'>
-                        <div className='row'>
-                            {/* 左側 點選列表 */}
-                            <div className='col-2 d-flex flex-column'>
-                                <div className="my-1 h2 font-weight-bold d-flex justify-content-center" onClick={this.innerContentChange}><Link to="/sunsua/intro" >介紹</Link></div>
-                                <div className="my-1 h2 font-weight-bold d-flex justify-content-center" onClick={this.innerContentChange}><Link to="/sunsua/proposal" >提案</Link></div>
-                                <div className="my-1 h2 font-weight-bold d-flex justify-content-center" onClick={this.innerContentChange}><Link to="/sunsua/order">搜方案</Link></div>
-                            </div>
-                            {/* 右側顯示列表 */}
-                            <div className="col-10">
-                                {this.state.innerContent}
-                            </div>
-                        </div>
-                    </div>
-                    {/* <div className='footer'>
-                    <p>about us</p>
-                </div> */}
-
-                </div>
-                <Footer/>
-
-            </React.Fragment>
-=======
+                <Navbar />
             <div id="sunsua" className='py-2'>
-                <Navbar></Navbar>
+                
                 <div id='sunsuaheader' className=''>
                     {/* <h1 className='h1' >順弁</h1> */}
                     <img src={sunsuaTitle} alt="" />
@@ -112,10 +83,11 @@ class Sunsua extends Component {
                         </div>
                     </div>
                 </div>
-                <Footer></Footer>
+                
             </div>
-
->>>>>>> origin/Max
+            <Footer />
+            </React.Fragment>
+        
         );
     }
 }

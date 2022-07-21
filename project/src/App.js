@@ -82,6 +82,14 @@ import CustomerMailSuccess from "./kangComponent/customerMail_Success.jsx";
 
 // /orderdetails 這頁加入連繫外送員按鈕
 
+/* =============================================================================================== */
+/* == 承翰 == */
+/* 測試用 */
+import Gmtest03 from "./component/Maxtest/gmtest03";
+import Gmtest04 from "./component/Maxtest/gmtest04";
+import Gmtest12 from "./component/Maxtest/gmtest12";
+
+
 class App extends React.Component {
   state = {};
   render() {
@@ -136,7 +144,7 @@ class App extends React.Component {
           <Route path="/orderrecord" component={Order_record} />
           <Route path="/customerMail" component={CustomerMail} />
           <Route path="/customerMailSuccess" component={CustomerMailSuccess} />
-          
+
           {/* 後台 */}
           {/* <Route path="/TodoIndex" component={TodoIndex} /> */}
           {/* <Route path="/Todo/Edit/:id" component={TodoEdit} /> */}
@@ -146,12 +154,22 @@ class App extends React.Component {
           {/* <Route path="/admin/dashboard" component={Dashboard} /> */}
 
           {/* <Route path="/orderDetails" component={OrderDetails} /> */}
-          
+
 
           <Route path="/forgotpwd" component={Forgotpwd} />
           <Route path="/resetpassword" component={Resetpassword} />
           <Route path="/CompleteResetPwd" component={CompleteResetPwd} />
           <Route path="/sendresetemail" component={sendresetemail} />
+
+
+          {/* ================================================================================================================== */}
+          {/* 承翰 */}
+          {/* 測試用 */}
+          <Route path="/gmtest03" component={Gmtest03} />
+          <Route path="/gmtest04" component={Gmtest04} />
+          <Route path="/gmtest12" component={Gmtest12} />
+
+
         </Switch>
       </BrowserRouter>
     );

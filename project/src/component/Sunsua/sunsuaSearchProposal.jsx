@@ -23,6 +23,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './css/sunsuaSearchProposal.css';
 class SunsuaSearchProposal extends Component {
     state = {
+        name: null,
         proposalDetail: [],
         // proposalDetail: [
         //     {
@@ -45,6 +46,8 @@ class SunsuaSearchProposal extends Component {
         }
     }
     componentDidMount = async () => {
+        console.log(localStorage.getItem('firstname'));
+        this.state.name = localStorage.getItem('firstname') + localStorage.getItem('lastname');
         let url = serverHost + '/' + phpRoute + 'sunsua/selProposal.php';
         this.state.proposalDetail = [];
         await axios.get(url)
@@ -81,16 +84,14 @@ class SunsuaSearchProposal extends Component {
     orderSubmit = async () => {
         alert("送出訂單");
 
+        /* 建立 順弁訂單 */
         let dataToServer = {
             proposalId: this.state.orderDetail.id,
-            // TODO: uid 要改成動態，從登入那邊抓
-            uidPartyB: '1',
+            emailPartyB: localStorage.getItem('email'),
             count: this.state.orderDetail.number,
-            // TODO: 運費也要改成動態，從google map api 判斷句離
-            freight: 60
+            freight: this.state.orderDetail.freight
         };
         console.log(dataToServer);
-
         let url = serverHost + '/' + phpRoute + 'sunsua/setSunsuaOrder.php';
         // console.log(`url: ${url}`);
         await axios.post(url, dataToServer)
@@ -104,7 +105,9 @@ class SunsuaSearchProposal extends Component {
                 return;
             });
 
-        /*  */
+
+
+        /* 改變 方案 上限數量 */
         dataToServer = {
             id: this.state.orderDetail.id,
             amount: this.state.orderDetail.amount - this.state.orderDetail.number
@@ -138,7 +141,7 @@ class SunsuaSearchProposal extends Component {
                     console.log("error:" + error.message);
                 });
         }
-        document.location.href = "/sunsua"
+        // document.location.href = "/sunsua"
     }
 
     /* 取消 */
@@ -148,14 +151,16 @@ class SunsuaSearchProposal extends Component {
         let orderConfirm = document.querySelector("#orderConfirm");
         orderConfirm.classList.add("d-none");
     }
-    /*  */
+    /* 測試用 */
     stateChk = () => {
-        console.log(this.state.proposalDetail);
+        console.log(this.state);
     }
+
     render() {
         return (
             <>
-                <button onClick={this.stateChk}>state show </button>
+                {/* 測試用 */}
+                {/* <button onClick={this.stateChk}>state show </button> */}
                 <div id="proposalSearch" className='container py-3'>
                     <h1 className='text-center'>搜尋方案</h1>
                     <div>
@@ -180,11 +185,11 @@ class SunsuaSearchProposal extends Component {
                         <tbody className='h3'>
                             <tr>
                                 <th>你的姓名</th>
-                                <td>{this.state.orderDetail.namePartyB}</td>
+                                <td>{this.state.name}</td>
                             </tr>
                             <tr>
                                 <th>送單人姓名</th>
-                                <td>{this.state.orderDetail.namePartyA}</td>
+                                <td>{this.state.orderDetail.firstName}{this.state.orderDetail.lastName}</td>
                             </tr>
                             <tr>
                                 <th>送到地址</th>
@@ -203,17 +208,26 @@ class SunsuaSearchProposal extends Component {
                                 <td>{this.state.orderDetail.meal}</td>
                             </tr>
                             <tr>
+                                <th>餐點單筆金額</th>
+                                <td>{this.state.orderDetail.cost}</td>
+                            </tr>
+                            <tr>
                                 <th>數量</th>
                                 <td>{this.state.orderDetail.number}</td>
                             </tr>
                             <tr>
+                                <th>運費</th>
+                                <td>{this.state.orderDetail.freight}</td>
+                            </tr>
+
+                            <tr>
                                 <th>金額</th>
-                                <td>{this.state.orderDetail.cost * this.state.orderDetail.number}</td>
+                                <td>{this.state.orderDetail.cost * this.state.orderDetail.number + this.state.orderDetail.freight}</td>
                             </tr>
                         </tbody>
                     </table>
                     <div className='px-5 d-flex flex-row-reverse'>
-                        <button className='mx-5' type="" onClick={this.orderSubmit}>送出訂單</button>
+                        <button className='mx-5' type="" onClick={this.orderSubmit}>送出訂單,結帳去</button>
                         <button className='mx-5' type="" onClick={this.cancel}>取消</button>
                     </div>
                 </div>

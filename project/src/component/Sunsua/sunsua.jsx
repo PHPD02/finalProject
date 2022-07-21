@@ -12,6 +12,9 @@ import Footer from '../../components/repeatability/Footer';
 
 import "./css/sunsua.css";
 
+/* 引入檔案 */
+import sunsuaTitle from '../../img/順便特殊字體.png'
+
 class Sunsua extends Component {
     state = {
         innerContent: <SunsuaIntro></SunsuaIntro>
@@ -24,7 +27,16 @@ class Sunsua extends Component {
                 this.state.innerContent = <SunsuaIntro></SunsuaIntro>
                 break;
             case "/sunsua/proposal":
-                this.state.innerContent = <SunsuaProposal></SunsuaProposal>
+                // if (localStorage.getItem('email')) {
+                //     this.state.innerContent = <SunsuaProposal></SunsuaProposal>
+                //     break;
+                // } else {
+                //     // 沒登入 返回登入頁
+                //     window.location = "http://localhost:3000/login";
+                //     break;
+                // }
+                // /*  */
+                this.state.innerContent = <SunsuaProposal></SunsuaProposal>;
                 break;
             case "/sunsua/order":
                 this.state.innerContent = <SunsuaSearchProposal></SunsuaSearchProposal>
@@ -37,7 +49,10 @@ class Sunsua extends Component {
             <div id="sunsua" className='py-2'>
                 <Navbar></Navbar>
                 <div id='sunsuaheader' className=''>
-                    <h1 className='h1' >順弁</h1>
+                    {/* <h1 className='h1' >順弁</h1> */}
+                    <img src={sunsuaTitle} alt="" />
+
+
                 </div>
                 <p></p>
                 <div className='container'>

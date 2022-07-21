@@ -15,6 +15,8 @@ import TimeCountDown from './timeCountDown.jsx'
 /* 引入 css */
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+
 class ProposalInfo extends Component {
     state = {
         proposalDetail: {
@@ -91,15 +93,16 @@ class ProposalInfo extends Component {
             });
 
     }
-    /*  */
+    /* 測試用 */
     stateChk = () => {
-        // console.log(this.state.proposalDetail);
-        console.log(this.state.proposalDetail.picUrl);
+        console.clear();
+        console.log(this.state.proposalDetail);
     }
     render() {
         return (
             <div className='container my-2'>
-                <button onClick={this.stateChk}> stateChk</button>
+                {/* 測試用 */}
+                {/* <button onClick={this.stateChk}> stateChk</button> */}
                 <div className='row p-1'>
                     <div className='col-lg-3 d-flex align-items-center justify-content-center'>
                         {/* <img src="https://dummyimage.com/100x100/a3a3a3/fff" alt="" /> */}
@@ -112,7 +115,9 @@ class ProposalInfo extends Component {
                             <tbody>
                                 <tr>
                                     <th>提案人</th>
-                                    <td>{this.state.proposalDetail.namePartyA}</td>
+                                    {/* <td>{this.state.proposalDetail.namePartyA}</td> */}
+                                    <td>{this.state.proposalDetail.firstName}{this.state.proposalDetail.lastName}</td>
+
                                     <th>餐廳</th>
                                     <td>{this.state.proposalDetail.shop}</td>
                                 </tr>

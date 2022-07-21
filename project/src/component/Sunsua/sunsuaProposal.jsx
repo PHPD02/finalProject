@@ -26,8 +26,9 @@ import cityAreaData from '../../data/taiwan city country/CityCountyData.json'
 
 class SunsuaProposal extends Component {
     state = {
+        name: "",
         proposalDetail: {
-            namePartyA: "吳承翰",
+            emailPartyA: "吳承翰",
             addr: null,
             city: null,
             area: null,
@@ -37,6 +38,7 @@ class SunsuaProposal extends Component {
             cost: null,
             amount: null,
             mealType: null,
+            freight: null,
             limitTime: null,
             limitTimeHr: null,
             limitTimeMin: null,
@@ -44,11 +46,13 @@ class SunsuaProposal extends Component {
         },
         file: {}
     }
-
+    dataToServer = {}
     constructor(props) {
         super(props);
     }
-    async componentDidMount() {
+    componentDidMount = () => {
+        this.state.proposalDetail.emailPartyA = localStorage.getItem('email');
+        this.state.name = localStorage.getItem('firstname') + localStorage.getItem('lastname');
     }
 
 
@@ -132,6 +136,12 @@ class SunsuaProposal extends Component {
     minInput = (e) => {
         if (e.target.value) {
             this.state.proposalDetail.limitTimeMin = e.target.value;
+        }
+    }
+    /* 運費輸入 */
+    freightInput = (e) => {
+        if (e.target.value) {
+            this.state.proposalDetail.freight = e.target.value;
         }
     }
     /*  */
@@ -223,6 +233,7 @@ class SunsuaProposal extends Component {
         if (this.state.proposalDetail.shop == null || this.state.proposalDetail.shop == "") return "請輸入餐廳"
         if (this.state.proposalDetail.meal == null || this.state.proposalDetail.meal == "") return "請輸入餐點"
         if (this.state.proposalDetail.cost == null || this.state.proposalDetail.cost == "") return "請輸入餐點價格"
+        if (this.state.proposalDetail.freight == null || this.state.proposalDetail.freight == "") return "請輸入運費價格"
         if (this.state.proposalDetail.amount == null || this.state.proposalDetail.amount == "") return "請輸入餐點上限數量"
         if (this.state.proposalDetail.mealType == null || this.state.proposalDetail.mealType == "") return "請選擇餐點類型"
         if (this.state.proposalDetail.limitTimeHr == null || this.state.proposalDetail.limitTimeHr == "") return "請輸入時間"
@@ -242,7 +253,8 @@ class SunsuaProposal extends Component {
             <div className='container py-3'>
                 <div id="proposalSet">
                     <h1 className='text-center'>提案頁面</h1>
-                    <button onClick={this.dataShow}>Data Show</button>
+                    {/* 測試用 */}
+                    {/* <button onClick={this.dataShow}>Data Show</button> */}
                     <br />
                     <div className='text-center'>
                         <form action='#' className=''>
@@ -251,7 +263,7 @@ class SunsuaProposal extends Component {
                                     {/* 到達地址 */}
                                     <tr>
                                         <td><div className='mt-5'>要送到的地址</div></td>
-                                        <td>
+                                        <td className='d-flex flex-column align-content-center justify-content-center'>
                                             <div className='m-3'>
                                                 <select id="city" className="mx-3 " style={{ width: 70 }} onChange={this.citySel} required="required">
                                                     <option value="-1">縣市</option>
@@ -263,12 +275,15 @@ class SunsuaProposal extends Component {
                                                     <option value="-1">地區</option>
                                                 </select>
                                             </div>
-                                            <input type="text" style={{ width: 300 }} placeholder="輸入要配送的地點" onChange={this.addrInput} required="required" />
+                                            <div>
+
+                                                <input type="text" style={{ width: 300 }} placeholder="輸入要配送的地點" onChange={this.addrInput} required="required" />
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>預計到達時間</td>
-                                        <td><input type="datetime-local" placeholder="輸入預計到達時間" onChange={this.arriveTimeInput} required="required" /></td>
+                                        <td><input type="datetime-local" className='' placeholder="輸入預計到達時間" onChange={this.arriveTimeInput} required="required" /></td>
                                     </tr>
                                     {/* 餐廳 / 商家 */}
                                     <tr>
@@ -324,6 +339,11 @@ class SunsuaProposal extends Component {
                                             </span>
                                         </td>
                                     </tr>
+                                    {/* 運費 */}
+                                    <tr>
+                                        <td>運費</td>
+                                        <td><input type="text" placeholder="輸入運費金額" onChange={this.freightInput} required="required" /></td>
+                                    </tr>
                                     {/* 提供餐單或照片 */}
                                     <tr>
                                         <td>
@@ -349,7 +369,7 @@ class SunsuaProposal extends Component {
                             <tbody className='h3'>
                                 <tr>
                                     <th>提案人 姓名</th>
-                                    <td>{this.state.proposalDetail.namePartyA}</td>
+                                    <td>{this.state.name}</td>
                                 </tr>
                                 <tr>
                                     <th>送到地址</th>
@@ -374,6 +394,10 @@ class SunsuaProposal extends Component {
                                 <tr>
                                     <th>餐點數量</th>
                                     <td>{this.state.proposalDetail.amount}</td>
+                                </tr>
+                                <tr>
+                                    <th>運費</th>
+                                    <td>{this.state.proposalDetail.freight}</td>
                                 </tr>
                             </tbody>
                         </table>

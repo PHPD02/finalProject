@@ -90,7 +90,7 @@ class StoreCard extends Component {
               <img src={picture} alt="" name="picture" height="100" className='col-3' />
               {/* 圖片 */}
               <div className='col-9 '>
-                <div className='col'>
+                {/* <div className='col'> */}
                   {/* 商品名稱 */}
 
                   {/* 金額 */}
@@ -98,18 +98,18 @@ class StoreCard extends Component {
                   <div className="row">
                     <div name="type" className='col-10'>{type}</div>
                     <button type="submit" className='col-2 btn btn-primary rounded-lg h-25' onClick={this.addtoCart}>+</button>
-
-
                   </div>
                   <span>$<span name="cost" >{cost}</span></span>
+                  <div className="row">
                   <div name="introduce" className='col-10'>{introduce}</div>
+                  </div>
                   {/* <span>$<span name="cost" >{cost}</span></span>
                     <div name="introduce" className='col'>{introduce}</div> */}
                   <br />
                   {/* <div className="row">
                       <div name="introduce" className='col'>{introduce}</div>
                       </div> */}
-                </div>
+                {/* </div> */}
 
 
               </div>

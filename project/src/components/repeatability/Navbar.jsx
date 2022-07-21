@@ -114,7 +114,7 @@ class Navbar extends Component {
                   <div className="row">
                   {/* 購物車 */}
                   <NavLink to='/cart'>
-                    <button type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'>
+                    <button id='cartBar' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'>
                       <i className="fa fa-shopping-cart text-info p-1"></i>
                       <span><strong>Cart</strong> <CheckCart cartNum={this.state.cartNum} /></span>
                     </button>

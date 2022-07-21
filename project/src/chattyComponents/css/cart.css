@@ -2,7 +2,8 @@
     background-color:cornflowerblue;
 }
 .cart-food-sp {
-    height: 80px;
+    /* height: 80px; */
+    min-height: 50px;
     display: flex;
     justify-content: right;
     align-items: center;

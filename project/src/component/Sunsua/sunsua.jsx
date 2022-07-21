@@ -6,6 +6,7 @@ import SunsuaProposal from './sunsuaProposal';
 import SunsuaSearchProposal from './sunsuaSearchProposal';
 import SunsuaIntro from './sunsuaIntro.jsx';
 import Navbar from '../../components/repeatability/Navbar';
+import Footer from '../../components/repeatability/Footer';
 
 import "./css/sunsua.css";
 
@@ -43,32 +44,35 @@ class Sunsua extends Component {
     }
     render() {
         return (
-            <div id="sunsua">
-                <Navbar />
-                <div className='header1'>
-                    <h1 className='h1' >順弁</h1>
-                </div>
-                <p></p>
-                <div className='container'>
-                    <div className='row'>
-                        {/* 左側 點選列表 */}
-                        <div className='col-2 d-flex flex-column'>
-                            <div className="my-1 h2 font-weight-bold d-flex justify-content-center" onClick={this.innerContentChange}><Link to="/sunsua/intro" >介紹</Link></div>
-                            <div className="my-1 h2 font-weight-bold d-flex justify-content-center" onClick={this.innerContentChange}><Link to="/sunsua/proposal" >提案</Link></div>
-                            <div className="my-1 h2 font-weight-bold d-flex justify-content-center" onClick={this.innerContentChange}><Link to="/sunsua/order">搜方案</Link></div>
-                        </div>
-                        {/* 右側顯示列表 */}
-                        <div className="col-10">
-                            {this.state.innerContent}
+            <React.Fragment>
+                <div id="sunsua">
+                    <Navbar />
+                    <div className='header1'>
+                        <h1 className='h1' >順弁</h1>
+                    </div>
+                    <p></p>
+                    <div className='container'>
+                        <div className='row'>
+                            {/* 左側 點選列表 */}
+                            <div className='col-2 d-flex flex-column'>
+                                <div className="my-1 h2 font-weight-bold d-flex justify-content-center" onClick={this.innerContentChange}><Link to="/sunsua/intro" >介紹</Link></div>
+                                <div className="my-1 h2 font-weight-bold d-flex justify-content-center" onClick={this.innerContentChange}><Link to="/sunsua/proposal" >提案</Link></div>
+                                <div className="my-1 h2 font-weight-bold d-flex justify-content-center" onClick={this.innerContentChange}><Link to="/sunsua/order">搜方案</Link></div>
+                            </div>
+                            {/* 右側顯示列表 */}
+                            <div className="col-10">
+                                {this.state.innerContent}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className='footer'>
+                    {/* <div className='footer'>
                     <p>about us</p>
+                </div> */}
+
                 </div>
+                <Footer/>
 
-            </div>
-
+            </React.Fragment>
         );
     }
 }

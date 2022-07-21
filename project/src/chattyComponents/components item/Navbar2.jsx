@@ -34,6 +34,7 @@ class Navbar extends Component {
     console.log(this.state.menuList)
     this.initCartNum();
   }
+  
   render() {
     return (
       <React.Fragment>

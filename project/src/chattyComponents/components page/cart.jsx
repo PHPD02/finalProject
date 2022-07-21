@@ -54,7 +54,13 @@ class Cart extends Component {
         }
     }
 
+    isempty() {
+        alert('目前購物車是空的!請前往選購');
+        window.location = 'http://localhost:3000/foodpandapage';
+    }
+
     async componentDidMount() {
+        
         await axios.get("http://localhost/PHP/cart/getallcart.php").then((response) => {
             this.setState({
                 cart: response.data,
@@ -62,6 +68,11 @@ class Cart extends Component {
             });
 
         })
+        console.log(this.state.cart);
+        // 如果購物車沒有資料
+        if(this.state.cart = []) {
+            // this.isempty();
+        }
         // console.log(this.state.cart);
         // console.log(this.state.restaurantName);
     }

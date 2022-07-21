@@ -28,13 +28,18 @@ class LatestNews extends Component {
       <React.Fragment>
         <header className='container'>
           <div className='row'>
-            <div className='col-md-10' id='news'>
+            {/* <div 
+            className='col-md-10' 
+            id='news'
+            > */}
               <h1>最新公告</h1>
-              <hr className='w-100 bg-danger' />
+              <hr 
+              className='w-100 bg-danger' 
+              />
             </div>
             <div className='col-my-1 mt-5'>
               <p>第一手重要通知，不容錯過</p>
-            </div>
+            {/* </div> */}
           </div>
 
         </header>

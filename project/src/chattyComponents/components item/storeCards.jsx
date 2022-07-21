@@ -87,7 +87,7 @@ class StoreCard extends Component {
           <div className='container' style={{height: '150px'}} >
             <div className='row mt-3'>
               {/* <div className='col-md-12 col-sm-12'> */}
-                <img src={picture} alt="" name="picture" height="100" className='col-3'  />
+                <img src={picture} alt="" name="picture" height="10vh" className='col-3'  />
                 {/* 圖片 */}
                 <div className='col-9 '>
                   <div className='col'>

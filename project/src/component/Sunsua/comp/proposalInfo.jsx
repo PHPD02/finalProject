@@ -6,14 +6,17 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 /* 引入 server host */
-import serverHost from './js/severHost.js';
+import serverHost from '../js/severHost.js';
+import phpRoute from '../js/phpRoute.js';
 
 /* 引入 component */
-import TimeCountDown from './comp/TimeCountDown.jsx'
+import TimeCountDown from './timeCountDown.jsx'
 
 /* 引入 css */
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./css/sunsuaProposalInfo.css";
+
+
+
 class ProposalInfo extends Component {
     state = {
         proposalDetail: {
@@ -75,7 +78,7 @@ class ProposalInfo extends Component {
         this.state.proposalDetail.state = 0;
 
         /* 傳給後端 改變資料庫狀態 */
-        let url = serverHost + '/finalProject_php/sunsua/chgProposalState.php';
+        let url = serverHost + '/' + phpRoute + 'sunsua/chgProposalState.php';
         let dataToServer = {
             id: this.state.proposalDetail.id,
             state: 0
@@ -90,28 +93,31 @@ class ProposalInfo extends Component {
             });
 
     }
-    /*  */
+    /* 測試用 */
     stateChk = () => {
-        // console.log(this.state.proposalDetail);
-        console.log(this.state.proposalDetail.picUrl);
+        console.clear();
+        console.log(this.state.proposalDetail);
     }
     render() {
         return (
             <div className='container my-2'>
-                <button onClick={this.stateChk}> stateChk</button>
+                {/* 測試用 */}
+                {/* <button onClick={this.stateChk}> stateChk</button> */}
                 <div className='row p-1'>
                     <div className='col-lg-3 d-flex align-items-center justify-content-center'>
                         {/* <img src="https://dummyimage.com/100x100/a3a3a3/fff" alt="" /> */}
                         {/* <img src="https://dummyimage.com/150x150/a3a3a3/fff" alt="" /> */}
                         {/* <img src="https://dummyimage.com/200x200/a3a3a3/fff" alt="" /> */}
-                        <img src={this.state.proposalDetail.picUrl} alt="" width={150} height={150}/>
+                        <img src={this.state.proposalDetail.picUrl} alt="" width={150} height={150} />
                     </div>
                     <div className='col-lg-6 d-flex align-items-center'>
                         <table className='table table-info my-2' border="1">
                             <tbody>
                                 <tr>
                                     <th>提案人</th>
-                                    <td>{this.state.proposalDetail.namePartyA}</td>
+                                    {/* <td>{this.state.proposalDetail.namePartyA}</td> */}
+                                    <td>{this.state.proposalDetail.firstName}{this.state.proposalDetail.lastName}</td>
+
                                     <th>餐廳</th>
                                     <td>{this.state.proposalDetail.shop}</td>
                                 </tr>
@@ -133,9 +139,9 @@ class ProposalInfo extends Component {
                         </table>
 
                     </div>
-                    <div id="proposalBtn" className='col-lg-3'>
+                    <div className='col-lg-3 d-flex flex-column justify-content-center align-items-center '>
                         <div className='m-1 text-center'>
-                            <label className='h3 mr-2'>提案剩餘時間</label>
+                            <span className='h3 mr-2'>提案剩餘時間</span>
                             <TimeCountDown
                                 // limitTime={this.state.proposalDetail.limitTime}
                                 // setTime={this.state.proposalDetail.setTime}
@@ -147,10 +153,11 @@ class ProposalInfo extends Component {
                         </div>
                         <br />
                         <div>
-                            <label className='h3'>剩餘數量 : </label>
+                            <span className='h3'>剩餘數量 : </span>
                             &nbsp;
-                            <label className='h4'>{this.state.proposalDetail.amount}</label>
-                            <label className='mr-2'>請選擇數量</label>
+                            <span className='h4'>{this.state.proposalDetail.amount}</span>
+                            <br />
+                            <span className='mr-2'>請選擇數量</span>
                             <select id='totalMeal' className='my-2' defaultValue={1} onChange={this.selNum}>
                                 {this.state.optionNum.map((item, index) => {
                                     return (

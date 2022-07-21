@@ -35,30 +35,30 @@ class Navbar extends Component {
     localStorage.clear();
     window.location = "http://localhost:3000/";
 
-}
+  }
 
   // componentDidMount() {
-    // if (getemail) {
-    //   //登入狀態
-    //   $('#login').attr('style','display:hidden'); 
-    //   $('#logout').attr('style','display:block');
-    // }
-    // else {
-    //   $('#logout').attr('style','display:hidden'); 
-    //   $('#login').attr('style','display:block');
-    // }
-    // console.log('ok');
+  // if (getemail) {
+  //   //登入狀態
+  //   $('#login').attr('style','display:hidden'); 
+  //   $('#logout').attr('style','display:block');
+  // }
+  // else {
+  //   $('#logout').attr('style','display:hidden'); 
+  //   $('#login').attr('style','display:block');
+  // }
+  // console.log('ok');
   // }
 
   async componentDidMount() {
     if (getemail) {
       //登入狀態
-      $('#login').attr('style','display:none'); 
-      $('#logout').attr('style','display:block');
+      $('#login').attr('style', 'display:none');
+      $('#logout').attr('style', 'display:block');
     }
     else {
-      $('#logout').attr('style','display:none'); 
-      $('#login').attr('style','display:block');
+      $('#logout').attr('style', 'display:none');
+      $('#login').attr('style', 'display:block');
     }
     console.log('ok');
     var result = await Axios.get("http://localhost/PHP/storeCards/getStoreItems.php");
@@ -112,23 +112,35 @@ class Navbar extends Component {
                 </ul>
                 <div className="buttons">
                   <div className="row">
-                  {/* 購物車 */}
-                  <NavLink to='/cart'>
-                    <button id='cartBar' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'>
-                      <i className="fa fa-shopping-cart text-info p-1 fa-2xl"></i>
-                      <span><strong>Cart</strong> <CheckCart cartNum={this.state.cartNum} /></span>
-                    </button>
-                  </NavLink>
-                  <NavLink to="/login">
-                    <button id='login' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display:'block'}} onClick={this.doLogin} >
-                      <i className="fa fa-user-circle text-info p-1 fa-2xl"></i><span><strong>Login</strong></span>
-                    </button>
-                  </NavLink>
-                  <NavLink to='/'>
-                    <button id='logout' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display:'none'}} onClick={this.doLogout}>
-                      <i className="fa fa-sign-out text-info p-1 fa-2xl"></i><span><strong>Logout</strong></span>
-                    </button>
-                  </NavLink>
+                    {/* 購物車 */}
+                    <NavLink to='/cart'>
+                      <button id='cartBar' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'>
+                        <i className="fa fa-shopping-cart text-info p-1 fa-2xl"></i>
+                        <span><strong>Cart</strong> <CheckCart cartNum={this.state.cartNum} /></span>
+                      </button>
+                    </NavLink>
+                    <NavLink to="/login">
+                      <button id='login' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display: 'block' }} onClick={this.doLogin} >
+                        <i className="fa fa-user-circle text-info p-1 fa-2xl"></i><span><b>Login</b></span>
+                      </button>
+                    </NavLink>
+                    {/* <NavLink to='/'> */}
+                    {/* <button id='logout' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display: 'none' }} onClick={this.doLogout}>
+                        <i className="fa fa-sign-out text-info p-1 fa-2xl"></i><span><strong>Logout</strong></span>
+                      </button> */}
+                    {/* </NavLink> */}
+
+                      {/* dropdown */}
+                    <div className="dropdown" id='logout' style={{ display: 'none' }} >
+                      <button className="btn btn-outline-dark rounded-pill ml-1 btnsm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i className="fa fa-user-circle text-info p-1 fa-2xl"></i> <b>會員</b>
+                      </button>
+                      <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a className="dropdown-item" href="#" style={{height:'50px'}} >Action</a>
+                        <a className="dropdown-item" href="#" style={{height:'50px'}}>Another action</a>
+                        <a className="dropdown-item" href="#" style={{height:'50px'}}  onClick={this.doLogout}><i className="fa fa-sign-out text-info p-1 fa-2xl"></i><b>Logout</b></a>
+                      </div>
+                    </div>
                   </div>
                 </div>
 

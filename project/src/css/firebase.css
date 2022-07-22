@@ -1,54 +1,79 @@
 .sign-wrapper{
     display: flex;
     justify-content: center;
-    height: 100vh;
-     align-items:center;
+    /* height: 50vh; */
+
+    align-items:center;
 }
 .signin-button{
-    padding: 30px;
+    /* padding: 30px; */
     font-Size: 20px;
     border-Radius: 0;
     font-Weight: 600;
 }
 .chatroom-wrapper{
     border: 1px solid black;
+
+    position:fixed  ;
+    height:65vh;
+    overflow: scroll;
+    right:20px;
+    bottom:20px;
+    z-index: 99;
+    background-color: white;
+    width:25%;
 }
 .signout-wrapper{
     border-bottom: 1px solid gray;
     display: flex;
-    height: 40px;
-    display: flex;
-    float: right;
-
+    height: 50px;
+    /* float: right; */
+    position: fixed ;
+    background-color: white;
+}
+.signout-wrapper .avatar{
+    background-image: url(../img/avatar.png);
+    width:50px;
+    background-size: cover;
+    border-radius: 50%;
+}
+.signout-wrapper .name{
+    margin: auto 0;
+    font-size: 18px;
+    font-weight: 600;
 }
 .signout-button{
-    font-size: 15px;
+    font-size: 12px;
     border-radius: 5px;
-    margin: 5px;
+    margin: 11px 5px 11px 95px ;
+
+    /* position: absolute;
+    right: 0px; */
 }
 .chatroom-wrapper .msgs {
-    margin: 110px 0;
+    margin: 40px 0;
     display: flex;
     flex-direction: column;
     /* 文字區塊 */
 }
 .chatroom-wrapper .msgs img{
     border-radius: 50%;
-    height: 55px;
-    width:55px;
+    height: 35px;
+    width:35px;
     border: 2px solid black;
+
 }
 .chatroom-wrapper .msgs p{
     font-weight: 500;
-    font-size: 25px;
+    font-size: 15px;
     margin: 10px;
     overflow-wrap: break-word;
 }
 .chatroom-wrapper .msg {
     display: flex;
-    width:65%;
-    padding: 20px;
-    margin: 20px 30px;
+    width:75%;
+    /* padding: 20px; */
+    margin: 10px 15px;
     border-radius: 15px;
     box-shadow: 0 0 10px grey;
     align-items: center;
@@ -57,7 +82,7 @@
 
 /* 判斷彼此是寄件人還是收件人 */
 .chatroom-wrapper .msgs .sent {
-    background-color: rgb(99, 99, 207);
+    background-color: rgb(145, 145, 207);
     border: 1px solid black;
     color: white;
     flex-direction: row-reverse;
@@ -73,9 +98,14 @@
     display: flex;
     width: 100%;
     border-top: 1px solid lightgray;
-    padding: 20px;
+    padding: 10px;
     background-color: #fafafa;
     align-items: center;
+    height:45px;
+    position: fixed;
+    bottom: 21px;
+    width:23.5%;
+    box-shadow: 0 2px 5px grey;
 }
 .sendMessage-wrapper input{
     width:80%;
@@ -90,7 +120,7 @@
     border: none;
     margin:0 15px;
     background-color: #fafafa;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     border-left: 2px solid gray;
 }

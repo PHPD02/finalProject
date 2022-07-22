@@ -157,13 +157,15 @@ class App extends React.Component {
 
           {/* <Route path="/orderDetails" component={OrderDetails} /> */}
           
-          <Route path="/FirebaseIndex" component={FirebaseIndex} />
           <Route path="/forgotpwd" component={Forgotpwd} />
           <Route path="/resetpassword" component={Resetpassword} />
           <Route path="/CompleteResetPwd" component={CompleteResetPwd} />
           <Route path="/sendresetemail" component={sendresetemail} />
-          <Route path="/tst" component={Tst} />
+
+          <Route path="/FirebaseIndex" component={FirebaseIndex} />
+          <Route path="/tst" component={Tst} />  
           <Route path="/try" component={Try} />
+          {/* 這兩個try忘記還用不用的到  先不要刪 */}
         </Switch>
       </BrowserRouter>
     );

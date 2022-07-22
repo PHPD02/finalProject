@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './repeatability/Navbar';
 import './css/orderdetails.css';
 // import Footer from '../repeatability/Footer';
+import FirebaseIndex from '../kangComponent/firebase/firebaseIndex';
 class OrderDetails extends Component {
   state = {}
   render() {
@@ -43,7 +44,7 @@ class OrderDetails extends Component {
                   <h4>餐點準備中</h4>
                 </div>
               </div>
-              <div className='col-md-6 col-sm-12 container p-1'>
+              <div className='col-md-6 col-sm-12 container '>
                 <div className='card p-1 cardshadow'>
                   <h3>訂單詳情</h3>
                   <br />
@@ -57,13 +58,11 @@ class OrderDetails extends Component {
                   {/* 撈資料庫產生 */}
                   <h5>查看細節(10個品項): <select><option>空</option></select></h5>
                   {/* 選擇器跑出來的內容 */}
+                  <br/>
+                  <FirebaseIndex/>
+                  <br/>
+                  {/* C:\Users\bgkon\Desktop\康峻軒final_project(0628)\project\src\kangComponent\firebase\firebaseIndex.jsx */}
 
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
                 </div>
                 <div className='container mt-2'>
                   <div className='row card cardshadow'>

@@ -31,7 +31,7 @@ class firstpage extends Component {
     Tw.textContent = e.target.getAttribute('value');                            //要顯示的文字
     this.state.address = e.target.getAttribute('value');                        //這裡的地址區域 會等於地圖點選後的值
     console.log(this.state.address);
-    this.state.restaurants = [];                                                  //點選後這裡的餐廳資訊
+    this.state.restaurants = [];                                                //點選後這裡的餐廳資訊
     this.setState({});                                                          //狀態更新 
     let url = "http://localhost/ourPHPFinalproject/RjieProject/firstsql2.php"
     // console.log(url);

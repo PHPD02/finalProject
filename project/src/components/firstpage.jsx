@@ -117,11 +117,12 @@ class firstpage extends Component {
             </div>
           </div>
           {/* 最新消息 */}
+          <br/><br/><br/>
           <header className='container-fluid'>
             <div className='row'>
-              <div className='col-2 col-lg=2'></div>
+              <div className='col-1 col-lg=1'></div>
               <div className='col-7 col-lg-7 col-md-8 col-sm-8'>
-                <h3 className='newnews'>最新消息</h3>
+                <h3 className='newnews' id="news">最新消息</h3>
               </div>
               <div className='col-3 col-lg-3 col-md-3 col-sm-3 mt-3'>
                 <p>第一手重要通知，不容錯過</p>
@@ -129,19 +130,19 @@ class firstpage extends Component {
             </div>
             <hr className='w-75 bg-danger' />
           </header>
-          <div className='container newsboxes'>
-            <div className='row '>
-              <div className='col-3'>
+          <div className='container newsboxes mx-auto'>
+            <div className='row mx-auto'>
+              <div className='col-4'>
                 <LatestNews />
               </div>
-              {/* <div className='col-3'>
+              <div className='col-4'>
                 <LatestNews />
               </div>
               <div className='col-4'>
                 <LatestNews />
               </div>
             </div>
-            <div className='row'>
+            <div className='row mx-auto'>
               <div className='col-4'>
                 <LatestNews />
               </div>
@@ -150,20 +151,15 @@ class firstpage extends Component {
               </div>
               <div className='col-4'>
                 <LatestNews />
-              </div> */}
+              </div>
             </div>
           </div>
-
-
-
           {/* 頁角 */}
           <Footer />
         </div>
-
       </React.Fragment>
 
     );
   }
 }
-
 export default firstpage;

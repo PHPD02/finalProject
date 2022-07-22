@@ -275,7 +275,7 @@ class SunsuaProposal extends Component {
         return (
             <div className='container py-3'>
                 <div id="proposalSet">
-                    <h1 className='text-center'>提案頁面</h1>
+                    <h1 className='h1 font-weight-bolder text-center'>提案頁面</h1>
                     {/* 測試用 */}
                     {/* <button onClick={this.dataShow}>Data Show</button> */}
                     <br />
@@ -285,52 +285,61 @@ class SunsuaProposal extends Component {
                                 <tbody >
                                     {/* 到達地址 */}
                                     <tr>
-                                        <td><div className='mt-5'>要送到的地址</div></td>
+                                        <td><div className='h3 font-weight-bold mt-4'>要送到的地址</div></td>
                                         <td className='d-flex flex-column align-content-center justify-content-center'>
-                                            <div className='m-3'>
-                                                <select id="city" className="mx-3 " style={{ width: 70 }} onChange={this.citySel} required="required">
+                                            <div className='m-3 d-flex align-content-center justify-content-center'>
+                                                <select id="city" className="mx-3 form-control " style={{ width: 100, display: 'inline' }} onChange={this.citySel} required="required">
                                                     <option value="-1">縣市</option>
                                                     {cityAreaData.map((val, idx) =>
                                                         <option key={idx} value={idx}>{val.CityName}</option>
                                                     )}
                                                 </select>
-                                                <select id="area" className="mx-3" style={{ width: 70 }} onChange={this.areaSel} required="required">
+                                                <select id="area" className="mx-3 form-control" style={{ width: 100, display: 'inline' }} onChange={this.areaSel} required="required">
                                                     <option value="-1">地區</option>
                                                 </select>
                                             </div>
-                                            <div>
-
-                                                <input type="text" style={{ width: 300 }} placeholder="輸入要配送的地點" onChange={this.addrInput} required="required" />
+                                            <div className='d-flex justify-content-center'>
+                                                <input type="text" className='text-center form-control' style={{ width: 300 }} placeholder="輸入要配送的地點" onChange={this.addrInput} required="required" />
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>預計到達時間</td>
-                                        <td><input type="datetime-local" className='' placeholder="輸入預計到達時間" onChange={this.arriveTimeInput} required="required" /></td>
+                                        <td className='h3 font-weight-bold'>預計到達時間</td>
+                                        <td className='d-flex justify-content-center'>
+                                            <input type="datetime-local" className='text-center form-control' style={{ width: '300px' }} placeholder="輸入預計到達時間" onChange={this.arriveTimeInput} required="required" />
+                                        </td>
                                     </tr>
                                     {/* 餐廳 / 商家 */}
                                     <tr>
-                                        <td>餐廳 / 商家</td>
-                                        <td><input type="text" className='form-control' placeholder="輸入要配送的餐廳" width={"1000px"} onChange={this.shopInput} required="required" /></td>
+                                        <td className='h3 font-weight-bold'>餐廳 / 商家</td>
+                                        <td className='d-flex justify-content-center'>
+                                            <input type="text" className='text-center form-control' width={"1000px"} placeholder="輸入要配送的餐廳" onChange={this.shopInput} required="required" />
+                                        </td>
                                     </tr>
                                     {/* 餐點資訊 */}
                                     <tr>
-                                        <td>餐點</td>
-                                        <td><input type="text" placeholder="輸入要配送的餐點" onChange={this.mealInput} required="required" /></td>
+                                        <td className='h3 font-weight-bold'>餐點</td>
+                                        <td className='d-flex justify-content-center'>
+                                            <input type="text" className='text-center form-control' placeholder="輸入要配送的餐點" onChange={this.mealInput} required="required" />
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>餐點上限數量</td>
-                                        <td><input type="number" min="0" placeholder="餐點上限數量" onChange={this.amountInput} required="required" /></td>
+                                        <td className='h3 font-weight-bold'>餐點上限數量</td>
+                                        <td className='d-flex justify-content-center'>
+                                            <input type="number" className='text-center form-control' style={{ width: 150 }} min="0" placeholder="餐點上限數量" onChange={this.amountInput} required="required" />
+                                        </td>
+                                    </tr>
+                                    <tr >
+                                        <td className='h3 font-weight-bold'>單筆金額</td>
+                                        <td className='d-flex justify-content-center'>
+                                            <input type="number" className='text-center form-control' style={{ width: 150}} min="0" placeholder="單筆餐點金額" onChange={this.costInput} required="required" />
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>單筆金額</td>
-                                        <td><input type="number" min="0" placeholder="單筆餐點金額" onChange={this.costInput} required="required" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td>單點品項</td>
-                                        <td>
+                                        <td className='h3 font-weight-bold'>單點品項</td>
+                                        <td className='d-flex justify-content-center'>
 
-                                            <select className="mx-3" style={{ width: 100 }} onChange={this.typeSel} defaultValue={-1} required="required">
+                                            <select className="mx-3 form-control" style={{ width: "150px" }} onChange={this.typeSel} defaultValue={-1} required="required">
                                                 <option value="-1">餐點類型</option>
                                                 <optgroup label="餐點">
                                                     <option value="台式">台式</option>
@@ -349,29 +358,30 @@ class SunsuaProposal extends Component {
                                     </tr>
                                     {/* 提案時間 */}
                                     <tr>
-                                        <td>提案限制時間</td>
-                                        <td>
+                                        <td className='h3 font-weight-bold'>提案限制時間</td>
+                                        <td className='d-flex align-content-center  justify-content-center'>
                                             <span>
-                                                <input type="number" min={0} max={24} defaultValue={0} style={{ width: 50 }} onChange={this.hrInput} required="required"></input>
+                                                <input type="number" className='form-control' style={{ width: 80 }} min={0} max={24} defaultValue={0} onChange={this.hrInput} required="required"></input>
                                             </span>
                                             <span className='p mx-2'>時</span>
                                             <span>
-                                                <input type="number" min={0} max={60} defaultValue={0} style={{ width: 50 }} onChange={this.minInput} required="required"></input>
-
-                                                <span className='p mx-2'>分</span>
+                                                <input type="number" className='form-control' style={{ width: 80 }} min={0} max={60} defaultValue={0} onChange={this.minInput} required="required"></input>
                                             </span>
+                                            <span className='p mx-2'>分</span>
                                         </td>
                                     </tr>
                                     {/* 運費 */}
                                     <tr>
-                                        <td>運費</td>
-                                        <td><input type="text" placeholder="輸入運費金額" onChange={this.freightInput} required="required" /></td>
+                                        <td className='h3 font-weight-bold'>運費</td>
+                                        <td className='d-flex justify-content-center' >
+                                            <input type="text" className='text-center form-control' style={{ width: 150 }} placeholder="輸入運費金額" onChange={this.freightInput} required="required" />
+                                        </td>
                                     </tr>
                                     {/* 提供餐單或照片 */}
                                     <tr>
-                                        <td>
+                                        <td className='h4 font-weight-bold'>
                                             資訊提供 <br />
-                                            餐單照片&nbsp;或&nbsp;餐點照片
+                                            菜單照片&nbsp;或&nbsp;餐點照片
                                         </td>
                                         <td><input type="file" onChange={this.picSel} /></td>
                                     </tr>
@@ -425,8 +435,8 @@ class SunsuaProposal extends Component {
                             </tbody>
                         </table>
                         <div className='px-5 d-flex flex-row-reverse'>
-                            <button className='mx-5' type="" onClick={this.submitProposal}>送出提案</button>
-                            <button className='mx-5' type="" onClick={this.cancel}>取消</button>
+                            <button className='mx-5 btn btn-success ' type="" onClick={this.submitProposal}>送出提案</button>
+                            <button className='mx-5 btn btn-danger ' type="" onClick={this.cancel}>取消</button>
                         </div>
                     </div>
                 </div>

@@ -108,37 +108,36 @@ class ProposalInfo extends Component {
                         {/* <img src="https://dummyimage.com/100x100/a3a3a3/fff" alt="" /> */}
                         {/* <img src="https://dummyimage.com/150x150/a3a3a3/fff" alt="" /> */}
                         {/* <img src="https://dummyimage.com/200x200/a3a3a3/fff" alt="" /> */}
-                        <img src={this.state.proposalDetail.picUrl} alt="" height={250} style={{objectFit: 'contain'}} />
+                        <img src={this.state.proposalDetail.picUrl} alt="" height={150} style={{ objectFit: 'contain' }} />
                     </div>
                     <div className='col-lg-6 d-flex align-items-center'>
-                        <table className='table table-info my-2' border="1">
+                        <table className='table table-light my-2 text-center' style={{}} border="2">
                             <tbody>
+                                {/* 
                                 <tr>
-                                    <th>提案人</th>
-                                    {/* <td>{this.state.proposalDetail.namePartyA}</td> */}
-                                    <td>{this.state.proposalDetail.firstName}{this.state.proposalDetail.lastName}</td>
+                                    <td colSpan={2} className="font-weight-bold">提案人</td>
+                                    <td colSpan={2} className="text-center">{this.state.proposalDetail.firstName}{this.state.proposalDetail.lastName}</td>
+                                </tr>
+                                */}
+                                <tr>
+                                    <td className='font-weight-bold'>地點</td>
+                                    <td colSpan={3} className='text-center'>{this.state.proposalDetail.addr}</td>
+                                </tr>
+                                <tr>
+                                    <td className='font-weight-bold'>時間</td>
+                                    <td colSpan={3} className='text-center'>{this.state.proposalDetail.arriveTime}</td>
 
-                                    <th>餐廳</th>
-                                    <td>{this.state.proposalDetail.shop}</td>
                                 </tr>
                                 <tr>
-                                    <th>預計到達時間</th>
-                                    <td>{this.state.proposalDetail.arriveTime}</td>
-                                    <th>餐點</th>
-                                    <td>{this.state.proposalDetail.meal}</td>
-                                </tr>
-                                <tr>
-                                    <th>送到地點</th>
-                                    <td>{this.state.proposalDetail.addr}</td>
 
-                                    <th>單份金額</th>
-                                    <td>{this.state.proposalDetail.cost}</td>
+                                    <td rowSpan={2} className='font-weight-bold'>餐點</td>
+                                    <td rowSpan={2} className='text-center'>{this.state.proposalDetail.meal}</td>
+                                    <td className='font-weight-bold'>單份金額</td>
+                                    <td className='text-center'>{this.state.proposalDetail.cost}</td>
                                 </tr>
                                 <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <th>運費</th>
-                                    <td>{this.state.proposalDetail.freight}</td>
+                                    <td className='font-weight-bold'>運費</td>
+                                    <td className='text-center'>{this.state.proposalDetail.freight}</td>
                                 </tr>
                             </tbody>
                         </table>

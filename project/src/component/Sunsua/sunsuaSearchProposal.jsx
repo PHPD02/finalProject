@@ -67,17 +67,25 @@ class SunsuaSearchProposal extends Component {
     }
     /* 訂單確認 */
     orderConfirm = (orderDetail, name, num) => {
-        console.log(orderDetail);
-        this.state.orderDetail = orderDetail;
-        this.state.orderDetail.namePartyB = name;
-        this.state.orderDetail.number = num;
+        if (localStorage.getItem('email')) {
+            console.log(orderDetail);
+            this.state.orderDetail = orderDetail;
+            this.state.orderDetail.namePartyB = name;
+            this.state.orderDetail.number = num;
 
 
-        this.setState({});
-        let proposalSearch = document.querySelector("#proposalSearch");
-        proposalSearch.classList.add("d-none");
-        let orderConfirm = document.querySelector("#orderConfirm");
-        orderConfirm.classList.remove("d-none");
+            this.setState({});
+            let proposalSearch = document.querySelector("#proposalSearch");
+            proposalSearch.classList.add("d-none");
+            let orderConfirm = document.querySelector("#orderConfirm");
+            orderConfirm.classList.remove("d-none");
+        } else {
+            // 沒登入 返回登入頁
+            console.log("沒有登入");
+            window.location = "http://localhost:3000/login";
+            return;
+        }
+
     }
 
     /* 送出訂單 */

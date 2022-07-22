@@ -108,7 +108,7 @@ class ProposalInfo extends Component {
                         {/* <img src="https://dummyimage.com/100x100/a3a3a3/fff" alt="" /> */}
                         {/* <img src="https://dummyimage.com/150x150/a3a3a3/fff" alt="" /> */}
                         {/* <img src="https://dummyimage.com/200x200/a3a3a3/fff" alt="" /> */}
-                        <img src={this.state.proposalDetail.picUrl} alt="" width={150} height={150} />
+                        <img src={this.state.proposalDetail.picUrl} alt="" height={250} style={{objectFit: 'contain'}} />
                     </div>
                     <div className='col-lg-6 d-flex align-items-center'>
                         <table className='table table-info my-2' border="1">
@@ -134,7 +134,12 @@ class ProposalInfo extends Component {
                                     <th>單份金額</th>
                                     <td>{this.state.proposalDetail.cost}</td>
                                 </tr>
-
+                                <tr>
+                                    <th></th>
+                                    <td></td>
+                                    <th>運費</th>
+                                    <td>{this.state.proposalDetail.freight}</td>
+                                </tr>
                             </tbody>
                         </table>
 
@@ -166,7 +171,7 @@ class ProposalInfo extends Component {
                                 })}
                             </select>
                         </div>
-                        <button className='bg-danger my-2' onClick={this.addProposal}>加入定單</button>
+                        <button className='btn btn-danger my-2' onClick={this.addProposal}>加入定單</button>
                     </div>
                 </div>
             </div>

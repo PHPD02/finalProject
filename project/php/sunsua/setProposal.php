@@ -9,7 +9,7 @@ include "../sql.php";
 $restJson = file_get_contents("php://input");
 $_POST = json_decode($restJson, true);
 if ($_POST) {
-    $namePartyA = $_POST['namePartyA'];
+    $emailPartyA = $_POST['emailPartyA'];
     $addr = $_POST['city'] . $_POST['area'] . $_POST['addr'];
     $city = $_POST['city'];
     $area = $_POST['area'];
@@ -20,18 +20,21 @@ if ($_POST) {
     $amount = $_POST['amount'];
     $mealType = $_POST['mealType'];
     $limitTimeHr = $_POST['limitTimeHr'];
+    $freight = $_POST['freight'];
     $limitTimeMin = $_POST['limitTimeMin'];
+    $picUrl = $_POST['picUrl'];
+
     $limitTime = $limitTimeHr . ":" . $limitTimeMin . ":00";
     $state = 1;
 
     $sql = "INSERT INTO proposal 
-            (id, namePartyA, addr, city, area, arriveTime, shop, meal, cost, amount, mealType, setTime, limitTime, state) 
-            VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, current_timestamp(), ?, 1 );";
+            (id, emailPartyA, addr, city, area, arriveTime, shop, meal, cost, amount, mealType, setTime, limitTime, freight ,picUrl,state) 
+            VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, current_timestamp(), ?, ?, ?, 1 );";
 
     $stmt = $mysqli->prepare($sql);
     $stmt->bind_param(
-        'sssssssssss',
-        $namePartyA,
+        'sssssssssssss',
+        $emailPartyA,
         $addr,
         $city,
         $area,
@@ -41,7 +44,9 @@ if ($_POST) {
         $cost,
         $amount,
         $mealType,
-        $limitTime
+        $limitTime,
+        $freight,
+        $picUrl,
     );
     $stmt->execute();
     $result = $stmt->get_result();

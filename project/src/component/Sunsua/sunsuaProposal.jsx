@@ -156,40 +156,63 @@ class SunsuaProposal extends Component {
         if (res_chkForm == 1) {
 
             console.log("1." + this.state)
-            let imgUrl = "";
-            const formData = new FormData();
-            formData.append(
-                "image",
-                this.state.file,
-            );
+            /* === 【Start】上傳到 imgur API 得到網址 (不支援localhost) === */
+            // let imgUrl = "";
+            // const formData = new FormData();
+            // formData.append(
+            //     "image",
+            //     this.state.file,
+            // );
 
-            // let url = "https://api.imgur.com/3/image";
-            let res = await $.post({
-                url: "https://api.imgur.com/3/image",
-                async: true,
-                crossDomain: true,
-                method: 'POST',
+            // // let url = "https://api.imgur.com/3/image";
+            // let res = await $.post({
+            //     url: "https://api.imgur.com/3/image",
+            //     async: true,
+            //     crossDomain: true,
+            //     method: 'POST',
+            //     headers: {
+            //         'Authorization': 'Client-ID 7b9a0d0b0e036c5',
+            //     },
+            //     processData: false,
+            //     contentType: false,
+            //     mimeType: 'multipart/form-data',
+            //     data: formData,
+            // })
+            //     .then(res => {
+            //         console.log("success");
+            //         let temp = JSON.parse(res);
+            //         this.state.proposalDetail.picUrl = temp.data.link;
+            //     })
+            //     .catch(err => {
+            //         console.log("failed");
+            //         console.log(err);
+            //         return;
+            //     })
+            /* === 【End】上傳到 imgur API 得到網址 (不支援localhost) === */
+
+
+            /* === 【Start】丟給php 後 在上傳到imgur api 得到url === */
+            console.clear();
+            // let url = "http://localhost/finalProject_php/imgur/picToUrl.php";
+            let url = serverHost + '/' + phpRoute + "imgur/picToUrl.php";
+            var formData = new FormData();
+            formData.append("image", this.state.file);
+            let result = await axios.post(url, formData, {
                 headers: {
-                    'Authorization': 'Client-ID 7b9a0d0b0e036c5',
-                },
-                processData: false,
-                contentType: false,
-                mimeType: 'multipart/form-data',
-                data: formData,
+                    'Content-Type': 'multipart/form-data'
+                }
             })
                 .then(res => {
-                    console.log("success");
-                    let temp = JSON.parse(res);
-                    this.state.proposalDetail.picUrl = temp.data.link;
+                    this.state.proposalDetail.picUrl = res.data;
+                    console.log(res.data);
                 })
                 .catch(err => {
-                    console.log("failed");
                     console.log(err);
-                    return;
                 })
-            console.log(this.state.proposalDetail);
+            /* === 【End】丟給php 後 在上傳到imgur api 得到url  === */
 
             this.setState({})
+
             let proposalSet = document.querySelector("#proposalSet");
             proposalSet.classList.add("d-none");
             let proposalConfirm = document.querySelector("#proposalConfirm");

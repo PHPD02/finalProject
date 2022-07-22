@@ -141,7 +141,7 @@ class SunsuaSearchProposal extends Component {
                     console.log("error:" + error.message);
                 });
         }
-        // document.location.href = "/sunsua"
+        document.location.href = "/sunsua"
     }
 
     /* 取消 */
@@ -221,14 +221,14 @@ class SunsuaSearchProposal extends Component {
                             </tr>
 
                             <tr>
-                                <th>金額</th>
-                                <td>{this.state.orderDetail.cost * this.state.orderDetail.number + this.state.orderDetail.freight}</td>
+                                <th>總金額(含運費)</th>
+                                <td>{(this.state.orderDetail.cost * this.state.orderDetail.number + this.state.orderDetail.freight).toLocaleString()}</td>
                             </tr>
                         </tbody>
                     </table>
                     <div className='px-5 d-flex flex-row-reverse'>
-                        <button className='mx-5' type="" onClick={this.orderSubmit}>送出訂單,結帳去</button>
-                        <button className='mx-5' type="" onClick={this.cancel}>取消</button>
+                        <button className='mx-5 btn btn-success' type="" onClick={this.orderSubmit}>送出訂單,結帳去</button>
+                        <button className='mx-5 btn btn-danger' type="" onClick={this.cancel}>取消</button>
                     </div>
                 </div>
             </>

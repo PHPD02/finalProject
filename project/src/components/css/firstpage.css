@@ -73,3 +73,13 @@
   background-repeat: no-repeat;
   text-shadow: 1px 1px rgba(255, 217, 0, 0.493);
 }
+
+.newnews {
+  font-weight: 1000;
+  height: 80px;
+  background-image: url("./newnews.png");
+  background-size: 150px 80px;
+  background-position: 0%;
+  background-repeat: no-repeat;
+  text-shadow: 1px 1px rgba(255, 217, 0, 0.493);
+}

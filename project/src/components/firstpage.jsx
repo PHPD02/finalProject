@@ -101,27 +101,27 @@ class firstpage extends Component {
               {/* 合作店家 */}
               {/* data-aos="zoom-in-down" */}
               <div className="col-lg-7 col-md-12">
-                  <div className='row '>
-                    {/* <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Diecard /></div> */}
-                    {/* 矩陣餐廳內容 導入卡片裡面 */}
-                    {this.state.restaurants.map((restaurant, index) => {
-                      return (
-                        <div className='col-lg-4 col-md-4 col-sm-12 stylecards'>
-                          <Cards key={index} catchData={restaurant} />
-                        </div>
-                      );
-                    })}
-                  </div>
-                  <NavLink to="/foodpandapage" className=" float-right btn btnon">more...</NavLink>
+                <div className='row '>
+                  {/* <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Diecard /></div> */}
+                  {/* 矩陣餐廳內容 導入卡片裡面 */}
+                  {this.state.restaurants.map((restaurant, index) => {
+                    return (
+                      <div className='col-lg-4 col-md-4 col-sm-12'>
+                        <Cards key={index} catchData={restaurant} />
+                      </div>
+                    );
+                  })}
+                </div>
+                <NavLink to="/foodpandapage" className=" float-right btn btnon">more...</NavLink>
               </div>
             </div>
           </div>
           {/* 最新消息 */}
           <header className='container-fluid'>
             <div className='row'>
-              <div className='col-1 col-lg=1'></div>
-              <div className='col-8 col-lg-8 col-md-8 col-sm-8'>
-                <h3 className=''>最新消息</h3>
+              <div className='col-2 col-lg=2'></div>
+              <div className='col-7 col-lg-7 col-md-8 col-sm-8'>
+                <h3 className='newnews'>最新消息</h3>
               </div>
               <div className='col-3 col-lg-3 col-md-3 col-sm-3 mt-3'>
                 <p>第一手重要通知，不容錯過</p>
@@ -129,13 +129,28 @@ class firstpage extends Component {
             </div>
             <hr className='w-75 bg-danger' />
           </header>
-          <div className='container-fluid'>
-            <div className='row'>
-              <div className=''></div>
-              <div className='col-'>
+          <div className='container newsboxes'>
+            <div className='row '>
+              <div className='col-3'>
                 <LatestNews />
               </div>
-              <div className=''></div>
+              {/* <div className='col-3'>
+                <LatestNews />
+              </div>
+              <div className='col-4'>
+                <LatestNews />
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-4'>
+                <LatestNews />
+              </div>
+              <div className='col-4'>
+                <LatestNews />
+              </div>
+              <div className='col-4'>
+                <LatestNews />
+              </div> */}
             </div>
           </div>
 

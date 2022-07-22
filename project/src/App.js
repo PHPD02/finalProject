@@ -70,8 +70,8 @@ import sendresetemail from './chattyComponents/components page/sendresetemail';
 // 按鈕或more
 import FoodpandaPage from "./kangComponent/foodpandapage";
 // 廠商登入後連結
-// import TodoIndex from "./kangComponent/TodoIndex";
-// import TodoEdit from "./kangComponent/TodoEdit";
+import TodoIndex from "./kangComponent/TodoIndex";
+import TodoEdit from "./kangComponent/TodoEdit";
 import TodoCreate from "./kangComponent/TodoCreate";
 import TodoDelete from "./kangComponent/TodoDelete";
 
@@ -94,6 +94,9 @@ import CustomerMailSuccess from "./kangComponent/customerMail_Success.jsx";
 import Gmtest03 from "./component/Maxtest/gmtest03";
 import Gmtest04 from "./component/Maxtest/gmtest04";
 import Gmtest12 from "./component/Maxtest/gmtest12";
+
+// import Gmtest03Copy from "./component/Maxtest/gmtest03 copy";
+// import Tessst from "./component/Maxtest/test";
 
 
 class App extends React.Component {
@@ -144,7 +147,7 @@ class App extends React.Component {
           {/* ================================================================================================================== */}
           {/* 峻軒 */}
           {/* <Route path="/login" component={Login} /> */}
-          <Route path="/foodpandapage" component={FoodpandaPage} />
+          <Route path="/sunsuafooddelivery" component={FoodpandaPage} />
           <Route path="/CommentPage" component={CommentPage} />
           <Route path="/memberpage" component={MemberPage} />
           <Route path="/orderrecord" component={Order_record} />
@@ -152,8 +155,8 @@ class App extends React.Component {
           <Route path="/customerMailSuccess" component={CustomerMailSuccess} />
 
           {/* 後台 */}
-          {/* <Route path="/TodoIndex" component={TodoIndex} /> */}
-          {/* <Route path="/Todo/Edit/:id" component={TodoEdit} /> */}
+          <Route path="/TodoIndex" component={TodoIndex} />
+          <Route path="/Todo/Edit/:id" component={TodoEdit} />
           <Route path="/Todo/Delete/:id" component={TodoDelete} />
           <Route path="/Todo/Create" component={TodoCreate} />
 

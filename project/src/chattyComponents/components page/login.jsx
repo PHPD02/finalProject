@@ -23,12 +23,18 @@ class Login1 extends Component {
     companyClick = () => {
         $('#login1').hide();
         $('#loginCompany').fadeIn();
+        $('.backimg').addClass('backcimg');
+        $('div').removeClass('backimg');
     }
     // 消費者點擊
     comsumerClick = () => {
         $('#login1').hide();
         // $('#loginComsumer').attr('style','display:block');
         $('#loginComsumer').fadeIn();
+        $('.backimg').addClass('backcimg');
+        $('div').removeClass('backimg');
+        $('div').removeClass('backcimg');
+        
     }
     // 廠商提交登入表單
     handleSubmitCompany = (e) => {
@@ -47,11 +53,13 @@ class Login1 extends Component {
                 else {
                     alert("Welcome!");
                     // alert(data);
+                    var sqlcid = JSON.parse(data).id;
                     var sqlemail = JSON.parse(data).email;
                     var sqlname = JSON.parse(data).name;
                     var sqladdress = JSON.parse(data).address;
 
                     // console.log(JSON.parse(data).id);
+                    localStorage.setItem('cid', sqlcid);
                     localStorage.setItem('email', sqlemail);
                     localStorage.setItem('companyname', sqlname);
                     localStorage.setItem('companyaddr', sqladdress);
@@ -150,7 +158,8 @@ class Login1 extends Component {
 
                     {/* 廠商 or 消費者 */}
                     <div id="login1" className="container">
-                        <h1 className='text-center my-5 border-bottom'><strong>請選擇您是廠商或用戶</strong></h1>
+                        <h1 className='text-center my-4 border-bottom shadow'
+                         style={{backgroundColor:"white",height:"80px",lineHeight:"100px"}}><strong>請選擇您是廠商或用戶</strong></h1>
 
                         <div className="row mt-5">
                             <div className="col text-center">

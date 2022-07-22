@@ -130,7 +130,7 @@ class TodoIndex extends React.Component {
             </ul>
           </div>
         </div>
-        <div className="content-wrap mt-5 pt-3">
+        <div className="content-wrap mt-5 pt-3" style={{backgroundColor:'whitesmoke'}}>
           <div className="main">
             <div className="container-fluid">
               <h1 className="h1 my-4">

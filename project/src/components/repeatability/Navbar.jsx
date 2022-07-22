@@ -136,8 +136,8 @@ class Navbar extends Component {
                         <i className="fa fa-user-circle text-info p-1 fa-2xl"></i> <b>會員</b>
                       </button>
                       <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a className="dropdown-item" href="#" style={{height:'50px'}} >Action</a>
-                        <a className="dropdown-item" href="#" style={{height:'50px'}}>Another action</a>
+                        <a className="dropdown-item" href="/memberpage" style={{height:'50px'}} >會員主頁</a>
+                        <a className="dropdown-item" href="/orderrecord" style={{height:'50px'}}>訂單紀錄</a>
                         <a className="dropdown-item" href="#" style={{height:'50px'}}  onClick={this.doLogout}><i className="fa fa-sign-out text-info p-1 fa-2xl"></i><b>Logout</b></a>
                       </div>
                     </div>

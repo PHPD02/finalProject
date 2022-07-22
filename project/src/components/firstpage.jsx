@@ -139,7 +139,7 @@ class firstpage extends Component {
                     <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Cards /></div>
                   </div>
 
-                  <NavLink to="/foodpandapage" className=" float-right btn btnon">more...</NavLink>
+                  <NavLink to="/sunsuafooddelivery" className=" float-right btn btnon">more...</NavLink>
                 </div>
               </div>
             </div>

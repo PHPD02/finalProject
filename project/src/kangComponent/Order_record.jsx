@@ -3,6 +3,7 @@ import Accordion from "react-bootstrap/Accordion";
 import "../css/MemberPage.css";
 import axios from "axios";
 // import img from "https://picsum.photos/150/110"
+import Navbar from "../components/repeatability/Navbar";
 
 class Order_record extends React.Component {
   state = {
@@ -29,6 +30,7 @@ class Order_record extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <Navbar />
         <div className="container d-flex justify-content-center">
           <div className="card" style={{ width: "30rem" }}>
             <div className="card-body">

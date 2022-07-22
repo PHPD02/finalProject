@@ -1,12 +1,26 @@
 .backimg {
   /* width: 100%; */
   height: 100vh;
-  background-image: url(../imgs/foodsideup.jfif);
+  background-image: url(../imgs/14.png);
   background-position: center; 
   background-repeat: no-repeat, repeat;
-  background-size: 100% 100%;
-  background-blend-mode:hard-light;
-  background-color: white;
+  background-size: 125%;
+  /* background-blend-mode:hard-light; */
+  /* background-color: white; */
+  /* opacity: 0.5; */
+  /* z-index: -1; */
+  /* position: relative; */
+  /* display: flex */
+}
+.backcimg {
+  /* width: 100%; */
+  height: 100vh;
+  background-image: url(../imgs/16.png);
+  background-position: center; 
+  background-repeat: no-repeat, repeat;
+  background-size: 50%;
+  /* background-blend-mode:hard-light; */
+  /* background-color: white; */
   /* opacity: 0.5; */
   /* z-index: -1; */
   /* position: relative; */

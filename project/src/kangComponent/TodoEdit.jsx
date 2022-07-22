@@ -196,7 +196,7 @@ class ToDoEdit extends React.Component {
             </ul>
           </div>
         </div>
-        <div className="content-wrap mt-5 pt-3">
+        <div className="content-wrap mt-5 pt-3" style={{backgroundColor:'whitesmoke'}}>
         <div className="container" style={{ width: "70rem" }}>
         <h1 className="h1 my-4">品項修改</h1>
         <div className="p-5" style={{ backgroundColor: "white" }}>

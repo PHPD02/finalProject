@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import axios from "axios";
 
+import Navbar from "../components/repeatability/Navbar";
+
 class MemberPage extends React.Component {
 
   state = {
@@ -42,7 +44,8 @@ class MemberPage extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <Navbar />
+        {/* <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <a className="navbar-brand" href="#">
             Navbar
           </a>
@@ -113,7 +116,7 @@ class MemberPage extends React.Component {
               </button>
             </form>
           </div>
-        </nav>
+        </nav> */}
         <div className="container d-flex justify-content-around mt-3">
           <div className="card" style={{ width: "30rem" }}>
             <div className="card-body">

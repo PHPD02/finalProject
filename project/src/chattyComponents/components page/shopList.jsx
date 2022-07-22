@@ -59,7 +59,7 @@ class shopList extends Component {
         
         <div>
           <div>
-            <img src='https://images.deliveryhero.io/image/fd-tw/LH/f6xl-hero.jpg?width=1600&height=400&quality=45' className="col-12 p-0" />
+            <img src='https://images.deliveryhero.io/image/fd-tw/LH/d2bz-hero.jpg?width=1600&height=400&quality=45' className="col-12 p-0" />
           </div>
           <br />
           <div className='container'>

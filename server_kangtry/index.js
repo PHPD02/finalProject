@@ -85,7 +85,7 @@ conn.connect(function (err) {
 })
 
 app.get("/todo/list", function (req, res) {
-    conn.query("select * from menu where restaurantName = '水項茶弄(台中中清店)'",
+    conn.query("select * from menu where restaurantName = '水巷茶弄(台中朝富店)'",
     [req.body.menuItemId,req.body.restaurantName,req.body.dish,req.body.type,req.body.introduce,req.body.picture,req.body.cost],
     function (err, rows) {
             res.send( JSON.stringify(rows) );

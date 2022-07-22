@@ -137,7 +137,7 @@ class Cart extends Component {
 
 
 
-                    <hr />
+                    {/* <hr /> */}
                 </div>
 
                 {/* 小計 */}

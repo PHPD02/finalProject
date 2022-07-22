@@ -192,7 +192,7 @@ class Payment extends Component {
                                 <hr />
                                 <div className='container'>
                                     <div className="row">
-                                        <div className="col-10 text-right">
+                                        <div className="col-9 text-right">
                                             <p><span>小計：</span></p>
                                             <p><span>外送服務費：</span></p>
                                             <p><span>總計：</span></p>

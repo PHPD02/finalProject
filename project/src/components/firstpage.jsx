@@ -30,7 +30,7 @@ class firstpage extends Component {
     var Tw = document.getElementById('textCity');                               //宣告變數等於網頁上的 #id                     
     Tw.textContent = e.target.getAttribute('value');                            //要顯示的文字
     this.state.address = e.target.getAttribute('value');                        //這裡的地址區域 會等於地圖點選後的值
-    console.log(this.state.address);
+    // console.log(this.state.address);
     this.state.restaurants = [];                                                //點選後這裡的餐廳資訊
     this.setState({});                                                          //狀態更新 
     let url = "http://localhost/ourPHPFinalproject/RjieProject/firstsql2.php"
@@ -38,11 +38,16 @@ class firstpage extends Component {
     await axios.get(url, { params: { address: this.state.address } })           //將取到的值送往後端做比較
       .then(res => {
         this.state.restaurants = res.data;
-        console.log(this.state.restaurants);
+        // console.log(this.state.restaurants);
         this.setState({})                                                       //這裡的狀態更新是資料庫設定幾筆資料就進來幾筆
       })
   }
-  componentDidMount() {
+  async componentDidMount() {
+    let url =" "
+    await axios.get(url)
+    .then(res=>{
+      this.state.restaurants =res.data;
+    })
     $('#accompany').attr('style', 'display:block');
     $('#latestNews').attr('style', 'display:block');
     $('#contact').attr('style', 'display:block');
@@ -131,10 +136,8 @@ class firstpage extends Component {
             <hr className='w-75 bg-danger' />
           </header>
           <div className='container'>
-            <div className='row'>
-              <div className='col-4 col-lg-4 col-md-4 col-sm-12'>
+            <div className='row m-auto'>
                 <LatestNews />
-              </div>
             </div>
           </div>
           {/* 頁角 */}

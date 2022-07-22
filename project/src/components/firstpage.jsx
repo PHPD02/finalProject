@@ -117,10 +117,10 @@ class firstpage extends Component {
             </div>
           </div>
           {/* 最新消息 */}
-          <br/><br/><br/>
+          <br /><br /><br />
           <header className='container-fluid'>
             <div className='row'>
-              <div className='col-1 col-lg=1'></div>
+              <div className='col-1 col-lg-1'></div>
               <div className='col-7 col-lg-7 col-md-8 col-sm-8'>
                 <h3 className='newnews' id="news">最新消息</h3>
               </div>
@@ -130,26 +130,9 @@ class firstpage extends Component {
             </div>
             <hr className='w-75 bg-danger' />
           </header>
-          <div className='container newsboxes mx-auto'>
-            <div className='row mx-auto'>
-              <div className='col-4'>
-                <LatestNews />
-              </div>
-              <div className='col-4'>
-                <LatestNews />
-              </div>
-              <div className='col-4'>
-                <LatestNews />
-              </div>
-            </div>
-            <div className='row mx-auto'>
-              <div className='col-4'>
-                <LatestNews />
-              </div>
-              <div className='col-4'>
-                <LatestNews />
-              </div>
-              <div className='col-4'>
+          <div className='container'>
+            <div className='row'>
+              <div className='col-4 col-lg-4 col-md-4 col-sm-12'>
                 <LatestNews />
               </div>
             </div>

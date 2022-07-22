@@ -20,7 +20,7 @@ class Cart extends Component {
     }
 
     stateChg = async () => {
-        await axios.get("http://localhost/PHP/cart/getallcart.php").then((response) => {
+        await axios.get("http://localhost//ourPHPFinalproject/ChtProject/cart/getallcart.php").then((response) => {
             this.setState({
                 cart: response.data,
             });
@@ -42,7 +42,7 @@ class Cart extends Component {
                 }
                 console.log(ordert);
                 // const { id, menuItemId, restaurantId, restaurantName, dish, type, picture, cost } = this.props.cart;
-                axios.post("http://localhost/PHP/order/inorder.php", ordert)
+                axios.post("http://localhost//ourPHPFinalproject/ChtProject/order/inorder.php", ordert)
                 .then((response) => {
                     console.log(response);
                 })
@@ -62,7 +62,7 @@ class Cart extends Component {
 
     async componentDidMount() {
         $('#cartBar').hide();
-        await axios.get("http://localhost/PHP/cart/getallcart.php").then((response) => {
+        await axios.get("http://localhost//ourPHPFinalproject/ChtProject/cart/getallcart.php").then((response) => {
             this.setState({
                 cart: response.data,
                 restaurantName: response.data[0].restaurantName

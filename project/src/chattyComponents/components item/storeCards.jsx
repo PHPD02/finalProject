@@ -16,7 +16,7 @@ class StoreCard extends Component {
     try {
       const { menuItemId, restaurantId, restaurantName, dish, type, picture, cost } = this.props.StoreCard;
 
-      const res = await axios.post("http://localhost/PHP/cart/getcart.php", { menuItemId: menuItemId })
+      const res = await axios.post("http://localhost//ourPHPFinalproject/ChtProject/cart/getcart.php", { menuItemId: menuItemId })
       // .then(function(response) {
       //   console.log(response);
       // }); 
@@ -39,7 +39,7 @@ class StoreCard extends Component {
         cart.mount = ++mount;
         console.log(cart);
         // 修改數量
-        await axios.put("http://localhost/PHP/cart/putcart.php", cart);
+        await axios.put("http://localhost//ourPHPFinalproject/ChtProject/cart/putcart.php", cart);
         // .then(function(response) {
         //   console.log(response);
         // })
@@ -58,7 +58,7 @@ class StoreCard extends Component {
         };
         // console.log(cart);
         // await axios.post("http://localhost/PHP/cart/postcart.php", this.props.StoreCard);
-        await axios.post("http://localhost:80/PHP/cart/postcart.php", cart);
+        await axios.post("http://localhost:80//ourPHPFinalproject/ChtProject/cart/postcart.php", cart);
         //   .then(function(response) {
         //     //code here 
         //     console.log(response);

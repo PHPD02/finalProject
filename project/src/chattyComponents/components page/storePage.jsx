@@ -13,7 +13,7 @@ class StorePage extends Component {
 
     async componentDidMount() {
         // var result = await Axios.get("http://localhost:8000/todo/list");
-        var result = await Axios.get("http://localhost/PHP/storeCards/getStoreItems.php");
+        var result = await Axios.get("http://localhost//ourPHPFinalproject/ChtProject/storeCards/getStoreItems.php");
         this.setState({
             menuList: result.data,
             restaurantName: result.data[0].restaurantName
@@ -23,7 +23,7 @@ class StorePage extends Component {
     }
 
     initCartNum = () => {
-        Axios.get("http://localhost/PHP/cart/getallcart.php").then((res) => {
+        Axios.get("http://localhost//ourPHPFinalproject/ChtProject/cart/getallcart.php").then((res) => {
             console.log(res.data);
             const carts = res.data || [] ;
             const cartNum = carts.map(cart => parseInt(cart.mount)).reduce((a,value) => a+value ,0);

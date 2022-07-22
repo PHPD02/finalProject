@@ -70,7 +70,7 @@ class Payment extends Component {
         // }
 
         // 抓購物車資料
-        await axios.get("http://localhost/PHP/cart/getallcart.php").then((response) => {
+        await axios.get("http://localhost//ourPHPFinalproject/ChtProject/cart/getallcart.php").then((response) => {
             this.setState({
                 cart: response.data,
                 restaurantName: response.data[0].restaurantName
@@ -210,7 +210,7 @@ class Payment extends Component {
                                     <form id="idFormAioCheckOut"
                                         method="POST" action=
                                         // "http://localhost/PHP/phpEcpay/test.php"
-                                        "http://localhost:80/PHP/phpEcpay/ECPay_CreateOrder.php"
+                                        "http://localhost:80//ourPHPFinalproject/ChtProject/phpEcpay/ECPay_CreateOrder.php"
                                         onSubmit={(event) => this.handleSubmit(event)}>
                                         <label hidden>編號 (MerchantTradeNo):
                                             <input type="text" name="MerchantTradeNo" defaultValue={this.state.num} className="form-control" />

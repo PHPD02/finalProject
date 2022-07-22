@@ -23,7 +23,7 @@ function Register2() {
             alert('已成功發送，請至信箱確認');
         }
         // console.log(sendmail);
-        $.post("http://localhost:80/PHP/sendmail/sendmail.php", {sendmail}, function(data){
+        $.post("http://localhost:80//ourPHPFinalproject/ChtProject/sendmail/sendmail.php", {sendmail}, function(data){
             setResult(data);
             
         })
@@ -86,7 +86,7 @@ function Register2() {
             {/* 消費者註冊 */}
             <div id='registerform'>
                 <form className="form-signin shadow registerformin" id='registerformin' encType="multipart/form-data"
-                    method='POST' action='http://localhost/PHP/loginComsumer/register.php'
+                    method='POST' action='http://localhost//ourPHPFinalproject/ChtProject/loginComsumer/register.php'
                     onSubmit={(event) => handleSumbit(event)}>
                     <h1 className="h3 mb-3 font-weight-normal">讓我們開始註冊吧</h1>
                     <h6>開始建立你的帳戶</h6>

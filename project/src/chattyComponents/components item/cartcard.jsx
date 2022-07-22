@@ -11,7 +11,7 @@ class Cartcard extends Component {
         const { id } = this.props.cart;
         console.log(this.props.cart);
         if(window.confirm("確定刪除嗎？") == true){
-            const res = await axios.put("http://localhost/PHP/cart/deletecart.php", { id: id })
+            const res = await axios.put("http://localhost//ourPHPFinalproject/ChtProject/cart/deletecart.php", { id: id })
             // .then(function(response) {
             //     console.log(response);
             // }); 
@@ -27,13 +27,13 @@ class Cartcard extends Component {
         this.props.cart.mount = e.target.value <1? 1:e.target.value;
         this.setState({});
 
-        const res = await axios.post("http://localhost/PHP/cart/getcart.php", { menuItemId: menuItemId });
+        const res = await axios.post("http://localhost//ourPHPFinalproject/ChtProject/cart/getcart.php", { menuItemId: menuItemId });
         const carts = res.data;
         console.log(carts.mount);
         // const cart = carts[0]
         carts.mount = e.target.value;
 
-        await axios.put(`http://localhost/PHP/cart/putcart.php`, carts);
+        await axios.put(`http://localhost//ourPHPFinalproject/ChtProject/cart/putcart.php`, carts);
         this.props.func();
 
     }

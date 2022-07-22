@@ -187,7 +187,7 @@ class Login1 extends Component {
                     <div id="loginCompany" style={{ display: 'none' }}>
                         <br /><br /><br /><br />
                         <form className="form-signin form-top"
-                            action='http://localhost:80/PHP/loginCompany/checkCompanyAccount.php' method='post'
+                            action='http://localhost:80/ourPHPFinalproject/ChtProject/loginCompany/checkCompanyAccount.php' method='post'
                             onSubmit={(event) => this.handleSubmitCompany(event)} >
                             <h1 className='shadow text-center p-2 mb-4'><strong>廠商 登入</strong></h1>
                             {/* 廠商email */}
@@ -211,7 +211,7 @@ class Login1 extends Component {
                     {/* 消費者登入 */}
                     <div id="loginComsumer" style={{ display: 'none' }}>
                         <form className="form-signin form-top mt-sm-2"
-                            action='http://localhost:80/PHP/loginComsumer/checkAccount.php' method='post'
+                            action='http://localhost:80//ourPHPFinalproject/ChtProject/loginComsumer/checkAccount.php' method='post'
                             onSubmit={(event) => this.handleSumbit(event)}>
                             <h1 className='shadow text-center p-2 mb-4'><strong>用戶 登入</strong></h1>
                             {/* userEmail */}

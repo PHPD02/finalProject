@@ -45,7 +45,7 @@ class CustomerMail extends Component {
     render() { 
         return (
             <div id="container">
-            <form id="validationForm"  action="http://localhost/try/mail.php" method="post">
+            <form id="validationForm"  action="http://localhost:80/ourPHPFinalproject/kangProject/sendEmail/mail.php" method="post">
                 {/* 注意路徑ㄚㄚㄚㄚ ㄚㄚㄚㄚ */}
             <label htmlFor="whyformail">來函主旨</label>
               <select name="whyformail" id="whyformail" className="input-style input-width" >

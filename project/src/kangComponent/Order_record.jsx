@@ -12,14 +12,14 @@ class Order_record extends React.Component {
   };
   async componentDidMount() {
     // var result = await axios.get("http://localhost:8050/orderdetails/list");
-    var orderdetails = await axios.get("http://localhost/orderrecord/normalorder/normalorder.php",
+    var orderdetails = await axios.get("http://localhost:80/ourPHPFinalproject/kangProject/orderrecord/normalorder/normalorder.php",
     {params:{email:'reste@gmail.com'}}
     );
     this.setState({ orderdetails: orderdetails.data });
     console.log(orderdetails.data);
 
     // var sunsua_order = await axios.get("http://localhost:8050/sunsua_order/list");
-    var sunsua_order = await axios.get("http://localhost/orderrecord/sunsuaorder/orderDetail.php",
+    var sunsua_order = await axios.get("http://localhost:80/ourPHPFinalproject/kangProject/orderrecord/sunsuaorder/orderDetail.php",
       {params:{emailPartyA:'reste@gmail.com'}}
     );
     

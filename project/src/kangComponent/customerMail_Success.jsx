@@ -18,10 +18,10 @@ class CustomerMailSuccess extends Component {
               </button>
 
             </div>
-            <form id="validationForm"  action="http://localhost/forgetpassword/mail.php" method="post">
+            <form id="validationForm"  action="http://localhost:80/ourPHPFinalproject/kangProject/sendEmail/mail.php" method="post" disabled>
             <label htmlFor="whyformail">來函主旨</label>
               <select name="whyformail" id="whyformail" className="input-style input-width" >
-                <option value="question" disabled selected>請選擇您的問題666666666666</option>
+                <option value="question" disabled selected>請選擇您的問題</option>
                 <option value="成為合作店家或外送員">成為合作店家或外送員</option>
                 <option value="投訴店家或送貨員">投訴店家或送貨員</option>
                 <option value="相關客服案件">相關客服案件</option>

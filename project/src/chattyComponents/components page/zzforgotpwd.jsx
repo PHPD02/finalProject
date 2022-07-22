@@ -28,7 +28,7 @@ function Forgotpwd(){
                 <br /><br />
                 <div id='registerform'>
                     <form className="form-signin shadow registerformin" id='registerformin'
-                    action='http://localhost:80/forgetpassword/resetpassword/reset-request.php' method='post' >
+                    action='http://localhost:80/ourPHPFinalproject/kangProject/forgetpassword/resetpassword/reset-request.php' method='post' >
                     {/* //  onSubmit={(event) => handleSumbit(event)}> */}
                         <h1 className="h3 mb-3 font-weight-normal">你的email是？</h1><br /> 
                         <h6>輸入你的email，我們將發送重設密碼連結</h6>

@@ -64,18 +64,18 @@ import sendresetemail from './chattyComponents/components page/sendresetemail';
 // 按鈕或more
 import FoodpandaPage from "./kangComponent/foodpandapage";
 // 廠商登入後連結
-import DashboardIndex from "./kangComponent/DashboardIndex";
+import ordermanage from "./kangComponent/Ordermanage";
 import TodoIndex from "./kangComponent/TodoIndex";
 import TodoEdit from "./kangComponent/TodoEdit";
 import TodoCreate from "./kangComponent/TodoCreate";
 import TodoDelete from "./kangComponent/TodoDelete";
+import Admindashboard from "./kangComponent/Admindashboard";
 
 // 會員拉霸-會員中心、訂單紀錄、登出
 import MemberPage from "./kangComponent/MemberPage";
 import Order_record from "./kangComponent/Order_record";
 // 餐廳資訊
 import CommentPage from "./kangComponent/CommentPage";
-// import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard";
 // 聯絡客服
 import CustomerMail from "./kangComponent/customerMail"
 import CustomerMailSuccess from "./kangComponent/customerMail_Success.jsx";
@@ -83,6 +83,9 @@ import CustomerMailSuccess from "./kangComponent/customerMail_Success.jsx";
 import FirebaseIndex from "./kangComponent/firebase/firebaseIndex";
 
 import Tst from "./component/test/tst";
+import Try from "./kangComponent/test";
+
+
 
 
 
@@ -145,13 +148,12 @@ class App extends React.Component {
           <Route path="/customerMailSuccess" component={CustomerMailSuccess} />
           
           {/* 後台 */}
-          <Route path="/DashboardIndex" component={DashboardIndex} />
+          <Route path="/ordermanage" component={ordermanage} />
           <Route path="/TodoIndex" component={TodoIndex} />
           <Route path="/Todo/Edit/:id" component={TodoEdit} />
           <Route path="/Todo/Delete/:id" component={TodoDelete} />
           <Route path="/Todo/Create" component={TodoCreate} />
-
-          {/* <Route path="/admin/dashboard" component={Dashboard} /> */}
+          <Route path="/admin/dashboard" component={Admindashboard} />
 
           {/* <Route path="/orderDetails" component={OrderDetails} /> */}
           
@@ -161,6 +163,7 @@ class App extends React.Component {
           <Route path="/CompleteResetPwd" component={CompleteResetPwd} />
           <Route path="/sendresetemail" component={sendresetemail} />
           <Route path="/tst" component={Tst} />
+          <Route path="/try" component={Try} />
         </Switch>
       </BrowserRouter>
     );

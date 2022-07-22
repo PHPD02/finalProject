@@ -10,7 +10,7 @@ import ExportExcelButton from "./ExportExcel_component"  //失敗
 import ExcelJs from "exceljs";
 
 
-class DashboardIndex extends React.Component {
+class Ordermanage extends React.Component {
     state = {
         dashboardorder: [],
         // dd:[],
@@ -34,7 +34,7 @@ class DashboardIndex extends React.Component {
           let ymd = date.toLocaleDateString();
 
           return(
-            [ymd,item.dish]
+            [item.orderId.toString(),ymd,item.dish,item.amount.toString(),item.cost.toString(),(item.amount*item.cost).toString()]
             // console.log([ymd,item.dish]),
             // this.setState({ tbody:this.gg})
             // console.log(this.setstate.tbody)
@@ -46,7 +46,7 @@ class DashboardIndex extends React.Component {
         sheetName: `水巷茶弄月收支報表`,
 	      thead: ['訂單編號','訂單日期','品項名稱','下單數目','消費金額','訂單利潤'],
 	      tbody: gg,
-	      // columnWidths: [{number: 1, width:20},{number: 2, width:10},{number: 3, width:40}]
+	      columnWidths: [{number: 1, width:20},{number: 2, width:20},{number: 3, width:30},{number: 4, width:20},{number: 5, width:20},{number: 6, width:30}]
         }];
         await this.setState({ downloadData:downloadData})
         // console.log(this.state.tbody)
@@ -111,14 +111,9 @@ class DashboardIndex extends React.Component {
                 <div className="nano-content">
                   <ul>
                     <li>
-                      <a className="sidebar-sub-toggle">
+                      <a href="/admin/dashboard" className="sidebar-sub-toggle">
                         <i className="ti-bar-chart-alt"></i> 儀錶板
                         <span className="sidebar-collapse-icon ti-angle-down"></span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="ti-calendar"></i> 主頁
                       </a>
                     </li>
                     <li>
@@ -127,7 +122,7 @@ class DashboardIndex extends React.Component {
                       </a>
                     </li>
                     <li>
-                      <a href="/DashboardIndex" style={{ color: "#03A9F5 " }}>
+                      <a href="/ordermanage" style={{ color: "#03A9F5 " }}>
                         <i className="ti-user"></i> 訂單紀錄
                       </a>
                     </li>
@@ -253,7 +248,7 @@ class DashboardIndex extends React.Component {
                     </div>
                     <div className="ml-auto mt-2 p-2">
                     <ExportExcelButton 
-                    fileName={'測試的試算表'}
+                    fileName={'月訂單報表'}
                     sheetDatas={this.state.downloadData}
                     />
                       {/* <a href="#" className="btn btn-outline-secondary btn-lg"
@@ -324,4 +319,4 @@ class DashboardIndex extends React.Component {
     }
 }
  
-export default DashboardIndex;
+export default Ordermanage;

@@ -11,11 +11,18 @@ class Order_record extends React.Component {
 
   };
   async componentDidMount() {
-    var result = await axios.get("http://localhost:8050/orderdetails/list");
-    this.setState({ orderdetails: result.data });
-    console.log(result.data);
+    // var result = await axios.get("http://localhost:8050/orderdetails/list");
+    var orderdetails = await axios.get("http://localhost/orderrecord/normalorder/normalorder.php",
+    {params:{email:'reste@gmail.com'}}
+    );
+    this.setState({ orderdetails: orderdetails.data });
+    console.log(orderdetails.data);
 
-    var sunsua_order = await axios.get("http://localhost:8050/sunsua_order/list");
+    // var sunsua_order = await axios.get("http://localhost:8050/sunsua_order/list");
+    var sunsua_order = await axios.get("http://localhost/orderrecord/sunsuaorder/orderDetail.php",
+      {params:{emailPartyA:'reste@gmail.com'}}
+    );
+    
     this.setState({ sunsua_order: sunsua_order.data });
     console.log(sunsua_order.data);
     
@@ -81,15 +88,21 @@ class Order_record extends React.Component {
             <ul className="list-group">
               
             {this.state.orderdetails.map((item, index) => {
+              let $sum =0 ;
+              item.OrderDetail.map((itemitem, index) => {
+                $sum += itemitem.amount * itemitem.cost;
+                return $sum;  
+              })
               return (
               <li className="list-group-item" key={index}>
                   <div className="row d-flex align-items-center">
                     <div className="col-3" >
-                      {/* <img
-                        src="https://picsum.photos/150/110"
+                      <img
+                        src={item.picture}
                         class="card-img-left"
                         alt="..."
-                      /> */}
+                        style={{width:"100%"}}
+                      />
                       
                     </div>
                     <div className="col-6">
@@ -98,7 +111,11 @@ class Order_record extends React.Component {
                         {/* 到時候看要join哪一張表 */}
                       </h5>
                       <div className="card-text">
-                        <p className="order_item h5">{this.state.orderdetails[0].dish}、{this.state.orderdetails[1].dish}</p>
+                      {item.OrderDetail.map((itemitem, index) => {
+                        return (
+                          <span className="order_item h5">{itemitem.dish}&nbsp;&nbsp;</span>
+                          )})}
+                        {/* <p className="order_item h5">{this.state.orderdetails[0].dish}、{this.state.orderdetails[1].dish}</p> */}
                         <br />
                         <p className="order_date">2022年5月26日</p>
                         {/* 欄位沒有date */}
@@ -106,7 +123,13 @@ class Order_record extends React.Component {
                     </div>
                     <div className="col-2">
                       <div>
-                        <p className="h3 text-nowrap" >${item.amount*item.cost}元</p>
+                      {/* {item.OrderDetail.map((itemitem, index) => {
+                        
+                        return (
+                          <p className="h3 text-nowrap" >${itemitem.amount*itemitem.cost}元</p>
+                          )})} */}
+                          <p className="h3 text-nowrap" >${$sum}元</p>
+
                       </div>
                     </div>
                   </div>
@@ -121,7 +144,7 @@ class Order_record extends React.Component {
                       <Accordion.Header className="mt-3 font-weight-bold "
                       style={{fontSize:"22px"}}
                       >
-                        <span>查看品項細節({this.state.orderdetails.length}個品項)</span>
+                        <span>查看品項細節({item.OrderDetail.length}個品項)</span>
                         <span className="ml-2">
                           <i class="fa-solid fa-angles-down"></i>
                         </span>
@@ -131,18 +154,22 @@ class Order_record extends React.Component {
                           <ul className="list-group mt-4 ">
                             <div className="container-fluid">
                               <div className="row d-flex ">
-                                <div className="col-10 ">品項</div>
+                                <div className="col-8 ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品項</div>
                                 <div className="col-1 text-nowrap">數量</div>
                                 <div className="col-1 text-nowrap">金額</div>
                               </div>
                             </div>
                             <li className="list-group-item d-flex  ">
                               <div className="container-fluid">
-                                <div className="row d-flex text-left">
-                                  <div className="col-10 ">{item.dish}</div>
-                                  <div className="col-1 text-nowrap">{item.amount}</div>
-                                  <div className="col-1 text-nowrap">{item.cost}</div>
-                                </div>
+                              {item.OrderDetail.map((itemitem, index) => {
+                        return (
+                          <div className="row d-flex text-left border-bottom">
+                          <div className="col-8 font-weight-bolder">{itemitem.dish}</div>
+                          <div className="col-1 text-nowrap ">{itemitem.amount}份</div>
+                          <div className="col-1 text-nowrap font-weight-bolder">${itemitem.cost}元</div>
+                        </div>
+                  )})}
+
                               </div>
                             </li>
                             {/* <li className="list-group-item d-flex  ">
@@ -280,7 +307,7 @@ class Order_record extends React.Component {
                     </div>
                     <div className="col-6">
                       <h5 className="card-title h4 font-weight-bold">
-                      {item.meal}
+                      {item.shop}-{item.meal}
                       </h5>
                       <div className="card-text">
                         <p className="order_item h5"> </p>
@@ -290,7 +317,7 @@ class Order_record extends React.Component {
                     </div>
                     <div className="col-2">
                       <div>
-                        <p className="h3 text-nowrap" >${item.count*item.freight}元</p>
+                        <p className="h3 text-nowrap" >${item.proposalOrderDetail.length*item.freight}元</p>
                       </div>
                     </div>
                   </div>
@@ -304,7 +331,7 @@ class Order_record extends React.Component {
                     <Accordion.Item eventKey="0">
                       <Accordion.Header className="mt-3 font-weight-bold "
                       style={{fontSize:"22px"}}>
-                        <span>查看明細({this.state.sunsua_order.length}條紀錄)</span>
+                        <span>查看明細({item.proposalOrderDetail.length}條紀錄)</span>
                         <span className="ml-2">
                           <i class="fa-solid fa-angles-down"></i>
                         </span>
@@ -313,19 +340,29 @@ class Order_record extends React.Component {
                         <div>
                           <ul className="list-group mt-4 ">
                             <div className="container-fluid">
-                              <div className="row d-flex ">
-                                <div className="col-8 ">店家-品名</div>
+                              <div className="row d-flex text-left">
+                                <div className="col-8 ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;訂購人</div>
                                 <div className="col-1 text-nowrap ">數量</div>
-                                <div className="col-1 text-nowrap">金額</div>
+                                <div className="col-1 text-nowrap">訂單費用</div>
                               </div>
                             </div>
                             <li className="list-group-item d-flex  ">
                               <div className="container-fluid">
-                                <div className="row d-flex text-left">
-                                  <div className="col-10 ">{item.shop}-{item.meal}</div>
-                                  <div className="col-1 text-nowrap">{item.amount}</div>
-                                  <div className="col-1 text-nowrap">{item.cost}</div>
-                                </div>
+
+                                  {item.proposalOrderDetail.map((itemitem, index) => {
+                                    return(
+                                      <div className="row d-flex text-left border-bottom">
+                                      <div className="col-9 font-weight-bolder">{itemitem.emailPartyB.split('@')[0]}</div>
+    
+                                      <div className="col-1 text-nowrap">{itemitem.count}份</div>
+                                      <div className="col-1 text-nowrap font-weight-bolder">${item.cost}元</div> 
+
+                                      </div>
+
+                                    )
+                                  })}
+
+
                               </div>
                             </li>
                             {/* <li className="list-group-item d-flex  ">

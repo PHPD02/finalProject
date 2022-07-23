@@ -7,7 +7,11 @@ body {
   background-repeat: no-repeat;
   padding: 33px;
   margin: 0 auto;
+<<<<<<< HEAD
   /* z-index: 99999999999999999999999; */
+=======
+  z-index: 10;
+>>>>>>> origin/RJIEtest
   
 }
 
@@ -41,4 +45,7 @@ body {
   font-weight: bolder;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/RJIEtest

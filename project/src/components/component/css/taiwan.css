@@ -5,13 +5,9 @@
   height: 620px;
   width: 100%;
 }
-
-
-
-path:hover {
+/* path:hover {
   fill: #1d5254;
   stroke: none;
-  /* stroke-width: 3; */
   cursor: pointer;
-
-}
+  transition-duration:1.5s;
+} */

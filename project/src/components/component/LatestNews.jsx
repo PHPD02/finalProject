@@ -1,31 +1,25 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import './css/latesnews.css';
-// import 'aos/dist/aos.css';
-// import AOS from 'aos';
+import axios from 'axios';
 class LatestNews extends Component {
-  state = {}
-  // 測試 滑鼠滑過上方會改變背景色與文字顏色
-  // onMouseOver = () => {
-  //   function change() {
-  //     var msg = document.getElementById('msg');
-  //     msg.style.color = 'white';
-  //     msg.style.backgroundColor = 'red';
-  //   }
-  // }
-  // onMouseout = () => {
-  //   function restore() {
-  //     var msg = document.getElementById('msg');
-  //     msg.style.color = '';
-  //     msg.style.backgroundColor = '';
-  //   }
-  // }
-  // id='msg' onMouseOver={"change"} onMouseOut={"restore"}
-  // 
-
+  state = {
+    news:[]
+  }
+  componentDidMount = async () => {
+    let url = "http://localhost/ourPHPFinalproject/RjieProject/latestNews.php";
+    await axios.get(url)
+      .then(res => {
+        this.state.news = res.data;
+        this.setState({})
+        // console.log(this.state.news)
+        // console.log(this.state.news.newsitems);
+      })
+    }
   render() {
     return (
       <React.Fragment>
+<<<<<<< HEAD
         <header className='container'>
           <div className='row'>
             {/* <div 
@@ -52,133 +46,34 @@ class LatestNews extends Component {
                 <b className='p-1'>
                   <div className='row'>
                     <h4>電子報</h4>
+=======
+        {/* 電子報 */}{this.state.news.map((value)=>{
+          return (
+            <div className='col-4 d-flex'>
+              {/* <div className="col-3 col-sm-4 col-md-4 col-lg-4 ml-2"> */}
+              <div className="col m-auto">
+                {/* <div className='card cardshadowNew' style={{ width: "400px", height: "200px" }}> */}
+                <div className='card cardshadowNew w-100'>
+                  <div>
+                    <h4>{value.newsitems}</h4>
+>>>>>>> origin/RJIEtest
                   </div>
-                  <div className='row'>
-                    <p>電子報8月號</p>
+                  <div>
+                    <p>{value.newsnews}</p>
                   </div>
-                  <div className='row'>
-                    <p>8月份電子報為夥伴精選多項夏季活動，請好好把握！！</p>
+                  <div>
+                    {/*讓文字多於框框的變成點點點 className='text-nowrap text-truncate' */}
+                    <p className='text-nowrap text-truncate'>{value.newscontents}</p>
                   </div>
-                  <div className='row'>
-                    <p>2022/08/07</p>
+                  <div>
+                    <p>{}</p>
                   </div>
-                </b>
+                </div>
               </div>
             </div>
-
-            {/* 七月電子報 */}
-            <div className=" col-md-4 ">
-              <div className='container card cardshadow'>
-                <b className='p-1'>
-                  <div className='row'>
-                    <h4>電子報</h4>
-                  </div>
-                  <div className='row'>
-                    <p>電子報7月號</p>
-                  </div>
-                  <div className='row'>
-                    <p>7月份電子報為夥伴精選多項獎金活動，請進來瞧瞧吧!</p>
-                  </div>
-                  <div className='row'>
-                    <p>2022/07/07</p>
-                  </div></b>
-              </div>
-            </div>
-
-
-            {/* 六月電子報 */}
-            <div className=" col-md-4 ">
-              <div className='container card cardshadow'>
-                <b className='p-1'>
-                  <div className='row'>
-                    <h4>電子報</h4>
-                  </div>
-                  <div className='row'>
-                    <p>電子報6月號</p>
-                  </div>
-                  <div className='row'>
-                    <p>2022年6月份電子報有專屬優惠，快點進來瞧瞧吧!</p>
-                  </div>
-                  <div className='row'>
-                    <p>2022/06/07</p>
-                  </div>
-                </b>
-
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 最新消息 */}
-        <section className="container">
-          <div className='row m-1'>
-            <div className="col-md-4 ">
-              <div className='container card cardshadow'>
-                <b className='p-1'>
-                  <div className='row'>
-                    <h4>最新快訊</h4>
-                  </div>
-                  <div className='row'>
-                    <p>當月開通強檔活動</p>
-                  </div>
-                  <div className='row'>
-                    <p>了解本月申請成為BytheWay外送夥伴的最新強檔活動</p>
-                  </div>
-                  <div className='row'>
-                    <p>2022/01/30</p>
-                  </div>
-                </b>
-
-              </div>
-            </div>
-
-            <div className="col-md-4 ">
-              <div className='container card cardshadow'>
-                <b className='p-1'>
-                  <div className='row'>
-                    <h4>最新快訊</h4>
-                  </div>
-                  <div className='row'>
-                    <p>外送申請流程懶人包，如何加入BytheWay成為外送夥伴？</p>
-                  </div>
-                  <div className='row'>
-                    <p>今天申請當天領取外送裝備，立即成為BytheWay外送夥伴</p>
-                  </div>
-                  <div className='row'>
-                    <p>2022/01/30</p>
-                  </div>
-                </b>
-
-              </div>
-            </div>
-
-            {/* 順弁頁面傳送 */}
-            <NavLink to="/sunsua" className="col-md-4">
-              <div className='container card cardshadow'>
-                <b className='p-1'>
-                  <div className='row'>
-                    <h4>最新快訊</h4>
-                  </div>
-                  <div className='row'>
-                    <p>強勢推出「順弁」New 功能</p>
-                  </div>
-                  <div className='row'>
-                    <p>為了讓消費者能更快速的選擇
-                      ，我們做了顧客與顧客的往來機制，快來一同「順弁」探索吧！</p>
-                  </div>
-                  <div className='row'>
-                    <p>2022/08/09</p>
-                  </div>
-                </b>
-              </div>
-            </NavLink>
-
-          </div>
-          <hr className="w-100 bg-danger" />
-        </section>
-
-
-
+          )
+        })}
+            
       </React.Fragment>
     );
   }

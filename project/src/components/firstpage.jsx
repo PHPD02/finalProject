@@ -14,47 +14,65 @@ import LatestNews from './component/LatestNews';
 import Diecard from './component/diecard';
 // import $ from 'jquery'
 import 'aos/dist/aos.css';
-import AOS from 'aos';
+import axios from 'axios';
 import Navbar from './repeatability/Navbar';
 import $ from 'jquery';
 
-
-
-
-
 class firstpage extends Component {
-  state = {}
-
-  // 首頁連結地圖城市
-  clickTwCity = (e) => {
-    // 是否有取得到Taiwan頁面的值
-    // let e = event;
-    // this.props.clickTwCity(e)
-    // var a = document.getElementsByClassName('itemCitys');
-    // console.log(e.target.getAttribute('value'));
-    // var a = event.target.value;
-    var Tw = document.getElementById('textCity');
-    Tw.textContent = e.target.getAttribute('value');
-    // getClickTwCity();
+  state = {
+    address: "",   //點選後將地圖'value' 送往後端的空值
+    restaurants: [],
+    restaurants: []
   }
-  // getClickTwcity(event){
-  //   let event = function clickTwCity(e){
+  // 首頁連結地圖城市
+  clickTwCity = async (e) => {
+    // 是否有取得到Taiwan頁面的值
+    // console.log(e.target.getAttribute('value'));
+    var Tw = document.getElementById('textCity');                               //宣告變數等於網頁上的 #id                     
+    Tw.textContent = e.target.getAttribute('value');                            //要顯示的文字
+    this.state.address = e.target.getAttribute('value');                        //這裡的地址區域 會等於地圖點選後的值
+    console.log(this.state.address);
+    this.state.restaurants = [];                                                //點選後這裡的餐廳資訊
+    this.setState({});                                                          //狀態更新 
+    let url = "http://localhost/ourPHPFinalproject/RjieProject/firstsql2.php"
+    // console.log(url);
+    await axios.get(url, { params: { address: this.state.address } })           //將取到的值送往後端做比較
+      .then(rest => {
+        this.state.restaurants = rest.data;
+        console.log(this.state.restaurants);                                    //點選後 出現進來的哪幾筆資料consloe.log
+        this.setState({})                                                       //這裡的狀態更新
+      })
+  }
 
+<<<<<<< HEAD
   //   }
   // }
   componentDidMount() {
+=======
+
+  async componentDidMount() {                                                   //畫面載入後 自動撈取資料庫
+    let url = "http://localhost/ourPHPFinalproject/RjieProject/firstsql.php"
+    await axios.get(url)
+      .then(res => {
+        this.state.restaurants = res.data;
+        this.setState({})
+        // console.log(this.state.restaurants);
+      })
+
+>>>>>>> origin/RJIEtest
     $('#accompany').attr('style', 'display:block');
     $('#latestNews').attr('style', 'display:block');
     $('#contact').attr('style', 'display:block');
     $('#navSunsua').attr('style', 'display:block');
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/RJIEtest
     // or simply just AOS.init();
-    AOS.init({
-      // initialise with other settings
-      // duration: 2000
-    });
+    // initialise with other settings
+    // duration: 2000
   }
   render() {
     return (
@@ -63,6 +81,7 @@ class firstpage extends Component {
         <Navbar />
         {/* <br /> */}
         {/* 首頁圖片 文字 */}
+<<<<<<< HEAD
         <div
         //  style={{zIndex:'-1'}}
         >
@@ -92,6 +111,11 @@ class firstpage extends Component {
           {/* <div 
           // className='mx-5 container-intro text-left card-img-overlay text-dark'
           >
+=======
+        <div style={{ zIndex: '-1' }}>
+          <img src="./image/foodtraditional.png" className="card-img firstpic" />
+          <div className='mx-5 container-intro text-left card-img-overlay text-dark'>
+>>>>>>> origin/RJIEtest
             <br />
             <div className='row'>
               <div className='col-sm-12'><br /><br />
@@ -112,7 +136,7 @@ class firstpage extends Component {
           </div> */}
 
           <div className='mt-4'>
-            <h4 className='text-center ImgZ'><span id="textCity" value=''></span> 特別合作店家</h4>
+            <h4 className='text-center ImgZ'><span id="textCity"></span> 特別合作店家</h4>
           </div>
           <hr className='w-75 bg-danger' />
           {/* 測試aos */}
@@ -132,6 +156,7 @@ class firstpage extends Component {
               {/* 合作店家 */}
               {/* data-aos="zoom-in-down" */}
               <div className="col-lg-7 col-md-12">
+<<<<<<< HEAD
                 <div>
                   <div className='row '>
                     <div className='col-lg-4 col-md-4 col-sm-12 stylecards mb-5'><Diecard /></div>
@@ -140,21 +165,53 @@ class firstpage extends Component {
                   </div>
 
                   <NavLink to="/sunsuafooddelivery" className=" float-right btn btnon">more...</NavLink>
+=======
+                <div className='row '>
+                  {/* <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Diecard /></div> */}
+                  {/* 矩陣餐廳內容 導入卡片裡面 */}
+                  {this.state.restaurants.map((restaurant, index) => {
+                    return (
+                      <div className='col-lg-4 col-md-4 col-sm-12'>
+                        <Cards key={index} catchData={restaurant} />
+                      </div>
+                    );
+                  })}
+>>>>>>> origin/RJIEtest
                 </div>
+
+                <NavLink to="/foodpandapage" className="float-right">
+                  <button data-text="Awesome" className="btnmore">
+                    <span className="actual-text">&nbsp;more...&nbsp;</span>
+                    <span className="hover-text" aria-hidden="true">&nbsp;more...&nbsp;</span>
+                  </button></NavLink>
               </div>
             </div>
           </div>
           {/* 最新消息 */}
-          <LatestNews />
-          <br />
+          <br /><br /><br />
+          <header className='container-fluid'>
+            <div className='row'>
+              <div className='col-1 col-lg-1'></div>
+              <div className='col-7 col-lg-7 col-md-8 col-sm-8'>
+                <h3 className='newnews' id="news">最新消息</h3>
+              </div>
+              <div className='col-3 col-lg-3 col-md-3 col-sm-3 mt-3'>
+                <p>第一手重要通知，不容錯過</p>
+              </div>
+            </div>
+            <hr className='w-75 bg-danger' />
+          </header>
+          <div className='container'>
+            <div className='row m-auto'>
+              <LatestNews />
+            </div>
+          </div>
           {/* 頁角 */}
           <Footer />
         </div>
-
       </React.Fragment>
 
     );
   }
 }
-
 export default firstpage;

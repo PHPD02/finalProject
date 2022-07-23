@@ -60,7 +60,7 @@ class Navbar extends Component {
       $('#logout').attr('style', 'display:none');
       $('#login').attr('style', 'display:block');
     }
-    console.log('ok');
+    // console.log('ok');
     var result = await Axios.get("http://localhost/PHP/storeCards/getStoreItems.php");
     this.setState({
       menuList: result.data,
@@ -114,13 +114,20 @@ class Navbar extends Component {
                   <div className="row">
                     {/* 購物車 */}
                     <NavLink to='/cart'>
+<<<<<<< HEAD
                       <button id='cartBar' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'>
                         <i className="fa fa-shopping-cart text-info p-1 fa-2xl"></i>
                         <span><strong>Cart</strong> <CheckCart cartNum={this.state.cartNum} /></span>
+=======
+                      <button type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'>
+                        <i className="fa fa-shopping-cart text-info p-1"></i>
+                        <span>Cart <CheckCart cartNum={this.state.cartNum} /></span>
+>>>>>>> origin/RJIEtest
                       </button>
                     </NavLink>
                     <NavLink to="/login">
                       <button id='login' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display: 'block' }} onClick={this.doLogin} >
+<<<<<<< HEAD
                         <i className="fa fa-user-circle text-info p-1 fa-2xl"></i><span><b>Login</b></span>
                       </button>
                     </NavLink>
@@ -141,6 +148,16 @@ class Navbar extends Component {
                         <a className="dropdown-item" href="#" style={{height:'50px'}}  onClick={this.doLogout}><i className="fa fa-sign-out text-info p-1 fa-2xl"></i><b>Logout</b></a>
                       </div>
                     </div>
+=======
+                        <i className="fa fa-user-circle text-info p-1 "></i><span>Login</span>
+                      </button>
+                    </NavLink>
+                    <NavLink to='/'>
+                      <button id='logout' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display: 'none' }}>
+                        <i className="fa fa-sign-out text-info p-1 "></i><span>Logout</span>
+                      </button>
+                    </NavLink>
+>>>>>>> origin/RJIEtest
                   </div>
                 </div>
 

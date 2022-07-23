@@ -1,22 +1,23 @@
+/* 右側卷軸改動(可更改) */
 
-html
-body {
-  /* margin: 0;
-  padding: 0; */
-  /* background-color: rgb(249, 210, 103, .7); */
+/* 網頁捲軸【寬度】 */
+::-webkit-scrollbar {
+  width: 15px;
 }
 
-/* body { */
-  /* margin: 0; */
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  
+/* 網頁捲軸【背景】顏色 */
+::-webkit-scrollbar-track {
+  background: #c77055;
 }
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace; */
-/* } */
+
+/* 網頁捲軸【把手】顏色 */
+::-webkit-scrollbar-thumb {
+  background: #ffe694;
+  border-radius: 25px;
+}
+
+/* 網頁捲軸【滑過時】把手的顏色 */
+::-webkit-scrollbar-thumb:hover {
+  background: #f5d878;
+
+}

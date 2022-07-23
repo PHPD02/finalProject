@@ -21,6 +21,7 @@ import $ from 'jquery';
 class firstpage extends Component {
   state = {
     address: "",   //點選後將地圖'value' 送往後端的空值
+    restaurants: [],
     restaurants: []
   }
   // 首頁連結地圖城市
@@ -30,24 +31,29 @@ class firstpage extends Component {
     var Tw = document.getElementById('textCity');                               //宣告變數等於網頁上的 #id                     
     Tw.textContent = e.target.getAttribute('value');                            //要顯示的文字
     this.state.address = e.target.getAttribute('value');                        //這裡的地址區域 會等於地圖點選後的值
-    // console.log(this.state.address);
+    console.log(this.state.address);
     this.state.restaurants = [];                                                //點選後這裡的餐廳資訊
     this.setState({});                                                          //狀態更新 
     let url = "http://localhost/ourPHPFinalproject/RjieProject/firstsql2.php"
     // console.log(url);
     await axios.get(url, { params: { address: this.state.address } })           //將取到的值送往後端做比較
-      .then(res => {
-        this.state.restaurants = res.data;
-        // console.log(this.state.restaurants);
-        this.setState({})                                                       //這裡的狀態更新是資料庫設定幾筆資料就進來幾筆
+      .then(rest => {
+        this.state.restaurants = rest.data;
+        console.log(this.state.restaurants);                                    //點選後 出現進來的哪幾筆資料consloe.log
+        this.setState({})                                                       //這裡的狀態更新
       })
   }
-  async componentDidMount() {
-    let url =" "
+
+
+  async componentDidMount() {                                                   //畫面載入後 自動撈取資料庫
+    let url = "http://localhost/ourPHPFinalproject/RjieProject/firstsql.php"
     await axios.get(url)
-    .then(res=>{
-      this.state.restaurants =res.data;
-    })
+      .then(res => {
+        this.state.restaurants = res.data;
+        this.setState({})
+        // console.log(this.state.restaurants);
+      })
+
     $('#accompany').attr('style', 'display:block');
     $('#latestNews').attr('style', 'display:block');
     $('#contact').attr('style', 'display:block');
@@ -117,7 +123,12 @@ class firstpage extends Component {
                     );
                   })}
                 </div>
-                <NavLink to="/foodpandapage" className=" float-right btn btnon">more...</NavLink>
+
+                <NavLink to="/foodpandapage" className="float-right">
+                  <button data-text="Awesome" className="btnmore">
+                    <span className="actual-text">&nbsp;more...&nbsp;</span>
+                    <span className="hover-text" aria-hidden="true">&nbsp;more...&nbsp;</span>
+                  </button></NavLink>
               </div>
             </div>
           </div>
@@ -137,7 +148,7 @@ class firstpage extends Component {
           </header>
           <div className='container'>
             <div className='row m-auto'>
-                <LatestNews />
+              <LatestNews />
             </div>
           </div>
           {/* 頁角 */}

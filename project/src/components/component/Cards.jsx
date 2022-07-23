@@ -3,23 +3,11 @@ import "./css/card.css";
 // import axios from 'axios';
 class Cards extends Component {
   state = {}
-
-    
-  
   rest = this.props.catchData;    //把父階的資料傳送到子階來
   componentDidMount = async () => {
-    console.log(this.res.name);
-    // console.log(this.res.region);
-    // let url = "http://localhost/ourPHPFinalproject/RjieProject/firstsql2.php"
-    // await axios.get(url)
-    //   .then(res => {
-    //     console.log("success");
-    //     this.state.restaurant = res.data;
-        // this.setState({})
-    //   })
-    //   .catch(err => {
-    //     console.log("failed")
-    //   })
+    // console.log(this.rest.name);
+    // console.log(this.rest.region);
+
   }
   render() {
     return (

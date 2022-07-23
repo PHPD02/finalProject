@@ -38,7 +38,7 @@ class TodoIndex extends React.Component {
                   </a>
                 </li>
                 <li>
-                  <a href="/DashboardIndex">
+                  <a href="/ordermanage">
                     <i className="ti-user"></i> 訂單紀錄
                   </a>
                 </li>

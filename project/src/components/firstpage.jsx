@@ -135,8 +135,8 @@ class firstpage extends Component {
                 <div>
                   <div className='row '>
                     <div className='col-lg-4 col-md-4 col-sm-12 stylecards mb-5'><Diecard /></div>
-                    <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Cards /></div>
-                    <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Cards /></div>
+                    {/* <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Cards /></div> */}
+                    {/* <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Cards /></div> */}
                   </div>
 
                   <NavLink to="/sunsuafooddelivery" className=" float-right btn btnon">more...</NavLink>

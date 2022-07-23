@@ -51,6 +51,7 @@ class Cart extends Component {
                 console.log(error);
             }
         } else {
+            alert('請先登入!')
             window.location = 'http://localhost:3000/login';
         }
     }

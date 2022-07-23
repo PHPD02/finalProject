@@ -38,7 +38,7 @@ const useGoogleLogin = () => {
       <GoogleOAuthProvider clientId="216063196453-rq2ca06ndlf13q47gghp0d7g227flpp0.apps.googleusercontent.com">
           {/* <div className='btn-block m'> */}
           <GoogleLogin
-          width="330px"
+          width="334px"
           onSuccess={handleCallbackResponse}
           onError={() => {
             console.log('Login Failed');

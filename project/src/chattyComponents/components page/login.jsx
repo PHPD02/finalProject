@@ -158,25 +158,28 @@ class Login1 extends Component {
 
                     {/* 廠商 or 消費者 */}
                     <div id="login1" className="container">
-                        <h1 className='text-center my-4 border-bottom shadow'
-                         style={{backgroundColor:"white",height:"80px",lineHeight:"100px"}}><strong>請選擇您是廠商或用戶</strong></h1>
+                        <h1 className='text-center my-4 border-bottom shadow-sm'
+                         style={{
+                            // backgroundColor:"white",
+                         height:"80px",lineHeight:"100px"}}
+                         ><strong>請選擇您是廠商或用戶</strong></h1>
 
                         <div className="row mt-5">
                             <div className="col text-center">
                                 {/* <NavLink to="/login2"> */}
-                                <button className='btn btn-light p-5 shadow' onClick={this.companyClick}>
+                                <div className='btn btn-light p-5 shadow card3d' onClick={this.companyClick}>
                                     <FontAwesomeIcon icon={faStore} className="fa-8x" /> <br />
                                     <h4 className='mt-4'>合作商家登入</h4>
-                                </button>
+                                </div>
                                 {/* </NavLink> */}
                             </div>
 
                             <div className="col text-center">
                                 {/* <NavLink to="/login3"> */}
-                                <button className='btn btn-light p-5 shadow' onClick={this.comsumerClick}>
+                                <div className='btn btn-light p-5 shadow card3d' onClick={this.comsumerClick}>
                                     <FontAwesomeIcon icon={faUserAlt} className="fa-8x" /> <br />
                                     <h4 className='mt-4'>消費者登入</h4>
-                                </button>
+                                </div>
                                 {/* </NavLink> */}
                             </div>
 
@@ -186,7 +189,8 @@ class Login1 extends Component {
                     {/* 廠商登入 */}
                     <div id="loginCompany" style={{ display: 'none' }}>
                         <br /><br /><br /><br />
-                        <form className="form-signin form-top"
+                        <form className="form-signin p-5 shadow"
+                            // style={{backgroundColor:'black'}}
                             action='http://localhost:80/ourPHPFinalproject/ChtProject/loginCompany/checkCompanyAccount.php' method='post'
                             onSubmit={(event) => this.handleSubmitCompany(event)} >
                             <h1 className='shadow text-center p-2 mb-4'><strong>廠商 登入</strong></h1>
@@ -210,7 +214,10 @@ class Login1 extends Component {
 
                     {/* 消費者登入 */}
                     <div id="loginComsumer" style={{ display: 'none' }}>
-                        <form className="form-signin form-top mt-sm-2"
+                        {/* <div
+                            style={{backgroundColor:'black'}}> */}
+                        <form className="form-signin form-top mt-sm-4 p-5 shadow"
+                            // style={{backgroundColor:'black'}}
                             action='http://localhost:80//ourPHPFinalproject/ChtProject/loginComsumer/checkAccount.php' method='post'
                             onSubmit={(event) => this.handleSumbit(event)}>
                             <h1 className='shadow text-center p-2 mb-4'><strong>用戶 登入</strong></h1>
@@ -229,15 +236,17 @@ class Login1 extends Component {
                                 </div>
                             </div>
                             <hr />
-                        </form>
-
-                        <div className="form-signin form-bottom">
+                            <div className="form-signin form-bottom">
                             {/* <b>使用第三方登入</b><br /> */}
                             <GoogleLogin className='btn btn-lg' />
                             <button className='btn btn-lg btn-primary btn-block shadow mt-4 p-1'><FontAwesomeIcon icon={faFacebookSquare} className="mr-2" /> Facebook</button><br />
                             {/* <button className='btn btn-lg btn-light btn-block shadow'><FontAwesomeIcon icon={faGoogle} className="mr-4" /> Google</button><br /> */}
                             <button className='btn btn-lg btn-dark btn-block shadow p-1'><FontAwesomeIcon icon={faApple} className="mr-2" /> 以apple帳戶登入</button><br />
                         </div>
+                        </form>
+
+                        
+                        {/* </div> */}
 
                     </div>
                 </div>

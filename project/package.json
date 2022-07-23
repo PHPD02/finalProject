@@ -24,6 +24,7 @@
     "chart.js": "^3.8.0",
     "d3": "^7.6.1",
     "exceljs": "^4.3.0",
+    "faker": "^6.6.6",
     "firebase": "^9.9.0",
     "font-awesome": "^4.7.0",
     "framer-motion": "^6.3.13",

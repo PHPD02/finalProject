@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import D3 from "./chart/D3chart.jsx";
-import { Piechart } from './chart/Pie_chartjs.jsx';
-
+import { Piechart } from "./chart/Pie_chartjs.jsx";
+import { Barchart } from "./chart/Barchart.jsx";
 // import Piechartjs from "./chart/Pie_chartjs.jsx";
-
-
 
 import "https://cdn.jsdelivr.net/npm/chart.js";
 
 // import $ from "jquery";
-
 
 // $(document).onload(function () {
 
@@ -33,7 +30,6 @@ import "https://cdn.jsdelivr.net/npm/chart.js";
 //                     fontSize: 20,
 
 //                 },
-
 
 //             ]
 //         }
@@ -67,9 +63,6 @@ import "https://cdn.jsdelivr.net/npm/chart.js";
 //         }
 //     })
 
-
-
-
 // })
 
 class Admindashboard extends Component {
@@ -98,7 +91,7 @@ class Admindashboard extends Component {
                   </a>
                 </li>
                 <li>
-                  <a href="/DashboardIndex">
+                  <a href="/ordermanage">
                     <i className="ti-user"></i> 訂單紀錄
                   </a>
                 </li>
@@ -236,44 +229,69 @@ class Admindashboard extends Component {
                 </div>
               </div>
 
-
               {/* chart */}
               <div class="container-fluid ">
-            <div class="row ">
-                <div class="col-lg-8 ">
+                <div class="row ">
+                  <div class="col-lg-12 mb-4">
                     <div class="card h-100 shadow">
-                        <div class="card-header  p-2 h4">營業額 </div>
-                        <div class="card-body d-flex align-items-center">
-                            <div class="row">
-                                <div class="col-8 ">
-                                    <div><Piechart/></div>
-                                </div>
-                                <div class="col-4">
-                                    <h3>說明</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis earum rerum quia
-                                        consequuntur perferendis, distinctio, ullam accusantium qui sint dolorem
-                                        officiis laborum eveniet, optio deserunt impedit quae! Alias amet molestiae
-                                        fugiat, velit consectetur et, quaerat dolores, veritatis voluptas at earum
-                                        labore! Quidem, omnis. Nulla, suscipit officiis!</p>
-                                </div>
+                      <div class="card-header  p-2 h4">近月銷售量 </div>
+                      <div class="card-body d-flex align-items-center">
+                        <div class="row">
+                          <div class="col-8 ">
+                            <div>
+                              <D3 style={{ width: "100%" }} />
                             </div>
+                          </div>
+                          <div class="col-4">
+                            <h3>近期銷售量起伏較大</h3>
+                             <br></br><br></br><br></br>
+                            <p>
+                              小規模營業人平均月營業額達8萬元以上未超過20萬元者，依規定免用統一發票，所謂「營業額20萬元」，係以六個月平均來計算，若僅有少數單月營業額超過20萬元水準，仍無須使用統一發票。
+                            </p><br></br><br></br>
+                            <b>可到訂單紀錄下載月度營銷報表</b>
+
+                          </div>
                         </div>
+                      </div>
                     </div>
-                </div>
-                <div class="col-lg-4 ">
+                  </div>
+
+                  <div class="col-lg-8 mb-5">
                     <div class="card h-100 shadow">
-                        <div class="card-header  p-2 h4">品項月銷量 </div>
-                        <div class="card-body d-flex align-items-center">
-                        <div><Piechart/></div>
+                      <div class="card-header  p-2 h4">營業額 </div>
+                      <div class="card-body d-flex align-items-center">
+                        <div class="row">
+                          <div class="col-12 mb-4">
+                            <div>
+                              <Barchart />
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <h3>說明</h3>
+                            <p>
+                              <b>最高營收紀錄：</b> <b>七月</b>金額為<i>49,604元</i><br/>
+                              <b>最低營收紀錄：</b> <b>八月</b>金額為<i>18,216元</i>
+                            </p>
+                          </div>
                         </div>
+                      </div>
                     </div>
+                  </div>
+                  <div class="col-lg-4 mb-5">
+                    <div class="card h-100 shadow">
+                      <div class="card-header  p-2 h4">品項月銷量 </div>
+                      <div class="card-body d-flex align-items-center">
+                        
+                        <div>
+                          <Piechart />
+                        </div>
+                      </div>
+                      <h3 className="text-center">店家TOP6品項</h3>
+
+                    </div>
+                  </div>
                 </div>
-            </div>
-
-            <D3 style={{width:"30%"}}/>
-
-        </div>
-
+              </div>
             </div>
           </div>
         </div>

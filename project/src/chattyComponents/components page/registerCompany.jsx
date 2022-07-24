@@ -79,10 +79,16 @@ function Register() {
     
     return (
         <React.Fragment>
+            <div className="backimg">
             <Navbar />
+            
             <br /><br /><br />
             <div id='companyRegisterform'>
-                <form className="form-signin shadow registerformin" id='registerformin' encType="multipart/form-data"  
+                <form className="form-signin p-5" id='registerformin' encType="multipart/form-data"
+                style={{
+                    // backgroundColor:'black'
+                    boxShadow:'8px 8px 10px 10px rgba(49, 166, 150 ,0.5)'
+                }}
                     method='POST' action='http://localhost:80//ourPHPFinalproject/ChtProject/loginCompany/registerCompany.php'
                     onSubmit={(event) => handleSumbit(event)}>
                     <h6 className="h5 mb-3 font-weight-normal">歡迎與我們的合作，讓我們開始註冊吧!</h6>
@@ -111,6 +117,7 @@ function Register() {
                     }}>{result}</div>
                     <button className="btn btn-lg btn-danger btn-block mt-4" type="submit">建立商家帳戶</button>
                 </form>
+            </div>
             </div>
             
         </React.Fragment>

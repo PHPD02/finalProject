@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import "./css/card.css";
-// import axios from 'axios';
+import axios from 'axios';
 class Cards extends Component {
   state = {}
   rest = this.props.catchData;    //把父階的資料傳送到子階來
   componentDidMount = async () => {
-<<<<<<< HEAD
     let url = "http://localhost:80/ourPHPFinalproject/RjieProject/firstsql2.php"
     await axios.get(url)
-=======
     // console.log(this.rest.name);
     // console.log(this.rest.region);
->>>>>>> origin/RJIEtest
 
   }
   render() {

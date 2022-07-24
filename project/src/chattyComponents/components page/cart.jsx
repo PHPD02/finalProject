@@ -27,27 +27,27 @@ class Cart extends Component {
 
         })
         console.log(this.state.cart);
-        
+
     }
 
     doPayment = () => {
         if (getemail) {
-            try{
+            try {
                 const ordert = {
-                    restaurantId:this.state.cart[0].restaurantId,
-                    uid:localStorage.getItem('uid'),
-                    cost:$('#cartTotal').text(),
-                    freight:$('#freight').text(),
-                    orderdetails:this.state.cart
+                    restaurantId: this.state.cart[0].restaurantId,
+                    uid: localStorage.getItem('uid'),
+                    cost: $('#cartTotal').text(),
+                    freight: $('#freight').text(),
+                    orderdetails: this.state.cart
                 }
                 console.log(ordert);
                 // const { id, menuItemId, restaurantId, restaurantName, dish, type, picture, cost } = this.props.cart;
                 axios.post("http://localhost//ourPHPFinalproject/ChtProject/order/inorder.php", ordert)
-                .then((response) => {
-                    console.log(response);
-                })
+                    .then((response) => {
+                        console.log(response);
+                    })
                 window.location = "http://localhost:3000/payment";
-            }catch(error){
+            } catch (error) {
                 console.log(error);
             }
         } else {
@@ -72,7 +72,7 @@ class Cart extends Component {
         })
         console.log(this.state.cart);
         // 如果購物車沒有資料
-        if(this.state.cart) {
+        if (this.state.cart) {
             // this.isempty();
         }
         // console.log(this.state.cart);
@@ -160,9 +160,13 @@ class Cart extends Component {
                         <div className='col'></div>
                         <div className="col-3">
                             {/* <NavLink to="/payment"> */}
-                            <button className='btn btn-danger btn-block'
+                            <button className='fancy btn-block'
                                 onClick={this.doPayment}>
-                                點我結帳
+                                <span class="top-key"></span>
+                                <span class="text">點我結帳</span>
+                                <span class="bottom-key-1"></span>
+                                <span class="bottom-key-2"></span>
+
                             </button>
                             {/* </NavLink> */}
                         </div>

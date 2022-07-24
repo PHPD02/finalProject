@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons/faCircleCheck';
 
 import Navbar from '../../components/repeatability/Navbar';
-import '../css/register.css';
+// import '../css/register.css';
 
 var upwhere = window.location.href;
 
@@ -80,12 +80,17 @@ function Register2() {
 
     return (
         <React.Fragment>
+            <div className="backimg">
             <Navbar />
             <br />
             
             {/* 消費者註冊 */}
             <div id='registerform'>
-                <form className="form-signin shadow registerformin" id='registerformin' encType="multipart/form-data"
+                <form className="form-signin registerformin p-5" id='registerformin' encType="multipart/form-data"
+                style={{
+                    // backgroundColor:'black'
+                    boxShadow:'8px 8px 10px 10px rgba(49, 166, 150 ,0.5)'
+                }}
                     method='POST' action='http://localhost//ourPHPFinalproject/ChtProject/loginComsumer/register.php'
                     onSubmit={(event) => handleSumbit(event)}>
                     <h1 className="h3 mb-3 font-weight-normal">讓我們開始註冊吧</h1>
@@ -120,7 +125,7 @@ function Register2() {
                     <button className="btn btn-lg btn-danger btn-block mt-4" type="submit">建立個人帳戶</button>
                 </form>
             </div>
-
+            </div>
         </React.Fragment>
     )
 }

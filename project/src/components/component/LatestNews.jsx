@@ -19,34 +19,6 @@ class LatestNews extends Component {
   render() {
     return (
       <React.Fragment>
-<<<<<<< HEAD
-        <header className='container'>
-          <div className='row'>
-            {/* <div 
-            className='col-md-10' 
-            id='news'
-            > */}
-              <h1>最新公告</h1>
-              <hr 
-              className='w-100 bg-danger' 
-              />
-            </div>
-            <div className='col-my-1 mt-5'>
-              <p>第一手重要通知，不容錯過</p>
-            {/* </div> */}
-          </div>
-
-        </header>
-        {/* 電子報 */}
-        <section className="container">
-          <div className='row m-1'>
-            {/* 八月電子報 */}
-            <div className=" col-md-4 ">
-              <div className='container card cardshadow'>
-                <b className='p-1'>
-                  <div className='row'>
-                    <h4>電子報</h4>
-=======
         {/* 電子報 */}{this.state.news.map((value)=>{
           return (
             <div className='col-4 d-flex'>
@@ -56,7 +28,6 @@ class LatestNews extends Component {
                 <div className='card cardshadowNew w-100'>
                   <div>
                     <h4>{value.newsitems}</h4>
->>>>>>> origin/RJIEtest
                   </div>
                   <div>
                     <p>{value.newsnews}</p>

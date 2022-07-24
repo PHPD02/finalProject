@@ -125,6 +125,12 @@ class Payment extends Component {
                                     {/* </select> */}
 
                                 </div>
+                                <p>備註:</p>
+                                <div>
+                                <input type="text" className='btn-block' placeholder="例如：需要餐具" />
+                                    
+                                </div>
+
                             </section>
                             <section id='section2' className='shadow p-5 my-5'>
                                 <h2>2.個人資料</h2>
@@ -240,7 +246,13 @@ class Payment extends Component {
                                             {/* <!-- Credit:信用卡及 AndroidPay AndroidPay: AndroidPay  WebATM:網路 ATM ATM:自動櫃員機 CVS:超商代碼 BARCODE:超商條碼 ALL:不指定 --> */}
                                         </label>
 
-                                        <button type="submit" className="btn btn-danger btn-block">送出</button>
+                                        <button type="submit" className="fancy btn-block">
+
+                                            <span class="top-key"></span>
+                                            <span class="text">送出</span>
+                                            <span class="bottom-key-1"></span>
+                                            <span class="bottom-key-2"></span>
+                                        </button>
                                     </form>
 
 

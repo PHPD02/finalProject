@@ -33,6 +33,8 @@ import Sunsua from "./component/Sunsua/sunsua.jsx";
 
 /* == 純芷 == */
 import Login from './chattyComponents/components page/login';
+import LoginCompany from "./chattyComponents/components page/loginCompany";
+import LoginComsumer from "./chattyComponents/components page/loginComsumer";
 import RegisterCompany from './chattyComponents/components page/registerCompany';
 import RegisterComsumer from './chattyComponents/components page/registerComsumer';
 import Cart from './chattyComponents/components page/cart';
@@ -46,25 +48,7 @@ import Resetpassword from './chattyComponents/components page/resetpassword';
 import CompleteResetPwd from './chattyComponents/components page/CompleteResetPwd';
 import sendresetemail from './chattyComponents/components page/sendresetemail';
 
-//
-// import Resetpassword from "./chattyComponents/components page/resetpassword";
-// import CompleteResetPwd from "./chattyComponents/components page/CompleteResetPwd";
-// import sendresetemail from "./chattyComponents/components page/sendresetemail";
 
-// import Card from './chattyComponents/components item/cartcard';
-// import Index from "./chattyComponents/components try/byIndex";
-// import StoreCard from "./chattyComponents/components item/storeCards";
-// import Test from "./chattyComponents/components try/zztestsql";
-// import Test1 from './chattyComponents/zzteststate';
-// import Login2 from './chattyComponents/zzloginCompany';
-// import Login3 from './chattyComponents/zzloginComsumer';
-// import Glogin from './chattyComponents/components try/googlelogin';
-// import UseGoogleLogin from "./chattyComponents/components try/useGoogleLogin";
-// import facebooklogin from './chattyComponents/components try/facebooklogin';
-// import './index';
-// import TestScreen from "./chattyComponents/components try/testscreen.jsx";
-// import StorePage from "./chattyComponents/components page/storePage.jsx";
-// import TestPayment from "./chattyComponents/components try/testpayment.jsx";
 
 /* == 峻軒 == */
 // 按鈕或more
@@ -124,6 +108,8 @@ class App extends React.Component {
           {/* <Route path="/cht4" component={Index} exact /> */}
           {/* <Route path="/index" component={Index} /> */}
           <Route path="/login" component={Login} />
+          <Route path="/loginCompany" component={LoginCompany} />
+          <Route path="/loginComsumer" component={LoginComsumer} />
           <Route path="/registerComsumer" component={RegisterComsumer} />
           <Route path="/registerCompany" component={RegisterCompany} />
           <Route path="/cart" component={Cart} />

@@ -6,6 +6,8 @@ import "./css/navbar.css";
 import $ from 'jquery';
 
 var getemail = localStorage.getItem('email');
+var getcemail = localStorage.getItem('cemail');
+
 class Navbar extends Component {
   state = {
     cartNum: 0
@@ -22,13 +24,13 @@ class Navbar extends Component {
     })
   }
 
-  doLogin() {
-    if (window.location.href = 'http://localhost:3000/login') {
-      $('#login1').fadeIn();
-      $('#loginCompany').hide();
-      $('#loginComsumer').hide();
-    }
-  }
+  // doLogin() {
+  //   if (window.location.href = 'http://localhost:3000/login') {
+  //     $('#login1').fadeIn();
+  //     $('#loginCompany').hide();
+  //     $('#loginComsumer').hide();
+  //   }
+  // }
 
   doLogout() {
     // 登出
@@ -52,9 +54,16 @@ class Navbar extends Component {
 
   async componentDidMount() {
     if (getemail) {
-      //登入狀態
+      //消費者登入狀態
       $('#login').attr('style', 'display:none');
       $('#logout').attr('style', 'display:block');
+    }
+    else if(getcemail) {
+      // 廠商登入狀態
+      $('#login').attr('style', 'display:none');
+      $('#cartBar').attr('style', 'display:none');
+      $('#logoutButton').attr('style', 'display:block');
+      
     }
     else {
       $('#logout').attr('style', 'display:none');
@@ -114,50 +123,39 @@ class Navbar extends Component {
                   <div className="row">
                     {/* 購物車 */}
                     <NavLink to='/cart'>
-<<<<<<< HEAD
                       <button id='cartBar' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'>
                         <i className="fa fa-shopping-cart text-info p-1 fa-2xl"></i>
                         <span><strong>Cart</strong> <CheckCart cartNum={this.state.cartNum} /></span>
-=======
-                      <button type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'>
-                        <i className="fa fa-shopping-cart text-info p-1"></i>
-                        <span>Cart <CheckCart cartNum={this.state.cartNum} /></span>
->>>>>>> origin/RJIEtest
                       </button>
                     </NavLink>
                     <NavLink to="/login">
-                      <button id='login' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display: 'block' }} onClick={this.doLogin} >
-<<<<<<< HEAD
+                      <button id='login' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display: 'block' }} 
+                      // onClick={this.doLogin} 
+                      >
                         <i className="fa fa-user-circle text-info p-1 fa-2xl"></i><span><b>Login</b></span>
                       </button>
                     </NavLink>
-                    {/* <NavLink to='/'> */}
-                    {/* <button id='logout' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display: 'none' }} onClick={this.doLogout}>
+
+                    <NavLink to='/'>
+                    <button id='logoutButton' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' 
+                    style={{ display: 'none' }} 
+                    onClick={this.doLogout}>
                         <i className="fa fa-sign-out text-info p-1 fa-2xl"></i><span><strong>Logout</strong></span>
-                      </button> */}
-                    {/* </NavLink> */}
+                      </button>
+                    </NavLink>
 
                       {/* dropdown */}
                     <div className="dropdown" id='logout' style={{ display: 'none' }} >
                       <button className="btn btn-outline-dark rounded-pill ml-1 btnsm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i className="fa fa-user-circle text-info p-1 fa-2xl"></i> <b>會員</b>
                       </button>
-                      <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      
+                      <div id='dropdown-menu' className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a className="dropdown-item" href="/memberpage" style={{height:'50px'}} >會員主頁</a>
                         <a className="dropdown-item" href="/orderrecord" style={{height:'50px'}}>訂單紀錄</a>
                         <a className="dropdown-item" href="#" style={{height:'50px'}}  onClick={this.doLogout}><i className="fa fa-sign-out text-info p-1 fa-2xl"></i><b>Logout</b></a>
                       </div>
                     </div>
-=======
-                        <i className="fa fa-user-circle text-info p-1 "></i><span>Login</span>
-                      </button>
-                    </NavLink>
-                    <NavLink to='/'>
-                      <button id='logout' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display: 'none' }}>
-                        <i className="fa fa-sign-out text-info p-1 "></i><span>Logout</span>
-                      </button>
-                    </NavLink>
->>>>>>> origin/RJIEtest
                   </div>
                 </div>
 

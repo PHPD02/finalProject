@@ -44,13 +44,13 @@ class firstpage extends Component {
       })
   }
 
-<<<<<<< HEAD
-  //   }
-  // }
-  componentDidMount() {
-=======
 
-  async componentDidMount() {                                                   //畫面載入後 自動撈取資料庫
+  async componentDidMount() {    
+    $('#accompany').attr('style', 'display:block');
+    $('#latestNews').attr('style', 'display:block');
+    $('#contact').attr('style', 'display:block');
+    $('#navSunsua').attr('style', 'display:block');
+                                                   //畫面載入後 自動撈取資料庫
     let url = "http://localhost/ourPHPFinalproject/RjieProject/firstsql.php"
     await axios.get(url)
       .then(res => {
@@ -59,17 +59,8 @@ class firstpage extends Component {
         // console.log(this.state.restaurants);
       })
 
->>>>>>> origin/RJIEtest
-    $('#accompany').attr('style', 'display:block');
-    $('#latestNews').attr('style', 'display:block');
-    $('#contact').attr('style', 'display:block');
-    $('#navSunsua').attr('style', 'display:block');
+    
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> origin/RJIEtest
     // or simply just AOS.init();
     // initialise with other settings
     // duration: 2000
@@ -81,7 +72,6 @@ class firstpage extends Component {
         <Navbar />
         {/* <br /> */}
         {/* 首頁圖片 文字 */}
-<<<<<<< HEAD
         <div
         //  style={{zIndex:'-1'}}
         >
@@ -99,7 +89,8 @@ class firstpage extends Component {
                 </div>
                 <div className='text-center'>
                   <NavLink to='/sunsua'>
-                    <button className='btn btn-outline-danger btn-lg'>點我查看新功能</button>
+                    <button className='btn btn-outline-danger btn-lg'>
+                      點我查看新功能</button>
                   </NavLink>
                   
                 </div>
@@ -107,33 +98,6 @@ class firstpage extends Component {
             </div>
             
           </div>
-
-          {/* <div 
-          // className='mx-5 container-intro text-left card-img-overlay text-dark'
-          >
-=======
-        <div style={{ zIndex: '-1' }}>
-          <img src="./image/foodtraditional.png" className="card-img firstpic" />
-          <div className='mx-5 container-intro text-left card-img-overlay text-dark'>
->>>>>>> origin/RJIEtest
-            <br />
-            <div className='row'>
-              <div className='col-sm-12'><br /><br />
-                <h2 className="pl-5 mt-5 textheader"><b>還等什麼？一起和我們開始這個外送的旅程吧！</b></h2>
-              </div>
-            </div>
-            <div className='row mt-3'>
-              <div className='col-sm-8'>
-                <h3 className="pl-5 textcontent">想讓上百萬新顧客試試你的美食或生鮮雜貨商品嗎？</h3>
-              </div>
-            </div>
-            <div className='row'>
-              <div className='col-sm-6'>
-                <h4 className="pl-5 textfooter"><b>讓我們來幫忙吧！該怎麼做呢？</b></h4>
-                <h5 className="pl-5 mt-1 textfooter"><b>我們會協助你上傳菜單或商品清單、幫你處理訂單、訂單確認後我們將請外送夥伴前往你的商店去取件，再將餐點或商品外送給顧客們。</b></h5>
-              </div>
-            </div>
-          </div> */}
 
           <div className='mt-4'>
             <h4 className='text-center ImgZ'><span id="textCity"></span> 特別合作店家</h4>
@@ -156,16 +120,6 @@ class firstpage extends Component {
               {/* 合作店家 */}
               {/* data-aos="zoom-in-down" */}
               <div className="col-lg-7 col-md-12">
-<<<<<<< HEAD
-                <div>
-                  <div className='row '>
-                    <div className='col-lg-4 col-md-4 col-sm-12 stylecards mb-5'><Diecard /></div>
-                    {/* <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Cards /></div> */}
-                    {/* <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Cards /></div> */}
-                  </div>
-
-                  <NavLink to="/sunsuafooddelivery" className=" float-right btn btnon">more...</NavLink>
-=======
                 <div className='row '>
                   {/* <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Diecard /></div> */}
                   {/* 矩陣餐廳內容 導入卡片裡面 */}
@@ -176,10 +130,9 @@ class firstpage extends Component {
                       </div>
                     );
                   })}
->>>>>>> origin/RJIEtest
                 </div>
 
-                <NavLink to="/foodpandapage" className="float-right">
+                <NavLink to="/sunsuafooddelivery" className="float-right">
                   <button data-text="Awesome" className="btnmore">
                     <span className="actual-text">&nbsp;more...&nbsp;</span>
                     <span className="hover-text" aria-hidden="true">&nbsp;more...&nbsp;</span>

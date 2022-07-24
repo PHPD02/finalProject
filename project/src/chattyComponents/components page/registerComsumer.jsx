@@ -69,7 +69,7 @@ function Register2() {
                     // setResult(data);
                     alert(data);
                     localStorage.setItem('upwhere', upwhere);
-                    window.location = "http://localhost:3000/login";
+                    window.location = "http://localhost:3000/loginComsumer";
                 }
             })
         }
@@ -120,7 +120,7 @@ function Register2() {
                     {/* password */}
                     <input type="password" id="password" name="password" className="form-control" placeholder="密碼" required autoFocus />
                     <div id="chkmesg" className='h6' style={{ color: 'red', height: '10px' 
-                    // , visibility:'hidden'
+                    , visibility:'hidden'
                     }}>{result}</div>
                     <button className="btn btn-lg btn-danger btn-block mt-4" type="submit">建立個人帳戶</button>
                 </form>

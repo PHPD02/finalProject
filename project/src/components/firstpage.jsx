@@ -45,12 +45,12 @@ class firstpage extends Component {
   }
 
 
-  async componentDidMount() {    
+  async componentDidMount() {
     $('#accompany').attr('style', 'display:block');
     $('#latestNews').attr('style', 'display:block');
     $('#contact').attr('style', 'display:block');
     $('#navSunsua').attr('style', 'display:block');
-                                                   //畫面載入後 自動撈取資料庫
+    //畫面載入後 自動撈取資料庫
     let url = "http://localhost/ourPHPFinalproject/RjieProject/firstsql.php"
     await axios.get(url)
       .then(res => {
@@ -59,7 +59,7 @@ class firstpage extends Component {
         // console.log(this.state.restaurants);
       })
 
-    
+
 
     // or simply just AOS.init();
     // initialise with other settings
@@ -82,21 +82,29 @@ class firstpage extends Component {
                 <h2 className='pt-5'><b>還等什麼？一起和我們開始這個外送的旅程吧！</b></h2>
                 <h3 >想讓上百萬新顧客試試你的美食或生鮮雜貨商品嗎？</h3>
                 <h4><b>讓我們來幫忙吧！該怎麼做呢？</b></h4>
-                <div style={{color:'gray'}}>
+                <div style={{ color: 'gray' }}>
                   <h5>我們會協助你上傳菜單或商品清單、幫你處理訂單</h5>
                   <h5>幫你處理訂單、訂單確認後我們將請外送夥伴前往你的商店去取件</h5>
                   <h5>再將餐點或商品外送給顧客們</h5>
                 </div>
                 <div className='text-center'>
+                  <NavLink to='/registerCompany'>
+                    <button className='btn btn-warning btn-lg'>
+                      立即加入我們</button>
+                  </NavLink>
+
+                </div>
+                <div className='text-center mt-5'>
+
                   <NavLink to='/sunsua'>
                     <button className='btn btn-outline-danger btn-lg'>
                       點我查看新功能</button>
                   </NavLink>
-                  
+
                 </div>
               </section>
             </div>
-            
+
           </div>
 
           <div className='mt-4'>
@@ -121,6 +129,11 @@ class firstpage extends Component {
               {/* data-aos="zoom-in-down" */}
               <div className="col-lg-7 col-md-12">
                 <div className='row '>
+                  <div className='col-lg-4 col-md-4 col-sm-12'>
+                    <NavLink to='/shoplist2'>
+                      <Diecard />
+                    </NavLink>
+                  </div>
                   {/* <div className='col-lg-4 col-md-4 col-sm-12 stylecards'><Diecard /></div> */}
                   {/* 矩陣餐廳內容 導入卡片裡面 */}
                   {this.state.restaurants.map((restaurant, index) => {

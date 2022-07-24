@@ -20,6 +20,7 @@ class Navbar extends Component {
       const cartNum = carts.map(cart => parseInt(cart.mount)).reduce((a, value) => a + value, 0);
       // console.log(cartNum);
       this.setState({ cartNum: cartNum });
+      // return cartNum;
       // console.log(carts[0]);
     })
   }
@@ -37,6 +38,19 @@ class Navbar extends Component {
     localStorage.clear();
     window.location = "http://localhost:3000/";
 
+  }
+  
+  
+  cartClick = () => {
+    // console.log(this.state.cartNum);
+    if (this.state.cartNum == 0) {
+      alert('目前購物車是空的，請前往選購！');
+      window.location = 'http://localhost:3000/sunsuafooddelivery';
+    }
+    else {
+      window.location = 'http://localhost:3000/cart';
+    }
+    
   }
 
   // componentDidMount() {
@@ -73,7 +87,7 @@ class Navbar extends Component {
     var result = await Axios.get("http://localhost/PHP/storeCards/getStoreItems.php");
     this.setState({
       menuList: result.data,
-      restaurantName: result.data[0].restaurantName
+      restaurantName: result.data[0].restaurantName 
     })
     // console.log(this.state.menuList)
     this.initCartNum();
@@ -122,12 +136,15 @@ class Navbar extends Component {
                 <div className="buttons">
                   <div className="row">
                     {/* 購物車 */}
-                    <NavLink to='/cart'>
-                      <button id='cartBar' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'>
+                    {/* <NavLink to='/cart'> */}
+                      <button id='cartBar' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'
+                        onClick={this.cartClick}>
                         <i className="fa fa-shopping-cart text-info p-1 fa-2xl"></i>
-                        <span><strong>Cart</strong> <CheckCart cartNum={this.state.cartNum} /></span>
+                        {/* <span> */}
+                          <strong>Cart</strong> <CheckCart cartNum={this.state.cartNum} />
+                          {/* </span> */}
                       </button>
-                    </NavLink>
+                    {/* </NavLink> */}
                     <NavLink to="/login">
                       <button id='login' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm' style={{ display: 'block' }} 
                       // onClick={this.doLogin} 

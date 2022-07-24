@@ -68,6 +68,8 @@ class StoreCard extends Component {
       }
 
       toast.info("已成功新增至購物車!");
+      // this.props.initCartNum();
+      // this.props.func();
 
 
     } catch (error) {

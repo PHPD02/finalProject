@@ -7,12 +7,12 @@ class CheckCart extends Component {
         return (
             <React.Fragment>
 
-                <NavLink to="/cart">
-                    <span>
+                {/* <NavLink to="/cart"> */}
+                    {/* <span> */}
                         {/* <i className='fas fa-shopping-cart'></i> */}
                         <span>({this.props.cartNum})</span>
-                    </span>
-                </NavLink>
+                    {/* </span> */}
+                {/* </NavLink> */}
 
 
             </React.Fragment>

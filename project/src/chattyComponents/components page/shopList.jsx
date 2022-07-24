@@ -77,46 +77,7 @@ class shopList extends Component {
             <div>
               <span>★</span><span>5</span>/<span>4.7</span><span>(500)</span>
             </div>
-            {/* <div>
-              <span>$$$</span>●<span>種類</span>●<span>西式/台式/沒事</span>
-            </div>
-            <div>
-              <span>地址</span>●<span>公里</span>●<span>以地圖開啟</span>
-            </div>
-            <hr /> */}
-            {/* <div>
-              <button className='btn btn-outline-primary'>人氣精選</button>
-              <button className='m-1 btn btn-outline-primary'>※注意事項※</button>
-              <button className='m-1 btn btn-outline-primary'>種類</button>
-              <button className='m-1 btn btn-outline-primary'>種類</button>
-              <button className='m-1 btn btn-outline-primary'>種類</button>
-            </div> */}
-            <br />
-            {/* <h3 className>人氣精選✨</h3>
-            <div className='container'>
-              <div className='row'>
-                <div className='col-md-6 col-sm-12'>
-                  <ShopCard />
-                </div>
-                <div className='col-md-6 col-sm-12 mt-1'>
-                  <ShopCard />
-                </div>
-              </div>
-            </div>
-
-            <hr />
-            <h3>※注意事項※</h3>
-            <div className='container'>
-              <div className='row'>
-                <div className='col-md-6 col-sm-12'>
-                  <ShopCard />
-                </div>
-                <div className='col-md-6 col-sm-12'>
-                  <ShopCard />
-                </div>
-              </div>
-            </div> */}
-            {/* <hr /> */}
+            
             <h4>菜單</h4>
             <div className='container'>
               <div className='row'>
@@ -125,32 +86,15 @@ class shopList extends Component {
                   // <div className='row'>
                   <div className='col-md-6 col-sm-12 mt-2' key={(p.menuItemId)} >
                     <StoreCard
-                      StoreCard={p} />
+                      StoreCard={p}
+                      // func={this.initCartNum} 
+                      />
                   </div>
                 )
               })}
               </div>
-              {/* <div className='row'> */}
-                {/* <div className='col-md-6 col-sm-12'>
-                  <ShopCard />
-                </div>
-                <div className='col-md-6 col-sm-12'>
-                  <ShopCard />
-                </div> */}
-              {/* </div> */}
             </div>
             <hr />
-            {/* <h4>種類</h4>
-            <div className='container'>
-              <div className='row'>
-                <div className='col-md-6 col-sm-12'>
-                  <ShopCard />
-                </div>
-                <div className='col-md-6 col-sm-12'>
-                  <ShopCard />
-                </div>
-              </div>
-            </div> */}
           </div>
 
         </div>

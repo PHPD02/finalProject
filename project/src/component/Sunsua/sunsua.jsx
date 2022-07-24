@@ -48,43 +48,42 @@ class Sunsua extends Component {
         return (
             <React.Fragment>
                 <Navbar />
-                <div className="body-wrapper"></div>
-                <div id="sunsua" className='py-2'>
+                <div className="body-wrapper">
 
-                    <div id='sunsuaheader' className=''>
-                        {/* <h1 className='h1' >順弁</h1> */}
-                        <img src={sunsuaTitle} alt="" />
-
-
-                    </div>
-                    <p></p>
-                    <div className='container'>
-                        <div className='row'>
-                            {/* 左側 點選列表 */}
-                            <div className='col-2 d-flex flex-column'>
-                                <div className="my-1 d-flex justify-content-center" onClick={this.innerContentChange}>
-                                    <button className='btn btn-outline-danger' >
-                                        <Link to="/sunsua/intro" className='h2 font-weight-bold' >介紹</Link>
-                                    </button>
+                    <div id="sunsua" className='py-2'>
+                        <div id='sunsuaheader' className=''>
+                            {/* <h1 className='h1' >順弁</h1> */}
+                            <img src={sunsuaTitle} alt="" />
+                        </div>
+                        <p></p>
+                        <div className='container'>
+                            <div className='row'>
+                                {/* 左側 點選列表 */}
+                                <div className='col-2 d-flex flex-column'>
+                                    <div className="my-1 d-flex justify-content-center" onClick={this.innerContentChange}>
+                                        <button className='btn btn-outline-danger' >
+                                            <Link to="/sunsua/intro" className='h2 font-weight-bold' >介紹</Link>
+                                        </button>
+                                    </div>
+                                    <div className="my-1 d-flex justify-content-center" onClick={this.innerContentChange}>
+                                        <button className='btn btn-outline-danger' >
+                                            <Link to="/sunsua/proposal" className='h2 font-weight-bold' >提案</Link>
+                                        </button>
+                                    </div>
+                                    <div className="my-1 d-flex justify-content-center" onClick={this.innerContentChange}>
+                                        <button className='btn btn-outline-danger' >
+                                            <Link to="/sunsua/order" className='h2 font-weight-bold'>搜方案</Link>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div className="my-1 d-flex justify-content-center" onClick={this.innerContentChange}>
-                                    <button className='btn btn-outline-danger' >
-                                        <Link to="/sunsua/proposal" className='h2 font-weight-bold' >提案</Link>
-                                    </button>
+                                {/* 右側顯示列表 */}
+                                <div className="col-10">
+                                    {this.state.innerContent}
                                 </div>
-                                <div className="my-1 d-flex justify-content-center" onClick={this.innerContentChange}>
-                                    <button className='btn btn-outline-danger' >
-                                        <Link to="/sunsua/order" className='h2 font-weight-bold'>搜方案</Link>
-                                    </button>
-                                </div>
-                            </div>
-                            {/* 右側顯示列表 */}
-                            <div className="col-10">
-                                {this.state.innerContent}
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
                 <Footer />
             </React.Fragment>

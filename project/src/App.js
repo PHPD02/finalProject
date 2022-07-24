@@ -94,6 +94,7 @@ import CustomerMailSuccess from "./kangComponent/customerMail_Success.jsx";
 import Gmtest03 from "./component/Maxtest/gmtest03";
 import Gmtest04 from "./component/Maxtest/gmtest04";
 import Gmtest12 from "./component/Maxtest/gmtest12";
+import ImgurToPhp from "./component/Maxtest/imgurToPhp";
 
 
 class App extends React.Component {
@@ -174,6 +175,7 @@ class App extends React.Component {
           <Route path="/gmtest03" component={Gmtest03} />
           <Route path="/gmtest04" component={Gmtest04} />
           <Route path="/gmtest12" component={Gmtest12} />
+          <Route path="/imgPhp" component={ImgurToPhp} />
 
 
         </Switch>

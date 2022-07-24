@@ -53,6 +53,7 @@ class Gmtest04 extends Component {
                     callback={(response) => {
                         console.log(response);
                         console.log(response.rows[0].elements[0].distance.text);
+                        
                         this.state.distance = response.rows[0].elements[0].distance.text;
                     }}
                 />

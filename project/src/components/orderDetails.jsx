@@ -64,7 +64,7 @@ class OrderDetails extends Component {
                   {/* C:\Users\bgkon\Desktop\康峻軒final_project(0628)\project\src\kangComponent\firebase\firebaseIndex.jsx */}
 
                 </div>
-                <div className='container mt-2'>
+                <div className='col-md-12 container mt-2'>
                   <div className='row card cardshadow'>
                     <div className='col-12'>
                       <h4>需要幫助嗎 ?</h4>

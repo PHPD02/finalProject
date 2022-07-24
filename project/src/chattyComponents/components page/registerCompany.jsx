@@ -113,7 +113,7 @@ function Register() {
                     {/* password */}
                     <input type="password" id="companyPasswd" name="companyPasswd" className="form-control" placeholder="密碼" required autoFocus />
                     <div id="chkmesg" className='h6' style={{ color: 'red', height: '10px' 
-                    // , visibility:'hidden'
+                    , visibility:'hidden'
                     }}>{result}</div>
                     <button className="btn btn-lg btn-danger btn-block mt-4" type="submit">建立商家帳戶</button>
                 </form>

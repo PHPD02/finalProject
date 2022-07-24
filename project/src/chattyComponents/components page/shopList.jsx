@@ -75,7 +75,7 @@ class shopList extends Component {
                 
             </div>
             <div>
-              <span>★</span><span>5</span>/<span>4.7</span><span>(500)</span>
+              <span>★</span><span>5</span>/<span>5</span><span>(476)</span>
             </div>
             
             <h4>菜單</h4>

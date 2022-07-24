@@ -26,6 +26,7 @@ import SvgLogo from "./Svg/final_project_logo.svg";
 import LogoPNG from "../img/logo.png"
 
 import Navbar from "../components/repeatability/Navbar";
+import { NavLink } from "react-router-dom";
 
 // import ChatRobot2 from "./NOT_UESD_NOW/ChatRobot2OW/ChatRobot2"
 // import FindDisatnce from "./js/GetCurrentPosition"
@@ -45,54 +46,13 @@ class FoodpandaPage extends React.Component {
 
         <div className="body-wrapper">
           <div className="container">
-            {/* <div className="d-flex justify-content-end mt-2 ">
-              <a href="/memberpage">
-                <button
-                  type="button"
-                  className="btn btn-outline-light text-dark mr-4 btn-lg"
-                >
-                  會員主頁
-                </button>
-              </a>
-              <a href="/commentPage">
-                <button
-                  type="button"
-                  className="btn btn-outline-light text-dark mr-4 btn-lg"
-                >
-                  評論頁
-                </button>
-              </a>
-              <a href="/orderrecord">
-                <button
-                  type="button"
-                  className="btn btn-outline-light text-dark mr-4 btn-lg"
-                >
-                  訂單紀錄
-                </button>
-              </a>
-
-              <a href="/TodoIndex">
-                <button
-                  type="button"
-                  className="btn btn-outline-light text-dark btn-lg"
-                >
-                  去後台
-                </button>
-              </a>
-              <a href="/customerMail ">
-                <button
-                  type="button"
-                  className="btn btn-outline-light text-dark btn-lg"
-                >
-                  <i className="fa fa-envelope"></i>
-                </button>
-              </a>
-            </div> */}
+            
             <div className="first-section d-flex">
               <div className="dot1 dot"></div>
               <div className="dot2 dot"></div>
               <div className="dot3 dot"></div>
               <div className="section-left flex-grow-1 ">
+              <h1 style={{ color:'red'}}><u>不知道要吃什麼嗎？</u></h1>
                 <h2>
                   <span className="special-text">&nbsp;</span>新功能上線中
                 </h2>
@@ -101,7 +61,9 @@ class FoodpandaPage extends React.Component {
                   &emsp; 獲得100元順弁優惠券
                 </h4>
                 <div className="btn-collect">
+                  <NavLink to='/sunsua'>
                   <button className="first-try">搶先體驗</button>
+                  </NavLink>
                   <button class="play-btn"></button>
                 </div>
               </div>

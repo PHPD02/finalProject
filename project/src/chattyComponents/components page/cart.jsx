@@ -52,7 +52,7 @@ class Cart extends Component {
             }
         } else {
             alert('請先登入!')
-            window.location = 'http://localhost:3000/login';
+            window.location = 'http://localhost:3000/loginComsumer';
         }
     }
 

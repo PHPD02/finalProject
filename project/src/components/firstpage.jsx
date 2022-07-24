@@ -82,11 +82,11 @@ class firstpage extends Component {
                 <h2 className='pt-5'><b>還等什麼？一起和我們開始這個外送的旅程吧！</b></h2>
                 <h3 >想讓上百萬新顧客試試你的美食或生鮮雜貨商品嗎？</h3>
                 <h4><b>讓我們來幫忙吧！該怎麼做呢？</b></h4>
-                <div style={{ color: 'gray' }}>
+                {/* <div style={{ color: 'gray' }}>
                   <h5>我們會協助你上傳菜單或商品清單、幫你處理訂單</h5>
                   <h5>幫你處理訂單、訂單確認後我們將請外送夥伴前往你的商店去取件</h5>
                   <h5>再將餐點或商品外送給顧客們</h5>
-                </div>
+                </div> */}
                 <div className='text-center'>
                   <NavLink to='/registerCompany'>
                     <button className='btn btn-warning btn-lg'>
@@ -95,6 +95,7 @@ class firstpage extends Component {
 
                 </div>
                 <div className='text-center mt-5'>
+                  <h1 style={{ color:'red'}}><u>不知道要吃什麼嗎？</u></h1>
 
                   <NavLink to='/sunsua'>
                     <button className='btn btn-outline-danger btn-lg'>

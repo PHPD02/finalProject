@@ -45,8 +45,9 @@ class Cart extends Component {
                 axios.post("http://localhost//ourPHPFinalproject/ChtProject/order/inorder.php", ordert)
                     .then((response) => {
                         console.log(response);
+                        // localStorage.setItem()
                     })
-                window.location = "http://localhost:3000/payment";
+                // window.location = "http://localhost:3000/payment";
             } catch (error) {
                 console.log(error);
             }
@@ -162,10 +163,10 @@ class Cart extends Component {
                             {/* <NavLink to="/payment"> */}
                             <button className='fancy btn-block'
                                 onClick={this.doPayment}>
-                                <span class="top-key"></span>
-                                <span class="text">點我結帳</span>
-                                <span class="bottom-key-1"></span>
-                                <span class="bottom-key-2"></span>
+                                <span className="top-key"></span>
+                                <span className="text text-center">點我結帳</span>
+                                <span className="bottom-key-1"></span>
+                                <span className="bottom-key-2"></span>
 
                             </button>
                             {/* </NavLink> */}

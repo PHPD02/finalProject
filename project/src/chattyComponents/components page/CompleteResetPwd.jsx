@@ -28,7 +28,7 @@ function CompleteResetPwd(){
 
 
 
-                        <NavLink to="/login3">
+                        <NavLink to="/login">
                             <button className="btn btn-lg btn-danger btn-block mt-4" type="submit">返回登入頁</button>
                         </NavLink>
                     </form>

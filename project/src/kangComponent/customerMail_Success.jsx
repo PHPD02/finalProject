@@ -14,7 +14,7 @@ class CustomerMailSuccess extends Component {
                 <img src={Logo} alt="" />
                 <p>我們將儘快回覆您</p>
                 <button id="backtoindex" className="input-style"  name="submit" >
-                <a href='http://localhost:3000/foodpandapage' style={{color:"white"}}>返回首頁</a>
+                <a href='http://localhost:3000/sunsuafooddelivery' style={{color:"white"}}>返回首頁</a>
               </button>
 
             </div>

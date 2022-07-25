@@ -35,7 +35,7 @@ class LoginCompany extends Component {
                     localStorage.setItem('companyaddr', sqladdress);
 
                     /////廠商登入後須到後台不留在前台
-                    window.location = "http://localhost:3000/todoindex";
+                    window.location = "http://localhost:3000/admin/dashboard";
                 }
             }
         })

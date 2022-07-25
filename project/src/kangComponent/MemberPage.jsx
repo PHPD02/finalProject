@@ -14,7 +14,7 @@ class MemberPage extends React.Component {
 
 
   async componentDidMount() {
-    var url = `http://localhost:8000/users/list/kongkong@gmail.com`;
+    var url = `http://localhost:8050/users/list/kongkong@gmail.com`;
     var result = await axios.get(url);
     // console.log(result);
     // console.log(url);
@@ -23,7 +23,7 @@ class MemberPage extends React.Component {
   }
   okButtonClick = async () => {
     var result = await axios.put(
-      `http://localhost:8000/users/list`,
+      `http://localhost:8050/users/list`,
       this.state.usersContact
     );
     console.log(result);

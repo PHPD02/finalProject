@@ -22,7 +22,7 @@ function Resetpassword(){
                 <br /><br /><br /><br /><br />
                 <div id='registerform'>
                     <form className="form-signin shadow registerformin" id='registerformin'
-                    action='http://localhost:80/forgetpassword/resetpassword/reset-password-validatorcopy.php' method='POST' >
+                    action='http://localhost:80/ourPHPFinalproject/kangProject/forgetpassword/resetpassword/reset-password-validatorcopy.php' method='POST' >
                         <h1 className="h3 mb-3 font-weight-normal">重設密碼</h1><br /> 
                         <label htmlFor="inputEmail" className="sr-only">電子郵件</label>
 

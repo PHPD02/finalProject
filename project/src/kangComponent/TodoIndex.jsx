@@ -14,7 +14,7 @@ class TodoIndex extends React.Component {
   };
 
   async componentDidMount() {
-    var result = await axios.get("http://localhost:8000/todo/list");
+    var result = await axios.get("http://localhost:8050/todo/list");
     this.setState({ todoList: result.data });
   }
 
@@ -26,23 +26,19 @@ class TodoIndex extends React.Component {
             <div className="nano-content">
               <ul>
                 <li>
-                  <a className="sidebar-sub-toggle">
+                  <a href="/admin/dashboard" className="sidebar-sub-toggle">
                     <i className="ti-bar-chart-alt"></i> 儀錶板
                     <span className="sidebar-collapse-icon ti-angle-down"></span>
                   </a>
                 </li>
+
                 <li>
-                  <a href="#">
-                    <i className="ti-calendar"></i> 主頁
-                  </a>
-                </li>
-                <li>
-                  <a href="#" style={{ color: "#03A9F5 " }}>
+                  <a href="/todoIndex" style={{ color: "#03A9F5 " }}>
                     <i className="ti-email"></i> 菜單管理
                   </a>
                 </li>
                 <li>
-                  <a href="/admin/dashboard/Dashboardorder">
+                  <a href="/ordermanage">
                     <i className="ti-user"></i> 訂單紀錄
                   </a>
                 </li>

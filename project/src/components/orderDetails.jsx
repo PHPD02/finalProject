@@ -4,6 +4,7 @@ import './css/orderdetails.css';
 import axios from 'axios';
 import DetailsCards from './component/DetailsCards';
 // import Footer from '../repeatability/Footer';
+import FirebaseIndex from '../kangComponent/firebase/firebaseIndex';
 class OrderDetails extends Component {
   state = {
     details: []
@@ -54,20 +55,41 @@ class OrderDetails extends Component {
                   <h4>餐點準備中</h4>
                 </div>
               </div>
+<<<<<<< HEAD
               <div className='col-md-6 col-sm-12 container' >
                 <div className='card'>
+=======
+              <div className='col-md-6 col-sm-12 container '>
+                <div className='card p-1 cardshadow'>
+>>>>>>> origin/resetMerge_kang0720
                   <h3>訂單詳情</h3>
                   {this.state.details.map(
                     (details, index) => {
                       return (<DetailsCards key={index} catchDetails={details} />);
                     })}
                   {/* 選擇器跑出來的內容 */}
+<<<<<<< HEAD
                 </div>
                 <div className='card'>
                   <div className='col-12'>
                     <h4>需要幫助嗎 ?</h4>
                     <h6>有需要的話聯絡我們</h6>
                     <button className="btn btn-outline-danger">客服中心</button>
+=======
+                  <br/>
+                  <FirebaseIndex/>
+                  <br/>
+                  {/* C:\Users\bgkon\Desktop\康峻軒final_project(0628)\project\src\kangComponent\firebase\firebaseIndex.jsx */}
+
+                </div>
+                <div className='col-md-12 container mt-2'>
+                  <div className='row card cardshadow'>
+                    <div className='col-12'>
+                      <h4>需要幫助嗎 ?</h4>
+                      <h6>有需要的話聯絡我們</h6>
+                      <button className="btn btn-outline-danger">客服中心</button>
+                    </div>
+>>>>>>> origin/resetMerge_kang0720
                   </div>
                 </div>
               </div>

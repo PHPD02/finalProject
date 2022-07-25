@@ -22,7 +22,7 @@ function CompleteResetPwd(){
                 <br /><br /><br /><br /><br />
                 <div id='registerform'>
                     <form className="form-signin shadow registerformin" id='registerformin'
-                    action='http://localhost:80/forgetpassword/resetpassword/reset-password-validatorcopy.php' method='POST' >
+                    action='http://localhost:80/ourPHPFinalproject/kangProject/forgetpassword/reset-password-validatorcopy.php' method='POST' >
                         <h1 className="h3 mb-3 font-weight-normal">您已完成重設密碼</h1><br /> 
                         <h6>請點選按鈕返回登入頁，並重新登入</h6>
 

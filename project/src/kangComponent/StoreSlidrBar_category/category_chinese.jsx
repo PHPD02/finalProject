@@ -12,7 +12,7 @@ class StoreSlidrBar2_chinese extends React.Component {
   };
 
   async componentDidMount() {
-    var result = await axios.get("http://localhost:8000/restaurants/category/chinese");
+    var result = await axios.get("http://localhost:8050/restaurants/category/chinese");
     this.setState({ restaurantsList: result.data });
   }
 

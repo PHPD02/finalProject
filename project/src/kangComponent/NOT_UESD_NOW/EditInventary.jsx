@@ -12,13 +12,13 @@ function EditInventary() {
   const [productList, setProductList] = useState("");
   
   useEffect(() => {
-    Axios.get("http://localhost:8000/api/get").then((response) => {
+    Axios.get("http://localhost:8050/api/get").then((response) => {
       setProductList(response.data);
     });
   });
 
   const submit = (id) => {
-    Axios.post("http://localhost:8000/api/update", { Id: Id, Name: Name, Description: Description,
+    Axios.post("http://localhost:8050/api/update", { Id: Id, Name: Name, Description: Description,
     Picture1: Picture1,
   }).then(
       (response) => {

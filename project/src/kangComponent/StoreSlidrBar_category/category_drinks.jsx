@@ -13,7 +13,7 @@ class StoreSlidrBar2_drinks extends React.Component {
     comment:Math.floor(Math.random()*1200),  };
 
   async componentDidMount() {
-    var result = await axios.get("http://localhost:8000/restaurants/category/drinks");
+    var result = await axios.get("http://localhost:8050/restaurants/category/drinks");
     this.setState({ restaurantsList: result.data });
   }
   randomStar (){

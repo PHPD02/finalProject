@@ -11,7 +11,7 @@ class StoreSlidrBar2taichung extends React.Component {
   };
 
   async componentDidMount() {
-    var result = await axios.get("http://localhost:8000/restaurants/category/aroundme");
+    var result = await axios.get("http://localhost:8050/restaurants/category/aroundme");
     this.setState({ restaurantsList: result.data });
   }
 

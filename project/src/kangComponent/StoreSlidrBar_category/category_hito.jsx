@@ -11,7 +11,7 @@ class StoreSlidrBar2_drinks extends React.Component {
   };
 
   async componentDidMount() {
-    var result = await axios.get("http://localhost:8000/restaurants/category/hito");
+    var result = await axios.get("http://localhost:8050/restaurants/category/hito");
     this.setState({ restaurantsList: result.data });
   }
 

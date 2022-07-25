@@ -19,7 +19,7 @@ class ToDoEdit extends React.Component {
   };
 
   async componentDidMount() {
-    var url = `http://localhost:8000/todo/item/${this.props.match.params.id}`;
+    var url = `http://localhost:8050/todo/item/${this.props.match.params.id}`;
     // 我明明就沒設這個id，但用我資料庫定的menuItemId反而抓不到
     var result = await axios.get(url);
     // console.log(result);
@@ -29,7 +29,7 @@ class ToDoEdit extends React.Component {
   }
   okButtonClick = async () => {
     var result = await axios.put(
-      `http://localhost:8000/todo/item`,
+      `http://localhost:8050/todo/item`,
       this.state.todoItem
     );
     console.log(result);
@@ -69,7 +69,7 @@ class ToDoEdit extends React.Component {
             <div className="nano-content">
               <ul>
                 <li>
-                  <a className="sidebar-sub-toggle">
+                  <a href="/admin/dashboard" className="sidebar-sub-toggle">
                     <i className="ti-bar-chart-alt"></i> 儀錶板
                     <span className="sidebar-collapse-icon ti-angle-down"></span>
                   </a>
@@ -97,18 +97,14 @@ class ToDoEdit extends React.Component {
                     </li>
                   </ul> */}
                 </li>
+
                 <li>
-                  <a href="#">
-                    <i className="ti-calendar"></i> 主頁
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
+                  <a href="/todoIndex" style={{ color: "#03A9F5 " }}>
                     <i className="ti-email"></i> 菜單管理
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/ordermanage">
                     <i className="ti-user"></i> 訂單紀錄
                   </a>
                 </li>

@@ -33,7 +33,9 @@ function FirebaseChat() {
         </div>
       ))}
       </div>
+      <div>
       <SendMessage scroll={scroll}/>
+      </div>
       <div ref={scroll}></div>
       {/* 更新的文字讓他自動往下滑 */}
     </div>

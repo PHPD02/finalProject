@@ -30,7 +30,7 @@ function DashboardProducts_tryifunctioncomponent() {
   // }
   const [productList, setProductList] = useState([]);
   useEffect(() => {
-    Axios.get("http://localhost:8000/api/get").then((response) => {
+    Axios.get("http://localhost:8050/api/get").then((response) => {
       setProductList(response.data);
     });
   },[]);
@@ -63,7 +63,7 @@ function DashboardProducts_tryifunctioncomponent() {
     });
   };
   const deleteitem = (Id) => {
-    Axios.delete(`http://localhost:8000/delete/${Id}`).then((response) => {
+    Axios.delete(`http://localhost:8050/delete/${Id}`).then((response) => {
       setProductList(
         productList.filter((val) => {
           return val.Id !== Id;

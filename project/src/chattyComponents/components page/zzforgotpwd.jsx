@@ -28,12 +28,12 @@ function Forgotpwd(){
                 <Navbar />
                 <br /><br />
                 <div id='registerform'>
-                    <form className="form-signin registerformin p-5" id='registerformin'
+                    <form className="form-signin shadow registerformin" id='registerformin'
                     style={{
                         // backgroundColor:'black'
                         boxShadow:'8px 8px 10px 10px rgba(49, 166, 150 ,0.5)'
                     }}
-                    action='http://localhost:80/forgetpassword/resetpassword/reset-request.php' method='post' >
+                    action='http://localhost:80/ourPHPFinalproject/kangProject/forgetpassword/resetpassword/reset-request.php' method='post' >
                     {/* //  onSubmit={(event) => handleSumbit(event)}> */}
                         <h1 className="h3 mb-3 font-weight-normal">你的email是？</h1><br /> 
                         <h6>輸入你的email，我們將發送重設密碼連結</h6>

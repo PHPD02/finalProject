@@ -1,6 +1,7 @@
 import Axios from "axios";
 import React from "react";
 import { toast } from "react-toastify";
+import ImgurToPhp from "./Imgurtophp";
 
 class ToDoCreate extends React.Component {
   state = {
@@ -19,7 +20,7 @@ class ToDoCreate extends React.Component {
   // }
 
   yesBtn = async () => {
-    await Axios.post(`http://localhost:8000/todo/create/`, this.state.todoItem);
+    await Axios.post(`http://localhost:8050/todo/create/`, this.state.todoItem);
     window.location = "/TodoIndex";
     toast.success("建立品項成功");
   };
@@ -53,7 +54,7 @@ class ToDoCreate extends React.Component {
             <div className="nano-content">
               <ul>
                 <li>
-                  <a className="sidebar-sub-toggle">
+                  <a href="/admin/dashboard" className="sidebar-sub-toggle">
                     <i className="ti-bar-chart-alt"></i> 儀錶板
                     <span className="sidebar-collapse-icon ti-angle-down"></span>
                   </a>
@@ -81,18 +82,14 @@ class ToDoCreate extends React.Component {
                     </li>
                   </ul> */}
                 </li>
+
                 <li>
-                  <a href="#">
-                    <i className="ti-calendar"></i> 主頁
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
+                  <a href="/todoIndex" style={{ color: "#03A9F5 " }}>
                     <i className="ti-email"></i> 菜單管理
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/ordermanage">
                     <i className="ti-user"></i> 訂單紀錄
                   </a>
                 </li>
@@ -242,6 +239,8 @@ class ToDoCreate extends React.Component {
               onChange={this.todoItemPicture1Change}
             ></input>
 <br /><br /><br /><br /><h3>這邊是之後看看能不能直接上傳圖片而非網址進資料庫方式</h3> 
+
+<ImgurToPhp/>
             <input
               type="file"
               className="form-control-file mb-4 justify-content-end"

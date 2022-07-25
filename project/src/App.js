@@ -48,21 +48,31 @@ import sendresetemail from "./chattyComponents/components page/sendresetemail";
 // 按鈕或more
 import FoodpandaPage from "./kangComponent/foodpandapage";
 // 廠商登入後連結
+import ordermanage from "./kangComponent/Ordermanage";
 import TodoIndex from "./kangComponent/TodoIndex";
 import TodoEdit from "./kangComponent/TodoEdit";
 import TodoCreate from "./kangComponent/TodoCreate";
 import TodoDelete from "./kangComponent/TodoDelete";
+import Admindashboard from "./kangComponent/Admindashboard";
 
 // 會員拉霸-會員中心、訂單紀錄、登出
 import MemberPage from "./kangComponent/MemberPage";
 import Order_record from "./kangComponent/Order_record";
 // 餐廳資訊
 import CommentPage from "./kangComponent/CommentPage";
-// import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard";
 // 聯絡客服
 import CustomerMail from "./kangComponent/customerMail";
 import CustomerMailSuccess from "./kangComponent/customerMail_Success.jsx";
 // import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard"
+import FirebaseIndex from "./kangComponent/firebase/firebaseIndex";
+
+import Tst from "./component/test/tst";
+import Try from "./kangComponent/test";
+
+
+
+
+
 
 // /orderdetails 這頁加入連繫外送員按鈕
 
@@ -135,15 +145,14 @@ class App extends React.Component {
           <Route path="/customerMailSuccess" component={CustomerMailSuccess} />
 
           {/* 後台 */}
+          <Route path="/ordermanage" component={ordermanage} />
           <Route path="/TodoIndex" component={TodoIndex} />
           <Route path="/Todo/Edit/:id" component={TodoEdit} />
           <Route path="/Todo/Delete/:id" component={TodoDelete} />
           <Route path="/Todo/Create" component={TodoCreate} />
-
-          {/* <Route path="/admin/dashboard" component={Dashboard} /> */}
+          <Route path="/admin/dashboard" component={Admindashboard} />
 
           {/* <Route path="/orderDetails" component={OrderDetails} /> */}
-
           <Route path="/forgotpwd" component={Forgotpwd} />
           <Route path="/resetpassword" component={Resetpassword} />
           <Route path="/CompleteResetPwd" component={CompleteResetPwd} />
@@ -159,6 +168,10 @@ class App extends React.Component {
           <Route path="/imgPhp" component={ImgurToPhp} />
 
 
+          <Route path="/FirebaseIndex" component={FirebaseIndex} />
+          <Route path="/tst" component={Tst} />  
+          <Route path="/try" component={Try} />
+          {/* 這兩個try忘記還用不用的到  先不要刪 */}
         </Switch>
       </BrowserRouter>
     );

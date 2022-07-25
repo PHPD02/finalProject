@@ -6,14 +6,14 @@ class ToDoDelete extends React.Component {
     todoItem: {},
   };
   async componentDidMount() {
-    var url = `http://localhost:8000/todo/item/${this.props.match.params.id}`;
+    var url = `http://localhost:8050/todo/item/${this.props.match.params.id}`;
     var result = await axios.get(url);
     this.state.todoItem = result.data;
     this.setState({});
   }
   okDelete = async () => {
     await axios.delete(
-      `http://localhost:8000/todo/delete/${this.state.todoItem.menuItemId}`
+      `http://localhost:8050/todo/delete/${this.state.todoItem.menuItemId}`
     );
     toast.success('刪除成功');
     window.location = "/TodoIndex";
@@ -27,7 +27,7 @@ class ToDoDelete extends React.Component {
             <div className="nano-content">
               <ul>
                 <li>
-                  <a className="sidebar-sub-toggle">
+                  <a href="/admin/dashboard" className="sidebar-sub-toggle">
                     <i className="ti-bar-chart-alt"></i> 儀錶板
                     <span className="sidebar-collapse-icon ti-angle-down"></span>
                   </a>
@@ -55,18 +55,14 @@ class ToDoDelete extends React.Component {
                     </li>
                   </ul> */}
                 </li>
+
                 <li>
-                  <a href="#">
-                    <i className="ti-calendar"></i> 主頁
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
+                  <a href="/todoIndex" style={{ color: "#03A9F5 " }}>
                     <i className="ti-email"></i> 菜單管理
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/ordermanage">
                     <i className="ti-user"></i> 訂單紀錄
                   </a>
                 </li>

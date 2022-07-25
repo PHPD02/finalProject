@@ -15,7 +15,7 @@ function firebaseSignin() {
 
     return ( 
         <div className='signin-wrapper'>
-            <Button onClick={signInWithGoogle} className='signin-button'> Google登入</Button>
+            <Button onClick={signInWithGoogle} className='signin-button '> 連繫外送人員</Button>
         </div>
      );
 }

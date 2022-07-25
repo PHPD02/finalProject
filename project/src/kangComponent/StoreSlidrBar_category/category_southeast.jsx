@@ -11,7 +11,7 @@ class StoreSlidrBar2_southeast extends React.Component {
   };
 
   async componentDidMount() {
-    var result = await axios.get("http://localhost:8000/restaurants/category/southeast");
+    var result = await axios.get("http://localhost:8050/restaurants/category/southeast");
     this.setState({ restaurantsList: result.data });
   }
 

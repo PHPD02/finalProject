@@ -25,7 +25,7 @@ class CommentPage extends React.Component {
   };
 
   async componentDidMount() {
-    var url = `http://localhost:8000/restaurantcomment/list/水巷茶弄`;
+    var url = `http://localhost:8050/restaurantcomment/list/水巷茶弄`;
     // var url = `http://localhost:8000/restaurantcomment/list/${this.props.match.params.restaurant}`;
     // 假定跳轉到這家店，網址中的restaurant會再被上面這個props利用
     var result = await axios.get(url);
@@ -33,6 +33,7 @@ class CommentPage extends React.Component {
     // this.state.restaurantcomment = result.data;
     // this.setState({});
 
+<<<<<<< HEAD
     // 拿水巷茶弄的資料  先放著 沒用到
     try {
       await axios.get("http://localhost:8000/todo/list");
@@ -41,6 +42,16 @@ class CommentPage extends React.Component {
     catch (error) {
       alert("GET Error!!");
     }
+=======
+// 拿水巷茶弄的資料  先放著 沒用到
+    try {await axios.get("http://localhost:8050/todo/list");
+    this.setState({ restaurantInfo: result.data });}
+    catch (error) 
+    {
+        alert("GET Error!!");    
+    } 
+    
+>>>>>>> origin/resetMerge_kang0720
 
 
 
@@ -58,7 +69,7 @@ class CommentPage extends React.Component {
   // 添加評論
   yesBtn = async () => {
     await axios.post(
-      `http://localhost:8000/restaurantcomment/create`,
+      `http://localhost:8050/restaurantcomment/create`,
       this.state.CreateRestaurantcomment
     );
     window.location.reload();

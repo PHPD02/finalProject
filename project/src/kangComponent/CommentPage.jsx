@@ -33,16 +33,6 @@ class CommentPage extends React.Component {
     // this.state.restaurantcomment = result.data;
     // this.setState({});
 
-<<<<<<< HEAD
-    // 拿水巷茶弄的資料  先放著 沒用到
-    try {
-      await axios.get("http://localhost:8000/todo/list");
-      this.setState({ restaurantInfo: result.data });
-    }
-    catch (error) {
-      alert("GET Error!!");
-    }
-=======
 // 拿水巷茶弄的資料  先放著 沒用到
     try {await axios.get("http://localhost:8050/todo/list");
     this.setState({ restaurantInfo: result.data });}
@@ -51,7 +41,6 @@ class CommentPage extends React.Component {
         alert("GET Error!!");    
     } 
     
->>>>>>> origin/resetMerge_kang0720
 
 
 

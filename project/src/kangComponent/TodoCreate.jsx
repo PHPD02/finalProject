@@ -1,7 +1,7 @@
 import Axios from "axios";
 import React from "react";
 import { toast } from "react-toastify";
-import ImgurToPhp from "./Imgurtophp";
+// import ImgurToPhp from "./Imgurtophp";
 
 class ToDoCreate extends React.Component {
   state = {
@@ -10,7 +10,7 @@ class ToDoCreate extends React.Component {
       introduce: "",
       picture: "",
       cost: "",
-      restaurantName:"水項茶弄(台中中清店)",
+      restaurantName:"水巷茶弄(台中朝富店)",
     },
   };
   // async componentDidMount(){
@@ -240,7 +240,7 @@ class ToDoCreate extends React.Component {
             ></input>
 <br /><br /><br /><br /><h3>這邊是之後看看能不能直接上傳圖片而非網址進資料庫方式</h3> 
 
-<ImgurToPhp/>
+{/* <ImgurToPhp/> */}
             <input
               type="file"
               className="form-control-file mb-4 justify-content-end"

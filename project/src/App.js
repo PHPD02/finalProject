@@ -22,14 +22,9 @@ import OrderDetails from "./components/orderDetails";
 /* 店家資訊 */
 import ShopList from "./components/shopList";
 
-
-
-
-
 /* 承翰 */
 /* 順弁 */
 import Sunsua from "./component/Sunsua/sunsua.jsx";
-
 
 /* == 純芷 == */
 import Login from './chattyComponents/components page/login';
@@ -41,12 +36,11 @@ import Cart from './chattyComponents/components page/cart';
 import Payment from './chattyComponents/components page/payment';
 import ShopList2 from "./chattyComponents/components page/shopList";
 
-
-// 
-import Forgotpwd from './chattyComponents/components page/zzforgotpwd';
-import Resetpassword from './chattyComponents/components page/resetpassword';
-import CompleteResetPwd from './chattyComponents/components page/CompleteResetPwd';
-import sendresetemail from './chattyComponents/components page/sendresetemail';
+//
+import Forgotpwd from "./chattyComponents/components page/zzforgotpwd";
+import Resetpassword from "./chattyComponents/components page/resetpassword";
+import CompleteResetPwd from "./chattyComponents/components page/CompleteResetPwd";
+import sendresetemail from "./chattyComponents/components page/sendresetemail";
 
 
 
@@ -66,7 +60,7 @@ import Order_record from "./kangComponent/Order_record";
 import CommentPage from "./kangComponent/CommentPage";
 // import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard";
 // 聯絡客服
-import CustomerMail from "./kangComponent/customerMail"
+import CustomerMail from "./kangComponent/customerMail";
 import CustomerMailSuccess from "./kangComponent/customerMail_Success.jsx";
 // import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard"
 
@@ -97,11 +91,10 @@ class App extends React.Component {
           <Route path="/sunsua" component={Sunsua} />
           {/* 外送頁 */}
           {/* 外送店家頁面 */}
-          {/* <Route path="/shopList" component={ShopList} /> */}
+          <Route path="/shopList" component={ShopList} />
           {/* 外送訂單詳情頁 */}
           <Route path="/orderDetails" component={OrderDetails} />
           <Route path="/shopList" component={ShopList} />
-          
 
           {/* ================================================================================================================== */}
           {/* 純芷 */}
@@ -149,7 +142,6 @@ class App extends React.Component {
           {/* <Route path="/admin/dashboard" component={Dashboard} /> */}
 
           {/* <Route path="/orderDetails" component={OrderDetails} /> */}
-
 
           <Route path="/forgotpwd" component={Forgotpwd} />
           <Route path="/resetpassword" component={Resetpassword} />

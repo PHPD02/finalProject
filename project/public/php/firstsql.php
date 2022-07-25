@@ -2,7 +2,7 @@
 
 include('sql.php');
 
-$sql = "SELECT name,region,picture FROM restaurant ORDER BY RAND() LIMIT 9";
+$sql = "SELECT * FROM `restaurant` LIMIT 9";
 $stmt = $mysqli->prepare($sql);
 $stmt->execute();
 $result = $stmt->get_result();

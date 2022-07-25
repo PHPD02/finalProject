@@ -23,7 +23,10 @@ class Cards extends Component {
             {/* <svg className="bd-img bd-img-lg featurette-image img-fluid mx-auto" id="myImg" width="100%" height="200" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#F08080"></rect></svg> */}
             <div className="zText">
               {/* 店家名稱 */}
-              <div className='row'><b className="col-7 text-nowrap text-truncate">{this.rest.name}</b>
+              <div className='row'>
+                <div className="col-7 text-nowrap text-truncate">{this.rest.name}
+
+                </div>
                 <div className='eva col-5'>
                   {/* 店家的評價★ */}
                   <i className="fa fa-star" style={{ color: "red" }}></i>
@@ -33,7 +36,9 @@ class Cards extends Component {
               </div>
               {/* 餐廳的種類restaurant.region */}
               <br />
-              <small className="restaurant-type">$$$,<b></b></small>
+              <div className='row'>
+                <small className="restaurant-type col-12 h-25 text-nowrap text-truncate">{this.rest.description}</small>
+              </div>
             </div>
           </div>
         </div>

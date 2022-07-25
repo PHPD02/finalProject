@@ -14,6 +14,7 @@ import TimeCountDown from './timeCountDown.jsx'
 
 /* 引入 css */
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/proposalInfo.css';
 
 
 
@@ -108,33 +109,36 @@ class ProposalInfo extends Component {
                         {/* <img src="https://dummyimage.com/100x100/a3a3a3/fff" alt="" /> */}
                         {/* <img src="https://dummyimage.com/150x150/a3a3a3/fff" alt="" /> */}
                         {/* <img src="https://dummyimage.com/200x200/a3a3a3/fff" alt="" /> */}
-                        <img src={this.state.proposalDetail.picUrl} alt="" width={150} height={150} />
+                        <img src={this.state.proposalDetail.picUrl} alt="" height={150} style={{ objectFit: 'contain' }} />
                     </div>
                     <div className='col-lg-6 d-flex align-items-center'>
-                        <table className='table table-info my-2' border="1">
+                        <table className='proposalDetail table table-light my-2 text-center' style={{}} >
                             <tbody>
+                                {/* 
                                 <tr>
-                                    <th>提案人</th>
-                                    {/* <td>{this.state.proposalDetail.namePartyA}</td> */}
-                                    <td>{this.state.proposalDetail.firstName}{this.state.proposalDetail.lastName}</td>
-
-                                    <th>餐廳</th>
-                                    <td>{this.state.proposalDetail.shop}</td>
+                                    <td colSpan={2} className="font-weight-bold">提案人</td>
+                                    <td colSpan={2} className="text-center">{this.state.proposalDetail.firstName}{this.state.proposalDetail.lastName}</td>
+                                </tr>
+                                */}
+                                <tr>
+                                    <td className='font-weight-bold'>地點</td>
+                                    <td colSpan={3} className='text-center'>{this.state.proposalDetail.addr}</td>
                                 </tr>
                                 <tr>
-                                    <th>預計到達時間</th>
-                                    <td>{this.state.proposalDetail.arriveTime}</td>
-                                    <th>餐點</th>
-                                    <td>{this.state.proposalDetail.meal}</td>
+                                    <td className='font-weight-bold'>時間</td>
+                                    <td colSpan={3} className='text-center'>{this.state.proposalDetail.arriveTime}</td>
+
                                 </tr>
                                 <tr>
-                                    <th>送到地點</th>
-                                    <td>{this.state.proposalDetail.addr}</td>
-
-                                    <th>單份金額</th>
-                                    <td>{this.state.proposalDetail.cost}</td>
+                                    <td rowSpan={2} className='mealTxt font-weight-bold align-middle'>餐點</td>
+                                    <td rowSpan={2} className='text-center align-middle'>{this.state.proposalDetail.meal}</td>
+                                    <td className='font-weight-bold'>單份金額</td>
+                                    <td className='text-center'>{this.state.proposalDetail.cost}</td>
                                 </tr>
-
+                                <tr>
+                                    <td className='font-weight-bold'>運費</td>
+                                    <td className='text-center'>{this.state.proposalDetail.freight}</td>
+                                </tr>
                             </tbody>
                         </table>
 
@@ -166,7 +170,7 @@ class ProposalInfo extends Component {
                                 })}
                             </select>
                         </div>
-                        <button className='bg-danger my-2' onClick={this.addProposal}>加入定單</button>
+                        <button className='btn btn-danger my-2' onClick={this.addProposal}>加入定單</button>
                     </div>
                 </div>
             </div>

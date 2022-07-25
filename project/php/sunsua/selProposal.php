@@ -7,8 +7,12 @@ date_default_timezone_set('Asia/Taipei');
 include "../serverHeader.php";
 include "../sql.php";
 
-$sql =  "SELECT * FROM proposal WHERE state = 1 ;";
-// $result = $mysqli->query($sql);
+$sql =  "   SELECT * 
+            FROM (
+                proposal LEFT JOIN ( SELECT email,firstName,lastName FROM usermember) AS A
+                ON proposal.emailPartyA = email
+                ) 
+            WHERE state = 1;";
 $stmt = $mysqli->prepare($sql);
 $stmt->execute();
 $result = $stmt->get_result();

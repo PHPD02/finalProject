@@ -209,6 +209,14 @@ var restaurant_catrgory = mysql.createConnection({
 restaurant_catrgory.connect(function (err) {
     console.log(err);
 })
+app.get("/restaurants/all", function (req, res) {
+    restaurant_catrgory.query("select * from restaurant ",
+        [req.params.id],
+        function (err, rows) {
+            res.send( JSON.stringify(rows) );
+        }
+    )
+})
 app.get("/restaurants/category/all", function (req, res) {
     restaurant_catrgory.query("select * from restaurant where town = '北區' or town = '西屯區' LIMIT 60", 
         [req.params.id],

@@ -14,6 +14,7 @@ import TimeCountDown from './timeCountDown.jsx'
 
 /* 引入 css */
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/proposalInfo.css';
 
 
 
@@ -111,7 +112,7 @@ class ProposalInfo extends Component {
                         <img src={this.state.proposalDetail.picUrl} alt="" height={150} style={{ objectFit: 'contain' }} />
                     </div>
                     <div className='col-lg-6 d-flex align-items-center'>
-                        <table className='table table-light my-2 text-center' style={{}} border="2">
+                        <table className='proposalDetail table table-light my-2 text-center' style={{}} >
                             <tbody>
                                 {/* 
                                 <tr>
@@ -129,9 +130,8 @@ class ProposalInfo extends Component {
 
                                 </tr>
                                 <tr>
-
-                                    <td rowSpan={2} className='font-weight-bold'>餐點</td>
-                                    <td rowSpan={2} className='text-center'>{this.state.proposalDetail.meal}</td>
+                                    <td rowSpan={2} className='mealTxt font-weight-bold align-middle'>餐點</td>
+                                    <td rowSpan={2} className='text-center align-middle'>{this.state.proposalDetail.meal}</td>
                                     <td className='font-weight-bold'>單份金額</td>
                                     <td className='text-center'>{this.state.proposalDetail.cost}</td>
                                 </tr>

@@ -23,7 +23,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './css/sunsuaSearchProposal.css';
 
 
-// import AutoCompleteLocation from "../../kangComponent/js/AutoCompleteLocation.jsx"
+import AutoCompleteLocation from "../../kangComponent/js/AutoCompleteLocation.jsx"
 class SunsuaSearchProposal extends Component {
     state = {
         name: null,
@@ -49,7 +49,6 @@ class SunsuaSearchProposal extends Component {
         }
     }
     componentDidMount = async () => {
-        console.log(localStorage.getItem('firstname'));
         this.state.name = localStorage.getItem('firstname') + localStorage.getItem('lastname');
         let url = serverHost + '/' + phpRoute + 'sunsua/selProposal.php';
         this.state.proposalDetail = [];
@@ -154,7 +153,31 @@ class SunsuaSearchProposal extends Component {
         }
         document.location.href = "/sunsua"
     }
-
+    /*  */
+    addrInput = async (e) => {
+        console.clear();
+        console.log("addr Input");
+        let url = serverHost + '/' + phpRoute + 'sunsua/selProposalSp.php';
+        this.state.proposalDetail = [];
+        let keyword = e.target.value;
+        await axios.get(url, { params: { keyword: keyword } })
+            .then(res => {
+                // console.log("success");
+                if (res.status == 200) {
+                    // console.log(res.data)
+                    this.state.proposalDetail = res.data;
+                    // console.log(this.state.proposalDetail);
+                    this.setState({});
+                }
+            })
+            .catch(error => {
+                console.log("error:" + error.message);
+            });
+        // this.setState({});
+    }
+    haha = () => {
+        console.log("haha");
+    }
     /* 取消 */
     cancel = () => {
         let proposalSearch = document.querySelector("#proposalSearch");
@@ -178,8 +201,8 @@ class SunsuaSearchProposal extends Component {
                         <h1 className='text-center'>搜尋方案</h1>
                         <div>
                             <span>
-                                {/* <AutoCompleteLocation /> */}
-                                <input id="searchBox" placeholder='請輸入您的地址' style={{ 'width': '80%' }} />
+                                {/* <AutoCompleteLocation onChange={this.haha} /> */}
+                                <input id="searchBox" placeholder='請輸入您的地址' onChange={this.addrInput} style={{ 'width': '80%' }} />
                                 <i className="bi bi-search ml-1"></i>
                             </span>
                             {/* <input id="" placeholder='時間' /><i className="bi bi-search ml-1"></i> */}

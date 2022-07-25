@@ -11,6 +11,7 @@ import Navbar from '../../components/repeatability/Navbar';
 import Footer from '../../components/repeatability/Footer';
 
 import "./css/sunsua.css";
+import $ from 'jquery';
 
 /* 引入檔案 */
 import sunsuaTitle from '../../img/順便特殊字體.png'
@@ -19,9 +20,9 @@ class Sunsua extends Component {
     state = {
         innerContent: <SunsuaIntro></SunsuaIntro>
     }
-    innerContentChange = () => {
-        // console.log(window.location.pathname);
-        /* 用 BrowserRouter */
+    innerContentChange = (e) => {
+        $('.sunsuaBtn').addClass("btnNotSel");
+        e.target.classList.remove("btnNotSel");
         switch (window.location.pathname) {
             case "/sunsua/intro":
                 this.state.innerContent = <SunsuaIntro></SunsuaIntro>
@@ -62,17 +63,17 @@ class Sunsua extends Component {
                                 <div className='col-2 d-flex flex-column'>
                                     <div className="my-1 d-flex justify-content-center" onClick={this.innerContentChange}>
                                         <button className='btn btn-outline-danger' >
-                                            <Link to="/sunsua/intro" className='h2 font-weight-bold' >介紹</Link>
+                                            <Link to="/sunsua/intro" className='sunsuaBtn btnNotSel h2 font-weight-bold' >介紹</Link>
                                         </button>
                                     </div>
                                     <div className="my-1 d-flex justify-content-center" onClick={this.innerContentChange}>
                                         <button className='btn btn-outline-danger' >
-                                            <Link to="/sunsua/proposal" className='h2 font-weight-bold' >提案</Link>
+                                            <Link to="/sunsua/proposal" className='sunsuaBtn btnNotSel h2 font-weight-bold' >提案</Link>
                                         </button>
                                     </div>
                                     <div className="my-1 d-flex justify-content-center" onClick={this.innerContentChange}>
                                         <button className='btn btn-outline-danger' >
-                                            <Link to="/sunsua/order" className='h2 font-weight-bold'>搜方案</Link>
+                                            <Link to="/sunsua/order" className='sunsuaBtn btnNotSel h2 font-weight-bold'>搜方案</Link>
                                         </button>
                                     </div>
                                 </div>

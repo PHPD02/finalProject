@@ -1,24 +1,15 @@
 import React, { Component } from 'react';
 import Navbar from './repeatability/Navbar';
 import './css/orderdetails.css';
-import axios from 'axios';
+// import axios from 'axios';
 import DetailsCards from './component/DetailsCards';
 // import Footer from '../repeatability/Footer';
 import FirebaseIndex from '../kangComponent/firebase/firebaseIndex';
 class OrderDetails extends Component {
-  state = {
-    details: []
-  }
+  state = {}
 
 
   componentDidMount = async () => {
-    let url = "http://localhost/ourPHPFinalproject/RjieProject/details.php"
-    await axios.get(url)
-      .then(res => {
-        this.state.details = res.data;
-        this.setState({});
-      })
-      // console.log(this.state.details);
   }
 
   render() {
@@ -58,14 +49,11 @@ class OrderDetails extends Component {
               <div className='col-md-6 col-sm-12 container' >
                 <div className='card'>
                   <h3>訂單詳情</h3>
-                  {this.state.details.map(
-                    (details, index) => {
-                      return (<DetailsCards key={index} catchDetails={details} />);
-                    })}
+                    <DetailsCards/>
                   {/* 選擇器跑出來的內容 */}
-                  <br/>
-                  <FirebaseIndex/>
-                  <br/>
+                  <br />
+                  <FirebaseIndex />
+                  <br />
                   {/* C:\Users\bgkon\Desktop\康峻軒final_project(0628)\project\src\kangComponent\firebase\firebaseIndex.jsx */}
 
                 </div>

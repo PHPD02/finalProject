@@ -10,8 +10,36 @@
     border-radius: 50px;
     text-align: center;
 }
+#sunsuaheader .headerImg{
+    width: 100%;
+    /* height: 320px; */
+    border-radius: 50px;
 
+}
 
 .btnNotSel{
     color: black;
+}
+/* .pro-item-wrapper{
+    position: fixed;
+} */
+
+.pro-item{
+    background-image: url(../../../img/15.png);
+    background-size: 140px 80px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin:30PX 0;
+
+
+}
+.sunsuaBtn{
+    color:white;
+    text-shadow: 2px 2px 8px black;
+}
+.introduce-wrapper{
+    outline: none;
+    border: 3px solid rgb(0, 40, 79);
+    border-radius: 50px;
+    min-height: 455px;
 }

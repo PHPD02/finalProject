@@ -93,7 +93,7 @@ class firstpage extends Component {
                   </NavLink>
 
                 </div>
-                <div className='text-center mt-5'>
+                {/* <div className='text-center mt-5'>
                   <h1 style={{ color: 'red' }}><u>不知道要吃什麼嗎？</u></h1>
 
                   <NavLink to='/sunsua'>
@@ -101,7 +101,7 @@ class firstpage extends Component {
                       點我查看新功能</button>
                   </NavLink>
 
-                </div>
+                </div> */}
               </section>
             </div>
 

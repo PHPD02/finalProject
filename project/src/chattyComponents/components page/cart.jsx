@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import $ from 'jquery';
 import Navbar from '../../components/repeatability/Navbar';
 import axios from 'axios';
@@ -71,13 +71,7 @@ class Cart extends Component {
             });
 
         })
-        console.log(this.state.cart);
-        // 如果購物車沒有資料
-        // if (this.state.cart) {
-            // this.isempty();
-        // }
         // console.log(this.state.cart);
-        // console.log(this.state.restaurantName);
     }
 
     render() {
@@ -101,8 +95,6 @@ class Cart extends Component {
                     </div>
                     <hr />
 
-
-
                     <div>
                         {this.state.cart.map((c) => {
                             return (
@@ -116,30 +108,6 @@ class Cart extends Component {
 
                     </div>
 
-
-                    {/* <div className='menutail row'> */}
-                    {/* 點餐內容 */}
-                    {/* <div className='col-3 cart-food-sp sp1'><img src="https://images.deliveryhero.io/image/fd-tw/Products/38155656.jpg?height=80" alt="" /></div>
-                        <div className='col-3 cart-food-sp sp2'>黃金里肌厚切豬排咖哩飯</div>
-                        <div className='col-2 cart-food-sp'>{this.state.price}</div>
-
-                        <div className='col-2 cart-food-sp'>
-                            <div className='orderbutton'>
-                                <button className='btn btn-danger'
-                                    onClick={this.doDecreseorder}>-</button>
-                                <output>&nbsp;{this.state.count}&nbsp;</output>
-                                <button className='btn btn-success'
-                                    onClick={this.doPlusorder}>+</button>
-
-                            </div>
-                        </div>
-
-                        <output className='col-2 cart-food-sp sp3' id='sum'>${this.state.countsum}</output>
-                    </div> */}
-
-
-
-                    {/* <hr /> */}
                 </div>
 
                 {/* 小計 */}

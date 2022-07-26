@@ -1,9 +1,21 @@
 import React, { Component } from 'react';
 import "./css/card.css";
 import axios from 'axios';
+import shopList from '../../chattyComponents/components page/shopList';
 class Cards extends Component {
   state = {}
   rest = this.props.catchData;    //把父階的資料傳送到子階來
+
+  doClickfc = () => {
+    // console.log(this.props.catchData);
+    // axios.post('http://localhost/ourPHPFinalproject/ChtProject/storeCards/getShopCards.php',{
+    //   data: this.props.catchData
+    // })
+    // .then((response) => {console.lo``g(response)})
+    // .catch((error) => {console.log(error)})
+    window.location = `http://localhost:3000/shopList2/${this.props.catchData.id}`;
+  }
+
   componentDidMount = async () => {
     let url = "http://localhost:80/ourPHPFinalproject/RjieProject/firstsql2.php"
     await axios.get(url)
@@ -14,7 +26,8 @@ class Cards extends Component {
   render() {
     return (
       <React.Fragment>
-        <div style={{ width: '200px', height: '250px' }}>
+        <div style={{ width: '200px', height: '250px' }}
+          onClick={this.doClickfc}>
           <div className="setHeight cardshadow">
             {/* 需要套資料庫呈現(圖片) */}
             <div className='zImg'>

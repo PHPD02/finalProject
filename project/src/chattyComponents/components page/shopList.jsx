@@ -21,7 +21,13 @@ class shopList extends Component {
 
   async componentDidMount() {
     // var result = await Axios.get("http://localhost:8000/todo/list");
-    var result = await Axios.get("http://localhost//ourPHPFinalproject/ChtProject/storeCards/getStoreItems.php");
+    let id
+    if(this.props.match.params.id){
+      id = this.props.match.params.id;
+    }
+
+    // var result = await Axios.get("http://localhost//ourPHPFinalproject/ChtProject/storeCards/getStoreItems.php");
+    var result = await Axios.get("http://localhost/ourPHPFinalproject/ChtProject/storeCards/getStoreItems.php",{params:{restaurantId:id}});
     this.setState({
       menuList: result.data,
       restaurantName: result.data[0].restaurantName

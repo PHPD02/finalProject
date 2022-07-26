@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 // import "./assets/css/lib/themify-icons.css"
 // import "./assets/css/lib/menubar/sidebar.css"
 // import "./assets/css/style.css"
-// 
+//
 
 class ToDoEdit extends React.Component {
   state = {
@@ -49,22 +49,42 @@ class ToDoEdit extends React.Component {
     this.state.todoItem.introduce = e.target.value;
     this.setState({});
   };
-  todoItemPicture1Change= async(e) => {
+  todoItemPicture1Change = async (e) => {
     // var newState = { ...this.state };
     this.state.todoItem.picture = e.target.value;
     this.setState({});
   };
-  todoItemCostChange= async(e) => {
+  todoItemCostChange = async (e) => {
     // var newState = { ...this.state };
     this.state.todoItem.cost = e.target.value;
     this.setState({});
   };
-
+  picSel = async (e) => {
+    let file = e.target.files[0];
+    let url = "http://localhost/ourPHPFinalproject/imgur/picToUrl.php";
+    var formData = new FormData();
+    formData.append("image", file);
+    let result = await axios
+      .post(url, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        var newState = { ...this.state };
+        newState.todoItem.picture = res.data;
+        this.setState(newState);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   render() {
     return (
-<>
-<div className="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+      <>
+        <div className="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
           <div className="nano">
             <div className="nano-content">
               <ul>
@@ -192,103 +212,109 @@ class ToDoEdit extends React.Component {
             </ul>
           </div>
         </div>
-        <div className="content-wrap mt-5 pt-3" style={{backgroundColor:'whitesmoke'}}>
-        <div className="container" style={{ width: "70rem" }}>
-        <h1 className="h1 my-4">品項修改</h1>
-        <div className="p-5" style={{ backgroundColor: "white" }}>
-          <input type="hidden" id="Id" name="Id" value="1" />
-          <div className="form-group">
-            <label htmlFor="itemName" className="h4">
-              品項名稱
-            </label>
-            <textarea
-              className="form-control mb-4"
-              id="itemName"
-              style={{ backgroundColor: "whitesmoke" }}
-              rows="2"
-              value={this.state.todoItem.dish}
-              onChange={this.todoItemNameChange}
-            ></textarea>
-          </div>
-          <div className="form-group">
-            <label htmlFor="itemDescribe" className="h4 ">
-              品項敘述
-            </label>
-            <textarea
-              className="form-control mb-4"
-              id="itemDescribe"
-              style={{ backgroundColor: "whitesmoke" }}
-              rows="5"
-              value={this.state.todoItem.introduce}
-              onChange={this.todoItemDescriptionChange}
-            ></textarea>
-          </div>
-          <div className="form-group">
-            <label htmlFor="itemPrice" className="h4">
-              售價
-            </label>
-            <input
-              type="text"
-              className="form-control mb-4"
-              id="itemPrice"
-              style={{ backgroundColor: "whitesmoke" }}
-              value={this.state.todoItem.cost}
-              onChange={this.todoItemCostChange}
-            ></input>
-          </div>
-          <div className="form-group">
-            <label htmlFor="itemPicture" className="h4">
-              重新上傳圖片(請輸入網址)
-            </label><br />
-            <img
-              style={{width:"850px"}}
-              src={this.state.todoItem.picture}
-              alt={this.state.todoItem.Name}
-            ></img>
-            <br /><br />
-            <input
-              type="text"
-              className="form-control mb-4"
-              id="itemPrice"
-              style={{width:"850px",backgroundColor: "whitesmoke"}}
-              placeholder="重新上傳請輸入網址"
-              // value={this.state.todoItem.Picture1}
-              onChange={this.todoItemPicture1Change}
-            ></input>
-<br /><br /><br /><br /><h3>這邊是之後看看能不能直接上傳圖片而非網址進資料庫方式</h3> 
-            <input
-              type="file"
-              className="form-control-file mb-4 justify-content-end"
-              id="itemPicture"
-              placeholder="重新選擇圖片"
-              // value={this.state.todoItem.Picture1}這句會壞
-              // onChange={this.todoItemTitleChange}
-            ></input>
-          </div>
+        <div
+          className="content-wrap mt-5 pt-3"
+          style={{ backgroundColor: "whitesmoke" }}
+        >
+          <div className="container" style={{ width: "70rem" }}>
+            <h1 className="h1 my-4">品項修改</h1>
+            <div className="p-5" style={{ backgroundColor: "white" }}>
+              <input type="hidden" id="Id" name="Id" value="1" />
+              <div className="form-group">
+                <label htmlFor="itemName" className="h4">
+                  品項名稱
+                </label>
+                <textarea
+                  className="form-control mb-4"
+                  id="itemName"
+                  style={{ backgroundColor: "whitesmoke" }}
+                  rows="2"
+                  value={this.state.todoItem.dish}
+                  onChange={this.todoItemNameChange}
+                ></textarea>
+              </div>
+              <div className="form-group">
+                <label htmlFor="itemDescribe" className="h4 ">
+                  品項敘述
+                </label>
+                <textarea
+                  className="form-control mb-4"
+                  id="itemDescribe"
+                  style={{ backgroundColor: "whitesmoke" }}
+                  rows="5"
+                  value={this.state.todoItem.introduce}
+                  onChange={this.todoItemDescriptionChange}
+                ></textarea>
+              </div>
+              <div className="form-group">
+                <label htmlFor="itemPrice" className="h4">
+                  售價
+                </label>
+                <input
+                  type="text"
+                  className="form-control mb-4"
+                  id="itemPrice"
+                  style={{ backgroundColor: "whitesmoke" }}
+                  value={this.state.todoItem.cost}
+                  onChange={this.todoItemCostChange}
+                ></input>
+              </div>
+              <div className="form-group">
+                <label htmlFor="itemPicture" className="h4">
+                  重新上傳圖片(請輸入網址)
+                </label>
+                <br />
+                <img
+                  style={{ width: "850px" }}
+                  src={this.state.todoItem.picture}
+                  alt={this.state.todoItem.Name}
+                ></img>
+                <br />
+                <br />
+                <input
+                  type="text"
+                  className="form-control mb-4"
+                  id="itemPrice"
+                  style={{ width: "850px", backgroundColor: "whitesmoke" }}
+                  placeholder="重新上傳請輸入網址"
+                  // value={this.state.todoItem.Picture1}
+                  onChange={this.todoItemPicture1Change}
+                ></input>
+                <br />
+                <br />
+                <br />
+                <br />
+                <input
+                  type="file"
+                  className="form-control-file mb-4 justify-content-end"
+                  id="itemPicture"
+                  placeholder="重新選擇圖片"
+                  // value={this.state.todoItem.Picture1}這句會壞
+                  // onChange={this.todoItemTitleChange}
+                ></input>
+              </div>
 
-          <div className="form-group float-right ">
-            <input
-              type="submit"
-              onClick={this.okButtonClick}
-              value="確定"
-              className="btn btn-outline-primary  btn-lg mr-3 "
-            />
+              <div className="form-group float-right ">
+                <input
+                  type="file"
+                  className="form-control-file mb-4 justify-content-end"
+                  id="itemPicture"
+                  placeholder="重新選擇圖片"
+                  onChange={this.picSel}
+                  // value={this.state.todoItem.Picture1}這句會壞
+                  // onChange={this.todoItemTitleChange}
+                ></input>
 
-            <a
-              href="/TodoIndex"
-              className="btn btn-outline-info mr-5 btn-lg ml-1"
-            >
-              取消
-            </a>
+                <a
+                  href="/TodoIndex"
+                  className="btn btn-outline-info mr-5 btn-lg ml-1"
+                >
+                  取消
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-
-
-        </div>
-
-
       </>
     );
   }

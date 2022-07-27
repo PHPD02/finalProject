@@ -15,50 +15,51 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 /* == 群傑 == */
-/* 首頁 */
+// 首頁 
 import Firstpage from "./components/firstpage";
-/* 訂單詳情 */
+// 訂單詳情 
 import OrderDetails from "./components/orderDetails";
-/* 店家資訊 */
+// 店家資訊 
 import ShopList from "./components/shopList";
 
-/* 承翰 */
-/* 順弁 */
+/* == 承翰 == */
+// 順弁 
 import Sunsua from "./component/Sunsua/sunsua.jsx";
 
 /* == 純芷 == */
+// 登入
 import Login from './chattyComponents/components page/login';
 import LoginCompany from "./chattyComponents/components page/loginCompany";
 import LoginComsumer from "./chattyComponents/components page/loginComsumer";
+// 註冊
 import RegisterCompany from './chattyComponents/components page/registerCompany';
 import RegisterComsumer from './chattyComponents/components page/registerComsumer';
+// 購物車
 import Cart from './chattyComponents/components page/cart';
+// 結帳頁面
 import Payment from './chattyComponents/components page/payment';
+// 店家資訊
 import ShopList2 from "./chattyComponents/components page/shopList";
 
-//
+/* == 峻軒 == */
+// 忘記密碼
 import Forgotpwd from "./chattyComponents/components page/zzforgotpwd";
 import Resetpassword from "./chattyComponents/components page/resetpassword";
 import CompleteResetPwd from "./chattyComponents/components page/CompleteResetPwd";
 import sendresetemail from "./chattyComponents/components page/sendresetemail";
-
-
-
-/* == 峻軒 == */
 // 按鈕或more
 import FoodpandaPage from "./kangComponent/foodpandapage";
-// 廠商登入後連結
+// 廠商登入後台
 import ordermanage from "./kangComponent/Ordermanage";
 import TodoIndex from "./kangComponent/TodoIndex";
 import TodoEdit from "./kangComponent/TodoEdit";
 import TodoCreate from "./kangComponent/TodoCreate";
 import TodoDelete from "./kangComponent/TodoDelete";
 import Admindashboard from "./kangComponent/Admindashboard";
-
-// 會員拉霸-會員中心、訂單紀錄、登出
+// 會員中心
 import MemberPage from "./kangComponent/MemberPage";
 import Order_record from "./kangComponent/Order_record";
-// 餐廳資訊
+// 餐廳評論頁
 import CommentPage from "./kangComponent/CommentPage";
 // 聯絡客服
 import CustomerMail from "./kangComponent/customerMail";
@@ -66,13 +67,9 @@ import CustomerMailSuccess from "./kangComponent/customerMail_Success.jsx";
 // import Dashboard from "./kangComponent/NOT_UESD_NOW/Dashboard"
 import FirebaseIndex from "./kangComponent/firebase/firebaseIndex";
 
+/* 其他 */
 import Tst from "./component/test/tst";
 import Try from "./kangComponent/test";
-
-
-
-
-
 
 // /orderdetails 這頁加入連繫外送員按鈕
 
@@ -94,56 +91,34 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Switch>
+          {/* 群傑 */}
           {/* 首頁 */}
           <Route path="/" component={Firstpage} exact />
           <Route path="/firstpage" component={Firstpage} />
-          {/* 登入頁面 */}
-          {/* 順弁頁 */}
-          <Route path="/sunsua" component={Sunsua} />
-          {/* 外送頁 */}
-          {/* 外送店家頁面 */}
-          <Route path="/shopList" component={ShopList} />
           {/* 外送訂單詳情頁 */}
           <Route path="/orderDetails" component={OrderDetails} />
-          <Route path="/shopList" component={ShopList} />
+          
+          {/* 承翰 */}
+          {/* 順弁頁 */}
+          <Route path="/sunsua" component={Sunsua} />
 
-          {/* ================================================================================================================== */}
           {/* 純芷 */}
-          {/* <Route path="/cht4" component={Index} exact /> */}
-          {/* <Route path="/index" component={Index} /> */}
           <Route path="/login" component={Login} />
           <Route path="/loginCompany" component={LoginCompany} />
           <Route path="/loginComsumer" component={LoginComsumer} />
           <Route path="/registerComsumer" component={RegisterComsumer} />
           <Route path="/registerCompany" component={RegisterCompany} />
           <Route path="/cart" component={Cart} />
-          <Route path="/payment" component={Payment} />
+          <Route path="/payment/:orderId" component={Payment} />
           <Route path="/shopList2/:id" component={ShopList2} />
 
-          {/* <Route path="/googlelogin" component={Glogin} /> */}
-          {/* <Route path="/usegooglelogin" component={UseGoogleLogin} /> */}
-          {/* <Route path="/usefacebooklogin" component={facebooklogin} /> */}
-          {/* <Route path="/testScreen" component={TestScreen} /> */}
-          {/* <Route path="/storeCards" component={StoreCard} /> */}
-          {/* <Route path="/storePage" component={StorePage} /> */}
-          {/* <Route path="/test" component={Test} /> */}
-          {/* <Route path="/testPayment" component={TestPayment} /> */}
-          {/* <Route path="/login2" component={Login2} />
-            <Route path="/login3" component={Login3} /> */}
-          {/* <Route path="/test1" component={Test1} /> */}
-          {/* <Route path="/cartcard" component={Card} /> */}
-          {/* <Route path="/forgotpwd" component={Forgotpwd} /> */}
-
-          {/* ================================================================================================================== */}
           {/* 峻軒 */}
-          {/* <Route path="/login" component={Login} /> */}
           <Route path="/sunsuafooddelivery" component={FoodpandaPage} />
           <Route path="/CommentPage" component={CommentPage} />
           <Route path="/memberpage" component={MemberPage} />
           <Route path="/orderrecord" component={Order_record} />
           <Route path="/customerMail" component={CustomerMail} />
           <Route path="/customerMailSuccess" component={CustomerMailSuccess} />
-
           {/* 後台 */}
           <Route path="/ordermanage" component={ordermanage} />
           <Route path="/TodoIndex" component={TodoIndex} />
@@ -151,7 +126,6 @@ class App extends React.Component {
           <Route path="/Todo/Delete/:id" component={TodoDelete} />
           <Route path="/Todo/Create" component={TodoCreate} />
           <Route path="/admin/dashboard" component={Admindashboard} />
-
           {/* <Route path="/orderDetails" component={OrderDetails} /> */}
           <Route path="/forgotpwd" component={Forgotpwd} />
           <Route path="/resetpassword" component={Resetpassword} />

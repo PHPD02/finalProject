@@ -40,12 +40,13 @@ class Cart extends Component {
                     freight: $('#freight').text(),
                     orderdetails: this.state.cart
                 }
-                console.log(ordert);
+                // console.log(ordert);
                 // const { id, menuItemId, restaurantId, restaurantName, dish, type, picture, cost } = this.props.cart;
                 axios.post("http://localhost//ourPHPFinalproject/ChtProject/order/inorder.php", ordert)
                     .then((response) => {
-                        console.log(response);
+                        console.log(response.data);
                         // localStorage.setItem()
+                        window.location = `http://localhost:3000/payment/${response.data}`;
                     })
                 // window.location = "http://localhost:3000/payment";
             } catch (error) {

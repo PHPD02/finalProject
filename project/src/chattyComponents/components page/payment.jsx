@@ -39,6 +39,18 @@ class Payment extends Component {
             cart: []
         };
     }
+    
+
+    // state = {
+    //     // num: num,
+    //     // gotDate: gotDate,
+
+    //     // subtotal: 250,
+    //     freight: 19,
+    //     // total: 270,
+
+    //     cart: []
+    // }
 
     getaddr = () => {
         const addr = localStorage.getItem('addr');
@@ -50,7 +62,7 @@ class Payment extends Component {
     }
 
     totalPrice = () => {
-        const totalPrice = this.state.cart.map(cartt => cartt.mount * parseInt(cartt.cost))
+        const totalPrice = this.state.cart.map(cartt => parseInt(cartt.cost))
             .reduce((a, value) => a + value, 0)
         return totalPrice
     }
@@ -68,19 +80,26 @@ class Payment extends Component {
         //     // window.history.back()
         //     // $('#loginin').hide();
         // }
+        var uid = localStorage.getItem('uid');
 
         // 抓購物車資料
-        await axios.get("http://localhost//ourPHPFinalproject/ChtProject/cart/getallcart.php").then((response) => {
+        await axios.get("http://localhost//ourPHPFinalproject/ChtProject/cart/getallcart.php"
+        // ,{params:{id}}
+        ,{ params: {uid: uid} }
+        )
+        .then((response) => {
             this.setState({
                 cart: response.data,
-                restaurantName: response.data[0].restaurantName
+                orderId : response.data[0].orderId
+            //     restaurantName: response.data[0].restaurantName
             });
+            // console.log(response.data);
 
         })
-        console.log(this.state.cart);
-
+        console.log(this.state.cart[0].orderId);
 
     }
+
     render() {
         return (
             <React.Fragment>
@@ -172,8 +191,8 @@ class Payment extends Component {
                                                 {/* 點餐內容 */}
                                                 {/* <div className='col-6 cart-food-sp sp1'>food1pic</div> */}
                                                 <div className='col cart-food-sp sp2 '><u>{c.dish}</u></div>
-                                                <div className='col-3 cart-food-sp'>{c.mount}</div>
-                                                <div className='col-3 cart-food-sp sp3'>${c.cost * c.mount}</div>
+                                                <div className='col-3 cart-food-sp'>{c.amount}</div>
+                                                <div className='col-3 cart-food-sp sp3'>${c.cost}</div>
                                             </div>
                                         )
                                     })}
@@ -219,7 +238,7 @@ class Payment extends Component {
                                         "http://localhost:80//ourPHPFinalproject/ChtProject/phpEcpay/ECPay_CreateOrder.php"
                                         onSubmit={(event) => this.handleSubmit(event)}>
                                         <label visible>編號 (MerchantTradeNo):
-                                            <input type="text" name="MerchantTradeNo" defaultValue={this.state.num} className="form-control" />
+                                            <input type="text" name="MerchantTradeNo" defaultValue={this.state.orderId} className="form-control" />
                                             {/* <!-- 不可重複使用。英數字大小寫混合 --> */}
                                         </label>
                                         <label visible className="col-xs-12">時間 (MerchantTradeDate):

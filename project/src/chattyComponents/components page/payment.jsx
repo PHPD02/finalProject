@@ -237,30 +237,30 @@ class Payment extends Component {
                                         // "http://localhost/PHP/phpEcpay/test.php"
                                         "http://localhost:80//ourPHPFinalproject/ChtProject/phpEcpay/ECPay_CreateOrder.php"
                                         onSubmit={(event) => this.handleSubmit(event)}>
-                                        <label visible>編號 (MerchantTradeNo):
+                                        <label hidden>編號 (MerchantTradeNo):
                                             <input type="text" name="MerchantTradeNo" defaultValue={this.state.orderId} className="form-control" />
                                             {/* <!-- 不可重複使用。英數字大小寫混合 --> */}
                                         </label>
-                                        <label visible className="col-xs-12">時間 (MerchantTradeDate):
+                                        <label hidden className="col-xs-12">時間 (MerchantTradeDate):
                                             <input type="text" name="MerchantTradeDate" defaultValue={this.state.gotDate} className="form-control" />
                                             {/* <!-- yyyy/MM/dd HH:mm:ss --> */}
                                         </label>
-                                        <label visible className="col-xs-12">類型 (PaymentType):
+                                        <label hidden className="col-xs-12">類型 (PaymentType):
                                             <input type="text" name="PaymentType" defaultValue="aio" className="form-control" />
                                             {/* <!-- aio --> */}
                                         </label>
-                                        <label visible className="col-xs-12">金額 (TotalAmount):
+                                        <label hidden className="col-xs-12">金額 (TotalAmount):
                                             <input type="text" name="TotalAmount" defaultValue={$('#pTotal').text()} className="form-control" />
                                             {/* <!-- 請帶整數，不可有小數點 僅限新台幣 金額不可為 0 元 CVS&BARCODE 最低限制為 30 元，最高限制為 30,000 元 --> */}
                                         </label>
-                                        <label visible className="col-xs-12">描述 (TradeDesc):
+                                        <label hidden className="col-xs-12">描述 (TradeDesc):
                                             <input type="text" name="TradeDesc" defaultValue="餐飲費用" className="form-control" />
                                         </label>
-                                        <label visible className="col-xs-12">名稱 (ItemName):
+                                        <label hidden className="col-xs-12">名稱 (ItemName):
                                             <input type="text" name="ItemName" defaultValue="餐飲費用" className="form-control" />
                                             {/* <!-- 商品名稱以符號 # 分 --> */}
                                         </label>
-                                        <label visible className="col-xs-12">付款方式 (ChoosePayment):
+                                        <label hidden className="col-xs-12">付款方式 (ChoosePayment):
                                             <input type="text" name="ChoosePayment" defaultValue="Credit" className="form-control" />
                                             {/* <!-- Credit:信用卡及 AndroidPay AndroidPay: AndroidPay  WebATM:網路 ATM ATM:自動櫃員機 CVS:超商代碼 BARCODE:超商條碼 ALL:不指定 --> */}
                                         </label>

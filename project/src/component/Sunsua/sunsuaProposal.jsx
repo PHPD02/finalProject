@@ -270,6 +270,7 @@ class SunsuaProposal extends Component {
         console.log(this.state);
     }
 
+        
 
     render() {
         return (
@@ -446,5 +447,6 @@ class SunsuaProposal extends Component {
         );
     }
 }
+
 
 export default SunsuaProposal;

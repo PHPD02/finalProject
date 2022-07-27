@@ -1,4 +1,5 @@
 /**
+ * 【可以work】
  * 定位 OK
  * 取得當下 座標位置 與 地址
 */
@@ -53,7 +54,7 @@ class Gmlocate extends Component {
                 console.log(result);
                 this.state.addr = result.results[0].formatted_address
                 /* ===End】 經緯度 轉地址 === */
-                
+
                 this.setState({});
 
             }

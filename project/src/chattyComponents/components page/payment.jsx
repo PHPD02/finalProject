@@ -4,14 +4,10 @@ import { faCcApplePay } from '@fortawesome/free-brands-svg-icons';
 import { faCreditCard, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import $ from 'jquery';
-
 import Navbar from '../../components/repeatability/Navbar';
-// import Footer from '../components item/footer';
 import Footer from '../../components/repeatability/Footer';
 
 import '../css/payment.css';
-
-
 
 class Payment extends Component {
     constructor() {
@@ -39,18 +35,6 @@ class Payment extends Component {
             cart: []
         };
     }
-    
-
-    // state = {
-    //     // num: num,
-    //     // gotDate: gotDate,
-
-    //     // subtotal: 250,
-    //     freight: 19,
-    //     // total: 270,
-
-    //     cart: []
-    // }
 
     getaddr = () => {
         const addr = localStorage.getItem('addr');
@@ -69,17 +53,7 @@ class Payment extends Component {
 
     async componentDidMount() {
         $('#cartBar').hide();
-        // var upwhere = window.location.href;
-        // localStorage.setItem('upwhere', upwhere);
-        // var url = "http://localhost:3000/login";
-        // var getemail = localStorage.getItem('email');
-        // // console.log(uId);
-        // if (!getemail) {
-        //     //登入狀態，不能連去登入頁
-        //     window.location = url;
-        //     // window.history.back()
-        //     // $('#loginin').hide();
-        // }
+
         var uid = localStorage.getItem('uid');
 
         // 抓購物車資料
@@ -90,13 +64,14 @@ class Payment extends Component {
         .then((response) => {
             this.setState({
                 cart: response.data,
-                orderId : response.data[0].orderId
-            //     restaurantName: response.data[0].restaurantName
+                orderId : response.data[0].orderId,
+                restaurantName: response.data[0].name
+                
             });
             // console.log(response.data);
 
         })
-        console.log(this.state.cart[0].orderId);
+        // console.log(this.state.cart[0].orderId);
 
     }
 
@@ -179,7 +154,7 @@ class Payment extends Component {
                         {/* 右邊 */}
                         <div className="col-lg-5 shadow  mx-3" id='col2color'>
                             <section className=' p-5'>
-                                <h3 className='text-center'>你的訂單</h3>
+                                <h3 className='text-center pro-item' style={{color:'white',fontSize:''}}>你的訂單</h3>
 
                                 <div id='outorder'>
 
@@ -273,14 +248,6 @@ class Payment extends Component {
                                             <span class="bottom-key-2"></span>
                                         </button>
                                     </form>
-
-
-                                    {/* <button className='btn btn-block btn-outline-danger' type="submit">送  出</button> */}
-                                    {/* <div className='row'>
-                                    <div className='col'></div>
-                                    <div className="col-3"><NavLink to="/payment"><button className='btn btn-danger btn-block'>點我結帳</button></NavLink></div>
-                                </div> */}
-
                                 </div>
                             </section>
                         </div>

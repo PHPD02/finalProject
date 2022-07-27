@@ -24,3 +24,12 @@
 .menutail:hover {
     background-color:  rgb(49, 166, 150,0.6) ;
 }
+
+#cartfooter{
+    height: 80px;
+    background-image: url(../../img/14.png);
+    background-size: 20%;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    /* margin:30PX 0; */
+}

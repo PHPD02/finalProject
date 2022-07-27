@@ -5,6 +5,7 @@ import Navbar from '../../components/repeatability/Navbar';
 import axios from 'axios';
 import Cartcard from '../components item/cartcard';
 import '../css/cart.css';
+// import img from '../../img/'
 
 var getemail = localStorage.getItem('email');
 class Cart extends Component {
@@ -80,7 +81,7 @@ class Cart extends Component {
             <React.Fragment>
                 <Navbar />
                 <br /><br /><br />
-                <div className="container">
+                <div className="container p-5" style={{border:'3px solid rgb(0, 40, 79)',borderRadius:'50px'}}>
                     <div className='text-center'>
                         <span className='h1'><strong>購物車</strong></span>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -127,7 +128,7 @@ class Cart extends Component {
                         <div className='col-1'></div>
                     </div>
                     <div className='row'>
-                        <div className='col'></div>
+                        <div className='col' ></div>
                         <div className="col-3">
                             {/* <NavLink to="/payment"> */}
                             <button className='fancy btn-block'
@@ -143,6 +144,8 @@ class Cart extends Component {
                         <div className="col-1"></div>
                     </div>
                 </div>
+                
+                <div id='cartfooter'></div>
 
                 {/* <Footer /> */}
             </React.Fragment>

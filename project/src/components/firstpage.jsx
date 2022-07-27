@@ -91,14 +91,9 @@ class firstpage extends Component {
                       立即加入我們</button>
                   </NavLink>
                 </div>
-<<<<<<< HEAD
-                <div className='text-center mt-5'>
-                  <h1 style={{ color: 'red' }}><u>不知道要吃什麼嗎？</u></h1>
-=======
                 {/* <div className='text-center mt-5'>
                   <h1 style={{ color: 'red' }}><u>不知道要吃什麼嗎？</u></h1>
 
->>>>>>> resetmerge
                   <NavLink to='/sunsua'>
                     <button className='btn btn-outline-danger btn-lg'>
                       點我查看新功能</button>

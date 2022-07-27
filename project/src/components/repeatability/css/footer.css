@@ -1,8 +1,7 @@
 .footerbackimg {
-  height: 70vh;
+  height: 100vh;
   background-image: url("./14.png");
   background-size: 100%;
   background-position: bottom;
   background-repeat: no-repeat;
-  font-weight: 1000;
 }

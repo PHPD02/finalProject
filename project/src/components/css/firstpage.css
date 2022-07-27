@@ -1,17 +1,12 @@
-.topColor {
-  background-color: #cdaa92;
-  height: 100px;
-}
-
 .firstpic {
-  height: 80vh;
+  height: 100vh;
   /* width: %; */
   /* overflow: visible; */
   /* size: cover; */
   /* overflow: hidden; */
   background-image: url('./13.png');
-  background-repeat: no-repeat, repeat;
-  background-position: bottom;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: 100%
     /* background-position: center; */
 

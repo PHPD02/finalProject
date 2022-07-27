@@ -37,7 +37,7 @@ class shopList extends Component {
   }
 
   initCartNum = () => {
-    Axios.get("http://localhost//ourPHPFinalproject/ChtProject/cart/getallcart.php").then((res) => {
+    Axios.get("http://localhost//ourPHPFinalproject/ChtProject/cart/1.php").then((res) => {
       console.log(res.data);
       const carts = res.data || [];
       const cartNum = carts.map(cart => parseInt(cart.mount)).reduce((a, value) => a + value, 0);

@@ -20,7 +20,7 @@ class Cart extends Component {
     }
 
     stateChg = async () => {
-        await axios.get("http://localhost//ourPHPFinalproject/ChtProject/cart/getallcart.php").then((response) => {
+        await axios.get("http://localhost//ourPHPFinalproject/ChtProject/cart/getallcart1.php").then((response) => {
             this.setState({
                 cart: response.data,
             });
@@ -65,14 +65,14 @@ class Cart extends Component {
 
     async componentDidMount() {
         $('#cartBar').hide();
-        await axios.get("http://localhost//ourPHPFinalproject/ChtProject/cart/getallcart.php").then((response) => {
+        await axios.get("http://localhost/ourPHPFinalproject/ChtProject/cart/getallcart1.php").then((response) => {
             this.setState({
                 cart: response.data,
                 restaurantName: response.data[0].restaurantName
             });
 
         })
-        // console.log(this.state.cart);
+        console.log(this.state.cart);
     }
 
     render() {

@@ -144,7 +144,6 @@ class TodoIndex extends React.Component {
                   {this.state.todoList.map((item, index) => {
                     return (
                       <div className="col-lg-4" key={index}>
-                        {/* 這key值需要提供，但還是能跑 */}
                         <div className="card alert ">
                           <div className="row align-items-center card-body">
                             <div className="col-lg-5">

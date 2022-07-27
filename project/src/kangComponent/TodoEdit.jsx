@@ -60,6 +60,27 @@ class ToDoEdit extends React.Component {
     this.setState({});
   };
 
+  picSel = async (e) => {
+    let file = e.target.files[0];
+    let url = "http://localhost/ourPHPFinalproject/imgur/picToUrl.php";
+    var formData = new FormData();
+    formData.append("image", file);
+    let result = await axios.post(url, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+      .then(res => {
+        console.log(res.data);
+        var newState = { ...this.state };
+        newState.todoItem.picture = res.data;
+        this.setState(newState);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+
+  }
 
   render() {
     return (
@@ -255,15 +276,17 @@ class ToDoEdit extends React.Component {
               // value={this.state.todoItem.Picture1}
               onChange={this.todoItemPicture1Change}
             ></input>
-<br /><br /><br /><br /><h3>這邊是之後看看能不能直接上傳圖片而非網址進資料庫方式</h3> 
-            <input
-              type="file"
-              className="form-control-file mb-4 justify-content-end"
-              id="itemPicture"
-              placeholder="重新選擇圖片"
-              // value={this.state.todoItem.Picture1}這句會壞
-              // onChange={this.todoItemTitleChange}
-            ></input>
+<br />
+
+<input
+                  type="file"
+                  className="form-control-file mb-4 justify-content-end"
+                  id="itemPicture"
+                  placeholder="重新選擇圖片"
+                  onChange={this.picSel}
+                // value={this.state.todoItem.Picture1}這句會壞
+                // onChange={this.todoItemTitleChange}
+                ></input>
           </div>
 
           <div className="form-group float-right ">

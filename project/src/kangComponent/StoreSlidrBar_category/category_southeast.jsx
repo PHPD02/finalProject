@@ -14,7 +14,10 @@ class StoreSlidrBar2_southeast extends React.Component {
     var result = await axios.get("http://localhost:8050/restaurants/category/southeast");
     this.setState({ restaurantsList: result.data });
   }
-
+  restaurantClick = (restaurantId) => {
+    // console.log(restaurantId)
+    window.location = `http://localhost:3000/shopList2/${restaurantId}`;
+  }
   render() {
     return (
       <div>
@@ -30,7 +33,7 @@ class StoreSlidrBar2_southeast extends React.Component {
             return (
               <Carousel.Item>
                 <div key={item.id}>
-                <div className="card" style={{ maxHeight: "349px",cursor:"pointer" }}>
+                <div className="card" style={{ maxHeight: "349px",cursor:"pointer" }} onClick={() => this.restaurantClick(item.id)}>
                     <img
                       src={item.picture}
                       className="card-img-top"

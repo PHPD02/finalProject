@@ -4,6 +4,13 @@
 
 #sunsuaSearchProposal {
     outline: none;
-    border: 3px solid rgb(46, 128, 176);
+    border: 3px solid rgb(0, 40, 79);
     border-radius: 50px;
+    min-height: 455px;
+}
+#sunsuaSearchProposal :after{
+    content:"";
+    background-color: red;
+    
+    
 }

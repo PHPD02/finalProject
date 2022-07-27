@@ -126,7 +126,9 @@ class CommentPage extends React.Component {
             </div>
           </div>
 
-          <div className="container  sendcomment-section" >
+          <div 
+          className="container  sendcomment-section"
+           >
             <br />
             <div>
               <div className="row">
@@ -144,7 +146,7 @@ class CommentPage extends React.Component {
                   ></input>
                 </div>
                 <div
-                // className="col-4 d-flex align-items-center justify-content-center"
+                className="col-4 d-flex align-items-center justify-content-center"
                 >
                   <Rating
                     name="simple-controlled"

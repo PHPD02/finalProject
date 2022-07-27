@@ -27,7 +27,7 @@ body {
     height: 40px;
   }
 
-  label {
+  #container label {
     width: 200px;
     float: left;
     font-size: 1.2em;

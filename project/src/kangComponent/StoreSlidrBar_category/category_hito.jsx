@@ -6,15 +6,18 @@ import axios from "axios";
 class StoreSlidrBar2_drinks extends React.Component {
   state = {
     restaurantsList: [],
-    star:(Math.random()*(1-5) + 5).toFixed(1),
-    comment:Math.floor(Math.random()*1200),
+    star: (Math.random() * (1 - 5) + 5).toFixed(1),
+    comment: Math.floor(Math.random() * 1200),
   };
 
   async componentDidMount() {
     var result = await axios.get("http://localhost:8050/restaurants/category/hito");
     this.setState({ restaurantsList: result.data });
   }
-
+  restaurantClick = (restaurantId) => {
+    // console.log(restaurantId)
+    window.location = `http://localhost:3000/shopList2/${restaurantId}`;
+  }
   render() {
     return (
       <div>
@@ -29,8 +32,8 @@ class StoreSlidrBar2_drinks extends React.Component {
           {this.state.restaurantsList.map((item, index) => {
             return (
               <Carousel.Item>
-                <div key={item.id}>
-                <div className="card" style={{ maxHeight: "349px",cursor:"pointer" }}>
+                <div key={item.id} >
+                  <div className="card" style={{ maxHeight: "349px", cursor: "pointer" }} onClick={() => this.restaurantClick(item.id)}>
                     <img
                       src={item.picture}
                       className="card-img-top"
@@ -48,28 +51,28 @@ class StoreSlidrBar2_drinks extends React.Component {
                         style={{ height: "50px", width: "100%" }}
                       >
                         <h5 className="card-title "
-                        style={{ 
-                          display: "webkitBox",
-                          WebkitBoxOrient: "vertical",
-                          overflow: "hidden",
-                          webkitLineClamp: "2",
-                          lineHeight: "20px",
+                          style={{
+                            display: "webkitBox",
+                            WebkitBoxOrient: "vertical",
+                            overflow: "hidden",
+                            webkitLineClamp: "2",
+                            lineHeight: "20px",
                           }}
                         >
                           <b>{item.name}</b>
                         </h5>
                         <div
                           className="float-right"
-                          style={{ whiteSpace: "nowrap",width:"30%" }}
+                          style={{ whiteSpace: "nowrap", width: "30%" }}
                         >
                           <i
                             className="fa fa-star "
                             style={{ color: "pink" }}
                           ></i>
-                          <span className="star-point">{(Math.random()*(1-5) + 5).toFixed(1)}</span>
-                          
+                          <span className="star-point">{(Math.random() * (1 - 5) + 5).toFixed(1)}</span>
+
                           <span className="comment-amount">
-                            ({Math.floor(Math.random()*1200)})
+                            ({Math.floor(Math.random() * 1200)})
                           </span>
                         </div>
                       </span>

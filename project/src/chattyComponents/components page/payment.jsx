@@ -4,14 +4,10 @@ import { faCcApplePay } from '@fortawesome/free-brands-svg-icons';
 import { faCreditCard, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import $ from 'jquery';
-
 import Navbar from '../../components/repeatability/Navbar';
-// import Footer from '../components item/footer';
 import Footer from '../../components/repeatability/Footer';
 
 import '../css/payment.css';
-
-
 
 class Payment extends Component {
     constructor() {
@@ -50,37 +46,35 @@ class Payment extends Component {
     }
 
     totalPrice = () => {
-        const totalPrice = this.state.cart.map(cartt => cartt.mount * parseInt(cartt.cost))
+        const totalPrice = this.state.cart.map(cartt => parseInt(cartt.cost))
             .reduce((a, value) => a + value, 0)
         return totalPrice
     }
 
     async componentDidMount() {
         $('#cartBar').hide();
-        // var upwhere = window.location.href;
-        // localStorage.setItem('upwhere', upwhere);
-        // var url = "http://localhost:3000/login";
-        // var getemail = localStorage.getItem('email');
-        // // console.log(uId);
-        // if (!getemail) {
-        //     //登入狀態，不能連去登入頁
-        //     window.location = url;
-        //     // window.history.back()
-        //     // $('#loginin').hide();
-        // }
+
+        var uid = localStorage.getItem('uid');
 
         // 抓購物車資料
-        await axios.get("http://localhost//ourPHPFinalproject/ChtProject/cart/getallcart.php").then((response) => {
+        await axios.get("http://localhost//ourPHPFinalproject/ChtProject/cart/getallcart.php"
+        // ,{params:{id}}
+        ,{ params: {uid: uid} }
+        )
+        .then((response) => {
             this.setState({
                 cart: response.data,
-                restaurantName: response.data[0].restaurantName
+                orderId : response.data[0].orderId,
+                restaurantName: response.data[0].name
+                
             });
+            // console.log(response.data);
 
         })
-        console.log(this.state.cart);
-
+        // console.log(this.state.cart[0].orderId);
 
     }
+
     render() {
         return (
             <React.Fragment>
@@ -160,7 +154,7 @@ class Payment extends Component {
                         {/* 右邊 */}
                         <div className="col-lg-5 shadow  mx-3" id='col2color'>
                             <section className=' p-5'>
-                                <h3 className='text-center'>你的訂單</h3>
+                                <h3 className='text-center pro-item' style={{color:'white',fontSize:''}}>你的訂單</h3>
 
                                 <div id='outorder'>
 
@@ -172,8 +166,8 @@ class Payment extends Component {
                                                 {/* 點餐內容 */}
                                                 {/* <div className='col-6 cart-food-sp sp1'>food1pic</div> */}
                                                 <div className='col cart-food-sp sp2 '><u>{c.dish}</u></div>
-                                                <div className='col-3 cart-food-sp'>{c.mount}</div>
-                                                <div className='col-3 cart-food-sp sp3'>${c.cost * c.mount}</div>
+                                                <div className='col-3 cart-food-sp'>{c.amount}</div>
+                                                <div className='col-3 cart-food-sp sp3'>${c.cost}</div>
                                             </div>
                                         )
                                     })}
@@ -218,30 +212,30 @@ class Payment extends Component {
                                         // "http://localhost/PHP/phpEcpay/test.php"
                                         "http://localhost:80//ourPHPFinalproject/ChtProject/phpEcpay/ECPay_CreateOrder.php"
                                         onSubmit={(event) => this.handleSubmit(event)}>
-                                        <label visible>編號 (MerchantTradeNo):
-                                            <input type="text" name="MerchantTradeNo" defaultValue={this.state.num} className="form-control" />
+                                        <label hidden>編號 (MerchantTradeNo):
+                                            <input type="text" name="MerchantTradeNo" defaultValue={this.state.orderId} className="form-control" />
                                             {/* <!-- 不可重複使用。英數字大小寫混合 --> */}
                                         </label>
-                                        <label visible className="col-xs-12">時間 (MerchantTradeDate):
+                                        <label hidden className="col-xs-12">時間 (MerchantTradeDate):
                                             <input type="text" name="MerchantTradeDate" defaultValue={this.state.gotDate} className="form-control" />
                                             {/* <!-- yyyy/MM/dd HH:mm:ss --> */}
                                         </label>
-                                        <label visible className="col-xs-12">類型 (PaymentType):
+                                        <label hidden className="col-xs-12">類型 (PaymentType):
                                             <input type="text" name="PaymentType" defaultValue="aio" className="form-control" />
                                             {/* <!-- aio --> */}
                                         </label>
-                                        <label visible className="col-xs-12">金額 (TotalAmount):
+                                        <label hidden className="col-xs-12">金額 (TotalAmount):
                                             <input type="text" name="TotalAmount" defaultValue={$('#pTotal').text()} className="form-control" />
                                             {/* <!-- 請帶整數，不可有小數點 僅限新台幣 金額不可為 0 元 CVS&BARCODE 最低限制為 30 元，最高限制為 30,000 元 --> */}
                                         </label>
-                                        <label visible className="col-xs-12">描述 (TradeDesc):
+                                        <label hidden className="col-xs-12">描述 (TradeDesc):
                                             <input type="text" name="TradeDesc" defaultValue="餐飲費用" className="form-control" />
                                         </label>
-                                        <label visible className="col-xs-12">名稱 (ItemName):
+                                        <label hidden className="col-xs-12">名稱 (ItemName):
                                             <input type="text" name="ItemName" defaultValue="餐飲費用" className="form-control" />
                                             {/* <!-- 商品名稱以符號 # 分 --> */}
                                         </label>
-                                        <label visible className="col-xs-12">付款方式 (ChoosePayment):
+                                        <label hidden className="col-xs-12">付款方式 (ChoosePayment):
                                             <input type="text" name="ChoosePayment" defaultValue="Credit" className="form-control" />
                                             {/* <!-- Credit:信用卡及 AndroidPay AndroidPay: AndroidPay  WebATM:網路 ATM ATM:自動櫃員機 CVS:超商代碼 BARCODE:超商條碼 ALL:不指定 --> */}
                                         </label>
@@ -254,14 +248,6 @@ class Payment extends Component {
                                             <span class="bottom-key-2"></span>
                                         </button>
                                     </form>
-
-
-                                    {/* <button className='btn btn-block btn-outline-danger' type="submit">送  出</button> */}
-                                    {/* <div className='row'>
-                                    <div className='col'></div>
-                                    <div className="col-3"><NavLink to="/payment"><button className='btn btn-danger btn-block'>點我結帳</button></NavLink></div>
-                                </div> */}
-
                                 </div>
                             </section>
                         </div>

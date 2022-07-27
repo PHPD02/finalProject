@@ -11,8 +11,7 @@ import Taiwan from './component/Taiwan';
 // 引入首頁專用最新消息資訊架構
 import LatestNews from './component/LatestNews';
 // 固定功夫茶
-import Diecard from './component/diecard';
-// import $ from 'jquery'
+// import Diecard from './component/diecard';
 import 'aos/dist/aos.css';
 import axios from 'axios';
 import Navbar from './repeatability/Navbar';
@@ -92,14 +91,20 @@ class firstpage extends Component {
                       立即加入我們</button>
                   </NavLink>
                 </div>
+<<<<<<< HEAD
                 <div className='text-center mt-5'>
                   <h1 style={{ color: 'red' }}><u>不知道要吃什麼嗎？</u></h1>
+=======
+                {/* <div className='text-center mt-5'>
+                  <h1 style={{ color: 'red' }}><u>不知道要吃什麼嗎？</u></h1>
+
+>>>>>>> resetmerge
                   <NavLink to='/sunsua'>
                     <button className='btn btn-outline-danger btn-lg'>
                       點我查看新功能</button>
                   </NavLink>
 
-                </div>
+                </div> */}
               </section>
             </div>
 

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import $ from 'jquery';
 import Navbar from '../../components/repeatability/Navbar';
 import axios from 'axios';
 import Cartcard from '../components item/cartcard';
 import '../css/cart.css';
+// import img from '../../img/'
 
 var getemail = localStorage.getItem('email');
 class Cart extends Component {
@@ -20,7 +21,7 @@ class Cart extends Component {
     }
 
     stateChg = async () => {
-        await axios.get("http://localhost//ourPHPFinalproject/ChtProject/cart/getallcart.php").then((response) => {
+        await axios.get("http://localhost//ourPHPFinalproject/ChtProject/cart/getallcart1.php").then((response) => {
             this.setState({
                 cart: response.data,
             });
@@ -40,12 +41,13 @@ class Cart extends Component {
                     freight: $('#freight').text(),
                     orderdetails: this.state.cart
                 }
-                console.log(ordert);
+                // console.log(ordert);
                 // const { id, menuItemId, restaurantId, restaurantName, dish, type, picture, cost } = this.props.cart;
                 axios.post("http://localhost//ourPHPFinalproject/ChtProject/order/inorder.php", ordert)
                     .then((response) => {
-                        console.log(response);
+                        console.log(response.data);
                         // localStorage.setItem()
+                        window.location = `http://localhost:3000/payment/${response.data}`;
                     })
                 // window.location = "http://localhost:3000/payment";
             } catch (error) {
@@ -64,7 +66,7 @@ class Cart extends Component {
 
     async componentDidMount() {
         $('#cartBar').hide();
-        await axios.get("http://localhost//ourPHPFinalproject/ChtProject/cart/getallcart.php").then((response) => {
+        await axios.get("http://localhost/ourPHPFinalproject/ChtProject/cart/getallcart1.php").then((response) => {
             this.setState({
                 cart: response.data,
                 restaurantName: response.data[0].restaurantName
@@ -72,12 +74,6 @@ class Cart extends Component {
 
         })
         console.log(this.state.cart);
-        // 如果購物車沒有資料
-        // if (this.state.cart) {
-            // this.isempty();
-        // }
-        // console.log(this.state.cart);
-        // console.log(this.state.restaurantName);
     }
 
     render() {
@@ -85,7 +81,7 @@ class Cart extends Component {
             <React.Fragment>
                 <Navbar />
                 <br /><br /><br />
-                <div className="container">
+                <div className="container p-5" style={{border:'3px solid rgb(0, 40, 79)',borderRadius:'50px'}}>
                     <div className='text-center'>
                         <span className='h1'><strong>購物車</strong></span>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -101,8 +97,6 @@ class Cart extends Component {
                     </div>
                     <hr />
 
-
-
                     <div>
                         {this.state.cart.map((c) => {
                             return (
@@ -116,30 +110,6 @@ class Cart extends Component {
 
                     </div>
 
-
-                    {/* <div className='menutail row'> */}
-                    {/* 點餐內容 */}
-                    {/* <div className='col-3 cart-food-sp sp1'><img src="https://images.deliveryhero.io/image/fd-tw/Products/38155656.jpg?height=80" alt="" /></div>
-                        <div className='col-3 cart-food-sp sp2'>黃金里肌厚切豬排咖哩飯</div>
-                        <div className='col-2 cart-food-sp'>{this.state.price}</div>
-
-                        <div className='col-2 cart-food-sp'>
-                            <div className='orderbutton'>
-                                <button className='btn btn-danger'
-                                    onClick={this.doDecreseorder}>-</button>
-                                <output>&nbsp;{this.state.count}&nbsp;</output>
-                                <button className='btn btn-success'
-                                    onClick={this.doPlusorder}>+</button>
-
-                            </div>
-                        </div>
-
-                        <output className='col-2 cart-food-sp sp3' id='sum'>${this.state.countsum}</output>
-                    </div> */}
-
-
-
-                    {/* <hr /> */}
                 </div>
 
                 {/* 小計 */}
@@ -158,7 +128,7 @@ class Cart extends Component {
                         <div className='col-1'></div>
                     </div>
                     <div className='row'>
-                        <div className='col'></div>
+                        <div className='col' ></div>
                         <div className="col-3">
                             {/* <NavLink to="/payment"> */}
                             <button className='fancy btn-block'
@@ -174,6 +144,8 @@ class Cart extends Component {
                         <div className="col-1"></div>
                     </div>
                 </div>
+                
+                <div id='cartfooter'></div>
 
                 {/* <Footer /> */}
             </React.Fragment>

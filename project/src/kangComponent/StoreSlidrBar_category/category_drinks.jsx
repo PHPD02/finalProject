@@ -19,7 +19,10 @@ class StoreSlidrBar2_drinks extends React.Component {
   randomStar (){
     (Math.random()*(1-5) + 5).toFixed(1)
   } 
-
+  restaurantClick = (restaurantId) => {
+    // console.log(restaurantId)
+    window.location = `http://localhost:3000/shopList2/${restaurantId}`;
+  }
   render() {
     return (
       <div>
@@ -35,7 +38,7 @@ class StoreSlidrBar2_drinks extends React.Component {
             return (
               <Carousel.Item>
                 <div key={item.id}>
-                <div className="card" style={{ maxHeight: "349px",cursor:"pointer" }}>
+                <div className="card" style={{ maxHeight: "349px",cursor:"pointer" }} onClick={() => this.restaurantClick(item.id)}>
                     <img
                       src={item.picture}
                       className="card-img-top"

@@ -9,13 +9,12 @@
   /* overflow: visible; */
   /* size: cover; */
   /* overflow: hidden; */
-  background-image: url('./foodtraditional.png');
+  background-image: url('./13.png');
   background-repeat: no-repeat, repeat;
-  background-position: bottom; 
+  background-position: bottom;
   background-size: 100%
-  
-  /* background-position: center; */
-  
+    /* background-position: center; */
+
 }
 
 .secpic {
@@ -26,7 +25,7 @@
 
 @media(max-width:1200px) {
   /* .firstpic { */
-    /* height: 450px; */
+  /* height: 450px; */
   /* } */
 
   .textheader {
@@ -46,7 +45,7 @@
 @media(max-width:600px) {
   /* .firstpic { */
 
-    /* height: 250px; */
+  /* height: 250px; */
   /* } */
 
   .textheader {

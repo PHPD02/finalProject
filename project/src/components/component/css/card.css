@@ -1,9 +1,9 @@
-
 @media(max-width:1200px) {
   .setHeight {
     width: 200px;
   }
 }
+
 #myImg {
   border-radius: 5px;
   cursor: pointer;
@@ -11,20 +11,28 @@
   max-width: 100%;
   height: 150px;
 }
+
 #myImg:hover {
   opacity: 0.7;
 }
-.zImg{
+
+.zImg {
   padding: 2px;
+  background-size: cover;
+  background-position: center center;
+  object-fit: cover;
 }
-.zText{
-background-color: wheat;
-padding: 1px;
-margin: 1px;   
+
+.zText {
+  background-color: wheat;
+  padding: 1px;
+  margin: 1px;
 }
-.eva{
+
+.eva {
   float: right;
 }
-.stylecards{
+
+.stylecards {
   padding: 2px;
 }

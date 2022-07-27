@@ -14,7 +14,7 @@ import "./css/sunsua.css";
 import $ from 'jquery';
 
 /* 引入檔案 */
-import sunsuaTitle from '../../img/順便特殊字體.png'
+import sunsuaTitle from '../../img/9.png'
 
 class Sunsua extends Component {
     state = {
@@ -54,31 +54,31 @@ class Sunsua extends Component {
                     <div id="sunsua" className='py-2'>
                         <div id='sunsuaheader' className=''>
                             {/* <h1 className='h1' >順弁</h1> */}
-                            <img src={sunsuaTitle} alt="" />
+                            <img className="headerImg" src={sunsuaTitle} alt="" />
                         </div>
                         <p></p>
                         <div className='container'>
                             <div className='row'>
                                 {/* 左側 點選列表 */}
-                                <div className='col-2 d-flex flex-column'>
-                                    <div className="my-1 d-flex justify-content-center" onClick={this.innerContentChange}>
-                                        <button className='btn btn-outline-danger' >
+                                <div className='col-2 d-flex flex-column pro-item-wrapper'>
+                                    <div className=" d-flex justify-content-center pro-item pro-item-1" onClick={this.innerContentChange}>
+                                        <button className='btn ' >
                                             <Link to="/sunsua/intro" className='sunsuaBtn btnNotSel h2 font-weight-bold' >介紹</Link>
                                         </button>
                                     </div>
-                                    <div className="my-1 d-flex justify-content-center" onClick={this.innerContentChange}>
-                                        <button className='btn btn-outline-danger' >
+                                    <div className=" d-flex justify-content-center pro-item" onClick={this.innerContentChange}>
+                                        <button className='btn ' >
                                             <Link to="/sunsua/proposal" className='sunsuaBtn btnNotSel h2 font-weight-bold' >提案</Link>
                                         </button>
                                     </div>
-                                    <div className="my-1 d-flex justify-content-center" onClick={this.innerContentChange}>
-                                        <button className='btn btn-outline-danger' >
+                                    <div className=" d-flex justify-content-center pro-item" onClick={this.innerContentChange}>
+                                        <button className='btn ' >
                                             <Link to="/sunsua/order" className='sunsuaBtn btnNotSel h2 font-weight-bold'>搜方案</Link>
                                         </button>
                                     </div>
                                 </div>
                                 {/* 右側顯示列表 */}
-                                <div className="col-10">
+                                <div className="col-10 introduce-wrapper" >
                                     {this.state.innerContent}
                                 </div>
                             </div>

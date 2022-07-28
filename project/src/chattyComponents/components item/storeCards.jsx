@@ -3,49 +3,36 @@ import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
-import { height } from '@mui/system';
-import $ from 'jquery';
+// import { height } from '@mui/system';
+// import $ from 'jquery';
 
 
 class StoreCard extends Component {
   state = {}
 
   addtoCart = async () => {
-    // const { dish, type, introduce, picture, cost } = this.props.StoreCard;
-    // console.log(this.props.StoreCard);
     try {
       const { menuItemId, restaurantId, restaurantName, dish, type, picture, cost } = this.props.StoreCard;
 
       const res = await axios.post("http://localhost//ourPHPFinalproject/ChtProject/cart/getcart.php", { menuItemId: menuItemId })
-      // .then(function(response) {
-      //   console.log(response);
-      // }); 
+     
       var carts = res.data;
       var id = carts.id
       var mount = carts.mount;
 
-      // console.log(carts);
-      // console.log(mount);
-
       if (carts) {
         // 如果購物車裡已有此筆資料
-
-        // const { id, mount} = this.props.StoreCard;
         const cart = {
           id,
           mount
         }
-        // const cmount = parseInt(carts.mount);
         cart.mount = ++mount;
         console.log(cart);
         // 修改數量
         await axios.put("http://localhost//ourPHPFinalproject/ChtProject/cart/putcart.php", cart);
-        // .then(function(response) {
-        //   console.log(response);
-        // })
+        
       } else {
         // 購物車裡沒有此筆資料
-
         const cart = {
           menuItemId,
           restaurantId,
@@ -56,26 +43,16 @@ class StoreCard extends Component {
           cost,
           mount: 1 //需要預設值
         };
-        // console.log(cart);
-        // await axios.post("http://localhost/PHP/cart/postcart.php", this.props.StoreCard);
         await axios.post("http://localhost:80//ourPHPFinalproject/ChtProject/cart/postcart.php", cart);
-        //   .then(function(response) {
-        //     //code here 
-        //     console.log(response);
-        // });
-
-
       }
-      // this.props.func();
+
       toast.info("已成功新增至購物車!");
 
       // 新增至購物車後右上角數量變動
       var num = document.getElementById('cartNum').innerText;
       document.getElementById('cartNum').innerText = parseInt(num) + 1;
-      // $("#cartNum").text();
-      console.log(num);
+      // console.log(num);
       
-
 
     } catch (error) {
       console.log(error);

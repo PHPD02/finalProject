@@ -20,20 +20,17 @@ class shopList extends Component {
   }
 
   async componentDidMount() {
-    // var result = await Axios.get("http://localhost:8000/todo/list");
+
     let id
+
     if(this.props.match.params.id){
       id = this.props.match.params.id;
     }
-
-    // var result = await Axios.get("http://localhost//ourPHPFinalproject/ChtProject/storeCards/getStoreItems.php");
     var result = await Axios.get("http://localhost/ourPHPFinalproject/ChtProject/storeCards/getStoreItems.php",{params:{restaurantId:id}});
     this.setState({
       menuList: result.data,
       restaurantName: result.data[0].restaurantName
     })
-    // console.log(this.state.menuList)
-    // this.initCartNum();
   }
 
   render() {
@@ -83,7 +80,6 @@ class shopList extends Component {
                   <div className='col-md-6 col-sm-12 mt-2' key={(p.menuItemId)} >
                     <StoreCard
                       StoreCard={p}
-                      // func={this.initCartNum} 
                       />
                   </div>
                 )

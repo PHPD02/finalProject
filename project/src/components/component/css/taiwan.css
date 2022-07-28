@@ -5,9 +5,16 @@
   height: 620px;
   width: 100%;
 }
+
+.twSvg path {
+  fill: none;
+  /* stroke: black; */
+  pointer-events: all;
+}
+
 /* path:hover {
   fill: #1d5254;
   stroke: none;
   cursor: pointer;
-  transition-duration:1.5s;
+  transition-duration: 1.5s;
 } */

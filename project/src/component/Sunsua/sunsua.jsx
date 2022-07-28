@@ -68,12 +68,12 @@ class Sunsua extends Component {
                                     </div>
                                     <div className=" d-flex justify-content-center pro-item" onClick={this.innerContentChange}>
                                         <button className='btn ' >
-                                            <Link to="/sunsua/proposal" className='sunsuaBtn btnNotSel h2 font-weight-bold' >提案</Link>
+                                            <Link to="/sunsua/proposal" className='sunsuaBtn btnNotSel h2 font-weight-bold' >發起團購提案</Link>
                                         </button>
                                     </div>
                                     <div className=" d-flex justify-content-center pro-item" onClick={this.innerContentChange}>
                                         <button className='btn ' >
-                                            <Link to="/sunsua/order" className='sunsuaBtn btnNotSel h2 font-weight-bold'>搜方案</Link>
+                                            <Link to="/sunsua/order" className='sunsuaBtn btnNotSel h2 font-weight-bold'>搜尋團購方案</Link>
                                         </button>
                                     </div>
                                 </div>

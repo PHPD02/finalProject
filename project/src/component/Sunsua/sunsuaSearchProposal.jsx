@@ -276,7 +276,7 @@ class SunsuaSearchProposal extends Component {
                     {/* 測試用 */}
                     {/* <button onClick={this.stateChk}>state show </button> */}
                     <div id="proposalSearch" className='container py-3'>
-                        <h1 className='text-center'>搜尋方案</h1>
+                        <h1 className='h1 font-weight-bolder text-center'>搜尋團購提案頁面</h1>
                         {/* ===== 篩選區塊 ===== */}
                         <div>
                             <div>

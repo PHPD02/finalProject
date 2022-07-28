@@ -277,7 +277,7 @@ class SunsuaProposal extends Component {
             <div id='sunsuaProposal'>
                 <div className='container'>
                     <div id="proposalSet">
-                        <h1 className='h1 font-weight-bolder text-center'>提案頁面</h1>
+                        <h1 className='h1 font-weight-bolder text-center'>發起團購提案頁面</h1>
                         {/* 測試用 */}
                         {/* <button onClick={this.dataShow}>Data Show</button> */}
                         <br />

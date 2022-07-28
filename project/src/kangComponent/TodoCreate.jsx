@@ -259,7 +259,7 @@ class ToDoCreate extends React.Component {
                   placeholder="重新上傳請輸入網址"
                   onChange={this.todoItemPicture1Change}
                 ></input>
-                <br /><br /><br /><br /><h3>這邊是之後看看能不能直接上傳圖片而非網址進資料庫方式</h3>
+                <br />
 
                 {/* <ImgurToPhp/> */}
                 <input

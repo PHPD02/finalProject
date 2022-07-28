@@ -9,3 +9,8 @@
 path:hover {
   cursor: pointer;
 }
+.twSvg path {
+  fill: none;
+  /* stroke: black; */
+  pointer-events: all;
+}

@@ -145,7 +145,8 @@ class ProposalInfo extends Component {
                     </div>
                     <div className='col-lg-3 d-flex flex-column justify-content-center align-items-center '>
                         <div className='m-1 text-center'>
-                            <span className='h3 mr-2'>提案剩餘時間</span>
+                            <span className='h5 mr-2'>團購開放剩餘時間</span>
+                            <br />
                             <TimeCountDown
                                 // limitTime={this.state.proposalDetail.limitTime}
                                 // setTime={this.state.proposalDetail.setTime}

@@ -71,11 +71,11 @@ class TimeCountDown extends Component {
     render() {
         return (
             <>
-                <span className='h3'>{this.state.showTime.hr} </span>
+                <span className='h4'>{this.state.showTime.hr} </span>
                 <span className='p'> hr : </span>
-                <span className='h3'>{this.state.showTime.min} </span>
+                <span className='h4'>{this.state.showTime.min} </span>
                 <span className='p'> min : </span>
-                <span className='h3'>{this.state.showTime.sec} </span>
+                <span className='h4'>{this.state.showTime.sec} </span>
                 <span className='p'> sec</span>
             </>
         );

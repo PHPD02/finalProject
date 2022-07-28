@@ -22,8 +22,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './css/sunsuaSearchProposal.css';
 
+/* 引入其他檔案 */
+import iconLocate from './pic/locate.png'
 
 import AutoCompleteLocation from "../../kangComponent/js/AutoCompleteLocation.jsx"
+
+const google = window.google;
 class SunsuaSearchProposal extends Component {
     state = {
         name: null,
@@ -48,6 +52,12 @@ class SunsuaSearchProposal extends Component {
             amount: null
         }
     }
+    locating = {
+        latitude: null,
+        longitude: null,
+        addr: null,
+    }
+
     componentDidMount = async () => {
         this.state.name = localStorage.getItem('firstname') + localStorage.getItem('lastname');
         let url = serverHost + '/' + phpRoute + 'sunsua/selProposal.php';
@@ -70,7 +80,7 @@ class SunsuaSearchProposal extends Component {
     /* 訂單確認 */
     orderConfirm = (orderDetail, name, num) => {
         if (localStorage.getItem('email')) {
-            console.log(orderDetail);
+            // console.log(orderDetail);
             this.state.orderDetail = orderDetail;
             this.state.orderDetail.namePartyB = name;
             this.state.orderDetail.number = num;
@@ -157,9 +167,16 @@ class SunsuaSearchProposal extends Component {
     addrInput = async (e) => {
         console.clear();
         console.log("addr Input");
-        let url = serverHost + '/' + phpRoute + 'sunsua/selProposalSp.php';
         this.state.proposalDetail = [];
-        let keyword = e.target.value;
+        this.setState({});
+        let keyword;
+        if (e) {
+            keyword = e.target.value;
+        } else {
+            const searchBox = document.querySelector("#searchBox");
+            keyword = searchBox.value;
+        }
+        let url = serverHost + '/' + phpRoute + 'sunsua/selProposalSp.php';
         await axios.get(url, { params: { keyword: keyword } })
             .then(res => {
                 // console.log("success");
@@ -185,6 +202,67 @@ class SunsuaSearchProposal extends Component {
         let orderConfirm = document.querySelector("#orderConfirm");
         orderConfirm.classList.add("d-none");
     }
+    locating = () => {
+        if (navigator.geolocation) {
+            console.clear();
+            // 使用者不提供權限，或是發生其它錯誤
+            function error() {
+                alert('無法取得你的位置');
+            }
+
+            // 使用者允許抓目前位置，回傳經緯度
+            var success = async (position) => {
+                console.log(position.coords.latitude, position.coords.longitude);
+                this.locating.latitude = position.coords.latitude.toFixed(7);
+                this.locating.longitude = position.coords.longitude.toFixed(7);
+
+                /* ===【Start】 經緯度 轉地址 === */
+                var geocoder = new google.maps.Geocoder();
+                var coord = new google.maps.LatLng(this.locating.latitude, this.locating.longitude);
+                var result
+                result = await geocoder.geocode({ 'latLng': coord }, function (results, status) {
+                    if (status === google.maps.GeocoderStatus.OK) {
+                        // 如果有資料就會回傳
+                        if (results) {
+                            console.log(results[0]);
+                            // return results;
+                        }
+                    }
+                    // 經緯度資訊錯誤
+                    else {
+                        alert("Reverse Geocoding failed because: " + status);
+                    }
+                })
+                    .then((res) => {
+                        // console.log(res);
+                        return res;
+                    });
+                // console.log(result);
+                this.locating.addr = result.results[0].formatted_address
+                console.log(this.locating.addr);
+                /* ===End】 經緯度 轉地址 === */
+
+                /*  */
+                // console.log(this.locating.addr)
+                let str = this.locating.addr;
+                let l = str.lengt;
+                this.locating.addr = this.locating.addr.slice(5, l)
+                const searchBox = document.querySelector("#searchBox");
+                searchBox.value = this.locating.addr;
+                /* */
+                this.addrInput();
+                this.setState({});
+
+            }
+
+            // 跟使用者拿所在位置的權限
+            navigator.geolocation.getCurrentPosition(success, error);
+
+        } else {
+            alert('Sorry, 你的裝置不支援地理位置功能。')
+        }
+    }
+
     /* 測試用 */
     stateChk = () => {
         console.log(this.state);
@@ -198,20 +276,29 @@ class SunsuaSearchProposal extends Component {
                     {/* 測試用 */}
                     {/* <button onClick={this.stateChk}>state show </button> */}
                     <div id="proposalSearch" className='container py-3'>
-                        <h1 className='text-center'>搜尋方案</h1>
+                        <h1 className='h1 font-weight-bolder text-center'>搜尋團購提案頁面</h1>
+                        {/* ===== 篩選區塊 ===== */}
                         <div>
-                            <span>
-                                {/* <AutoCompleteLocation onChange={this.haha} /> */}
-                                <input id="searchBox" placeholder='請輸入您的地址' onChange={this.addrInput} style={{ 'width': '80%' }} />
-                                <i className="bi bi-search ml-1"></i>
-                            </span>
-                            {/* <input id="" placeholder='時間' /><i className="bi bi-search ml-1"></i> */}
+                            <div>
+                                <span className='d-flex align-content-center'>
+                                    {/* <AutoCompleteLocation onChange={this.haha} /> */}
+                                    <input id="searchBox" placeholder='請輸入您的地址' onChange={this.addrInput} style={{ 'width': '80%' }} />
+                                    <img src={iconLocate} className="mx-1" alt="" style={{ "width": "25px", "height": "25px" }} onClick={this.locating} />
+                                    {/* <i className="bi bi-search ml-1"></i> */}
+                                </span>
+                                {/* <input id="" placeholder='時間' /><i className="bi bi-search ml-1"></i> */}
 
+                            </div>
                         </div>
                         <hr />
+                        {/* ===== 搜尋方案 主要區塊 ===== */}
                         {this.state.proposalDetail.map((value, index) => {
                             return (
-                                <ProposalInfo key={index} proposalDetail={value} func={this.orderConfirm}> </ProposalInfo>
+                                <>
+
+                                    <ProposalInfo key={index} proposalDetail={value} func={this.orderConfirm}> </ProposalInfo>
+                                    <hr />
+                                </>
                             )
                         })}
                     </div>

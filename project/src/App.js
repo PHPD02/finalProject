@@ -76,10 +76,9 @@ import Try from "./kangComponent/test";
 /* =============================================================================================== */
 /* == 承翰 == */
 /* 測試用 */
-import Gmtest03 from "./component/Maxtest/gmtest03";
-import Gmtest04 from "./component/Maxtest/gmtest04";
-import Gmtest12 from "./component/Maxtest/gmtest12";
+import Gmlocate from "./component/Maxtest/gmlocationBtn";
 import ImgurToPhp from "./component/Maxtest/imgurToPhp";
+import Gmtest03 from "./component/Maxtest/gmtest03";
 
 // import Gmtest03Copy from "./component/Maxtest/gmtest03 copy";
 // import Tessst from "./component/Maxtest/test";
@@ -134,10 +133,9 @@ class App extends React.Component {
           {/* ================================================================================================================== */}
           {/* 承翰 */}
           {/* 測試用 */}
-          <Route path="/gmtest03" component={Gmtest03} />
-          <Route path="/gmtest04" component={Gmtest04} />
-          <Route path="/gmtest12" component={Gmtest12} />
-          <Route path="/imgPhp" component={ImgurToPhp} />
+          <Route path="/imgPhp" component={ImgurToPhp} /> {/* 能work */}
+          <Route path="/gmlocate" component={Gmlocate} /> {/* 能work */}
+          <Route path="/gmtest03" component={Gmtest03} /> {/* 能work */}
 
           <Route path="/FirebaseIndex" component={FirebaseIndex} />
           <Route path="/tst" component={Tst} />

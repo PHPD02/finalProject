@@ -29,7 +29,7 @@ class Payment extends Component {
             gotDate: gotDate,
 
             // subtotal: 250,
-            freight: 19,
+            freight: 39,
             // total: 270,
 
             cart: []
@@ -201,7 +201,7 @@ class Payment extends Component {
 
                                             <p><span >{this.totalPrice()}</span></p>
                                             <p><span>{this.state.freight}</span></p>
-                                            <p><span id='pTotal'>{this.totalPrice() + 19}</span></p>
+                                            <p><span id='pTotal'>{this.totalPrice() + 39}</span></p>
                                         </div>
                                     </div>
 

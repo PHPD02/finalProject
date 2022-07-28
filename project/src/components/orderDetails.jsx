@@ -16,6 +16,8 @@ class OrderDetails extends Component {
     time: [], //給於一個空的時間值
     timeleft: '',
   }
+
+
   componentDidMount = async () => {
     let url = "http://localhost/ourPHPFinalproject/RjieProject/details.php"
     await axios.get(url)
@@ -31,9 +33,13 @@ class OrderDetails extends Component {
     // this.state.timeleft = this.state.time[0].getTime();
     console.log(this.state.time);
     console.log(this.state.timeleft);
-
     this.setState({});
 
+
+
+
+    const timeleft = Date.now();
+    console.log(timeleft);
   }
   render() {
     return (
@@ -47,7 +53,7 @@ class OrderDetails extends Component {
                 <div className='card'>
                   <div className='row'>
                     <div className='col-11 text-center'>
-                      <h4>預計外送時間:20分00秒</h4>
+                      <h4>預計外送時間:00分00秒</h4>
                       ({this.state.time[0]})-({this.state.time[1]})
                     </div>
                     {/* 讀取外送時間 */}
@@ -60,7 +66,7 @@ class OrderDetails extends Component {
                   </div>
                   {/* 再送達後更改內容 */}
                   <div className='col-11 text-center'>
-                    {/* <h4>{this.state.data2 == 0 ? "餐點已送達!謝謝光臨" : "餐點準備中"}</h4> */}
+                    <h4>{0 == 0 ? "餐點已送達!謝謝光臨" : "餐點準備中"}</h4>
 
                   </div>
                 </div>

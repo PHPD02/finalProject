@@ -6,9 +6,6 @@
   width: 100%;
 }
 
-/* path:hover {
-  fill: #1d5254;
-  stroke: none;
+path:hover {
   cursor: pointer;
-  transition-duration:1.5s;
-} */
+}

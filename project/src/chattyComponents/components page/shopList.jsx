@@ -70,21 +70,21 @@ class shopList extends Component {
           <br />
           <div className='container'>
             <div className='row'>
-              <h4 className='col-9'>餐廳名稱:{this.state.restaurantName}</h4>
+              <h4 className='col-9' style={{fontWeight:"bold",fontSize:"30px"}}>餐廳名稱:{this.state.restaurantName}</h4>
               {/* <button className='col-3 btn btn-outline-primary'><b>+</b><i className='fa fa-users pr-1'></i>開始團購訂單</button> */}
               
               <div className="col-2">
                 <NavLink to='/CommentPage'>
-                  <button className='btn btn-outline-success btn-lg'>餐廳資訊</button>
+                  <button className='btn btn-outline-success btn-lg' >餐廳資訊</button>
                 </NavLink>
               </div>
                 
             </div>
-            <div>
-              <span>★</span><span>5</span>/<span>5</span><span>(476)</span>
+            <div style={{fontSize:"20px"}}>
+              <span style={{color:"red"}}>★</span><span >5</span>/<span >5</span><span >(476)</span>
             </div>
-            
-            <h4>菜單</h4>
+            <br/>
+            <h4  style={{fontSize:"26px"}}>菜單</h4>
             <div className='container'>
               <div className='row'>
               {this.state.menuList.map((p) => {

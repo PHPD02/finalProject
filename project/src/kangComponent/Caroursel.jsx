@@ -32,17 +32,17 @@ class Caroursel extends React.Component {
               // navigation
               loop={true}
               autoplay={{
-                delay: 3000,
+                delay: 5000,
                 disableOnInteraction: false,
               }}
               pagination={{ clickable: true }}
               onSwiper={(swiper) => console.log(swiper)}
               // onSlideChange={() => console.log('slide change')}
-              style={{width:'95%',height:'50vh'}}
+              style={{width:'95%',height:'85vh'}}
             >
               {/* <SwiperSlide><img src={img1} alt="img1" style={{width:"100%",height:"50vh"}}/></SwiperSlide> */}
-              <SwiperSlide><img src={img2} alt="img2" style={{width:"100%",height:"50vh"}}/></SwiperSlide>
-              <SwiperSlide><img src={img3} alt="img3" style={{width:"100%",height:"50vh"}}/></SwiperSlide>
+              <SwiperSlide><img src={img2} alt="img2" style={{width:"100%",height:"85vh"}}/></SwiperSlide>
+              <SwiperSlide><img src={img3} alt="img3" style={{width:"100%",height:"85vh"}}/></SwiperSlide>
               {/* <SwiperSlide><img src={img4} alt="img4" style={{width:"100%",height:"50vh"}}/></SwiperSlide> */}
             </Swiper>
           );

@@ -31,6 +31,9 @@ import { NavLink } from "react-router-dom";
 // import ChatRobot2 from "./NOT_UESD_NOW/ChatRobot2OW/ChatRobot2"
 // import FindDisatnce from "./js/GetCurrentPosition"
 class FoodpandaPage extends React.Component {
+  state={
+    location:"1",
+  }
   componentDidMount() {
     // or simply just AOS.init();
     AOS.init({
@@ -38,6 +41,79 @@ class FoodpandaPage extends React.Component {
       duration: 2000,
     });
   }
+//   locating = {
+//     latitude: null,
+//     longitude: null,
+//     addr: null,
+// }
+
+
+// locating = () => {
+//   if (navigator.geolocation) {
+//       console.clear();
+//       // 使用者不提供權限，或是發生其它錯誤
+//       function error() {
+//           alert('無法取得你的位置');
+//       }
+
+//       // 使用者允許抓目前位置，回傳經緯度
+//       var success = async (position) => {
+//           console.log(position.coords.latitude, position.coords.longitude);
+//           this.locating.latitude = position.coords.latitude.toFixed(7);
+//           this.locating.longitude = position.coords.longitude.toFixed(7);
+
+//           /* ===【Start】 經緯度 轉地址 === */
+//           var geocoder = new google.maps.Geocoder();
+//           var coord = new google.maps.LatLng(this.locating.latitude, this.locating.longitude);
+//           var result
+//           result = await geocoder.geocode({ 'latLng': coord }, function (results, status) {
+//               if (status === google.maps.GeocoderStatus.OK) {
+//                   // 如果有資料就會回傳
+//                   if (results) {
+//                       console.log(results[0]);
+//                       // return results;
+//                   }
+//               }
+//               // 經緯度資訊錯誤
+//               else {
+//                   alert("Reverse Geocoding failed because: " + status);
+//               }
+//           })
+//               .then((res) => {
+//                   // console.log(res);
+//                   return res;
+//               });
+//           // console.log(result);
+//           this.locating.addr = result.results[0].formatted_address
+//           console.log(this.locating.addr);
+//           /* ===End】 經緯度 轉地址 === */
+
+//           /*  */
+//           // console.log(this.locating.addr)
+//           let str = this.locating.addr;
+//           let l = str.length;
+//           this.locating.addr = this.locating.addr.slice(5, l)
+//           const searchBox = document.querySelector("#searchBox");
+//           searchBox.value = this.locating.addr;
+//           /* */
+
+
+
+//       }
+
+//       // 跟使用者拿所在位置的權限
+//       navigator.geolocation.getCurrentPosition(success, error);
+
+
+//   } else {
+//       alert('Sorry, 你的裝置不支援地理位置功能。')
+//   }
+
+// }
+
+
+
+
   render() {
     return (
       <React.Fragment>
@@ -45,6 +121,9 @@ class FoodpandaPage extends React.Component {
         <ChatRobot />
 
         <div className="body-wrapper">
+        {/* <div className="container"> */}
+            <Caroursel />
+          {/* </div> */}
           <div className="container">
             
             <div className="first-section d-flex">
@@ -52,7 +131,7 @@ class FoodpandaPage extends React.Component {
               <div className="dot2 dot"></div>
               <div className="dot3 dot"></div>
               <div className="section-left flex-grow-1 ">
-              <h1 style={{ color:'red'}}><u>不知道要吃什麼嗎？</u></h1>
+              <br/><br/>
                 <h2>
                   <span className="special-text">&nbsp;</span>新功能上線中
                 </h2>
@@ -72,9 +151,12 @@ class FoodpandaPage extends React.Component {
               </div>
             </div>
           </div>
-          <div className="container">
-            <Caroursel />
-          </div>
+
+{/* 定位功能 */}
+{/* <button onClick={this.locating}>123</button>
+<input type="text"  id="searchBox"/> */}
+
+
           <div className="container">
             <div className=" section1_searchsection">
               <div>
@@ -82,11 +164,11 @@ class FoodpandaPage extends React.Component {
 
                 {/* 搜尋bar部分 */}
                 <div className="searchbar-wrapper">
-
-                  <div style={{ margin: "0px 0 70px 180px" }}>
-                    <h1 className="font-weight-bolder h1 section1_searchbar">
+                  <div style={{ margin: "0px 0 0px 180px" }}>
+                    <h1 className="font-weight-bolder h1 section1_searchbar ">
                       即刻享用新鮮餐點
                     </h1>
+                  
                     <SearchBar />
                   </div>
                   {/* <img src={Hands} alt=""/> */}
@@ -97,77 +179,80 @@ class FoodpandaPage extends React.Component {
           {/* <LiveChat /> */}
           {/* <FirebaseIndex /> */}
           {/* <FindDisatnce /> */}
-          <div className="container mt-4 all-item">
+          <div className=" all-item">
             <div className="section2">
               <div
-                className="section2_bar1 hito"
+                className="section2_bar1 hito section2_bar"
               // data-aos="fade-right"
               // data-aos-once="true"
               >
-                <h2 className="font-weight-bolder ">
+                <h2 className=" " >
                   &ensp;優惠主打星
-                  <i className="fa fa-star ml-3" style={{ color: "gold" }}></i>
+                  {/* <i className="fa fa-star ml-3" style={{ color: "gold" }}></i> */}
                 </h2>
                 <StoreSlidrBar2hito />
               </div>
               <div
-                className="section2_bar2"
+                className="section2_bar2 section2_bar"
               // data-aos="fade-left"
               // data-aos-once="true"
               >
-                <h2 className="mt-5 font-weight-bolder">
+                <h2 className=" ">
                   &ensp;附近美食
-                  <i className="fa fa-cutlery ml-3" style={{ color: "grey" }}></i>
+                  {/* <i className="fa fa-cutlery ml-3" style={{ color: "grey" }}></i> */}
                 </h2>
                 <StoreSlidrBar2taichung />
               </div>
+              <div className="section2_bar5 section2_bar">
+                <h2 className=" ">
+                  &ensp;飲料
+                  {/* <i className="fa fa-coffee ml-3" style={{ color: "pink" }}></i> */}
+                </h2>
+                <StoreSlidrBar2drinks />
+              </div>
+
               <div
-                className="section2_bar3"
+                className="section2_bar3 section2_bar"
               // data-aos="fade-right"
               // data-aos-once="true"
               >
-                <h2 className="mt-5 font-weight-bolder">
+                <h2 className=" ">
                   &ensp;中式餐廳
-                  <i className="fa fa-lemon ml-3" style={{ color: "orange" }}></i>
+                  {/* <i className="fa fa-lemon ml-3" style={{ color: "orange" }}></i> */}
                 </h2>
                 <StoreSlidrBar2chinese />
               </div>
               <div
-                className="section2_bar4"
+                className="section2_bar4 section2_bar "
               // data-aos="fade-left"
               // data-aos-once="true"
               // data-aos-duration="700"
               >
-                <h2 className="mt-5 font-weight-bolder">
-                  &ensp;西式餐廳
-                  <i
+                <h2 className="">
+                  西式餐廳
+                  {/* <i
                     className="fa  fa-glasses ml-3"
                     style={{ color: "yellow" }}
-                  ></i>
+                  ></i> */}
                 </h2>
                 <StoreSlidrBar2west />
               </div>
-              <div className="section2_bar5">
-                <h2 className="mt-5 font-weight-bolder">
-                  &ensp;飲料
-                  <i className="fa fa-coffee ml-3" style={{ color: "pink" }}></i>
-                </h2>
-                <StoreSlidrBar2drinks />
-              </div>
-              <div className="section2_bar6">
-                <h2 className="mt-5 font-weight-bolder">
+              <div className="section2_bar6 section2_bar">
+                <h2 className=" ">
                   &ensp;東南亞料理
-                  <i className="fa fa-coffee ml-3" style={{ color: "pink" }}></i>
+                  {/* <i className="fa fa-coffee ml-3" style={{ color: "pink" }}></i> */}
                 </h2>
                 <StoreSlidrBar2southeast />
               </div>
 
-
-              <h2 className="mt-5 font-weight-bolder">
-                &ensp;探索更多<i className="fa fa-star" style={{ color: "gold" }}></i>
+<div style={{marginLeft:"50px",marginTop:"70px"}}>
+              <h2 className=" font-weight-bolder">
+                &ensp;探索更多
+                {/* <i className="fa fa-star" style={{ color: "gold" }}></i> */}
               </h2>
             </div>
-            <section><Restaurants /></section>
+            <div ><Restaurants /></div>
+            </div>
             {/* <MultipleSearch /> */}
             {/* <MultipleSearch2 /> */}
           </div>

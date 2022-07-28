@@ -344,8 +344,8 @@ class Order_record extends React.Component {
                             <div className="container-fluid">
                               <div className="row d-flex text-left">
                                 <div className="col-8 ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;訂購人</div>
-                                <div className="col-1 text-nowrap ">數量</div>
-                                <div className="col-1 text-nowrap">訂單費用</div>
+                                {/* <div className="col-1 text-nowrap ">數量</div> */}
+                                <div className="col-1 text-nowrap">訂單運費</div>
                               </div>
                             </div>
                             <li className="list-group-item d-flex  ">
@@ -356,8 +356,8 @@ class Order_record extends React.Component {
                                       <div className="row d-flex text-left border-bottom">
                                       <div className="col-9 font-weight-bolder">{itemitem.emailPartyB.split('@')[0]}</div>
     
-                                      <div className="col-1 text-nowrap">{itemitem.count}份</div>
-                                      <div className="col-1 text-nowrap font-weight-bolder">${item.cost}元</div> 
+                                      {/* <div className="col-1 text-nowrap">{itemitem.count}份</div> */}
+                                      <div className="col-1 text-nowrap font-weight-bolder">${item.freight}元</div> 
 
                                       </div>
 

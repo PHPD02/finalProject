@@ -75,7 +75,6 @@ class firstpage extends Component {
         //  style={{zIndex:'-1'}}
         >
           <div className='firstpic'>
-            {/* <img src="./image/foodtraditional.png" className="card-img " /> */}
             <div className='secpic'>
               <section>
                 <h2 className='pt-5'><b>還等什麼？一起和我們開始這個外送的旅程吧！</b></h2>
@@ -91,7 +90,6 @@ class firstpage extends Component {
                     <button className='btn btn-warning btn-lg'>
                       立即加入我們</button>
                   </NavLink>
-
                 </div>
                 {/* <div className='text-center mt-5'>
                   <h1 style={{ color: 'red' }}><u>不知道要吃什麼嗎？</u></h1>

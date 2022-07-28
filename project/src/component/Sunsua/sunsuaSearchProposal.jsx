@@ -93,8 +93,8 @@ class SunsuaSearchProposal extends Component {
             orderConfirm.classList.remove("d-none");
         } else {
             // 沒登入 返回登入頁
-            console.log("沒有登入");
-            window.location = "http://localhost:3000/login";
+            alert(" 請先登入! ")
+            window.location = "http://localhost:3000/loginComsumer";
             return;
         }
 

@@ -167,9 +167,16 @@ class SunsuaSearchProposal extends Component {
     addrInput = async (e) => {
         console.clear();
         console.log("addr Input");
-        let url = serverHost + '/' + phpRoute + 'sunsua/selProposalSp.php';
         this.state.proposalDetail = [];
-        let keyword = e.target.value;
+        this.setState({});
+        let keyword;
+        if (e) {
+            keyword = e.target.value;
+        } else {
+            const searchBox = document.querySelector("#searchBox");
+            keyword = searchBox.value;
+        }
+        let url = serverHost + '/' + phpRoute + 'sunsua/selProposalSp.php';
         await axios.get(url, { params: { keyword: keyword } })
             .then(res => {
                 // console.log("success");
@@ -236,9 +243,14 @@ class SunsuaSearchProposal extends Component {
                 /* ===End】 經緯度 轉地址 === */
 
                 /*  */
+                // console.log(this.locating.addr)
+                let str = this.locating.addr;
+                let l = str.lengt;
+                this.locating.addr = this.locating.addr.slice(5, l)
                 const searchBox = document.querySelector("#searchBox");
                 searchBox.value = this.locating.addr;
-
+                /* */
+                this.addrInput();
                 this.setState({});
 
             }

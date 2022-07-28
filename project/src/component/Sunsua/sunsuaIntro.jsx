@@ -6,6 +6,7 @@
 import React, { Component } from 'react';
 
 /* 引入 css */
+import './css/sunsuaIntro.css'
 
 class SunsuaIntro extends Component {
     state = {}

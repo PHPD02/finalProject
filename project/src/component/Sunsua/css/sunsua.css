@@ -1,5 +1,8 @@
 #sunsua {
     box-sizing: border-box;
+    background-image: url(../../../img/6.jpg);
+    background-size: 100%;
+    /* background-repeat: no-repeat; */
 }
 
 #sunsuaheader {
@@ -38,8 +41,8 @@
     text-shadow: 2px 2px 8px black;
 }
 .introduce-wrapper{
-    outline: none;
+    /* outline: none;
     border: 3px solid rgb(0, 40, 79);
     border-radius: 50px;
-    min-height: 455px;
+    min-height: 455px; */
 }

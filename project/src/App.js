@@ -20,7 +20,7 @@ import Firstpage from "./components/firstpage";
 // 訂單詳情
 import OrderDetails from "./components/orderDetails";
 // 店家資訊
-import ShopList from "./components/shopList";
+// import ShopList from "./components/shopList";
 
 /* == 承翰 == */
 // 順弁

@@ -1,3 +1,7 @@
+/**
+ * 【可以work】
+ * 圖片轉成url
+ */
 import React, { Component } from 'react';
 import axios from 'axios';
 

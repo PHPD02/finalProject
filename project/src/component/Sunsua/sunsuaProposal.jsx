@@ -259,8 +259,8 @@ class SunsuaProposal extends Component {
         if (this.state.proposalDetail.freight == null || this.state.proposalDetail.freight == "") return "請輸入運費價格"
         if (this.state.proposalDetail.amount == null || this.state.proposalDetail.amount == "") return "請輸入餐點上限數量"
         if (this.state.proposalDetail.mealType == null || this.state.proposalDetail.mealType == "") return "請選擇餐點類型"
-        if (this.state.proposalDetail.limitTimeHr == null || this.state.proposalDetail.limitTimeHr == "") return "請輸入時間"
-        if (this.state.proposalDetail.limitTimeMin == null || this.state.proposalDetail.limitTimeMin == "") return "請輸入時間"
+        if (this.state.proposalDetail.limitTimeHr == null || this.state.proposalDetail.limitTimeHr == "") return "請輸入開放時間"
+        if (this.state.proposalDetail.limitTimeMin == null || this.state.proposalDetail.limitTimeMin == "") return "請輸入開放時間"
         // if (this.state.proposalDetail.picUrl == null || this.state.proposalDetail.picUrl == "") return "請選擇餐點照片"
         return 1;
     }
@@ -270,19 +270,20 @@ class SunsuaProposal extends Component {
         console.log(this.state);
     }
 
+        
 
     render() {
         return (
             <div id='sunsuaProposal'>
                 <div className='container'>
                     <div id="proposalSet">
-                        <h1 className='h1 font-weight-bolder text-center'>提案頁面</h1>
+                        <h1 className='h1 font-weight-bolder text-center'>發起團購提案頁面</h1>
                         {/* 測試用 */}
                         {/* <button onClick={this.dataShow}>Data Show</button> */}
                         <br />
                         <div className='text-center'>
                             <form action='#' className=''>
-                                <table className='table'>
+                                <table className='rwd-table'>
                                     <tbody >
                                         {/* 到達地址 */}
                                         <tr>
@@ -357,9 +358,9 @@ class SunsuaProposal extends Component {
                                                 <input type='text' id="otherType" className='d-none' style={{ width: 200 }} placeholder='輸入品項類型' onChange={this.typeInput} required="required"></input>
                                             </td>
                                         </tr>
-                                        {/* 提案時間 */}
+                                        {/* 團購開放時間 */}
                                         <tr>
-                                            <td className='h3 font-weight-bold'>提案限制時間</td>
+                                            <td className='h3 font-weight-bold'>團購開放時間</td>
                                             <td className='d-flex align-content-center  justify-content-center'>
                                                 <span>
                                                     <input type="number" className='sunsuaInput form-control' style={{ width: 80 }} min={0} max={24} defaultValue={0} onChange={this.hrInput} required="required"></input>
@@ -446,5 +447,6 @@ class SunsuaProposal extends Component {
         );
     }
 }
+
 
 export default SunsuaProposal;

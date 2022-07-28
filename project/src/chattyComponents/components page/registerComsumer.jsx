@@ -48,6 +48,25 @@ function Register2() {
         }
     }
 
+    const doShow = () => {
+        var checkBox = document.getElementById("passwdchk");
+        if(checkBox.checked == true){
+            $('#password').attr('type', 'text');
+        }else{
+            $('#password').attr('type', 'password');
+        }
+        
+    }
+    
+    const dopwdchk = (e) => {
+        console.log(e.target.value)
+        let pwd = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,10}$/);
+        if ( pwd.test( e.target.value ) ) {
+            $('#pwdrex').css("visibility",'visible') ;
+        }
+           
+    }
+
     const handleSumbit = (e) => {
         e.preventDefault();
         var correctNumber = $('#chkmesg').text();
@@ -118,7 +137,20 @@ function Register2() {
                     {/* tel */}
                     <input type="text" id="phoneNumber" name="phoneNumber" className='btn-block form-control' placeholder='手機號碼' required autoFocus />
                     {/* password */}
-                    <input type="password" id="password" name="password" className="form-control" placeholder="密碼" required autoFocus />
+                    <input type="password" id="password" name="password" className="form-control" placeholder="密碼" required autoFocus
+                        onChange={dopwdchk} />
+                    <h6 className='text-danger'>請輸入6~8位密碼，含特殊符號、大寫、小寫及數字至少各一位<span id='pwdrex' style={{ color: 'green', height: '15px', visibility: 'hidden' }} ><FontAwesomeIcon icon={faCircleCheck} /></span></h6>
+                    
+                    <input type="checkbox" name="passwdchk" id="passwdchk" 
+                    onClick={doShow} 
+                    />
+                    <label htmlFor="passwdchk">顯示密碼</label>
+                    {/* <i className="fas fa-eye" 
+                    style={{position:'absolute',top:'59%',right:'40%'}} 
+                    onClick={doShow}></i>
+                    <i className="fas fa-eye-slash" 
+                    style={{position:'absolute',top:'59%',right:'40%',display:'none'}} 
+                    onClick={doHide}></i> */}
                     <div id="chkmesg" className='h6' style={{ color: 'red', height: '10px' 
                     , visibility:'hidden'
                     }}>{result}</div>

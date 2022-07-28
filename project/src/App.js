@@ -3,10 +3,10 @@ import { BrowserRouter, HashRouter, Switch, Route } from "react-router-dom";
 
 // 引入模板
 // import "./assets/css/lib/font-awesome.min.css"
-import '../../project/src/kangComponent/assets/css/lib/font-awesome.min.css'
-import "../../project/src/kangComponent/assets/css/lib/themify-icons.css"
-import "../../project/src/kangComponent/assets/css/lib/menubar/sidebar.css"
-import "../../project/src/kangComponent/assets/css/style.css"
+import "../../project/src/kangComponent/assets/css/lib/font-awesome.min.css";
+import "../../project/src/kangComponent/assets/css/lib/themify-icons.css";
+import "../../project/src/kangComponent/assets/css/lib/menubar/sidebar.css";
+import "../../project/src/kangComponent/assets/css/style.css";
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
@@ -15,29 +15,29 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 /* == 群傑 == */
-// 首頁 
+// 首頁
 import Firstpage from "./components/firstpage";
-// 訂單詳情 
+// 訂單詳情
 import OrderDetails from "./components/orderDetails";
-// 店家資訊 
-import ShopList from "./components/shopList";
+// 店家資訊
+// import ShopList from "./components/shopList";
 
 /* == 承翰 == */
-// 順弁 
+// 順弁
 import Sunsua from "./component/Sunsua/sunsua.jsx";
 
 /* == 純芷 == */
 // 登入
-import Login from './chattyComponents/components page/login';
+import Login from "./chattyComponents/components page/login";
 import LoginCompany from "./chattyComponents/components page/loginCompany";
 import LoginComsumer from "./chattyComponents/components page/loginComsumer";
 // 註冊
-import RegisterCompany from './chattyComponents/components page/registerCompany';
-import RegisterComsumer from './chattyComponents/components page/registerComsumer';
+import RegisterCompany from "./chattyComponents/components page/registerCompany";
+import RegisterComsumer from "./chattyComponents/components page/registerComsumer";
 // 購物車
-import Cart from './chattyComponents/components page/cart';
+import Cart from "./chattyComponents/components page/cart";
 // 結帳頁面
-import Payment from './chattyComponents/components page/payment';
+import Payment from "./chattyComponents/components page/payment";
 // 店家資訊
 import ShopList2 from "./chattyComponents/components page/shopList";
 
@@ -76,14 +76,12 @@ import Try from "./kangComponent/test";
 /* =============================================================================================== */
 /* == 承翰 == */
 /* 測試用 */
-import Gmtest03 from "./component/Maxtest/gmtest03";
-import Gmtest04 from "./component/Maxtest/gmtest04";
-import Gmtest12 from "./component/Maxtest/gmtest12";
+import Gmlocate from "./component/Maxtest/gmlocationBtn";
 import ImgurToPhp from "./component/Maxtest/imgurToPhp";
+import Gmtest03 from "./component/Maxtest/gmtest03";
 
 // import Gmtest03Copy from "./component/Maxtest/gmtest03 copy";
 // import Tessst from "./component/Maxtest/test";
-
 
 class App extends React.Component {
   state = {};
@@ -97,7 +95,7 @@ class App extends React.Component {
           <Route path="/firstpage" component={Firstpage} />
           {/* 外送訂單詳情頁 */}
           <Route path="/orderDetails" component={OrderDetails} />
-          
+
           {/* 承翰 */}
           {/* 順弁頁 */}
           <Route path="/sunsua" component={Sunsua} />
@@ -132,18 +130,15 @@ class App extends React.Component {
           <Route path="/CompleteResetPwd" component={CompleteResetPwd} />
           <Route path="/sendresetemail" component={sendresetemail} />
 
-
           {/* ================================================================================================================== */}
           {/* 承翰 */}
           {/* 測試用 */}
-          <Route path="/gmtest03" component={Gmtest03} />
-          <Route path="/gmtest04" component={Gmtest04} />
-          <Route path="/gmtest12" component={Gmtest12} />
-          <Route path="/imgPhp" component={ImgurToPhp} />
-
+          <Route path="/imgPhp" component={ImgurToPhp} /> {/* 能work */}
+          <Route path="/gmlocate" component={Gmlocate} /> {/* 能work */}
+          <Route path="/gmtest03" component={Gmtest03} /> {/* 能work */}
 
           <Route path="/FirebaseIndex" component={FirebaseIndex} />
-          <Route path="/tst" component={Tst} />  
+          <Route path="/tst" component={Tst} />
           <Route path="/try" component={Try} />
           {/* 這兩個try忘記還用不用的到  先不要刪 */}
         </Switch>

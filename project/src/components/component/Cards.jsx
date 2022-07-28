@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "./css/card.css";
 import axios from 'axios';
-import shopList from '../../chattyComponents/components page/shopList';
+// import shopList from '../../chattyComponents/components page/shopList';
 class Cards extends Component {
   state = {}
   rest = this.props.catchData;    //把父階的資料傳送到子階來
@@ -37,10 +37,8 @@ class Cards extends Component {
             <div className="zText">
               {/* 店家名稱 */}
               <div className='row'>
-                <div className="col-7 text-nowrap text-truncate">{this.rest.name}
-
-                </div>
-                <div className='eva col-5'>
+                <div className="col-8 text-nowrap text-truncate">{this.rest.name}</div>
+                <div>
                   {/* 店家的評價★ */}
                   <i className="fa fa-star" style={{ color: "red" }}></i>
                   <span className="star-point">5</span> /

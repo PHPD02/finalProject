@@ -122,8 +122,8 @@ class Cart extends Component {
                         </div>
                         <div className="col text-right">
                             <p>$<span>{this.totalPrice()}</span></p>
-                            <p>$<span id='freight'>19</span></p>
-                            <p>$<span id='cartTotal'>{this.totalPrice() + 19}</span></p>
+                            <p>$<span id='freight'>39</span></p>
+                            <p>$<span id='cartTotal'>{this.totalPrice() + 39}</span></p>
                         </div>
                         <div className='col-1'></div>
                     </div>

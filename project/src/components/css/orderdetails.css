@@ -44,8 +44,12 @@
   }
 } */
 
-img {
-  width: 250px;
+.thispic {
+  height: 45vh;
+  background-image: url('./2.gif');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100%
 }
 
 /* .cardshadow {

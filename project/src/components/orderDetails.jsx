@@ -2,25 +2,46 @@ import React, { Component } from 'react';
 import Navbar from './repeatability/Navbar';
 import './css/orderdetails.css';
 import axios from 'axios';
-import DetailsCards from './component/DetailsCards';
-// import Footer from '../repeatability/Footer';
+import Footer from './repeatability/Footer';
 import FirebaseIndex from '../kangComponent/firebase/firebaseIndex';
 class OrderDetails extends Component {
   state = {
-    details: []
+    details: {
+      water: '',
+      menu: [
+        { amount: "", cost: "", dish: "", sum: "" }
+      ],
+      sums: '',
+    },
+    time: [], //給於一個空的時間值
+    timeleft: '',
   }
 
 
   componentDidMount = async () => {
+    alert("付款成功!您的訂單正在路上");
     let url = "http://localhost/ourPHPFinalproject/RjieProject/details.php"
     await axios.get(url)
       .then(res => {
         this.state.details = res.data;
+        this.state.length = this.state.details.menu.length; //長度等於菜單清單的筆數
         this.setState({});
-      })
-      // console.log(this.state.details);
-  }
+      });
+    this.state.time[0] = new Date(this.state.details.water * 1000).toLocaleTimeString();
+    //流水號 轉回時間 
+    this.state.time[1] = new Date(this.state.details.water * 1000 + 20 * 60 * 1000).toLocaleTimeString();
+    //流水號 轉回時間 並加上配送時間
+    // this.state.timeleft = this.state.time[0].getTime();
+    console.log(this.state.time);
+    console.log(this.state.timeleft);
+    this.setState({});
 
+
+
+
+    const timeleft = Date.now();
+    console.log(timeleft);
+  }
   render() {
     return (
       <React.Fragment>
@@ -32,40 +53,62 @@ class OrderDetails extends Component {
               <div className='col-md-6 col-sm-12 container'>
                 <div className='card'>
                   <div className='row'>
-                    <div className='col-12 '>
-                      <h4>預計外送時間</h4>
+                    <div className='col-11 text-center'>
+                      <h4>預計外送時間:00分00秒</h4>
+                      ({this.state.time[0]})-({this.state.time[1]})
                     </div>
                     {/* 讀取外送時間 */}
                     <div className='col-12'>
-                      <p className='display-3'>{ }</p>
+                      <p className='display-3'></p>
                     </div>
                     <div className='col-12'>
-                      <img src="./image/deliveryman.png" />
+                      <div className='thispic'></div>
                     </div>
-                    {/* <div className='col-12 row'>
-                      <p className="progress-1"></p>
-                      <p className="progress-2"></p>
-                      <p className="progress-3"></p>
-                      <p className="progress-4"></p>
-                    </div> */}
                   </div>
-                  <br />
-                  <br />
                   {/* 再送達後更改內容 */}
-                  <h4>餐點準備中</h4>
+                  <div className='col-11 text-center'>
+                    <h4>{0 == 0 ? "餐點已送達!謝謝光臨" : "餐點準備中"}</h4>
+
+                  </div>
                 </div>
               </div>
               <div className='col-md-6 col-sm-12 container' >
                 <div className='card'>
                   <h3>訂單詳情</h3>
-                  {this.state.details.map(
-                    (details, index) => {
-                      return (<DetailsCards key={index} catchDetails={details} />);
-                    })}
+                  <br />
+                  <h5>訂單編號：{this.state.details.water}</h5>
+                  <br />
+                  <h5>訂單配送來自：{ }</h5>
+                  <br />
+                  <h5>送餐地址：{ }</h5>
+                  <br />
+                  <h5>總計：$ {this.state.details.sums}</h5>
+                  {/* 撈資料庫產生 */}
+                  {/* <h5>查看細節{this.state.details.menu}個品項: */}
+                  <h5>查看細節{this.state.length}個品項：
+                    <span className="dropdown">
+                      <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      </button>
+                      <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {this.state.details.menu.map((menui, index) => {
+                          return (
+                            <div key={index}>
+                              <div className="dropdown-item ">
+                                <div className='container'>
+                                  <div className='row'>
+                                    <div className="col-3">{menui.dish}{menui.amount}{menui.cost}{menui.sum}</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    </span></h5>
                   {/* 選擇器跑出來的內容 */}
-                  <br/>
-                  <FirebaseIndex/>
-                  <br/>
+                  <br />
+                  <FirebaseIndex />
+                  <br />
                   {/* C:\Users\bgkon\Desktop\康峻軒final_project(0628)\project\src\kangComponent\firebase\firebaseIndex.jsx */}
 
                 </div>
@@ -82,6 +125,7 @@ class OrderDetails extends Component {
             </div>
           </div>
         </div>
+        <Footer />
       </React.Fragment>
     );
   }

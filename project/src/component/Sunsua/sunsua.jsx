@@ -33,7 +33,8 @@ class Sunsua extends Component {
                     break;
                 } else {
                     // 沒登入 返回登入頁
-                    window.location = "http://localhost:3000/login";
+                    alert(" 請先登入! ")
+                    window.location = "http://localhost:3000/loginComsumer";
                     break;
                 }
             /*  */
@@ -63,17 +64,17 @@ class Sunsua extends Component {
                                 <div className='col-2 d-flex flex-column pro-item-wrapper'>
                                     <div className=" d-flex justify-content-center pro-item pro-item-1" onClick={this.innerContentChange}>
                                         <button className='btn ' >
-                                            <Link to="/sunsua/intro" className='sunsuaBtn btnNotSel h2 font-weight-bold' >介紹</Link>
+                                            <Link to="/sunsua/intro" className='sunsuaBtn btnNotSel h2 font-weight-bold' >順弁團購介紹</Link>
                                         </button>
                                     </div>
                                     <div className=" d-flex justify-content-center pro-item" onClick={this.innerContentChange}>
                                         <button className='btn ' >
-                                            <Link to="/sunsua/proposal" className='sunsuaBtn btnNotSel h2 font-weight-bold' >提案</Link>
+                                            <Link to="/sunsua/proposal" className='sunsuaBtn btnNotSel h2 font-weight-bold' >發起團購方案</Link>
                                         </button>
                                     </div>
                                     <div className=" d-flex justify-content-center pro-item" onClick={this.innerContentChange}>
                                         <button className='btn ' >
-                                            <Link to="/sunsua/order" className='sunsuaBtn btnNotSel h2 font-weight-bold'>搜方案</Link>
+                                            <Link to="/sunsua/order" className='sunsuaBtn btnNotSel h2 font-weight-bold'>搜尋團購方案</Link>
                                         </button>
                                     </div>
                                 </div>

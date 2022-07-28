@@ -29,7 +29,7 @@ class Payment extends Component {
             gotDate: gotDate,
 
             // subtotal: 250,
-            freight: 19,
+            freight: 39,
             // total: 270,
 
             cart: []
@@ -126,7 +126,7 @@ class Payment extends Component {
                                 </div>
 
                             </section>
-                            <section id='section2' className='shadow p-5 my-5'>
+                            <section id='section2' className='shadow px-5 pt-5 my-3'>
                                 <h2>2.個人資料</h2>
                                 <input type="email" placeholder='電子郵件' className='btn-block' defaultValue={localStorage.getItem('email')} /><br />
                                 <input type="text" placeholder='名' className='btn-block' defaultValue={localStorage.getItem('lastname')} /><br />
@@ -134,7 +134,7 @@ class Payment extends Component {
                                 <input type="email" placeholder='手機號碼' className='btn-block' defaultValue={localStorage.getItem('telphone')} /><br /><br />
                                 {/* <button className='btn btn-danger btn-block'>儲存</button> */}
                             </section>
-                            <section id='section3' className='shadow p-5'>
+                            <section id='section3' className='shadow px-5 pt-5'>
                                 <h2>3.付款方式</h2>
                                 <label htmlFor='pycard' className='btn btn-dark btn-block'>
                                     <FontAwesomeIcon icon={faCreditCard} className="fa-xl float-left" />&nbsp;&nbsp;信用卡
@@ -154,7 +154,7 @@ class Payment extends Component {
                         {/* 右邊 */}
                         <div className="col-lg-5 shadow  mx-3" id='col2color'>
                             <section className=' p-5'>
-                                <h3 className='text-center pro-item' style={{color:'white',fontSize:''}}>你的訂單</h3>
+                                <h3 className='text-center itemback' style={{color:'white'}}><b>你的訂單</b></h3>
 
                                 <div id='outorder'>
 
@@ -201,7 +201,7 @@ class Payment extends Component {
 
                                             <p><span >{this.totalPrice()}</span></p>
                                             <p><span>{this.state.freight}</span></p>
-                                            <p><span id='pTotal'>{this.totalPrice() + 19}</span></p>
+                                            <p><span id='pTotal'>{this.totalPrice() + 39}</span></p>
                                         </div>
                                     </div>
 

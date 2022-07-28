@@ -25,22 +25,13 @@ class Navbar extends Component {
     })
   }
 
-  // doLogin() {
-  //   if (window.location.href = 'http://localhost:3000/login') {
-  //     $('#login1').fadeIn();
-  //     $('#loginCompany').hide();
-  //     $('#loginComsumer').hide();
-  //   }
-  // }
-
   doLogout() {
     // 登出
     localStorage.clear();
     window.location = "http://localhost:3000/";
 
   }
-  
-  
+ 
   cartClick = () => {
     // console.log(this.state.cartNum);
     if (this.state.cartNum == 0) {
@@ -50,21 +41,7 @@ class Navbar extends Component {
     else {
       window.location = 'http://localhost:3000/cart';
     }
-    
   }
-
-  // componentDidMount() {
-  // if (getemail) {
-  //   //登入狀態
-  //   $('#login').attr('style','display:hidden'); 
-  //   $('#logout').attr('style','display:block');
-  // }
-  // else {
-  //   $('#logout').attr('style','display:hidden'); 
-  //   $('#login').attr('style','display:block');
-  // }
-  // console.log('ok');
-  // }
 
   async componentDidMount() {
     if (getemail) {
@@ -139,10 +116,17 @@ class Navbar extends Component {
                     {/* <NavLink to='/cart'> */}
                       <button id='cartBar' type="button" className='btn btn-outline-dark ml-1 rounded-pill btnsm'
                         onClick={this.cartClick}>
-                        <i className="fa fa-shopping-cart text-info p-1 fa-2xl"></i>
-                        {/* <span> */}
-                          <strong>Cart</strong> <CheckCart cartNum={this.state.cartNum} />
+                          {/* <div className='row'> */}
+                          <i className="fa fa-shopping-cart text-info p-1 fa-2xl"></i>
+                          {/* <span> */}
+                          <strong>Cart</strong>
+                          {/* <span id='cartNum'>({this.state.cartNum})</span> */}
+                          {/* <span className='col'> */}
+                          (<span id='cartNum'>{this.state.cartNum}</span>)
                           {/* </span> */}
+                          {/* <CheckCart cartNum={this.state.cartNum} /> */}
+                          {/* </span> */}
+                          {/* </div> */}
                       </button>
                     {/* </NavLink> */}
                     <NavLink to="/login">
@@ -175,13 +159,9 @@ class Navbar extends Component {
                     </div>
                   </div>
                 </div>
-
-
               </div>
-
             </div>
           </div>
-
         </nav>
       </React.Fragment >
     );

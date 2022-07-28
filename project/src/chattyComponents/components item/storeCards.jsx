@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { height } from '@mui/system';
-// import $ from 'jquery';
+import $ from 'jquery';
 
 
 class StoreCard extends Component {
@@ -66,10 +66,15 @@ class StoreCard extends Component {
 
 
       }
-
-      toast.info("已成功新增至購物車!");
-      // this.props.initCartNum();
       // this.props.func();
+      toast.info("已成功新增至購物車!");
+
+      // 新增至購物車後右上角數量變動
+      var num = document.getElementById('cartNum').innerText;
+      document.getElementById('cartNum').innerText = parseInt(num) + 1;
+      // $("#cartNum").text();
+      console.log(num);
+      
 
 
     } catch (error) {
@@ -104,15 +109,8 @@ class StoreCard extends Component {
                   </div>
                   <span className='h4'>$<span name="cost" >{cost}</span><b>元</b></span>
                   
-                  {/* <span>$<span name="cost" >{cost}</span></span>
-                    <div name="introduce" className='col'>{introduce}</div> */}
                   <br />
-                  {/* <div className="row">
-                      <div name="introduce" className='col'>{introduce}</div>
-                      </div> */}
-                {/* </div> */}
-
-
+                  
               </div>
               {/* </div> */}
             </div>

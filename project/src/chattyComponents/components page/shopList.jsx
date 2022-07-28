@@ -32,26 +32,16 @@ class shopList extends Component {
       menuList: result.data,
       restaurantName: result.data[0].restaurantName
     })
-    console.log(this.state.menuList)
-    this.initCartNum();
+    // console.log(this.state.menuList)
+    // this.initCartNum();
   }
 
-  initCartNum = () => {
-    Axios.get("http://localhost//ourPHPFinalproject/ChtProject/cart/1.php").then((res) => {
-      console.log(res.data);
-      const carts = res.data || [];
-      const cartNum = carts.map(cart => parseInt(cart.mount)).reduce((a, value) => a + value, 0);
-      console.log(cartNum);
-      this.setState({ cartNum: cartNum });
-      // console.log(carts[0]);
-    })
-  }
   render() {
     return (
       <React.Fragment>
         <Navbar />
         {/* 查詢地址  */}
-        <div className='container fixed-top ddd' style={{ display: "none" }}>
+        {/* <div className='container fixed-top ddd' style={{ display: "none" }}>
           <div className='row'>
             <div className='col-md-12 col-sm-12'>送到:
               <input type="button" className='w-25 text-left' value={'Select your address'} />
@@ -60,7 +50,7 @@ class shopList extends Component {
           <div className='col-md-12 col-sm-12'>
             <SearchBar />
           </div>
-        </div>
+        </div> */}
 
         
         <div>

@@ -294,7 +294,11 @@ class SunsuaSearchProposal extends Component {
                         {/* ===== 搜尋方案 主要區塊 ===== */}
                         {this.state.proposalDetail.map((value, index) => {
                             return (
-                                <ProposalInfo key={index} proposalDetail={value} func={this.orderConfirm}> </ProposalInfo>
+                                <>
+
+                                    <ProposalInfo key={index} proposalDetail={value} func={this.orderConfirm}> </ProposalInfo>
+                                    <hr />
+                                </>
                             )
                         })}
                     </div>

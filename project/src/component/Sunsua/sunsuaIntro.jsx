@@ -13,7 +13,7 @@ class SunsuaIntro extends Component {
     render() {
         return (
             <div id="sunsuaIntro" className='text-center py-4'>
-                <h1 className='h1 font-weight-bolder'> 關於順弁 </h1>
+                <h1 className='h1 font-weight-bolder'> 順弁團購介紹 </h1>
                 <hr />
                 <h3>構想理念:</h3>
                 <h5>基於美食外送之概念，重新構築外送員、美食平台、與消費者三者間的關係。</h5>

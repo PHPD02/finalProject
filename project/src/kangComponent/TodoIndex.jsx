@@ -16,6 +16,7 @@ class TodoIndex extends React.Component {
   async componentDidMount() {
     var result = await axios.get("http://localhost:8050/todo/list");
     this.setState({ todoList: result.data });
+    console.log(this.state.todoList)
   }
 
   render() {
@@ -126,7 +127,7 @@ class TodoIndex extends React.Component {
             </ul>
           </div>
         </div>
-        <div className="content-wrap mt-5 pt-3" style={{backgroundColor:'whitesmoke'}}>
+        <div className="content-wrap mt-5 pt-3" style={{ backgroundColor: 'whitesmoke' }}>
           <div className="main">
             <div className="container-fluid">
               <h1 className="h1 my-4">
@@ -157,7 +158,10 @@ class TodoIndex extends React.Component {
                                 <div className="product_name">
                                   <h4 className="item_Name">{item.dish}</h4>
                                 </div>
-                                <div className="product_des">
+                                <div className="product_type">
+                                  <p>{item.type}</p>
+                                </div>
+                               <div className="product_des">
                                   <p>{item.introduce}</p>
                                 </div>
                                 <div className="price mt-3">

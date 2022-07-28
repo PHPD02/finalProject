@@ -9,9 +9,9 @@
   /* overflow: visible; */
   /* size: cover; */
   /* overflow: hidden; */
-  background-image: url('./foodtraditional.png');
-  background-repeat: no-repeat, repeat;
-  background-position: bottom; 
+  background-image: url('../../img/13.png');
+  background-repeat: no-repeat;
+  background-position: center; 
   background-size: 100%
   
   /* background-position: center; */

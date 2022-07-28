@@ -86,7 +86,7 @@ class firstpage extends Component {
                   <h5>幫你處理訂單、訂單確認後我們將請外送夥伴前往你的商店去取件</h5>
                   <h5>再將餐點或商品外送給顧客們</h5>
                 </div> */}
-                <div className='text-center'>
+                <div className='text-right'>
                   <NavLink to='/registerCompany'>
                     <button className='btn btn-warning btn-lg'>
                       立即加入我們</button>

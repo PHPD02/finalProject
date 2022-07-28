@@ -12,6 +12,7 @@ class OrderDetails extends Component {
 
 
   componentDidMount = async () => {
+    alert("付款成功!您的訂單正在路上");
     let url = "http://localhost/ourPHPFinalproject/RjieProject/details.php"
     await axios.get(url)
       .then(res => {

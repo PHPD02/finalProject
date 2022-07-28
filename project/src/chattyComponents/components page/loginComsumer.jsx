@@ -4,7 +4,7 @@ import { faFacebookSquare, faGoogle, faApple } from '@fortawesome/free-brands-sv
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import $ from 'jquery';
 import '../css/signin.css';
-import GoogleLogin from '../components try/useGoogleLogin';
+import GoogleLogin from '../components item/useGoogleLogin';
 import Navbar from '../../components/repeatability/Navbar';
 
 class LoginComsumer extends Component {
@@ -25,7 +25,7 @@ class LoginComsumer extends Component {
                     alert("something wrong or password worong")
                 }
                 else {
-                    alert("Welcome!");
+                    
                     // alert(data);
                     var sqluid = JSON.parse(data).uid;
                     var sqlemail = JSON.parse(data).email;
@@ -40,20 +40,7 @@ class LoginComsumer extends Component {
                     localStorage.setItem('lastname', sqllastname);
                     localStorage.setItem('telphone', sqltel);
                     localStorage.setItem('addr', sqladdr);
-                    // window.location= url;
-                    // window.location = "http://localhost:3000/index";
-                    // var fromwhere = localStorage.getItem('upwhere');
-                    // if(fromwhere){
-                    //     if(fromwhere = "http://localhost:3000/register2" || "http://localhost:3000/register" ){
-                    //         window.location = "http://localhost:3000/";
-                    //     }
-                    //     window.location= fromwhere;
-                    // }
-                    // else{
-                    //     window.location = "http://localhost:3000/";
-                    // }
-
-                    // 登入成功到首頁 //以上判斷有空再調整
+                    alert("Welcome!"+ sqllastname);
                     window.location = "http://localhost:3000/";
                 }
 
@@ -96,7 +83,10 @@ class LoginComsumer extends Component {
                         <hr />
                         <div className="form-signin form-bottom">
                             {/* <b>使用第三方登入</b><br /> */}
-                            <GoogleLogin className='btn btn-lg' />
+                            {/* <label for='gl' className='btn btn-lg btn-light btn-block shadow mt-4 p-1' > */}
+                            <GoogleLogin id='gl' className='btn btn-lg'/>
+                                
+                            {/* </label> */}
                             <button className='btn btn-lg btn-primary btn-block shadow mt-4 p-1'><FontAwesomeIcon icon={faFacebookSquare} className="mr-2" /> Facebook</button><br />
                             {/* <button className='btn btn-lg btn-light btn-block shadow'><FontAwesomeIcon icon={faGoogle} className="mr-4" /> Google</button><br /> */}
                             <button className='btn btn-lg btn-dark btn-block shadow p-1'><FontAwesomeIcon icon={faApple} className="mr-2" /> 以apple帳戶登入</button><br />

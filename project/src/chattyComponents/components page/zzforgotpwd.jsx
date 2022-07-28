@@ -28,7 +28,7 @@ function Forgotpwd(){
                 <Navbar />
                 <br /><br />
                 <div id='registerform'>
-                    <form className="form-signin shadow registerformin" id='registerformin'
+                    <form className="form-signin registerformin p-5" id='registerformin'
                     style={{
                         // backgroundColor:'black'
                         boxShadow:'8px 8px 10px 10px rgba(49, 166, 150 ,0.5)'

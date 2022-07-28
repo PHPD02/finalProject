@@ -48,6 +48,25 @@ function Register() {
         }
     }
 
+    const doShow = () => {
+        var checkBox = document.getElementById("passwdchk");
+        if(checkBox.checked == true){
+            $('#companyPasswd').attr('type', 'text');
+        }else{
+            $('#companyPasswd').attr('type', 'password');
+        }
+        
+    }
+    
+    const dopwdchk = (e) => {
+        console.log(e.target.value)
+        let pwd = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,10}$/);
+        if ( pwd.test( e.target.value ) ) {
+            $('#pwdrex').css("visibility",'visible') ;
+        }
+           
+    }
+
     const handleSumbit = (e) => {
         e.preventDefault();
         var correctNumber = $('#chkmesg').text();
@@ -82,8 +101,8 @@ function Register() {
             <div className="backimg">
             <Navbar />
             
-            <br /><br /><br />
-            <div id='companyRegisterform'>
+            <br />
+            <div id='companyRegisterform '>
                 <form className="form-signin p-5" id='registerformin' encType="multipart/form-data"
                 style={{
                     // backgroundColor:'black'
@@ -111,7 +130,14 @@ function Register() {
                     {/* tel */}
                     <input type="text" id="companyTel" name="companyTel" className='btn-block form-control' placeholder='手機號碼' required autoFocus />
                     {/* password */}
-                    <input type="password" id="companyPasswd" name="companyPasswd" className="form-control" placeholder="密碼" required autoFocus />
+                    <input type="password" id="companyPasswd" name="companyPasswd" className="form-control" placeholder="密碼" required autoFocus 
+                    onChange={dopwdchk} />
+                    <h6 className='text-danger'>請輸入6~8位密碼，含特殊符號、大寫、小寫及數字至少各一位<span id='pwdrex' style={{ color: 'green', height: '15px', visibility: 'hidden' }} ><FontAwesomeIcon icon={faCircleCheck} /></span></h6>
+                    
+                    <input type="checkbox" name="passwdchk" id="passwdchk" 
+                    onClick={doShow} 
+                    />
+                    <label htmlFor="passwdchk">顯示密碼</label>
                     <div id="chkmesg" className='h6' style={{ color: 'red', height: '10px' 
                     , visibility:'hidden'
                     }}>{result}</div>

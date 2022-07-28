@@ -40,7 +40,7 @@ class LoginComsumer extends Component {
                     localStorage.setItem('lastname', sqllastname);
                     localStorage.setItem('telphone', sqltel);
                     localStorage.setItem('addr', sqladdr);
-                    alert("Welcome!"+ sqllastname);
+                    alert("Welcome!     "+sqllastname);
                     window.location = "http://localhost:3000/";
                 }
 

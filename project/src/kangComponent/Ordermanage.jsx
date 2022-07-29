@@ -5,6 +5,8 @@ import "./assets/css/lib/font-awesome.min.css";
 import "./assets/css/lib/themify-icons.css";
 import "./assets/css/lib/menubar/sidebar.css";
 import "./assets/css/style.css";
+import $ from "jquery";
+
 
 import ExportExcelButton from "./ExportExcel_component"  //失敗
 import ExcelJs from "exceljs";
@@ -13,21 +15,58 @@ import ExcelJs from "exceljs";
 class Ordermanage extends React.Component {
   state = {
     dashboardorder: [],
-    // dd:[],
-    // dd:(new Date(result.data[0].orderId*1000)).toLocaleDateString()}
     monthrevenue: "",
-    downloadData: [],
-    tbody: [],
+
+    downloadData: [{
+      sheetName: '',
+      thead: ['訂單編號', '訂單日期', '品項名稱', '下單數目', '消費金額', '訂單利潤'],
+      tbody: [],
+      columnWidths: []
+    }],
+
+    data: {
+
+    },
+    downloadData_thead: {
+      id: "訂單編號",
+      date: "訂單日期",
+      dish: "品項名稱",
+      amount: "下單數目",
+      cost: "消費金額",
+      profit: "訂單利潤"
+    },
+    downloadData_tbody: {
+      id: [],
+      date: [],
+      dish: [],
+      amount: [],
+      cost: [],
+      profit: []
+    }
   };
 
+
   async componentDidMount() {
+    // console.clear();
     var result = await axios.get("http://localhost:8050/dashboardorder");
     this.setState({ dashboardorder: result.data });
     const resultdata = result.data
+    // console.log(resultdata);
     const monthrevenue = resultdata.map(dashboardorder => dashboardorder.cost * dashboardorder.amount).reduce((a, value) => a + value, 0)
     //       累加器   當前值            初始值
     this.setState({ monthrevenue: monthrevenue })
-    // excel部分 試試
+
+
+    /*  */
+    this.state.downloadData_tbody.id = resultdata.map((item) => item.orderId.toString());
+    this.state.downloadData_tbody.ymd = resultdata.map((item) => new Date(item.orderId * 1000).toLocaleDateString());
+    this.state.downloadData_tbody.dish = resultdata.map((item) => item.dish);
+    this.state.downloadData_tbody.amount = resultdata.map((item) => item.amount.toString());
+    this.state.downloadData_tbody.cost = resultdata.map((item) => (item.amount * item.cost).toString());
+    this.state.downloadData_tbody.profit = resultdata.map((item) => (Math.round(item.amount * item.cost * 0.75)).toString());
+
+
+    /* excel */
     const gg = resultdata.map((item, index) => {
       let date = new Date(item.orderId * 1000);
       //   console.log()
@@ -43,20 +82,19 @@ class Ordermanage extends React.Component {
     console.log(gg)
 
     const downloadData = [{
+
       sheetName: `水巷茶弄月收支報表`,
       thead: ['訂單編號', '訂單日期', '品項名稱', '下單數目', '消費金額', '訂單利潤'],
       tbody: gg,
       columnWidths: [{ number: 1, width: 20 }, { number: 2, width: 20 }, { number: 3, width: 30 }, { number: 4, width: 20 }, { number: 5, width: 20 }, { number: 6, width: 30 }]
     }];
+
+    // console.log(this.state)
+    console.log(downloadData);
     await this.setState({ downloadData: downloadData })
-    // console.log(this.state.tbody)
-    console.log(downloadData)
+
 
   }
-  //    orderId =this.state.dashboardorder[0].orderId;
-  //    ymd = new Date(this.orderId*1000);
-  //    dd = this.ymd.toLocaleDateString();
-
 
   toCurrency(num) {
     var parts = num.toString().split('.');
@@ -65,36 +103,102 @@ class Ordermanage extends React.Component {
   }
 
 
-  //這沒用到  不用管他
-  onClick() {
-    const workbook = new ExcelJs.Workbook(); // 創建試算表檔案
-    const sheet = workbook.addWorksheet('工作表範例1'); //在檔案中新增工作表 參數放自訂名稱
+  excelChkboxSel = (e) => {
+    console.clear();
 
-    sheet.addTable({ // 在工作表裡面指定位置、格式並用columsn與rows屬性填寫內容
-      name: 'table名稱',  // 表格內看不到的，算是key值，讓你之後想要針對這個table去做額外設定的時候，可以指定到這個table
-      ref: 'A1', // 從A1開始
-      columns: [{ name: '名字' }, { name: '年齡' }, { name: '電話' }],
-      rows: [['小明', '20', '0987654321'], ['小美', '23', '0912345678']]
-    });
+    // if (e.target.checked) {
+    //   switch (e.target.value) {
+    //     case 'date':
+    //       console.log("date V");
+    //       this.state.downloadData_thead.date = "訂單日期";
 
-    // 表格裡面的資料都填寫完成之後，訂出下載的callback function
-    // 異步的等待他處理完之後，創建url與連結，觸發下載
-    workbook.xlsx.writeBuffer().then((content) => {
-      const link = document.createElement("a");
-      const blobData = new Blob([content], {
-        type: "application/vnd.ms-excel;charset=utf-8;"
-      });
-      link.download = '測試的試算表.xlsx';
-      link.href = URL.createObjectURL(blobData);
-      link.click();
+
+    //       break;
+    //     case 'dish':
+    //       console.log("dish V");
+    //       this.state.downloadData_thead.dish = "品項名稱";
+    //       break;
+    //     case 'amount':
+    //       this.state.downloadData_thead.amount = "下單數目";
+    //       break;
+    //     case 'cost':
+    //       this.state.downloadData_thead.cost = "單筆金額";
+    //       break;
+    //   }
+    // } else {
+    //   switch (e.target.value) {
+    //     case 'date':
+    //       console.log("date X");
+    //       this.state.downloadData_thead.date = "";
+    //       // thead 刪掉訂單日期
+    //       this.state.downloadData[0].thead = "訂單日期";
+    //       break;
+    //     case 'dish':
+    //       console.log("disg X");
+    //       this.state.downloadData_thead.dish = "";
+    //       break;
+    //     case 'amount':
+    //       this.state.downloadData_thead.amount = "";
+    //       break;
+    //     case 'cost':
+    //       this.state.downloadData_thead.cost = "";
+    //       break;
+    //   }
+    // }
+
+    // console.log(this.state.downloadData)
+    // // console.log(this.state.downloadData_thead)
+    // console.log(this.state.downloadData[0].thead)
+    this.state.downloadData[0].thead = ['訂單編號'];
+    // for()
+    // console.log(this.state.downloadData[0]);
+    for (let i = 0; i < this.state.downloadData[0].tbody.length; i++) {
+      this.state.downloadData[0].tbody[i] = [this.state.downloadData_tbody.id[i]];
+    }
+    // console.log(this.state.downloadData[0]);
+    console.log(this.state.downloadData[0].tbody);
+
+    $("input[name='excelPost[]']").map((index, item) => {
+      if (item.checked) {
+        // console.log(item.value)
+        switch (item.value) {
+          case 'date':
+            this.state.downloadData[0].thead.push('訂單日期')
+            for (let i = 0; i < this.state.downloadData[0].tbody.length; i++) {
+              this.state.downloadData[0].tbody[i].push(this.state.downloadData_tbody.ymd[i]);
+            }
+            break;
+          case 'dish':
+            this.state.downloadData[0].thead.push('品項名稱')
+            for (let i = 0; i < this.state.downloadData[0].tbody.length; i++) {
+              this.state.downloadData[0].tbody[i].push(this.state.downloadData_tbody.dish[i]);
+            }
+            break;
+          case 'amount':
+            this.state.downloadData[0].thead.push('下單數目')
+            for (let i = 0; i < this.state.downloadData[0].tbody.length; i++) {
+              this.state.downloadData[0].tbody[i].push(this.state.downloadData_tbody.amount[i]);
+            }
+            break;
+          case 'cost':
+            for (let i = 0; i < this.state.downloadData[0].tbody.length; i++) {
+              this.state.downloadData[0].tbody[i].push(this.state.downloadData_tbody.cost[i]);
+            }
+            this.state.downloadData[0].thead.push('消費金額')
+
+            break;
+          case 'profit':
+            this.state.downloadData[0].thead.push('訂單利潤')
+            for (let i = 0; i < this.state.downloadData[0].tbody.length; i++) {
+              this.state.downloadData[0].tbody[i].push(this.state.downloadData_tbody.profit[i]);
+            }
+            break;
+        }
+      }
     });
+    console.log(this.state.downloadData[0].thead);
+    this.setState({});
   }
-
-
-
-
-
-
 
 
 
@@ -166,46 +270,6 @@ class Ordermanage extends React.Component {
                 <span className="user-avatar">
                   康大哥 <i className="ti-angle-down f-s-10"></i>
                 </span>
-                <div className="drop-down dropdown-profile">
-                  <div className="dropdown-content-heading">
-                    <span className="text-left"> 簽約成特約店家</span>
-                    <p className="trial-day">抽成數可減至0</p>
-                  </div>
-                  <div className="dropdown-content-body">
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <i className="ti-user"></i> <span>店家資訊</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="ti-wallet"></i> <span>店家收益</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="ti-write"></i> <span>重要通知</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="ti-settings"></i> <span>設定</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="ti-help-alt"></i> <span>聯絡官方</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="ti-power-off"></i> <span>登出</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
               </li>
             </ul>
           </div>
@@ -247,20 +311,26 @@ class Ordermanage extends React.Component {
                       </select>
                     </div>
                     <div className="ml-auto mt-2 p-2">
-                      <ExportExcelButton
-                        fileName={'月訂單報表'}
-                        sheetDatas={this.state.downloadData}
-                      />
-                      {/* <a href="#" className="btn btn-outline-secondary btn-lg"
-                      onClick={this.onClick}>
-                        下載報表
-                      </a> */}
-                      <a
-                        href="#"
-                        className="btn btn-outline-secondary btn-lg ml-2"
-                      >
-                        管理訂單
-                      </a>
+
+                    </div>
+                    <div className="ml-auto mt-2 p-2 d-flex">
+                      <span className="dropdown show">
+                        <button class="btn btn-outline-secondary btn-lg ml-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" > <b>下載報表</b></button>
+                        <div className="dropdown-menu p-2">
+                          <input type="checkbox" id="excelPost1" name="excelPost[]" value="date" onChange={this.excelChkboxSel} defaultChecked /> <label htmlFor="excelPost1">日期</label> <br />
+                          <input type="checkbox" id="excelPost2" name="excelPost[]" value="dish" onChange={this.excelChkboxSel} defaultChecked /> <label htmlFor="excelPost2">品項名稱</label> <br />
+                          <input type="checkbox" id="excelPost3" name="excelPost[]" value="amount" onChange={this.excelChkboxSel} defaultChecked /> <label htmlFor="excelPost3">下單數</label> <br />
+                          <input type="checkbox" id="excelPost4" name="excelPost[]" value="cost" onChange={this.excelChkboxSel} defaultChecked /> <label htmlFor="excelPost4">消費金額</label> <br />
+                          <input type="checkbox" id="excelPost5" name="excelPost[]" value="profit" onChange={this.excelChkboxSel} defaultChecked /> <label htmlFor="excelPost5">訂單利潤</label> <br />
+                          <hr />
+                          <ExportExcelButton
+                            fileName={'月訂單報表'}
+                            sheetDatas={this.state.downloadData}
+                          />
+                        </div>
+                      </span>
+
+                      <span><a href="#" className="btn btn-outline-secondary btn-lg ml-2"> 管理訂單 </a></span>
                     </div>
                   </div>
                 </div>
@@ -269,9 +339,9 @@ class Ordermanage extends React.Component {
                     <tr>
                       <th>#</th>
                       <th>日期</th>
-                      <th>品名</th>
-                      <th>下單數</th>
-                      <th>訂單金額</th>
+                      <th>品項名稱</th>
+                      <th>數量</th>
+                      <th>消費金額</th>
                       <th>訂單利潤</th>
                     </tr>
                   </thead>
@@ -287,7 +357,7 @@ class Ordermanage extends React.Component {
                           <td>{item.dish}</td>
                           <td>{item.amount}</td>
                           <td className="text-right">{item.amount * item.cost}</td>
-                          <td className="text-right">{item.amount * item.cost * 0.75}</td>
+                          <td className="text-right">{Math.round(item.amount * item.cost * 0.75)}</td>
                         </tr>
 
                       )
@@ -296,13 +366,13 @@ class Ordermanage extends React.Component {
                   </tbody>
                   <tfoot>
                     <tr>
-                      <th colspan="5" className="text-right">
+                      <th colSpan="5" className="text-right">
                         月總營收
                       </th>
                       <td className="text-right">{this.toCurrency(this.state.monthrevenue)}</td>
                     </tr>
                     <tr>
-                      <th colspan="5" className="text-right">
+                      <th colSpan="5" className="text-right">
                         月淨利潤
                       </th>
                       <td className="text-right">{this.toCurrency(Math.round(this.state.monthrevenue * 0.75))}</td>

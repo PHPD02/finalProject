@@ -20,7 +20,7 @@ class StoreSlidrBar2_drinks extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div >
         <Carousel
           cols={4}
           rows={1}
@@ -56,7 +56,7 @@ class StoreSlidrBar2_drinks extends React.Component {
                             WebkitBoxOrient: "vertical",
                             overflow: "hidden",
                             webkitLineClamp: "2",
-                            lineHeight: "20px",
+                            lineHeight: "18px",
                           }}
                         >
                           <b>{item.name}</b>
@@ -93,8 +93,9 @@ class StoreSlidrBar2_drinks extends React.Component {
                         {item.description}
                       </p>
                       <p className="card-price ">
-                        $ {item.tel}
-                        <small> 外送服務費</small>
+                        {/* $ {item.tel} 經老師建議先使用固定最低運費  */}
+                        $ 39
+                        <small> 最低外送服務費</small>
                       </p>
                     </div>
                   </div>

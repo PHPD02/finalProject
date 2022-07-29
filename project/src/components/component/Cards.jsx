@@ -37,8 +37,8 @@ class Cards extends Component {
             <div className="zText">
               {/* 店家名稱 */}
               <div className='row'>
-                <div className="col-8 text-nowrap text-truncate">{this.rest.name}</div>
-                <div>
+                <div className="col-9 text-nowrap text-truncate " style={{fontWeight:"bold"}}>{this.rest.name}</div>
+                <div style={{fontSize:"14px"}}>
                   {/* 店家的評價★ */}
                   <i className="fa fa-star" style={{ color: "red" }}></i>
                   <span className="star-point">5</span> /

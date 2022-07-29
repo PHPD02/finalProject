@@ -57,9 +57,10 @@ class Restaurant extends React.Component {
             {Description}
           </p>
           <p className="card-price ">
-            $ {delivercost}
-            <small> 外送服務費</small>
-          </p>
+                        {/* $ {item.tel} 經老師建議先使用固定最低運費  */}
+                        $ 39
+                        <small> 最低外送服務費</small>
+                      </p>
         </div>
       </div>
     );

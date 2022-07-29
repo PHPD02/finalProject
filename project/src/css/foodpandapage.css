@@ -13,7 +13,7 @@
     background-size: 100%;
 } */
 .first-section{
-    padding-top: 100px;
+    padding-top: 140px;
     width: 100%;
     height: 100vh;
     position: relative;
@@ -201,6 +201,7 @@
 }
 .section1_searchbar{
     padding-top: 50px;
+    text-shadow: 5px 5px 8px white;
 }
 .form-control:focus{
     outline:none,
@@ -217,12 +218,56 @@
     padding: 5px;
     width:250px;
     height: 80px;
-    background-image: url("../img/文字背景.png");
+    font-weight: 800;
+    font-size: 40px;
+    /* background-image: url("../img/文字背景.png"); */
     background-size: 250px 40px ;
     background-position:  center center;
     background-repeat: no-repeat;
     text-shadow: 1px 1px rgba(255, 217, 0, 0.493);
     
+}
+.section2_bar{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 70px;
+    margin-top: 70px;
+}
+.section2_bar1{
+    background-image: url("../img/17.png");
+    background-size: 100% 145% ;
+    background-position:  bottom center;
+    background-repeat: no-repeat;
+}
+.section2_bar2{
+    background-image: url("../img/18.png");
+    background-size: 100% 120% ;
+    background-position: -50px -140px ;
+    background-repeat: no-repeat;
+}
+.section2_bar3{
+    background-image: url("../img/18.png");
+    background-size: 100% 145% ;
+    background-position:  bottom center;
+    background-repeat: no-repeat;
+}
+.section2_bar4{
+    background-image: url("../img/17.png");
+    background-size: 100% 145% ;
+    background-position:  bottom center;
+    background-repeat: no-repeat;
+}
+.section2_bar5{
+    background-image: url("../img/17.png");
+    background-size: 100% 145% ;
+    background-position:  bottom center;
+    background-repeat: no-repeat;
+}
+.section2_bar6{
+    background-image: url("../img/18.png");
+    background-size: 100% 120% ;
+    background-position: -50px -140px ;
+    background-repeat: no-repeat;
 }
 /* .body-wrapper .all-item .section2 .hito{
     height: 500px;
@@ -233,13 +278,16 @@
 
 .searchbar-wrapper{
     /* border:1px solid black; */
-    background: url(../img/hand.png);
-    background-position:  left bottom;
-    background-size: contain;
+    background: url(../img/16.png);
+    background-position:  center center;
+    background-size: cover;
     background-repeat: no-repeat;
     /* width: 80%; */
+    /* background-color: rgb(196, 222, 235); */
     height: 300px;
     position: relative;
+    border-radius: 50px;
+    box-shadow: 0px 10px 10px rgb(189, 188, 188);
 }
 /* .searchbar-wrapper img{
     width: 700px;

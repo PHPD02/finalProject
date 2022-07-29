@@ -95,9 +95,9 @@ class Navbar extends Component {
               <div className='container-fluid'>
                 {/* <ul></ul> */}
                 <ul className="navbar-nav">
-                  <li id='navSunsua' className="nav-item active pl-5" style={{ display: 'none' }}>
+                  <li id='navSunsua' className="nav-item active pl-5" >
                     {/* <NavLink to='/sunsua'> */}
-                    <a className="nav-link settext" href='/sunsua'><span className="sr-only "></span><i></i>順弁</a>
+                    <a className="nav-link settext" href='/sunsua'><span className="sr-only "></span><i></i>順弁團購</a>
                     {/* </NavLink> */}
                   </li>
                   <li id='accompany' className="nav-item active pl-5" style={{ display: 'none' }}>
@@ -154,7 +154,8 @@ class Navbar extends Component {
                       <div id='dropdown-menu' className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a className="dropdown-item" href="/memberpage" style={{height:'50px'}} >會員主頁</a>
                         <a className="dropdown-item" href="/orderrecord" style={{height:'50px'}}>訂單紀錄</a>
-                        <a className="dropdown-item" href="#" style={{height:'50px'}}  onClick={this.doLogout}><i className="fa fa-sign-out text-info p-1 fa-2xl"></i><b>Logout</b></a>
+                        <a className="dropdown-item" href="/customerMail" style={{height:'50px'}}>客服<i className='fa fa-envelope-o text-info p-1  fa-xl ml-2'></i></a>
+                        <a className="dropdown-item" href="#" style={{height:'50px'}}  onClick={this.doLogout}><b>登出</b><i className="fa fa-sign-out text-info p-1 fa-xl ml-2"></i></a>
                       </div>
                     </div>
                   </div>
@@ -163,7 +164,7 @@ class Navbar extends Component {
             </div>
           </div>
         </nav>
-      </React.Fragment >
+      </React.Fragment>
     );
   }
 }

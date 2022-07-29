@@ -283,7 +283,7 @@ class SunsuaSearchProposal extends Component {
                                 <span className='d-flex align-content-center'>
                                     {/* <AutoCompleteLocation onChange={this.haha} /> */}
                                     <input id="searchBox" placeholder='請輸入您的地址' onChange={this.addrInput} style={{ 'width': '80%' }} />
-                                    <img src={iconLocate} className="mx-1" alt="" style={{ "width": "25px", "height": "25px" }} onClick={this.locating} />
+                                    <img src={iconLocate} className="mx-1 ml-4" alt="" style={{ "width": "25px", "height": "25px" ,cursor:"pointer"}} onClick={this.locating}  />
                                     {/* <i className="bi bi-search ml-1"></i> */}
                                 </span>
                                 {/* <input id="" placeholder='時間' /><i className="bi bi-search ml-1"></i> */}
@@ -364,4 +364,7 @@ class SunsuaSearchProposal extends Component {
 }
 
 export default SunsuaSearchProposal;
+
+/* 訂單編號 */
+/* 時間 */
 

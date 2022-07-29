@@ -74,7 +74,7 @@ class firstpage extends Component {
         <div
         //  style={{zIndex:'-1'}}
         >
-          <div className='firstpic'>
+          <div className='firstpic' style={{marginBottom:"80px"}}>
             <div className='secpic'>
               <section>
                 <h2 className='pt-5'><b>還等什麼？一起和我們開始這個外送的旅程吧！</b></h2>
@@ -105,7 +105,7 @@ class firstpage extends Component {
 
           </div>
 
-          <div className='mt-4'>
+          <div className='mt-4' >
             <h4 className='text-center ImgZ'><span id="textCity"></span> 特別合作店家</h4>
           </div>
           <hr className='w-75 bg-danger' />
@@ -157,11 +157,11 @@ class firstpage extends Component {
             <div className='row'>
               <div className='col-1 col-lg-1'></div>
               <div className='col-7 col-lg-7 col-md-8 col-sm-8'>
-                <h3 className='newnews' id="news">最新消息</h3>
+                <h3 className='newnews pt-4' id="news">最新消息</h3>
               </div>
-              <div className='col-3 col-lg-3 col-md-3 col-sm-3 mt-3'>
+              {/* <div className='col-3 col-lg-3 col-md-3 col-sm-3  pt-5'>
                 <p>第一手重要通知，不容錯過</p>
-              </div>
+              </div> */}
             </div>
             <hr className='w-75 bg-danger' />
           </header>

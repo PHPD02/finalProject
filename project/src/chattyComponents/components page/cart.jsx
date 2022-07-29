@@ -83,13 +83,13 @@ class Cart extends Component {
                 <br /><br /><br />
                 <div className="container p-5" style={{border:'3px solid rgb(0, 40, 79)',borderRadius:'50px'}}>
                     <div className='text-center'>
-                        <span className='h1'><strong>購物車</strong></span>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span className='h4'><u>{this.state.restaurantName}</u></span>
+                        <span className='h1 '><strong >購物車</strong></span><br></br><br></br>
+                        {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
+                        <span className='h4 mt-2'><u>{this.state.restaurantName}</u></span>
                     </div>
                     <div className='menutailBar row text-right mt-4'>
-                        <div className='col-2'>食物</div>
-                        <div className='col-3'>食物名字</div>
+                        <div className='col-2'>品項快照</div>
+                        <div className='col-3'>品項</div>
                         <div className='col-2'>單價</div>
                         <div className='col-2'>數量</div>
                         <div className='col-2'>金額</div>
@@ -129,7 +129,7 @@ class Cart extends Component {
                     </div>
                     <div className='row'>
                         <div className='col' ></div>
-                        <div className="col-3">
+                        <div className="col-2  ">
                             {/* <NavLink to="/payment"> */}
                             <button className='fancy btn-block'
                                 onClick={this.doPayment}>

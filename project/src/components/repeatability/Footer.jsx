@@ -22,22 +22,24 @@ class Footer extends Component {
       <React.Fragment>
         <div className="footerbackimg" id='ff'>
           <div className='container'>
-            <div className='row'>
-              <div className='col-4 col-sm-4 col-md-4 col-lg-4 mt-1 text-center'>
-                <h5>關於</h5>
-                <li><a href='#'>外送夥伴品牌形象</a></li>
-                <li><a href='#'>承攬服務條款</a></li>
-                <li><a href='#'>隱私權政策</a></li>
+            <div className='row '>
+              <div className='col-4 col-sm-4 col-md-4 col-lg-4 mt-4 text-center'>
+                <h5 style={{fontSize:"25px",fontWeight:"bold"}}>關於</h5>
+                <li><a href='#' style={{color:"black"}}>外送夥伴品牌形象</a></li>
+                <li><a href='#' style={{color:"black"}}>承攬服務條款</a></li>
+                <li><a href='#' style={{color:"black"}}>隱私權政策</a></li>
               </div>
-              <div className='col-4 col-sm-4 col-md-4 col-lg-4 mt-1 text-center'>
-                <h5 className='text-center'>取得協助</h5>
-                <li><a href='#'>常見Q&A</a></li>
-                <li><a href='#'>營運中心開放時間</a></li>
+              <div className='col-4 col-sm-4 col-md-4 col-lg-4 mt-4 text-center'>
+                <h5 className='text-center' style={{fontSize:"25px",fontWeight:"bold"}}>取得協助</h5>
+                <li><a href='#' style={{color:"black"}}>常見Q&A</a></li>
+                <li><a href='#' style={{color:"black"}}>營運中心開放時間</a></li>
               </div>
-              <div className='col-4 col-sm-4 col-md-4 col-lg-4 mt-1 text-center'>
-                <h5 className='text-center'>請聯絡我們</h5>
+              <div className='col-4 col-sm-4 col-md-4 col-lg-4 mt-4 text-center'>
+                <h5 className='text-center' style={{fontSize:"25px",fontWeight:"bold"}}>聯絡我們</h5>
                 {/* id="emails"onMouseEnter={this.openChange} onMouseLeave={this.openChange}  */}
-                <i className="fa fa-envelope-o fa-3x"></i>
+                <li><a href='#' style={{color:"black"}}>成為合作店家</a></li>
+                <li><a href='#' style={{color:"black"}}>成為外送員</a></li>
+                <a href="/customerMail" ><i className="fa fa-envelope-o fa-2x" style={{color:"black",cursor:"pointer"}}></i></a>
               </div>
             </div>
           </div>

@@ -124,40 +124,13 @@ class FoodpandaPage extends React.Component {
         {/* <div className="container"> */}
             <Caroursel />
           {/* </div> */}
-          <div className="container">
-            
-            <div className="first-section d-flex">
-              <div className="dot1 dot"></div>
-              <div className="dot2 dot"></div>
-              <div className="dot3 dot"></div>
-              <div className="section-left flex-grow-1 ">
-              <br/><br/>
-                <h2>
-                  <span className="special-text">&nbsp;</span>團購服務上線中
-                </h2>
-                <h4>
-                  搶先體驗 <br />
-                  &emsp; 獲得100元順弁優惠券
-                </h4>
-                <div className="btn-collect">
-                  <NavLink to='/sunsua'>
-                  <button className="first-try">搶先體驗</button>
-                  </NavLink>
-                  <button class="play-btn"></button>
-                </div>
-              </div>
-              <div className="section-right">
-                <img src={Section1_pic} alt="" />
-              </div>
-            </div>
-          </div>
 
 {/* 定位功能 */}
 {/* <button onClick={this.locating}>123</button>
 <input type="text"  id="searchBox"/> */}
 
 
-          <div className="container">
+          <div className="container " style={{marginTop:"90px"}}>
             <div className=" section1_searchsection">
               <div>
 
@@ -258,6 +231,34 @@ class FoodpandaPage extends React.Component {
           </div>
           <ChatRobot />
         </div>
+        <div className="container">
+            
+            <div className="first-section d-flex">
+              <div className="dot1 dot"></div>
+              <div className="dot2 dot"></div>
+              <div className="dot3 dot"></div>
+              <div className="section-left flex-grow-1 ">
+              <br/><br/>
+                <h2>
+                  <span className="special-text">&nbsp;</span>團購服務
+                </h2>
+                <h4>
+                找不到吃什麼嗎? <br />
+                  &emsp; 來試試看團購功能
+                </h4>
+                <div className="btn-collect">
+                  <NavLink to='/sunsua'>
+                  <button className="first-try">加入團購</button>
+                  </NavLink>
+                  <button class="play-btn"></button>
+                </div>
+              </div>
+              <div className="section-right">
+                <img src={Section1_pic} alt="" />
+              </div>
+            </div>
+          </div>
+
       </React.Fragment>
     );
   }

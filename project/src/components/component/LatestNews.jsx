@@ -23,18 +23,18 @@ class LatestNews extends Component {
           return (
             <div className='col-4 d-flex'>
               {/* <div className="col-3 col-sm-4 col-md-4 col-lg-4 ml-2"> */}
-              <div className="col m-auto">
+              <div className="col mx-1">
                 {/* <div className='card cardshadowNew' style={{ width: "400px", height: "200px" }}> */}
                 <div className='card cardshadowNew w-100'>
                   <div>
-                    <h4>{value.newsitems}</h4>
+                    <h4 style={{fontWeight:"bold"}}>{value.newsitems}</h4>
                   </div>
                   <div>
-                    <p>{value.newsnews}</p>
+                    <p style={{color:"grey"}}>{value.newsnews}</p>
                   </div>
-                  <div>
+                  <div className='news-card-wrapper'>
                     {/*讓文字多於框框的變成點點點 className='text-nowrap text-truncate' */}
-                    <p className='text-nowrap text-truncate'>{value.newscontents}</p>
+                    <p className='news-card'>{value.newscontents}</p>
                   </div>
                   <div>
                     <p>{}</p>

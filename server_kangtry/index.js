@@ -226,7 +226,7 @@ app.get("/restaurants/category/all", function (req, res) {
     )
 })
 app.get("/restaurants/category/drinks", function (req, res) {
-    restaurant_catrgory.query("select * from restaurant where category = '飲料' LIMIT 100", 
+    restaurant_catrgory.query("select * from restaurant where category = '飲料' ORDER BY id DESC LIMIT 100 ", 
         [req.params.id],
         function (err, rows) {
             res.send( JSON.stringify(rows) );
@@ -236,7 +236,7 @@ app.get("/restaurants/category/drinks", function (req, res) {
     )
 })
 app.get("/restaurants/category/chinese", function (req, res) {
-    restaurant_catrgory.query("select * from restaurant where category = '中式' LIMIT 20", 
+    restaurant_catrgory.query("select * from restaurant where category = '中式' LIMIT 60", 
         [req.params.id],
         function (err, rows) {
             res.send( JSON.stringify(rows) );
@@ -244,7 +244,7 @@ app.get("/restaurants/category/chinese", function (req, res) {
     )
 })
 app.get("/restaurants/category/west", function (req, res) {
-    restaurant_catrgory.query("select * from restaurant where category = '西式' LIMIT 20", 
+    restaurant_catrgory.query("select * from restaurant where category = '西式' LIMIT 60", 
         [req.params.id],
         function (err, rows) {
             res.send( JSON.stringify(rows) );
@@ -252,7 +252,7 @@ app.get("/restaurants/category/west", function (req, res) {
     )
 })
 app.get("/restaurants/category/southeast", function (req, res) {
-    restaurant_catrgory.query("select * from restaurant where category = '東南亞' LIMIT 20", 
+    restaurant_catrgory.query("select * from restaurant where category = '東南亞' LIMIT 60", 
         [req.params.id],
         function (err, rows) {
             res.send( JSON.stringify(rows) );
@@ -268,7 +268,7 @@ app.get("/restaurants/category/aroundme", function (req, res) {
     )
 })
 app.get("/restaurants/category/hito", function (req, res) {
-    restaurant_catrgory.query("select * from restaurant where region = '臺中市' LIMIT 40", 
+    restaurant_catrgory.query("select * from restaurant where region = '臺中市' LIMIT 60", 
         [req.params.id],
         function (err, rows) {
             res.send( JSON.stringify(rows) );

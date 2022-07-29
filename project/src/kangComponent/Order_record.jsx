@@ -322,28 +322,15 @@ class Order_record extends React.Component {
                       </div>
                       <div className="col-2">
                         <div>
-                          <p className="h3 text-nowrap" >${item.proposalOrderDetail.length * item.freight}元</p>
-                        </div>
-                      </div>
-                    </div>
-                    <Accordion
-                      style={{
-                        borderTop: "1px solid black",
-                        marginTop: "20px",
-                        fontSize: "15px",
-                      }}
-                    >
-                      <Accordion.Item eventKey="0">
-                        <Accordion.Header className="mt-3 font-weight-bold "
-                          style={{ fontSize: "22px" }}>
-                          <span>查看明細({item.proposalOrderDetail.length}條紀錄)</span>
-                          <span className="ml-2">
-                            <i class="fa-solid fa-angles-down"></i>
-                          </span>
-                        </Accordion.Header>
-                        <Accordion.Body>
-                          <div>
-                            <ul className="list-group mt-4 ">
+                          <ul className="list-group mt-4 ">
+                            <div className="container-fluid">
+                              <div className="row d-flex text-left">
+                                <div className="col-8 ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;訂購人</div>
+                                {/* <div className="col-1 text-nowrap ">數量</div> */}
+                                <div className="col-1 text-nowrap">訂單運費</div>
+                              </div>
+                            </div>
+                            <li className="list-group-item d-flex  ">
                               <div className="container-fluid">
                                 <div className="row d-flex text-left">
                                   <div className="col-8 ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;訂購人</div>
@@ -357,10 +344,10 @@ class Order_record extends React.Component {
                                   {item.proposalOrderDetail.map((itemitem, index) => {
                                     return (
                                       <div className="row d-flex text-left border-bottom">
-                                        <div className="col-9 font-weight-bolder">{itemitem.emailPartyB.split('@')[0]}</div>
-
-                                        <div className="col-1 text-nowrap">{itemitem.count}份</div>
-                                        <div className="col-1 text-nowrap font-weight-bolder">${item.cost}元</div>
+                                      <div className="col-9 font-weight-bolder">{itemitem.emailPartyB.split('@')[0]}</div>
+    
+                                      {/* <div className="col-1 text-nowrap">{itemitem.count}份</div> */}
+                                      <div className="col-1 text-nowrap font-weight-bolder">${item.freight}元</div> 
 
                                       </div>
 

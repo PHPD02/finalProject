@@ -27,7 +27,7 @@ class StoreSlidrBar2_drinks extends React.Component {
     return (
       <div>
         <Carousel
-          cols={4}
+          cols={5}
           rows={1}
           gap={40}
           dotColorActive={"red"}
@@ -99,8 +99,9 @@ class StoreSlidrBar2_drinks extends React.Component {
                         {item.description}
                       </p>
                       <p className="card-price ">
-                        $ {item.tel}
-                        <small> 外送服務費</small>
+                        {/* $ {item.tel} 經老師建議先使用固定最低運費  */}
+                        $ 39
+                        <small> 最低外送服務費</small>
                       </p>
                     </div>
                   </div>

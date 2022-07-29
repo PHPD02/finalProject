@@ -69,8 +69,8 @@
 
 .btnmore {
   border-right: 6px;
-  --text-stroke-color: rgb(255, 202, 87);
-  --animation-color: #ff9900;
+  --text-stroke-color: rgb(46,128,174);
+  --animation-color: rgb(50,166,150);
   --fs-size: 2em;
   letter-spacing: 3px;
   text-decoration: none;
@@ -120,11 +120,12 @@
 .ImgZ {
   font-weight: 1000;
   height: 50px;
-  background-image: url("./文字背景.png");
+  /* background-image: url("./文字背景.png"); */
   background-size: 250px 40px;
   background-position: center center;
   background-repeat: no-repeat;
   text-shadow: 1px 1px rgba(255, 217, 0, 0.493);
+  font-size: 35px;
 }
 
 .newnews {

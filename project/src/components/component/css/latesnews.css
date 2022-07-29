@@ -1,3 +1,16 @@
 .cardshadowNew {
   box-shadow: 3px 3px rgb(174, 174, 174);
 }
+.news-card-wrapperproduct_des {
+  width: 100%;
+  -webkit-line-clamp: 2;
+  font-size: 15px;
+}
+
+.news-card-wrapper .news-card{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

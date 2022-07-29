@@ -33,7 +33,8 @@ class Sunsua extends Component {
                     break;
                 } else {
                     // 沒登入 返回登入頁
-                    window.location = "http://localhost:3000/login";
+                    alert(" 請先登入! ")
+                    window.location = "http://localhost:3000/loginComsumer";
                     break;
                 }
             /*  */

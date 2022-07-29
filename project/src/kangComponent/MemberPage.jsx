@@ -123,19 +123,12 @@ class MemberPage extends React.Component {
               <h2 className="card-title text-center font-weight-bold h2">
                 訂單紀錄
               </h2>
-              <h6 className="card-subtitle mb-2 text-muted my-4 text-center">
-                {/* 您可以隨時提取押金，但記得使用順弁服務需要您提供一定金額的押金 */}
-                <br></br><br/>
-              </h6>
+
               <div className="row my-2 text-center d-flex align-items-center">
-                  {/* <div className="col-5">
-                    <i
-                      class="fa fa-gift"
-                      aria-hidden="true"
-                      style={{ fontSize: "80px" }}
-                    ></i>
+                  <div className="col-12 orderdetail-wrapper">
+
                   </div>
-                  <div className="col-7">
+                  {/* <div className="col-7">
                     <p className="card-text" style={{ fontSize: "50px" }}>
                       $500元
                     </p>

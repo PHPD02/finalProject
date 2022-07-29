@@ -83,3 +83,10 @@ left: 30%;
 	-webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
 	transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
 }
+.orderdetail-wrapper{
+	height: 150px;
+	background-image: url('../img/1.gif');
+	background-repeat: no-repeat;
+	background-position: center -20px;
+	background-size: 100% 140%
+}

@@ -46,7 +46,7 @@ export function ExportExcelButton (props){
           style={style}
           className="btn btn-outline-secondary btn-lg"
       >
-        下載報表
+        匯出excel
       </button>
     )
 };

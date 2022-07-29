@@ -23,7 +23,7 @@ class StoreSlidrBar2_chinese extends React.Component {
     return (
       <div>
         <Carousel
-          cols={5}
+          cols={4}
           rows={1}
           gap={40}
           dotColorActive={"red"}

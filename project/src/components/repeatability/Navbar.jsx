@@ -118,9 +118,9 @@ class Navbar extends Component {
               <div className='container-fluid'>
                 {/* <ul></ul> */}
                 <ul className="navbar-nav">
-                  <li id='navSunsua' className="nav-item active pl-5" style={{ display: 'none' }}>
+                  <li id='navSunsua' className="nav-item active pl-5" >
                     {/* <NavLink to='/sunsua'> */}
-                    <a className="nav-link settext" href='/sunsua'><span className="sr-only "></span><i></i>順弁</a>
+                    <a className="nav-link settext" href='/sunsua'><span className="sr-only "></span><i></i>順弁團購</a>
                     {/* </NavLink> */}
                   </li>
                   <li id='accompany' className="nav-item active pl-5" style={{ display: 'none' }}>
@@ -184,7 +184,7 @@ class Navbar extends Component {
           </div>
 
         </nav>
-      </React.Fragment >
+      </React.Fragment>
     );
   }
 }

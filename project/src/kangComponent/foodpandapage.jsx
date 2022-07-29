@@ -133,7 +133,7 @@ class FoodpandaPage extends React.Component {
               <div className="section-left flex-grow-1 ">
               <br/><br/>
                 <h2>
-                  <span className="special-text">&nbsp;</span>新功能上線中
+                  <span className="special-text">&nbsp;</span>團購服務上線中
                 </h2>
                 <h4>
                   搶先體驗 <br />

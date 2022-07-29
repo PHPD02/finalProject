@@ -27,7 +27,7 @@ class StoreSlidrBar2_drinks extends React.Component {
     return (
       <div>
         <Carousel
-          cols={5}
+          cols={4}
           rows={1}
           gap={40}
           dotColorActive={"red"}

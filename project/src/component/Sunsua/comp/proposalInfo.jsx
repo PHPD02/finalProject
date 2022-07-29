@@ -121,17 +121,17 @@ class ProposalInfo extends Component {
                                 </tr>
                                 */}
                                 <tr>
-                                    <td className='font-weight-bold'>地點</td>
-                                    <td colSpan={3} className='text-center'>{this.state.proposalDetail.addr}</td>
+                                    <td className='font-weight-bold'>取餐地點</td>
+                                    <td colSpan={3} className='text-center font-weight-bold'>{this.state.proposalDetail.addr}</td>
                                 </tr>
                                 <tr>
-                                    <td className='font-weight-bold'>時間</td>
-                                    <td colSpan={3} className='text-center'>{this.state.proposalDetail.arriveTime}</td>
+                                    <td className='font-weight-bold'>取餐時間</td>
+                                    <td colSpan={3} className='text-center font-weight-bold'>{this.state.proposalDetail.arriveTime}</td>
 
                                 </tr>
                                 <tr>
                                     <td rowSpan={2} className='mealTxt font-weight-bold align-middle'>餐點</td>
-                                    <td rowSpan={2} className='text-center align-middle'>{this.state.proposalDetail.meal}</td>
+                                    <td rowSpan={2} className='text-center align-middle font-weight-bold' >{this.state.proposalDetail.meal}</td>
                                     <td className='font-weight-bold'>單份金額</td>
                                     <td className='text-center'>{this.state.proposalDetail.cost}</td>
                                 </tr>

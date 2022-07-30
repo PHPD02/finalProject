@@ -68,7 +68,7 @@ class shopList extends Component {
                 
             </div>
             <div style={{fontSize:"20px"}}>
-              <span style={{color:"red"}}>★</span><span >5</span>/<span >5</span><span >(476)</span>
+              <span style={{color:"red"}}>★</span><span >4</span>/<span >5</span><span >(476)</span>
             </div>
             <br/>
             <h4  style={{fontSize:"26px"}}>菜單</h4>

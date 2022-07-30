@@ -5,7 +5,8 @@ import Navbar from "../components/repeatability/Navbar";
 import "../css/commentpage.css"
 import $ from "jquery"
 
-var value = Math.floor(Math.random() * 5 + 1);
+// var value = Math.floor(Math.random() * 5 + 1);
+var value = 4;
 var value2 = Math.floor(Math.random() * 6);
 
 class CommentPage extends React.Component {

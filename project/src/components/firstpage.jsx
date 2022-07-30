@@ -145,8 +145,8 @@ class firstpage extends Component {
 
                 <NavLink to="/sunsuafooddelivery" className="float-right">
                   <button data-text="Awesome" className="btnmore">
-                    <span className="actual-text">&nbsp;more...&nbsp;</span>
-                    <span className="hover-text" aria-hidden="true">&nbsp;more...&nbsp;</span>
+                    <span className="actual-text">&nbsp;點我查看更多店家...&nbsp;</span>
+                    <span className="hover-text" aria-hidden="true">&nbsp;點我查看更多店家...&nbsp;</span>
                   </button></NavLink>
               </div>
             </div>

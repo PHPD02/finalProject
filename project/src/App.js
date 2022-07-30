@@ -38,6 +38,7 @@ import RegisterComsumer from "./chattyComponents/components page/registerComsume
 import Cart from "./chattyComponents/components page/cart";
 // 結帳頁面
 import Payment from "./chattyComponents/components page/payment";
+import Payment_Sunsua from "./chattyComponents/components page/payment_sunsua";
 // 店家資訊
 import ShopList2 from "./chattyComponents/components page/shopList";
 
@@ -109,6 +110,7 @@ class App extends React.Component {
           <Route path="/registerCompany" component={RegisterCompany} />
           <Route path="/cart" component={Cart} />
           <Route path="/payment/:orderId" component={Payment} />
+          <Route path="/payment_sunsua/:proposalId" component={Payment_Sunsua} />
           <Route path="/shopList2/:id" component={ShopList2} />
 
           {/* 峻軒 */}

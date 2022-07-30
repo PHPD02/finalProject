@@ -68,7 +68,7 @@ class StoreCard extends Component {
     return (
       <React.Fragment>
         <div className='card' style={{ boxShadow: "3px 3px 3px grey" }}>
-          <div className='container' style={{ height: '150px' }} >
+          <div className='container' style={{ height: '165px' }} >
             <div className='row mt-3 d-flex align-items-center'>
               {/* <div className='col-md-12 col-sm-12'> */}
               <img src={picture} alt="" name="picture" height='100%' className='col-4 ' />

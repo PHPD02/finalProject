@@ -54,8 +54,9 @@ class OrderDetails extends Component {
                 <div className='card'>
                   <div className='row'>
                     <div className='col-11 text-center'>
-                      <h4>預計外送時間:00分00秒</h4>
-                      ({this.state.time[0]})-({this.state.time[1]})
+                      <h4>預計外送時間:20分00秒</h4>
+                      <br />
+                      {/* ({this.state.time[0]})-({this.state.time[1]}) */}
                     </div>
                     {/* 讀取外送時間 */}
                     <div className='col-12'>
@@ -67,7 +68,7 @@ class OrderDetails extends Component {
                   </div>
                   {/* 再送達後更改內容 */}
                   <div className='col-11 text-center'>
-                    <h4>{0 == 0 ? "餐點已送達!謝謝光臨" : "餐點準備中"}</h4>
+                    {/* <h4>{0 == 0 ? "餐點已送達!謝謝光臨" : "餐點準備中"}</h4> */}
 
                   </div>
                 </div>
@@ -76,13 +77,13 @@ class OrderDetails extends Component {
                 <div className='card'>
                   <h3>訂單詳情</h3>
                   <br />
-                  <h5>訂單編號：{this.state.details.water}</h5>
+                  <h5>訂單編號：{this.state.details.water}1659165812</h5>
                   <br />
-                  <h5>訂單配送來自：{ }</h5>
+                  <h5>訂單配送來自：{ }台中市西屯區朝富路134號</h5>
                   <br />
                   <h5>送餐地址：51號 21 公益路二段 Taichung City 408</h5>
                   <br />
-                  <h5>總計：$ {this.state.details.sums}</h5>
+                  <h5>總計：$ {this.state.details.sums}253</h5>
                   {/* 撈資料庫產生 */}
                   <Accordion style={{ borderTop: "1px solid black", marginTop: "20px", fontSize: "15px", }}>
                     <Accordion.Item eventKey="0">
@@ -129,14 +130,15 @@ class OrderDetails extends Component {
                   <br />
                   {/* C:\Users\bgkon\Desktop\康峻軒final_project(0628)\project\src\kangComponent\firebase\firebaseIndex.jsx */}
                 </div>
-                <div className='col-md-12 container mt-2'>
-                  <div className='row card cardshadow'>
+                <div className='col-md-12 container mt-2 card cardshadow'>
+                  {/* <div className='row card cardshadow'> */}
                     <div className='col-12'>
-                      <h4>需要幫助嗎 ?</h4>
-                      <h6>有需要的話聯絡我們</h6>
-                      <button className="btn btn-outline-danger">客服中心</button>
+                      {/* <h4>需要幫助嗎 ?</h4> */}
+                      {/* <h4></h4> */}
+                      <h6>此次餐點還滿意嗎？</h6>
+                      <button className="btn btn-outline-success">點我進入店家，以進行評論</button>
                     </div>
-                  </div>
+                  {/* </div> */}
                 </div>
               </div>
             </div>

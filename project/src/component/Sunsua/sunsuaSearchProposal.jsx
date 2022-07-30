@@ -26,6 +26,7 @@ import './css/sunsuaSearchProposal.css';
 import iconLocate from './pic/locate.png'
 
 import AutoCompleteLocation from "../../kangComponent/js/AutoCompleteLocation.jsx"
+import { json } from 'd3';
 
 const google = window.google;
 class SunsuaSearchProposal extends Component {
@@ -118,6 +119,7 @@ class SunsuaSearchProposal extends Component {
             .then(res => {
                 if (res.status == 200) {
                     console.log("success state = 200");
+                    
                 }
             })
             .catch(error => {
@@ -138,6 +140,10 @@ class SunsuaSearchProposal extends Component {
             .then(res => {
                 if (res.status == 200) {
                     console.log("success state = 200");
+                    // cht成功改變數量後
+
+                    // console.log(JSON.parse( res.config.data).id);
+                    // window.location = `http://localhost:3000/payment_sunsua/${JSON.parse(res.config.data).id}`;
                 }
             })
             .catch(error => {
@@ -161,7 +167,8 @@ class SunsuaSearchProposal extends Component {
                     console.log("error:" + error.message);
                 });
         }
-        document.location.href = "/sunsua"
+        // document.location.href = "/sunsua"
+
     }
     /*  */
     addrInput = async (e) => {

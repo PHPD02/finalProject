@@ -34,7 +34,9 @@ class Navbar extends Component {
  
   cartClick = () => {
     // console.log(this.state.cartNum);
-    if (this.state.cartNum == 0) {
+    var num = parseInt(document.getElementById('cartNum').innerText);
+    
+    if (this.state.cartNum == 0 && num == 0) {
       alert('目前購物車是空的，請前往選購！');
       window.location = 'http://localhost:3000/sunsuafooddelivery';
     }

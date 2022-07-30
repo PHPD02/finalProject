@@ -66,12 +66,18 @@ class Payment extends Component {
         ,{ params: {email:email} }
         )
         .then((response) => {
-            // this.setState({
-            //     cart: response.data,
+            this.setState({
+                // cart: response.data.meal,
             //     orderId : response.data[0].orderId,
-            //     restaurantName: response.data[0].name
+                restaurantName: response.data.shop,
+                meal: response.data.meal,
+                count: response.data.count,
+                cost: response.data.cost,
+                proposalId: response.data.id
+
                 
-            // });
+            });
+            // var result = response.data;
             console.log(response.data);
 
         })
@@ -164,25 +170,26 @@ class Payment extends Component {
 
                                     <h4 className='text-center'><u>{this.state.restaurantName}</u></h4><br />
                                     <p className='h3'>結帳餐點:</p>
-                                    {this.state.cart.map((c) => {
+                                    
+                                    {/* {this.state.cart.map((c) => {
                                         return (
-                                            <div className='menutail row' key={c.id}>
+                                            <div className='menutail row' key={c.id}> */}
                                                 {/* 點餐內容 */}
                                                 {/* <div className='col-6 cart-food-sp sp1'>food1pic</div> */}
-                                                <div className='col cart-food-sp sp2 '><u>{c.dish}</u></div>
+                                                {/* <div className='col cart-food-sp sp2 '><u>{c.dish}</u></div>
                                                 <div className='col-3 cart-food-sp'>{c.amount}</div>
                                                 <div className='col-3 cart-food-sp sp3'>${c.cost}</div>
-                                            </div>
-                                        )
-                                    })}
+                                            </div> */}
+                                        {/* )
+                                    })} */}
 
-                                    {/* <div className='menutail row'> */}
+                                    <div className='menutail row'>
                                     {/* 點餐內容 */}
                                     {/* <div className='col-6 cart-food-sp sp1'>food1pic</div> */}
-                                    {/* <div className='col cart-food-sp sp2 '><u>黃金里肌厚切豬排咖哩飯</u></div>
-                                    <div className='col-3 cart-food-sp'>1</div>
-                                    <div className='col-3 cart-food-sp sp3'>$100</div>
-                                </div> */}
+                                    <div className='col cart-food-sp sp2 '><u>{this.state.meal}</u></div>
+                                    <div className='col-3 cart-food-sp'>{this.state.count}</div>
+                                    <div className='col-3 cart-food-sp sp3'>{this.state.cost}</div>
+                                </div>
                                     {/* <div className='menutail row'> */}
                                     {/* 點餐內容 */}
                                     {/* <div className='col-6 cart-food-sp sp1'>food1pic</div> */}
@@ -203,9 +210,9 @@ class Payment extends Component {
                                         </div>
                                         <div className="col text-right">
 
-                                            <p><span >{this.totalPrice()}</span></p>
+                                            <p><span >{this.state.cost}</span></p>
                                             <p><span>{this.state.freight}</span></p>
-                                            <p><span id='pTotal'>{this.totalPrice() + 39}</span></p>
+                                            <p><span id='pTotal'>{parseInt(this.state.cost) + parseInt(this.state.freight)}</span></p>
                                         </div>
                                     </div>
 
@@ -217,7 +224,7 @@ class Payment extends Component {
                                         "http://localhost:80//ourPHPFinalproject/ChtProject/phpEcpay/ECPay_CreateOrder.php"
                                         onSubmit={(event) => this.handleSubmit(event)}>
                                         <label hidden>編號 (MerchantTradeNo):
-                                            <input type="text" name="MerchantTradeNo" defaultValue={this.state.orderId} className="form-control" />
+                                            <input type="text" name="MerchantTradeNo" defaultValue={this.state.num} className="form-control" />
                                             {/* <!-- 不可重複使用。英數字大小寫混合 --> */}
                                         </label>
                                         <label hidden className="col-xs-12">時間 (MerchantTradeDate):

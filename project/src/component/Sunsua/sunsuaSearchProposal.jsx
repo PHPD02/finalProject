@@ -143,7 +143,7 @@ class SunsuaSearchProposal extends Component {
                     // cht成功改變數量後
 
                     // console.log(JSON.parse( res.config.data).id);
-                    // window.location = `http://localhost:3000/payment_sunsua/${JSON.parse(res.config.data).id}`;
+                    window.location = `http://localhost:3000/payment_sunsua/${JSON.parse(res.config.data).id}`;
                 }
             })
             .catch(error => {

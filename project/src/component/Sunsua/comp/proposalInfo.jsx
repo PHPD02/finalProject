@@ -130,12 +130,14 @@ class ProposalInfo extends Component {
 
                                 </tr>
                                 <tr>
-                                    <td rowSpan={2} className='mealTxt font-weight-bold align-middle'>餐點</td>
-                                    <td rowSpan={2} className='text-center align-middle font-weight-bold' >{this.state.proposalDetail.meal}</td>
+                                    <td rowSpan={1} className='mealTxt font-weight-bold align-middle'>餐廳</td>
+                                    <td rowSpan={1} className='text-center align-middle font-weight-bold' >{this.state.proposalDetail.shop}</td>
                                     <td className='font-weight-bold'>單份金額</td>
                                     <td className='text-center'>{this.state.proposalDetail.cost}</td>
                                 </tr>
                                 <tr>
+                                    <td rowSpan={1} className='mealTxt font-weight-bold align-middle'>餐點</td>
+                                    <td rowSpan={1} className='text-center align-middle font-weight-bold' >{this.state.proposalDetail.meal}</td>
                                     <td className='font-weight-bold'>運費</td>
                                     <td className='text-center'>{this.state.proposalDetail.freight}</td>
                                 </tr>

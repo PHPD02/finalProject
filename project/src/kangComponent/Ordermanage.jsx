@@ -19,7 +19,7 @@ class Ordermanage extends React.Component {
 
     downloadData: [{
       sheetName: '',
-      thead: ['訂單編號', '訂單日期', '品項名稱', '下單數目', '消費金額', '訂單利潤'],
+      thead: ['訂單編號', '訂單日期', '品項名稱', '數量', '消費金額', '訂單利潤'],
       tbody: [],
       columnWidths: []
     }],
@@ -31,7 +31,7 @@ class Ordermanage extends React.Component {
       id: "訂單編號",
       date: "訂單日期",
       dish: "品項名稱",
-      amount: "下單數目",
+      amount: "數量",
       cost: "消費金額",
       profit: "訂單利潤"
     },
@@ -84,7 +84,7 @@ class Ordermanage extends React.Component {
     const downloadData = [{
 
       sheetName: `水巷茶弄月收支報表`,
-      thead: ['訂單編號', '訂單日期', '品項名稱', '下單數目', '消費金額', '訂單利潤'],
+      thead: ['訂單編號', '訂單日期', '品項名稱', '數量', '消費金額', '訂單利潤'],
       tbody: gg,
       columnWidths: [{ number: 1, width: 20 }, { number: 2, width: 20 }, { number: 3, width: 30 }, { number: 4, width: 20 }, { number: 5, width: 20 }, { number: 6, width: 30 }]
     }];
@@ -119,7 +119,7 @@ class Ordermanage extends React.Component {
     //       this.state.downloadData_thead.dish = "品項名稱";
     //       break;
     //     case 'amount':
-    //       this.state.downloadData_thead.amount = "下單數目";
+    //       this.state.downloadData_thead.amount = "數量";
     //       break;
     //     case 'cost':
     //       this.state.downloadData_thead.cost = "單筆金額";
@@ -175,7 +175,7 @@ class Ordermanage extends React.Component {
             }
             break;
           case 'amount':
-            this.state.downloadData[0].thead.push('下單數目')
+            this.state.downloadData[0].thead.push('數量')
             for (let i = 0; i < this.state.downloadData[0].tbody.length; i++) {
               this.state.downloadData[0].tbody[i].push(this.state.downloadData_tbody.amount[i]);
             }
@@ -319,7 +319,7 @@ class Ordermanage extends React.Component {
                         <div className="dropdown-menu p-2">
                           <input type="checkbox" id="excelPost1" name="excelPost[]" value="date" onChange={this.excelChkboxSel} defaultChecked /> <label htmlFor="excelPost1">日期</label> <br />
                           <input type="checkbox" id="excelPost2" name="excelPost[]" value="dish" onChange={this.excelChkboxSel} defaultChecked /> <label htmlFor="excelPost2">品項名稱</label> <br />
-                          <input type="checkbox" id="excelPost3" name="excelPost[]" value="amount" onChange={this.excelChkboxSel} defaultChecked /> <label htmlFor="excelPost3">下單數</label> <br />
+                          <input type="checkbox" id="excelPost3" name="excelPost[]" value="amount" onChange={this.excelChkboxSel} defaultChecked /> <label htmlFor="excelPost3">數量</label> <br />
                           <input type="checkbox" id="excelPost4" name="excelPost[]" value="cost" onChange={this.excelChkboxSel} defaultChecked /> <label htmlFor="excelPost4">消費金額</label> <br />
                           <input type="checkbox" id="excelPost5" name="excelPost[]" value="profit" onChange={this.excelChkboxSel} defaultChecked /> <label htmlFor="excelPost5">訂單利潤</label> <br />
                           <hr />

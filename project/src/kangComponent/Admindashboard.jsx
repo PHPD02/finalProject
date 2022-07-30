@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import D3 from "./chart/D3chart.jsx";
 import { Piechart } from "./chart/Pie_chartjs.jsx";
 import { Barchart } from "./chart/Barchart.jsx";
+import { Linechart } from "./chart/Linechart.jsx";
+
 // import Piechartjs from "./chart/Pie_chartjs.jsx";
 
 import "https://cdn.jsdelivr.net/npm/chart.js";
@@ -186,10 +188,10 @@ class Admindashboard extends Component {
                 <div class="col-lg-3 col-6 mb-2">
                   <div class="card h-100 shadow">
                     <div class="card-body d-flex align-items-center">
-                      <div class="fa fa-money fa-4x text-secondary ml-3 d-none d-md-block"></div>
+                      <div class="fa fa-money fa-4x text-secondary  d-none d-md-block"></div>
                       <div class="text-center w-100">
-                        <div class="h4 text-nowrap">本日營業額</div>
-                        <div class="h2 ">20,000</div>
+                        <div class="h4 text-nowrap"><span className="font-weight-bold">今日</span>營業額</div>
+                        <div class="h2 font-weight-bold">13,072</div>
                       </div>
                     </div>
                   </div>
@@ -197,10 +199,10 @@ class Admindashboard extends Component {
                 <div class="col-lg-3 col-6 mb-2">
                   <div class="card h-100 shadow">
                     <div class="card-body d-flex align-items-center">
-                      <div class="fa fa-shopping-cart fa-4x text-secondary ml-3 d-none d-md-block"></div>
+                      <div class="fa fa-shopping-cart fa-4x text-secondary  d-none d-md-block"></div>
                       <div class="text-center w-100">
-                        <div class="h4 text-nowrap">本日訂單</div>
-                        <div class="h2 display-3">30</div>
+                        <div class="h4 text-nowrap"><span className="font-weight-bold">昨日</span>營業額</div>
+                        <div class="h2 ">10,281</div>
                       </div>
                     </div>
                   </div>
@@ -208,10 +210,10 @@ class Admindashboard extends Component {
                 <div class="col-lg-3 col-6 mb-2">
                   <div class="card h-100 shadow">
                     <div class="card-body d-flex align-items-center">
-                      <div class="fa fa-user fa-4x text-secondary ml-3 d-none d-md-block"></div>
+                      <div class="fa fa-user fa-4x text-secondary  d-none d-md-block"></div>
                       <div class="text-center w-100">
-                        <div class="h4 text-nowrap">今日訪客</div>
-                        <div class="h2 display-3">500</div>
+                        <div class="h4 text-nowrap">今日下單數</div>
+                        <div class="h2 ">153</div>
                       </div>
                     </div>
                   </div>
@@ -219,10 +221,10 @@ class Admindashboard extends Component {
                 <div class="col-lg-3 col-6 mb-2">
                   <div class="card h-100 shadow">
                     <div class="card-body d-flex align-items-center">
-                      <div class="fa fa-instagram fa-4x text-secondary ml-3 d-none d-md-block"></div>
+                      <div class="fa fa-dollar fa-4x text-secondary  d-none d-md-block"></div>
                       <div class="text-center w-100">
-                        <div class="h4 text-nowrap">IG追蹤數</div>
-                        <div class="h2 display-3">800</div>
+                        <div class="h4 text-nowrap"><span className="font-weight-bold">8月</span>營收</div>
+                        <div class="h2 ">210,251</div>
                       </div>
                     </div>
                   </div>
@@ -234,17 +236,17 @@ class Admindashboard extends Component {
                 <div class="row ">
                   <div class="col-lg-12 mb-4">
                     <div class="card h-100 shadow">
-                      <div class="card-header  p-2 h4">近月銷售量 </div>
+                      <div class="card-header  p-2 h4"><span className="font-weight-bold">八月 </span>日營收 </div>
                       <div class="card-body d-flex align-items-center">
                         <div class="row">
                           <div class="col-8 ">
                             <div>
-                              <D3 style={{ width: "100%" }} />
+                              <Barchart />
                             </div>
                           </div>
                           <div class="col-4">
-                            <h3>近期銷售量起伏較大</h3>
-                             <br></br><br></br><br></br>
+                            <h3>八月營收小計(08/01-08/09)</h3>
+                             <h2 className="text-center font-weight-bold">$167,826元</h2><br></br><br></br>
                             <p>
                               小規模營業人平均月營業額達8萬元以上未超過20萬元者，依規定免用統一發票，所謂「營業額20萬元」，係以六個月平均來計算，若僅有少數單月營業額超過20萬元水準，仍無須使用統一發票。
                             </p><br></br><br></br>
@@ -258,19 +260,19 @@ class Admindashboard extends Component {
 
                   <div class="col-lg-8 mb-5">
                     <div class="card h-100 shadow">
-                      <div class="card-header  p-2 h4">營業額 </div>
+                      <div class="card-header  p-2 h4">近12個月營業額 </div>
                       <div class="card-body d-flex align-items-center">
                         <div class="row">
                           <div class="col-12 mb-4">
                             <div>
-                              <Barchart />
+                              <Linechart />
                             </div>
                           </div>
                           <div class="col-12">
                             <h3>說明</h3>
                             <p>
-                              <b>最高營收紀錄：</b> <b>七月</b>金額為<i>49,604元</i><br/>
-                              <b>最低營收紀錄：</b> <b>八月</b>金額為<i>18,216元</i>
+                              <b>最高營收紀錄：</b> <b>2022/07</b>金額為<i> $672,105元</i><br/>
+                              <b>最低營收紀錄：</b> <b>2022/01</b>金額為<i> $480,140元</i>
                             </p>
                           </div>
                         </div>
@@ -286,7 +288,7 @@ class Admindashboard extends Component {
                           <Piechart />
                         </div>
                       </div>
-                      <h3 className="text-center">店家TOP6品項</h3>
+                      <h3 className="text-center">店家TOP5品項</h3>
 
                     </div>
                   </div>

@@ -60,7 +60,7 @@ function Register2() {
     
     const dopwdchk = (e) => {
         console.log(e.target.value)
-        let pwd = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,10}$/);
+        let pwd = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,8}$/);
         if ( pwd.test( e.target.value ) ) {
             $('#pwdrex').css("visibility",'visible') ;
         }

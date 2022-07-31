@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import Navbar from './repeatability/Navbar';
 import './css/orderdetails.css';
 import axios from 'axios';
@@ -17,6 +18,8 @@ class OrderDetails extends Component {
     time: [], //給於一個空的時間值
     timeleft: '',
   }
+
+  
 
 
   componentDidMount = async () => {
@@ -136,7 +139,9 @@ class OrderDetails extends Component {
                       {/* <h4>需要幫助嗎 ?</h4> */}
                       {/* <h4></h4> */}
                       <h6>此次餐點還滿意嗎？</h6>
-                      <button className="btn btn-outline-success">點我進入店家，以進行評論</button>
+                      <NavLink to='/CommentPage/7008'>
+                      <button className="btn btn-outline-success" >點我進入店家，以進行評論</button>
+                      </NavLink>
                     </div>
                   {/* </div> */}
                 </div>

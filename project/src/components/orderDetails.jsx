@@ -6,7 +6,7 @@ import axios from 'axios';
 import Footer from './repeatability/Footer';
 import FirebaseIndex from '../kangComponent/firebase/firebaseIndex';
 import Accordion from "react-bootstrap/Accordion";
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 // import { useEffect, useState } from "react";
 
 class OrderDetails extends Component {
@@ -151,10 +151,6 @@ class OrderDetails extends Component {
                     <h5 id="text1"></h5>
                     <NavLink to="/CommentPage"><p id="text2" className='btn btn-outline-success'> </p></NavLink>
 
-                    {/* {this.state.countDownTime.subtractionTime == 0 ? (<NavLink to="/CommentPage"><button className='btn btn-outline-success'>點我進入店家，以進行評論</button></NavLink>) : ("")} */}
-                    {/* <h5 className='test2'>{0 == 0 ? this.state.test2[0] : this.state.test2[1]}</h5> */}
-                    {/* <h5 className='test2'>{0 == 0 ? this.test1() : '餐點準備中'}</h5> */}
-                    {/* <h5 className='test2'>{0 == 0 ? this.state.test2[0] : this.state.test2[1]}</h5> */}
 
                   </div>
                 </div>
@@ -217,22 +213,7 @@ class OrderDetails extends Component {
                   <br />
                   {/* C:\Users\bgkon\Desktop\康峻軒final_project(0628)\project\src\kangComponent\firebase\firebaseIndex.jsx */}
                 </div>
-                {/* <div className='col-md-12 container mt-2 card cardshadow'> */}
-                  {/* <div className='row card cardshadow'> */}
-                {/* <div className='col-md-12 container mt-2'>
-                  <div className='row card cardshadow'>
-                    <div className='col-12'>
-                      {/* <h4>需要幫助嗎 ?</h4> */}
-                      {/* <h4></h4> */}
-                      <h6>此次餐點還滿意嗎？</h6>
-                      <NavLink to='/CommentPage/7008'>
-                      <button className="btn btn-outline-success" >點我進入店家，以進行評論</button>
-                      </NavLink>
-                    {/* </div> */}
-                  {/* </div> */}
-                {/* </div>
-                  </div> */}
-                {/* </div> */}
+                
               </div>
             </div>
           </div>

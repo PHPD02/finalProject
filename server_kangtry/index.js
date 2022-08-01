@@ -86,6 +86,7 @@ conn.connect(function (err) {
 
 app.get("/todo/list", function (req, res) {
     conn.query("select * from menu where restaurantName = '水巷茶弄(台中朝富店)'",
+    // conn.query("select * from menu where restaurantName = '吳和和的餐廳'",
     [req.body.menuItemId,req.body.restaurantName,req.body.dish,req.body.type,req.body.introduce,req.body.picture,req.body.cost],
     function (err, rows) {
             res.send( JSON.stringify(rows) );
@@ -104,6 +105,7 @@ app.get("/todo/item/:menuItemId", function (req, res) {
 })
 
 app.post("/todo/create", function (req, res) {
+    // req.body.restaurantName = '吳和和的餐廳';
      conn.query("INSERT INTO menu (dish , introduce , picture , cost , restaurantName ) VALUES (?,?,?,?,?)", 
          [req.body.dish,req.body.introduce,req.body.picture,req.body.cost,req.body.restaurantName],
 function (err, rows) {

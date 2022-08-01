@@ -330,7 +330,7 @@ class Ordermanage extends React.Component {
                         </div>
                       </span>
 
-                      <span><a href="#" className="btn btn-outline-secondary btn-lg ml-2"> 管理訂單 </a></span>
+                      {/* <span><a href="#" className="btn btn-outline-secondary btn-lg ml-2"> 管理訂單 </a></span> */}
                     </div>
                   </div>
                 </div>

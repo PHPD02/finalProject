@@ -243,7 +243,7 @@ class ToDoCreate extends React.Component {
               </div>
               <div className="form-group">
                 <label htmlFor="itemPicture" className="h4">
-                  重新上傳圖片(請輸入網址)
+                  上傳圖片(請輸入網址 或 選擇檔案)
                 </label><br />
                 <img
                   style={{ width: "850px" }}

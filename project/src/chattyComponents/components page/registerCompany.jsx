@@ -17,6 +17,7 @@ function Register() {
     const reschkButton = () => {
         var sendmail = $('#companyInputEmail').val();
         // var account = $('#inputEmail').val();
+        console.log(sendmail)
         if(sendmail){
             // $.post("http://localhost:80/loginComsumer/isNewAccount.php", {account}, function(data){
             //     console.log(data);
@@ -27,7 +28,8 @@ function Register() {
         $.post("http://localhost:80//ourPHPFinalproject/ChtProject/sendmail/sendmail.php", {sendmail}, function(data){
             setResult(data);
             
-        })
+        }).then(res=>console.log(res))
+        .catch(err=>console.log(err))
 
     }
 

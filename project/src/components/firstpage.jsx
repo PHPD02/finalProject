@@ -74,7 +74,7 @@ class firstpage extends Component {
         <div
         //  style={{zIndex:'-1'}}
         >
-          <div className='firstpic' style={{marginBottom:"80px"}}>
+          <div className='firstpic' style={{ marginBottom: "80px" }}>
             <div className='secpic'>
               <section>
                 <h2 className='pt-5'><b>還等什麼？一起和我們開始這個外送的旅程吧！</b></h2>

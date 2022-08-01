@@ -6,6 +6,9 @@ import axios from 'axios';
 import Footer from './repeatability/Footer';
 import FirebaseIndex from '../kangComponent/firebase/firebaseIndex';
 import Accordion from "react-bootstrap/Accordion";
+import { NavLink } from 'react-router-dom';
+// import { useEffect, useState } from "react";
+
 class OrderDetails extends Component {
   state = {
     details: {
@@ -15,15 +18,25 @@ class OrderDetails extends Component {
       ],
       sums: '',
     },
-    time: [], //給於一個空的時間值
-    timeleft: '',
+    time: [],               //給於一個空的時間值
+    countDownTime: {
+      startTime: '',        //初始的時間
+      endTime: '',          //最後的時間
+      subtractionTime: '',  //相減的時間
+    },
+    dayWork: {
+      hours: '00',            //時
+      minutes: '00',          //分
+      seconds: '00',          //秒
+    },
+    subtractionTime1: '',
   }
 
   
 
 
   componentDidMount = async () => {
-    alert("付款成功!您的訂單正在路上");
+    // alert("付款成功!您的訂單正在路上");
     let url = "http://localhost/ourPHPFinalproject/RjieProject/details.php"
     await axios.get(url)
       .then(res => {
@@ -32,20 +45,78 @@ class OrderDetails extends Component {
         this.setState({});
       });
     this.state.time[0] = new Date(this.state.details.water * 1000).toLocaleTimeString();
-    //流水號 轉回時間 
-    this.state.time[1] = new Date(this.state.details.water * 1000 + 20 * 60 * 1000).toLocaleTimeString();
-    //流水號 轉回時間 並加上配送時間
-    console.log(this.state.time);
-    console.log(this.state.timeleft);
-    this.setState({});
+    //toLocaleTimeString 字串轉回時間 
+    this.state.time[1] = new Date(this.state.details.water * 1000 + 20 * 60 * 1000).toLocaleTimeString(); // 訂單時間 + 20 分鐘 等於送餐的時間
+    // getTime 把時間轉換成字串
+    this.state.countDownTime.endTime = new Date(this.state.details.water * 1000 + 29 * 60 * 1000).getTime();
+    // console.log(this.state.countDownTime.startTime, this.state.countDownTime.endTime)
+
+
+
+    setInterval(() => {
+
+
+      this.state.countDownTime.startTime = new Date().getTime();
+
+      // console.log(this.state.countDownTime.endTime)
+      // console.log(this.state.countDownTime.startTime)
+      this.state.countDownTime.subtractionTime = this.state.countDownTime.endTime - this.state.countDownTime.startTime;
+      // console.log(Math.abs(this.state.countDownTime.subtractionTime));
+
+      // 負轉正數
+      // this.state.subtractionTime1 = Math.abs(this.state.countDownTime.subtractionTime)
+      // console.log(this.state.subtractionTime1);
+
+
+      this.state.dayWork.hours = Math.floor((this.state.countDownTime.subtractionTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      // console.log(this.state.dayWork.hours);
+      this.state.dayWork.minutes = Math.floor((this.state.countDownTime.subtractionTime % (1000 * 60 * 60)) / (1000 * 60));
+      // console.log(this.state.dayWork.minutes);
+      this.state.dayWork.seconds = Math.floor((this.state.countDownTime.subtractionTime % (1000 * 60)) / 1000);
+      // console.log(this.state.dayWork.seconds);
+      document.getElementById("allTimer").innerHTML = this.state.dayWork.hours + "時" + this.state.dayWork.minutes + "分" + this.state.dayWork.seconds + "秒";
+      // document.getElementById("allTimer").innerHTML = Math.abs(this.state.dayWork.minutes) + "分" + Math.abs(this.state.dayWork.seconds) + "秒";
+
+
+      if (this.state.countDownTime.subtractionTime > 0) {
+        document.getElementById("allTimer").innerHTML = this.state.dayWork.hours + "時" + this.state.dayWork.minutes + "分" + this.state.dayWork.seconds + "秒";
+        document.getElementById('text1').innerHTML = "餐點準備中";
+        // clearInterval();
+        // this.setState({})
+      } else if (this.state.countDownTime.subtractionTime < 0) {
+        document.getElementById('allTimer').innerHTML = "餐點已送達!";
+        document.getElementById('text1').innerHTML = "此次餐點還滿意嗎 ?";
+        document.getElementById('text2').innerHTML = "點我進入店家，以進行評論!";
+        // document.getElementById('button1').innerHTML = "點我進入店家，以進行評論!";
+      }
 
 
 
 
-    const timeleft = Date.now();
-    console.log(timeleft);
+      // if (this.state.countDownTime.subtractionTime < 0) {
+      //   clearInterval();
+      //   // this.setState({})
+      //   document.getElementById('allTimer').innerHTML = "餐點已送達!";
+      // };
+
+    }, 1000)
+
+
+
+    // console.log(this.state.countDownTime.subtractionTime);
+
+    // if (this.state.countDownTime.subtractionTime == 0) {
+    //   clearInterval();
+    //   // this.setState({})
+    //   document.getElementById('allTimer').innerHTML = "餐點已送達!";
+    // };
   }
+
+
+
+
   render() {
+
     return (
       <React.Fragment>
         <Navbar />
@@ -57,9 +128,11 @@ class OrderDetails extends Component {
                 <div className='card'>
                   <div className='row'>
                     <div className='col-11 text-center'>
-                      <h4>預計外送時間:20分00秒</h4>
-                      <br />
+                      {/* <h4>預計外送時間:20分00秒</h4>
+                      <br /> */}
                       {/* ({this.state.time[0]})-({this.state.time[1]}) */}
+                      <h4>預計外送時間<p id='allTimer'></p></h4>
+                      ({this.state.time[0]})-({this.state.time[1]})
                     </div>
                     {/* 讀取外送時間 */}
                     <div className='col-12'>
@@ -70,8 +143,18 @@ class OrderDetails extends Component {
                     </div>
                   </div>
                   {/* 再送達後更改內容 */}
-                  <div className='col-11 text-center'>
+                  {/* <div className='col-11 text-center'> */}
                     {/* <h4>{0 == 0 ? "餐點已送達!謝謝光臨" : "餐點準備中"}</h4> */}
+                  <div className='col-11 text-center ' >
+                    {/* {this.state.countDownTime.subtractionTime == 0 ? ("此次餐點還滿意嗎 ?") : ("餐點準備中 ! ")} */}
+                    <br />
+                    <h5 id="text1"></h5>
+                    <NavLink to="/CommentPage"><p id="text2" className='btn btn-outline-success'> </p></NavLink>
+
+                    {/* {this.state.countDownTime.subtractionTime == 0 ? (<NavLink to="/CommentPage"><button className='btn btn-outline-success'>點我進入店家，以進行評論</button></NavLink>) : ("")} */}
+                    {/* <h5 className='test2'>{0 == 0 ? this.state.test2[0] : this.state.test2[1]}</h5> */}
+                    {/* <h5 className='test2'>{0 == 0 ? this.test1() : '餐點準備中'}</h5> */}
+                    {/* <h5 className='test2'>{0 == 0 ? this.state.test2[0] : this.state.test2[1]}</h5> */}
 
                   </div>
                 </div>
@@ -82,7 +165,8 @@ class OrderDetails extends Component {
                   <br />
                   <h5>訂單編號：{this.state.details.water}1659165812</h5>
                   <br />
-                  <h5>訂單配送來自：{ }台中市西屯區朝富路134號</h5>
+                  {/* <h5>訂單配送來自：{ }台中市西屯區朝富路134號</h5> */}
+                  <h5>訂單配送來自：水巷茶弄(台中朝富店)</h5>
                   <br />
                   <h5>送餐地址：51號 21 公益路二段 Taichung City 408</h5>
                   <br />
@@ -133,8 +217,10 @@ class OrderDetails extends Component {
                   <br />
                   {/* C:\Users\bgkon\Desktop\康峻軒final_project(0628)\project\src\kangComponent\firebase\firebaseIndex.jsx */}
                 </div>
-                <div className='col-md-12 container mt-2 card cardshadow'>
+                {/* <div className='col-md-12 container mt-2 card cardshadow'> */}
                   {/* <div className='row card cardshadow'> */}
+                {/* <div className='col-md-12 container mt-2'>
+                  <div className='row card cardshadow'>
                     <div className='col-12'>
                       {/* <h4>需要幫助嗎 ?</h4> */}
                       {/* <h4></h4> */}
@@ -142,15 +228,17 @@ class OrderDetails extends Component {
                       <NavLink to='/CommentPage/7008'>
                       <button className="btn btn-outline-success" >點我進入店家，以進行評論</button>
                       </NavLink>
-                    </div>
+                    {/* </div> */}
                   {/* </div> */}
-                </div>
+                {/* </div>
+                  </div> */}
+                {/* </div> */}
               </div>
             </div>
           </div>
         </div>
         <Footer />
-      </React.Fragment>
+      </React.Fragment >
     );
   }
 }

@@ -15,7 +15,7 @@ class StoreCard extends Component {
       const { menuItemId, restaurantId, restaurantName, dish, type, picture, cost } = this.props.StoreCard;
 
       const res = await axios.post("http://localhost//ourPHPFinalproject/ChtProject/cart/getcart.php", { menuItemId: menuItemId })
-     
+
       var carts = res.data;
       var id = carts.id
       var mount = carts.mount;
@@ -30,7 +30,7 @@ class StoreCard extends Component {
         console.log(cart);
         // 修改數量
         await axios.put("http://localhost//ourPHPFinalproject/ChtProject/cart/putcart.php", cart);
-        
+
       } else {
         // 購物車裡沒有此筆資料
         const cart = {
@@ -52,7 +52,7 @@ class StoreCard extends Component {
       var num = document.getElementById('cartNum').innerText;
       document.getElementById('cartNum').innerText = parseInt(num) + 1;
       // console.log(num);
-      
+
 
     } catch (error) {
       console.log(error);
@@ -68,32 +68,41 @@ class StoreCard extends Component {
     return (
       <React.Fragment>
         <div className='card' style={{ boxShadow: "3px 3px 3px grey" }}>
-          <div className='container' style={{ height: '165px' }} >
-            <div className='row mt-3 d-flex align-items-center'>
+          <div className='container'
+            style={{ minHeight: '250px' }}
+          >
+            <div className='row mt-3 d-flex align-items-center' style={{ height:'100%',minHeight:'250px'}}>
               {/* <div className='col-md-12 col-sm-12'> */}
-              <img src={picture} alt="" name="picture" height='100%' className='col-4 ' />
+              <img src={picture} alt="" name="picture" className='col-4' />
               {/* 圖片 */}
-              <div className='col-8 '>
+              <div className='col-7'>
                 {/* <div className='col'> */}
-                  {/* 商品名稱 */}
+                {/* 商品名稱 */}
 
-                  {/* 金額 */}
-                  <h4 name="dish">{dish}</h4>
-                  <div className="row">
-                    <div name="type" className='col-10'>{type}</div>
-                    <div name="introduce" className='col-10'>{introduce}</div>
-                    <button type="submit" className='col-2 btn btn-primary rounded-lg h-25' onClick={this.addtoCart}>+</button>
-                  </div>
-                  <span className='h4'>$<span name="cost" >{cost}</span><b>元</b></span>
-                  
-                  <br />
-                  
+                {/* 金額 */}
+                <h4 name="dish">{dish}</h4>
+                {/* <div className="row"> */}
+                <div name="type"
+                // className='col-10'
+                >{type}</div>
+                <div name="introduce"
+                // className='col-10'
+                >{introduce}</div>
+                {/* </div> */}
+                <span className='h4'>$<span name="cost" >{cost}</span><b>元</b></span>
+
+                <br />
+
               </div>
+              <div className='col-1 p-1'>
+                <button type="submit" className='btn btn-primary rounded-lg h-25' onClick={this.addtoCart}>+</button>
+              </div>
+
               {/* </div> */}
             </div>
-            <div className="row">
-                  
-                  </div>
+            {/* <div className="row">
+
+            </div> */}
           </div>
         </div>
 

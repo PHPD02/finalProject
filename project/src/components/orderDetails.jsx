@@ -82,6 +82,7 @@ class OrderDetails extends Component {
       if (this.state.countDownTime.subtractionTime > 0) {
         document.getElementById("allTimer").innerHTML = this.state.dayWork.hours + "時" + this.state.dayWork.minutes + "分" + this.state.dayWork.seconds + "秒";
         document.getElementById('text1').innerHTML = "餐點準備中";
+        // document.getElementById('text2').innerHTML = "點我進入店家，以進行評論!";
         // clearInterval();
         // this.setState({})
       } else if (this.state.countDownTime.subtractionTime < 0) {
@@ -135,7 +136,7 @@ class OrderDetails extends Component {
                       <br /> */}
                       {/* ({this.state.time[0]})-({this.state.time[1]}) */}
                       <h4>預計外送時間<p id='allTimer'></p></h4>
-                      ({this.state.time[0]})-({this.state.time[1]})
+                      {this.state.time[0]}{this.state.time[1]}
                     </div>
                     {/* 讀取外送時間 */}
                     <div className='col-12'>
@@ -165,8 +166,8 @@ class OrderDetails extends Component {
                   {/* <h5>訂單編號：{this.state.details.water}</h5> */}
                   <h5>訂單編號：165962688012</h5>
                   <br />
-                  {/* <h5>訂單配送來自：{ }台中市西屯區朝富路134號</h5> */}
-                  <h5>訂單配送來自：水巷茶弄(台中朝富店)</h5>
+                  <h5>訂單配送來自：台中市西屯區朝富路134號</h5>
+                  {/* <h5>訂單配送來自：水巷茶弄(台中朝富店)</h5> */}
                   <br />
                   <h5>送餐地址：51號 21 公益路二段 Taichung City 408</h5>
                   <br />

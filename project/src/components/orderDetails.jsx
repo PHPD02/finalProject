@@ -6,6 +6,7 @@ import axios from 'axios';
 import Footer from './repeatability/Footer';
 import FirebaseIndex from '../kangComponent/firebase/firebaseIndex';
 import Accordion from "react-bootstrap/Accordion";
+import $ from 'jquery';
 // import { NavLink } from 'react-router-dom';
 // import { useEffect, useState } from "react";
 
@@ -86,7 +87,9 @@ class OrderDetails extends Component {
       } else if (this.state.countDownTime.subtractionTime < 0) {
         document.getElementById('allTimer').innerHTML = "餐點已送達!";
         document.getElementById('text1').innerHTML = "此次餐點還滿意嗎 ?";
-        document.getElementById('text2').innerHTML = "點我進入店家，以進行評論!";
+        //出現text2
+        $('#text2').attr('style', 'display:visible');
+        // document.getElementById('text2').innerHTML = "點我進入店家，以進行評論!";
         // document.getElementById('button1').innerHTML = "點我進入店家，以進行評論!";
       }
 
@@ -149,7 +152,7 @@ class OrderDetails extends Component {
                     {/* {this.state.countDownTime.subtractionTime == 0 ? ("此次餐點還滿意嗎 ?") : ("餐點準備中 ! ")} */}
                     <br />
                     <h5 id="text1"></h5>
-                    <NavLink to="/CommentPage"><p id="text2" className='btn btn-outline-success'> </p></NavLink>
+                    <NavLink to="/CommentPage"><p id="text2" style={{display:'none'}} className='btn btn-outline-success'>點我進入店家，以進行評論! </p></NavLink>
 
 
                   </div>
@@ -159,19 +162,22 @@ class OrderDetails extends Component {
                 <div className='card'>
                   <h3>訂單詳情</h3>
                   <br />
-                  <h5>訂單編號：{this.state.details.water}1659165812</h5>
+                  {/* <h5>訂單編號：{this.state.details.water}</h5> */}
+                  <h5>訂單編號：165962688012</h5>
                   <br />
                   {/* <h5>訂單配送來自：{ }台中市西屯區朝富路134號</h5> */}
                   <h5>訂單配送來自：水巷茶弄(台中朝富店)</h5>
                   <br />
                   <h5>送餐地址：51號 21 公益路二段 Taichung City 408</h5>
                   <br />
-                  <h5>總計：$ {this.state.details.sums}253</h5>
+                  {/* <h5>總計：$ {this.state.details.sums}</h5> */}
+                  <h5>總計：$ 253</h5>
                   {/* 撈資料庫產生 */}
                   <Accordion style={{ borderTop: "1px solid black", marginTop: "20px", fontSize: "15px", }}>
                     <Accordion.Item eventKey="0">
                       <Accordion.Header className="mt-3 font-weight-bold " style={{ fontSize: "22px" }}>
-                        <span>查看品項細節({this.state.length}個品項)</span>
+                        {/* <span>查看品項細節({this.state.length}個品項)</span> */}
+                        <span>查看品項細節(4個品項)</span>
                         <span className="ml-2">
                           <i class="fa-solid fa-angles-down"></i>
                         </span>

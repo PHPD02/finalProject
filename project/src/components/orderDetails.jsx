@@ -135,8 +135,12 @@ class OrderDetails extends Component {
                       {/* <h4>預計外送時間:20分00秒</h4>
                       <br /> */}
                       {/* ({this.state.time[0]})-({this.state.time[1]}) */}
-                      <h4>預計外送時間<p id='allTimer'></p></h4>
-                      {this.state.time[0]}{this.state.time[1]}
+                      <h4>預計外送時間
+                        {/* <p id='allTimer'></p> */}
+                        </h4>
+                      <h4><p>00時20分00秒</p></h4>
+                      <p>(下午12:30:34) - (下午12:50:34)</p>
+                      {/* {this.state.time[0]}{this.state.time[1]} */}
                     </div>
                     {/* 讀取外送時間 */}
                     <div className='col-12'>

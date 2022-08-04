@@ -156,7 +156,7 @@ class OrderDetails extends Component {
                   <div className='col-11 text-center ' >
                     {/* {this.state.countDownTime.subtractionTime == 0 ? ("此次餐點還滿意嗎 ?") : ("餐點準備中 ! ")} */}
                     <br />
-                    <h5 id="text1"></h5>
+                    <h5 id="text1">餐點準備中</h5>
                     <NavLink to="/CommentPage"><p id="text2" style={{display:'none'}} className='btn btn-outline-success'>點我進入店家，以進行評論! </p></NavLink>
 
 

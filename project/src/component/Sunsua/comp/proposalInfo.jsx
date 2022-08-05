@@ -155,6 +155,7 @@
                                  limitTime={this.props.proposalDetail.limitTime}
                                  setTime={this.props.proposalDetail.setTime}
                                  parentFunc={this.timeoutChageState}
+                                 style={{width:"100%"}}
                              >
                              </TimeCountDown>
                          </div>
@@ -173,7 +174,7 @@
                                  })}
                              </select>
                          </div>
-                         <button className='btn btn-danger my-2' onClick={this.addProposal}>加入定單</button>
+                         <button className='btn btn-danger my-2' onClick={this.addProposal}>加入訂單</button>
                      </div>
                  </div>
              </div>

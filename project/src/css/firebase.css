@@ -21,7 +21,7 @@
     bottom:20px;
     z-index: 99;
     background-color: white;
-    width:25%;
+    width:375px;
 }
 .signout-wrapper{
     border-bottom: 1px solid gray;
@@ -83,7 +83,7 @@
 
 /* 判斷彼此是寄件人還是收件人 */
 .chatroom-wrapper .msgs .sent {
-    background-color: rgb(145, 145, 207);
+    background-color: rgb(223, 223, 243);
     border: 1px solid black;
     color: white;
     flex-direction: row-reverse;
@@ -105,7 +105,8 @@
     height:45px;
     position: fixed;
     bottom: 21px;
-    width:23.5%;
+    /* width:23.5%; */
+    width:358px;
     box-shadow: 0 2px 5px grey;
 }
 .sendMessage-wrapper input{

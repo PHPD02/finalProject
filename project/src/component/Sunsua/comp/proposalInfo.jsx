@@ -155,7 +155,8 @@
                                  limitTime={this.props.proposalDetail.limitTime}
                                  setTime={this.props.proposalDetail.setTime}
                                  parentFunc={this.timeoutChageState}
-                                 style={{width:"100%"}}
+                                 style={{width:"115%"}}
+                                 className="text-nowrap"
                              >
                              </TimeCountDown>
                          </div>

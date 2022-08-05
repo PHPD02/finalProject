@@ -167,7 +167,7 @@ class ToDoEdit extends React.Component {
                   alt=""
                 />
                 <span className="user-avatar">
-                  康大哥 <i className="ti-angle-down f-s-10"></i>
+                  吳大哥 <i className="ti-angle-down f-s-10"></i>
                 </span>
                 <div className="drop-down dropdown-profile">
                   <div className="dropdown-content-heading">
@@ -259,7 +259,7 @@ class ToDoEdit extends React.Component {
           </div>
           <div className="form-group">
             <label htmlFor="itemPicture" className="h4">
-              重新上傳圖片(請輸入網址)
+              重新上傳圖片(請輸入網址 或 選擇檔案)
             </label><br />
             <img
               style={{width:"850px"}}

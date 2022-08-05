@@ -191,7 +191,7 @@ class Admindashboard extends Component {
                       <div class="fa fa-money fa-4x text-secondary  d-none d-md-block"></div>
                       <div class="text-center w-100">
                         <div class="h4 text-nowrap"><span className="font-weight-bold">今日</span>營業額</div>
-                        <div class="h2 font-weight-bold">13,072</div>
+                        <div class="h2 font-weight-bold">26,582</div>
                       </div>
                     </div>
                   </div>
@@ -202,7 +202,7 @@ class Admindashboard extends Component {
                       <div class="fa fa-shopping-cart fa-4x text-secondary  d-none d-md-block"></div>
                       <div class="text-center w-100">
                         <div class="h4 text-nowrap"><span className="font-weight-bold">昨日</span>營業額</div>
-                        <div class="h2 ">10,281</div>
+                        <div class="h2 ">19,216</div>
                       </div>
                     </div>
                   </div>
@@ -224,7 +224,7 @@ class Admindashboard extends Component {
                       <div class="fa fa-dollar fa-4x text-secondary  d-none d-md-block"></div>
                       <div class="text-center w-100">
                         <div class="h4 text-nowrap"><span className="font-weight-bold">8月</span>營收</div>
-                        <div class="h2 ">210,251</div>
+                        <div class="h2 ">167,826</div>
                       </div>
                     </div>
                   </div>

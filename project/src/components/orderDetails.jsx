@@ -38,18 +38,20 @@ class OrderDetails extends Component {
 
   componentDidMount = async () => {
     // alert("付款成功!您的訂單正在路上");
-    let url = "http://localhost/ourPHPFinalproject/RjieProject/details.php"
-    await axios.get(url)
-      .then(res => {
-        this.state.details = res.data;
-        this.state.length = this.state.details.menu.length; //長度等於菜單清單的筆數
-        this.setState({});
-      });
+    // let url = "http://localhost/ourPHPFinalproject/RjieProject/details.php"
+    // await axios.get(url)
+    //   .then(res => {
+    //     this.state.details = res.data;
+    //     this.state.length = this.state.details.menu.length; //長度等於菜單清單的筆數
+    //     this.setState({});
+    //   });
     this.state.time[0] = new Date(this.state.details.water * 1000).toLocaleTimeString();
+    // this.state.time[0] = new Date("August 5, 2022 11:28:00").getMinutes;
     //toLocaleTimeString 字串轉回時間 
     this.state.time[1] = new Date(this.state.details.water * 1000 + 20 * 60 * 1000).toLocaleTimeString(); // 訂單時間 + 20 分鐘 等於送餐的時間
     // getTime 把時間轉換成字串
-    this.state.countDownTime.endTime = new Date(this.state.details.water * 1000 + 29 * 60 * 1000).getTime();
+    // this.state.countDownTime.endTime = new Date(this.state.details.water * 1000 + 29 * 60 * 1000).getTime();
+    this.state.countDownTime.endTime = new Date("August 5, 2022 11:35:00").getTime();
     // console.log(this.state.countDownTime.startTime, this.state.countDownTime.endTime)
 
 
@@ -72,6 +74,7 @@ class OrderDetails extends Component {
       this.state.dayWork.hours = Math.floor((this.state.countDownTime.subtractionTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       // console.log(this.state.dayWork.hours);
       this.state.dayWork.minutes = Math.floor((this.state.countDownTime.subtractionTime % (1000 * 60 * 60)) / (1000 * 60));
+      // this.state.dayWork.minutes
       // console.log(this.state.dayWork.minutes);
       this.state.dayWork.seconds = Math.floor((this.state.countDownTime.subtractionTime % (1000 * 60)) / 1000);
       // console.log(this.state.dayWork.seconds);
@@ -136,9 +139,9 @@ class OrderDetails extends Component {
                       <br /> */}
                       {/* ({this.state.time[0]})-({this.state.time[1]}) */}
                       <h4>預計外送時間
-                        {/* <p id='allTimer'></p> */}
+                        <p id='allTimer'></p>
                         </h4>
-                      <h4><p>00時20分00秒</p></h4>
+                      {/* <h4><p>00時20分00秒</p></h4> */}
                       <p>(下午12:30:34) - (下午12:50:34)</p>
                       {/* {this.state.time[0]}{this.state.time[1]} */}
                     </div>

@@ -173,7 +173,7 @@
                                  })}
                              </select>
                          </div>
-                         <button className='btn btn-danger my-2' onClick={this.addProposal}>加入定單</button>
+                         <button className='btn btn-danger my-2' onClick={this.addProposal}>加入訂單</button>
                      </div>
                  </div>
              </div>

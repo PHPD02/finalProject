@@ -32,7 +32,7 @@ class SunsuaProposal extends Component {
             addr: null,
             city: null,
             area: null,
-            arriveTime: null,
+            arriveTime: "",
             shop: null,
             meal: null,
             cost: null,
@@ -86,6 +86,7 @@ class SunsuaProposal extends Component {
         if (e.target.value) {
             this.state.proposalDetail.arriveTime = e.target.value;
         }
+        this.state.proposalDetail.arriveTime = this.state.proposalDetail.arriveTime.replace('T', ' ');
     }
 
     /* ==【Event Func】輸入 餐廳資訊 == */
@@ -270,7 +271,7 @@ class SunsuaProposal extends Component {
         console.log(this.state);
     }
 
-        
+
 
     render() {
         return (

@@ -221,7 +221,7 @@ class Payment extends Component {
                                     <form id="idFormAioCheckOut"
                                         method="POST" action=
                                         // "http://localhost/PHP/phpEcpay/test.php"
-                                        "http://localhost:80//ourPHPFinalproject/ChtProject/phpEcpay/ECPay_CreateOrder.php"
+                                        "http://localhost:80//ourPHPFinalproject/ChtProject/phpEcpay/ECPay_CreateOrder_sunsua.php"
                                         onSubmit={(event) => this.handleSubmit(event)}>
                                         <label hidden>編號 (MerchantTradeNo):
                                             <input type="text" name="MerchantTradeNo" defaultValue={this.state.num} className="form-control" />
